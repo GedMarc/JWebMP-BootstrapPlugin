@@ -16,11 +16,16 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.dropdown;
 
-import za.co.mmagon.jwebswing.base.ComponentHTMLBootstrapBase;
+import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Link;
+import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
-import za.co.mmagon.jwebswing.base.interfaces.IComponentHTMLBootstrapBase;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonAttributes;
+import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
 
@@ -36,18 +41,18 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
  * @since 13 Jan 2017
  * @version 1.0
  */
+@ComponentInformation(name = "Bootstrap Dropdown", description = "Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.",
+        url = "https://v4-alpha.getbootstrap.com/components/dropdowns/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSDropDown<J extends BSDropDown>
-        extends Div<BSDropDownChildren, BSDropDownAttributes, BSDropDownFeatures, BSDropDownEvents, J>
-        implements IBSDropDown
+        extends Div<BSDropDownChildren, BSDropDownAttributes, GlobalFeatures, BSDropDownEvents, J> implements IBSDropDown<J>
 {
 
     private static final long serialVersionUID = 1L;
-    private BSDropDownFeature feature;
 
     /**
      * The button for the drop down,
      */
-    private ComponentHTMLBootstrapBase dropdownButton;
+    private Component dropdownButton;
 
     /**
      * The dropdownMenu for this drop down
@@ -60,6 +65,7 @@ public class BSDropDown<J extends BSDropDown>
     public BSDropDown()
     {
         addClass(BSComponentDropDownOptions.Dropdown);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -71,6 +77,7 @@ public class BSDropDown<J extends BSDropDown>
     {
         this();
         setDropdownButton(link);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -82,6 +89,17 @@ public class BSDropDown<J extends BSDropDown>
     {
         this();
         setDropdownButton(button);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+    }
+
+    /**
+     * Neater view on the matter
+     *
+     * @return
+     */
+    public IBSDropDown asMe()
+    {
+        return this;
     }
 
     /**
@@ -112,7 +130,7 @@ public class BSDropDown<J extends BSDropDown>
         this.dropdownMenu = menu;
         if (menu != null)
         {
-            menu.addAttribute("role", "menu");
+            menu.addAttribute(BSButtonAttributes.Role.toString(), "menu");
         }
         return this;
     }
@@ -123,7 +141,7 @@ public class BSDropDown<J extends BSDropDown>
      * @return
      */
     @Override
-    public ComponentHTMLBootstrapBase getDropdownButton()
+    public Component getDropdownButton()
     {
         if (dropdownButton == null)
         {
@@ -141,36 +159,14 @@ public class BSDropDown<J extends BSDropDown>
      * @return
      */
     @Override
-    public final <T extends BSDropDownChildren & IComponentHTMLBootstrapBase> BSDropDown setDropdownButton(T dropdownButton)
+    public final J setDropdownButton(Component dropdownButton)
     {
-        this.dropdownButton = (ComponentHTMLBootstrapBase) dropdownButton;
-        //dropdownButton.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-        return this;
-    }
-
-    /**
-     * Doesn't return anything
-     *
-     * @return
-     */
-    public final BSDropDownFeature getFeature()
-    {
-        if (feature == null)
+        this.dropdownButton = (Component) dropdownButton;
+        if (dropdownButton != null)
         {
-            feature = new BSDropDownFeature(this);
+            dropdownButton.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
         }
-        return feature;
-    }
-
-    /**
-     * Doesn't return anything
-     *
-     * @return
-     */
-    @Override
-    public BSDropDownOptions getOptions()
-    {
-        return getFeature().getOptions();
+        return (J) this;
     }
 
     @Override
@@ -178,12 +174,12 @@ public class BSDropDown<J extends BSDropDown>
     {
         if (!isConfigured())
         {
-            getDropdownButton().addAttribute("role", "button");
+            getDropdownButton().addAttribute(BSButtonGroupAttributes.Role.toString(), "button");
             add((BSDropDownChildren) getDropdownButton());
             add((BSDropDownChildren) getDropdownMenu());
 
-            getDropdownMenu().addAttribute(GlobalAttributes.Aria_LabelledBy, getDropdownButton().getID());
-            getDropdownButton().addAttribute("data-target", getDropdownMenu().getID());
+            getDropdownMenu().addAttribute(GlobalAttributes.Aria_LabelledBy.toString(), getDropdownButton().getID());
+            getDropdownButton().addAttribute(ButtonAttributes.Data_Target.toString(), getDropdownMenu().getID());
 
             if (Link.class.isAssignableFrom(getDropdownButton().getClass()))
             {

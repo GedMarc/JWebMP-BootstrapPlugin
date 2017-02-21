@@ -16,9 +16,15 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler;
 
-import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.base.html.Button;
+import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.Span;
+import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
+import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSComponentNavBarOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSComponentNavsOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
 
 /**
@@ -27,7 +33,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
  * @since 21 Jan 2017
  *
  */
-public class BSNavBarToggler extends Button implements BSNavBarChildren
+public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavBarToggler
 {
 
     private static final long serialVersionUID = 1L;
@@ -64,22 +70,35 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren
      *
      * @return
      */
+    @Override
     public <T extends Div & BSNavBarChildren> T createCollapsingDiv(BSNavs navs)
     {
-        navs.removeClass("nav");
-        navs.addClass("navbar-nav");
+        navs.removeClass(BSComponentNavsOptions.Nav);
+        navs.addClass(BSComponentNavsOptions.Navbar_Nav);
 
         BSNavBarTogglerDiv div = new BSNavBarTogglerDiv();
         div.add(navs);
 
-        addAttribute("data-toggle", "collapse");
-        addAttribute("data-target", div.getID(true));
-        addAttribute("aria-controls", div.getID());
-        addAttribute("aria-expanded", "false");
-        addAttribute("aria-label", ARIA_LABEL);
-        addAttribute("type", "button");
+        addAttribute(ButtonAttributes.Data_Toggle, "collapse");
+        addAttribute(ButtonAttributes.Data_Target, div.getID(true));
+        addAttribute(GlobalAttributes.Aria_Controls, div.getID());
+        addAttribute(GlobalAttributes.Aria_Expanded, "false");
+        addAttribute(GlobalAttributes.Aria_Label, ARIA_LABEL);
+        addAttribute(GlobalAttributes.Type, "button");
+
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
 
         return (T) div;
+    }
+
+    /**
+     * A neater view
+     *
+     * @return
+     */
+    public IBSNavBarToggler asMe()
+    {
+        return this;
     }
 
     @Override
@@ -94,11 +113,13 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren
         super.preConfigure();
     }
 
+    @Override
     public String getIconClass()
     {
         return iconClass;
     }
 
+    @Override
     public void setIconClass(String iconClass)
     {
         this.iconClass = iconClass;

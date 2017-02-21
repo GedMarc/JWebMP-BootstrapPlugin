@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,14 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.collapse;
 
-import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.base.html.Button;
+import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.Link;
+import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 
 /**
  * Collapse
@@ -27,6 +34,8 @@ import za.co.mmagon.jwebswing.base.html.*;
  * @since 29 Aug 2015
  * @version 1.0
  */
+@ComponentInformation(name = "Bootstrap Collapse", description = "The Bootstrap collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.",
+        url = "https://v4-alpha.getbootstrap.com/components/collapse/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCollapse
 {
 
@@ -46,14 +55,21 @@ public class BSCollapse
             display.addClass("collapse");
             if (!hideOnStart)
             {
-                display.addClass("in");
+                if (!BootstrapPageConfigurator.isBootstrap4())
+                {
+                    display.addClass(BSComponentDefaultOptions.In);
+                }
+                else
+                {
+                    display.addClass(BSComponentDefaultOptions.Show);
+                }
             }
             linkController.addAttribute("aria-controls", display.getID());
-            linkController.addAttribute("data-target", display.getID(true));
+            linkController.addAttribute(LinkAttributes.Data_Target.toString(), display.getID(true));
         }
 
-        linkController.addAttribute("data-toggle", "collapse");
-        linkController.addAttribute("aria-expanded", Boolean.toString(!hideOnStart));
+        linkController.addAttribute(LinkAttributes.Data_Toggle, "collapse");
+        linkController.addAttribute(GlobalAttributes.Aria_Expanded, Boolean.toString(!hideOnStart));
 
     }
 

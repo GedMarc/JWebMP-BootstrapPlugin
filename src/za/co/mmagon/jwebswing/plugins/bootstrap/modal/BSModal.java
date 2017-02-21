@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.base.html.Button;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentCloseIconOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
@@ -29,10 +31,16 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
  * helpful subcomponents, sizes, and more.
  * <p>
  * @author Marc Magon
+ * @param <J>
+ *
  * @since 9 Nov 2016
  * @version 1.0
  */
-public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeatures, BSModalEvents, BSModal> implements IBSModal, BSNavBarChildren
+@ComponentInformation(name = "Bootstrap Modals", description = "Modals are streamlined, but flexible dialog prompts powered by JavaScript. They support a number of use cases from user notification to completely custom content and feature a handful of helpful subcomponents, sizes, and more.",
+        url = "https://v4-alpha.getbootstrap.com/components/modal/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSModal<J extends BSModal>
+        extends Div<BSModalChildren, BSModalAttributes, BSModalFeatures, BSModalEvents, J>
+        implements BSNavBarChildren, IBSModal<J>
 {
 
     private static final long serialVersionUID = 1L;
@@ -69,8 +77,10 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
         addAttribute(BSModalAttributes.Role, "dialog");
         addAttribute(BSModalAttributes.TabIndex, "-1");
         addAttribute(GlobalAttributes.Aria_Hidden, "true");
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
+    @Override
     public BSModal setFade()
     {
         addClass(BSComponentDefaultOptions.Fade);
@@ -116,18 +126,21 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
      * Sets the overall dialog of the modal
      *
      * @param modalDialog
+     *
+     * @return
      */
     @Override
-    public void setModalDialog(Div modalDialog)
+    public J setModalDialog(Div modalDialog)
     {
         getChildren().remove(this.modalDialog);
         this.modalDialog = modalDialog;
         if (this.modalDialog != null)
         {
-            add(modalDialog);
+            getChildren().add(modalDialog);
             modalDialog.addClass(BSComponentModalOptions.Modal_Dialog);
-            modalDialog.addAttribute("role", "document");
+            modalDialog.addAttribute(BSModalAttributes.Role, "document");
         }
+        return (J) this;
     }
 
     /**
@@ -149,9 +162,11 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
      * Sets the modal content pane
      *
      * @param modalContent
+     *
+     * @return
      */
     @Override
-    public void setModalContent(Div modalContent)
+    public J setModalContent(Div modalContent)
     {
         getModalDialog().remove(this.modalContent);
         this.modalContent = modalContent;
@@ -160,6 +175,7 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
             this.modalContent.addClass(BSComponentModalOptions.Modal_Content);
             getModalDialog().add(this.modalContent);
         }
+        return (J) this;
     }
 
     /**
@@ -181,9 +197,11 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
      * Sets the modal header pane
      *
      * @param modalHeader
+     *
+     * @return
      */
     @Override
-    public void setModalHeader(Div modalHeader)
+    public J setModalHeader(Div modalHeader)
     {
         getModalContent().remove(modalHeader);
         this.modalHeader = modalHeader;
@@ -192,6 +210,7 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
             getModalContent().add(0, this.modalHeader);
             this.modalHeader.addClass(BSComponentModalOptions.Modal_Header);
         }
+        return (J) this;
     }
 
     /**
@@ -213,9 +232,11 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
      * Sets the modal body
      *
      * @param modalBody
+     *
+     * @return
      */
     @Override
-    public void setModalBody(Div modalBody)
+    public J setModalBody(Div modalBody)
     {
         getModalContent().remove(this.modalBody);
         this.modalBody = modalBody;
@@ -224,6 +245,7 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
             this.modalBody.addClass(BSComponentModalOptions.Modal_Body);
             getModalContent().add(this.modalBody);
         }
+        return (J) this;
     }
 
     /**
@@ -245,9 +267,11 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
      * Sets the modal footer
      *
      * @param modalFooter
+     *
+     * @return
      */
     @Override
-    public void setModalFooter(Div modalFooter)
+    public J setModalFooter(Div modalFooter)
     {
         getModalContent().remove(this.modalFooter);
         this.modalFooter = modalFooter;
@@ -256,49 +280,116 @@ public class BSModal extends Div<BSModalChildren, BSModalAttributes, BSModalFeat
             getModalContent().add(this.modalFooter);
             this.modalFooter.addClass(BSComponentModalOptions.Modal_Footer);
         }
+        return (J) this;
     }
 
     /**
      * Adds a button that will open up the modal
      *
      * @param button
+     *
+     * @return
      */
     @Override
-    public void addOpenButton(Button button)
+    public J addOpenButton(Button button)
     {
         button.addAttribute(ButtonAttributes.Data_Toggle, "modal");
         button.addAttribute(ButtonAttributes.Data_Target, getID(true));
+        return (J) this;
     }
 
     /**
      * Adds the dismiss button to the modal
      *
      * @param button
+     *
+     * @return
      */
     @Override
-    public void addDismissButton(Button button)
+    public J addDismissButton(Button button)
     {
         button.addClass(BSComponentCloseIconOptions.Close);
         button.addAttribute(ButtonAttributes.Data_Dismiss, "modal");
+        getModalHeader().add(button);
+        return (J) this;
     }
 
     /**
      * Sets the size to render for the modal. By default medium. false sets small
      *
      * @param large
+     *
+     * @return
      */
     @Override
-    public void setModalDialogSize(boolean large)
+    public J setModalDialogSize(boolean large)
     {
         if (large)
         {
-            getModalDialog().removeClass("modal-sm");
-            getModalDialog().addClass("modal-lg");
+            getModalDialog().removeClass(BSComponentModalOptions.Modal_Sm);
+            getModalDialog().addClass(BSComponentModalOptions.Modal_Lg);
         }
         else
         {
-            getModalDialog().addClass("modal-sm");
-            getModalDialog().removeClass("modal-lg");
+            getModalDialog().addClass(BSComponentModalOptions.Modal_Sm);
+            getModalDialog().removeClass(BSComponentModalOptions.Modal_Lg);
         }
+        return (J) this;
+    }
+
+    /**
+     * Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on click.
+     *
+     * @param backdrop
+     *
+     * @return
+     */
+    @Override
+    public J setBackdrop(boolean backdrop)
+    {
+        addAttribute(BSModalAttributes.Data_Backdrop, backdrop);
+        return (J) this;
+    }
+
+    /**
+     * Closes the modal when escape key is pressed
+     *
+     * @param keyboard
+     *
+     * @return
+     */
+    @Override
+    public J setKeyboard(boolean keyboard)
+    {
+        addAttribute(BSModalAttributes.Data_Keyboard, keyboard);
+        return (J) this;
+    }
+
+    /**
+     * Puts the focus on the modal when initialized.
+     *
+     * @param focus
+     *
+     * @return
+     */
+    @Override
+    public J setFocus(boolean focus)
+    {
+        addAttribute(BSModalAttributes.Data_Focus, focus);
+        return (J) this;
+    }
+
+    /**
+     * Shows the modal when initialized.
+     *
+     * @param show
+     *
+     * @return
+     */
+    @Override
+    public J setShow(boolean show)
+    {
+        addAttribute(BSModalAttributes.Data_Show, show);
+        return (J) this;
     }
 }

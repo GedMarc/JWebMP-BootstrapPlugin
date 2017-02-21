@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownChildren;
 
@@ -27,13 +28,11 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownChildren;
  * @since 13 Jan 2017
  * @version 1.0
  */
-public class BSDropDownMenu extends Div<BSDropDownMenuChildren, BSDropDownMenuAttributes, BSDropDownMenuFeatures, BSDropDownMenuEvents, BSDropDownMenu>
+public class BSDropDownMenu extends Div<BSDropDownMenuChildren, BSDropDownMenuAttributes, GlobalFeatures, BSDropDownMenuEvents, BSDropDownMenu>
         implements BSDropDownChildren
 {
 
     private static final long serialVersionUID = 1L;
-
-    private BSDropDownMenuFeature feature;
 
     /**
      * A new drop down menu list
@@ -42,15 +41,6 @@ public class BSDropDownMenu extends Div<BSDropDownMenuChildren, BSDropDownMenuAt
     {
         addClass(BSComponentDropDownOptions.Dropdown_Menu);
 
-    }
-
-    public final BSDropDownMenuFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSDropDownMenuFeature(this);
-        }
-        return feature;
     }
 
     /**
@@ -66,17 +56,6 @@ public class BSDropDownMenu extends Div<BSDropDownMenuChildren, BSDropDownMenuAt
     {
         addClass(BSComponentDropDownOptions.Dropdown_Menu_Right);
         return this;
-    }
-
-    /**
-     * Returns very little
-     *
-     * @return
-     */
-    @Override
-    public BSDropDownMenuOptions getOptions()
-    {
-        return getFeature().getOptions();
     }
 
 }

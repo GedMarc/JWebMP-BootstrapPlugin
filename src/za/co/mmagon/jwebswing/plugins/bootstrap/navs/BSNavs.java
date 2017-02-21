@@ -17,23 +17,29 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 
 /**
  * Navs Navigation available in Bootstrap share general markup and styles, from the base .nav class to the active and disabled states. Swap modifier classes to switch between each style.
  * <p>
  * @author Marc Magon
+ * @param <J>
+ *
  * @since 17 Jan 2017
  * @version 1.0
  */
-public class BSNavs extends Div<BSNavsChildren, BSNavsAttributes, BSNavsFeatures, BSNavsEvents, BSNavs> implements BSNavBarChildren
+@ComponentInformation(name = "Bootstrap Navs", description = "Navigation available in Bootstrap share general markup and styles, from the base .nav class to the active and disabled states. Swap modifier classes to switch between each style.",
+        url = "https://v4-alpha.getbootstrap.com/components/navs/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSNavs<J extends BSNavs>
+        extends Div<BSNavsChildren, BSNavsAttributes, GlobalFeatures, GlobalEvents, J>
+        implements BSNavBarChildren, IBSNavs
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The associated feature
-     */
-    private BSNavsFeature feature;
     /**
      * Assign the navigation list
      */
@@ -46,7 +52,8 @@ public class BSNavs extends Div<BSNavsChildren, BSNavsAttributes, BSNavsFeatures
     {
         setTag("nav");
         addClass(BSComponentNavsOptions.Nav);
-        addAttribute("role", "navigation");
+        addAttribute(BSNavsAttributes.Role, "navigation");
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -54,6 +61,7 @@ public class BSNavs extends Div<BSNavsChildren, BSNavsAttributes, BSNavsFeatures
      *
      * @return
      */
+    @Override
     public BSNavs setCentered()
     {
         addClass(BSComponentNavsOptions.Justify_Content_Center);
@@ -65,6 +73,7 @@ public class BSNavs extends Div<BSNavsChildren, BSNavsAttributes, BSNavsFeatures
      *
      * @return
      */
+    @Override
     public BSNavs setRightAligned()
     {
         addClass(BSComponentNavsOptions.Justify_Content_End);
@@ -72,35 +81,11 @@ public class BSNavs extends Div<BSNavsChildren, BSNavsAttributes, BSNavsFeatures
     }
 
     /**
-     * Returns the feature if any is required
-     *
-     * @return
-     */
-    public final BSNavsFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSNavsFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Returns the options if any is required
-     *
-     * @return
-     */
-    @Override
-    public BSNavsOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
-
-    /**
      * Assigns the navigation list
      *
      * @return
      */
+    @Override
     public BSNavList getNavigationList()
     {
         if (this.navigationList == null)
@@ -115,6 +100,7 @@ public class BSNavs extends Div<BSNavsChildren, BSNavsAttributes, BSNavsFeatures
      *
      * @param navigationList
      */
+    @Override
     public void setNavigationList(BSNavList navigationList)
     {
         if (this.navigationList != null)
@@ -126,6 +112,16 @@ public class BSNavs extends Div<BSNavsChildren, BSNavsAttributes, BSNavsFeatures
         {
             add(this.navigationList);
         }
+    }
+
+    /**
+     * A neater version of only my options
+     *
+     * @return
+     */
+    public IBSNavs asMe()
+    {
+        return this;
     }
 
     @Override

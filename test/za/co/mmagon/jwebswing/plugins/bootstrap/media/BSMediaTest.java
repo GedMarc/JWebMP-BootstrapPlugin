@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.media;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.media.BSMedia;
 import org.junit.Assert;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
@@ -57,14 +56,15 @@ public class BSMediaTest extends BaseTestClass
                 + "		<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n"
                 + "		<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n"
                 + "		<link href=\"bower_components/bootstrap/dist/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\">\n"
-                + "		<link href=\"bower_components/bootstrap3-dialog/dist/css/bootstrap-dialog.css\" rel=\"stylesheet\" type=\"text/css\">\n"
                 + "	</head>\n"
                 + "	<body id=\"body\">\n"
                 + "		<div class=\"media\" id=\"media\"></div>\n"
+                + "		<!-- Priority [First] Values -->\n"
                 + "		<script src=\"bower_components/jquery-3/dist/jquery.js\" type=\"text/javascript\"></script>\n"
+                + "		<!-- Priority [Second] Values -->\n"
                 + "		<script src=\"bower_components/jquery-migrate/jquery-migrate.js\" type=\"text/javascript\"></script>\n"
+                + "		<!-- Priority [Third] Values -->\n"
                 + "		<script src=\"bower_components/bootstrap/dist/js/bootstrap.js\" type=\"text/javascript\"></script>\n"
-                + "		<script src=\"bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.js\" type=\"text/javascript\"></script>\n"
                 + "	</body>\n"
                 + "</html>", p.toString(true));
     }

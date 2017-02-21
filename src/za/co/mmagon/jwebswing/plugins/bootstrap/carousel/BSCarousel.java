@@ -21,6 +21,7 @@ import java.util.List;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
@@ -39,7 +40,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  * @since 01 Jan 2017
  * @version 1.0
  */
-public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BSCarouselAttributes, BSCarouselFeatures, BSCarouselEvents, J>
+@ComponentInformation(name = "Bootstrap Carousel", description = " slideshow component for cycling through elements—images or slides of text—like a carousel.",
+        url = "https://v4-alpha.getbootstrap.com/components/carousel/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BSCarouselAttributes, BSCarouselFeatures, BSCarouselEvents, J> implements IBSCarousel<J>
 {
 
     private static final long serialVersionUID = 1L;
@@ -81,6 +84,17 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
     public BSCarousel()
     {
         addFeature(getFeature());
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+    }
+
+    /**
+     * Neater representation
+     *
+     * @return
+     */
+    public IBSCarousel asMe()
+    {
+        return this;
     }
 
     /**
@@ -113,6 +127,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public int getActiveSlide()
     {
         return activeSlide;
@@ -125,6 +140,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public BSCarousel setActiveSlide(int activeSlide)
     {
         this.activeSlide = activeSlide;
@@ -136,6 +152,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public List<BSCarouselItem> getSlides()
     {
         if (slides == null)
@@ -152,6 +169,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public BSCarousel setSlides(List<BSCarouselItem> slides)
     {
         this.slides = slides;
@@ -163,6 +181,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public BSCarouselSlides getCarouselSlides()
     {
         if (carouselSlides == null)
@@ -179,6 +198,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setCarouselSlides(BSCarouselSlides carouselSlides)
     {
         this.carouselSlides = carouselSlides;
@@ -190,6 +210,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public BSCarouselControl getPreviousLink()
     {
         if (previousLink == null)
@@ -206,6 +227,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setPreviousLink(BSCarouselControl previousLink)
     {
         getChildren().remove(this.previousLink);
@@ -249,6 +271,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public BSCarouselControl getNextLink()
     {
         if (nextLink == null)
@@ -266,6 +289,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setAnimateOnLoad(boolean startAnimationOnLoad)
     {
         if (startAnimationOnLoad)
@@ -286,6 +310,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setInterval(int interval)
     {
         addAttribute("data-interval", interval + "");
@@ -299,6 +324,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setKeyboard(boolean keyboard)
     {
         addAttribute("data-keyboard", keyboard + "");
@@ -312,6 +338,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setPause(boolean pause)
     {
         addAttribute("data-pause", pause ? "hover" : "" + "null");
@@ -325,6 +352,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setWrap(boolean wrap)
     {
         addAttribute("data-wrap", wrap + "");
@@ -338,6 +366,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setNextLink(BSCarouselControl nextLink)
     {
         getChildren().remove(this.nextLink);
@@ -382,6 +411,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public boolean isIndicators()
     {
         return indicators;
@@ -394,6 +424,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
      *
      * @return
      */
+    @Override
     public J setIndicators(boolean indicators)
     {
         this.indicators = indicators;

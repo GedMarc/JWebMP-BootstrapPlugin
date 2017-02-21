@@ -19,8 +19,10 @@
   "dependencies": {
 	"bootstrap": "bootstrap4#^3.3.7",
 	"bootstrap4": "bootstrap#^v4.0.0-alpha.3",
-	"bootstrap-social": "^5.0.0",
-	"bootstrap3-dialog": "^1.35.3",
 	"tether":"^1.4.0"
-  }
+  },
+  "ignoredDependencies": [
+        "jquery",
+        "font-awesome"
+    ]
 }

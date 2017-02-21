@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.popovers;
 
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapReferencePool;
 
 /**
@@ -39,7 +41,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapReferencePool;
  * @since 17 Jan 2017
  * @version 1.0
  */
-public class BSPopOver extends Div<BSPopOverChildren, BSPopOverAttributes, BSPopOverFeatures, BSPopOverEvents, BSPopOver>
+@ComponentInformation(name = "Bootstrap Popovers", description = "Add small overlay content, like those found in iOS, to any element for housing secondary information.",
+        url = "https://v4-alpha.getbootstrap.com/components/popovers/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSPopOver extends Div<BSPopOverChildren, BSPopOverAttributes, BSPopOverFeatures, BSPopOverEvents, BSPopOver> implements IBSPopOver
 {
 
     private static final long serialVersionUID = 1L;
@@ -81,13 +85,13 @@ public class BSPopOver extends Div<BSPopOverChildren, BSPopOverAttributes, BSPop
     {
         addFeature(getFeature());
         getJavascriptReferences().add(BootstrapReferencePool.Bootstrap4TetherReference.getJavaScriptReference());
-        addAttribute("rel", "bs4popover");
+        addAttribute(BSPopOverAttributes.Rel, "bs4popover");
         if (displayedComponent != null)
         {
             displayedComponent.setTiny(true);
             getOptions().setContent(displayedComponent.toString(true));
         }
-        setBootstrapRequired(true);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -113,6 +117,16 @@ public class BSPopOver extends Div<BSPopOverChildren, BSPopOverAttributes, BSPop
     public final BSPopOverOptions getOptions()
     {
         return getFeature().getOptions();
+    }
+
+    /**
+     * Neater representation
+     *
+     * @return
+     */
+    public IBSPopOver asMe()
+    {
+        return this;
     }
 
     @Override

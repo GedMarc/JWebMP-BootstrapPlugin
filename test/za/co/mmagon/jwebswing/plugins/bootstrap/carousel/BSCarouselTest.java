@@ -58,7 +58,7 @@ public class BSCarouselTest extends BaseTestClass
         car.addEvent(new BSCarouselSlidEvent(car)
         {
             @Override
-            public void onClose(AjaxCall call, AjaxResponse response)
+            public void onSlid(AjaxCall call, AjaxResponse response)
             {
                 addOnDemandEvent(this);
             }

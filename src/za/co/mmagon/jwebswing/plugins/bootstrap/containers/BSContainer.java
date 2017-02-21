@@ -21,6 +21,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
@@ -63,6 +64,7 @@ public class BSContainer<J extends BSContainer>
     public BSContainer(BSContainerType type)
     {
         addClass(type.toString());
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,10 +22,14 @@ import za.co.mmagon.jwebswing.base.html.ListItem;
  * Basic example The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
  *
  * @author GedMarc
+ * @param <J>
+ *
  * @since 19 Jan 2017
  *
  */
-public class BSListGroupListItem extends ListItem implements BSListGroupChildren
+public class BSListGroupListItem<J extends BSListGroupListItem>
+        extends ListItem<J>
+        implements BSListGroupChildren, IBSListGroupListItem<J>
 {
 
     private static final long serialVersionUID = 1L;
@@ -54,10 +58,11 @@ public class BSListGroupListItem extends ListItem implements BSListGroupChildren
      *
      * @return
      */
-    public BSListGroupListItem setActive()
+    @Override
+    public J setActive()
     {
         addClass(BSComponentListGroupOptions.Active);
-        return this;
+        return (J) this;
     }
 
     /**
@@ -66,10 +71,11 @@ public class BSListGroupListItem extends ListItem implements BSListGroupChildren
      *
      * @return
      */
-    public BSListGroupListItem setDisabled()
+    @Override
+    public J setDisabled()
     {
         addClass(BSComponentListGroupOptions.Disabled);
-        return this;
+        return (J) this;
     }
 
     /**
@@ -77,10 +83,11 @@ public class BSListGroupListItem extends ListItem implements BSListGroupChildren
      *
      * @return
      */
-    public BSListGroupListItem setSuccess()
+    @Override
+    public J setSuccess()
     {
         addClass(BSComponentListGroupOptions.List_Group_Item_Success);
-        return this;
+        return (J) this;
     }
 
     /**
@@ -88,10 +95,11 @@ public class BSListGroupListItem extends ListItem implements BSListGroupChildren
      *
      * @return
      */
-    public BSListGroupListItem setWarning()
+    @Override
+    public J setWarning()
     {
         addClass(BSComponentListGroupOptions.List_Group_Item_Warning);
-        return this;
+        return (J) this;
     }
 
     /**
@@ -99,10 +107,11 @@ public class BSListGroupListItem extends ListItem implements BSListGroupChildren
      *
      * @return
      */
-    public BSListGroupListItem setInfo()
+    @Override
+    public J setInfo()
     {
         addClass(BSComponentListGroupOptions.List_Group_Item_Info);
-        return this;
+        return (J) this;
     }
 
     /**
@@ -110,10 +119,11 @@ public class BSListGroupListItem extends ListItem implements BSListGroupChildren
      *
      * @return
      */
-    public BSListGroupListItem setDanger()
+    @Override
+    public J setDanger()
     {
         addClass(BSComponentListGroupOptions.List_Group_Item_Danger);
-        return this;
+        return (J) this;
     }
 
 }

@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 
 import za.co.mmagon.jwebswing.base.html.List;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
@@ -28,6 +29,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * @since 29 Aug 2015
  * @version 1.0
  */
+@ComponentInformation(name = "Bootstrap Breadcrumbs", description = "Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.",
+        url = "https://v4-alpha.getbootstrap.com/components/breadcrumb/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSBreadcrumbs extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttributes, BSBreadcrumbsEvents, BSBreadcrumbs>
 {
 
@@ -63,6 +66,7 @@ public class BSBreadcrumbs extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttr
      * Convenience method for quick access
      *
      * @param crumb
+     *
      * @return
      */
     public BSBreadcrumbs add(BSBreadcrumb crumb)

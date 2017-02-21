@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -53,7 +53,15 @@ public enum BSComponentModalOptions implements IBSComponentOptions
     /**
      * The modal dialog
      */
-    Modal_Dialog,;
+    Modal_Dialog,
+    /**
+     * Modal large
+     */
+    Modal_Lg,
+    /**
+     * Modal small
+     */
+    Modal_Sm;
 
     private BSComponentModalOptions()
     {

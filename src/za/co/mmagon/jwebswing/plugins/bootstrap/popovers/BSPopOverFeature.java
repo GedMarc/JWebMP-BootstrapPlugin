@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -43,6 +43,7 @@ public class BSPopOverFeature extends Feature<BSPopOverOptions, BSPopOverFeature
     {
         super("BootstrapPopoverFeature");
         setComponent(forComponent);
+        getOptions().setSelector("[rel=bs4popover]");
     }
 
     /**
@@ -64,8 +65,8 @@ public class BSPopOverFeature extends Feature<BSPopOverOptions, BSPopOverFeature
     public void assignFunctionsToComponent()
     {
         String requiredString = getNewLine()
-                + getComponent().getJQueryID() + "$('body').popover({" + getNewLine()
-                + "selector: '[rel=bs4popover]'" + getNewLine()
+                + getComponent().getJQueryID() + "popover({"
+                + getOptions()
                 + "});" + getNewLine();
         addQuery(requiredString);
     }

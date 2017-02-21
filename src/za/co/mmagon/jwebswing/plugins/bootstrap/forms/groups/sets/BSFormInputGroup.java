@@ -39,7 +39,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  */
 public class BSFormInputGroup
         extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSFormInputGroup>
-        implements BSFormGroupChildren, BSFormSetChildren, BSDropDownMenuChildren
+        implements BSFormGroupChildren, BSFormSetChildren, BSDropDownMenuChildren, IBSFormInputGroup
 {
 
     private static final long serialVersionUID = 1L;
@@ -119,6 +119,7 @@ public class BSFormInputGroup
      *
      * @return
      */
+    @Override
     public List<Span> getInputGroupAddons()
     {
         if (inputGroupAddons == null)
@@ -135,6 +136,7 @@ public class BSFormInputGroup
      *
      * @return
      */
+    @Override
     public BSFormInputGroup setInputGroupAddons(List<Span> inputGroupAddons)
     {
         this.inputGroupAddons = inputGroupAddons;
@@ -146,6 +148,7 @@ public class BSFormInputGroup
      *
      * @return
      */
+    @Override
     public List<Span> getInputGroupAddonsRight()
     {
         if (inputGroupAddonsRight == null)
@@ -162,9 +165,20 @@ public class BSFormInputGroup
      *
      * @return
      */
+    @Override
     public BSFormInputGroup setInputGroupAddonsRight(List<Span> inputGroupAddonsRight)
     {
         this.inputGroupAddonsRight = inputGroupAddonsRight;
+        return this;
+    }
+
+    /**
+     * A neater representation
+     *
+     * @return
+     */
+    public IBSFormInputGroup asMe()
+    {
         return this;
     }
 

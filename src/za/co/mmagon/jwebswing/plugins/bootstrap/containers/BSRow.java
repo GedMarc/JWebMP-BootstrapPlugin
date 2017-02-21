@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,6 +21,8 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
@@ -46,6 +48,7 @@ public class BSRow extends Div<GlobalChildren, NoAttributes, GlobalFeatures, Glo
      */
     public BSRow()
     {
-        addClass("row");
+        addClass(BSComponentDefaultOptions.Row);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 }

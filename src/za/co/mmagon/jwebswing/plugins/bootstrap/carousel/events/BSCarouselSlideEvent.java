@@ -96,17 +96,17 @@ public abstract class BSCarouselSlideEvent extends Event
     /**
      * Triggers on Click
      * <p>
-     * @param call The physical AJAX call
+     * @param call     The physical AJAX call
      * @param response The physical Ajax Receiver
      */
-    public abstract void onClose(AjaxCall call, AjaxResponse response);
+    public abstract void onSlide(AjaxCall call, AjaxResponse response);
 
     @Override
     public void fireEvent(AjaxCall call, AjaxResponse response)
     {
         try
         {
-            onClose(call, response);
+            onSlide(call, response);
         }
         catch (Exception e)
         {

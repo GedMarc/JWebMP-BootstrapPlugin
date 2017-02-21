@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,10 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.pagination;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Pagination
@@ -26,17 +30,18 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
  * as in search results or inboxes.
  * <p>
  * @author Marc Magon
+ * @param <J>
+ *
  * @since 17 Jan 2017
  * @version 1.0
  */
-public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttributes, BSPaginationFeatures, BSPaginationEvents, BSPagination>
+@ComponentInformation(name = "Bootstrap Pagination", description = "Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance, such as in search results or inboxes.",
+        url = "https://v4-alpha.getbootstrap.com/components/pagination/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSPagination<J extends BSPagination>
+        extends Div<BSPaginationChildren, BSPaginationAttributes, GlobalFeatures, GlobalEvents, J> implements IBSPagination
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The associated feature
-     */
-    private BSPaginationFeature feature;
 
     /**
      * The actual list for the pagination
@@ -54,6 +59,7 @@ public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttribut
     {
         setTag("nav");
         addAttribute(GlobalAttributes.Aria_Label, "bootstrap pagination");
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -68,6 +74,7 @@ public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttribut
     {
         this();
         getPageList().addClass(sizing);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -82,6 +89,7 @@ public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttribut
     {
         this();
         getPageList().addClass(alignment);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -98,31 +106,7 @@ public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttribut
         this();
         getPageList().addClass(sizing);
         getPageList().addClass(alignment);
-    }
-
-    /**
-     * Returns the feature if any is required
-     *
-     * @return
-     */
-    public final BSPaginationFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSPaginationFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Returns the options if any is required
-     *
-     * @return
-     */
-    @Override
-    public BSPaginationOptions getOptions()
-    {
-        return getFeature().getOptions();
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -134,6 +118,7 @@ public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttribut
      *
      * @return
      */
+    @Override
     public BSPaginationLink createPageLink(String ariaLabel)
     {
         BSPageinationListItem listItem = new BSPageinationListItem();
@@ -145,14 +130,14 @@ public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttribut
 
     }
 
-    @Override
-    public void preConfigure()
+    /**
+     * A neater view
+     *
+     * @return
+     */
+    public IBSPagination asMe()
     {
-        if (!isConfigured())
-        {
-
-        }
-        super.preConfigure();
+        return this;
     }
 
     /**
@@ -160,6 +145,7 @@ public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttribut
      *
      * @return
      */
+    @Override
     public final BSPaginationList getPageList()
     {
         if (this.pageList == null)
@@ -174,6 +160,7 @@ public class BSPagination extends Div<BSPaginationChildren, BSPaginationAttribut
      *
      * @param pageList
      */
+    @Override
     public void setPageList(BSPaginationList pageList)
     {
         if (this.pageList != null)

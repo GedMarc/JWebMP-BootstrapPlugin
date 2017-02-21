@@ -24,6 +24,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.logging.Logger;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.PageConfigurator;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
@@ -33,7 +34,8 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.MetaAttributes;
 import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.RequirementsPriority;
-import za.co.mmagon.jwebswing.plugins.bootstrap.dialog.BootstrapDialogFeature;
+import za.co.mmagon.jwebswing.plugins.PluginInformation;
+import za.co.mmagon.logger.LogFactory;
 
 /**
  *
@@ -41,21 +43,32 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dialog.BootstrapDialogFeature;
  * <p>
  * HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries WARNING: Respond.js doesn't work if you view the page via file://
  */
-public class BootstrapPageConfigurator implements PageConfigurator
+@PluginInformation(pluginName = "Bootstrap", pluginDescription = "Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.",
+        pluginUniqueName = "jwebswing-bootstrap", pluginVersion = "3 or 4 (Alpha 6)",
+        pluginCategories = "bootstrap,ui,web ui, framework", pluginSubtitle = "Bootstrap makes front-end web development faster and easier.",
+        pluginSourceUrl = "http://getbootstrap.com/", pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki",
+        pluginGitUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin", pluginIconUrl = "", pluginIconImageUrl = "",
+        pluginOriginalHomepage = "http://getbootstrap.com/"
+)
+public class BootstrapPageConfigurator extends PageConfigurator
 {
 
+    private static final Logger log = LogFactory.getInstance().getLogger("Bootstrap");
     @JsonIgnore
     public static final String BootstrapEnabledString = "bootstrap-enabled";
     /**
      * If the generator is generating for bootstrap 4
      */
     private static boolean bootstrap4;
+    private static final long serialVersionUID = 1L;
 
     /**
      *
      * The 3 meta tags *must* come first in the head; any other head content must come *after* these tags
      * <p>
      * HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries WARNING: Respond.js doesn't work if you view the page via file://
+     *
+     * @return
      */
     @Override
     public Page configure(Page page)
@@ -96,7 +109,7 @@ public class BootstrapPageConfigurator implements PageConfigurator
                 page.getBody().addJavaScriptReference(BootstrapReferencePool.BootstrapCoreReference.getJavaScriptReference());
                 page.getBody().addCssReference(BootstrapReferencePool.BootstrapCoreReference.getCssReference());
             }
-            page.getBody().addFeature(new BootstrapDialogFeature(page.getBody())); //Default error message dialogs
+            // page.getBody().addFeature(new BootstrapDialogFeature(page.getBody())); //Default error message dialogs
 
             if (page.getBrowser().compareTo(Browsers.InternetExplorer9) < 1)
             {

@@ -16,24 +16,23 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormCheckboxInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormColourInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormRadioInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormSetLegend;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormCheckGroup;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormDateInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormEmailInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormSet;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextAreaInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSForm;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormFileInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormPasswordInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormCheckboxInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormColourInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormDateInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormEmailInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormFileInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormPasswordInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormRadioInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextAreaInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormCheckGroup;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormSet;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormSetLegend;
 
 /**
  *
@@ -54,7 +53,7 @@ public class BSFormTest extends BaseTestClass
         BSFormEmailInput emailForm = new BSFormEmailInput();
         emailForm.addAttribute("placeholder", "Email Entry");
         emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new Label("label"), emailForm, "Help Text");
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
         group.setID("group");
         form.add(group);
         System.out.println(form.toString(true));
@@ -68,7 +67,7 @@ public class BSFormTest extends BaseTestClass
         BSFormPasswordInput emailForm = new BSFormPasswordInput();
         emailForm.addAttribute("placeholder", "password Entry");
         emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new Label("label"), emailForm, "Help Text");
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
         group.setID("group");
         form.add(group);
         System.out.println(form.toString(true));
@@ -83,7 +82,7 @@ public class BSFormTest extends BaseTestClass
         emailForm.add(new Option("Option 1"));
         emailForm.addAttribute("placeholder", "password Entry");
         emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new Label("label"), emailForm, "Help Text");
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
         group.setID("group");
         form.add(group);
         System.out.println(form.toString(true));
@@ -98,7 +97,7 @@ public class BSFormTest extends BaseTestClass
         emailForm.add(new Option("Option 1"));
         emailForm.addAttribute("placeholder", "password Entry");
         emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new Label("label"), emailForm, "Help Text");
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
         group.setID("group");
         form.add(group);
         System.out.println(form.toString(true));
@@ -111,7 +110,7 @@ public class BSFormTest extends BaseTestClass
         form.setID("form");
         BSFormTextAreaInput emailForm = new BSFormTextAreaInput(3);
         emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new Label("label"), emailForm, "Help Text");
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
         group.setID("group");
         form.add(group);
         System.out.println(form.toString(true));
@@ -124,7 +123,7 @@ public class BSFormTest extends BaseTestClass
         form.setID("form");
         BSFormFileInput emailForm = new BSFormFileInput();
         emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new Label("label"), emailForm, "Help Text");
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
         group.setID("group");
         form.add(group);
         System.out.println(form.toString(true));
@@ -141,11 +140,11 @@ public class BSFormTest extends BaseTestClass
         BSFormSetLegend legend = new BSFormSetLegend("legend text");
         fieldSet.add(legend);
 
-        BSFormCheckGroup radioGroup = new BSFormCheckGroup(new Label("radioGroup"), new BSFormRadioInput("group 1"), "help text", "value");
+        BSFormCheckGroup radioGroup = new BSFormCheckGroup(new BSFormLabel("radioGroup"), new BSFormRadioInput("group 1"), "help text", "value");
         fieldSet.add(radioGroup);
 
         BSFormCheckboxInput check = new BSFormCheckboxInput("checkbox");
-        BSFormCheckGroup checkGroup = new BSFormCheckGroup(new Label("checkboxGroup"), check, "help text", "value");
+        BSFormCheckGroup checkGroup = new BSFormCheckGroup(new BSFormLabel("checkboxGroup"), check, "help text", "value");
         fieldSet.add(checkGroup);
 
         System.out.println(form.toString(true));
@@ -158,7 +157,7 @@ public class BSFormTest extends BaseTestClass
         BSFormColourInput input = new BSFormColourInput();
         input.setID("input");
         input.toString(true);
-        BSFormGroup group = new BSFormGroup(new Label("input"), input, null);
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
         group.setID("group");
         System.out.println(group.toString(true));
     }
@@ -169,7 +168,7 @@ public class BSFormTest extends BaseTestClass
         BSFormDateInput input = new BSFormDateInput();
         input.setID("input");
         input.toString(true);
-        BSFormGroup group = new BSFormGroup(new Label("input"), input, null);
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
         group.setID("group");
 
         System.out.println(group.toString(true));
@@ -182,7 +181,7 @@ public class BSFormTest extends BaseTestClass
         BSFormDateInput input = new BSFormDateInput();
         input.setID("input");
         input.toString(true);
-        BSFormGroup group = new BSFormGroup(new Label("input"), input, null);
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
         group.setID("group");
         group.setAngularValidation(true);
 
@@ -206,7 +205,7 @@ public class BSFormTest extends BaseTestClass
         inputGroup.getInputGroupAddons().add(new Span("@"));
         //System.out.println(inputGroup);
 
-        BSFormGroup group = new BSFormGroup(new Label("input"), inputGroup, null);
+        BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), inputGroup, null);
         group.setID("group");
 
         System.out.println(group.toString(true));

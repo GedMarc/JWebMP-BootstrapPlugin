@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.containers;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 
 /**
@@ -46,6 +47,7 @@ public class BSColumn extends Div
                 addClass(columnOption.toString());
             }
         }
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**

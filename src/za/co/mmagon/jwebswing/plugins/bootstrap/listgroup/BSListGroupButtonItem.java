@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -15,6 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.listgroup;
+
+import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 
 /**
  * Links and buttons Use &gt;a&lt;s or &gt;button&lt;s to create actionable list group items with hover, disabled, and active states by adding .list-group-item-action. We separate these pseudo-classes
@@ -36,7 +38,7 @@ public class BSListGroupButtonItem extends BSListGroupListItem
     public BSListGroupButtonItem()
     {
         setTag("button");
-        addAttribute("type", "button");
+        addAttribute(GlobalAttributes.Type, "button");
         addClass(BSComponentListGroupOptions.List_Group_Item_Action);
     }
 }

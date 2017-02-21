@@ -16,6 +16,10 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 
+import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDown;
+import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownButton;
+import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownLink;
+
 /**
  *
  * @author GedMarc
@@ -27,6 +31,9 @@ public class BSNavItemDropDown extends BSDropDown implements BSNavsChildren
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * A drop down that can be placed on any nav bar
+     */
     public BSNavItemDropDown()
     {
         getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
@@ -34,6 +41,11 @@ public class BSNavItemDropDown extends BSDropDown implements BSNavsChildren
         setTag("li");
     }
 
+    /**
+     * A drop down that can be placed on any nav bar
+     *
+     * @param link
+     */
     public BSNavItemDropDown(BSDropDownLink link)
     {
         super(link);
@@ -42,6 +54,11 @@ public class BSNavItemDropDown extends BSDropDown implements BSNavsChildren
         setTag("li");
     }
 
+    /**
+     * A drop down that can be placed on any nav bar
+     *
+     * @param button
+     */
     public BSNavItemDropDown(BSDropDownButton button)
     {
         super(button);

@@ -17,6 +17,9 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.listgroup;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
 
 /**
@@ -29,15 +32,13 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
  * @since 17 Jan 2017
  * @version 1.0
  */
-public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes, BSListGroupFeatures, BSListGroupEvents, BSListGroup>
+@ComponentInformation(name = "Bootstrap ListGroup", description = "List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within. They can also be used as navigation with the right modifier class.",
+        url = "https://v4-alpha.getbootstrap.com/components/list-group/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes, GlobalFeatures, BSListGroupEvents, BSListGroup>
         implements BSCardChildren
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The associated feature
-     */
-    private BSListGroupFeature feature;
 
     /**
      * List group
@@ -49,31 +50,7 @@ public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes,
     {
         setTag("ul");
         addClass(BSComponentListGroupOptions.List_Group);
-    }
-
-    /**
-     * Returns the feature if any is required
-     *
-     * @return
-     */
-    public final BSListGroupFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSListGroupFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Returns the options if any is required
-     *
-     * @return
-     */
-    @Override
-    public BSListGroupOptions getOptions()
-    {
-        return getFeature().getOptions();
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     @Override

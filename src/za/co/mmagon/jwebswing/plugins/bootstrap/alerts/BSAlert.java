@@ -20,6 +20,7 @@ import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
@@ -29,10 +30,13 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  *
  * @author GedMarc
  * @param <J>
+ *
  * @since 31 Dec 2016
  * @version 1.0
  *
  */
+@ComponentInformation(name = "Bootstrap Alert", description = "rovide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.",
+         url = "https://v4-alpha.getbootstrap.com/components/alerts/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttributes, GlobalFeatures, BSAlertEvents, J> implements IBSAlert<J>
 {
 
@@ -77,6 +81,7 @@ public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttri
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -99,6 +104,7 @@ public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttri
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -120,6 +126,7 @@ public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttri
      * Sets the style as link
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -142,6 +149,7 @@ public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttri
      *
      * @param <T>
      * @param component
+     *
      * @return
      */
     @Override
@@ -155,6 +163,7 @@ public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttri
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -175,6 +184,7 @@ public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttri
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override

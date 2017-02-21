@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -63,7 +63,8 @@ public enum BSComponentNavsOptions implements IBSComponentOptions
     /**
      * Horizontal alignment Change the horizontal alignment of your nav with flexbox utilities. By default, navs are left-aligned, but you can easily change them to center or right aligned.
      */
-    Justify_Content_End;
+    Justify_Content_End,
+    Navbar_Nav,;
 
     private BSComponentNavsOptions()
     {

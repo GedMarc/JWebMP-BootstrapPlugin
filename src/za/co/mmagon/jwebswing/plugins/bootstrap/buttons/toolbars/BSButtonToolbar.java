@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.toolbars;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
@@ -30,6 +31,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * @since 29 Aug 2015
  * @version 1.0
  */
+@ComponentInformation(name = "Bootstrap Toolbar", description = "Combine sets of button groups into button toolbars for more complex components. Use utility classes as needed to space out groups, buttons, and more.",
+        url = "https://v4-alpha.getbootstrap.com/components/button-group/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSButtonToolbar extends Div<BSButtonToolbarChildren, BSButtonToolbarAttributes, GlobalFeatures, BSButtonToolbarEvents, BSButtonToolbar> implements IBSButtonToolbar
 {
 

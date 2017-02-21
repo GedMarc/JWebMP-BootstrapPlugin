@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.pagination;
 
 import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 
 /**
  * The default paging list
@@ -26,7 +27,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
  * @since 21 Jan 2017
  *
  */
-public class BSPaginationList extends List<BSPageinationListItem, NoAttributes, BSPaginationEvents, BSPaginationList> implements BSPaginationChildren
+public class BSPaginationList extends List<BSPageinationListItem, NoAttributes, GlobalEvents, BSPaginationList> implements BSPaginationChildren
 {
 
     private static final long serialVersionUID = 1L;

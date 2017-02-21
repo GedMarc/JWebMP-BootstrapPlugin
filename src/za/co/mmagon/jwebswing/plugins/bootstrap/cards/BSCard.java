@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * Cards
@@ -30,6 +31,8 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
  * @since 29 Aug 2015
  * @version 1.0
  */
+@ComponentInformation(name = "Bootstrap Card", description = "A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.",
+        url = "https://v4-alpha.getbootstrap.com/components/card/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCard extends Div<BSCardChildren, BSCardAttributes, GlobalFeatures, BSCardEvents, BSCard>
 {
 

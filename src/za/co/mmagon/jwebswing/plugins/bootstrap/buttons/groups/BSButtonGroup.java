@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.toolbars.BSButtonToolbarChildren;
 
 /**
@@ -30,6 +31,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.toolbars.BSButtonToolbar
  * @since 01 Jan 2017
  * @version 1.0
  */
+@ComponentInformation(name = "Bootstrap Button Groups", description = "Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.",
+        url = "https://v4-alpha.getbootstrap.com/components/button-group/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSButtonGroup extends Div<BSButtonGroupChildren, BSButtonGroupAttributes, GlobalFeatures, BSButtonGroupEvents, BSButtonGroup>
         implements BSButtonToolbarChildren, IBSButtonGroup
 {

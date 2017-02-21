@@ -17,6 +17,10 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar.brand;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSComponentNavBarOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarColourSchemes;
 
 /**
  * Brand
@@ -40,6 +44,7 @@ public class BSNavBarBrand extends Div implements BSNavBarChildren
     public BSNavBarBrand()
     {
         addClass(BSComponentNavBarOptions.Navbar_Brand);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**

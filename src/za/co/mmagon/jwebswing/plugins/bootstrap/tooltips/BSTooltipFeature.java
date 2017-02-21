@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.tooltips;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.popovers.BSPopOverFeatures;
 import za.co.mmagon.jwebswing.plugins.bootstrap.popovers.BSPopOverOptions;
 
@@ -45,6 +46,7 @@ public class BSTooltipFeature extends Feature<BSPopOverOptions, BSTooltipFeature
     {
         super("BootstrapPopoverFeature");
         setComponent(forComponent);
+        BootstrapPageConfigurator.setBootstrapRequired(forComponent, true);
     }
 
     /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,11 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.jumbotron;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Jumbotron
@@ -24,17 +29,39 @@ import za.co.mmagon.jwebswing.base.html.Div;
  * A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.
  * <p>
  * @author Marc Magon
+ * @param <J>
+ *
  * @since 18 Jan 2017
  * @version 1.0
  */
-public class BSJumbotron extends Div<BSJumbotronChildren, BSJumbotronAttributes, BSJumbotronFeatures, BSJumbotronEvents, BSJumbotron>
+@ComponentInformation(name = "Bootstrap Jumbotron", description = "A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.",
+        url = "https://v4-alpha.getbootstrap.com/components/jumbotron/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSJumbotron<J extends BSJumbotron>
+        extends Div<GlobalChildren, BSJumbotronAttributes, GlobalFeatures, GlobalEvents, J>
 {
 
     private static final long serialVersionUID = 1L;
+
     /**
-     * The associated feature
+     * Constructs a new instance
+     * <p>
      */
-    private BSJumbotronFeature feature;
+    public BSJumbotron()
+    {
+        this((String) null);
+    }
+
+    /**
+     * Constructs a new instance
+     *
+     * @param text
+     */
+    public BSJumbotron(String text)
+    {
+        super(text);
+        addClass(BSComponentJumbotronOptions.Jumbotron);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+    }
 
     /**
      * Constructs a new instance
@@ -43,36 +70,11 @@ public class BSJumbotron extends Div<BSJumbotronChildren, BSJumbotronAttributes,
      */
     public BSJumbotron(BSComponentJumbotronOptions... jumbotronType)
     {
-        addClass(BSComponentJumbotronOptions.Jumbotron);
+        this((String) null);
         for (BSComponentJumbotronOptions bSComponentJumbotronOptions : jumbotronType)
         {
             addClass(bSComponentJumbotronOptions);
         }
-    }
-
-    /**
-     * Returns the feature if any is required
-     *
-     * @return
-     */
-    public final BSJumbotronFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSJumbotronFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Returns the options if any is required
-     *
-     * @return
-     */
-    @Override
-    public BSJumbotronOptions getOptions()
-    {
-        return getFeature().getOptions();
     }
 
     @Override

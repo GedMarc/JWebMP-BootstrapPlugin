@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,16 +17,24 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarTogglerSizes;
 
 /**
  *
  * <p>
  * @author Marc Magon
+ * @param <J>
+ *
  * @since 13 Jan 2017
  * @version 1.0
  */
-public class BSNavBar extends Div<BSNavBarChildren, BSNavBarAttributes, BSNavBarFeatures, BSNavBarEvents, BSNavBar>
+@ComponentInformation(name = "Bootstrap Navbar", description = "The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive behaviors.",
+        url = "https://v4-alpha.getbootstrap.com/components/navbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSNavBar<J extends BSNavBar>
+        extends Div<BSNavBarChildren, BSNavBarAttributes, GlobalFeatures, BSNavBarEvents, J> implements IBSNavBar
 {
 
     private static final long serialVersionUID = 1L;
@@ -43,8 +51,8 @@ public class BSNavBar extends Div<BSNavBarChildren, BSNavBarAttributes, BSNavBar
     public BSNavBar(BSNavBarTogglerSizes navBarTogglerSize, BSNavBarColourSchemes... colourSchemes)
     {
         setTag("nav");
-        addClass("navbar");
-        addAttribute("role", "navigation");
+        addClass(BSComponentNavBarOptions.Navbar);
+        addAttribute(BSNavBarAttributes.Role, "navigation");
         if (navBarTogglerSize != null)
         {
             addClass(navBarTogglerSize);
@@ -56,6 +64,7 @@ public class BSNavBar extends Div<BSNavBarChildren, BSNavBarAttributes, BSNavBar
                 addClass(colourScheme);
             }
         }
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -65,16 +74,10 @@ public class BSNavBar extends Div<BSNavBarChildren, BSNavBarAttributes, BSNavBar
      *
      * @return
      */
+    @Override
     public BSNavBar setPositioning(BSNavBarPositioning position)
     {
         addClass(position);
         return this;
     }
-
-    @Override
-    public BSNavBarOptions getOptions()
-    {
-        return new BSNavBarOptions();
-    }
-
 }

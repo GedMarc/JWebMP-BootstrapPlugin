@@ -20,6 +20,7 @@ import za.co.mmagon.jwebswing.base.html.Button;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.InputButtonTypeAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownChildren;
@@ -32,9 +33,12 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
  * <p>
  * @author Marc Magon
  * @param <J>
+ *
  * @since 29 Aug 2015
  * @version 1.0
  */
+@ComponentInformation(name = "Bootstrap Buttons", description = "Use Bootstrap’s custom button styles for actions in forms, dialogs, and more. Includes support for a handful of contextual variations, sizes, states, and more.",
+        url = "https://v4-alpha.getbootstrap.com/components/buttons/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSButtonAttributes, GlobalFeatures, BSButtonEvents, J>
         implements BSDropDownChildren, BSFormChildren, IBSButton<J>
 {
@@ -191,6 +195,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -213,6 +218,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -235,6 +241,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -257,6 +264,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -278,6 +286,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Sets the style as link
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -299,6 +308,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -319,6 +329,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -339,6 +350,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -361,6 +373,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -383,6 +396,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -405,6 +419,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -426,6 +441,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -446,6 +462,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -464,10 +481,11 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
 
     /**
      * Button plugin Do more with buttons. Control button states or create groups of buttons for more components like toolbars.
-     *
+     * <p>
      * Toggle states Add data-toggle="button" to toggle a button’s active state. If you’re pre-toggling a button, you must manually add the .active class
      *
      * @param toggle
+     *
      * @return
      */
     @Override

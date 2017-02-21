@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.badge;
 
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
@@ -27,9 +28,13 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * <p>
  * @author Marc Magon
  * @param <J>
+ *
  * @since 17 Jan 2017
  * @version 1.0
  */
+@ComponentInformation(name = "Bootstrap Badge", description = "Add badges to any list group item to show unread counts, activity, and more with the help of some utilities. Note the justify-content-between utility class and the badge’s placement.",
+        url = "https://v4-alpha.getbootstrap.com/components/badge/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+
 public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttributes, J> implements IBSBadge<J>
 {
 
@@ -95,6 +100,7 @@ public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttr
      * Primary colour theme
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -117,6 +123,7 @@ public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttr
      * Default colour theme
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -139,6 +146,7 @@ public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttr
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -161,6 +169,7 @@ public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttr
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -182,6 +191,7 @@ public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttr
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override
@@ -202,6 +212,7 @@ public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttr
      * Set or remove the style
      *
      * @param applyStyle
+     *
      * @return
      */
     @Override

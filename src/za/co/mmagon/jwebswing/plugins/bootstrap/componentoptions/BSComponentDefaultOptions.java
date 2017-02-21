@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,6 +25,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum BSComponentDefaultOptions implements IBSComponentOptions
 {
+    /**
+     * A bs row
+     */
+    Row,
     /**
      * Only do it when coming in (or hiding?)
      */
@@ -150,6 +154,10 @@ public enum BSComponentDefaultOptions implements IBSComponentOptions
      * Forces an element to be hidden
      */
     Hidden,
+    /**
+     * If an item is collapsed
+     */
+    Collapsed,
     /**
      * Helps replace an element's text content with a background image
      */

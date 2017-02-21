@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 
 import za.co.mmagon.jwebswing.base.html.Link;
+import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 
 /**
  * A navigation link item
@@ -38,7 +39,7 @@ public class BSNavLinkItem extends Link implements BSNavsChildren
     public BSNavLinkItem(String url)
     {
         setTag("a");
-        addAttribute("href", url);
+        addAttribute(LinkAttributes.HRef, url);
         addClass(BSComponentNavsOptions.Nav_Link);
     }
 

@@ -18,17 +18,23 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.toggle;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
-import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.base.html.Button;
+import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.Link;
+import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 
 /**
  * An implementation of the Bootstrap Toggle Feature
  * <p>
+ * <p>
  * @author Marc Magon
  * @since 29 Aug 2015
  * @version 1.0
+ * @deprecated Bootstrap 3 only
  */
 public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, BSToggleFeatures, BSToggleEvents, BSDropDownToggle>
 {
@@ -50,6 +56,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
         setTag(titleItem.getTag());
         setTitle(titleItem);
         setContents(contents);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -64,6 +71,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
         setTag(titleItem.getTag());
         setTitle(titleItem);
         setContents(contents);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**

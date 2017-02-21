@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,20 +19,26 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 
 /**
- * An implementation 
+ * An implementation of the bootstrap bar
  * <p>
  * @author Marc Magon
+ * @param <J>
+ *
  * @since 29 Aug 2015
  * @version 1.0
  */
-public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSProgressBarDisplayAttributes, BSProgressBarDisplayFeatures, BSProgressBarDisplayEvents, BSProgressBarDisplay>
+public class BSProgressBarDisplay<J extends BSProgressBarDisplay>
+        extends Div<GlobalChildren, BSProgressBarDisplayAttributes, BSProgressBarDisplayFeatures, BSProgressBarDisplayEvents, J> implements IBSProgressBarDisplay<J>
 {
 
     private static final long serialVersionUID = 1L;
     private BSProgressBarDisplayFeature feature;
-    
+
     private Span span;
     private BSProgressBarThemes theme;
 
@@ -52,50 +58,55 @@ public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSPr
      * The label of the bar
      */
     private String label;
-    
+
     /**
      * Constructs an empty progress bar display
      */
     public BSProgressBarDisplay()
     {
-        //addFeature(getFeature());
-        this(0,100,0);
+
+        this(0, 100, 0);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
      * Construct a new progress bar display with the given values
-     * @param value  The actual percentage value
+     *
+     * @param value The actual percentage value
      */
     public BSProgressBarDisplay(double value)
     {
-        this(0,100,value);
+        this(0, 100, value);
     }
 
     /**
      * Construct a new progress bar display with the given values
-     * @param min The minimum value
-     * @param max The maximum value
+     *
+     * @param min   The minimum value
+     * @param max   The maximum value
      * @param value The actual percentage value
      */
     public BSProgressBarDisplay(double min, double max, double value)
     {
-        this(min,max,value,null);
+        this(min, max, value, null);
     }
 
     /**
      * Construct a new progress bar display with the given values
+     *
      * @param value The actual percentage value
      * @param label The label to display
      */
     public BSProgressBarDisplay(double value, String label)
     {
-        this(0,100,value,label);
+        this(0, 100, value, label);
     }
 
     /**
      * Construct a new progress bar display with the given values
-     * @param min The minimum value
-     * @param max The maximum value
+     *
+     * @param min   The minimum value
+     * @param max   The maximum value
      * @param value The actual percentage value
      * @param label The label to display
      */
@@ -112,18 +123,17 @@ public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSPr
     @Override
     public void preConfigure()
     {
-        if(!isConfigured())
+        if (!isConfigured())
         {
             addClass(getTheme().getClassText());
         }
-        super.preConfigure(); 
+        super.preConfigure();
     }
-    
-    
-    
+
     /**
      * Returns the current min value
-     * @return 
+     *
+     * @return
      */
     public double getMin()
     {
@@ -132,18 +142,25 @@ public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSPr
 
     /**
      * Returns the current min value
-     * @param min 
+     *
+     * @param min
+     *
+     * @return
      */
-    public final void setMin(double min)
+    @Override
+    public final J setMin(double min)
     {
         this.min = min;
         addAttribute(BSProgressBarDisplayAttributes.Aria_ValueMin, min + "");
+        return (J) this;
     }
 
     /**
      * Gets the current max value
-     * @return 
+     *
+     * @return
      */
+    @Override
     public double getMax()
     {
         return max;
@@ -151,18 +168,25 @@ public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSPr
 
     /**
      * Sets the current max value
-     * @param max 
+     *
+     * @param max
+     *
+     * @return
      */
-    public final void setMax(double max)
+    @Override
+    public final J setMax(double max)
     {
         this.max = max;
         addAttribute(BSProgressBarDisplayAttributes.Aria_ValueMax, max + "");
+        return (J) this;
     }
 
     /**
      * Returns the current percentage
-     * @return 
+     *
+     * @return
      */
+    @Override
     public double getValue()
     {
         return value;
@@ -170,35 +194,43 @@ public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSPr
 
     /**
      * Sets the current percentage / width
-     * @param value 
+     *
+     * @param value
+     *
+     * @return
      */
-    public final void setValue(double value)
+    @Override
+    public final J setValue(double value)
     {
         this.value = value;
         addAttribute(BSProgressBarDisplayAttributes.Aria_Valuenow, value + "");
         addAttribute(GlobalAttributes.Style, "width:" + value + "%;");
-        
+        return (J) this;
     }
 
     /**
      * Returns this associated span
-     * @return 
+     *
+     * @return
      */
+    @Override
     public Span getSpan()
     {
-        if(span == null)
+        if (span == null)
         {
             span = new Span();
-            add(span); 
+            add(span);
         }
-        span.addClass("sr-only");
+        span.addClass(BSComponentColoursOptions.Sr_Only);
         return span;
     }
 
     /**
      * Returns this label
-     * @return 
+     *
+     * @return
      */
+    @Override
     public String getLabel()
     {
         return label;
@@ -206,12 +238,17 @@ public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSPr
 
     /**
      * Sets this label
-     * @param label 
+     *
+     * @param label
+     *
+     * @return
      */
-    public final void setLabel(String label)
+    @Override
+    public final J setLabel(String label)
     {
         this.label = label;
         getSpan().setText(label);
+        return (J) this;
     }
 
     public final BSProgressBarDisplayFeature getFeature()
@@ -231,11 +268,13 @@ public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSPr
 
     /**
      * Returns a current theme, default is success
-     * @return 
+     *
+     * @return
      */
+    @Override
     public BSProgressBarThemes getTheme()
     {
-        if(theme == null)
+        if (theme == null)
         {
             setTheme(BSProgressBarThemes.Success);
         }
@@ -244,23 +283,28 @@ public class BSProgressBarDisplay extends Div<BSProgressBarDisplayChildren, BSPr
 
     /**
      * Sets the current theme
-     * @param theme 
+     *
+     * @param theme
+     *
+     * @return
      */
-    public void setTheme(BSProgressBarThemes theme)
+    @Override
+    public J setTheme(BSProgressBarThemes theme)
     {
-        if(this.theme != null)
+        if (this.theme != null)
         {
             removeClass(theme.getClassText());
         }
         this.theme = theme;
-        if(theme != null)
+        if (theme != null)
         {
             addClass(theme.getClassText());
         }
         else
         {
-            
+
         }
+        return (J) this;
     }
 
 }

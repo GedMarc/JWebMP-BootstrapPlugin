@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.modal;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.modal.BSModal;
 import org.junit.Test;
 import za.co.mmagon.jwebswing.plugins.bootstrap.close.BSCloseIcon;
 
@@ -36,7 +35,12 @@ public class BSModalTest
     {
         BSModal modal = new BSModal();
         modal.getModalDialog();
-        modal.getModalHeader().add(new BSCloseIcon().setDataDismiss("modal"));
+        // modal.getModalHeader().add(new BSCloseIcon().setDataDismiss("modal"));
+        modal.asMe().addDismissButton(new BSCloseIcon());
+        modal.asMe().setKeyboard(true);
+        modal.asMe().setBackdrop(true);
+        modal.asMe().setFocus(true);
+        modal.asMe().setShow(false);
         System.out.println(modal.toString(true));
     }
 

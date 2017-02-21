@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -35,6 +35,6 @@ public class BSNavList extends BSNavs
     public BSNavList()
     {
         setTag("ul");
-        addClass("navbar-nav");
+        addClass(BSComponentNavsOptions.Navbar_Nav);
     }
 }

@@ -16,20 +16,19 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.dropdown;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDown;
-import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropUp;
-import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItemDivider;
-import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownSplitButton;
-import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItemHeader;
 import org.junit.Test;
+import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButton;
+import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonPrimaryOutline;
+import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItem;
+import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItemDivider;
+import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItemHeader;
 
 /**
  *
  * @author GedMarc
  */
-public class BSDropDownTest
+public class BSDropDownTest extends BaseTestClass
 {
 
     public BSDropDownTest()
@@ -43,6 +42,14 @@ public class BSDropDownTest
         drop.getDropdownMenu().add(new BSDropDownMenuItem("menu item"));
         drop.getDropdownMenu().add(new BSDropDownMenuItemDivider());
         drop.getDropdownMenu().add(new BSDropDownMenuItemHeader("Text Yes"));
+        System.out.println(drop.toString(true));
+    }
+
+    @Test
+    public void testSingleDropdown()
+    {
+        BSDropDown drop = new BSDropDown();
+        drop.setDropdownButton(new BSButtonPrimaryOutline());
         System.out.println(drop.toString(true));
     }
 

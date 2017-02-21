@@ -16,8 +16,14 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.media;
 
-import za.co.mmagon.jwebswing.base.ComponentHTMLBootstrapBase;
-import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.Component;
+import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.H4;
+import za.co.mmagon.jwebswing.base.html.HeaderText;
+import za.co.mmagon.jwebswing.base.html.Link;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Media object
@@ -27,17 +33,17 @@ import za.co.mmagon.jwebswing.base.html.*;
  * Included is support for left and right aligned content, content alignment options, nesting, and more.
  *
  * @author Marc Magon
+ * @param <J>
+ *
  * @since 29 Aug 2015
  * @version 1.0
  */
-public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeatures, BSMediaEvents, BSMedia> implements IBSMedia
+@ComponentInformation(name = "Bootstrap Media", description = "The media object helps build complex and repetitive components where some media is positioned alongside content that doesn’t wrap around said media. Plus, it does this with only two required classes thanks to flexbox.",
+        url = "https://v4-alpha.getbootstrap.com/layout/media-object/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSMedia<J extends BSMedia> extends Div<BSMediaChildren, BSMediaAttributes, GlobalFeatures, BSMediaEvents, J> implements IBSMedia
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The feature of the media object
-     */
-    private BSMediaFeature feature;
     /**
      * The link for the media object
      */
@@ -53,7 +59,7 @@ public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeat
     /**
      * The media object being displayed (usually image or something)
      */
-    private ComponentHTMLBootstrapBase mediaComponent;
+    private Component mediaComponent;
 
     /**
      * The media object is an abstract element used as the basis for building more complex and repetitive components (like blog comments, Tweets, etc).
@@ -62,43 +68,8 @@ public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeat
      */
     public BSMedia()
     {
-        addFeature(getFeature());
         addClass(BSComponentMediaOptions.Media);
-    }
-
-    /**
-     * Cleaner interface for the BS Media object
-     *
-     * @return
-     */
-    public IBSMedia asMe()
-    {
-        return this;
-    }
-
-    /**
-     * Returns the feature associated (doesn't do anything for media)
-     *
-     * @return
-     */
-    public final BSMediaFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSMediaFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Doesn't do anything
-     *
-     * @return
-     */
-    @Override
-    public BSMediaOptions getOptions()
-    {
-        return getFeature().getOptions();
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -130,7 +101,7 @@ public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeat
         if (this.mediaLink != null)
         {
             mediaLink.add(getMediaComponent());
-            remove(this.mediaLink);
+            getChildren().remove(this.mediaLink);
             this.mediaLink = null;
         }
         this.mediaLink = mediaLink;
@@ -144,7 +115,7 @@ public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeat
             {
                 this.mediaLink.addClass(BSComponentMediaOptions.Media_Right);
             }
-            add(0, this.mediaLink);
+            getChildren().add(0, this.mediaLink);
         }
         return this;
     }
@@ -176,7 +147,7 @@ public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeat
     {
         if (this.mediaBody != null)
         {
-            remove(this.mediaBody);
+            getChildren().remove(this.mediaBody);
             this.mediaBody = null;
         }
         this.mediaBody = mediaBody;
@@ -184,7 +155,7 @@ public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeat
         {
             this.mediaBody.addClass(BSComponentMediaOptions.Media_Body);
         }
-        add(mediaBody);
+        getChildren().add(mediaBody);
         return this;
     }
 
@@ -233,7 +204,7 @@ public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeat
      * @return
      */
     @Override
-    public ComponentHTMLBootstrapBase getMediaComponent()
+    public Component getMediaComponent()
     {
         if (this.mediaComponent == null)
         {
@@ -250,7 +221,7 @@ public class BSMedia extends Div<BSMediaChildren, BSMediaAttributes, BSMediaFeat
      * @return
      */
     @Override
-    public BSMedia setMediaComponent(ComponentHTMLBootstrapBase mediaComponent)
+    public BSMedia setMediaComponent(Component mediaComponent)
     {
         if (this.mediaComponent != null)
         {

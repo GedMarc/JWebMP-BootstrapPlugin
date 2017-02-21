@@ -40,7 +40,10 @@ public class BSAccordionTest
     public void testHtml()
     {
         BSAccordion accordion = new BSAccordion();
-        accordion.add(new )
+        accordion.add(new BSAccordionItem());
+        accordion.add(new BSAccordionItem());
+
+        System.out.println(accordion.toString(true));
     }
 
 }

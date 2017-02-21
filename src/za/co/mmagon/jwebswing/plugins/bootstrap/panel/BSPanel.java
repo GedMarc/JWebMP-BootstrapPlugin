@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,6 +24,8 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 
 /**
@@ -32,7 +34,10 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  * @author Marc Magon
  * @since 29 Aug 2015
  * @version 1.0
+ * @deprecated for bootstrap 4, rather use bootstrap cards
  */
+@ComponentInformation(name = "Bootstrap Panel", description = "Panels can be used with bootstrap 3",
+        url = "https://v4-alpha.getbootstrap.com/components/cards/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, BSPanel>
 {
 
@@ -49,7 +54,7 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
      */
     private Div panelHeader;
     /*
-    The panel body
+     * The panel body
      */
     private Div panelBody;
 
@@ -69,12 +74,14 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
 
     /**
      * Construct a new controlled instance of the sb2 panel
-     * @param theme 
+     *
+     * @param theme
      */
     public BSPanel(BSPanelThemes theme)
     {
         addClass("panel");
         setTheme(theme);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     @Override
@@ -160,6 +167,7 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
         }
         return panelFooter;
     }
+
     /**
      * Returns the current theme attached, default is the default
      *
@@ -277,11 +285,12 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
             getPanelHeader().add(panelHeaderButtonBar);
         }
     }
-    
+
     /**
      * Adds a button to the drop down header
+     *
      * @param dropDownIcon
-     * @param dropDownContent 
+     * @param dropDownContent
      */
     public void addDropDownToHeaderButtonBar(ComponentHierarchyBase dropDownIcon, ComponentHierarchyBase dropDownContent)
     {
@@ -290,13 +299,12 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
         b.add(dropDownIcon);
         b.addAttribute(ButtonAttributes.Type, "button");
         b.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
-        
+
         dropDownContent.setTag("ul");
         dropDownContent.addClass("dropdown-menu slidedown");
-         
+
         getPanelHeaderButtonBar().add(b);
         getPanelHeaderButtonBar().add(dropDownContent);
     }
-    
-    
+
 }

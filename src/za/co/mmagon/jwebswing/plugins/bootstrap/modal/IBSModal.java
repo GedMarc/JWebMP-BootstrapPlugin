@@ -1,18 +1,25 @@
-/* 
- * Copyright (C) 2017 Marc Magon
+/*
+ * The MIT License
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Copyright 2017 GedMarc.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.modal;
 
@@ -20,90 +27,138 @@ import za.co.mmagon.jwebswing.base.html.Button;
 import za.co.mmagon.jwebswing.base.html.Div;
 
 /**
- * The Bootstrap Modal Interface 
+ *
  * @author GedMarc
- * @since Nov 11, 2016
- * 
+ * @param <J>
+ *
+ * @since 21 Feb 2017
+ *
  */
-public interface IBSModal 
+public interface IBSModal<J extends BSModal>
 {
 
     /**
      * Adds the dismiss button to the modal
+     *
      * @param button
      */
-    void addDismissButton(Button button);
+    J addDismissButton(Button button);
 
     /**
      * Adds a button that will open up the modal
+     *
      * @param button
      */
-    void addOpenButton(Button button);
+    J addOpenButton(Button button);
 
     /**
      * Gets the modal body
+     *
      * @return
      */
     Div getModalBody();
 
     /**
      * Gets the modal content pane
+     *
      * @return
      */
     Div getModalContent();
-    /**
-     * Returns the modal dialog part
-     * @return 
-     */
+
     Div getModalDialog();
 
     /**
      * Gets the modal footer
+     *
      * @return
      */
     Div getModalFooter();
 
     /**
      * Sets the modal header pane
+     *
      * @return
      */
     Div getModalHeader();
 
     /**
+     * Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on click.
+     *
+     * @param backdrop
+     *
+     * @return
+     */
+    J setBackdrop(boolean backdrop);
+
+    BSModal setFade();
+
+    /**
+     * Puts the focus on the modal when initialized.
+     *
+     * @param focus
+     *
+     * @return
+     */
+    J setFocus(boolean focus);
+
+    /**
+     * Closes the modal when escape key is pressed
+     *
+     * @param keyboard
+     *
+     * @return
+     */
+    J setKeyboard(boolean keyboard);
+
+    /**
      * Sets the modal body
+     *
      * @param modalBody
      */
-    void setModalBody(Div modalBody);
+    J setModalBody(Div modalBody);
 
     /**
      * Sets the modal content pane
+     *
      * @param modalContent
      */
-    void setModalContent(Div modalContent);
+    J setModalContent(Div modalContent);
 
     /**
      * Sets the overall dialog of the modal
+     *
      * @param modalDialog
      */
-    void setModalDialog(Div modalDialog);
+    J setModalDialog(Div modalDialog);
 
     /**
-     * Sets the size to render for the modal.
-     * By default medium. false sets small
+     * Sets the size to render for the modal. By default medium. false sets small
+     *
      * @param large
      */
-    void setModalDialogSize(boolean large);
+    J setModalDialogSize(boolean large);
 
     /**
      * Sets the modal footer
+     *
      * @param modalFooter
      */
-    void setModalFooter(Div modalFooter);
+    J setModalFooter(Div modalFooter);
 
     /**
      * Sets the modal header pane
+     *
      * @param modalHeader
      */
-    void setModalHeader(Div modalHeader);
+    J setModalHeader(Div modalHeader);
+
+    /**
+     * Shows the modal when initialized.
+     *
+     * @param show
+     *
+     * @return
+     */
+    J setShow(boolean show);
 
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 
@@ -24,18 +26,15 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGrou
  * An implementation of
  * <p>
  * @author Marc Magon
+ * @param <J>
  * @since 17 Jan 2017
  * @version 1.0
  */
-public class BSFormSet extends Div<BSFormSetChildren, BSFormSetAttributes, BSFormSetFeatures, BSFormSetEvents, BSFormSet>
+public class BSFormSet<J extends BSFormSet> extends Div<BSFormSetChildren, BSFormSetAttributes, GlobalFeatures, GlobalEvents, J>
         implements BSFormChildren
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The associated feature
-     */
-    private BSFormSetFeature feature;
 
     /**
      * Constructs a new instance
@@ -44,31 +43,6 @@ public class BSFormSet extends Div<BSFormSetChildren, BSFormSetAttributes, BSFor
     {
         setTag("fieldset");
         addClass(BSComponentFormGroupOptions.Form_Group);
-    }
-
-    /**
-     * Returns the feature if any is required
-     *
-     * @return
-     */
-    public final BSFormSetFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSFormSetFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Returns the options if any is required
-     *
-     * @return
-     */
-    @Override
-    public BSFormSetOptions getOptions()
-    {
-        return getFeature().getOptions();
     }
 
     @Override

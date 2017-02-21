@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,15 @@ public class BSDropUp extends BSDropDown
 
     public BSDropUp()
     {
-        removeClass("drowndown");
+
         addClass(BSComponentDropDownOptions.Dropup);
     }
+
+    @Override
+    public void init()
+    {
+        removeClass("dropdown");
+        super.init();
+    }
+
 }

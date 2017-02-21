@@ -4,12 +4,24 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="JWebswing Static">
             <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/BootstrapPageConfigurator.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/accordion/BSAccordion.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/alerts/BSAlertDanger.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/buttons/BSButton.java</file>
             <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/alerts/BSAlertDismissButton.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/test/za/co/mmagon/jwebswing/plugins/bootstrap/alerts/BSAlertTest.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/badge/BSBadge.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/breadcrumbs/BSBreadcrumb.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/breadcrumbs/BSBreadcrumbs.java</file>
             <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/alerts/BSAlert.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/test/za/co/mmagon/jwebswing/plugins/bootstrap/BootstrapPageConfiguratorTest.java</file>
+        </group>
+        <group name="JWebSwing">
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/accordion/BSAccordion.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/collapse/BSCollapse.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/accordion/BSAccordionCollapsingContent.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/accordion/BSAccordionHeader.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/carousel/BSCarousel.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/buttons/BSButton.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/test/za/co/mmagon/jwebswing/plugins/bootstrap/accordion/BSAccordionTest.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/alerts/BSAlert.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/accordion/BSAccordionItem.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/close/BSCloseIcon.java</file>
         </group>
     </open-files>
 </project-private>

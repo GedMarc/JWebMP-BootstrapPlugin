@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,21 +17,32 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.progressbar;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar.BSProgressBarDisplay;
 
 /**
- * An implementation of the jsTree project.
+ * Progress
+ * <p>
+ * Use our custom progress component for displaying simple or complex progress bars.
+ * We don’t use the HTML5 progress element, ensuring you can stack progress bars, animate them, and place text
+ * labels over them.
  * <p>
  * @author Marc Magon
+ * @param <J>
+ *
  * @since 29 Aug 2015
  * @version 1.0
  */
-public class BSProgressBar extends Div<BSProgressBarChildren, BSProgressBarAttributes, BSProgressBarFeatures, BSProgressBarEvents, BSProgressBar>
+@ComponentInformation(name = "Bootstrap Progress Bars", description = "Use our custom progress component for displaying simple or complex progress bars.",
+        url = "https://v4-alpha.getbootstrap.com/components/progress/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSProgressBar<J extends BSProgressBar>
+        extends Div<BSProgressBarChildren, BSProgressBarAttributes, BSProgressBarFeatures, BSProgressBarEvents, J> implements IBSProgressBar<J>
 {
 
     private static final long serialVersionUID = 1L;
     private BSProgressBarFeature feature;
-    
+
     /**
      * Whether or not the progress bar is striped
      */
@@ -40,44 +51,71 @@ public class BSProgressBar extends Div<BSProgressBarChildren, BSProgressBarAttri
      * Whether or not this progress bar should display as active
      */
     private boolean active;
+    /**
+     * if animated
+     */
+    private boolean animated;
 
     /**
      * The actual progress bar
      */
     private BSProgressBarDisplay progressBar;
+
     /**
-     * Creates a new instance of a progress bar
-     * @param striped If the progress bar is striped or not
+     * Use our custom progress component for displaying simple or complex progress bars.
      */
-    public BSProgressBar(boolean striped)
+    public BSProgressBar()
     {
-        this(striped,false);
+        this(false);
     }
 
     /**
      * Creates a new instance of a progress bar
+     *
      * @param striped If the progress bar is striped or not
-     * @param active if the progress bar is active or not
+     */
+    public BSProgressBar(boolean striped)
+    {
+        this(striped, false);
+    }
+
+    /**
+     * Creates a new instance of a progress bar
+     *
+     * @param striped If the progress bar is striped or not
+     * @param active  if the progress bar is active or not
      */
     public BSProgressBar(boolean striped, boolean active)
     {
-        this(striped,active,null);
+        this(striped, active, null);
     }
-    
+
     /**
      * Creates a new instance of a progress bar
-     * @param striped If the progress bar is striped or not
-     * @param active if the progress bar is active or not
-     * @param progressBar  The actual progress bar
+     *
+     * @param striped     If the progress bar is striped or not
+     * @param active      if the progress bar is active or not
+     * @param progressBar The actual progress bar
      */
     public BSProgressBar(boolean striped, boolean active, BSProgressBarDisplay progressBar)
     {
-        addClass("progress");
+        addClass(BSComponentProgressBarOptions.Progress);
         setStriped(striped);
         setActive(active);
         setProgressBar(null);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
-    
+
+    /**
+     * Returns a new progress bar
+     *
+     * @return
+     */
+    public IBSProgressBar asMe()
+    {
+        return this;
+    }
+
     public final BSProgressBarFeature getFeature()
     {
         if (feature == null)
@@ -95,8 +133,10 @@ public class BSProgressBar extends Div<BSProgressBarChildren, BSProgressBarAttri
 
     /**
      * Sets if this component is striped or not
-     * @return 
+     *
+     * @return
      */
+    @Override
     public boolean isStriped()
     {
         return striped;
@@ -104,25 +144,43 @@ public class BSProgressBar extends Div<BSProgressBarChildren, BSProgressBarAttri
 
     /**
      * Sets if this components is striped or not
-     * @param striped 
+     *
+     * @param striped
      */
+    @Override
     public final void setStriped(boolean striped)
     {
         this.striped = striped;
-        if(striped)
+        if (striped)
         {
-            addClass("progress-striped");
+            getProgressBar().addClass(BSComponentProgressBarOptions.Progress_Bar_Striped);
         }
         else
         {
-            removeClass("progress-striped");
+            getProgressBar().removeClass(BSComponentProgressBarOptions.Progress_Bar_Striped);
         }
     }
 
     /**
-     * Returns if this progress bar should return as active
-     * @return 
+     * Sets the given percentage
+     *
+     * @param percent
+     *
+     * @return
      */
+    @Override
+    public J setPercentage(double percent)
+    {
+        getProgressBar().setValue(percent);
+        return (J) this;
+    }
+
+    /**
+     * Returns if this progress bar should return as active
+     *
+     * @return
+     */
+    @Override
     public boolean isActive()
     {
         return active;
@@ -130,28 +188,32 @@ public class BSProgressBar extends Div<BSProgressBarChildren, BSProgressBarAttri
 
     /**
      * Sets if this component should return as active
-     * @param active 
+     *
+     * @param active
      */
+    @Override
     public final void setActive(boolean active)
     {
         this.active = active;
-        if(active)
+        if (active)
         {
-            addClass("active");
+            getProgressBar().addClass("active");
         }
         else
         {
-            removeClass("active");
+            getProgressBar().removeClass("active");
         }
     }
 
     /**
      * Returns the actual progress bar
-     * @return 
+     *
+     * @return
      */
+    @Override
     public BSProgressBarDisplay getProgressBar()
     {
-        if(progressBar == null)
+        if (progressBar == null)
         {
             progressBar = new BSProgressBarDisplay();
             setProgressBar(progressBar);
@@ -161,15 +223,48 @@ public class BSProgressBar extends Div<BSProgressBarChildren, BSProgressBarAttri
 
     /**
      * Sets the actual progress bar
-     * @param progressBar 
+     *
+     * @param progressBar
      */
+    @Override
     public final void setProgressBar(BSProgressBarDisplay progressBar)
     {
         getChildren().remove(this.progressBar);
         this.progressBar = progressBar;
-        if(progressBar != null)
+        if (progressBar != null)
         {
             getChildren().add(progressBar);
         }
     }
+
+    /**
+     * If is animated
+     *
+     * @return
+     */
+    @Override
+    public boolean isAnimated()
+    {
+        return animated;
+    }
+
+    /**
+     * Sets if animated
+     *
+     * @param animated
+     */
+    @Override
+    public void setAnimated(boolean animated)
+    {
+        this.animated = animated;
+        if (animated)
+        {
+            getProgressBar().addClass(BSComponentProgressBarOptions.Progress_Bar_Animated);
+        }
+        else
+        {
+            getProgressBar().removeClass(BSComponentProgressBarOptions.Progress_Bar_Animated);
+        }
+    }
+
 }

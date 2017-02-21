@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,9 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
-import za.co.mmagon.jwebswing.base.html.Label;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
 
@@ -24,10 +26,12 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
  * A bootstrap formatted radio button
  *
  * @author GedMarc
+ * @param <J>
+ *
  * @since 18 Jan 2017
  *
  */
-public class BSFormCheckGroup extends BSFormGroup implements BSFormSetChildren
+public class BSFormCheckGroup<J extends BSFormCheckGroup> extends BSFormGroup<BSInput, J> implements BSFormSetChildren
 {
 
     private static final long serialVersionUID = 1L;
@@ -44,10 +48,11 @@ public class BSFormCheckGroup extends BSFormGroup implements BSFormSetChildren
      *
      * @see BSFormSet
      */
-    public BSFormCheckGroup(Label label, BSFormCheckInput inputComponent, String helpText, String value)
+    public BSFormCheckGroup(BSFormLabel label, BSFormCheckInput inputComponent, String helpText, String value)
     {
         super(label, inputComponent, helpText);
         inputComponent.addAttribute("value", value);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -60,7 +65,7 @@ public class BSFormCheckGroup extends BSFormGroup implements BSFormSetChildren
         {
             addClass(BSComponentFormGroupOptions.Form_Check);
             getLabel().addClass(BSComponentFormGroupOptions.Form_Check_Label);
-            removeClass("form-group");
+            removeClass(BSComponentFormGroupOptions.Form_Group);
 
             getLabel().add(getInputComponent());
             getLabel().setRenderTextBeforeChildren(false);

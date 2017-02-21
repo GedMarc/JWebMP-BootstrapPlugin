@@ -19,12 +19,17 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.base.ComponentHTMLBootstrapBase;
 import za.co.mmagon.jwebswing.base.angular.AngularAttributes;
-import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.TextArea;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.*;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
@@ -35,12 +40,13 @@ import za.co.mmagon.logger.LogFactory;
  * <p>
  * @author Marc Magon
  * @param <T> Is a component and a valid form group child
+ * @param <J>
  *
  * @since 17 Jan 2017
  * @version 1.0
  */
-public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChildren> extends Div<BSFormGroupChildren, BSFormGroupAttributes, BSFormGroupFeatures, BSFormGroupEvents, BSFormGroup>
-        implements BSFormChildren
+public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div<BSFormGroupChildren, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
+        implements BSFormChildren, IBSFormGroup<T, J>
 {
 
     private static final Logger log = LogFactory.getLog("BSFormGroup");
@@ -73,17 +79,13 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
     public static String SUCCESS_CLASS_FEEDBACK = "form-control-success";
 
     /**
-     * The associated feature
-     */
-    private BSFormGroupFeature feature;
-    /**
      * The label
      */
-    private Label label;
+    private BSFormLabel label;
     /**
      * The label help text
      */
-    private SmallText helpText;
+    private BSFormHelpText helpText;
     /**
      * The input component for the form group
      */
@@ -136,12 +138,13 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      * @param inputComponent
      * @param helpText
      */
-    public BSFormGroup(Label label, BSInput inputComponent, String helpText)
+    public BSFormGroup(BSFormLabel label, BSInput inputComponent, String helpText)
     {
         this.label = label;
         this.inputComponent = inputComponent;
-        this.helpText = new SmallText(helpText);
+        this.helpText = new BSFormHelpText(helpText);
         addClass(BSComponentFormGroupOptions.Form_Group);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -151,12 +154,13 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      * @param inputComponent
      * @param helpText
      */
-    public BSFormGroup(Label label, BSFormSelectInput inputComponent, String helpText)
+    public BSFormGroup(BSFormLabel label, BSFormSelectInput inputComponent, String helpText)
     {
         this.label = label;
         this.inputComponent = inputComponent;
-        this.helpText = new SmallText(helpText);
+        this.helpText = new BSFormHelpText(helpText);
         addClass(BSComponentFormGroupOptions.Form_Group);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -166,12 +170,13 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      * @param inputComponent
      * @param helpText
      */
-    public BSFormGroup(Label label, TextArea inputComponent, String helpText)
+    public BSFormGroup(BSFormLabel label, TextArea inputComponent, String helpText)
     {
         this.label = label;
         this.inputComponent = inputComponent;
-        this.helpText = new SmallText(helpText);
+        this.helpText = new BSFormHelpText(helpText);
         addClass(BSComponentFormGroupOptions.Form_Group);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
@@ -181,37 +186,23 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      * @param inputComponent
      * @param helpText
      */
-    public BSFormGroup(Label label, BSFormInputGroup inputComponent, String helpText)
+    public BSFormGroup(BSFormLabel label, BSFormInputGroup inputComponent, String helpText)
     {
         this.label = label;
         this.inputComponent = inputComponent;
-        this.helpText = new SmallText(helpText);
+        this.helpText = new BSFormHelpText(helpText);
         addClass(BSComponentFormGroupOptions.Form_Group);
+        BootstrapPageConfigurator.setBootstrapRequired(this, true);
     }
 
     /**
-     * Returns the feature if any is required
+     * A neater representation
      *
      * @return
      */
-    public final BSFormGroupFeature getFeature()
+    public IBSFormGroup asMe()
     {
-        if (feature == null)
-        {
-            feature = new BSFormGroupFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Returns the options if any is required
-     *
-     * @return
-     */
-    @Override
-    public BSFormGroupOptions getOptions()
-    {
-        return getFeature().getOptions();
+        return this;
     }
 
     /**
@@ -219,12 +210,13 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public Label getLabel()
+    @Override
+    public BSFormLabel getLabel()
     {
         if (label == null)
         {
-            setLabel(new Label("Component Label"));
-            label.addClass("sr-only");
+            setLabel(new BSFormLabel("Component Label"));
+            label.addClass(BSComponentColoursOptions.Sr_Only);
         }
         return label;
     }
@@ -233,10 +225,14 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      * Sets the label to the given label
      *
      * @param label
+     *
+     * @return
      */
-    public void setLabel(Label label)
+    @Override
+    public J setLabel(BSFormLabel label)
     {
         this.label = label;
+        return (J) this;
     }
 
     /**
@@ -244,11 +240,12 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public SmallText getHelpText()
+    @Override
+    public BSFormHelpText getHelpText()
     {
         if (helpText == null)
         {
-            helpText = new SmallText();
+            helpText = new BSFormHelpText();
         }
         return helpText;
     }
@@ -257,10 +254,14 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      * Sets the help text
      *
      * @param helpText
+     *
+     * @return
      */
-    public void setHelpText(SmallText helpText)
+    @Override
+    public J setHelpText(BSFormHelpText helpText)
     {
         this.helpText = helpText;
+        return (J) this;
     }
 
     /**
@@ -268,6 +269,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public Component getInputComponent()
     {
         if (inputComponent == null)
@@ -281,20 +283,28 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      * Sets the input component
      *
      * @param inputComponent
+     *
+     * @return
      */
-    public void setInputComponent(BSInput inputComponent)
+    @Override
+    public J setInputComponent(BSInput inputComponent)
     {
         this.inputComponent = inputComponent;
+        return (J) this;
     }
 
     /**
      * Sets the input component
      *
      * @param inputComponent
+     *
+     * @return
      */
-    public void setInputComponent(BSFormSelectInput inputComponent)
+    @Override
+    public J setInputComponent(BSFormSelectInput inputComponent)
     {
         this.inputComponent = inputComponent;
+        return (J) this;
     }
 
     /**
@@ -307,9 +317,8 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
         {
             if (isAsRow())
             {
-                addClass("row");
+                addClass(BSComponentDefaultOptions.Row);
                 getLabel().addClass("col-2");
-                getLabel().addClass("col-form-label");
                 getInputComponent().addClass("col-10");
             }
 
@@ -431,9 +440,8 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
 
             if (!isInline())
             {
-                getHelpText().addClass(BSComponentFormGroupOptions.Form_Text);
+                getHelpText().setInline(true);
             }
-            getHelpText().addClass(BSComponentDefaultOptions.Text_Muted);
             add(getHelpText());
         }
         super.preConfigure();
@@ -444,6 +452,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public boolean isAsRow()
     {
         return asRow;
@@ -456,10 +465,11 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public BSFormGroup setAsRow(boolean asRow)
+    @Override
+    public J setAsRow(boolean asRow)
     {
         this.asRow = asRow;
-        return this;
+        return (J) this;
     }
 
     /**
@@ -467,6 +477,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public boolean isInline()
     {
         return inline;
@@ -479,6 +490,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public BSFormGroup setInline(boolean inline)
     {
         this.inline = inline;
@@ -490,6 +502,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public boolean isAngularValidation()
     {
         return angularValidation;
@@ -502,6 +515,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public BSFormGroup setAngularValidation(boolean angularValidation)
     {
         this.angularValidation = angularValidation;
@@ -513,6 +527,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public T getRequiredMessage()
     {
         return requiredMessage;
@@ -525,11 +540,12 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public BSFormGroup setRequiredMessage(T requiredMessage)
+    @Override
+    public J setRequiredMessage(T requiredMessage)
     {
         setAngularValidation(true);
         this.requiredMessage = requiredMessage;
-        return this;
+        return (J) this;
     }
 
     /**
@@ -537,6 +553,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public T getPatternMessage()
     {
         return patternMessage;
@@ -549,11 +566,12 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public BSFormGroup setPatternMessage(T patternMessage)
+    @Override
+    public J setPatternMessage(T patternMessage)
     {
         setAngularValidation(true);
         this.patternMessage = patternMessage;
-        return this;
+        return (J) this;
     }
 
     /**
@@ -561,6 +579,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public T getMinMessage()
     {
         return minMessage;
@@ -573,11 +592,12 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public BSFormGroup setMinMessage(T minMessage)
+    @Override
+    public J setMinMessage(T minMessage)
     {
         setAngularValidation(true);
         this.minMessage = minMessage;
-        return this;
+        return (J) this;
     }
 
     /**
@@ -585,6 +605,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public T getMaxMessage()
     {
         return maxMessage;
@@ -597,11 +618,12 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public BSFormGroup setMaxMessage(T maxMessage)
+    @Override
+    public J setMaxMessage(T maxMessage)
     {
         setAngularValidation(true);
         this.maxMessage = maxMessage;
-        return this;
+        return (J) this;
     }
 
     /**
@@ -609,6 +631,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public T getMinLengthMessage()
     {
         return minLengthMessage;
@@ -621,11 +644,12 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public BSFormGroup setMinLengthMessage(T minLengthMessage)
+    @Override
+    public J setMinLengthMessage(T minLengthMessage)
     {
         setAngularValidation(true);
         this.minLengthMessage = minLengthMessage;
-        return this;
+        return (J) this;
     }
 
     /**
@@ -633,6 +657,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public T getMaxLengthMessage()
     {
         return maxLengthMessage;
@@ -645,11 +670,12 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public BSFormGroup setMaxLengthMessage(T maxLengthMessage)
+    @Override
+    public J setMaxLengthMessage(T maxLengthMessage)
     {
         setAngularValidation(true);
         this.maxLengthMessage = maxLengthMessage;
-        return this;
+        return (J) this;
     }
 
     /**
@@ -657,6 +683,7 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
+    @Override
     public Boolean getShowControlFeedback()
     {
         return showControlFeedback;
@@ -669,11 +696,12 @@ public class BSFormGroup<T extends ComponentHTMLBootstrapBase & BSFormGroupChild
      *
      * @return
      */
-    public BSFormGroup setShowControlFeedback(Boolean showControlFeedback)
+    @Override
+    public J setShowControlFeedback(Boolean showControlFeedback)
     {
         setAngularValidation(true);
         this.showControlFeedback = showControlFeedback;
-        return this;
+        return (J) this;
     }
 
     @Override
