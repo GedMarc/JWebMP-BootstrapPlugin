@@ -20,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.angular.AngularAttributes;
+import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.TextArea;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
@@ -337,7 +338,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
 
             if (isAngularValidation())
             {
-                setLoadAngular(true);
+                AngularPageConfigurator.setAngularRequired(this, true);
                 BSForm referencedForm = findParent(BSForm.class);
                 if (referencedForm == null)
                 {

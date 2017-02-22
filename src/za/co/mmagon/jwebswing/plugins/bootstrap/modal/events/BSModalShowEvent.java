@@ -62,7 +62,6 @@ public abstract class BSModalShowEvent extends Event
         if (!isConfigured())
         {
             getComponent().getPage().getOptions().setjQueryEnabled(true);
-            getComponent().getPage().getOptions().setAngularEnabled(true);
             getComponent().getAngularDirectives().add(getDirective());
             component.addAttribute("ng-show-bootstap-modal", "perform($event," + renderVariables() + ");");
         }
@@ -96,7 +95,7 @@ public abstract class BSModalShowEvent extends Event
     /**
      * Triggers on Click
      * <p>
-     * @param call     The physical AJAX call
+     * @param call The physical AJAX call
      * @param response The physical Ajax Receiver
      */
     public abstract void onModalShow(AjaxCall call, AjaxResponse response);

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -40,13 +40,13 @@ public enum BSComponentInputGroupOptions implements IBSComponentOptions
      * <p>
      * Add the relative form sizing classes to the .input-group itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
      */
-    InputGroup_Lg,
+    Input_Group_Lg,
     /**
      * Sizing
      * <p>
      * Add the relative form sizing classes to the .input-group itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
      */
-    InputGroup_Sm;
+    Input_Group_Sm;
 
     private BSComponentInputGroupOptions()
     {

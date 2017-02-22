@@ -62,7 +62,6 @@ public abstract class BSCarouselSlidEvent extends Event
         if (!isConfigured())
         {
             getComponent().getPage().getOptions().setjQueryEnabled(true);
-            getComponent().getPage().getOptions().setAngularEnabled(true);
             getComponent().getAngularDirectives().add(getDirective());
             component.addAttribute("ng-bs-carousel-slid-directive", "perform($event," + renderVariables() + ");");
         }
@@ -96,7 +95,7 @@ public abstract class BSCarouselSlidEvent extends Event
     /**
      * Triggers on Click
      * <p>
-     * @param call     The physical AJAX call
+     * @param call The physical AJAX call
      * @param response The physical Ajax Receiver
      */
     public abstract void onSlid(AjaxCall call, AjaxResponse response);

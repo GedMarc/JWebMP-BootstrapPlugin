@@ -60,8 +60,9 @@ public class BSCarouselTest extends BaseTestClass
             @Override
             public void onSlid(AjaxCall call, AjaxResponse response)
             {
-                addOnDemandEvent(this);
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
+
         });
     }
 
