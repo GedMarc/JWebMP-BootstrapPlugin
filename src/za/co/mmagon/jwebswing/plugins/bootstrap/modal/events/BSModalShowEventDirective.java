@@ -36,7 +36,7 @@ public class BSModalShowEventDirective extends AngularDirectiveBase
      *
      * @param angular
      */
-    public BSModalShowEventDirective(AngularFeature angular)
+    public BSModalShowEventDirective()
     {
         super("ngShowBootstapModal");
     }

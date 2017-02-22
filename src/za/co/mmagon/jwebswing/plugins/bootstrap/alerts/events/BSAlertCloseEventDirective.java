@@ -36,7 +36,7 @@ public class BSAlertCloseEventDirective extends AngularDirectiveBase
      *
      * @param angular
      */
-    public BSAlertCloseEventDirective(AngularFeature angular)
+    public BSAlertCloseEventDirective()
     {
         super("ngBSAlertCloseEventDirective");
     }

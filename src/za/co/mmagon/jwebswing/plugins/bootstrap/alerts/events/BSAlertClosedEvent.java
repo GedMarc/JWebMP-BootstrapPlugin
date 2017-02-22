@@ -62,7 +62,7 @@ public abstract class BSAlertClosedEvent extends Event
         if (!isConfigured())
         {
             getComponent().getPage().getOptions().setjQueryEnabled(true);
-            getComponent().getAngularDirectives().add(getDirective());
+            getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
             component.addAttribute("ng-bs-alert-closed-directive", "perform($event," + renderVariables() + ");");
         }
         super.preConfigure();
@@ -77,7 +77,7 @@ public abstract class BSAlertClosedEvent extends Event
     {
         if (directive == null)
         {
-            directive = new BSAlertCloseEventDirective(getComponent().getPage().getAngular());
+            directive = new BSAlertCloseEventDirective();
         }
         return directive;
     }

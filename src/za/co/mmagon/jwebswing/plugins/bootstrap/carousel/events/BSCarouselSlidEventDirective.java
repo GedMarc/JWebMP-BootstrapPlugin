@@ -36,7 +36,7 @@ public class BSCarouselSlidEventDirective extends AngularDirectiveBase
      *
      * @param angular
      */
-    public BSCarouselSlidEventDirective(AngularFeature angular)
+    public BSCarouselSlidEventDirective()
     {
         super("ngBSCarouselSlidEventDirective");
     }
