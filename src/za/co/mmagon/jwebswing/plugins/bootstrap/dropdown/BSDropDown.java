@@ -24,6 +24,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapReferencePool;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
@@ -103,6 +104,28 @@ public class BSDropDown<J extends BSDropDown>
     }
 
     /**
+     * Sets no Cart on the item
+     *
+     * @param noCaret
+     * @return
+     */
+    public J setNoCaret(boolean noCaret)
+    {
+        if (noCaret)
+        {
+            getDropdownButton().addClass("no-caret");
+            addCssReference(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
+        }
+        else
+        {
+            getDropdownButton().removeClass("no-caret");
+            getCssReferences().remove(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
+        }
+
+        return (J) this;
+    }
+
+    /**
      * Returns the current dropdownMenu or a new one
      *
      * @return
@@ -153,7 +176,7 @@ public class BSDropDown<J extends BSDropDown>
     /**
      * Sets the drop down dropdownMenu button
      *
-     * @param <T>            bs drop down children type
+     * @param <T> bs drop down children type
      * @param dropdownButton
      *
      * @return
