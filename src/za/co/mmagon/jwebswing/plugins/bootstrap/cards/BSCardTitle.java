@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -46,7 +46,7 @@ public class BSCardTitle extends HeaderText
      */
     public BSCardTitle()
     {
-        this(null, null);
+        this(HeaderTypes.H2, "");
     }
 
     /**

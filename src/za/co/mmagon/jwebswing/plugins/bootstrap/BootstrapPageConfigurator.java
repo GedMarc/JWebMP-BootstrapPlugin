@@ -1,25 +1,18 @@
-/*
- * The MIT License
+/* 
+ * Copyright (C) 2017 Marc Magon
  *
- * Copyright 2017 GedMarc.
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
@@ -43,12 +36,19 @@ import za.co.mmagon.logger.LogFactory;
  * <p>
  * HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries WARNING: Respond.js doesn't work if you view the page via file://
  */
-@PluginInformation(pluginName = "Bootstrap", pluginDescription = "Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.",
-        pluginUniqueName = "jwebswing-bootstrap", pluginVersion = "3 or 4 (Alpha 6)",
-        pluginCategories = "bootstrap,ui,web ui, framework", pluginSubtitle = "Bootstrap makes front-end web development faster and easier.",
-        pluginSourceUrl = "http://getbootstrap.com/", pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki",
-        pluginGitUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin", pluginIconUrl = "", pluginIconImageUrl = "",
-        pluginOriginalHomepage = "http://getbootstrap.com/"
+@PluginInformation(pluginName = "Bootstrap",
+                   pluginDescription = "Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.<br/> We are bootstrap 4 ready!",
+                   pluginUniqueName = "jwebswing-bootstrap",
+                   pluginVersion = "3.3.7 / 4a6",
+                   pluginCategories = "bootstrap,ui,web ui, framework",
+                   pluginSubtitle = "Bootstrap makes front-end web development faster and easier.",
+                   pluginSourceUrl = "http://getbootstrap.com/",
+                   pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki",
+                   pluginGitUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin",
+                   pluginIconUrl = "bower_components/bootstrap/bootstrapicon.jpg",
+                   pluginIconImageUrl = "bower_components/bootstrap/bootstraplogo.jpg",
+                   pluginOriginalHomepage = "http://getbootstrap.com/",
+                   pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/BootstrapPlugin.jar/download"
 )
 public class BootstrapPageConfigurator extends PageConfigurator
 {

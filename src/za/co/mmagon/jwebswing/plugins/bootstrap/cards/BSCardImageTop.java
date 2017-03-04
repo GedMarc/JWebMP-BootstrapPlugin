@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,11 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 
-import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
-import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.base.html.Image;
 
 /**
  * Image overlays
@@ -32,7 +28,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * @version 1.0
  *
  */
-public class BSCardImageTop extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSCardImageTop>
+public class BSCardImageTop extends Image<BSCardImageTop>
         implements BSCardChildren
 {
 
@@ -53,11 +49,11 @@ public class BSCardImageTop extends Div<GlobalChildren, NoAttributes, GlobalFeat
      * <p>
      * Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need .card-inverse (see below).
      *
-     * @param text
+     * @param imageUrlk
      */
-    public BSCardImageTop(String text)
+    public BSCardImageTop(String imageUrlk)
     {
-        super(text);
+        super(imageUrlk);
         addClass(BSComponentCardOptions.Card_Img_Top);
     }
 
