@@ -32,10 +32,7 @@
         </group>
         <group name="JWebSwing"/>
         <group name="JWebSwing Plugins">
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/BootstrapPageConfigurator.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/cards/BSCardSubtitle.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/cards/BSCardImageTop.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/cards/BSCardTitle.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/tooltips/BSTooltipFeature.java</file>
         </group>
     </open-files>
 </project-private>
