@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -359,12 +359,12 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
                 String fieldName = "'" + getInputComponent().getID() + "'";
 
                 addAttribute(AngularAttributes.ngClass, formName + "[" + fieldName + "].$valid && !" + formName + "[" + fieldName + "].$pristine "
-                        + "? '" + SUCCESS_CLASS + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + ERROR_CLASS + "'");
+                             + "? '" + SUCCESS_CLASS + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + ERROR_CLASS + "'");
 
                 if (getShowControlFeedback() != null && getShowControlFeedback())
                 {
                     getInputComponent().addAttribute(AngularAttributes.ngClass, formName + "[" + fieldName + "].$valid && !" + formName + "[" + fieldName + "].$pristine "
-                            + "? '" + SUCCESS_CLASS_FEEDBACK + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + ERROR_CLASS_FEEDBACK + "'");
+                                                     + "? '" + SUCCESS_CLASS_FEEDBACK + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + ERROR_CLASS_FEEDBACK + "'");
                 }
 
                 if (getRequiredMessage() != null)

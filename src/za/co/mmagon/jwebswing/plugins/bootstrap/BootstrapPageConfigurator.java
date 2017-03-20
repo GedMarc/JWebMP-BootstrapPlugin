@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.MetaAttributes;
 import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.RequirementsPriority;
 import za.co.mmagon.jwebswing.plugins.PluginInformation;
+import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 import za.co.mmagon.logger.LogFactory;
 
 /**
@@ -74,11 +75,9 @@ public class BootstrapPageConfigurator extends PageConfigurator
     public Page configure(Page page)
     {
         // log.info("Configuring for bootstrap");
-        if (page.getBody().readChildrenPropertyFirstResult(BootstrapEnabledString, true))
+        //  if (page.getBody().readChildrenPropertyFirstResult(BootstrapEnabledString, true))
         {
-            page.getOptions().setjQueryEnabled(true);
-            page.getBody().configureJQuery();
-
+            JQueryPageConfigurator.setRequired(page.getBody(), true);
             Meta charMeta = new Meta();
             charMeta.addAttribute(MetaAttributes.Charset, "utf-16");
 
@@ -116,10 +115,9 @@ public class BootstrapPageConfigurator extends PageConfigurator
                 page.getBody().addJavaScriptReference(new JavascriptReference("html5shimrespond", 1.0, "https://oss.maxcdn.com/respond/1.4.2/respond.min.js", RequirementsPriority.Fourth));
             }
         }
-        else
-        {
-            log.warning("No components using bootstrap were found");
-        }
+        //  else
+        //    log.warning("No components using bootstrap were found");
+        //   }
         return page;
     }
 

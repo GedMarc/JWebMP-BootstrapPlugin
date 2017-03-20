@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -61,7 +61,6 @@ public abstract class BSAlertCloseEvent extends Event
     {
         if (!isConfigured())
         {
-            getComponent().getPage().getOptions().setjQueryEnabled(true);
             getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
             component.addAttribute("ng-bs-alert-close-directive", "perform($event," + renderVariables() + ");");
         }
@@ -95,7 +94,7 @@ public abstract class BSAlertCloseEvent extends Event
     /**
      * Triggers on Click
      * <p>
-     * @param call The physical AJAX call
+     * @param call     The physical AJAX call
      * @param response The physical Ajax Receiver
      */
     public abstract void onClose(AjaxCall call, AjaxResponse response);

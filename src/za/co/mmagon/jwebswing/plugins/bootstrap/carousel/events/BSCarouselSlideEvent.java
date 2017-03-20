@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -61,7 +61,6 @@ public abstract class BSCarouselSlideEvent extends Event
     {
         if (!isConfigured())
         {
-            getComponent().getPage().getOptions().setjQueryEnabled(true);
             getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
             component.addAttribute("ng-bs-carousel-slide-directive", "perform($event," + renderVariables() + ");");
         }
@@ -95,7 +94,7 @@ public abstract class BSCarouselSlideEvent extends Event
     /**
      * Triggers on Click
      * <p>
-     * @param call The physical AJAX call
+     * @param call     The physical AJAX call
      * @param response The physical Ajax Receiver
      */
     public abstract void onSlide(AjaxCall call, AjaxResponse response);
