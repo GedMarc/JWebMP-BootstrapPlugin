@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.toggle;
 
-import za.co.mmagon.jwebswing.components.newcomponents.*;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
@@ -32,7 +31,7 @@ public class BSToggleFeature extends Feature<BSToggleOptions, BSToggleFeature> i
 {
 
     private static final long serialVersionUID = 1L;
- 
+
     private final Component forComponent;
     private BSToggleOptions options;
 
