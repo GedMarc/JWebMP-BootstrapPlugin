@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,8 +28,8 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
  */
 public enum BootstrapReferencePool implements ReferencePool
 {
-    BootstrapCoreReference(new JavascriptReference("BSCore", 3.36, "bower_components/bootstrap/dist/js/bootstrap.js", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", 10),
-            new CSSReference("BSCore", 3.36, "bower_components/bootstrap/dist/css/bootstrap.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", 10)),
+    BootstrapCoreReference(new JavascriptReference("BSCore", 3.36, "bower_components/bootstrap/dist/js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", 10),
+                           new CSSReference("BSCore", 3.36, "bower_components/bootstrap/dist/css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", 10)),
     //BootstrapDefaultThemeReference(null, new CSSReference("BSTheme", 3.36, "css/bootstrap/bootstrap-theme.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", 11)),
 
     /*
@@ -37,12 +37,12 @@ public enum BootstrapReferencePool implements ReferencePool
      * BootstrapTimelineReference(null, new CSSReference("BSAdmin2TimelineTheme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css")),
      * BootstrapSocialThemeReference(null, new CSSReference("BSSocialTheme", 3.36, "bower_components/bootstrap-social/bootstrap-social.css")),
      */
-    Bootstrap4CoreReference(new JavascriptReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/js/bootstrap.js", 10),
-            new CSSReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/css/bootstrap.css", 10)),
-    Bootstrap4TetherReference(new JavascriptReference("BS4Tether", 4.003, "bower_components/tether/dist/js/tether.js", 9),
-            new CSSReference("BS4Core", 4.003, "bower_components/tether/dist/css/tether.css", 9)),
+    Bootstrap4CoreReference(new JavascriptReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/js/bootstrap.min.js", 10),
+                            new CSSReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/css/bootstrap.min.css", 10)),
+    Bootstrap4TetherReference(new JavascriptReference("BS4Tether", 4.003, "bower_components/tether/dist/js/tether.min.js", 9),
+                              new CSSReference("BS4Core", 4.003, "bower_components/tether/dist/css/tether.min.css", 9)),
     Bootstrap4DropDownReference(null,
-            new CSSReference("BS4DropDownNoCaret", 4.006, "bs4custom/bs4hidecaret.css", 90)),;
+                                new CSSReference("BS4DropDownNoCaret", 4.006, "bs4custom/bs4hidecaret.css", 90)),;
 
     private BootstrapReferencePool()
     {

@@ -338,7 +338,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
 
             if (isAngularValidation())
             {
-                AngularPageConfigurator.setAngularRequired(this, true);
+                AngularPageConfigurator.setRequired(this, true);
                 BSForm referencedForm = findParent(BSForm.class);
                 if (referencedForm == null)
                 {

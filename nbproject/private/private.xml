@@ -31,14 +31,7 @@
             <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/toggle/BSDropDownToggle.java</file>
         </group>
         <group name="JWebSwing"/>
-        <group name="JWebSwing Website">
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/BootstrapPageConfigurator.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/carousel/events/BSCarouselSlideEvent.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/carousel/events/BSCarouselSlidEvent.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/modal/events/BSModalShowEvent.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/alerts/events/BSAlertClosedEvent.java</file>
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/alerts/events/BSAlertCloseEvent.java</file>
-        </group>
         <group name="JWebSwing Plugins"/>
+        <group name="JWebSwing Website"/>
     </open-files>
 </project-private>
