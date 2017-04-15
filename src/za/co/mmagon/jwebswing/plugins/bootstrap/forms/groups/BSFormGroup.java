@@ -24,7 +24,6 @@ import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.TextArea;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
-import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
@@ -131,6 +130,10 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
      * Shows a ticket, warning or cross from bootstrap 4
      */
     private Boolean showControlFeedback;
+
+    public BSFormGroup()
+    {
+    }
 
     /**
      * Constructs a new instance
@@ -246,7 +249,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
     {
         if (helpText == null)
         {
-            helpText = new BSFormHelpText();
+//            helpText = new BSFormHelpText();
         }
         return helpText;
     }
@@ -275,7 +278,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
     {
         if (inputComponent == null)
         {
-            setInputComponent(new BSInput(InputTypes.Text));
+            //setInputComponent(new BSInput(InputTypes.Text));
         }
         return inputComponent;
     }
@@ -329,12 +332,17 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
                 add(getLabel());
             }
 
-            if (getInputComponent().getParent() == null)
+            if (!(getInputComponent() == null))
             {
-                add((BSFormGroupChildren) getInputComponent());
+                if (getInputComponent().getParent() == null)
+                {
+                    add((BSFormGroupChildren) getInputComponent());
+                }
+                if (getHelpText() != null)
+                {
+                    getInputComponent().addAttribute(GlobalAttributes.Aria_Describedby, getHelpText().getID());
+                }
             }
-
-            getInputComponent().addAttribute(GlobalAttributes.Aria_Describedby, getHelpText().getID());
 
             if (isAngularValidation())
             {
@@ -356,15 +364,18 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
                 referencedForm.setTag("ng-form");
 
                 String formName = referencedForm.getID();
-                String fieldName = "'" + getInputComponent().getID() + "'";
+                String fieldName = "'" + (getInputComponent() == null ? "" : getInputComponent().getID()) + "'";
 
                 addAttribute(AngularAttributes.ngClass, formName + "[" + fieldName + "].$valid && !" + formName + "[" + fieldName + "].$pristine "
                              + "? '" + SUCCESS_CLASS + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + ERROR_CLASS + "'");
 
                 if (getShowControlFeedback() != null && getShowControlFeedback())
                 {
-                    getInputComponent().addAttribute(AngularAttributes.ngClass, formName + "[" + fieldName + "].$valid && !" + formName + "[" + fieldName + "].$pristine "
-                                                     + "? '" + SUCCESS_CLASS_FEEDBACK + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + ERROR_CLASS_FEEDBACK + "'");
+                    if (getInputComponent() != null)
+                    {
+                        getInputComponent().addAttribute(AngularAttributes.ngClass, formName + "[" + fieldName + "].$valid && !" + formName + "[" + fieldName + "].$pristine "
+                                                         + "? '" + SUCCESS_CLASS_FEEDBACK + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + ERROR_CLASS_FEEDBACK + "'");
+                    }
                 }
 
                 if (getRequiredMessage() != null)
@@ -441,9 +452,15 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
 
             if (!isInline())
             {
-                getHelpText().setInline(true);
+                if (getHelpText() != null)
+                {
+                    getHelpText().setInline(true);
+                }
             }
-            add(getHelpText());
+            if (getHelpText() != null)
+            {
+                add(getHelpText());
+            }
         }
         super.preConfigure();
     }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls;
 
+import za.co.mmagon.jwebswing.base.angular.AngularAttributes;
+import za.co.mmagon.jwebswing.base.dto.RegularExpressionsDTO;
 import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
 
 /**
@@ -37,5 +39,17 @@ public class BSFormEmailInput extends BSInput
     {
 
         setInputType(InputTypes.Email);
+        addAttribute(AngularAttributes.ngPattern, "regex.emailField");
     }
+
+    @Override
+    public void init()
+    {
+        if (!isInitialized())
+        {
+            getPage().getBody().addDto("regex", new RegularExpressionsDTO());
+        }
+        super.init();
+    }
+
 }

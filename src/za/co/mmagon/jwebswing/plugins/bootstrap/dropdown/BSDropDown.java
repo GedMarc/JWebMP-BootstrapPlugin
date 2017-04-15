@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -43,7 +43,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Dropdown", description = "Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.",
-        url = "https://v4-alpha.getbootstrap.com/components/dropdowns/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+                      url = "https://v4-alpha.getbootstrap.com/components/dropdowns/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSDropDown<J extends BSDropDown>
         extends Div<BSDropDownChildren, BSDropDownAttributes, GlobalFeatures, BSDropDownEvents, J> implements IBSDropDown<J>
 {
@@ -114,12 +114,18 @@ public class BSDropDown<J extends BSDropDown>
         if (noCaret)
         {
             getDropdownButton().addClass("no-caret");
-            addCssReference(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
+            if (BootstrapPageConfigurator.isBootstrap4())
+            {
+                addCssReference(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
+            }
         }
         else
         {
             getDropdownButton().removeClass("no-caret");
-            getCssReferences().remove(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
+            if (BootstrapPageConfigurator.isBootstrap4())
+            {
+                getCssReferences().remove(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
+            }
         }
 
         return (J) this;
@@ -176,7 +182,7 @@ public class BSDropDown<J extends BSDropDown>
     /**
      * Sets the drop down dropdownMenu button
      *
-     * @param <T> bs drop down children type
+     * @param <T>            bs drop down children type
      * @param dropdownButton
      *
      * @return

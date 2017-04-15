@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -36,7 +36,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Forms", description = "Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.",
-        url = "https://v4-alpha.getbootstrap.com/components/forms/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+                      url = "https://v4-alpha.getbootstrap.com/components/forms/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSForm<J extends BSForm> extends Div<BSFormChildren, BSFormAttributes, GlobalFeatures, BSFormEvents, J>
 {
 
@@ -73,10 +73,10 @@ public class BSForm<J extends BSForm> extends Div<BSFormChildren, BSFormAttribut
      *
      * @return
      */
-    public BSForm addSubmitButton(ComponentHierarchyBase component)
+    public ComponentHierarchyBase addSubmitButton(ComponentHierarchyBase component)
     {
         component.addAttribute(AngularAttributes.ngDisabled, getID() + ".$invalid || jw.isLoading");
         component.addAttribute(GlobalAttributes.Type, "submit");
-        return this;
+        return component;
     }
 }

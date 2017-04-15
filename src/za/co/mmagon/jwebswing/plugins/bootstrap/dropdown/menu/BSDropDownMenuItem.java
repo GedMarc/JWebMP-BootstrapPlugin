@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -35,6 +35,11 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
     private static final long serialVersionUID = 1L;
     private String iconClass;
 
+    public BSDropDownMenuItem()
+    {
+        this("");
+    }
+
     /**
      * Construct a new drop down menu item
      *
@@ -56,6 +61,7 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
     public BSDropDownMenuItem(String iconClass, String text)
     {
         this(text);
+        this.iconClass = iconClass;
     }
 
     public BSDropDownMenuItem setDisabled()
@@ -92,8 +98,12 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
     {
         if (!isConfigured())
         {
+
             Italic i = new Italic();
-            i.addClass(iconClass);
+            if (iconClass != null && !iconClass.isEmpty())
+            {
+                i.addClass(iconClass);
+            }
             setText(i.toString(true) + getText(getCurrentTabIndents()).toString());
         }
         super.preConfigure();

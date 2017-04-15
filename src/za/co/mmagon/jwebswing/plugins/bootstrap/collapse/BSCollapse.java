@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.collapse;
 
+import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Button;
-import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
@@ -35,7 +35,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Collapse", description = "The Bootstrap collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.",
-        url = "https://v4-alpha.getbootstrap.com/components/collapse/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+                      url = "https://v4-alpha.getbootstrap.com/components/collapse/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCollapse
 {
 
@@ -48,7 +48,7 @@ public class BSCollapse
      * @param display
      * @param hideOnStart
      */
-    public BSCollapse(Link linkController, Div display, boolean hideOnStart)
+    public BSCollapse(Link linkController, ComponentHierarchyBase display, boolean hideOnStart)
     {
         if (display != null)
         {
@@ -80,7 +80,7 @@ public class BSCollapse
      * @param display
      * @param hideOnStart
      */
-    public BSCollapse(Button buttonController, Div display, boolean hideOnStart)
+    public BSCollapse(Button buttonController, ComponentHierarchyBase display, boolean hideOnStart)
     {
         if (display != null)
         {
@@ -96,6 +96,5 @@ public class BSCollapse
 
         buttonController.addAttribute("data-toggle", "collapse");
         buttonController.addAttribute("aria-expanded", Boolean.toString(!hideOnStart));
-
     }
 }
