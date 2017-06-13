@@ -48,7 +48,7 @@ public class BSButtonToolbar extends Div<BSButtonToolbarChildren, BSButtonToolba
         addAttribute(BSButtonToolbarAttributes.Role, "toolbar");
         setAriaLabel("Button Toolbar");
         addClass(BSComponentButtonToolbarOptions.Btn_Toolbar);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

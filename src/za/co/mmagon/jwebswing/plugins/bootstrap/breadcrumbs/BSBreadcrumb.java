@@ -47,7 +47,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb> extends ListItem<J>
     public BSBreadcrumb()
     {
         addClass(BSComponentBreadcrumbOptions.Breadcrumb_Item);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -60,7 +60,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb> extends ListItem<J>
     {
         this();
         setCrumbLink(crumbLink);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

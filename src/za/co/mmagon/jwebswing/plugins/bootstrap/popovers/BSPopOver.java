@@ -91,7 +91,7 @@ public class BSPopOver extends Div<BSPopOverChildren, BSPopOverAttributes, BSPop
             displayedComponent.setTiny(true);
             getOptions().setContent(displayedComponent.toString(true));
         }
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

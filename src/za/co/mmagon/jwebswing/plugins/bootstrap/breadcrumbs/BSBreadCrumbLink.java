@@ -37,7 +37,7 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink> extends Link<J>
      */
     public BSBreadCrumbLink()
     {
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -48,7 +48,7 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink> extends Link<J>
     public BSBreadCrumbLink(String directToAddress)
     {
         super(directToAddress);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -60,7 +60,7 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink> extends Link<J>
     public BSBreadCrumbLink(String directToAddress, String targetFrameName)
     {
         super(directToAddress, targetFrameName);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -73,7 +73,7 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink> extends Link<J>
     public BSBreadCrumbLink(String directToAddress, String targetFrameName, String text)
     {
         super(directToAddress, targetFrameName, text);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -86,7 +86,7 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink> extends Link<J>
     public BSBreadCrumbLink(String directToAddress, String targetFrameName, ComponentHierarchyBase component)
     {
         super(directToAddress, targetFrameName, component);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls;
 
-import za.co.mmagon.jwebswing.base.html.TextArea;
+import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
 import za.co.mmagon.jwebswing.base.html.attributes.TextAreaAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
@@ -27,7 +27,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  * @since 17 Jan 2017
  *
  */
-public class BSFormTextAreaInput extends TextArea
+public class BSFormTextAreaInput extends BSInput
         implements BSFormGroupChildren
 {
 
@@ -39,6 +39,7 @@ public class BSFormTextAreaInput extends TextArea
     public BSFormTextAreaInput()
     {
         this(3);
+
     }
 
     /**
@@ -48,7 +49,7 @@ public class BSFormTextAreaInput extends TextArea
      */
     public BSFormTextAreaInput(int linesToShow)
     {
-        super("");
+        super(InputTypes.Text);
         addAttribute(TextAreaAttributes.Rows, linesToShow);
         addClass(BSComponentFormGroupOptions.Form_Control);
     }

@@ -20,6 +20,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
+import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  *
@@ -45,6 +46,8 @@ public class BSMediaTest extends BaseTestClass
     public void testNothingPage()
     {
         Page p = getInstance();
+        BootstrapPageConfigurator bpc = new BootstrapPageConfigurator();
+        bpc.configure(p);
         BSMedia media = new BSMedia();
         media.setID("media");
         p.getBody().add(media);
@@ -55,16 +58,16 @@ public class BSMediaTest extends BaseTestClass
                 + "		<meta charset=\"utf-16\">\n"
                 + "		<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n"
                 + "		<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n"
-                + "		<link href=\"bower_components/bootstrap/dist/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\">\n"
+                + "		\n"
+                + "		\n"
+                + "		<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n"
                 + "	</head>\n"
                 + "	<body id=\"body\">\n"
                 + "		<div class=\"media\" id=\"media\"></div>\n"
-                + "		<!-- Priority [First] Values -->\n"
-                + "		<script src=\"bower_components/jquery-3/dist/jquery.js\" type=\"text/javascript\"></script>\n"
-                + "		<!-- Priority [Second] Values -->\n"
-                + "		<script src=\"bower_components/jquery-migrate/jquery-migrate.js\" type=\"text/javascript\"></script>\n"
+                + "		\n"
                 + "		<!-- Priority [Third] Values -->\n"
-                + "		<script src=\"bower_components/bootstrap/dist/js/bootstrap.js\" type=\"text/javascript\"></script>\n"
+                + "		<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n"
+                + "		\n"
                 + "	</body>\n"
                 + "</html>", p.toString(true));
     }

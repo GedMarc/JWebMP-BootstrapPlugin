@@ -46,7 +46,7 @@ public class BSTooltipFeature extends Feature<BSPopOverOptions, BSTooltipFeature
     {
         super("BootstrapPopoverFeature");
         setComponent(forComponent);
-        BootstrapPageConfigurator.setBootstrapRequired(forComponent, true);
+        BootstrapPageConfigurator.setRequired(forComponent, true);
     }
 
     /**

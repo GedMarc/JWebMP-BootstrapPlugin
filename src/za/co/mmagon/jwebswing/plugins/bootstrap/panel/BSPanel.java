@@ -81,7 +81,7 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
     {
         addClass("panel");
         setTheme(theme);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     @Override

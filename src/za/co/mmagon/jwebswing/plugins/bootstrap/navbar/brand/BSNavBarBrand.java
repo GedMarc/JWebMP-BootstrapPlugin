@@ -44,7 +44,7 @@ public class BSNavBarBrand extends Div implements BSNavBarChildren
     public BSNavBarBrand()
     {
         addClass(BSComponentNavBarOptions.Navbar_Brand);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

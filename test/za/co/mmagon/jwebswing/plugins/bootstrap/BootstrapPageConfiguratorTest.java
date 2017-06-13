@@ -25,13 +25,14 @@ package za.co.mmagon.jwebswing.plugins.bootstrap;
 
 import org.junit.Assert;
 import org.junit.Test;
+import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 
 /**
  *
  * @author GedMarc
  */
-public class BootstrapPageConfiguratorTest
+public class BootstrapPageConfiguratorTest extends BaseTestClass
 {
 
     public BootstrapPageConfiguratorTest()
@@ -41,8 +42,9 @@ public class BootstrapPageConfiguratorTest
     @Test
     public void testPageConfiguration()
     {
-        Page p = new Page();
-        p.getBody().getProperties().put(BootstrapPageConfigurator.BootstrapEnabledString, "true");
+        Page p = getInstance();
+        BootstrapPageConfigurator bpc = new BootstrapPageConfigurator();
+        bpc.configure(p);
         System.out.println(p.toString(true));
         Assert.assertEquals("<!DOCTYPE html>\n"
                 + "<html>\n"
@@ -50,16 +52,15 @@ public class BootstrapPageConfiguratorTest
                 + "		<meta charset=\"utf-16\">\n"
                 + "		<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n"
                 + "		<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n"
-                + "		<link href=\"bower_components/bootstrap/dist/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\">\n"
-                + "		<link href=\"bower_components/bootstrap3-dialog/dist/css/bootstrap-dialog.css\" rel=\"stylesheet\" type=\"text/css\">\n"
+                + "		\n"
+                + "		\n"
+                + "		<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n"
                 + "	</head>\n"
                 + "	<body id=\"body\">\n"
-                + "		<script src=\"bower_components/jquery-3/dist/jquery.js\" type=\"text/javascript\"></script>\n"
-                + "		<script src=\"bower_components/jquery-migrate/jquery-migrate.js\" type=\"text/javascript\"></script>\n"
+                + "		\n"
                 + "		<!-- Priority [Third] Values -->\n"
-                + "		<script src=\"bower_components/bootstrap/dist/js/bootstrap.js\" type=\"text/javascript\"></script>\n"
-                + "		<!-- Priority [Fourth] Values -->\n"
-                + "		<script src=\"bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.js\" type=\"text/javascript\"></script>\n"
+                + "		<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n"
+                + "		\n"
                 + "	</body>\n"
                 + "</html>", p.toString(true));
     }

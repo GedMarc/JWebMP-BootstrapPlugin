@@ -86,7 +86,7 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
         addAttribute(GlobalAttributes.Aria_Label, ARIA_LABEL);
         addAttribute(GlobalAttributes.Type, "button");
 
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
 
         return (T) div;
     }

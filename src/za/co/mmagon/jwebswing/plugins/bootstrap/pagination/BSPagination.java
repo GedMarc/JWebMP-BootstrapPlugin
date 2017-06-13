@@ -59,7 +59,7 @@ public class BSPagination<J extends BSPagination>
     {
         setTag("nav");
         addAttribute(GlobalAttributes.Aria_Label, "bootstrap pagination");
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -74,7 +74,7 @@ public class BSPagination<J extends BSPagination>
     {
         this();
         getPageList().addClass(sizing);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -89,7 +89,7 @@ public class BSPagination<J extends BSPagination>
     {
         this();
         getPageList().addClass(alignment);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -106,7 +106,7 @@ public class BSPagination<J extends BSPagination>
         this();
         getPageList().addClass(sizing);
         getPageList().addClass(alignment);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

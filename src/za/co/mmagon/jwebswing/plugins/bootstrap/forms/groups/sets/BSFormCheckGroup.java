@@ -52,7 +52,7 @@ public class BSFormCheckGroup<J extends BSFormCheckGroup> extends BSFormGroup<BS
     {
         super(label, inputComponent, helpText);
         inputComponent.addAttribute("value", value);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

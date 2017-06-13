@@ -69,7 +69,7 @@ public class BSMedia<J extends BSMedia> extends Div<BSMediaChildren, BSMediaAttr
     public BSMedia()
     {
         addClass(BSComponentMediaOptions.Media);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

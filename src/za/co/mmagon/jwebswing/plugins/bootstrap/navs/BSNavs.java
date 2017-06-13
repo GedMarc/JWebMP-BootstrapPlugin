@@ -53,7 +53,7 @@ public class BSNavs<J extends BSNavs>
         setTag("nav");
         addClass(BSComponentNavsOptions.Nav);
         addAttribute(BSNavsAttributes.Role, "navigation");
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

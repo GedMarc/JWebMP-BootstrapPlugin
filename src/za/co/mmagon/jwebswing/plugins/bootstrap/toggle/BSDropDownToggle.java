@@ -56,7 +56,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
         setTag(titleItem.getTag());
         setTitle(titleItem);
         setContents(contents);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -71,7 +71,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
         setTag(titleItem.getTag());
         setTitle(titleItem);
         setContents(contents);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

@@ -77,7 +77,7 @@ public class BSModal<J extends BSModal>
         addAttribute(BSModalAttributes.Role, "dialog");
         addAttribute(BSModalAttributes.TabIndex, "-1");
         addAttribute(GlobalAttributes.Aria_Hidden, "true");
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     @Override

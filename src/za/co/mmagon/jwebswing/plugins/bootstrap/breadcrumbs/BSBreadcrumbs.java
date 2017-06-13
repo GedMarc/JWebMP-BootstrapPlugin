@@ -45,7 +45,7 @@ public class BSBreadcrumbs extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttr
     public BSBreadcrumbs()
     {
         addClass(BSComponentBreadcrumbOptions.Breadcrumb);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     @Override

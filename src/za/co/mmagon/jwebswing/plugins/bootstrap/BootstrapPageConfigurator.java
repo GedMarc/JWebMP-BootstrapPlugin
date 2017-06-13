@@ -132,7 +132,7 @@ public class BootstrapPageConfigurator extends PageConfigurator
      * @param component
      * @param bootstrapRequired
      */
-    public static void setBootstrapRequired(ComponentHierarchyBase component, Boolean bootstrapRequired)
+    public static void setRequired(ComponentHierarchyBase component, Boolean bootstrapRequired)
     {
         component.getProperties().put(BootstrapEnabledString, bootstrapRequired);
     }

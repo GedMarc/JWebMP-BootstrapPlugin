@@ -59,7 +59,7 @@ public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttr
         {
             addClass(badgeOption);
         }
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -83,7 +83,7 @@ public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttr
         {
             addClass(badgeOption);
         }
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

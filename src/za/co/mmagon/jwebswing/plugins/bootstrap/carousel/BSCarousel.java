@@ -84,7 +84,7 @@ public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BS
     public BSCarousel()
     {
         addFeature(getFeature());
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

@@ -49,6 +49,6 @@ public class BSRow extends Div<GlobalChildren, NoAttributes, GlobalFeatures, Glo
     public BSRow()
     {
         addClass(BSComponentDefaultOptions.Row);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 }

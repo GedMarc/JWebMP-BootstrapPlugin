@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -47,7 +47,7 @@ public class BSColumn extends Div
                 addClass(columnOption.toString());
             }
         }
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -61,4 +61,16 @@ public class BSColumn extends Div
     {
         return new BSColumn(columnOptions);
     }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+
+        return false;
+    }
+
 }

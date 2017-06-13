@@ -54,7 +54,7 @@ public class BSAccordion<J extends BSAccordion> extends Div<BSAccordionChildren,
     @SuppressWarnings("")
     public BSAccordion()
     {
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
         addAttribute(BSAccordionAttributes.Role, "tablist");
         addAttribute(BSAccordionAttributes.Aria_Multiselectable, "true");
     }

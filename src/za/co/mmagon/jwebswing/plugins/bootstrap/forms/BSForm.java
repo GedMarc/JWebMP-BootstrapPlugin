@@ -50,7 +50,7 @@ public class BSForm<J extends BSForm> extends Div<BSFormChildren, BSFormAttribut
     public BSForm()
     {
         setTag("form");
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

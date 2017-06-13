@@ -42,7 +42,7 @@ public class BSInput
      */
     public BSInput()
     {
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -53,7 +53,7 @@ public class BSInput
     public BSInput(InputTypes inputType)
     {
         super(inputType);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     @Override

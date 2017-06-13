@@ -148,7 +148,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
         this.inputComponent = inputComponent;
         this.helpText = new BSFormHelpText(helpText);
         addClass(BSComponentFormGroupOptions.Form_Group);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -164,7 +164,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
         this.inputComponent = inputComponent;
         this.helpText = new BSFormHelpText(helpText);
         addClass(BSComponentFormGroupOptions.Form_Group);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -180,7 +180,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
         this.inputComponent = inputComponent;
         this.helpText = new BSFormHelpText(helpText);
         addClass(BSComponentFormGroupOptions.Form_Group);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -196,7 +196,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
         this.inputComponent = inputComponent;
         this.helpText = new BSFormHelpText(helpText);
         addClass(BSComponentFormGroupOptions.Form_Group);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

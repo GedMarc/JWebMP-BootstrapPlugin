@@ -66,7 +66,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay>
     {
 
         this(0, 100, 0);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

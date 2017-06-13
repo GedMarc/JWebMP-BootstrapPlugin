@@ -42,7 +42,7 @@ public class BSFormLabel<J extends BSFormLabel> extends Label<J>
     public BSFormLabel()
     {
         this(null);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -53,7 +53,7 @@ public class BSFormLabel<J extends BSFormLabel> extends Label<J>
     public BSFormLabel(String label)
     {
         this(label, null);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -66,7 +66,7 @@ public class BSFormLabel<J extends BSFormLabel> extends Label<J>
     {
         super(label, forInputComponent);
         addClass(BSComponentFormOptions.Col_Form_Label);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
 
     }
 

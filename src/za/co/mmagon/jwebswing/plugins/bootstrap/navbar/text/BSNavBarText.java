@@ -43,13 +43,13 @@ public class BSNavBarText extends Span implements BSNavBarChildren
     public BSNavBarText()
     {
         addClass(BSComponentNavBarOptions.Navbar_Text);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     public BSNavBarText(String text)
     {
         super(text);
         addClass(BSComponentNavBarOptions.Navbar_Text);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 }

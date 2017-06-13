@@ -60,7 +60,7 @@ public class BSJumbotron<J extends BSJumbotron>
     {
         super(text);
         addClass(BSComponentJumbotronOptions.Jumbotron);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

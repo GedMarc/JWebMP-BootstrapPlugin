@@ -53,7 +53,7 @@ public class BSButton<J extends BSButton> extends Button<BSButtonChildren, BSBut
     {
         addClass(BSComponentButtonOptions.Btn);
         addAttribute(GlobalAttributes.Type, "button");
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

@@ -64,7 +64,7 @@ public class BSContainer<J extends BSContainer>
     public BSContainer(BSContainerType type)
     {
         addClass(type.toString());
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

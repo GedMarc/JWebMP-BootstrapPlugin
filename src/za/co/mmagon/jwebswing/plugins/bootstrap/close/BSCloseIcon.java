@@ -59,7 +59,7 @@ public class BSCloseIcon extends Button
         addClass(BSComponentCloseIconOptions.Close);
         addAttribute(GlobalAttributes.Type, "button");
         getCloseIcon();
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

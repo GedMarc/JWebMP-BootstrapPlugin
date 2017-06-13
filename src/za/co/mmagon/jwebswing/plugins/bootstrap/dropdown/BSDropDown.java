@@ -66,7 +66,7 @@ public class BSDropDown<J extends BSDropDown>
     public BSDropDown()
     {
         addClass(BSComponentDropDownOptions.Dropdown);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -78,7 +78,7 @@ public class BSDropDown<J extends BSDropDown>
     {
         this();
         setDropdownButton(link);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -90,7 +90,7 @@ public class BSDropDown<J extends BSDropDown>
     {
         this();
         setDropdownButton(button);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

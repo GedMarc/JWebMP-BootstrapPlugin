@@ -51,7 +51,7 @@ public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttri
     {
         addAttribute(BSAlertAttributes.Role, "alert");
         addClass(BSComponentAlertOptions.Alert);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

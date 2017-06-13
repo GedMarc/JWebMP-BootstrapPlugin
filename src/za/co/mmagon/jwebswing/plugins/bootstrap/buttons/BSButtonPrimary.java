@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons;
  * @version 1.0
  *
  */
-public class BSButtonPrimary extends BSButton
+public class BSButtonPrimary<J extends BSButtonPrimary> extends BSButton<J>
 {
 
     private static final long serialVersionUID = 1L;

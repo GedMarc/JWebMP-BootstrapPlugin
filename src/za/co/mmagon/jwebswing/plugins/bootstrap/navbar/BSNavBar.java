@@ -64,7 +64,7 @@ public class BSNavBar<J extends BSNavBar>
                 addClass(colourScheme);
             }
         }
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**

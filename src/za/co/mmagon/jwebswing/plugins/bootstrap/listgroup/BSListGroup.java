@@ -50,7 +50,7 @@ public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes,
     {
         setTag("ul");
         addClass(BSComponentListGroupOptions.List_Group);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     @Override

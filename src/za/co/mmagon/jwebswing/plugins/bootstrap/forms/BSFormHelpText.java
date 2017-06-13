@@ -45,7 +45,7 @@ public class BSFormHelpText<J extends BSFormHelpText> extends SmallText<J>
     {
         super(text);
         addClass(BSComponentDefaultOptions.Text_Muted);
-        BootstrapPageConfigurator.setBootstrapRequired(this, true);
+        BootstrapPageConfigurator.setRequired(this, true);
     }
 
     /**
