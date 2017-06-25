@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -36,9 +36,10 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Pagination", description = "Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance, such as in search results or inboxes.",
-        url = "https://v4-alpha.getbootstrap.com/components/pagination/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSPagination<J extends BSPagination>
-        extends Div<BSPaginationChildren, BSPaginationAttributes, GlobalFeatures, GlobalEvents, J> implements IBSPagination
+                      url = "https://v4-alpha.getbootstrap.com/components/pagination/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSPagination<J extends BSPagination<J>>
+        extends Div<BSPaginationChildren, BSPaginationAttributes, GlobalFeatures, GlobalEvents, J>
+        implements IBSPagination
 {
 
     private static final long serialVersionUID = 1L;

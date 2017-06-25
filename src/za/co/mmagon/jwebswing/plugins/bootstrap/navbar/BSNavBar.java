@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,9 +32,10 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarTogglerSi
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Navbar", description = "The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive behaviors.",
-        url = "https://v4-alpha.getbootstrap.com/components/navbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSNavBar<J extends BSNavBar>
-        extends Div<BSNavBarChildren, BSNavBarAttributes, GlobalFeatures, BSNavBarEvents, J> implements IBSNavBar
+                      url = "https://v4-alpha.getbootstrap.com/components/navbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSNavBar<J extends BSNavBar<J>>
+        extends Div<BSNavBarChildren, BSNavBarAttributes, GlobalFeatures, BSNavBarEvents, J>
+        implements IBSNavBar
 {
 
     private static final long serialVersionUID = 1L;

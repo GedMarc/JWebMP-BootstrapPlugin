@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * @since 16 Feb 2017
  *
  */
-public class BSAnyChild<A extends Enum & AttributeDefinitions> extends Div<GlobalChildren, A, GlobalFeatures, GlobalEvents, BSAnyChild>
+public class BSAnyChild<A extends Enum & AttributeDefinitions> extends Div<GlobalChildren, A, GlobalFeatures, GlobalEvents, BSAnyChild<A>>
         implements Serializable
 {
 

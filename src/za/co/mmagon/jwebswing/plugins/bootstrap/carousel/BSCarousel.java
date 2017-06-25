@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -41,8 +41,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Carousel", description = " slideshow component for cycling through elements—images or slides of text—like a carousel.",
-        url = "https://v4-alpha.getbootstrap.com/components/carousel/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSCarousel<J extends BSCarousel> extends Div<BSCarouselChildren, BSCarouselAttributes, BSCarouselFeatures, BSCarouselEvents, J> implements IBSCarousel<J>
+                      url = "https://v4-alpha.getbootstrap.com/components/carousel/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSCarousel<J extends BSCarousel<J>>
+        extends Div<BSCarouselChildren, BSCarouselAttributes, BSCarouselFeatures, BSCarouselEvents, J> implements IBSCarousel<J>
 {
 
     private static final long serialVersionUID = 1L;

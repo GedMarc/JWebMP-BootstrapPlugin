@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -35,8 +35,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Jumbotron", description = "A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.",
-        url = "https://v4-alpha.getbootstrap.com/components/jumbotron/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSJumbotron<J extends BSJumbotron>
+                      url = "https://v4-alpha.getbootstrap.com/components/jumbotron/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSJumbotron<J extends BSJumbotron<J>>
         extends Div<GlobalChildren, BSJumbotronAttributes, GlobalFeatures, GlobalEvents, J>
 {
 

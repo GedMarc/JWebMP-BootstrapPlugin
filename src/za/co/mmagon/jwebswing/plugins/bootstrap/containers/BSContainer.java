@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -41,7 +41,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
  * @version 1.0
  *
  */
-public class BSContainer<J extends BSContainer>
+public class BSContainer<J extends BSContainer<J>>
         extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J>
         implements BSNavBarChildren, BSFormChildren, BSFormGroupChildren
 {

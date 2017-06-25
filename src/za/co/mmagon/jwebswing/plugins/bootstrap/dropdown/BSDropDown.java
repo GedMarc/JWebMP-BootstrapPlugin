@@ -44,7 +44,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
  */
 @ComponentInformation(name = "Bootstrap Dropdown", description = "Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.",
                       url = "https://v4-alpha.getbootstrap.com/components/dropdowns/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSDropDown<J extends BSDropDown>
+public class BSDropDown<J extends BSDropDown<J>>
         extends Div<BSDropDownChildren, BSDropDownAttributes, GlobalFeatures, BSDropDownEvents, J> implements IBSDropDown<J>
 {
 
@@ -63,6 +63,7 @@ public class BSDropDown<J extends BSDropDown>
     /**
      * Construct a new bootstrap drop down
      */
+    @SuppressWarnings("")
     public BSDropDown()
     {
         addClass(BSComponentDropDownOptions.Dropdown);
@@ -74,6 +75,7 @@ public class BSDropDown<J extends BSDropDown>
      *
      * @param link
      */
+    @SuppressWarnings("")
     public BSDropDown(BSDropDownLink link)
     {
         this();
@@ -86,6 +88,7 @@ public class BSDropDown<J extends BSDropDown>
      *
      * @param button
      */
+    @SuppressWarnings("")
     public BSDropDown(BSDropDownButton button)
     {
         this();
@@ -182,7 +185,6 @@ public class BSDropDown<J extends BSDropDown>
     /**
      * Sets the drop down dropdownMenu button
      *
-     * @param <T>            bs drop down children type
      * @param dropdownButton
      *
      * @return
@@ -217,5 +219,4 @@ public class BSDropDown<J extends BSDropDown>
         }
         super.preConfigure();
     }
-
 }

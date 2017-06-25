@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,8 +32,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColo
  * @since 29 Aug 2015
  * @version 1.0
  */
-public class BSProgressBarDisplay<J extends BSProgressBarDisplay>
-        extends Div<GlobalChildren, BSProgressBarDisplayAttributes, BSProgressBarDisplayFeatures, BSProgressBarDisplayEvents, J> implements IBSProgressBarDisplay<J>
+public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
+        extends Div<GlobalChildren, BSProgressBarDisplayAttributes, BSProgressBarDisplayFeatures, BSProgressBarDisplayEvents, J>
+        implements IBSProgressBarDisplay<J>
 {
 
     private static final long serialVersionUID = 1L;

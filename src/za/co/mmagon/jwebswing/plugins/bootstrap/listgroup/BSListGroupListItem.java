@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,7 @@ import za.co.mmagon.jwebswing.base.html.ListItem;
  * @since 19 Jan 2017
  *
  */
-public class BSListGroupListItem<J extends BSListGroupListItem>
+public class BSListGroupListItem<J extends BSListGroupListItem<J>>
         extends ListItem<J>
         implements BSListGroupChildren, IBSListGroupListItem<J>
 {

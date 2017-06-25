@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -35,9 +35,10 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar.BSProgressBarDis
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Progress Bars", description = "Use our custom progress component for displaying simple or complex progress bars.",
-        url = "https://v4-alpha.getbootstrap.com/components/progress/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSProgressBar<J extends BSProgressBar>
-        extends Div<BSProgressBarChildren, BSProgressBarAttributes, BSProgressBarFeatures, BSProgressBarEvents, J> implements IBSProgressBar<J>
+                      url = "https://v4-alpha.getbootstrap.com/components/progress/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSProgressBar<J extends BSProgressBar<J>>
+        extends Div<BSProgressBarChildren, BSProgressBarAttributes, BSProgressBarFeatures, BSProgressBarEvents, J>
+        implements IBSProgressBar<J>
 {
 
     private static final long serialVersionUID = 1L;

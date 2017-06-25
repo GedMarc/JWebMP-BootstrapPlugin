@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,8 @@ import za.co.mmagon.jwebswing.base.html.Paragraph;
  * @since 15 Feb 2017
  *
  */
-public class BSCardText<J extends BSCardText> extends Paragraph<J>
+public class BSCardText<J extends BSCardText<J>>
+        extends Paragraph<J>
         implements BSCardChildren
 {
 

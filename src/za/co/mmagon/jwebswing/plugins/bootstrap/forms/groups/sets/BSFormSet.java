@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -30,7 +30,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGrou
  * @since 17 Jan 2017
  * @version 1.0
  */
-public class BSFormSet<J extends BSFormSet> extends Div<BSFormSetChildren, BSFormSetAttributes, GlobalFeatures, GlobalEvents, J>
+public class BSFormSet<J extends BSFormSet<J>>
+        extends Div<BSFormSetChildren, BSFormSetAttributes, GlobalFeatures, GlobalEvents, J>
         implements BSFormChildren
 {
 

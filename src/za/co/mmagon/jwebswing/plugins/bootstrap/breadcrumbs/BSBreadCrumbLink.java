@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * @since 16 Feb 2017
  *
  */
-public class BSBreadCrumbLink<J extends BSBreadCrumbLink> extends Link<J>
+public class BSBreadCrumbLink<J extends BSBreadCrumbLink<J>>
+        extends Link<J>
 {
 
     private static final long serialVersionUID = 1L;

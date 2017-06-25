@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -30,7 +30,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  * @since 20 Feb 2017
  *
  */
-public class BSFormLabel<J extends BSFormLabel> extends Label<J>
+public class BSFormLabel<J extends BSFormLabel<J>>
+        extends Label<J>
         implements BSFormGroupChildren
 {
 

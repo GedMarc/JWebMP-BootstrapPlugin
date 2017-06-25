@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -33,9 +33,10 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Badge", description = "Add badges to any list group item to show unread counts, activity, and more with the help of some utilities. Note the justify-content-between utility class and the badge’s placement.",
-        url = "https://v4-alpha.getbootstrap.com/components/badge/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+                      url = "https://v4-alpha.getbootstrap.com/components/badge/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 
-public class BSBadge<J extends BSBadge> extends Span<GlobalChildren, BSBadgeAttributes, J> implements IBSBadge<J>
+public class BSBadge<J extends BSBadge<J>>
+        extends Span<GlobalChildren, BSBadgeAttributes, J> implements IBSBadge<J>
 {
 
     private static final long serialVersionUID = 1L;

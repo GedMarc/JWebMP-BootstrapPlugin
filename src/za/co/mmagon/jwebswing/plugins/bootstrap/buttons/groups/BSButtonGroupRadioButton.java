@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonChildren;
  * @since 16 Feb 2017
  *
  */
-public class BSButtonGroupRadioButton<J extends BSButtonGroupRadioButton> extends InputRadioType<J>
+public class BSButtonGroupRadioButton<J extends BSButtonGroupRadioButton<J>>
+        extends InputRadioType<J>
         implements IBSButtonGroupInput, BSButtonChildren
 {
 

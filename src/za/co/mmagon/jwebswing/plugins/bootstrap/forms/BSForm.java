@@ -37,7 +37,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  */
 @ComponentInformation(name = "Bootstrap Forms", description = "Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.",
                       url = "https://v4-alpha.getbootstrap.com/components/forms/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSForm<J extends BSForm> extends Div<BSFormChildren, BSFormAttributes, GlobalFeatures, BSFormEvents, J>
+public class BSForm<J extends BSForm<J>>
+        extends Div<BSFormChildren, BSFormAttributes, GlobalFeatures, BSFormEvents, J>
 {
 
     private static final long serialVersionUID = 1L;

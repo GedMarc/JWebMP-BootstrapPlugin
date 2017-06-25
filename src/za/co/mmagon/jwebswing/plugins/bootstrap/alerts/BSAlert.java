@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -36,8 +36,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  *
  */
 @ComponentInformation(name = "Bootstrap Alert", description = "rovide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.",
-         url = "https://v4-alpha.getbootstrap.com/components/alerts/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSAlert<J extends BSAlert> extends Div<GlobalChildren, BSAlertAttributes, GlobalFeatures, BSAlertEvents, J> implements IBSAlert<J>
+                      url = "https://v4-alpha.getbootstrap.com/components/alerts/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSAlert<J extends BSAlert<J>>
+        extends Div<GlobalChildren, BSAlertAttributes, GlobalFeatures, BSAlertEvents, J> implements IBSAlert<J>
 {
 
     private static final long serialVersionUID = 1L;

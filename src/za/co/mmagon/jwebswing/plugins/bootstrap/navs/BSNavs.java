@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -33,8 +33,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Navs", description = "Navigation available in Bootstrap share general markup and styles, from the base .nav class to the active and disabled states. Swap modifier classes to switch between each style.",
-        url = "https://v4-alpha.getbootstrap.com/components/navs/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSNavs<J extends BSNavs>
+                      url = "https://v4-alpha.getbootstrap.com/components/navs/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+public class BSNavs<J extends BSNavs<J>>
         extends Div<BSNavsChildren, BSNavsAttributes, GlobalFeatures, GlobalEvents, J>
         implements BSNavBarChildren, IBSNavs
 {

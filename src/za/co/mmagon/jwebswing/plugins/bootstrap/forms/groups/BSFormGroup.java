@@ -45,7 +45,8 @@ import za.co.mmagon.logger.LogFactory;
  * @since 17 Jan 2017
  * @version 1.0
  */
-public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div<BSFormGroupChildren, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
+public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
+        extends Div<BSFormGroupChildren, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
         implements BSFormChildren, IBSFormGroup<T, J>
 {
 
@@ -274,13 +275,13 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup> extends Div
      * @return
      */
     @Override
-    public Component getInputComponent()
+    public T getInputComponent()
     {
         if (inputComponent == null)
         {
             //setInputComponent(new BSInput(InputTypes.Text));
         }
-        return inputComponent;
+        return (T) inputComponent;
     }
 
     /**

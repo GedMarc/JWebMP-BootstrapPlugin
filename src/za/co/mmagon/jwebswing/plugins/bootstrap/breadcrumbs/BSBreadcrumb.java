@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -30,7 +30,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  * @version 1.0
  *
  */
-public class BSBreadcrumb<J extends BSBreadcrumb> extends ListItem<J>
+public class BSBreadcrumb<J extends BSBreadcrumb<J>>
+        extends ListItem<J>
         implements BSBreadcrumbsChildren, IBSBreadcrumb<J>
 {
 

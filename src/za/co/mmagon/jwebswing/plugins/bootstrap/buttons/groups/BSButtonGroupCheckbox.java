@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonChildren;
  * @since 16 Feb 2017
  *
  */
-public class BSButtonGroupCheckbox<J extends BSButtonGroupCheckbox> extends InputCheckBoxType<J>
+public class BSButtonGroupCheckbox<J extends BSButtonGroupCheckbox<J>>
+        extends InputCheckBoxType<J>
         implements IBSButtonGroupInput, BSButtonChildren
 {
 
