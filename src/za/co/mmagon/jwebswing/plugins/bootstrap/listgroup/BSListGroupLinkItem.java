@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -30,7 +30,8 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
  * @since 19 Jan 2017
  *
  */
-public class BSListGroupLinkItem<J extends BSListGroupLinkItem> extends BSListGroupListItem<J>
+public class BSListGroupLinkItem<J extends BSListGroupLinkItem<J>>
+        extends BSListGroupListItem<J>
 {
 
     private static final long serialVersionUID = 1L;

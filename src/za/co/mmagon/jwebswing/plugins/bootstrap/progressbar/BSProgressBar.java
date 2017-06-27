@@ -103,7 +103,7 @@ public class BSProgressBar<J extends BSProgressBar<J>>
         addClass(BSComponentProgressBarOptions.Progress);
         setStriped(striped);
         setActive(active);
-        setProgressBar(null);
+        setProgressBar(progressBar);
         BootstrapPageConfigurator.setRequired(this, true);
     }
 

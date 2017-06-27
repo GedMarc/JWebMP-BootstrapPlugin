@@ -34,8 +34,6 @@
         <group name="JWebSwing Website"/>
         <group name="JWebSwing Plugins"/>
         <group name="Dance Culture Complete"/>
-        <group name="LSM">
-            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/BootstrapPlugin/src/za/co/mmagon/jwebswing/plugins/bootstrap/forms/groups/BSFormGroup.java</file>
-        </group>
+        <group name="LSM"/>
     </open-files>
 </project-private>

@@ -26,7 +26,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons;
  * @version 1.0
  *
  */
-public class BSButtonPrimary<J extends BSButtonPrimary> extends BSButton<J>
+public class BSButtonPrimary<J extends BSButtonPrimary<J>>
+        extends BSButton<J>
 {
 
     private static final long serialVersionUID = 1L;
