@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.carousel;
 
-import java.util.Iterator;
 import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.children.ListChildren;
@@ -33,7 +32,7 @@ public class BSCarouselIndicators extends List<ListChildren, NoAttributes, BSCar
 {
 
     private static final long serialVersionUID = 1L;
-    private BSCarousel carousel;
+	private final BSCarousel carousel;
 
     /**
      * The indicators for the bootstrap carousel
@@ -57,12 +56,11 @@ public class BSCarouselIndicators extends List<ListChildren, NoAttributes, BSCar
         {
             if (this.carousel != null)
             {
-                for (Iterator it = carousel.getSlides().iterator(); it.hasNext();)
-                {
-                    BSCarouselItem slide = (BSCarouselItem) it.next();
-                    BSCarouselIndicatorItem newSlideIndicator = new BSCarouselIndicatorItem(this.carousel.getID(true),
-                            carousel.getSlides().indexOf(slide), carousel.getSlides().indexOf(slide) == carousel.getActiveSlide());
-                    add(newSlideIndicator);
+	            for (int i = 0; i < carousel.getSlides().size(); i++)
+	            {
+	                //BSCarouselItem slide = (BSCarouselItem) carousel.getSlides().get(i);
+	                BSCarouselIndicatorItem newSlideIndicator = new BSCarouselIndicatorItem(carousel.getID(true), i, i == carousel.getActiveSlide());
+		            add(newSlideIndicator);
                 }
             }
         }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * @version 1.0
  */
 @ComponentInformation(name = "Bootstrap Card", description = "A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.",
-        url = "https://v4-alpha.getbootstrap.com/components/card/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/card/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCard extends Div<BSCardChildren, BSCardAttributes, GlobalFeatures, BSCardEvents, BSCard>
 {
 
@@ -50,7 +50,25 @@ public class BSCard extends Div<BSCardChildren, BSCardAttributes, GlobalFeatures
         this(null);
     }
 
-    /**
+	/**
+	 * Cards
+	 * <p>
+	 * A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
+	 * <p>
+	 * If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
+	 * <p>
+	 * This card is inversed
+	 *
+	 * @param inverse
+	 */
+	public BSCard(boolean inverse)
+	{
+		this(null);
+		addClass("card-inverse");
+		addStyle("background-color:transparent;");
+	}
+
+	/**
      * Cards
      * <p>
      * A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.

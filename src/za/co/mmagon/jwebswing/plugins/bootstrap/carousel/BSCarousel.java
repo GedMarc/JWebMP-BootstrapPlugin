@@ -16,8 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.carousel;
 
-import java.util.ArrayList;
-import java.util.List;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
@@ -25,6 +23,10 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Carousel
@@ -134,7 +136,20 @@ public class BSCarousel<J extends BSCarousel<J>>
         return activeSlide;
     }
 
-    /**
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			if (BootstrapPageConfigurator.isBootstrap4())
+			{
+				addClass("carousel slide");
+			}
+		}
+		super.preConfigure();
+	}
+
+	/**
      * Sets the active slide
      *
      * @param activeSlide
@@ -448,9 +463,10 @@ public class BSCarousel<J extends BSCarousel<J>>
                 activeItem = getSlides().get(getActiveSlide());
                 activeItem.addClass(BSComponentDefaultOptions.Active);
             }
-            for (BSCarouselItem slide : getSlides())
-            {
-                getCarouselSlides().add(slide);
+	        for (Iterator<BSCarouselItem> it = getSlides().iterator(); it.hasNext(); )
+	        {
+	            BSCarouselItem slide = it.next();
+		        getCarouselSlides().add(slide);
             }
 
             add(getPreviousLink());

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.HeaderText;
+import za.co.mmagon.jwebswing.base.html.attributes.HeaderTypes;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
@@ -32,7 +34,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * @version 1.0
  *
  */
-public class BSCardHeader extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSCardHeader> implements BSCardChildren
+public class BSCardHeader<J extends BSCardHeader<J>> extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J> implements BSCardChildren
 {
 
     private static final long serialVersionUID = 1L;
@@ -59,5 +61,19 @@ public class BSCardHeader extends Div<GlobalChildren, NoAttributes, GlobalFeatur
         super(text);
         addClass(BSComponentCardOptions.Card_Header);
     }
+	
+	/**
+	 * Header and footer
+	 * <p>
+	 * Add an optional header and/or footer within a card.
+	 *
+	 * @param text
+	 */
+	public BSCardHeader(HeaderTypes headerType, String text)
+	{
+		super();
+		add(new HeaderText(headerType, text));
+		addClass(BSComponentCardOptions.Card_Header);
+	}
 
 }
