@@ -314,7 +314,7 @@ public class BSCarousel<J extends BSCarousel<J>>
         }
         else
         {
-            getAttributesCustom().remove("data-ride");
+            getAttributes().remove("data-ride");
         }
         return (J) this;
     }

@@ -500,7 +500,7 @@ public class BSButton<J extends BSButton<J>>
         else
         {
             getAttributes().remove(BSButtonAttributes.Data_Toggle, "button");
-            getAttributesCustom().remove(InputButtonTypeAttributes.AutoComplete.toString());
+            getAttributes().remove(InputButtonTypeAttributes.AutoComplete.toString());
         }
 
         return (J) this;

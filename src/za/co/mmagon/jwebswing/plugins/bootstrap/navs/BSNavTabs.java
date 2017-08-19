@@ -23,10 +23,12 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
  * @since 19 Jan 2017
  *
  */
-public class BSNavTabs extends BSNavs
+public class BSNavTabs extends BSNavs<BSNavTabs>
 {
 
     private static final long serialVersionUID = 1L;
+    
+    //private Pair<>
 
     /**
      * Tabs Takes the basic nav from above and adds the .nav-tabs class to generate a tabbed interface. Use them to create tabbable regions with our tab JavaScript plugin.
@@ -35,5 +37,9 @@ public class BSNavTabs extends BSNavs
     {
         super();
         addClass(BSComponentNavsOptions.Nav_Tabs);
+        setTag("ul");
+        
     }
+    
+    
 }
