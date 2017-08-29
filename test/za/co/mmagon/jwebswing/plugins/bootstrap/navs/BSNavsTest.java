@@ -16,12 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavPill;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavTabs;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavLinkItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavListItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavItemDropDown;
+import za.co.mmagon.jwebswing.plugins.bootstrap.tabs.BSTabs;
 import org.junit.Test;
 
 /**
@@ -66,7 +61,7 @@ public class BSNavsTest
     @Test
     public void testTabsDropDownInTab()
     {
-        BSNavs nav = new BSNavTabs();
+        BSTabs nav = new BSTabs();
         nav.add(new BSNavItemDropDown());
         System.out.println(nav.toString(true));
     }

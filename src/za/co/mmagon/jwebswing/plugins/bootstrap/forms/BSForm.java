@@ -78,6 +78,7 @@ public class BSForm<J extends BSForm<J>>
     {
         component.addAttribute(AngularAttributes.ngDisabled, getID() + ".$invalid || jw.isLoading");
         component.addAttribute(GlobalAttributes.Type, "submit");
+        component.addStyle("cursor:pointer");
         return component;
     }
 }
