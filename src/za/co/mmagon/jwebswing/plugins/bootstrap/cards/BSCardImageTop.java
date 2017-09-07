@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 
 import za.co.mmagon.jwebswing.base.html.Image;
+import za.co.mmagon.jwebswing.base.html.attributes.ImageAttributes;
 
 /**
  * Image overlays
@@ -49,11 +50,12 @@ public class BSCardImageTop extends Image<BSCardImageTop>
      * <p>
      * Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need .card-inverse (see below).
      *
-     * @param imageUrlk
+     * @param imageUrl
      */
-    public BSCardImageTop(String imageUrlk)
+    public BSCardImageTop(String imageUrl)
     {
-        super(imageUrlk);
+        super(imageUrl);
+        addAttribute(ImageAttributes.Src,imageUrl);
         addClass(BSComponentCardOptions.Card_Img_Top);
     }
 
