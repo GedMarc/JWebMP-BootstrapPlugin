@@ -34,7 +34,7 @@
             <id>unittest-profile</id>
             <properties>
             </properties>
-			<build>
+            <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -78,18 +78,18 @@
             <id>release-profile</id>
             <build>
                 <plugins>
-				<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-jar-plugin</artifactId>
-						<version>3.0.2</version>
-						<executions>
-						  <execution>
-							<goals>
-							  <goal>test-jar</goal>
-							</goals>
-						  </execution>
-						</executions>
-					 </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>3.0.2</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>test-jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
@@ -246,7 +246,18 @@
             <type>test-jar</type>
         </dependency>
     </dependencies>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>ArminSoftwareArtifactory-snapshots</name>
+            <url>https://www.armin.software/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+        <repository>
+            <id>central</id>
+            <name>ArminSoftwareArtifactory-releases</name>
+            <url>https://www.armin.software/artifactory/libs-release-local</url>
+        </repository>
+    </distributionManagement>
     <organization>
         <name>Armin Software</name>
         <url>http://www.armin.software</url>
