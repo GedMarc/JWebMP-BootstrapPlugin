@@ -30,8 +30,12 @@ public enum BootstrapReferencePool implements ReferencePool
 {
     BootstrapCoreReference(new JavascriptReference("BSCore", 3.36, "bower_components/bootstrap/dist/js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", 10),
                            new CSSReference("BSCore", 3.36, "bower_components/bootstrap/dist/css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", 10)),
-    //BootstrapDefaultThemeReference(null, new CSSReference("BSTheme", 3.36, "css/bootstrap/bootstrap-theme.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", 11)),
-
+    
+	
+	//BootstrapDefaultThemeReference(null, new CSSReference("BSTheme", 3.36, "css/bootstrap/bootstrap-theme.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", 11)),
+	
+	BootstrapNumberSpinnerReference(new JavascriptReference("NumberSpinnerReference", 3.36, "bs4custom/bsnumberspinner.js")
+			, new CSSReference("NumberSpinnerReference", 3.36, "bs4custom/bsnumberspinner.js")),
     /*
      * BootstrapSBAdmin2Reference(null, new CSSReference("BSAdmin2Theme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")),
      * BootstrapTimelineReference(null, new CSSReference("BSAdmin2TimelineTheme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css")),

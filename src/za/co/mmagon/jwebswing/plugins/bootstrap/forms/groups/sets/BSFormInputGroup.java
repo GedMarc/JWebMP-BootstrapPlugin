@@ -16,17 +16,16 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
-import java.util.ArrayList;
-import java.util.List;
-import za.co.mmagon.jwebswing.base.html.*;
-import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
-import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextAreaInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Input group
@@ -37,8 +36,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  * @since 18 Jan 2017
  *
  */
-public class BSFormInputGroup
-        extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSFormInputGroup>
+public class BSFormInputGroup<J extends BSFormInputGroup<J>>
+        extends BSFormGroup
         implements BSFormGroupChildren, BSFormSetChildren, BSDropDownMenuChildren, IBSFormInputGroup
 {
 
@@ -51,6 +50,8 @@ public class BSFormInputGroup
      * The input group addons
      */
     private List<Span> inputGroupAddonsRight;
+    
+    private BSInput input;
 
     /**
      * Input group
@@ -62,8 +63,8 @@ public class BSFormInputGroup
      */
     public BSFormInputGroup(BSInput input, BSComponentInputGroupOptions... size)
     {
+    	this.input = input;
         addClass(BSComponentInputGroupOptions.Input_Group);
-        add(input);
         if (size != null && size.length > 0)
         {
             for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
@@ -83,8 +84,8 @@ public class BSFormInputGroup
      */
     public BSFormInputGroup(BSFormSelectInput input, BSComponentInputGroupOptions... size)
     {
+	    this.input = input;
         addClass(BSComponentInputGroupOptions.Input_Group);
-        add(input);
         if (size != null && size.length > 0)
         {
             for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
@@ -102,10 +103,10 @@ public class BSFormInputGroup
      * @param input
      * @param size
      */
-    public BSFormInputGroup(TextArea input, BSComponentInputGroupOptions... size)
+    public BSFormInputGroup(BSFormTextAreaInput input, BSComponentInputGroupOptions... size)
     {
+	    this.input = input;
         addClass(BSComponentInputGroupOptions.Input_Group);
-        add(input);
         if (size != null && size.length > 0)
         {
             for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
@@ -171,16 +172,25 @@ public class BSFormInputGroup
         this.inputGroupAddonsRight = inputGroupAddonsRight;
         return this;
     }
-
-    /**
-     * A neater representation
-     *
-     * @return
-     */
-    public IBSFormInputGroup asMe()
-    {
-        return this;
-    }
+	
+	/**
+	 * Gets the input component
+	 * @return
+	 */
+	public BSInput getInput()
+	{
+		return input;
+	}
+	
+	/**
+	 * Sets the input component
+	 * @param input
+	 */
+	public J setInput(BSInput input)
+	{
+		this.input = input;
+		return (J) this;
+	}
 
     @Override
     public void preConfigure()
@@ -192,7 +202,7 @@ public class BSFormInputGroup
                 inputGroupAddon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
                 add(0, inputGroupAddon);
             });
-
+	        add(getInput());
             getInputGroupAddonsRight().forEach(inputGroupAddon ->
             {
                 inputGroupAddon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);

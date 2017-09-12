@@ -16,6 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
+import za.co.mmagon.jwebswing.base.html.attributes.InputCheckBoxTypeAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
 
@@ -26,17 +27,19 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
  * @since 18 Jan 2017
  *
  */
-public abstract class BSFormCheckInput extends BSInput implements BSFormSetChildren
+public abstract class BSFormCheckInput<J extends BSFormCheckInput>
+		extends BSInput
+		implements BSFormSetChildren
 {
 
     private static final long serialVersionUID = 1L;
-
+	
     /**
      * Defines an item as a check item.
      */
     public BSFormCheckInput()
     {
-
+		super(InputTypes.Checkbox);
     }
 
     /**
@@ -48,5 +51,25 @@ public abstract class BSFormCheckInput extends BSInput implements BSFormSetChild
     {
         super(inputType);
     }
-
+	
+	/**
+	 * Sets the checkbox accordingly
+	 *
+	 * @param checked
+	 *
+	 * @return
+	 */
+	public J setChecked(boolean checked)
+	{
+		if (checked)
+		{
+			addAttribute(InputCheckBoxTypeAttributes.Checked.toString(), null);
+		}
+		else
+		{
+			getAttributes().remove(InputCheckBoxTypeAttributes.Checked.toString());
+		}
+		return (J) this;
+	}
+	
 }

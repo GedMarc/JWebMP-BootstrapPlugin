@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls;
 import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
+import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
@@ -30,8 +31,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  * @since 17 Jan 2017
  *
  */
-public class BSInput
-        extends Input
+public class BSInput<J extends BSInput<J>>
+        extends Input<NoAttributes,J>
         implements BSFormGroupChildren
 {
 

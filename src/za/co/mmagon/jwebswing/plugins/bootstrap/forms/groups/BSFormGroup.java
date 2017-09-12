@@ -26,7 +26,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.*;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
@@ -34,6 +33,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
 import za.co.mmagon.logger.LogFactory;
 
+import javax.annotation.Nullable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -225,11 +225,11 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	@Override
 	public BSFormLabel getLabel()
 	{
-		if (label == null)
+		/*if (label == null)
 		{
 			setLabel(new BSFormLabel("Component Label"));
 			label.addClass(BSComponentColoursOptions.Sr_Only);
-		}
+		}*/
 		return label;
 	}
 	
@@ -253,6 +253,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
+	@Nullable
 	public BSFormHelpText getHelpText()
 	{
 		if (helpText == null)
@@ -293,7 +294,9 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	
 	/**
 	 * Sets the input component to any input type
+	 *
 	 * @param inputComponent
+	 *
 	 * @return
 	 */
 	public J setInputComponent(Input inputComponent)
@@ -351,18 +354,18 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 				}
 			}
 			
-			if (getLabel().getParent() == null)
+			if (getLabel() != null)
 			{
-				getLabel().setForInputComponent(getInputComponent());
-				add(getLabel());
+				if (getLabel().getParent() == null)
+				{
+					getLabel().setForInputComponent(getInputComponent());
+					add(getLabel());
+				}
 			}
 			
 			if (!(getInputComponent() == null))
 			{
-				if (getInputComponent().getParent() == null)
-				{
-					add((BSInput) getInputComponent());
-				}
+				add((BSInput) getInputComponent());
 				if (getHelpText() != null)
 				{
 					getInputComponent().addAttribute(GlobalAttributes.Aria_Describedby, getHelpText().getID());
