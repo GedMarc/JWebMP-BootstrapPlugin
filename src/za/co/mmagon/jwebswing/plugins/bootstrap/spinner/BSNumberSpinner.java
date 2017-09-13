@@ -2,25 +2,19 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.spinner;
 
 import za.co.mmagon.jwebswing.base.html.Button;
 import za.co.mmagon.jwebswing.base.html.Span;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormNumberInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSComponentInputGroupOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormInputGroup<J>
+public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberInput<J>
 {
 	private List<Span> before = new ArrayList<>();
 	private List<Span> after = new ArrayList<>();
 	
-	private BSFormTextInput input;
-	
 	public BSNumberSpinner(BSComponentInputGroupOptions... size)
 	{
-		super(new BSFormTextInput(), size);
-		input = (BSFormTextInput) getInput();
-		
 		addClass("number-spinner");
 		
 		Span lower = new Span();
@@ -54,8 +48,17 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormInputGr
 	{
 		if(!isInitialized())
 		{
-			getInputGroupAddons().addAll(before);
-			getInputGroupAddonsRight().addAll(after);
+			int index = getParent().getChildren().indexOf(this);
+			for(Span addon : getBefore())
+			{
+				addon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
+				getParent().add(index,addon);
+			}
+			for(Span addon : getBefore())
+			{
+				addon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
+				getParent().add(index + 1,addon);
+			}
 		}
 		super.init();
 	}
@@ -84,18 +87,5 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormInputGr
 	{
 		this.after = after;
 		return (J)this;
-	}
-	
-	@Override
-	public BSFormTextInput getInput()
-	{
-		return input;
-	}
-	
-	public J setInput(BSFormTextInput input)
-	{
-		this.input = input;
-		super.setInput(input);
-		return (J) this;
 	}
 }
