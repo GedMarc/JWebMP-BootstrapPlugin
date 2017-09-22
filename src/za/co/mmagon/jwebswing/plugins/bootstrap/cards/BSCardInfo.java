@@ -22,25 +22,24 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
  * Cards include their own variant classes for quickly changing the background-color and border-color of a card. Darker colors require the use of .card-inverse.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCardInfo extends BSCard
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Background variants
-     * <p>
-     * Cards include their own variant classes for quickly changing the background-color and border-color of a card. Darker colors require the use of .card-inverse.
-     */
-    public BSCardInfo()
-    {
-        addClass(BSComponentCardOptions.Card_Inverse);
-        addClass(BSComponentCardOptions.Card_Info);
-    }
-    
-    
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Background variants
+	 * <p>
+	 * Cards include their own variant classes for quickly changing the background-color and border-color of a card. Darker colors require the use of .card-inverse.
+	 */
+	public BSCardInfo()
+	{
+		addClass(BSComponentCardOptions.Card_Inverse);
+		addClass(BSComponentCardOptions.Card_Info);
+	}
+	
+	
 }

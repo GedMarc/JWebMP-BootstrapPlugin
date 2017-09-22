@@ -21,21 +21,19 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButton;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonAttributes;
 
 /**
- *
  * @author GedMarc
  * @since 13 Jan 2017
- *
  */
 public class BSDropDownButton extends BSButton implements BSDropDownChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSDropDownButton()
-    {
-        addAttribute(BSButtonAttributes.Data_Toggle, "dropdown");
-        addAttribute(GlobalAttributes.Aria_HasPopup, "true");
-        addAttribute(GlobalAttributes.Aria_Expanded, "false");
-        addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSDropDownButton()
+	{
+		addAttribute(BSButtonAttributes.Data_Toggle, "dropdown");
+		addAttribute(GlobalAttributes.Aria_HasPopup, "true");
+		addAttribute(GlobalAttributes.Aria_Expanded, "false");
+		addClass(BSComponentDropDownOptions.Dropdown_Toggle);
+	}
 }

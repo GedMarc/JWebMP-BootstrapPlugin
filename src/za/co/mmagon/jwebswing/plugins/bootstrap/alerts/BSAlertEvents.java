@@ -19,10 +19,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 
 /**
- *
  * @author GedMarc
  * @since 16 Feb 2017
- *
  */
 public interface BSAlertEvents extends GlobalEvents
 {

@@ -31,153 +31,154 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOpti
  * An implementation of the Bootstrap Toggle Feature
  * <p>
  * <p>
+ *
  * @author Marc Magon
- * @since 29 Aug 2015
  * @version 1.0
+ * @since 29 Aug 2015
  * @deprecated Bootstrap 3 only
  */
 public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, BSToggleFeatures, BSToggleEvents, BSDropDownToggle>
 {
-
-    private static final long serialVersionUID = 1L;
-    private BSToggleFeature feature;
-    private Component title;
-    private List contents;
-
-    /**
-     * Construct a new toggle item with the given items
-     *
-     * @param titleItem Displays by default, clickable to show the contents
-     * @param contents
-     */
-    public BSDropDownToggle(Link titleItem, List contents)
-    {
-        addFeature(getFeature());
-        setTag(titleItem.getTag());
-        setTitle(titleItem);
-        setContents(contents);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Construct a new toggle item with the given items
-     *
-     * @param titleItem Displays by default, clickable to show the contents
-     * @param contents
-     */
-    public BSDropDownToggle(Button titleItem, List contents)
-    {
-        addFeature(getFeature());
-        setTag(titleItem.getTag());
-        setTitle(titleItem);
-        setContents(contents);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Returns the title component
-     *
-     * @return
-     */
-    public ComponentHierarchyBase getTitle()
-    {
-        return title;
-    }
-
-    /**
-     * Sets the title
-     *
-     * @param title
-     */
-    public final void setTitle(Button title)
-    {
-        getChildren().remove(this.title);
-
-        this.title = title;
-        if (title != null)
-        {
-            getChildren().add(0, this.title);
-            this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-            title.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
-            if (contents != null)
-            {
-                title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
-            }
-        }
-    }
-
-    /**
-     * Sets the title
-     *
-     * @param title
-     */
-    public final void setTitle(Link title)
-    {
-        getChildren().remove(this.title);
-        this.title = title;
-        if (title != null)
-        {
-            getChildren().add(0, this.title);
-            this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-            title.addAttribute(LinkAttributes.Data_Toggle, "dropdown");
-            if (contents != null)
-            {
-                title.addAttribute(LinkAttributes.Data_Target, contents.getID(true));
-            }
-        }
-    }
-
-    /**
-     * Returns the contents
-     *
-     * @return
-     */
-    public List getContents()
-    {
-        return contents;
-    }
-
-    /**
-     * Sets the contents
-     *
-     * @param contents
-     */
-    public final void setContents(List contents)
-    {
-        this.contents = contents;
-
-        if (contents != null)
-        {
-            contents.addClass(BSComponentDropDownOptions.Dropdown_Menu);
-            contents.addClass("");
-            title.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
-            title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
-        }
-    }
-
-    /**
-     * Doesn't return anything
-     *
-     * @return
-     */
-    public final BSToggleFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSToggleFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Doesn't return anything
-     *
-     * @return
-     */
-    @Override
-    public BSToggleOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
+	
+	private static final long serialVersionUID = 1L;
+	private BSToggleFeature feature;
+	private Component title;
+	private List contents;
+	
+	/**
+	 * Construct a new toggle item with the given items
+	 *
+	 * @param titleItem Displays by default, clickable to show the contents
+	 * @param contents
+	 */
+	public BSDropDownToggle(Link titleItem, List contents)
+	{
+		addFeature(getFeature());
+		setTag(titleItem.getTag());
+		setTitle(titleItem);
+		setContents(contents);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Construct a new toggle item with the given items
+	 *
+	 * @param titleItem Displays by default, clickable to show the contents
+	 * @param contents
+	 */
+	public BSDropDownToggle(Button titleItem, List contents)
+	{
+		addFeature(getFeature());
+		setTag(titleItem.getTag());
+		setTitle(titleItem);
+		setContents(contents);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Returns the title component
+	 *
+	 * @return
+	 */
+	public ComponentHierarchyBase getTitle()
+	{
+		return title;
+	}
+	
+	/**
+	 * Sets the title
+	 *
+	 * @param title
+	 */
+	public final void setTitle(Link title)
+	{
+		getChildren().remove(this.title);
+		this.title = title;
+		if (title != null)
+		{
+			getChildren().add(0, this.title);
+			this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
+			title.addAttribute(LinkAttributes.Data_Toggle, "dropdown");
+			if (contents != null)
+			{
+				title.addAttribute(LinkAttributes.Data_Target, contents.getID(true));
+			}
+		}
+	}
+	
+	/**
+	 * Sets the title
+	 *
+	 * @param title
+	 */
+	public final void setTitle(Button title)
+	{
+		getChildren().remove(this.title);
+		
+		this.title = title;
+		if (title != null)
+		{
+			getChildren().add(0, this.title);
+			this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
+			title.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
+			if (contents != null)
+			{
+				title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
+			}
+		}
+	}
+	
+	/**
+	 * Returns the contents
+	 *
+	 * @return
+	 */
+	public List getContents()
+	{
+		return contents;
+	}
+	
+	/**
+	 * Sets the contents
+	 *
+	 * @param contents
+	 */
+	public final void setContents(List contents)
+	{
+		this.contents = contents;
+		
+		if (contents != null)
+		{
+			contents.addClass(BSComponentDropDownOptions.Dropdown_Menu);
+			contents.addClass("");
+			title.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
+			title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
+		}
+	}
+	
+	/**
+	 * Doesn't return anything
+	 *
+	 * @return
+	 */
+	public final BSToggleFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new BSToggleFeature(this);
+		}
+		return feature;
+	}
+	
+	/**
+	 * Doesn't return anything
+	 *
+	 * @return
+	 */
+	@Override
+	public BSToggleOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
 
 }

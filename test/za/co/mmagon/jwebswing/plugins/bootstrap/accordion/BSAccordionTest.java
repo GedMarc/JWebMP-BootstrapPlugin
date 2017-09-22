@@ -26,24 +26,23 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 import org.junit.Test;
 
 /**
- *
  * @author GedMarc
  */
 public class BSAccordionTest
 {
-
-    public BSAccordionTest()
-    {
-    }
-
-    @Test
-    public void testHtml()
-    {
-        BSAccordion accordion = new BSAccordion();
-        accordion.add(new BSAccordionItem());
-        accordion.add(new BSAccordionItem());
-
-        System.out.println(accordion.toString(true));
-    }
+	
+	public BSAccordionTest()
+	{
+	}
+	
+	@Test
+	public void testHtml()
+	{
+		BSAccordion accordion = new BSAccordion();
+		accordion.add(new BSAccordionItem());
+		accordion.add(new BSAccordionItem());
+		
+		System.out.println(accordion.toString(true));
+	}
 
 }

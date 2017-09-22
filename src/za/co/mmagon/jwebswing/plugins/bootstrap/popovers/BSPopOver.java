@@ -37,122 +37,124 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapReferencePool;
  * on a wrapper element. When triggered from hyperlinks that span multiple lines, popovers will be centered. Use white-space: nowrap; on your as to avoid this behavior.
  * <p>
  * <p>
+ *
  * @author Marc Magon
- * @since 17 Jan 2017
  * @version 1.0
+ * @since 17 Jan 2017
  */
 @ComponentInformation(name = "Bootstrap Popovers", description = "Add small overlay content, like those found in iOS, to any element for housing secondary information.",
-        url = "https://v4-alpha.getbootstrap.com/components/popovers/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/popovers/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSPopOver extends Div<BSPopOverChildren, BSPopOverAttributes, BSPopOverFeatures, BSPopOverEvents, BSPopOver> implements IBSPopOver
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * P
-     */
-    private BSPopOverFeature feature;
-
-    /**
-     * Popovers
-     * <p>
-     * Add small overlay content, like those found in iOS, to any element for housing secondary information.
-     * <p>
-     * Overview
-     * <p>
-     * Things to know when using the popover plugin:
-     * <p>
-     * Popovers rely on the 3rd party library Tether for positioning.
-     * <p>
-     * You must include tether.min.js before bootstrap.js in order for popovers to work!
-     * <p>
-     * Popovers require the tooltip plugin as a
-     * <p>
-     * dependency. Popovers are opt-in for performance reasons, so you must initialize them yourself.
-     * <p>
-     * Zero-length title and content values will never show a popover. Specify container: 'body' to avoid
-     * <p>
-     * rendering problems in more complex components (like our input groups, button groups, etc).
-     * <p>
-     * Triggering popovers on hidden elements will not work. Popovers for .disabled or disabled elements must be triggered on a wrapper element. When triggered from hyperlinks that span multiple
-     * lines, popovers will be centered.
-     * <p>
-     * Use white-space: nowrap; on your as to avoid this behavior.
-     * <p>
-     * <p>
-     * @param displayedComponent Shortcut for getOptions().setContent
-     */
-    public BSPopOver(ComponentHierarchyBase displayedComponent)
-    {
-        addFeature(getFeature());
-        getJavascriptReferences().add(BootstrapReferencePool.Bootstrap4TetherReference.getJavaScriptReference());
-        addAttribute(BSPopOverAttributes.Rel, "bs4popover");
-        if (displayedComponent != null)
-        {
-            displayedComponent.setTiny(true);
-            getOptions().setContent(displayedComponent.toString(true));
-        }
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Returns the feature if any is required
-     *
-     * @return
-     */
-    public final BSPopOverFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSPopOverFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Returns the options if any is required
-     *
-     * @return
-     */
-    @Override
-    public final BSPopOverOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
-
-    /**
-     * Neater representation
-     *
-     * @return
-     */
-    public IBSPopOver asMe()
-    {
-        return this;
-    }
-
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (getClass() != obj.getClass())
-        {
-            return false;
-        }
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int hash = 7;
-        hash = 79 * hash + (this.getID().hashCode());
-        return hash;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * P
+	 */
+	private BSPopOverFeature feature;
+	
+	/**
+	 * Popovers
+	 * <p>
+	 * Add small overlay content, like those found in iOS, to any element for housing secondary information.
+	 * <p>
+	 * Overview
+	 * <p>
+	 * Things to know when using the popover plugin:
+	 * <p>
+	 * Popovers rely on the 3rd party library Tether for positioning.
+	 * <p>
+	 * You must include tether.min.js before bootstrap.js in order for popovers to work!
+	 * <p>
+	 * Popovers require the tooltip plugin as a
+	 * <p>
+	 * dependency. Popovers are opt-in for performance reasons, so you must initialize them yourself.
+	 * <p>
+	 * Zero-length title and content values will never show a popover. Specify container: 'body' to avoid
+	 * <p>
+	 * rendering problems in more complex components (like our input groups, button groups, etc).
+	 * <p>
+	 * Triggering popovers on hidden elements will not work. Popovers for .disabled or disabled elements must be triggered on a wrapper element. When triggered from hyperlinks that span multiple
+	 * lines, popovers will be centered.
+	 * <p>
+	 * Use white-space: nowrap; on your as to avoid this behavior.
+	 * <p>
+	 * <p>
+	 *
+	 * @param displayedComponent Shortcut for getOptions().setContent
+	 */
+	public BSPopOver(ComponentHierarchyBase displayedComponent)
+	{
+		addFeature(getFeature());
+		getJavascriptReferences().add(BootstrapReferencePool.Bootstrap4TetherReference.getJavaScriptReference());
+		addAttribute(BSPopOverAttributes.Rel, "bs4popover");
+		if (displayedComponent != null)
+		{
+			displayedComponent.setTiny(true);
+			getOptions().setContent(displayedComponent.toString(true));
+		}
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Returns the feature if any is required
+	 *
+	 * @return
+	 */
+	public final BSPopOverFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new BSPopOverFeature(this);
+		}
+		return feature;
+	}
+	
+	/**
+	 * Returns the options if any is required
+	 *
+	 * @return
+	 */
+	@Override
+	public final BSPopOverOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
+	
+	/**
+	 * Neater representation
+	 *
+	 * @return
+	 */
+	public IBSPopOver asMe()
+	{
+		return this;
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (getClass() != obj.getClass())
+		{
+			return false;
+		}
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (this.getID().hashCode());
+		return hash;
+	}
 
 }

@@ -16,27 +16,26 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSColumn;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSColumn;
 
 /**
- *
  * @author GedMarc
  */
 public class BSColumnTest extends BaseTestClass
 {
-
-    public BSColumnTest()
-    {
-    }
-
-    @Test
-    public void testNewInstance()
-    {
-        BSColumn column = BSColumn.newInstance();
-        column.setID("id");
-        System.out.println(column.toString(true));
-    }
-
+	
+	public BSColumnTest()
+	{
+	}
+	
+	@Test
+	public void testNewInstance()
+	{
+		BSColumn column = BSColumn.newInstance();
+		column.setID("id");
+		System.out.println(column.toString(true));
+	}
+	
 }

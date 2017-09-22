@@ -19,40 +19,39 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 
 /**
- *
  * @author GedMarc
  */
 public enum BSAccordionAttributes implements AttributeDefinitions
 {
-    Role,
-    Aria_Multiselectable,
-    Visibility;
-
-    private BSAccordionAttributes()
-    {
-    }
-
-    private BSAccordionAttributes(boolean isKeyword)
-    {
-        this.isKeyword = isKeyword;
-    }
-
-    private boolean isKeyword;
-
-    @Override
-    public boolean isKeyword()
-    {
-        return isKeyword;
-    }
-
-    /**
-     * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
-     *
-     * @return
-     */
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-').replace("$", "");
-    }
+	Role,
+	Aria_Multiselectable,
+	Visibility;
+	
+	private boolean isKeyword;
+	
+	BSAccordionAttributes()
+	{
+	}
+	
+	BSAccordionAttributes(boolean isKeyword)
+	{
+		this.isKeyword = isKeyword;
+	}
+	
+	@Override
+	public boolean isKeyword()
+	{
+		return isKeyword;
+	}
+	
+	/**
+	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
+	 *
+	 * @return
+	 */
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-').replace("$", "");
+	}
 }

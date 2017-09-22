@@ -25,33 +25,32 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
  *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public class BSPaginationLink extends Link
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A pagination link for an item, usually auto generated from BSPagination
-     *
-     * @param ariaLabel In addition, as pages likely have more than one such navigation section, it’s advisable to provide a descriptive aria-label for the nav to reflect its purpose. For example, if
-     *                  the pagination component is used to navigate between a set of search results, an appropriate label could be aria-label="Search results pages".
-     */
-    public BSPaginationLink(String ariaLabel)
-    {
-        addClass(BSComponentPaginationOptions.Page_Link);
-        addAttribute(LinkAttributes.HRef, "#");
-        addAttribute(GlobalAttributes.Aria_Label, ariaLabel);
-    }
-
-    /**
-     * Returns this items parent (usually, may throw exceptions if used other than BSPagination.createLink();
-     *
-     * @return
-     */
-    public BSPageinationListItem getListItem()
-    {
-        return (BSPageinationListItem) getParent();
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A pagination link for an item, usually auto generated from BSPagination
+	 *
+	 * @param ariaLabel In addition, as pages likely have more than one such navigation section, it’s advisable to provide a descriptive aria-label for the nav to reflect its purpose. For example, if
+	 *                  the pagination component is used to navigate between a set of search results, an appropriate label could be aria-label="Search results pages".
+	 */
+	public BSPaginationLink(String ariaLabel)
+	{
+		addClass(BSComponentPaginationOptions.Page_Link);
+		addAttribute(LinkAttributes.HRef, "#");
+		addAttribute(GlobalAttributes.Aria_Label, ariaLabel);
+	}
+	
+	/**
+	 * Returns this items parent (usually, may throw exceptions if used other than BSPagination.createLink();
+	 *
+	 * @return
+	 */
+	public BSPageinationListItem getListItem()
+	{
+		return (BSPageinationListItem) getParent();
+	}
 }

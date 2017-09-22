@@ -34,7 +34,8 @@ public class BSTab<J extends BSTab> implements Serializable
 	
 	/**
 	 * Construct a new tab with the given items
-	 * @param tabHeader The header of the tab
+	 *
+	 * @param tabHeader  The header of the tab
 	 * @param tabContent The content of the tab
 	 */
 	public BSTab(ListItem tabHeader, Div tabContent)
@@ -45,6 +46,7 @@ public class BSTab<J extends BSTab> implements Serializable
 	
 	/**
 	 * Returns the list item. Nullable
+	 *
 	 * @return
 	 */
 	public ListItem getTabHeader()
@@ -54,6 +56,7 @@ public class BSTab<J extends BSTab> implements Serializable
 	
 	/**
 	 * Sets the tab header
+	 *
 	 * @param tabHeader
 	 */
 	public void setTabHeader(ListItem tabHeader)
@@ -63,6 +66,7 @@ public class BSTab<J extends BSTab> implements Serializable
 	
 	/**
 	 * Gets the tab content. Nullable
+	 *
 	 * @return
 	 */
 	public Div getTabContent()
@@ -72,25 +76,29 @@ public class BSTab<J extends BSTab> implements Serializable
 	
 	/**
 	 * Sets the tab content
+	 *
 	 * @param tabContent
 	 */
 	public void setTabContent(Div tabContent)
 	{
 		this.tabContent = tabContent;
 	}
-
+	
 	/**
 	 * If this tab is set as active
+	 *
 	 * @return
 	 */
 	public boolean isActive()
 	{
 		return active;
 	}
-
+	
 	/**
 	 * Sets this tab as active (try only have one per tab set)
+	 *
 	 * @param active
+	 *
 	 * @return
 	 */
 	public J setActive(boolean active)

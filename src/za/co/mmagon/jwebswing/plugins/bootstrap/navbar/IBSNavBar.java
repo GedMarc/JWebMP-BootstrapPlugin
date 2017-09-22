@@ -17,21 +17,19 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar;
 
 /**
- *
  * @author GedMarc
  * @since 21 Feb 2017
- *
  */
 public interface IBSNavBar
 {
-
-    /**
-     * Sets this navbar's positioning
-     *
-     * @param position
-     *
-     * @return
-     */
-    BSNavBar setPositioning(BSNavBarPositioning position);
+	
+	/**
+	 * Sets this navbar's positioning
+	 *
+	 * @param position
+	 *
+	 * @return
+	 */
+	BSNavBar setPositioning(BSNavBarPositioning position);
 
 }

@@ -26,52 +26,52 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  */
 public enum BSComponentModalOptions implements IBSComponentOptions
 {
-    /**
-     * Represents a Modal
-     */
-    Modal,
-    /**
-     * The content of the modal
-     */
-    Modal_Content,
-    /**
-     * The header of the modal
-     */
-    Modal_Header,
-    /**
-     * The body of the modal
-     */
-    Modal_Body,
-    /**
-     * The footer of the modal
-     */
-    Modal_Footer,
-    /**
-     * The modal title
-     */
-    Modal_Title,
-    /**
-     * The modal dialog
-     */
-    Modal_Dialog,
-    /**
-     * Modal large
-     */
-    Modal_Lg,
-    /**
-     * Modal small
-     */
-    Modal_Sm;
-
-    private BSComponentModalOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Represents a Modal
+	 */
+	Modal,
+	/**
+	 * The content of the modal
+	 */
+	Modal_Content,
+	/**
+	 * The header of the modal
+	 */
+	Modal_Header,
+	/**
+	 * The body of the modal
+	 */
+	Modal_Body,
+	/**
+	 * The footer of the modal
+	 */
+	Modal_Footer,
+	/**
+	 * The modal title
+	 */
+	Modal_Title,
+	/**
+	 * The modal dialog
+	 */
+	Modal_Dialog,
+	/**
+	 * Modal large
+	 */
+	Modal_Lg,
+	/**
+	 * Modal small
+	 */
+	Modal_Sm;
+	
+	BSComponentModalOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

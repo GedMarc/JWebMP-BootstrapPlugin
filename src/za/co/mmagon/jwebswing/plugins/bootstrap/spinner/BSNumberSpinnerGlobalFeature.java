@@ -12,6 +12,7 @@ public class BSNumberSpinnerGlobalFeature extends Feature
 	@Override
 	protected void assignFunctionsToComponent()
 	{
+		//TODO get the spinner going for bs4
 		/*addQuery("$(document).on('click', '.number-spinner button', function () {    \n" +
 				         "\tvar btn = $(this),\n" +
 				         "\t\toldValue = btn.closest('.number-spinner').find('input').val().trim(),\n" +
@@ -29,6 +30,5 @@ public class BSNumberSpinnerGlobalFeature extends Feature
 				         "\tbtn.closest('.number-spinner').find('input').val(newVal);\n" +
 				         "});");
 		*/
-		super.assignFunctionsToComponent();
 	}
 }

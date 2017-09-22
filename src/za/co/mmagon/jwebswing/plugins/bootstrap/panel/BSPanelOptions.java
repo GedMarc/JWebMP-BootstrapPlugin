@@ -22,26 +22,27 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 /**
  * All the options for the tooltip library
  * <p>
+ *
  * @author GedMarc
- * @since Mar 4, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 4, 2015
  */
 public class BSPanelOptions extends JavaScriptPart
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSPanelOptions()
-    {
-
-    }
-
-    @Override
-    public JavascriptPartType getJavascriptType()
-    {
-        return JavascriptPartType.Javascript;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSPanelOptions()
+	{
+	
+	}
+	
+	@Override
+	public JavascriptPartType getJavascriptType()
+	{
+		return JavascriptPartType.Javascript;
+	}
+	
 }

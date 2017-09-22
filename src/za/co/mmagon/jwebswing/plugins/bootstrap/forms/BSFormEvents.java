@@ -19,10 +19,9 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.forms;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 
 /**
- *
  * @author Marc Magon
- * @since 07 Aug 2015
  * @version 1.0
+ * @since 07 Aug 2015
  */
 public interface BSFormEvents extends GlobalEvents
 {

@@ -24,23 +24,22 @@ import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
  * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSAlertAttributes implements AttributeDefinitions
 {
-    Role;
-
-    @Override
-    public boolean isKeyword()
-    {
-        return false;
-    }
-
-    @Override
-    public String toString()
-    {
-        return name();
-    }
+	Role;
+	
+	@Override
+	public boolean isKeyword()
+	{
+		return false;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name();
+	}
 }

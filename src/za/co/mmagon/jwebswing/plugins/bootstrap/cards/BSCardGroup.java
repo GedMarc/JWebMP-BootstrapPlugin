@@ -32,27 +32,26 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * Only applies to small devices and above.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCardGroup extends Div<BSCard, NoAttributes, GlobalFeatures, GlobalEvents, BSCardGroup>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Groups
-     * <p>
-     * Use card groups to render cards as a single, attached element with equal width and height columns.
-     * <p>
-     * By default, card groups use display: table; and table-layout: fixed; to achieve their uniform sizing. However, enabling flexbox mode can switch that to use display: flex; and provide the same
-     * effect.
-     * <p>
-     * Only applies to small devices and above.
-     */
-    public BSCardGroup()
-    {
-        addClass(BSComponentCardOptions.Card_Group);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Groups
+	 * <p>
+	 * Use card groups to render cards as a single, attached element with equal width and height columns.
+	 * <p>
+	 * By default, card groups use display: table; and table-layout: fixed; to achieve their uniform sizing. However, enabling flexbox mode can switch that to use display: flex; and provide the same
+	 * effect.
+	 * <p>
+	 * Only applies to small devices and above.
+	 */
+	public BSCardGroup()
+	{
+		addClass(BSComponentCardOptions.Card_Group);
+	}
 }

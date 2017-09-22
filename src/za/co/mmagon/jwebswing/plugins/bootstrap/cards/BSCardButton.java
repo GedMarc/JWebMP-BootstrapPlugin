@@ -20,35 +20,33 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButton;
 
 /**
- *
  * @author GedMarc
  * @since 16 Feb 2017
- *
  */
 public class BSCardButton extends BSButton implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new card button (a link behaving as a button)
-     */
-    public BSCardButton()
-    {
-        setTag("a");
-        addAttribute(LinkAttributes.HRef.toString(), "#");
-    }
-
-    /**
-     * Constructs a new card button (a link behaving as a button)
-     *
-     * @param text
-     */
-    public BSCardButton(String text)
-    {
-        super(text);
-        setTag("a");
-        addAttribute(LinkAttributes.HRef.toString(), "#");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new card button (a link behaving as a button)
+	 */
+	public BSCardButton()
+	{
+		setTag("a");
+		addAttribute(LinkAttributes.HRef.toString(), "#");
+	}
+	
+	/**
+	 * Constructs a new card button (a link behaving as a button)
+	 *
+	 * @param text
+	 */
+	public BSCardButton(String text)
+	{
+		super(text);
+		setTag("a");
+		addAttribute(LinkAttributes.HRef.toString(), "#");
+	}
+	
 }

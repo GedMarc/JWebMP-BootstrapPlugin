@@ -24,53 +24,52 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Shortcut for writing column Div's and spans for bootstrap
  *
  * @author GedMarc
- * @since Oct 10, 2016
  * @version 1.0
- *
+ * @since Oct 10, 2016
  */
 public class BSColumn extends Div
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Supply a list of column options for this div
-     *
-     * @param columnOptions
-     */
-    public BSColumn(IBSComponentOptions... columnOptions)
-    {
-        if (columnOptions != null)
-        {
-            for (IBSComponentOptions columnOption : columnOptions)
-            {
-                addClass(columnOption.toString());
-            }
-        }
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Constructs a new instance with the given column options
-     *
-     * @param columnOptions
-     *
-     * @return
-     */
-    public static BSColumn newInstance(IBSComponentOptions... columnOptions)
-    {
-        return new BSColumn(columnOptions);
-    }
-
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (obj == null)
-        {
-            return false;
-        }
-
-        return false;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Supply a list of column options for this div
+	 *
+	 * @param columnOptions
+	 */
+	public BSColumn(IBSComponentOptions... columnOptions)
+	{
+		if (columnOptions != null)
+		{
+			for (IBSComponentOptions columnOption : columnOptions)
+			{
+				addClass(columnOption.toString());
+			}
+		}
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Constructs a new instance with the given column options
+	 *
+	 * @param columnOptions
+	 *
+	 * @return
+	 */
+	public static BSColumn newInstance(IBSComponentOptions... columnOptions)
+	{
+		return new BSColumn(columnOptions);
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (obj == null)
+		{
+			return false;
+		}
+		
+		return false;
+	}
 
 }

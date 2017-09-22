@@ -22,77 +22,75 @@ import za.co.mmagon.jwebswing.base.html.HeaderText;
 import za.co.mmagon.jwebswing.base.html.Link;
 
 /**
- *
  * @author GedMarc
  * @since 21 Feb 2017
- *
  */
 public interface IBSMedia
 {
-
-    /**
-     * Returns the body portion of this media object
-     *
-     * @return
-     */
-    Div getMediaBody();
-
-    /**
-     * Returns the component displayed inside the link that is used for display
-     *
-     * @return
-     */
-    Component getMediaComponent();
-
-    /**
-     * Returns a new H4 header
-     *
-     * @return
-     */
-    HeaderText getMediaHeader();
-
-    /**
-     * Returns the associated media link, never null
-     *
-     * @return
-     */
-    Link getMediaLink();
-
-    /**
-     * Sets the media body and adds it to this object
-     *
-     * @param mediaBody
-     *
-     * @return
-     */
-    BSMedia setMediaBody(Div mediaBody);
-
-    /**
-     * Sets the component displayed to the left or right (set that in the link)
-     *
-     * @param mediaComponent
-     *
-     * @return
-     */
-    BSMedia setMediaComponent(Component mediaComponent);
-
-    /**
-     * Sets the header to the required object
-     *
-     * @param mediaHeader
-     *
-     * @return
-     */
-    BSMedia setMediaHeader(HeaderText mediaHeader);
-
-    /**
-     * Sets the media link, and moves the media object into the new link if necessary
-     *
-     * @param mediaLink
-     * @param left
-     *
-     * @return
-     */
-    BSMedia setMediaLink(Link mediaLink, boolean left);
-
+	
+	/**
+	 * Returns the body portion of this media object
+	 *
+	 * @return
+	 */
+	Div getMediaBody();
+	
+	/**
+	 * Returns the component displayed inside the link that is used for display
+	 *
+	 * @return
+	 */
+	Component getMediaComponent();
+	
+	/**
+	 * Returns a new H4 header
+	 *
+	 * @return
+	 */
+	HeaderText getMediaHeader();
+	
+	/**
+	 * Returns the associated media link, never null
+	 *
+	 * @return
+	 */
+	Link getMediaLink();
+	
+	/**
+	 * Sets the media body and adds it to this object
+	 *
+	 * @param mediaBody
+	 *
+	 * @return
+	 */
+	BSMedia setMediaBody(Div mediaBody);
+	
+	/**
+	 * Sets the component displayed to the left or right (set that in the link)
+	 *
+	 * @param mediaComponent
+	 *
+	 * @return
+	 */
+	BSMedia setMediaComponent(Component mediaComponent);
+	
+	/**
+	 * Sets the header to the required object
+	 *
+	 * @param mediaHeader
+	 *
+	 * @return
+	 */
+	BSMedia setMediaHeader(HeaderText mediaHeader);
+	
+	/**
+	 * Sets the media link, and moves the media object into the new link if necessary
+	 *
+	 * @param mediaLink
+	 * @param left
+	 *
+	 * @return
+	 */
+	BSMedia setMediaLink(Link mediaLink, boolean left);
+	
 }

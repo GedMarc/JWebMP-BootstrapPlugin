@@ -20,67 +20,65 @@ import za.co.mmagon.jwebswing.base.html.H5;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
 
 /**
- *
  * @author GedMarc
  * @since 20 Feb 2017
- *
  */
 public class BSAccordionHeader extends H5<BSAccordionHeader>
-        implements BSCardChildren
+		implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-    private BSAccordionHeaderLink accordionHeaderLink;
-
-    /**
-     * An accordion header for the component
-     */
-    public BSAccordionHeader()
-    {
-        this(null);
-    }
-
-    /**
-     * An accordion header for the component
-     *
-     * @param text
-     */
-    public BSAccordionHeader(String text)
-    {
-        super(text);
-        addClass("mb-0");
-    }
-
-    /**
-     * Gets the current link
-     *
-     * @return
-     */
-    public BSAccordionHeaderLink getAccordionHeaderLink()
-    {
-        if (accordionHeaderLink == null)
-        {
-            setAccordionHeaderLink(new BSAccordionHeaderLink());
-        }
-        return accordionHeaderLink;
-    }
-
-    /**
-     * Sets the link
-     *
-     * @param accordionHeaderLink
-     */
-    public void setAccordionHeaderLink(BSAccordionHeaderLink accordionHeaderLink)
-    {
-        if (this.accordionHeaderLink != null)
-        {
-            getChildren().remove(this.accordionHeaderLink);
-        }
-        this.accordionHeaderLink = accordionHeaderLink;
-        if (this.accordionHeaderLink != null)
-        {
-            add(this.accordionHeaderLink);
-        }
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	private BSAccordionHeaderLink accordionHeaderLink;
+	
+	/**
+	 * An accordion header for the component
+	 */
+	public BSAccordionHeader()
+	{
+		this(null);
+	}
+	
+	/**
+	 * An accordion header for the component
+	 *
+	 * @param text
+	 */
+	public BSAccordionHeader(String text)
+	{
+		super(text);
+		addClass("mb-0");
+	}
+	
+	/**
+	 * Gets the current link
+	 *
+	 * @return
+	 */
+	public BSAccordionHeaderLink getAccordionHeaderLink()
+	{
+		if (accordionHeaderLink == null)
+		{
+			setAccordionHeaderLink(new BSAccordionHeaderLink());
+		}
+		return accordionHeaderLink;
+	}
+	
+	/**
+	 * Sets the link
+	 *
+	 * @param accordionHeaderLink
+	 */
+	public void setAccordionHeaderLink(BSAccordionHeaderLink accordionHeaderLink)
+	{
+		if (this.accordionHeaderLink != null)
+		{
+			getChildren().remove(this.accordionHeaderLink);
+		}
+		this.accordionHeaderLink = accordionHeaderLink;
+		if (this.accordionHeaderLink != null)
+		{
+			add(this.accordionHeaderLink);
+		}
+	}
+	
 }

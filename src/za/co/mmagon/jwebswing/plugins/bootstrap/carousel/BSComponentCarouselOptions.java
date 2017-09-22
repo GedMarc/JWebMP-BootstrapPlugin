@@ -26,27 +26,26 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public enum BSComponentCarouselOptions implements IBSComponentOptions
 {
-    Carousel,
-    Carousel_Indicators,
-    Carousel_Item,
-    Carousel_Inner,
-    Carousel_Control,
-    Carousel_Control_Next,
-    Carousel_Control_Next_Icon,
-    Carousel_Control_Prev,
-    Carousel_Control_Prev_Icon,
-    Icon_Next,
-    Icon_Prev;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	Carousel,
+	Carousel_Indicators,
+	Carousel_Item,
+	Carousel_Inner,
+	Carousel_Control,
+	Carousel_Control_Next,
+	Carousel_Control_Next_Icon,
+	Carousel_Control_Prev,
+	Carousel_Control_Prev_Icon,
+	Icon_Next,
+	Icon_Prev;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

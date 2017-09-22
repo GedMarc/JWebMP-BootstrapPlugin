@@ -28,37 +28,36 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * Add an optional header and/or footer within a card.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCardFooter extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSCardFooter> implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Header and footer
-     * <p>
-     * Add an optional header and/or footer within a card.
-     */
-    public BSCardFooter()
-    {
-        this(null);
-    }
-
-    /**
-     * Header and footer
-     * <p>
-     * Add an optional header and/or footer within a card.
-     *
-     * @param text
-     */
-    public BSCardFooter(String text)
-    {
-        super(text);
-
-        addClass(BSComponentCardOptions.Card_Footer);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Header and footer
+	 * <p>
+	 * Add an optional header and/or footer within a card.
+	 */
+	public BSCardFooter()
+	{
+		this(null);
+	}
+	
+	/**
+	 * Header and footer
+	 * <p>
+	 * Add an optional header and/or footer within a card.
+	 *
+	 * @param text
+	 */
+	public BSCardFooter(String text)
+	{
+		super(text);
+		
+		addClass(BSComponentCardOptions.Card_Footer);
+	}
+	
 }

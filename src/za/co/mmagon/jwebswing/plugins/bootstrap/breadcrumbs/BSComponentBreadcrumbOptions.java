@@ -24,34 +24,33 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentBreadcrumbOptions implements IBSComponentOptions
 {
-    /**
-     * Specifies the item as a breadcrumb group
-     */
-    Breadcrumb,
-    /**
-     * Specifies the list item object as a bread crumb item
-     */
-    Breadcrumb_Item,
-    /**
-     * Marks the item as active
-     */
-    Active;
-
-    private BSComponentBreadcrumbOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Specifies the item as a breadcrumb group
+	 */
+	Breadcrumb,
+	/**
+	 * Specifies the list item object as a bread crumb item
+	 */
+	Breadcrumb_Item,
+	/**
+	 * Marks the item as active
+	 */
+	Active;
+	
+	BSComponentBreadcrumbOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

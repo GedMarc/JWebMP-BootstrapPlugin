@@ -25,18 +25,17 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public class BSPaginationList extends List<BSPageinationListItem, NoAttributes, GlobalEvents, BSPaginationList> implements BSPaginationChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * The default paging list
-     */
-    public BSPaginationList()
-    {
-        addClass(BSComponentPaginationOptions.Pagination);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * The default paging list
+	 */
+	public BSPaginationList()
+	{
+		addClass(BSComponentPaginationOptions.Pagination);
+	}
 }

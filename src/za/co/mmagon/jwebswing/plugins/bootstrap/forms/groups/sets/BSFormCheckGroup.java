@@ -25,54 +25,53 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
 /**
  * A bootstrap formatted radio button
  *
- * @author GedMarc
  * @param <J>
  *
+ * @author GedMarc
  * @since 18 Jan 2017
- *
  */
 public class BSFormCheckGroup<J extends BSFormCheckGroup<J>>
-        extends BSFormGroup<BSInput, J>
-        implements BSFormSetChildren
+		extends BSFormGroup<BSInput, J>
+		implements BSFormSetChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new instance of a group of items that denote a single radio button.
-     * <p>
-     * Place inside a BS Form Set
-     *
-     * @param label
-     * @param inputComponent
-     * @param helpText
-     * @param value
-     *
-     * @see BSFormSet
-     */
-    public BSFormCheckGroup(BSFormLabel label, BSFormCheckInput inputComponent, String helpText, String value)
-    {
-        super(label, inputComponent, helpText);
-        inputComponent.addAttribute("value", value);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Adds all the necessary items
-     */
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            addClass(BSComponentFormGroupOptions.Form_Check);
-            getLabel().addClass(BSComponentFormGroupOptions.Form_Check_Label);
-            removeClass(BSComponentFormGroupOptions.Form_Group);
-
-            getLabel().add(getInputComponent());
-            getLabel().setRenderTextBeforeChildren(false);
-            add(getLabel());
-        }
-        super.preConfigure();
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new instance of a group of items that denote a single radio button.
+	 * <p>
+	 * Place inside a BS Form Set
+	 *
+	 * @param label
+	 * @param inputComponent
+	 * @param helpText
+	 * @param value
+	 *
+	 * @see BSFormSet
+	 */
+	public BSFormCheckGroup(BSFormLabel label, BSFormCheckInput inputComponent, String helpText, String value)
+	{
+		super(label, inputComponent, helpText);
+		inputComponent.addAttribute("value", value);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Adds all the necessary items
+	 */
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			addClass(BSComponentFormGroupOptions.Form_Check);
+			getLabel().addClass(BSComponentFormGroupOptions.Form_Check_Label);
+			removeClass(BSComponentFormGroupOptions.Form_Group);
+			
+			getLabel().add(getInputComponent());
+			getLabel().setRenderTextBeforeChildren(false);
+			add(getLabel());
+		}
+		super.preConfigure();
+	}
 }

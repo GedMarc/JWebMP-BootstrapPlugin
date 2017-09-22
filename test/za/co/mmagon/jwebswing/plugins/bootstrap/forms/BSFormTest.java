@@ -18,16 +18,10 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.forms;
 
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
-import za.co.mmagon.jwebswing.base.html.*;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormCheckboxInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormColourInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormDateInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormEmailInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormFileInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormPasswordInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormRadioInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextAreaInput;
+import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.Option;
+import za.co.mmagon.jwebswing.base.html.Span;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.*;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormCheckGroup;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
@@ -35,179 +29,178 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormSet;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormSetLegend;
 
 /**
- *
  * @author GedMarc
  */
 public class BSFormTest extends BaseTestClass
 {
-
-    public BSFormTest()
-    {
-    }
-
-    @Test
-    public void testEmailForm()
-    {
-        BSForm form = new BSForm();
-        form.setID("form");
-        BSFormEmailInput emailForm = new BSFormEmailInput();
-        emailForm.addAttribute("placeholder", "Email Entry");
-        emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
-        group.setID("group");
-        form.add(group);
-        System.out.println(form.toString(true));
-    }
-
-    @Test
-    public void testPasswordEntryForm()
-    {
-        BSForm form = new BSForm();
-        form.setID("form");
-        BSFormPasswordInput emailForm = new BSFormPasswordInput();
-        emailForm.addAttribute("placeholder", "password Entry");
-        emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
-        group.setID("group");
-        form.add(group);
-        System.out.println(form.toString(true));
-    }
-
-    @Test
-    public void testSelectEntryForm()
-    {
-        BSForm form = new BSForm();
-        form.setID("form");
-        BSFormSelectInput emailForm = new BSFormSelectInput();
-        emailForm.add(new Option("Option 1"));
-        emailForm.addAttribute("placeholder", "password Entry");
-        emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
-        group.setID("group");
-        form.add(group);
-        System.out.println(form.toString(true));
-    }
-
-    @Test
-    public void testSelectMultipleEntryForm()
-    {
-        BSForm form = new BSForm();
-        form.setID("form");
-        BSFormSelectInput emailForm = new BSFormSelectInput(true);
-        emailForm.add(new Option("Option 1"));
-        emailForm.addAttribute("placeholder", "password Entry");
-        emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
-        group.setID("group");
-        form.add(group);
-        System.out.println(form.toString(true));
-    }
-
-    @Test
-    public void testTextArea()
-    {
-        BSForm form = new BSForm();
-        form.setID("form");
-        BSFormTextAreaInput emailForm = new BSFormTextAreaInput(3);
-        emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
-        group.setID("group");
-        form.add(group);
-        System.out.println(form.toString(true));
-    }
-
-    @Test
-    public void testFileInput()
-    {
-        BSForm form = new BSForm();
-        form.setID("form");
-        BSFormFileInput emailForm = new BSFormFileInput();
-        emailForm.setID("emailExample");
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
-        group.setID("group");
-        form.add(group);
-        System.out.println(form.toString(true));
-    }
-
-    @Test
-    public void testFieldSet()
-    {
-        BSForm form = new BSForm();
-        form.setID("form");
-        BSFormSet fieldSet = new BSFormSet();
-        form.add(fieldSet);
-
-        BSFormSetLegend legend = new BSFormSetLegend("legend text");
-        fieldSet.add(legend);
-
-        BSFormCheckGroup radioGroup = new BSFormCheckGroup(new BSFormLabel("radioGroup"), new BSFormRadioInput("group 1"), "help text", "value");
-        fieldSet.add(radioGroup);
-
-        BSFormCheckboxInput check = new BSFormCheckboxInput("checkbox");
-        BSFormCheckGroup checkGroup = new BSFormCheckGroup(new BSFormLabel("checkboxGroup"), check, "help text", "value");
-        fieldSet.add(checkGroup);
-
-        System.out.println(form.toString(true));
-
-    }
-
-    @Test
-    public void testInputColour()
-    {
-        BSFormColourInput input = new BSFormColourInput();
-        input.setID("input");
-        input.toString(true);
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
-        group.setID("group");
-        System.out.println(group.toString(true));
-    }
-
-    @Test
-    public void testInputCDate()
-    {
-        BSFormDateInput input = new BSFormDateInput();
-        input.setID("input");
-        input.toString(true);
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
-        group.setID("group");
-
-        System.out.println(group.toString(true));
-    }
-
-    @Test
-    public void testAngular()
-    {
-        BSForm form = new BSForm();
-        BSFormDateInput input = new BSFormDateInput();
-        input.setID("input");
-        input.toString(true);
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
-        group.setID("group");
-        group.setAngularValidation(true);
-
-        group.setPatternMessage(new Div("test pattern message"));
-        group.setRequiredMessage(new Div("test required message"));
-        group.setMinMessage(new Div("test min message"));
-        group.setMaxMessage(new Div("test max message"));
-
-        form.add(group);
-        System.out.println(form.toString(true));
-    }
-
-    @Test
-    public void testInputGroups()
-    {
-        BSFormDateInput input = new BSFormDateInput();
-        input.setID("input");
-        //input.toString(true);
-
-        BSFormInputGroup inputGroup = new BSFormInputGroup(input);
-        inputGroup.getInputGroupAddons().add(new Span("@"));
-        //System.out.println(inputGroup);
-
-        BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), inputGroup, null);
-        group.setID("group");
-
-        System.out.println(group.toString(true));
-    }
+	
+	public BSFormTest()
+	{
+	}
+	
+	@Test
+	public void testEmailForm()
+	{
+		BSForm form = new BSForm();
+		form.setID("form");
+		BSFormEmailInput emailForm = new BSFormEmailInput();
+		emailForm.addAttribute("placeholder", "Email Entry");
+		emailForm.setID("emailExample");
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
+		group.setID("group");
+		form.add(group);
+		System.out.println(form.toString(true));
+	}
+	
+	@Test
+	public void testPasswordEntryForm()
+	{
+		BSForm form = new BSForm();
+		form.setID("form");
+		BSFormPasswordInput emailForm = new BSFormPasswordInput();
+		emailForm.addAttribute("placeholder", "password Entry");
+		emailForm.setID("emailExample");
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
+		group.setID("group");
+		form.add(group);
+		System.out.println(form.toString(true));
+	}
+	
+	@Test
+	public void testSelectEntryForm()
+	{
+		BSForm form = new BSForm();
+		form.setID("form");
+		BSFormSelectInput emailForm = new BSFormSelectInput();
+		emailForm.add(new Option("Option 1"));
+		emailForm.addAttribute("placeholder", "password Entry");
+		emailForm.setID("emailExample");
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
+		group.setID("group");
+		form.add(group);
+		System.out.println(form.toString(true));
+	}
+	
+	@Test
+	public void testSelectMultipleEntryForm()
+	{
+		BSForm form = new BSForm();
+		form.setID("form");
+		BSFormSelectInput emailForm = new BSFormSelectInput(true);
+		emailForm.add(new Option("Option 1"));
+		emailForm.addAttribute("placeholder", "password Entry");
+		emailForm.setID("emailExample");
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
+		group.setID("group");
+		form.add(group);
+		System.out.println(form.toString(true));
+	}
+	
+	@Test
+	public void testTextArea()
+	{
+		BSForm form = new BSForm();
+		form.setID("form");
+		BSFormTextAreaInput emailForm = new BSFormTextAreaInput(3);
+		emailForm.setID("emailExample");
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
+		group.setID("group");
+		form.add(group);
+		System.out.println(form.toString(true));
+	}
+	
+	@Test
+	public void testFileInput()
+	{
+		BSForm form = new BSForm();
+		form.setID("form");
+		BSFormFileInput emailForm = new BSFormFileInput();
+		emailForm.setID("emailExample");
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
+		group.setID("group");
+		form.add(group);
+		System.out.println(form.toString(true));
+	}
+	
+	@Test
+	public void testFieldSet()
+	{
+		BSForm form = new BSForm();
+		form.setID("form");
+		BSFormSet fieldSet = new BSFormSet();
+		form.add(fieldSet);
+		
+		BSFormSetLegend legend = new BSFormSetLegend("legend text");
+		fieldSet.add(legend);
+		
+		BSFormCheckGroup radioGroup = new BSFormCheckGroup(new BSFormLabel("radioGroup"), new BSFormRadioInput("group 1"), "help text", "value");
+		fieldSet.add(radioGroup);
+		
+		BSFormCheckboxInput check = new BSFormCheckboxInput("checkbox");
+		BSFormCheckGroup checkGroup = new BSFormCheckGroup(new BSFormLabel("checkboxGroup"), check, "help text", "value");
+		fieldSet.add(checkGroup);
+		
+		System.out.println(form.toString(true));
+		
+	}
+	
+	@Test
+	public void testInputColour()
+	{
+		BSFormColourInput input = new BSFormColourInput();
+		input.setID("input");
+		input.toString(true);
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
+		group.setID("group");
+		System.out.println(group.toString(true));
+	}
+	
+	@Test
+	public void testInputCDate()
+	{
+		BSFormDateInput input = new BSFormDateInput();
+		input.setID("input");
+		input.toString(true);
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
+		group.setID("group");
+		
+		System.out.println(group.toString(true));
+	}
+	
+	@Test
+	public void testAngular()
+	{
+		BSForm form = new BSForm();
+		BSFormDateInput input = new BSFormDateInput();
+		input.setID("input");
+		input.toString(true);
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), input, null);
+		group.setID("group");
+		group.setAngularValidation(true);
+		
+		group.setPatternMessage(new Div("test pattern message"));
+		group.setRequiredMessage(new Div("test required message"));
+		group.setMinMessage(new Div("test min message"));
+		group.setMaxMessage(new Div("test max message"));
+		
+		form.add(group);
+		System.out.println(form.toString(true));
+	}
+	
+	@Test
+	public void testInputGroups()
+	{
+		BSFormDateInput input = new BSFormDateInput();
+		input.setID("input");
+		//input.toString(true);
+		
+		BSFormInputGroup inputGroup = new BSFormInputGroup(input);
+		inputGroup.getInputGroupAddons().add(new Span("@"));
+		//System.out.println(inputGroup);
+		
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("input"), inputGroup, null);
+		group.setID("group");
+		
+		System.out.println(group.toString(true));
+	}
 }

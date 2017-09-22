@@ -22,48 +22,46 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGrou
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormCheckInput;
 
 /**
- *
  * @author GedMarc
  * @since 18 Jan 2017
- *
  */
 public class BSFormRadioInput extends BSFormCheckInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new Radio Input
-     *
-     * @param groupName
-     */
-    public BSFormRadioInput(String groupName)
-    {
-        super(InputTypes.Radio);
-        addClass(BSComponentFormGroupOptions.Form_Check_Input);
-        addAttribute(GlobalAttributes.Name, groupName);
-        removeClass("form-control");
-    }
-
-    /**
-     * Sets this radio item as checked
-     *
-     * @return
-     */
-    public BSFormRadioInput setChecked()
-    {
-        addAttribute("checked", null);
-        return this;
-    }
-
-    /**
-     * Sets this radio item disabled
-     *
-     * @return
-     */
-    public BSFormRadioInput setDisabled()
-    {
-        addAttribute("disabled", null);
-        return this;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new Radio Input
+	 *
+	 * @param groupName
+	 */
+	public BSFormRadioInput(String groupName)
+	{
+		super(InputTypes.Radio);
+		addClass(BSComponentFormGroupOptions.Form_Check_Input);
+		addAttribute(GlobalAttributes.Name, groupName);
+		removeClass("form-control");
+	}
+	
+	/**
+	 * Sets this radio item as checked
+	 *
+	 * @return
+	 */
+	public BSFormRadioInput setChecked()
+	{
+		addAttribute("checked", null);
+		return this;
+	}
+	
+	/**
+	 * Sets this radio item disabled
+	 *
+	 * @return
+	 */
+	public BSFormRadioInput setDisabled()
+	{
+		addAttribute("disabled", null);
+		return this;
+	}
 }

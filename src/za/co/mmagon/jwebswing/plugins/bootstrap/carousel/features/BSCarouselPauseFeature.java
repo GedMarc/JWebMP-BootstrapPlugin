@@ -26,36 +26,37 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * Stops the carousel from cycling through items.
  *
  * @author MMagon
- * @since 2013/01/16
  * @version 1.0
+ * @since 2013/01/16
  */
 public class BSCarouselPauseFeature extends Feature<BSCarouselOptions, BSCarouselPauseFeature>
-        implements BSCarouselFeatures, GlobalFeatures
+		implements BSCarouselFeatures, GlobalFeatures
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The method name to call
-     */
-    private final String methodName = "pause";
-
-    /**
-     * Constructs a new Carousel Feature - Cycle
-     * <p>
-     * @param forComponent
-     */
-    public BSCarouselPauseFeature(BSCarousel forComponent)
-    {
-        super("BSCarouselPauseFeature");
-        setComponent(forComponent);
-    }
-
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        String requiredString = getComponent().getJQueryID() + "carousel('";
-        requiredString += methodName;
-        requiredString += "');" + getNewLine();
-        addQuery(requiredString);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The method name to call
+	 */
+	private final String methodName = "pause";
+	
+	/**
+	 * Constructs a new Carousel Feature - Cycle
+	 * <p>
+	 *
+	 * @param forComponent
+	 */
+	public BSCarouselPauseFeature(BSCarousel forComponent)
+	{
+		super("BSCarouselPauseFeature");
+		setComponent(forComponent);
+	}
+	
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		String requiredString = getComponent().getJQueryID() + "carousel('";
+		requiredString += methodName;
+		requiredString += "');" + getNewLine();
+		addQuery(requiredString);
+	}
 }

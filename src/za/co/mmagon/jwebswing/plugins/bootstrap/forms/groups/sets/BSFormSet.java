@@ -25,51 +25,53 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGrou
 /**
  * An implementation of
  * <p>
- * @author Marc Magon
+ *
  * @param <J>
- * @since 17 Jan 2017
+ *
+ * @author Marc Magon
  * @version 1.0
+ * @since 17 Jan 2017
  */
 public class BSFormSet<J extends BSFormSet<J>>
-        extends Div<BSFormSetChildren, BSFormSetAttributes, GlobalFeatures, GlobalEvents, J>
-        implements BSFormChildren
+		extends Div<BSFormSetChildren, BSFormSetAttributes, GlobalFeatures, GlobalEvents, J>
+		implements BSFormChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new instance
-     */
-    public BSFormSet()
-    {
-        setTag("fieldset");
-        addClass(BSComponentFormGroupOptions.Form_Group);
-    }
-
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (getClass() != obj.getClass())
-        {
-            return false;
-        }
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int hash = 7;
-        hash = 79 * hash + (this.getID().hashCode());
-        return hash;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new instance
+	 */
+	public BSFormSet()
+	{
+		setTag("fieldset");
+		addClass(BSComponentFormGroupOptions.Form_Group);
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (getClass() != obj.getClass())
+		{
+			return false;
+		}
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (this.getID().hashCode());
+		return hash;
+	}
+	
 }

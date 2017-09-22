@@ -27,24 +27,23 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
  *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public class BSNavBarBrandImage extends Div implements BSNavBarChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Adding images to the .navbar-brand will likely always require custom styles or utilities to properly size. Here are some examples to demonstrate.
-     *
-     * @param image
-     */
-    public BSNavBarBrandImage(Image image)
-    {
-        addClass(BSComponentDisplayOptions.Inline_Block);
-        addClass(BSComponentVerticalAlignmentOptions.Align_Top);
-        addAttribute("alt", "...");
-        add(image);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Adding images to the .navbar-brand will likely always require custom styles or utilities to properly size. Here are some examples to demonstrate.
+	 *
+	 * @param image
+	 */
+	public BSNavBarBrandImage(Image image)
+	{
+		addClass(BSComponentDisplayOptions.Inline_Block);
+		addClass(BSComponentVerticalAlignmentOptions.Align_Top);
+		addAttribute("alt", "...");
+		add(image);
+	}
+	
 }

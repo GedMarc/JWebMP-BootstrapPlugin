@@ -17,19 +17,17 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.popovers;
 
 /**
- *
  * @author GedMarc
  * @since 21 Feb 2017
- *
  */
 public interface IBSPopOver
 {
-
-    /**
-     * Returns the options if any is required
-     *
-     * @return
-     */
-    BSPopOverOptions getOptions();
+	
+	/**
+	 * Returns the options if any is required
+	 *
+	 * @return
+	 */
+	BSPopOverOptions getOptions();
 
 }

@@ -21,73 +21,72 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
+ * @param <J>
  *
  * @author GedMarc
- * @param <J>
  * @since 16 Feb 2017
- *
  */
 public class BSBreadCrumbLink<J extends BSBreadCrumbLink<J>>
-        extends Link<J>
+		extends Link<J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A new default crumb link
-     */
-    public BSBreadCrumbLink()
-    {
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * A new default crumb link
-     *
-     * @param directToAddress
-     */
-    public BSBreadCrumbLink(String directToAddress)
-    {
-        super(directToAddress);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * A new default crumb link
-     *
-     * @param directToAddress
-     * @param targetFrameName
-     */
-    public BSBreadCrumbLink(String directToAddress, String targetFrameName)
-    {
-        super(directToAddress, targetFrameName);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * A new default crumb link
-     *
-     * @param directToAddress
-     * @param targetFrameName
-     * @param text
-     */
-    public BSBreadCrumbLink(String directToAddress, String targetFrameName, String text)
-    {
-        super(directToAddress, targetFrameName, text);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * A new default crumb link
-     *
-     * @param directToAddress
-     * @param targetFrameName
-     * @param component
-     */
-    public BSBreadCrumbLink(String directToAddress, String targetFrameName, ComponentHierarchyBase component)
-    {
-        super(directToAddress, targetFrameName, component);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A new default crumb link
+	 */
+	public BSBreadCrumbLink()
+	{
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * A new default crumb link
+	 *
+	 * @param directToAddress
+	 */
+	public BSBreadCrumbLink(String directToAddress)
+	{
+		super(directToAddress);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * A new default crumb link
+	 *
+	 * @param directToAddress
+	 * @param targetFrameName
+	 */
+	public BSBreadCrumbLink(String directToAddress, String targetFrameName)
+	{
+		super(directToAddress, targetFrameName);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * A new default crumb link
+	 *
+	 * @param directToAddress
+	 * @param targetFrameName
+	 * @param text
+	 */
+	public BSBreadCrumbLink(String directToAddress, String targetFrameName, String text)
+	{
+		super(directToAddress, targetFrameName, text);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * A new default crumb link
+	 *
+	 * @param directToAddress
+	 * @param targetFrameName
+	 * @param component
+	 */
+	public BSBreadCrumbLink(String directToAddress, String targetFrameName, ComponentHierarchyBase component)
+	{
+		super(directToAddress, targetFrameName, component);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
 }

@@ -23,71 +23,71 @@ import za.co.mmagon.jwebswing.base.html.Link;
  * In the same way, links are added and placed next to each other by adding .card-link to an a tag.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
-public class BSCardLink extends Link
-        implements BSCardChildren
+public class BSCardLink<J extends BSCardLink<J>>
+		extends Link<J>
+		implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
-     */
-    public BSCardLink()
-    {
-        addClass(BSComponentCardOptions.Card_Link);
-    }
-
-    /**
-     * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
-     *
-     * @param directToAddress
-     */
-    public BSCardLink(String directToAddress)
-    {
-        super(directToAddress);
-        addClass(BSComponentCardOptions.Card_Link);
-    }
-
-    /**
-     * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
-     *
-     * @param directToAddress
-     * @param targetFrameName
-     */
-    public BSCardLink(String directToAddress, String targetFrameName)
-    {
-        super(directToAddress, targetFrameName);
-        addClass(BSComponentCardOptions.Card_Link);
-    }
-
-    /**
-     * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
-     *
-     * @param directToAddress
-     * @param targetFrameName
-     * @param text
-     */
-    public BSCardLink(String directToAddress, String targetFrameName, String text)
-    {
-        super(directToAddress, targetFrameName, text);
-        addClass(BSComponentCardOptions.Card_Link);
-    }
-
-    /**
-     * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
-     *
-     * @param directToAddress
-     * @param targetFrameName
-     * @param component
-     */
-    public BSCardLink(String directToAddress, String targetFrameName, ComponentHierarchyBase component)
-    {
-        super(directToAddress, targetFrameName, component);
-        addClass(BSComponentCardOptions.Card_Link);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
+	 */
+	public BSCardLink()
+	{
+		addClass(BSComponentCardOptions.Card_Link);
+	}
+	
+	/**
+	 * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
+	 *
+	 * @param directToAddress
+	 */
+	public BSCardLink(String directToAddress)
+	{
+		super(directToAddress);
+		addClass(BSComponentCardOptions.Card_Link);
+	}
+	
+	/**
+	 * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
+	 *
+	 * @param directToAddress
+	 * @param targetFrameName
+	 */
+	public BSCardLink(String directToAddress, String targetFrameName)
+	{
+		super(directToAddress, targetFrameName);
+		addClass(BSComponentCardOptions.Card_Link);
+	}
+	
+	/**
+	 * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
+	 *
+	 * @param directToAddress
+	 * @param targetFrameName
+	 * @param text
+	 */
+	public BSCardLink(String directToAddress, String targetFrameName, String text)
+	{
+		super(directToAddress, targetFrameName, text);
+		addClass(BSComponentCardOptions.Card_Link);
+	}
+	
+	/**
+	 * In the same way, links are added and placed next to each other by adding .card-link to a &lt;a&gt; tag.
+	 *
+	 * @param directToAddress
+	 * @param targetFrameName
+	 * @param component
+	 */
+	public BSCardLink(String directToAddress, String targetFrameName, ComponentHierarchyBase component)
+	{
+		super(directToAddress, targetFrameName, component);
+		addClass(BSComponentCardOptions.Card_Link);
+	}
+	
 }

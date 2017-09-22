@@ -25,25 +25,24 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * not by hovering; this is an intentional design decision.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public enum BSComponentDropDownOptions implements IBSComponentOptions
 {
-    Dropdown,
-    Dropup,
-    Dropdown_Item,
-    Dropdown_Menu,
-    Dropdown_Toggle,
-    Dropdown_Divider,
-    Dropdown_Toggle_Split,
-    Dropdown_Header,
-    Dropdown_Menu_Right;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	Dropdown,
+	Dropup,
+	Dropdown_Item,
+	Dropdown_Menu,
+	Dropdown_Toggle,
+	Dropdown_Divider,
+	Dropdown_Toggle_Split,
+	Dropdown_Header,
+	Dropdown_Menu_Right;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

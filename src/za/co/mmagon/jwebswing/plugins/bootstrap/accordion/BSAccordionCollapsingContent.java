@@ -20,50 +20,48 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
 
 /**
- *
  * @author GedMarc
  * @since 20 Feb 2017
- *
  */
 public class BSAccordionCollapsingContent extends Div
-        implements BSCardChildren
+		implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-    private BSAccordionContent accordionContent;
-
-    /**
-     * The actual content
-     *
-     * @return
-     */
-    public BSAccordionContent getAccordionContent()
-    {
-        if (this.accordionContent == null)
-        {
-            this.accordionContent = new BSAccordionContent();
-        }
-        return accordionContent;
-    }
-
-    /**
-     * The actual content
-     *
-     * @param accordionContent
-     */
-    public void setAccordionContent(BSAccordionContent accordionContent)
-    {
-        this.accordionContent = accordionContent;
-    }
-
-    @Override
-    public void init()
-    {
-        if (!isInitialized())
-        {
-            add(getAccordionContent());
-        }
-        super.init();
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	private BSAccordionContent accordionContent;
+	
+	/**
+	 * The actual content
+	 *
+	 * @return
+	 */
+	public BSAccordionContent getAccordionContent()
+	{
+		if (this.accordionContent == null)
+		{
+			this.accordionContent = new BSAccordionContent();
+		}
+		return accordionContent;
+	}
+	
+	/**
+	 * The actual content
+	 *
+	 * @param accordionContent
+	 */
+	public void setAccordionContent(BSAccordionContent accordionContent)
+	{
+		this.accordionContent = accordionContent;
+	}
+	
+	@Override
+	public void init()
+	{
+		if (!isInitialized())
+		{
+			add(getAccordionContent());
+		}
+		super.init();
+	}
+	
 }

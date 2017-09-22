@@ -16,35 +16,33 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.popovers;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.popovers.BSPopOver;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 
 /**
- *
  * @author GedMarc
  */
 public class BSPopOverTest extends BaseTestClass
 {
-
-    public BSPopOverTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSPopOver popOver = new BSPopOver(null);
-
-        System.out.println(popOver.toString(true));
-        System.out.println(popOver.renderJavascript());
-
-        Page p = getInstance();
-        //p.getOptions().setBootstrapEnabled(true);
-        p.getBody().add(popOver);
-
-        System.out.println(p.toString(true));
-    }
+	
+	public BSPopOverTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSPopOver popOver = new BSPopOver(null);
+		
+		System.out.println(popOver.toString(true));
+		System.out.println(popOver.renderJavascript());
+		
+		Page p = getInstance();
+		//p.getOptions().setBootstrapEnabled(true);
+		p.getBody().add(popOver);
+		
+		System.out.println(p.toString(true));
+	}
 
 }

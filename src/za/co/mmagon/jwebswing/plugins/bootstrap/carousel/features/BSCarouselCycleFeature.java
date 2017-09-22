@@ -26,36 +26,37 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * Cycles through the carousel items from left to right.
  *
  * @author MMagon
- * @since 2013/01/16
  * @version 1.0
+ * @since 2013/01/16
  */
 public class BSCarouselCycleFeature extends Feature<BSCarouselOptions, BSCarouselCycleFeature>
-        implements BSCarouselFeatures, GlobalFeatures
+		implements BSCarouselFeatures, GlobalFeatures
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The method name to call
-     */
-    private final String methodName = "cycle";
-
-    /**
-     * Constructs a new Carousel Feature - Cycle
-     * <p>
-     * @param forComponent
-     */
-    public BSCarouselCycleFeature(BSCarousel forComponent)
-    {
-        super("BSCarouselCycleFeature");
-        setComponent(forComponent);
-    }
-
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        String requiredString = getComponent().getJQueryID() + "carousel('";
-        requiredString += methodName;
-        requiredString += "');" + getNewLine();
-        addQuery(requiredString);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The method name to call
+	 */
+	private final String methodName = "cycle";
+	
+	/**
+	 * Constructs a new Carousel Feature - Cycle
+	 * <p>
+	 *
+	 * @param forComponent
+	 */
+	public BSCarouselCycleFeature(BSCarousel forComponent)
+	{
+		super("BSCarouselCycleFeature");
+		setComponent(forComponent);
+	}
+	
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		String requiredString = getComponent().getJQueryID() + "carousel('";
+		requiredString += methodName;
+		requiredString += "');" + getNewLine();
+		addQuery(requiredString);
+	}
 }

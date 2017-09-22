@@ -32,23 +32,22 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  * Content should be placed within columns, and only columns may be immediate children of rows.
  *
  * @author GedMarc
- * @since Oct 7, 2016
  * @version 1.0
- *
+ * @since Oct 7, 2016
  */
 public class BSRow extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSRow> implements BSFormChildren, BSFormGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Rows are horizontal groups of columns that ensure your columns are lined up properly.
-     * <p>
-     * Content should be placed within columns, and only columns may be immediate children of rows.
-     */
-    public BSRow()
-    {
-        addClass(BSComponentDefaultOptions.Row);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Rows are horizontal groups of columns that ensure your columns are lined up properly.
+	 * <p>
+	 * Content should be placed within columns, and only columns may be immediate children of rows.
+	 */
+	public BSRow()
+	{
+		addClass(BSComponentDefaultOptions.Row);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
 }

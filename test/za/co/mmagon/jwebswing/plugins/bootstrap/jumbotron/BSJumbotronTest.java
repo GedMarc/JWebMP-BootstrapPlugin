@@ -16,27 +16,24 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.jumbotron;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.jumbotron.BSJumbotron;
-import za.co.mmagon.jwebswing.plugins.bootstrap.jumbotron.BSComponentJumbotronOptions;
 import org.junit.Test;
 
 /**
- *
  * @author GedMarc
  */
 public class BSJumbotronTest
 {
-
-    public BSJumbotronTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSJumbotron jumbo = new BSJumbotron(BSComponentJumbotronOptions.Jumbotron);
-
-        System.out.println(jumbo.toString(true));
-    }
+	
+	public BSJumbotronTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSJumbotron jumbo = new BSJumbotron(BSComponentJumbotronOptions.Jumbotron);
+		
+		System.out.println(jumbo.toString(true));
+	}
 
 }

@@ -17,12 +17,10 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups;
 
 /**
- *
  * @author GedMarc
  * @since 16 Feb 2017
- * 
  */
-public interface IBSButtonGroupInput 
+public interface IBSButtonGroupInput
 {
 
 }

@@ -19,24 +19,22 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 
 /**
- *
  * @author GedMarc
  * @since 23 Jan 2017
- *
  */
 public class BSNavListItem extends ListItem implements BSNavsChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a list item with a link item inside
-     *
-     * @param linkItem
-     */
-    public BSNavListItem(BSNavLinkItem linkItem)
-    {
-        add(linkItem);
-        addClass(BSComponentNavsOptions.Nav_Item);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a list item with a link item inside
+	 *
+	 * @param linkItem
+	 */
+	public BSNavListItem(BSNavLinkItem linkItem)
+	{
+		add(linkItem);
+		addClass(BSComponentNavsOptions.Nav_Item);
+	}
 }

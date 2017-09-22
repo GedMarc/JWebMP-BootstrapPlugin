@@ -22,17 +22,16 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
  * Easily clear floats by adding .clearfix to the parent element. Utilizes the micro clearfix as popularized by Nicolas Gallagher. Can also be used as a mixin.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentClearfixOptions implements IBSComponentOptions
 {
-    Clearfix;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase();
-    }
+	Clearfix;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase();
+	}
 }

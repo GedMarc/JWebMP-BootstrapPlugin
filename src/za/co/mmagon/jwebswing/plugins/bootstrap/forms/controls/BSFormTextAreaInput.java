@@ -22,36 +22,34 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGrou
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
 /**
- *
  * @author GedMarc
  * @since 17 Jan 2017
- *
  */
 public class BSFormTextAreaInput extends BSInput
-        implements BSFormGroupChildren
+		implements BSFormGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A bootstrap default form select
-     */
-    public BSFormTextAreaInput()
-    {
-        this(3);
-
-    }
-
-    /**
-     * Constructs a new select input with multiple
-     *
-     * @param linesToShow
-     */
-    public BSFormTextAreaInput(int linesToShow)
-    {
-        super(InputTypes.Text);
-        addAttribute(TextAreaAttributes.Rows, linesToShow);
-        addClass(BSComponentFormGroupOptions.Form_Control);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A bootstrap default form select
+	 */
+	public BSFormTextAreaInput()
+	{
+		this(3);
+		
+	}
+	
+	/**
+	 * Constructs a new select input with multiple
+	 *
+	 * @param linesToShow
+	 */
+	public BSFormTextAreaInput(int linesToShow)
+	{
+		super(InputTypes.Text);
+		addAttribute(TextAreaAttributes.Rows, linesToShow);
+		addClass(BSComponentFormGroupOptions.Form_Control);
+	}
 
 }

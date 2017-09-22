@@ -17,58 +17,57 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.panel;
 
 /**
- *
  * @author GedMarc
- * @since Oct 6, 2016
  * @version 1.0
- * 
+ * @since Oct 6, 2016
  */
-public enum BSPanelThemes 
+public enum BSPanelThemes
 {
-    Info("panel-info"),
-    Warning("panel-warning"),
-    Danger("panel-danger"),
-    Success("panel-success"),
-    Primary("panel-primary"),
-    Secondary("panel-secondary"),
-    Tertiary("panel-tertiary"),
-    Default("panel-default"),
-    
-    Green("panel-green"),
-    Yellow("panel-yellow"),
-    Red("panel-red")
-    ;
-    
-    private BSPanelThemes (String classText)
-    {
-        this.classText = classText;
-    }
-        
-    private String classText;
-
-    /**
-     * Returns the class text
-     * @return 
-     */
-    public String getClassText()
-    {
-        return classText;
-    }
-
-    /**
-     * Sets the class text
-     * @param classText 
-     */
-    public void setClassText(String classText)
-    {
-        this.classText = classText;
-    }
-    
-    @Override
-    public String toString()
-    {
-        return getClassText().toLowerCase();
-    }
-    
-    
+	Info("panel-info"),
+	Warning("panel-warning"),
+	Danger("panel-danger"),
+	Success("panel-success"),
+	Primary("panel-primary"),
+	Secondary("panel-secondary"),
+	Tertiary("panel-tertiary"),
+	Default("panel-default"),
+	
+	Green("panel-green"),
+	Yellow("panel-yellow"),
+	Red("panel-red");
+	
+	private String classText;
+	
+	BSPanelThemes(String classText)
+	{
+		this.classText = classText;
+	}
+	
+	/**
+	 * Returns the class text
+	 *
+	 * @return
+	 */
+	public String getClassText()
+	{
+		return classText;
+	}
+	
+	/**
+	 * Sets the class text
+	 *
+	 * @param classText
+	 */
+	public void setClassText(String classText)
+	{
+		this.classText = classText;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return getClassText().toLowerCase();
+	}
+	
+	
 }

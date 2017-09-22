@@ -29,176 +29,177 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance, such
  * as in search results or inboxes.
  * <p>
- * @author Marc Magon
+ *
  * @param <J>
  *
- * @since 17 Jan 2017
+ * @author Marc Magon
  * @version 1.0
+ * @since 17 Jan 2017
  */
 @ComponentInformation(name = "Bootstrap Pagination", description = "Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance, such as in search results or inboxes.",
-                      url = "https://v4-alpha.getbootstrap.com/components/pagination/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/pagination/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSPagination<J extends BSPagination<J>>
-        extends Div<BSPaginationChildren, BSPaginationAttributes, GlobalFeatures, GlobalEvents, J>
-        implements IBSPagination
+		extends Div<BSPaginationChildren, BSPaginationAttributes, GlobalFeatures, GlobalEvents, J>
+		implements IBSPagination
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * The actual list for the pagination
-     */
-    private BSPaginationList pageList;
-
-    /**
-     * Pagination
-     * <p>
-     * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
-     * such as in search results or inboxes.
-     * <p>
-     */
-    public BSPagination()
-    {
-        setTag("nav");
-        addAttribute(GlobalAttributes.Aria_Label, "bootstrap pagination");
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Pagination
-     * <p>
-     * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
-     * such as in search results or inboxes.
-     *
-     * @param sizing Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
-     */
-    public BSPagination(BSComponentPaginationSizingOptions sizing)
-    {
-        this();
-        getPageList().addClass(sizing);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Pagination
-     * <p>
-     * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
-     * such as in search results or inboxes.
-     *
-     * @param alignment Change the alignment of pagination components with flexbox utilities.
-     */
-    public BSPagination(BSComponentPaginationAlignmentOptions alignment)
-    {
-        this();
-        getPageList().addClass(alignment);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Pagination
-     * <p>
-     * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
-     * such as in search results or inboxes.
-     *
-     * @param alignment Change the alignment of pagination components with flexbox utilities.
-     * @param sizing    Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
-     */
-    public BSPagination(BSComponentPaginationSizingOptions sizing, BSComponentPaginationAlignmentOptions alignment)
-    {
-        this();
-        getPageList().addClass(sizing);
-        getPageList().addClass(alignment);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Creates a new pagination button link.
-     * <p>
-     * Use .getParent() to access the list item object
-     *
-     * @param ariaLabel
-     *
-     * @return
-     */
-    @Override
-    public BSPaginationLink createPageLink(String ariaLabel)
-    {
-        BSPageinationListItem listItem = new BSPageinationListItem();
-        BSPaginationLink newLink = new BSPaginationLink(ariaLabel);
-
-        listItem.add(newLink);
-        getPageList().add(listItem);
-        return newLink;
-
-    }
-
-    /**
-     * A neater view
-     *
-     * @return
-     */
-    public IBSPagination asMe()
-    {
-        return this;
-    }
-
-    /**
-     * The actual list for the pagination
-     *
-     * @return
-     */
-    @Override
-    public final BSPaginationList getPageList()
-    {
-        if (this.pageList == null)
-        {
-            setPageList(new BSPaginationList());
-        }
-        return pageList;
-    }
-
-    /**
-     * The actual list for the pagination
-     *
-     * @param pageList
-     */
-    @Override
-    public void setPageList(BSPaginationList pageList)
-    {
-        if (this.pageList != null)
-        {
-            getChildren().remove(this.pageList);
-        }
-        this.pageList = pageList;
-        if (this.pageList != null)
-        {
-            add(this.pageList);
-        }
-    }
-
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (getClass() != obj.getClass())
-        {
-            return false;
-        }
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int hash = 7;
-        hash = 79 * hash + (this.getID().hashCode());
-        return hash;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * The actual list for the pagination
+	 */
+	private BSPaginationList pageList;
+	
+	/**
+	 * Pagination
+	 * <p>
+	 * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
+	 * such as in search results or inboxes.
+	 * <p>
+	 */
+	public BSPagination()
+	{
+		setTag("nav");
+		addAttribute(GlobalAttributes.Aria_Label, "bootstrap pagination");
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Pagination
+	 * <p>
+	 * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
+	 * such as in search results or inboxes.
+	 *
+	 * @param sizing Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
+	 */
+	public BSPagination(BSComponentPaginationSizingOptions sizing)
+	{
+		this();
+		getPageList().addClass(sizing);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Pagination
+	 * <p>
+	 * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
+	 * such as in search results or inboxes.
+	 *
+	 * @param alignment Change the alignment of pagination components with flexbox utilities.
+	 */
+	public BSPagination(BSComponentPaginationAlignmentOptions alignment)
+	{
+		this();
+		getPageList().addClass(alignment);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Pagination
+	 * <p>
+	 * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
+	 * such as in search results or inboxes.
+	 *
+	 * @param alignment Change the alignment of pagination components with flexbox utilities.
+	 * @param sizing    Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
+	 */
+	public BSPagination(BSComponentPaginationSizingOptions sizing, BSComponentPaginationAlignmentOptions alignment)
+	{
+		this();
+		getPageList().addClass(sizing);
+		getPageList().addClass(alignment);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Creates a new pagination button link.
+	 * <p>
+	 * Use .getParent() to access the list item object
+	 *
+	 * @param ariaLabel
+	 *
+	 * @return
+	 */
+	@Override
+	public BSPaginationLink createPageLink(String ariaLabel)
+	{
+		BSPageinationListItem listItem = new BSPageinationListItem();
+		BSPaginationLink newLink = new BSPaginationLink(ariaLabel);
+		
+		listItem.add(newLink);
+		getPageList().add(listItem);
+		return newLink;
+		
+	}
+	
+	/**
+	 * A neater view
+	 *
+	 * @return
+	 */
+	public IBSPagination asMe()
+	{
+		return this;
+	}
+	
+	/**
+	 * The actual list for the pagination
+	 *
+	 * @return
+	 */
+	@Override
+	public final BSPaginationList getPageList()
+	{
+		if (this.pageList == null)
+		{
+			setPageList(new BSPaginationList());
+		}
+		return pageList;
+	}
+	
+	/**
+	 * The actual list for the pagination
+	 *
+	 * @param pageList
+	 */
+	@Override
+	public void setPageList(BSPaginationList pageList)
+	{
+		if (this.pageList != null)
+		{
+			getChildren().remove(this.pageList);
+		}
+		this.pageList = pageList;
+		if (this.pageList != null)
+		{
+			add(this.pageList);
+		}
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (getClass() != obj.getClass())
+		{
+			return false;
+		}
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (this.getID().hashCode());
+		return hash;
+	}
+	
 }

@@ -22,27 +22,26 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons;
  * Use Bootstrap’s custom button styles for actions in forms, dialogs, and more. Includes support for a handful of contextual variations, sizes, states, and more.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSButtonSuccessOutline extends BSButton
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Indicates a successful or positive action
-     */
-    public BSButtonSuccessOutline()
-    {
-        addClass(BSComponentButtonOptions.Btn_Outline_Success);
-    }
-
-    public BSButtonSuccessOutline(String text)
-    {
-        super(text);
-        addClass(BSComponentButtonOptions.Btn_Outline_Success);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Indicates a successful or positive action
+	 */
+	public BSButtonSuccessOutline()
+	{
+		addClass(BSComponentButtonOptions.Btn_Outline_Success);
+	}
+	
+	public BSButtonSuccessOutline(String text)
+	{
+		super(text);
+		addClass(BSComponentButtonOptions.Btn_Outline_Success);
+	}
+	
 }

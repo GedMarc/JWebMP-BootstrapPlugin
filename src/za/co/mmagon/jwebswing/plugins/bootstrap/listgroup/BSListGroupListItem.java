@@ -21,109 +21,108 @@ import za.co.mmagon.jwebswing.base.html.ListItem;
 /**
  * Basic example The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
  *
- * @author GedMarc
  * @param <J>
  *
+ * @author GedMarc
  * @since 19 Jan 2017
- *
  */
 public class BSListGroupListItem<J extends BSListGroupListItem<J>>
-        extends ListItem<J>
-        implements BSListGroupChildren, IBSListGroupListItem<J>
+		extends ListItem<J>
+		implements BSListGroupChildren, IBSListGroupListItem<J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Basic example The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
-     */
-    public BSListGroupListItem()
-    {
-        addClass(BSComponentListGroupOptions.List_Group_Item);
-    }
-
-    /**
-     * Basic example The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
-     *
-     * @param text
-     */
-    public BSListGroupListItem(String text)
-    {
-        super(text);
-        addClass(BSComponentListGroupOptions.List_Group_Item);
-    }
-
-    /**
-     * Active items Add .active to a .list-group-item to indicate the current active selection.
-     *
-     * @return
-     */
-    @Override
-    public J setActive()
-    {
-        addClass(BSComponentListGroupOptions.Active);
-        return (J) this;
-    }
-
-    /**
-     * Disabled items Add .disabled to a .list-group-item to make it appear disabled. Note that some elements with .disabled will also require custom JavaScript to fully disable their click events
-     * (e.g., links).
-     *
-     * @return
-     */
-    @Override
-    public J setDisabled()
-    {
-        addClass(BSComponentListGroupOptions.Disabled);
-        return (J) this;
-    }
-
-    /**
-     * Contextual classes Use contextual classes to style list items with a stateful background and color.
-     *
-     * @return
-     */
-    @Override
-    public J setSuccess()
-    {
-        addClass(BSComponentListGroupOptions.List_Group_Item_Success);
-        return (J) this;
-    }
-
-    /**
-     * Contextual classes Use contextual classes to style list items with a stateful background and color.
-     *
-     * @return
-     */
-    @Override
-    public J setWarning()
-    {
-        addClass(BSComponentListGroupOptions.List_Group_Item_Warning);
-        return (J) this;
-    }
-
-    /**
-     * Contextual classes Use contextual classes to style list items with a stateful background and color.
-     *
-     * @return
-     */
-    @Override
-    public J setInfo()
-    {
-        addClass(BSComponentListGroupOptions.List_Group_Item_Info);
-        return (J) this;
-    }
-
-    /**
-     * Contextual classes Use contextual classes to style list items with a stateful background and color.
-     *
-     * @return
-     */
-    @Override
-    public J setDanger()
-    {
-        addClass(BSComponentListGroupOptions.List_Group_Item_Danger);
-        return (J) this;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Basic example The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
+	 */
+	public BSListGroupListItem()
+	{
+		addClass(BSComponentListGroupOptions.List_Group_Item);
+	}
+	
+	/**
+	 * Basic example The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
+	 *
+	 * @param text
+	 */
+	public BSListGroupListItem(String text)
+	{
+		super(text);
+		addClass(BSComponentListGroupOptions.List_Group_Item);
+	}
+	
+	/**
+	 * Active items Add .active to a .list-group-item to indicate the current active selection.
+	 *
+	 * @return
+	 */
+	@Override
+	public J setActive()
+	{
+		addClass(BSComponentListGroupOptions.Active);
+		return (J) this;
+	}
+	
+	/**
+	 * Disabled items Add .disabled to a .list-group-item to make it appear disabled. Note that some elements with .disabled will also require custom JavaScript to fully disable their click events
+	 * (e.g., links).
+	 *
+	 * @return
+	 */
+	@Override
+	public J setDisabled()
+	{
+		addClass(BSComponentListGroupOptions.Disabled);
+		return (J) this;
+	}
+	
+	/**
+	 * Contextual classes Use contextual classes to style list items with a stateful background and color.
+	 *
+	 * @return
+	 */
+	@Override
+	public J setSuccess()
+	{
+		addClass(BSComponentListGroupOptions.List_Group_Item_Success);
+		return (J) this;
+	}
+	
+	/**
+	 * Contextual classes Use contextual classes to style list items with a stateful background and color.
+	 *
+	 * @return
+	 */
+	@Override
+	public J setWarning()
+	{
+		addClass(BSComponentListGroupOptions.List_Group_Item_Warning);
+		return (J) this;
+	}
+	
+	/**
+	 * Contextual classes Use contextual classes to style list items with a stateful background and color.
+	 *
+	 * @return
+	 */
+	@Override
+	public J setInfo()
+	{
+		addClass(BSComponentListGroupOptions.List_Group_Item_Info);
+		return (J) this;
+	}
+	
+	/**
+	 * Contextual classes Use contextual classes to style list items with a stateful background and color.
+	 *
+	 * @return
+	 */
+	@Override
+	public J setDanger()
+	{
+		addClass(BSComponentListGroupOptions.List_Group_Item_Danger);
+		return (J) this;
+	}
+	
 }

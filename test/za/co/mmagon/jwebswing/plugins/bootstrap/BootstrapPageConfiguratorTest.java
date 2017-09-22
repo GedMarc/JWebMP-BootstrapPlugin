@@ -29,40 +29,39 @@ import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 
 /**
- *
  * @author GedMarc
  */
 public class BootstrapPageConfiguratorTest extends BaseTestClass
 {
-
-    public BootstrapPageConfiguratorTest()
-    {
-    }
-
-    @Test
-    public void testPageConfiguration()
-    {
-        Page p = getInstance();
-        BootstrapPageConfigurator bpc = new BootstrapPageConfigurator();
-        bpc.configure(p);
-        System.out.println(p.toString(true));
-        Assert.assertEquals("<!DOCTYPE html>\n"
-                + "<html>\n"
-                + "	<head>\n"
-                + "		<meta charset=\"utf-16\">\n"
-                + "		<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n"
-                + "		<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n"
-                + "		\n"
-                + "		\n"
-                + "		<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n"
-                + "	</head>\n"
-                + "	<body id=\"body\">\n"
-                + "		\n"
-                + "		<!-- Priority [Third] Values -->\n"
-                + "		<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n"
-                + "		\n"
-                + "	</body>\n"
-                + "</html>", p.toString(true));
-    }
-
+	
+	public BootstrapPageConfiguratorTest()
+	{
+	}
+	
+	@Test
+	public void testPageConfiguration()
+	{
+		Page p = getInstance();
+		BootstrapPageConfigurator bpc = new BootstrapPageConfigurator();
+		bpc.configure(p);
+		System.out.println(p.toString(true));
+		Assert.assertEquals("<!DOCTYPE html>\n"
+				                    + "<html>\n"
+				                    + "	<head>\n"
+				                    + "		<meta charset=\"utf-16\">\n"
+				                    + "		<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n"
+				                    + "		<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n"
+				                    + "		\n"
+				                    + "		\n"
+				                    + "		<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n"
+				                    + "	</head>\n"
+				                    + "	<body id=\"body\">\n"
+				                    + "		\n"
+				                    + "		<!-- Priority [Third] Values -->\n"
+				                    + "		<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n"
+				                    + "		\n"
+				                    + "	</body>\n"
+				                    + "</html>", p.toString(true));
+	}
+	
 }

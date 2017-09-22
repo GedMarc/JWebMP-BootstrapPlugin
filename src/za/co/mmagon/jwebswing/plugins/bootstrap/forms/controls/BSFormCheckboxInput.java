@@ -19,19 +19,17 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls;
 import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
 
 /**
- *
  * @author GedMarc
  * @since 18 Jan 2017
- *
  */
 public class BSFormCheckboxInput extends BSFormRadioInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSFormCheckboxInput(String groupName)
-    {
-        super(groupName);
-        setInputType(InputTypes.Checkbox);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSFormCheckboxInput(String groupName)
+	{
+		super(groupName);
+		setInputType(InputTypes.Checkbox);
+	}
 }

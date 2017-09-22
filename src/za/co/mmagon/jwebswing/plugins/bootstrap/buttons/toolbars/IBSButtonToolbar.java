@@ -17,21 +17,19 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.toolbars;
 
 /**
- *
  * @author GedMarc
  * @since 16 Feb 2017
- * 
  */
-public interface IBSButtonToolbar 
+public interface IBSButtonToolbar
 {
-
-    /**
-     * Sets the screen reader label for this group
-     *
-     * @param label
-     *
-     * @return
-     */
-    BSButtonToolbar setAriaLabel(String label);
-
+	
+	/**
+	 * Sets the screen reader label for this group
+	 *
+	 * @param label
+	 *
+	 * @return
+	 */
+	BSButtonToolbar setAriaLabel(String label);
+	
 }

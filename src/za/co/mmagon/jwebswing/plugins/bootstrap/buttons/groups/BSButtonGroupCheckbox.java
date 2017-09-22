@@ -21,22 +21,21 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputCheckBoxTypeAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonChildren;
 
 /**
+ * @param <J>
  *
  * @author GedMarc
- * @param <J>
  * @since 16 Feb 2017
- *
  */
 public class BSButtonGroupCheckbox<J extends BSButtonGroupCheckbox<J>>
-        extends InputCheckBoxType<J>
-        implements IBSButtonGroupInput, BSButtonChildren
+		extends InputCheckBoxType<J>
+		implements IBSButtonGroupInput, BSButtonChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSButtonGroupCheckbox()
-    {
-        addAttribute(InputCheckBoxTypeAttributes.AutoComplete, "off");
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSButtonGroupCheckbox()
+	{
+		addAttribute(InputCheckBoxTypeAttributes.AutoComplete, "off");
+	}
 
 }

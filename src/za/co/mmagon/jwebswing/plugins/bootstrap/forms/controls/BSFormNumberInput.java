@@ -17,30 +17,26 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls;
 
 import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
 /**
- *
  * @author GedMarc
  * @since 17 Jan 2017
- *
  */
 public class BSFormNumberInput<J extends BSFormNumberInput<J>> extends BSInput<J>
-        implements BSFormGroupChildren
+		implements BSFormGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A bootstrap default form select
-     */
-    public BSFormNumberInput()
-    {
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A bootstrap default form select
+	 */
+	public BSFormNumberInput()
+	{
 		super(InputTypes.Number);
-	    addClass(BSComponentFormGroupOptions.Form_Control);
-	    addClass(BSComponentDefaultOptions.Text_Center);
-    }
-
+		addClass(BSComponentFormGroupOptions.Form_Control);
+	}
+	
 }

@@ -19,94 +19,92 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar;
 import za.co.mmagon.jwebswing.base.html.Span;
 
 /**
- *
- * @author GedMarc
  * @param <J>
  *
+ * @author GedMarc
  * @since 21 Feb 2017
- *
  */
 public interface IBSProgressBarDisplay<J extends BSProgressBarDisplay>
 {
-
-    /**
-     * Returns this label
-     *
-     * @return
-     */
-    String getLabel();
-
-    /**
-     * Gets the current max value
-     *
-     * @return
-     */
-    double getMax();
-
-    /**
-     * Returns this associated span
-     *
-     * @return
-     */
-    Span getSpan();
-
-    /**
-     * Returns a current theme, default is success
-     *
-     * @return
-     */
-    BSProgressBarThemes getTheme();
-
-    /**
-     * Returns the current percentage
-     *
-     * @return
-     */
-    double getValue();
-
-    /**
-     * Sets this label
-     *
-     * @param label
-     *
-     * @return
-     */
-    J setLabel(String label);
-
-    /**
-     * Sets the current max value
-     *
-     * @param max
-     *
-     * @return
-     */
-    J setMax(double max);
-
-    /**
-     * Returns the current min value
-     *
-     * @param min
-     *
-     * @return
-     */
-    J setMin(double min);
-
-    /**
-     * Sets the current theme
-     *
-     * @param theme
-     *
-     * @return
-     */
-    J setTheme(BSProgressBarThemes theme);
-
-    /**
-     * Sets the current percentage / width
-     *
-     * @param value
-     *
-     * @return
-     */
-    J setValue(double value);
-
+	
+	/**
+	 * Returns this label
+	 *
+	 * @return
+	 */
+	String getLabel();
+	
+	/**
+	 * Gets the current max value
+	 *
+	 * @return
+	 */
+	double getMax();
+	
+	/**
+	 * Returns this associated span
+	 *
+	 * @return
+	 */
+	Span getSpan();
+	
+	/**
+	 * Returns a current theme, default is success
+	 *
+	 * @return
+	 */
+	BSProgressBarThemes getTheme();
+	
+	/**
+	 * Returns the current percentage
+	 *
+	 * @return
+	 */
+	double getValue();
+	
+	/**
+	 * Sets this label
+	 *
+	 * @param label
+	 *
+	 * @return
+	 */
+	J setLabel(String label);
+	
+	/**
+	 * Sets the current max value
+	 *
+	 * @param max
+	 *
+	 * @return
+	 */
+	J setMax(double max);
+	
+	/**
+	 * Returns the current min value
+	 *
+	 * @param min
+	 *
+	 * @return
+	 */
+	J setMin(double min);
+	
+	/**
+	 * Sets the current theme
+	 *
+	 * @param theme
+	 *
+	 * @return
+	 */
+	J setTheme(BSProgressBarThemes theme);
+	
+	/**
+	 * Sets the current percentage / width
+	 *
+	 * @param value
+	 *
+	 * @return
+	 */
+	J setValue(double value);
+	
 }

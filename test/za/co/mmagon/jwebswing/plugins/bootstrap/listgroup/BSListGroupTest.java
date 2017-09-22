@@ -16,50 +16,45 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.listgroup;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.listgroup.BSListGroup;
-import za.co.mmagon.jwebswing.plugins.bootstrap.listgroup.BSListGroupLinkItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.listgroup.BSListGroupListItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.listgroup.BSListGroupButtonItem;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 
 /**
- *
  * @author GedMarc
  */
 public class BSListGroupTest extends BaseTestClass
 {
-
-    public BSListGroupTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSListGroup group = new BSListGroup();
-        group.add(new BSListGroupListItem("List Item").setActive());
-
-        System.out.println(group.toString(true));
-
-        group.add(new BSListGroupLinkItem("#", "link item"));
-        System.out.println(group.toString(true));
-
-        group.add((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button"));
-        System.out.println(group.toString(true));
-
-        group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setSuccess());
-        group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setDanger());
-        group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setWarning());
-        group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setInfo());
-        System.out.println(group.toString(true));
-
-        group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setSuccess());
-        group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setDanger());
-        group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setWarning());
-        group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setInfo());
-        System.out.println(group.toString(true));
-
-    }
+	
+	public BSListGroupTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSListGroup group = new BSListGroup();
+		group.add(new BSListGroupListItem("List Item").setActive());
+		
+		System.out.println(group.toString(true));
+		
+		group.add(new BSListGroupLinkItem("#", "link item"));
+		System.out.println(group.toString(true));
+		
+		group.add((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button"));
+		System.out.println(group.toString(true));
+		
+		group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setSuccess());
+		group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setDanger());
+		group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setWarning());
+		group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setInfo());
+		System.out.println(group.toString(true));
+		
+		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setSuccess());
+		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setDanger());
+		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setWarning());
+		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setInfo());
+		System.out.println(group.toString(true));
+		
+	}
 
 }

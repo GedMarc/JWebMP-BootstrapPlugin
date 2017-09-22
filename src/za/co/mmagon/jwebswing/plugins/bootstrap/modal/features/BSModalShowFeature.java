@@ -20,26 +20,24 @@ import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.bootstrap.modal.BSModal;
 
 /**
- *
  * @author GedMarc
  * @since 21 Feb 2017
- *
  */
 public class BSModalShowFeature extends Feature
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSModalShowFeature(BSModal modal)
-    {
-        super("BSModalShowFeature", modal);
-        setComponent(modal);
-    }
-
-    @Override
-    protected void assignFunctionsToComponent()
-    {
-        addQuery(getComponent().getJQueryID() + "modal('show');");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSModalShowFeature(BSModal modal)
+	{
+		super("BSModalShowFeature", modal);
+		setComponent(modal);
+	}
+	
+	@Override
+	protected void assignFunctionsToComponent()
+	{
+		addQuery(getComponent().getJQueryID() + "modal('show');");
+	}
+	
 }

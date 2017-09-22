@@ -20,31 +20,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 
 /**
- *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public enum BSNavBarTogglerAlignments implements IBSComponentOptions
 {
-    /**
-     * Position the toggler on the right
-     */
-    Navbar_Toggler_Right,
-    /**
-     * Position the toggler on the left
-     */
-    Navbar_Toggler_Left,;
-
-    private BSNavBarTogglerAlignments()
-    { //Nothing Needed
-    }
-
-    @JsonValue
-    @Override
-    public String toString()
-    {
-        String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
-        return name;
-    }
+	/**
+	 * Position the toggler on the right
+	 */
+	Navbar_Toggler_Right,
+	/**
+	 * Position the toggler on the left
+	 */
+	Navbar_Toggler_Left,;
+	
+	BSNavBarTogglerAlignments()
+	{ //Nothing Needed
+	}
+	
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
+		return name;
+	}
 }

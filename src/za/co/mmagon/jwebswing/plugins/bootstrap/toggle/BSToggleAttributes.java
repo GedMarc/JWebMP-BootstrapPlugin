@@ -19,35 +19,34 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.toggle;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 
 /**
- *
  * @author GedMarc
  */
 public enum BSToggleAttributes implements AttributeDefinitions
 {
-    Data_Toggle,
-    Data_Target,
-    Visibility;
-
-    private BSToggleAttributes()
-    {
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
-    private BSToggleAttributes(boolean isKeyword)
-    {
-        this.isKeyword = isKeyword;
-    }
-
-    private boolean isKeyword;
-
-    @Override
-    public boolean isKeyword()
-    {
-        return isKeyword;
-    }
+	Data_Toggle,
+	Data_Target,
+	Visibility;
+	
+	private boolean isKeyword;
+	
+	BSToggleAttributes()
+	{
+	}
+	
+	BSToggleAttributes(boolean isKeyword)
+	{
+		this.isKeyword = isKeyword;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
+	@Override
+	public boolean isKeyword()
+	{
+		return isKeyword;
+	}
 }

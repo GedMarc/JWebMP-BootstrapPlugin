@@ -24,22 +24,21 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Combine sets of button groups into button toolbars for more complex components.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public enum BSComponentButtonToolbarOptions implements IBSComponentOptions
 {
-    /**
-     * Button toolbar
-     * <p>
-     * Combine sets of button groups into button toolbars for more complex components.
-     */
-    Btn_Toolbar;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	/**
+	 * Button toolbar
+	 * <p>
+	 * Combine sets of button groups into button toolbars for more complex components.
+	 */
+	Btn_Toolbar;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

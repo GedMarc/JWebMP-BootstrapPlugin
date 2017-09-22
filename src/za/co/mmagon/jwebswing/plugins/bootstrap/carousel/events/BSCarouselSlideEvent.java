@@ -16,8 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.carousel.events;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Event;
 import za.co.mmagon.jwebswing.base.ajax.AjaxCall;
@@ -27,88 +25,92 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTy
 import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.BSAlertEvents;
 import za.co.mmagon.logger.LogFactory;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Handles all events. Over-ride methods.
  *
  * @author Marc Magon
  */
 public abstract class BSCarouselSlideEvent extends Event
-        implements GlobalEvents, BSAlertEvents
+		implements GlobalEvents, BSAlertEvents
 {
-
-    /**
-     * Logger for the Component
-     */
-    private static final Logger LOG = LogFactory.getInstance().getLogger("BSCarouselSlideEvent");
-    private static final long serialVersionUID = 1L;
-    private BSCarouselSlideEventDirective directive;
-
-    /**
-     * Performs a click
-     *
-     * @param component The component this click is going to be acting on
-     */
-    public BSCarouselSlideEvent(Component component)
-    {
-        super(EventTypes.undefined, component);
-    }
-
-    /**
-     * Sets JQuery and Angular enabled, adds the directive to angular, and the attribute to the component
-     */
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-            component.addAttribute("ng-bs-carousel-slide-directive", "perform($event," + renderVariables() + ");");
-        }
-        super.preConfigure();
-    }
-
-    /**
-     * Returns the angular directive associated with the right click event
-     *
-     * @return
-     */
-    public BSCarouselSlideEventDirective getDirective()
-    {
-        if (directive == null)
-        {
-            directive = new BSCarouselSlideEventDirective();
-        }
-        return directive;
-    }
-
-    /**
-     * Sets the right click angular event
-     *
-     * @param directive
-     */
-    public void setDirective(BSCarouselSlideEventDirective directive)
-    {
-        this.directive = directive;
-    }
-
-    /**
-     * Triggers on Click
-     * <p>
-     * @param call     The physical AJAX call
-     * @param response The physical Ajax Receiver
-     */
-    public abstract void onSlide(AjaxCall call, AjaxResponse response);
-
-    @Override
-    public void fireEvent(AjaxCall call, AjaxResponse response)
-    {
-        try
-        {
-            onSlide(call, response);
-        }
-        catch (Exception e)
-        {
-            LOG.log(Level.SEVERE, "Error In Firing Event", e);
-        }
-    }
+	
+	/**
+	 * Logger for the Component
+	 */
+	private static final Logger LOG = LogFactory.getInstance().getLogger("BSCarouselSlideEvent");
+	private static final long serialVersionUID = 1L;
+	private BSCarouselSlideEventDirective directive;
+	
+	/**
+	 * Performs a click
+	 *
+	 * @param component The component this click is going to be acting on
+	 */
+	public BSCarouselSlideEvent(Component component)
+	{
+		super(EventTypes.undefined, component);
+	}
+	
+	/**
+	 * Sets JQuery and Angular enabled, adds the directive to angular, and the attribute to the component
+	 */
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
+			component.addAttribute("ng-bs-carousel-slide-directive", "perform($event," + renderVariables() + ");");
+		}
+		super.preConfigure();
+	}
+	
+	/**
+	 * Returns the angular directive associated with the right click event
+	 *
+	 * @return
+	 */
+	public BSCarouselSlideEventDirective getDirective()
+	{
+		if (directive == null)
+		{
+			directive = new BSCarouselSlideEventDirective();
+		}
+		return directive;
+	}
+	
+	/**
+	 * Sets the right click angular event
+	 *
+	 * @param directive
+	 */
+	public void setDirective(BSCarouselSlideEventDirective directive)
+	{
+		this.directive = directive;
+	}
+	
+	/**
+	 * Triggers on Click
+	 * <p>
+	 *
+	 * @param call     The physical AJAX call
+	 * @param response The physical Ajax Receiver
+	 */
+	public abstract void onSlide(AjaxCall call, AjaxResponse response);
+	
+	@Override
+	public void fireEvent(AjaxCall call, AjaxResponse response)
+	{
+		try
+		{
+			onSlide(call, response);
+		}
+		catch (Exception e)
+		{
+			LOG.log(Level.SEVERE, "Error In Firing Event", e);
+		}
+	}
 }

@@ -19,29 +19,27 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardBlock;
 
 /**
- *
  * @author GedMarc
  * @since 20 Feb 2017
- *
  */
 public class BSAccordionContent extends BSCardBlock
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSAccordionContent()
-    {
-    }
-
-    @Override
-    public void init()
-    {
-        if (!isInitialized())
-        {
-            removeClass("collapse");
-        }
-        super.init();
-
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSAccordionContent()
+	{
+	}
+	
+	@Override
+	public void init()
+	{
+		if (!isInitialized())
+		{
+			removeClass("collapse");
+		}
+		super.init();
+		
+	}
+	
 }

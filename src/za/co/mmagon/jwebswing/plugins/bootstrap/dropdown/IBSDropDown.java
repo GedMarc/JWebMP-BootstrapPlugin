@@ -20,45 +20,43 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
 
 /**
- *
  * @author GedMarc
  * @since 20 Feb 2017
- * 
  */
-public interface IBSDropDown<J extends BSDropDown> 
+public interface IBSDropDown<J extends BSDropDown>
 {
-
-    /**
-     * Returns the drop down button
-     *
-     * @return
-     */
-    Component getDropdownButton();
-
-    /**
-     * Returns the current dropdownMenu or a new one
-     *
-     * @return
-     */
-    BSDropDownMenu getDropdownMenu();
-
-    /**
-     * Sets the drop down dropdownMenu button
-     *
-     * @param <T> bs drop down children type
-     * @param dropdownButton
-     *
-     * @return
-     */
-    J setDropdownButton(Component dropdownButton);
-
-    /**
-     * Sets the dropdownMenu
-     *
-     * @param menu
-     *
-     * @return
-     */
-    BSDropDown setMenu(BSDropDownMenu menu);
-
+	
+	/**
+	 * Returns the drop down button
+	 *
+	 * @return
+	 */
+	Component getDropdownButton();
+	
+	/**
+	 * Returns the current dropdownMenu or a new one
+	 *
+	 * @return
+	 */
+	BSDropDownMenu getDropdownMenu();
+	
+	/**
+	 * Sets the drop down dropdownMenu button
+	 *
+	 * @param <T>            bs drop down children type
+	 * @param dropdownButton
+	 *
+	 * @return
+	 */
+	J setDropdownButton(Component dropdownButton);
+	
+	/**
+	 * Sets the dropdownMenu
+	 *
+	 * @param menu
+	 *
+	 * @return
+	 */
+	BSDropDown setMenu(BSDropDownMenu menu);
+	
 }

@@ -25,31 +25,30 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormEmailInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default email input for bootstrap
-     */
-    public BSFormEmailInput()
-    {
-
-        setInputType(InputTypes.Email);
-        addAttribute(AngularAttributes.ngPattern, "regex.emailField");
-    }
-
-    @Override
-    public void init()
-    {
-        if (!isInitialized())
-        {
-            getPage().getBody().addDto("regex", new RegularExpressionsDTO());
-        }
-        super.init();
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default email input for bootstrap
+	 */
+	public BSFormEmailInput()
+	{
+		
+		setInputType(InputTypes.Email);
+		addAttribute(AngularAttributes.ngPattern, "regex.emailField");
+	}
+	
+	@Override
+	public void init()
+	{
+		if (!isInitialized())
+		{
+			getPage().getBody().addDto("regex", new RegularExpressionsDTO());
+		}
+		super.init();
+	}
 
 }

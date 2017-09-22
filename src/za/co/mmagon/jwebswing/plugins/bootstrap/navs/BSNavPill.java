@@ -21,18 +21,17 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
  *
  * @author GedMarc
  * @since 19 Jan 2017
- *
  */
 public class BSNavPill extends BSNavs
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Pills Take that same HTML, but use .nav-pills instead:
-     */
-    public BSNavPill()
-    {
-        addClass(BSComponentNavsOptions.Nav_Pills);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Pills Take that same HTML, but use .nav-pills instead:
+	 */
+	public BSNavPill()
+	{
+		addClass(BSComponentNavsOptions.Nav_Pills);
+	}
 }

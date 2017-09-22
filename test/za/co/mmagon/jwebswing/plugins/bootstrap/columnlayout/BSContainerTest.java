@@ -16,42 +16,41 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.columnlayout;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSContainer;
-import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSContainerType;
 import org.junit.Assert;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSContainer;
+import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSContainerType;
 
 /**
- *
  * @author GedMarc
  */
 public class BSContainerTest extends BaseTestClass
 {
-
-    public BSContainerTest()
-    {
-
-    }
-
-    @Test
-    public void testNewInstance()
-    {
-        BSContainer.newInstance(BSContainerType.Container);
-    }
-
-    @Test
-    public void testContainer()
-    {
-        BSContainer b = new BSContainer();
-        b.setID("id");
-        System.out.println(b.toString(true));
-        Assert.assertEquals("<div class=\"container-fluid\" id=\"id\"></div>", b.toString(true));
-        
-        b.setContainerType(BSContainerType.Container);
-        System.out.println(b.toString(true));
-        Assert.assertEquals("<div class=\"container\" id=\"id\"></div>", b.toString(true));
-        soutDivider();
-    }
+	
+	public BSContainerTest()
+	{
+	
+	}
+	
+	@Test
+	public void testNewInstance()
+	{
+		BSContainer.newInstance(BSContainerType.Container);
+	}
+	
+	@Test
+	public void testContainer()
+	{
+		BSContainer b = new BSContainer();
+		b.setID("id");
+		System.out.println(b.toString(true));
+		Assert.assertEquals("<div class=\"container-fluid\" id=\"id\"></div>", b.toString(true));
+		
+		b.setContainerType(BSContainerType.Container);
+		System.out.println(b.toString(true));
+		Assert.assertEquals("<div class=\"container\" id=\"id\"></div>", b.toString(true));
+		soutDivider();
+	}
 
 }

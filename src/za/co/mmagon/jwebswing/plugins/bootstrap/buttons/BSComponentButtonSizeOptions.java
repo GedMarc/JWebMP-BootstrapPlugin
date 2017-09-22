@@ -24,28 +24,27 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Use Bootstrap’s custom button styles for actions in forms, dialogs, and more. Includes support for a handful of contextual variations, sizes, states, and more.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public enum BSComponentButtonSizeOptions implements IBSComponentOptions
 {
-    /**
-     * Makes a large button
-     */
-    Btn_Lg,
-    /**
-     * Makes a small button
-     */
-    Btn_Sm,
-    /**
-     * Makes a block_level button (spans the full width of the parent element)
-     */
-    Btn_Block;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	/**
+	 * Makes a large button
+	 */
+	Btn_Lg,
+	/**
+	 * Makes a small button
+	 */
+	Btn_Sm,
+	/**
+	 * Makes a block_level button (spans the full width of the parent element)
+	 */
+	Btn_Block;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

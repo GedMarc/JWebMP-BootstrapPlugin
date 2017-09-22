@@ -27,42 +27,41 @@ import za.co.mmagon.jwebswing.base.html.attributes.HeaderTypes;
  * The multiple content types can be easily combined to create the card you need. See below for an example.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCardTitle extends HeaderText
-        implements BSCardChildren
+		implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Subtitles are used by adding a .card-subtitle to an h* tag.
-     * <p>
-     * If the .card-title and the .card-subtitle items are placed in a .card-block item, the card title and subtitle are aligned nicely.
-     * <p>
-     * The multiple content types can be easily combined to create the card you need. See below for an example.
-     */
-    public BSCardTitle()
-    {
-        this(HeaderTypes.H2, "");
-    }
-
-    /**
-     * Subtitles are used by adding a .card-subtitle to an h* tag.
-     * <p>
-     * If the .card-title and the .card-subtitle items are placed in a .card-block item, the card title and subtitle are aligned nicely.
-     * <p>
-     * The multiple content types can be easily combined to create the card you need. See below for an example.
-     *
-     * @param headerType
-     * @param text
-     */
-    public BSCardTitle(HeaderTypes headerType, String text)
-    {
-        super(headerType, text);
-        addClass(BSComponentCardOptions.Card_Title);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Subtitles are used by adding a .card-subtitle to an h* tag.
+	 * <p>
+	 * If the .card-title and the .card-subtitle items are placed in a .card-block item, the card title and subtitle are aligned nicely.
+	 * <p>
+	 * The multiple content types can be easily combined to create the card you need. See below for an example.
+	 */
+	public BSCardTitle()
+	{
+		this(HeaderTypes.H2, "");
+	}
+	
+	/**
+	 * Subtitles are used by adding a .card-subtitle to an h* tag.
+	 * <p>
+	 * If the .card-title and the .card-subtitle items are placed in a .card-block item, the card title and subtitle are aligned nicely.
+	 * <p>
+	 * The multiple content types can be easily combined to create the card you need. See below for an example.
+	 *
+	 * @param headerType
+	 * @param text
+	 */
+	public BSCardTitle(HeaderTypes headerType, String text)
+	{
+		super(headerType, text);
+		addClass(BSComponentCardOptions.Card_Title);
+	}
+	
 }

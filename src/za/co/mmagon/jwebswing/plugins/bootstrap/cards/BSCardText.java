@@ -19,37 +19,35 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 import za.co.mmagon.jwebswing.base.html.Paragraph;
 
 /**
- *
- * @author GedMarc
  * @param <J>
  *
+ * @author GedMarc
  * @since 15 Feb 2017
- *
  */
 public class BSCardText<J extends BSCardText<J>>
-        extends Paragraph<J>
-        implements BSCardChildren
+		extends Paragraph<J>
+		implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Standard paragraph format for card text
-     */
-    public BSCardText()
-    {
-        addClass(BSComponentCardOptions.Card_Text);
-    }
-
-    /**
-     * Standard paragraph format for card text
-     *
-     * @param text
-     */
-    public BSCardText(String text)
-    {
-        super(text);
-        addClass(BSComponentCardOptions.Card_Text);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Standard paragraph format for card text
+	 */
+	public BSCardText()
+	{
+		addClass(BSComponentCardOptions.Card_Text);
+	}
+	
+	/**
+	 * Standard paragraph format for card text
+	 *
+	 * @param text
+	 */
+	public BSCardText(String text)
+	{
+		super(text);
+		addClass(BSComponentCardOptions.Card_Text);
+	}
+	
 }

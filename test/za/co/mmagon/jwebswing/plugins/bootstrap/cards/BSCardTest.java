@@ -26,23 +26,22 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 import org.junit.Test;
 
 /**
- *
  * @author GedMarc
  */
 public class BSCardTest
 {
-
-    public BSCardTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSCard card = new BSCard();
-        card.add(new BSCardBlock());
-        card.add(new BSCardHeader("THis is a card header"));
-        System.out.println(card.toString(true));
-    }
+	
+	public BSCardTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSCard card = new BSCard();
+		card.add(new BSCardBlock());
+		card.add(new BSCardHeader("THis is a card header"));
+		System.out.println(card.toString(true));
+	}
 
 }

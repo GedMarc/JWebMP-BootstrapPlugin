@@ -21,8 +21,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
-import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
- 
+
 /**
  * Optional captions
  * <p>
@@ -33,29 +32,29 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
  */
 public class BSCarouselCaption extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSCarouselCaption>
 {
-
-    /**
-     * Optional captions
-     * <p>
-     * Add captions to your slides easily with the .carousel-caption element within any .carousel-item. Place just about any optional HTML within there and it will be automatically aligned and
-     * formatted.
-     */
-    public BSCarouselCaption()
-    {
-    }
-
-    /**
-     * Optional captions
-     * <p>
-     * Add captions to your slides easily with the .carousel-caption element within any .carousel-item. Place just about any optional HTML within there and it will be automatically aligned and
-     * formatted.
-     *
-     * @param text
-     */
-    public BSCarouselCaption(String text)
-    {
-        super(text);
-    }
-
-    
+	
+	/**
+	 * Optional captions
+	 * <p>
+	 * Add captions to your slides easily with the .carousel-caption element within any .carousel-item. Place just about any optional HTML within there and it will be automatically aligned and
+	 * formatted.
+	 */
+	public BSCarouselCaption()
+	{
+	}
+	
+	/**
+	 * Optional captions
+	 * <p>
+	 * Add captions to your slides easily with the .carousel-caption element within any .carousel-item. Place just about any optional HTML within there and it will be automatically aligned and
+	 * formatted.
+	 *
+	 * @param text
+	 */
+	public BSCarouselCaption(String text)
+	{
+		super(text);
+	}
+	
+	
 }

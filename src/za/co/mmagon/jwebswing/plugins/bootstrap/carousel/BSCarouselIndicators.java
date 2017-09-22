@@ -24,47 +24,46 @@ import za.co.mmagon.jwebswing.base.html.interfaces.children.ListChildren;
  * The indicators for the bootstrap carousel
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCarouselIndicators extends List<ListChildren, NoAttributes, BSCarouselEvents, BSCarouselIndicators> implements BSCarouselChildren
 {
-
-    private static final long serialVersionUID = 1L;
+	
+	private static final long serialVersionUID = 1L;
 	private final BSCarousel carousel;
-
-    /**
-     * The indicators for the bootstrap carousel
-     *
-     * @param carousel
-     */
-    public BSCarouselIndicators(BSCarousel carousel)
-    {
-        super(true);
-        this.carousel = carousel;
-        addClass(BSComponentCarouselOptions.Carousel_Indicators);
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void init()
-    {
-        if (!isInitialized())
-        {
-            if (this.carousel != null)
-            {
-	            for (int i = 0; i < carousel.getSlides().size(); i++)
-	            {
-	                //BSCarouselItem slide = (BSCarouselItem) carousel.getSlides().get(i);
-	                BSCarouselIndicatorItem newSlideIndicator = new BSCarouselIndicatorItem(carousel.getID(true), i, i == carousel.getActiveSlide());
-		            add(newSlideIndicator);
-                }
-            }
-        }
-        super.init();
-    }
-
+	
+	/**
+	 * The indicators for the bootstrap carousel
+	 *
+	 * @param carousel
+	 */
+	public BSCarouselIndicators(BSCarousel carousel)
+	{
+		super(true);
+		this.carousel = carousel;
+		addClass(BSComponentCarouselOptions.Carousel_Indicators);
+	}
+	
+	/**
+	 *
+	 */
+	@Override
+	public void init()
+	{
+		if (!isInitialized())
+		{
+			if (this.carousel != null)
+			{
+				for (int i = 0; i < carousel.getSlides().size(); i++)
+				{
+					//BSCarouselItem slide = (BSCarouselItem) carousel.getSlides().get(i);
+					BSCarouselIndicatorItem newSlideIndicator = new BSCarouselIndicatorItem(carousel.getID(true), i, i == carousel.getActiveSlide());
+					add(newSlideIndicator);
+				}
+			}
+		}
+		super.init();
+	}
+	
 }

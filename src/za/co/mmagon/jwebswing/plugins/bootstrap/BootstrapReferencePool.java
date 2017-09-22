@@ -22,74 +22,73 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.RequirementsPriority;
 import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
 
 /**
- *
  * @author GedMarc
  * @since 20 Apr 2016
  */
 public enum BootstrapReferencePool implements ReferencePool
 {
-    BootstrapCoreReference(new JavascriptReference("BSCore", 3.36, "bower_components/bootstrap/dist/js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", 10),
-                           new CSSReference("BSCore", 3.36, "bower_components/bootstrap/dist/css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", 10)),
-    
+	BootstrapCoreReference(new JavascriptReference("BSCore", 3.36, "bower_components/bootstrap/dist/js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", 10),
+	                       new CSSReference("BSCore", 3.36, "bower_components/bootstrap/dist/css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", 10)),
+	
 	
 	//BootstrapDefaultThemeReference(null, new CSSReference("BSTheme", 3.36, "css/bootstrap/bootstrap-theme.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", 11)),
 	
 	BootstrapNumberSpinnerReference(new JavascriptReference("NumberSpinnerReference", 3.36, "bs4custom/bsnumberspinner.js")
 			, new CSSReference("NumberSpinnerReference", 3.36, "bs4custom/bsnumberspinner.js")),
-    /*
-     * BootstrapSBAdmin2Reference(null, new CSSReference("BSAdmin2Theme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")),
-     * BootstrapTimelineReference(null, new CSSReference("BSAdmin2TimelineTheme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css")),
-     * BootstrapSocialThemeReference(null, new CSSReference("BSSocialTheme", 3.36, "bower_components/bootstrap-social/bootstrap-social.css")),
-     */
-    Bootstrap4CoreReference(new JavascriptReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/js/bootstrap.min.js", 10),
-                            new CSSReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/css/bootstrap.min.css", 10)),
-    Bootstrap4TetherReference(new JavascriptReference("BS4Tether", 4.003, "bower_components/tether/dist/js/tether.min.js", 9),
-                              new CSSReference("BS4Core", 4.003, "bower_components/tether/dist/css/tether.min.css", 9)),
-    Bootstrap4DropDownReference(null,
-                                new CSSReference("BS4DropDownNoCaret", 4.006, "bs4custom/bs4hidecaret.css", 90)),;
-
-    private BootstrapReferencePool()
-    {
-    }
-
-    private JavascriptReference javaScriptReference;
-    private CSSReference cssReference;
-
-    private BootstrapReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-        if (this.javaScriptReference != null)
-        {
-            this.javaScriptReference.setPriority(RequirementsPriority.Third);
-        }
-        this.cssReference = cssReference;
-        if (this.cssReference != null)
-        {
-            this.cssReference.setPriority(RequirementsPriority.Third);
-        }
-    }
-
-    @Override
-    public JavascriptReference getJavaScriptReference()
-    {
-        return javaScriptReference;
-    }
-
-    @Override
-    public void setJavaScriptReference(JavascriptReference javaScriptReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-    }
-
-    @Override
-    public CSSReference getCssReference()
-    {
-        return cssReference;
-    }
-
-    @Override
-    public void setCssReference(CSSReference cssReference)
-    {
-        this.cssReference = cssReference;
-    }
+	/*
+	 * BootstrapSBAdmin2Reference(null, new CSSReference("BSAdmin2Theme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")),
+	 * BootstrapTimelineReference(null, new CSSReference("BSAdmin2TimelineTheme", 3.36, "bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css")),
+	 * BootstrapSocialThemeReference(null, new CSSReference("BSSocialTheme", 3.36, "bower_components/bootstrap-social/bootstrap-social.css")),
+	 */
+	Bootstrap4CoreReference(new JavascriptReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/js/bootstrap.min.js", 10),
+	                        new CSSReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/css/bootstrap.min.css", 10)),
+	Bootstrap4TetherReference(new JavascriptReference("BS4Tether", 4.003, "bower_components/tether/dist/js/tether.min.js", 9),
+	                          new CSSReference("BS4Core", 4.003, "bower_components/tether/dist/css/tether.min.css", 9)),
+	Bootstrap4DropDownReference(null,
+	                            new CSSReference("BS4DropDownNoCaret", 4.006, "bs4custom/bs4hidecaret.css", 90)),;
+	
+	private JavascriptReference javaScriptReference;
+	private CSSReference cssReference;
+	
+	BootstrapReferencePool()
+	{
+	}
+	
+	BootstrapReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+		if (this.javaScriptReference != null)
+		{
+			this.javaScriptReference.setPriority(RequirementsPriority.Third);
+		}
+		this.cssReference = cssReference;
+		if (this.cssReference != null)
+		{
+			this.cssReference.setPriority(RequirementsPriority.Third);
+		}
+	}
+	
+	@Override
+	public JavascriptReference getJavaScriptReference()
+	{
+		return javaScriptReference;
+	}
+	
+	@Override
+	public void setJavaScriptReference(JavascriptReference javaScriptReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+	}
+	
+	@Override
+	public CSSReference getCssReference()
+	{
+		return cssReference;
+	}
+	
+	@Override
+	public void setCssReference(CSSReference cssReference)
+	{
+		this.cssReference = cssReference;
+	}
 }

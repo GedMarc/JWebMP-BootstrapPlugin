@@ -5,157 +5,165 @@
  * --------------------------------------------------------------------------
  */
 
-const Util = (($) => {
+const Util = (($) = > {
 
 
-  /**
-   * ------------------------------------------------------------------------
-   * Private TransitionEnd Helpers
-   * ------------------------------------------------------------------------
-   */
+    /**
+     * ------------------------------------------------------------------------
+     * Private TransitionEnd Helpers
+     * ------------------------------------------------------------------------
+     */
 
-  let transition = false
+    let transition = false
 
-  const MAX_UID = 1000000
+    const MAX_UID = 1000000
 
-  const TransitionEndEvent = {
-    WebkitTransition : 'webkitTransitionEnd',
-    MozTransition    : 'transitionend',
-    OTransition      : 'oTransitionEnd otransitionend',
-    transition       : 'transitionend'
-  }
+    const TransitionEndEvent = {
+        WebkitTransition: 'webkitTransitionEnd',
+        MozTransition: 'transitionend',
+        OTransition: 'oTransitionEnd otransitionend',
+        transition: 'transitionend'
+    }
 
-  // shoutout AngusCroll (https://goo.gl/pxwQGp)
-  function toType(obj) {
+    // shoutout AngusCroll (https://goo.gl/pxwQGp)
+    function toType(obj);
+{
     return {}.toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
-  }
+}
 
-  function isElement(obj) {
+function isElement(obj) {
     return (obj[0] || obj).nodeType
-  }
+}
 
-  function getSpecialTransitionEndEvent() {
+function getSpecialTransitionEndEvent() {
     return {
-      bindType: transition.end,
-      delegateType: transition.end,
-      handle(event) {
-        if ($(event.target).is(this)) {
-          return event.handleObj.handler.apply(this, arguments) // eslint-disable-line prefer-rest-params
+        bindType: transition.end,
+        delegateType: transition.end,
+        handle(event) {
+            if ($(event.target).is(this)) {
+                return event.handleObj.handler.apply(this, arguments) // eslint-disable-line prefer-rest-params
+            }
+            return undefined
         }
-        return undefined
-      }
     }
-  }
+}
 
-  function transitionEndTest() {
+function transitionEndTest() {
     if (window.QUnit) {
-      return false
+        return false
     }
 
-    const el = document.createElement('bootstrap')
+    const el = document.createElement('bootstrap');
 
     for (const name in TransitionEndEvent) {
-      if (el.style[name] !== undefined) {
-        return {
-          end: TransitionEndEvent[name]
+        if (el.style[name] !== undefined) {
+            return {
+                end: TransitionEndEvent[name]
+            }
         }
-      }
     }
 
     return false
-  }
+}
 
-  function transitionEndEmulator(duration) {
-    let called = false
+function transitionEndEmulator(duration) {
+    let called = false;
 
-    $(this).one(Util.TRANSITION_END, () => {
-      called = true
-    })
+    $(this).one(Util.TRANSITION_END, () = > {
+        called = true
+    };
+)
 
-    setTimeout(() => {
-      if (!called) {
+    setTimeout(() = > {
+        if(;
+    !called;
+)
+    {
         Util.triggerTransitionEnd(this)
-      }
-    }, duration)
+    }
+},
+    duration;
+)
 
     return this
-  }
+}
 
-  function setTransitionEndSupport() {
-    transition = transitionEndTest()
+function setTransitionEndSupport() {
+    transition = transitionEndTest();
 
-    $.fn.emulateTransitionEnd = transitionEndEmulator
+    $.fn.emulateTransitionEnd = transitionEndEmulator;
 
     if (Util.supportsTransitionEnd()) {
-      $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent()
+        $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent()
     }
-  }
+}
 
 
-  /**
-   * --------------------------------------------------------------------------
-   * Public Util Api
-   * --------------------------------------------------------------------------
-   */
+/**
+ * --------------------------------------------------------------------------
+ * Public Util Api
+ * --------------------------------------------------------------------------
+ */
 
-  const Util = {
+const Util = {
 
     TRANSITION_END: 'bsTransitionEnd',
 
     getUID(prefix) {
-      do {
-        // eslint-disable-next-line no-bitwise
-        prefix += ~~(Math.random() * MAX_UID) // "~~" acts like a faster Math.floor() here
-      } while (document.getElementById(prefix))
-      return prefix
+        do {
+            // eslint-disable-next-line no-bitwise
+            prefix += ~~(Math.random() * MAX_UID) // "~~" acts like a faster Math.floor() here
+        } while (document.getElementById(prefix));
+        return prefix
     },
 
     getSelectorFromElement(element) {
-      let selector = element.getAttribute('data-target')
+        let selector = element.getAttribute('data-target');
 
-      if (!selector) {
-        selector = element.getAttribute('href') || ''
-        selector = /^#[a-z]/i.test(selector) ? selector : null
-      }
+        if (!selector) {
+            selector = element.getAttribute('href') || '';
+            selector = /^#[a-z]/i.test(selector) ? selector : null
+        }
 
-      return selector
+        return selector
     },
 
     reflow(element) {
-      return element.offsetHeight
+        return element.offsetHeight
     },
 
     triggerTransitionEnd(element) {
-      $(element).trigger(transition.end)
+        $(element).trigger(transition.end)
     },
 
     supportsTransitionEnd() {
-      return Boolean(transition)
+        return Boolean(transition)
     },
 
     typeCheckConfig(componentName, config, configTypes) {
-      for (const property in configTypes) {
-        if (configTypes.hasOwnProperty(property)) {
-          const expectedTypes = configTypes[property]
-          const value         = config[property]
-          const valueType     = value && isElement(value) ?
-                                'element' : toType(value)
+        for (const property in configTypes) {
+            if (configTypes.hasOwnProperty(property)) {
+                const expectedTypes = configTypes[property];
+                const value = config[property];
+                const valueType = value && isElement(value) ?
+                    'element' : toType(value);
 
-          if (!new RegExp(expectedTypes).test(valueType)) {
-            throw new Error(
-              `${componentName.toUpperCase()}: ` +
-              `Option "${property}" provided type "${valueType}" ` +
-              `but expected type "${expectedTypes}".`)
-          }
+                if (!new RegExp(expectedTypes).test(valueType)) {
+                    throw new Error(
+                        `${componentName.toUpperCase()}: ` +
+                        `Option "${property}" provided type "${valueType}" ` +
+                        `but expected type "${expectedTypes}".`)
+                }
+            }
         }
-      }
     }
-  }
+};
 
-  setTransitionEndSupport()
+setTransitionEndSupport();
 
-  return Util
+return Util;
 
-})(jQuery)
+})
+(jQuery);
 
 export default Util

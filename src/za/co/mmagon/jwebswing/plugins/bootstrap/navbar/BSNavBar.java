@@ -23,62 +23,62 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarTogglerSizes;
 
 /**
- *
  * <p>
- * @author Marc Magon
+ *
  * @param <J>
  *
- * @since 13 Jan 2017
+ * @author Marc Magon
  * @version 1.0
+ * @since 13 Jan 2017
  */
 @ComponentInformation(name = "Bootstrap Navbar", description = "The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive behaviors.",
-                      url = "https://v4-alpha.getbootstrap.com/components/navbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/navbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSNavBar<J extends BSNavBar<J>>
-        extends Div<BSNavBarChildren, BSNavBarAttributes, GlobalFeatures, BSNavBarEvents, J>
-        implements IBSNavBar
+		extends Div<BSNavBarChildren, BSNavBarAttributes, GlobalFeatures, BSNavBarEvents, J>
+		implements IBSNavBar
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Navbar
-     * <p>
-     * The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive
-     * behaviors.
-     *
-     * @param navBarTogglerSize
-     * @param colourSchemes
-     */
-    public BSNavBar(BSNavBarTogglerSizes navBarTogglerSize, BSNavBarColourSchemes... colourSchemes)
-    {
-        setTag("nav");
-        addClass(BSComponentNavBarOptions.Navbar);
-        addAttribute(BSNavBarAttributes.Role, "navigation");
-        if (navBarTogglerSize != null)
-        {
-            addClass(navBarTogglerSize);
-        }
-        if (colourSchemes != null)
-        {
-            for (BSNavBarColourSchemes colourScheme : colourSchemes)
-            {
-                addClass(colourScheme);
-            }
-        }
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Sets this navbar's positioning
-     *
-     * @param position
-     *
-     * @return
-     */
-    @Override
-    public BSNavBar setPositioning(BSNavBarPositioning position)
-    {
-        addClass(position);
-        return this;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Navbar
+	 * <p>
+	 * The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive
+	 * behaviors.
+	 *
+	 * @param navBarTogglerSize
+	 * @param colourSchemes
+	 */
+	public BSNavBar(BSNavBarTogglerSizes navBarTogglerSize, BSNavBarColourSchemes... colourSchemes)
+	{
+		setTag("nav");
+		addClass(BSComponentNavBarOptions.Navbar);
+		addAttribute(BSNavBarAttributes.Role, "navigation");
+		if (navBarTogglerSize != null)
+		{
+			addClass(navBarTogglerSize);
+		}
+		if (colourSchemes != null)
+		{
+			for (BSNavBarColourSchemes colourScheme : colourSchemes)
+			{
+				addClass(colourScheme);
+			}
+		}
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Sets this navbar's positioning
+	 *
+	 * @param position
+	 *
+	 * @return
+	 */
+	@Override
+	public BSNavBar setPositioning(BSNavBarPositioning position)
+	{
+		addClass(position);
+		return this;
+	}
 }

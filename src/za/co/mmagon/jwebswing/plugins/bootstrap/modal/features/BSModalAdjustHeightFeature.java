@@ -26,23 +26,22 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.modal.BSModal;
  *
  * @author GedMarc
  * @since 21 Feb 2017
- *
  */
 public class BSModalAdjustHeightFeature extends Feature
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSModalAdjustHeightFeature(BSModal modal)
-    {
-        super("BSModalDynamicHeightFeature", modal);
-        setComponent(modal);
-    }
-
-    @Override
-    protected void assignFunctionsToComponent()
-    {
-        addQuery(getComponent().getJQueryID() + ".data('bs.modal').handleUpdate();");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSModalAdjustHeightFeature(BSModal modal)
+	{
+		super("BSModalDynamicHeightFeature", modal);
+		setComponent(modal);
+	}
+	
+	@Override
+	protected void assignFunctionsToComponent()
+	{
+		addQuery(getComponent().getJQueryID() + ".data('bs.modal').handleUpdate();");
+	}
+	
 }

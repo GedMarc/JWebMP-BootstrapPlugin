@@ -26,26 +26,25 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Included is support for left and right aligned content, content alignment options, nesting, and more.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentProgressBarOptions implements IBSComponentOptions
 {
-    Progress,
-    Progress_Bar,
-    Progress_Bar_Striped,
-    Progress_Bar_Animated;
-
-    private BSComponentProgressBarOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	Progress,
+	Progress_Bar,
+	Progress_Bar_Striped,
+	Progress_Bar_Animated;
+	
+	BSComponentProgressBarOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

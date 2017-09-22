@@ -23,30 +23,29 @@ import za.co.mmagon.jwebswing.base.html.Italic;
  *
  * @author GedMarc
  * @since 18 Jan 2017
- *
  */
 public class BSFormSetLegend extends Italic implements BSFormSetChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A legend to describe a form set
-     */
-    public BSFormSetLegend()
-    {
-        setTag("legend");
-    }
-
-    /**
-     * A legend to describe a form set
-     *
-     * @param text
-     */
-    public BSFormSetLegend(String text)
-    {
-        super(text);
-        setTag("legend");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A legend to describe a form set
+	 */
+	public BSFormSetLegend()
+	{
+		setTag("legend");
+	}
+	
+	/**
+	 * A legend to describe a form set
+	 *
+	 * @param text
+	 */
+	public BSFormSetLegend(String text)
+	{
+		super(text);
+		setTag("legend");
+	}
+	
 }

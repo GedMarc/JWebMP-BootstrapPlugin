@@ -28,28 +28,27 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
  *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public class BSNavBarText extends Span implements BSNavBarChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Text
-     * <p>
-     * Navbars may contain bits of text with the help of .navbar-text. This class adjusts vertical alignment and horizontal spacing for strings of text.
-     */
-    public BSNavBarText()
-    {
-        addClass(BSComponentNavBarOptions.Navbar_Text);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    public BSNavBarText(String text)
-    {
-        super(text);
-        addClass(BSComponentNavBarOptions.Navbar_Text);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Text
+	 * <p>
+	 * Navbars may contain bits of text with the help of .navbar-text. This class adjusts vertical alignment and horizontal spacing for strings of text.
+	 */
+	public BSNavBarText()
+	{
+		addClass(BSComponentNavBarOptions.Navbar_Text);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	public BSNavBarText(String text)
+	{
+		super(text);
+		addClass(BSComponentNavBarOptions.Navbar_Text);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
 }

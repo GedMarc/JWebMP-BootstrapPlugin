@@ -25,32 +25,31 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
  *
  * @author GedMarc
  * @since 18 Jan 2017
- *
  */
 public abstract class BSFormCheckInput<J extends BSFormCheckInput>
 		extends BSInput
 		implements BSFormSetChildren
 {
-
-    private static final long serialVersionUID = 1L;
 	
-    /**
-     * Defines an item as a check item.
-     */
-    public BSFormCheckInput()
-    {
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Defines an item as a check item.
+	 */
+	public BSFormCheckInput()
+	{
 		super(InputTypes.Checkbox);
-    }
-
-    /**
-     * Defines an item as a check item
-     *
-     * @param inputType
-     */
-    public BSFormCheckInput(InputTypes inputType)
-    {
-        super(inputType);
-    }
+	}
+	
+	/**
+	 * Defines an item as a check item
+	 *
+	 * @param inputType
+	 */
+	public BSFormCheckInput(InputTypes inputType)
+	{
+		super(inputType);
+	}
 	
 	/**
 	 * Sets the checkbox accordingly

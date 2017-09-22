@@ -21,20 +21,19 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
  *
  * @author GedMarc
  * @since 23 Jan 2017
- *
  */
 public class BSNavList extends BSNavs
-        implements BSNavsChildren
+		implements BSNavsChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new nav list for use with the bs nav widget
-     */
-    public BSNavList()
-    {
-        setTag("ul");
-        addClass(BSComponentNavsOptions.Navbar_Nav);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new nav list for use with the bs nav widget
+	 */
+	public BSNavList()
+	{
+		setTag("ul");
+		addClass(BSComponentNavsOptions.Navbar_Nav);
+	}
 }

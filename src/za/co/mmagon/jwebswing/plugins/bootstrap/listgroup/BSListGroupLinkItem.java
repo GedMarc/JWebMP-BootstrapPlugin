@@ -24,32 +24,31 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
  * <p>
  * Be sure to not use the standard .btn classes here.
  *
- * @author GedMarc
  * @param <J>
  *
+ * @author GedMarc
  * @since 19 Jan 2017
- *
  */
 public class BSListGroupLinkItem<J extends BSListGroupLinkItem<J>>
-        extends BSListGroupListItem<J>
+		extends BSListGroupListItem<J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Links and buttons Use &gt;a&lt;s or &gt;button&lt;s to create actionable list group items with hover, disabled, and active states by adding .list-group-item-action. We separate these
-     * pseudo-classes to ensure list groups made of non-interactive elements (like &gt;li&lt;s or &gt;div&lt;s) don’t provide a click or tap affordance.
-     * <p>
-     * Be sure to not use the standard .btn classes here.
-     *
-     * @param url
-     * @param text
-     */
-    public BSListGroupLinkItem(String url, String text)
-    {
-        super(text);
-        setTag("a");
-        addAttribute(LinkAttributes.HRef.toString(), url);
-        addClass(BSComponentListGroupOptions.List_Group_Item_Action);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Links and buttons Use &gt;a&lt;s or &gt;button&lt;s to create actionable list group items with hover, disabled, and active states by adding .list-group-item-action. We separate these
+	 * pseudo-classes to ensure list groups made of non-interactive elements (like &gt;li&lt;s or &gt;div&lt;s) don’t provide a click or tap affordance.
+	 * <p>
+	 * Be sure to not use the standard .btn classes here.
+	 *
+	 * @param url
+	 * @param text
+	 */
+	public BSListGroupLinkItem(String url, String text)
+	{
+		super(text);
+		setTag("a");
+		addAttribute(LinkAttributes.HRef.toString(), url);
+		addClass(BSComponentListGroupOptions.List_Group_Item_Action);
+	}
 }

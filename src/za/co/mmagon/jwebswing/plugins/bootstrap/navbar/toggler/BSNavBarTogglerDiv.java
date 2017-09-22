@@ -20,19 +20,17 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 
 /**
- *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public class BSNavBarTogglerDiv extends Div implements BSNavBarChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSNavBarTogglerDiv()
-    {
-        addClass("collapse");
-        addClass("navbar-collapse");
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSNavBarTogglerDiv()
+	{
+		addClass("collapse");
+		addClass("navbar-collapse");
+	}
 }

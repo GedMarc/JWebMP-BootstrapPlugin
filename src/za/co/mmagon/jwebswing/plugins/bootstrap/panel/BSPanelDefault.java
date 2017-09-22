@@ -22,88 +22,88 @@ import za.co.mmagon.jwebswing.base.html.Span;
  * A default Bootstrap panel with a header row that has an icon and title
  *
  * @author GedMarc
- * @since Oct 9, 2016
  * @version 1.0
- *
+ * @since Oct 9, 2016
  */
 public class BSPanelDefault extends BSPanel
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The icon class
-     */
-    private String icon;
-    /**
-     * The title
-     */
-    private Span title;
-
-    /**
-     * Construct a default panel with header icon and title
-     */
-    public BSPanelDefault()
-    {
-        super(BSPanelThemes.Default);
-    }
-
-    public BSPanelDefault(String icon, String title)
-    {
-        this();
-        setIcon(icon);
-        setTitle(new Span(" " + title));
-
-    }
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            getPanelHeader().add(getIcon());
-            getPanelHeader().add(getTitle());
-        }
-        super.preConfigure();
-    }
-
-    /**
-     * Gets the assigned icon class
-     *
-     * @return
-     */
-    public String getIcon()
-    {
-        return icon;
-    }
-
-    /**
-     * Sets the assigned icon class
-     *
-     * @param icon
-     */
-    public void setIcon(String icon)
-    {
-        this.icon = icon;
-    }
-
-    //@TODO Glyphicons
-    /**
-     * Gets the title
-     *
-     * @return
-     */
-    public Span getTitle()
-    {
-        return title;
-    }
-
-    /**
-     * Sets the title
-     *
-     * @param title
-     */
-    public void setTitle(Span title)
-    {
-        this.title = title;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The icon class
+	 */
+	private String icon;
+	/**
+	 * The title
+	 */
+	private Span title;
+	
+	/**
+	 * Construct a default panel with header icon and title
+	 */
+	public BSPanelDefault()
+	{
+		super(BSPanelThemes.Default);
+	}
+	
+	public BSPanelDefault(String icon, String title)
+	{
+		this();
+		setIcon(icon);
+		setTitle(new Span(" " + title));
+		
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			getPanelHeader().add(getIcon());
+			getPanelHeader().add(getTitle());
+		}
+		super.preConfigure();
+	}
+	
+	/**
+	 * Gets the assigned icon class
+	 *
+	 * @return
+	 */
+	public String getIcon()
+	{
+		return icon;
+	}
+	
+	/**
+	 * Sets the assigned icon class
+	 *
+	 * @param icon
+	 */
+	public void setIcon(String icon)
+	{
+		this.icon = icon;
+	}
+	
+	//@TODO Glyphicons
+	
+	/**
+	 * Gets the title
+	 *
+	 * @return
+	 */
+	public Span getTitle()
+	{
+		return title;
+	}
+	
+	/**
+	 * Sets the title
+	 *
+	 * @param title
+	 */
+	public void setTitle(Span title)
+	{
+		this.title = title;
+	}
 }

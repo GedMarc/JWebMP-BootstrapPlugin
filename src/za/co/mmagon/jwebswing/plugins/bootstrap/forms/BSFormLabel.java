@@ -24,51 +24,50 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
 /**
  * A label that can be used in a bootstrap form
  *
- * @author GedMarc
  * @param <J>
  *
+ * @author GedMarc
  * @since 20 Feb 2017
- *
  */
 public class BSFormLabel<J extends BSFormLabel<J>>
-        extends Label<J>
-        implements BSFormGroupChildren
+		extends Label<J>
+		implements BSFormGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new label for a bootstrap form
-     */
-    public BSFormLabel()
-    {
-        this(null);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Constructs a new label for a bootstrap form
-     *
-     * @param label
-     */
-    public BSFormLabel(String label)
-    {
-        this(label, null);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Constructs a new label for a bootstrap form
-     *
-     * @param label
-     * @param forInputComponent
-     */
-    public BSFormLabel(String label, Input forInputComponent)
-    {
-        super(label, forInputComponent);
-        addClass(BSComponentFormOptions.Col_Form_Label);
-        BootstrapPageConfigurator.setRequired(this, true);
-
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new label for a bootstrap form
+	 */
+	public BSFormLabel()
+	{
+		this(null);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Constructs a new label for a bootstrap form
+	 *
+	 * @param label
+	 */
+	public BSFormLabel(String label)
+	{
+		this(label, null);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Constructs a new label for a bootstrap form
+	 *
+	 * @param label
+	 * @param forInputComponent
+	 */
+	public BSFormLabel(String label, Input forInputComponent)
+	{
+		super(label, forInputComponent);
+		addClass(BSComponentFormOptions.Col_Form_Label);
+		BootstrapPageConfigurator.setRequired(this, true);
+		
+	}
 
 }

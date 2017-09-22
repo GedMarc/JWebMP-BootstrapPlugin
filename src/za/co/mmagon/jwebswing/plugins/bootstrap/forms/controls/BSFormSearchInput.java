@@ -23,19 +23,18 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormSearchInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default search input for bootstrap
-     */
-    public BSFormSearchInput()
-    {
-
-        setInputType(InputTypes.Search);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default search input for bootstrap
+	 */
+	public BSFormSearchInput()
+	{
+		
+		setInputType(InputTypes.Search);
+	}
 }

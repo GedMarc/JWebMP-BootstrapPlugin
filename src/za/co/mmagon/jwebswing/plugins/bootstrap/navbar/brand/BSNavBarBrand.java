@@ -29,38 +29,37 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarColourSchemes;
  *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public class BSNavBarBrand extends Div implements BSNavBarChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Brand
-     * <p>
-     * The .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
-     */
-    public BSNavBarBrand()
-    {
-        addClass(BSComponentNavBarOptions.Navbar_Brand);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Color schemes
-     * <p>
-     * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
-     * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
-     *
-     * @param colourScheme
-     */
-    public BSNavBarBrand(BSNavBarColourSchemes... colourScheme)
-    {
-        this();
-        for (BSNavBarColourSchemes bSNavBarColourSchemes : colourScheme)
-        {
-            addClass(bSNavBarColourSchemes);
-        }
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Brand
+	 * <p>
+	 * The .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
+	 */
+	public BSNavBarBrand()
+	{
+		addClass(BSComponentNavBarOptions.Navbar_Brand);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Color schemes
+	 * <p>
+	 * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
+	 * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
+	 *
+	 * @param colourScheme
+	 */
+	public BSNavBarBrand(BSNavBarColourSchemes... colourScheme)
+	{
+		this();
+		for (BSNavBarColourSchemes bSNavBarColourSchemes : colourScheme)
+		{
+			addClass(bSNavBarColourSchemes);
+		}
+	}
 }

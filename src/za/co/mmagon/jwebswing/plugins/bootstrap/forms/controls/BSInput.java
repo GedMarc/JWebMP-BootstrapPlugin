@@ -29,42 +29,41 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  *
  * @author GedMarc
  * @since 17 Jan 2017
- *
  */
 public class BSInput<J extends BSInput<J>>
-        extends Input<NoAttributes,J>
-        implements BSFormGroupChildren
+		extends Input<NoAttributes, J>
+		implements BSFormGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Allows construction of a bootstrap input component
-     */
-    public BSInput()
-    {
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Allows construction of a bootstrap input component
-     *
-     * @param inputType
-     */
-    public BSInput(InputTypes inputType)
-    {
-        super(inputType);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            addAttribute(GlobalAttributes.Name, getID());
-            addClass(BSComponentFormGroupOptions.Form_Control);
-        }
-        super.preConfigure();
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Allows construction of a bootstrap input component
+	 */
+	public BSInput()
+	{
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Allows construction of a bootstrap input component
+	 *
+	 * @param inputType
+	 */
+	public BSInput(InputTypes inputType)
+	{
+		super(inputType);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			addAttribute(GlobalAttributes.Name, getID());
+			addClass(BSComponentFormGroupOptions.Form_Control);
+		}
+		super.preConfigure();
+	}
 }

@@ -34,62 +34,61 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
  * <p>
  * While containers can be nested, most layouts do not require a nested container.
  *
- * @author GedMarc
  * @param <J>
  *
- * @since Oct 11, 2016
+ * @author GedMarc
  * @version 1.0
- *
+ * @since Oct 11, 2016
  */
 public class BSContainer<J extends BSContainer<J>>
-        extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J>
-        implements BSNavBarChildren, BSFormChildren, BSFormGroupChildren
+		extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J>
+		implements BSNavBarChildren, BSFormChildren, BSFormGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs as a container-fluid full page
-     */
-    public BSContainer()
-    {
-        this(BSContainerType.Container_Fluid);
-    }
-
-    /**
-     * Constructs a new container
-     *
-     * @param type
-     */
-    public BSContainer(BSContainerType type)
-    {
-        addClass(type.toString());
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Returns a new instance
-     *
-     * @param type The type of container.
-     *
-     * @return
-     */
-    public static BSContainer newInstance(BSContainerType type)
-    {
-        return new BSContainer(type);
-    }
-
-    /**
-     * Sets the container type on this container
-     *
-     * @param type
-     */
-    public void setContainerType(BSContainerType type)
-    {
-        for (BSContainerType value : BSContainerType.values())
-        {
-            removeClass(value.toString());
-        }
-        addClass(type.toString());
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs as a container-fluid full page
+	 */
+	public BSContainer()
+	{
+		this(BSContainerType.Container_Fluid);
+	}
+	
+	/**
+	 * Constructs a new container
+	 *
+	 * @param type
+	 */
+	public BSContainer(BSContainerType type)
+	{
+		addClass(type.toString());
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Returns a new instance
+	 *
+	 * @param type The type of container.
+	 *
+	 * @return
+	 */
+	public static BSContainer newInstance(BSContainerType type)
+	{
+		return new BSContainer(type);
+	}
+	
+	/**
+	 * Sets the container type on this container
+	 *
+	 * @param type
+	 */
+	public void setContainerType(BSContainerType type)
+	{
+		for (BSContainerType value : BSContainerType.values())
+		{
+			removeClass(value.toString());
+		}
+		addClass(type.toString());
+	}
 }

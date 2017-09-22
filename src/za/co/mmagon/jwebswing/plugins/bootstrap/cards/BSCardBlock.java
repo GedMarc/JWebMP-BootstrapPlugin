@@ -22,22 +22,21 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 
 /**
+ * @param <J>
  *
  * @author GedMarc
- * @param <J>
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCardBlock<J extends BSCardBlock<J>> extends Div<BSCardChildren, NoAttributes, GlobalFeatures, GlobalEvents, J>
-        implements BSCardChildren
+		implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSCardBlock()
-    {
-        addClass(BSComponentCardOptions.Card_Block);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSCardBlock()
+	{
+		addClass(BSComponentCardOptions.Card_Block);
+	}
+	
 }

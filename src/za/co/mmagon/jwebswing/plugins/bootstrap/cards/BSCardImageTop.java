@@ -25,38 +25,37 @@ import za.co.mmagon.jwebswing.base.html.attributes.ImageAttributes;
  * Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need .card-inverse (see below).
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCardImageTop extends Image<BSCardImageTop>
-        implements BSCardChildren
+		implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Image overlays
-     * <p>
-     * Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need .card-inverse (see below).
-     */
-    public BSCardImageTop()
-    {
-        this(null);
-    }
-
-    /**
-     * Image overlays
-     * <p>
-     * Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need .card-inverse (see below).
-     *
-     * @param imageUrl
-     */
-    public BSCardImageTop(String imageUrl)
-    {
-        super(imageUrl);
-        addAttribute(ImageAttributes.Src,imageUrl);
-        addClass(BSComponentCardOptions.Card_Img_Top);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Image overlays
+	 * <p>
+	 * Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need .card-inverse (see below).
+	 */
+	public BSCardImageTop()
+	{
+		this(null);
+	}
+	
+	/**
+	 * Image overlays
+	 * <p>
+	 * Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need .card-inverse (see below).
+	 *
+	 * @param imageUrl
+	 */
+	public BSCardImageTop(String imageUrl)
+	{
+		super(imageUrl);
+		addAttribute(ImageAttributes.Src, imageUrl);
+		addClass(BSComponentCardOptions.Card_Img_Top);
+	}
+	
 }

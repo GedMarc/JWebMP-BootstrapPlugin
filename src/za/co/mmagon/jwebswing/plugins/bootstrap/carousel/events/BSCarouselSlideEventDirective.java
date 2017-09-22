@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.carousel.events;
 
 import za.co.mmagon.FileTemplates;
-import za.co.mmagon.jwebswing.base.angular.AngularFeature;
 import za.co.mmagon.jwebswing.base.angular.directives.AngularDirectiveBase;
 
 /**
@@ -28,28 +27,28 @@ import za.co.mmagon.jwebswing.base.angular.directives.AngularDirectiveBase;
  */
 public class BSCarouselSlideEventDirective extends AngularDirectiveBase
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new right click directive based on the angular object passed in
-     *
-     * @param angular
-     */
-    public BSCarouselSlideEventDirective()
-    {
-        super("ngBSCarouselSlideEventDirective");
-    }
-
-    /**
-     * Renders the right click directive from the JavaScript file
-     *
-     * @return
-     */
-    @Override
-    public String renderFunction()
-    {
-        return FileTemplates.getFileTemplate(BSCarouselSlideEventDirective.class, "Event").toString();
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new right click directive based on the angular object passed in
+	 *
+	 * @param angular
+	 */
+	public BSCarouselSlideEventDirective()
+	{
+		super("ngBSCarouselSlideEventDirective");
+	}
+	
+	/**
+	 * Renders the right click directive from the JavaScript file
+	 *
+	 * @return
+	 */
+	@Override
+	public String renderFunction()
+	{
+		return FileTemplates.getFileTemplate(BSCarouselSlideEventDirective.class, "Event").toString();
+	}
+	
 }

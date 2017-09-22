@@ -19,38 +19,37 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 
 /**
- *
  * @author GedMarc
  */
 public enum BSBreadcrumbsAttributes implements AttributeDefinitions
 {
-    Visibility;
-
-    private BSBreadcrumbsAttributes()
-    {
-    }
-
-    private BSBreadcrumbsAttributes(boolean isKeyword)
-    {
-        this.isKeyword = isKeyword;
-    }
-
-    private boolean isKeyword;
-
-    @Override
-    public boolean isKeyword()
-    {
-        return isKeyword;
-    }
-
-    /**
-     * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
-     *
-     * @return
-     */
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-').replace("$", "");
-    }
+	Visibility;
+	
+	private boolean isKeyword;
+	
+	BSBreadcrumbsAttributes()
+	{
+	}
+	
+	BSBreadcrumbsAttributes(boolean isKeyword)
+	{
+		this.isKeyword = isKeyword;
+	}
+	
+	@Override
+	public boolean isKeyword()
+	{
+		return isKeyword;
+	}
+	
+	/**
+	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
+	 *
+	 * @return
+	 */
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-').replace("$", "");
+	}
 }

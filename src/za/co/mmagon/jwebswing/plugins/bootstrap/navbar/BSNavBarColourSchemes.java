@@ -27,49 +27,48 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public enum BSNavBarColourSchemes implements IBSComponentOptions
 {
-    /**
-     * Color schemes
-     * <p>
-     * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
-     * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
-     */
-    Navbar_Inverse,
-    /**
-     * Color schemes
-     * <p>
-     * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
-     * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
-     */
-    BG_Inverse,
-    /**
-     * Color schemes
-     * <p>
-     * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
-     * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
-     */
-    BG_Faded,
-    /**
-     * Color schemes
-     * <p>
-     * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
-     * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
-     */
-    Navbar_Light;
-
-    private BSNavBarColourSchemes()
-    {
-        //Nothing Needed
-    }
-
-    @JsonValue
-    @Override
-    public String toString()
-    {
-        String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
-        return name;
-    }
+	/**
+	 * Color schemes
+	 * <p>
+	 * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
+	 * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
+	 */
+	Navbar_Inverse,
+	/**
+	 * Color schemes
+	 * <p>
+	 * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
+	 * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
+	 */
+	BG_Inverse,
+	/**
+	 * Color schemes
+	 * <p>
+	 * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
+	 * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
+	 */
+	BG_Faded,
+	/**
+	 * Color schemes
+	 * <p>
+	 * Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from .navbar-light for use with light background colors, or
+	 * .navbar-inverse for dark background colors. Then, customize with .bg-* utilities.
+	 */
+	Navbar_Light;
+	
+	BSNavBarColourSchemes()
+	{
+		//Nothing Needed
+	}
+	
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
+		return name;
+	}
 }

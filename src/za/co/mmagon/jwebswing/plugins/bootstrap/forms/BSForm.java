@@ -29,56 +29,57 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * <p>
  * Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.
  * <p>
- * @author Marc Magon
+ *
  * @param <J>
  *
- * @since 14 Jan 2017
+ * @author Marc Magon
  * @version 1.0
+ * @since 14 Jan 2017
  */
 @ComponentInformation(name = "Bootstrap Forms", description = "Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.",
-                      url = "https://v4-alpha.getbootstrap.com/components/forms/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/forms/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSForm<J extends BSForm<J>>
-        extends Div<BSFormChildren, BSFormAttributes, GlobalFeatures, BSFormEvents, J>
+		extends Div<BSFormChildren, BSFormAttributes, GlobalFeatures, BSFormEvents, J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Forms
-     * <p>
-     * Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.
-     */
-    public BSForm()
-    {
-        setTag("form");
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Pre configures the item with a name
-     */
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            addAttribute(GlobalAttributes.Name, getID());
-        }
-        super.preConfigure();
-    }
-
-    /**
-     * Configures a component as the submit button for this component
-     *
-     * @param component
-     *
-     * @return
-     */
-    public ComponentHierarchyBase addSubmitButton(ComponentHierarchyBase component)
-    {
-        component.addAttribute(AngularAttributes.ngDisabled, getID() + ".$invalid || jw.isLoading");
-        component.addAttribute(GlobalAttributes.Type, "submit");
-        component.addStyle("cursor:pointer");
-        return component;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Forms
+	 * <p>
+	 * Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.
+	 */
+	public BSForm()
+	{
+		setTag("form");
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Pre configures the item with a name
+	 */
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			addAttribute(GlobalAttributes.Name, getID());
+		}
+		super.preConfigure();
+	}
+	
+	/**
+	 * Configures a component as the submit button for this component
+	 *
+	 * @param component
+	 *
+	 * @return
+	 */
+	public ComponentHierarchyBase addSubmitButton(ComponentHierarchyBase component)
+	{
+		component.addAttribute(AngularAttributes.ngDisabled, getID() + ".$invalid || jw.isLoading");
+		component.addAttribute(GlobalAttributes.Type, "submit");
+		component.addStyle("cursor:pointer");
+		return component;
+	}
 }

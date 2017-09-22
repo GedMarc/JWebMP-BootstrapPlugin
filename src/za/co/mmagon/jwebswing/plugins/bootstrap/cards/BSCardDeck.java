@@ -27,21 +27,20 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * table styles for the sizing and the gutters on .card-deck. The .card-deck-wrapper is used to negative margin out the border-spacing on the .card-deck.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCardDeck extends Div<BSCard, NoAttributes, GlobalFeatures, GlobalEvents, BSCardDeck> implements GlobalChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Need a set of equal width and height cards that aren’t attached to one another? Use card decks. By default, card decks require two wrapping elements: .card-deck-wrapper and a .card-deck. We use
-     * table styles for the sizing and the gutters on .card-deck. The .card-deck-wrapper is used to negative margin out the border-spacing on the .card-deck.
-     */
-    public BSCardDeck()
-    {
-        addClass(BSComponentCardOptions.Card_Deck);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Need a set of equal width and height cards that aren’t attached to one another? Use card decks. By default, card decks require two wrapping elements: .card-deck-wrapper and a .card-deck. We use
+	 * table styles for the sizing and the gutters on .card-deck. The .card-deck-wrapper is used to negative margin out the border-spacing on the .card-deck.
+	 */
+	public BSCardDeck()
+	{
+		addClass(BSComponentCardOptions.Card_Deck);
+	}
 }

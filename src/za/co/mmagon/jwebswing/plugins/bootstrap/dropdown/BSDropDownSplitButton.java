@@ -28,17 +28,16 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButton;
  *
  * @author GedMarc
  * @since 14 Jan 2017
- *
  */
 public class BSDropDownSplitButton extends BSDropDown
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSDropDownSplitButton(BSButton actionButton)
-    {
-        add(actionButton);
-        getDropdownButton().addClass(BSComponentDropDownOptions.Dropdown_Toggle_Split);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSDropDownSplitButton(BSButton actionButton)
+	{
+		add(actionButton);
+		getDropdownButton().addClass(BSComponentDropDownOptions.Dropdown_Toggle_Split);
+	}
+	
 }

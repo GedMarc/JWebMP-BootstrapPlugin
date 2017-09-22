@@ -23,19 +23,18 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormUrlInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default url input for bootstrap
-     */
-    public BSFormUrlInput()
-    {
-
-        setInputType(InputTypes.Url);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default url input for bootstrap
+	 */
+	public BSFormUrlInput()
+	{
+		
+		setInputType(InputTypes.Url);
+	}
 }

@@ -24,46 +24,45 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Included is support for left and right aligned content, content alignment options, nesting, and more.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentMediaOptions implements IBSComponentOptions
 {
-    /**
-     * Denotes this as a bootstrap media object
-     */
-    Media,
-    /**
-     * Aligns in the media object to the left
-     */
-    Media_Left,
-    /**
-     * Aligns in the media object to the right
-     */
-    Media_Right,
-    /**
-     * Aligns in the media object to the heading
-     */
-    Media_Heading,
-    /**
-     * Aligns to the media object in the body
-     */
-    Media_Body,
-    /**
-     * Marks the object displayed as the media object
-     */
-    Media_Object;
-
-    private BSComponentMediaOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Denotes this as a bootstrap media object
+	 */
+	Media,
+	/**
+	 * Aligns in the media object to the left
+	 */
+	Media_Left,
+	/**
+	 * Aligns in the media object to the right
+	 */
+	Media_Right,
+	/**
+	 * Aligns in the media object to the heading
+	 */
+	Media_Heading,
+	/**
+	 * Aligns to the media object in the body
+	 */
+	Media_Body,
+	/**
+	 * Marks the object displayed as the media object
+	 */
+	Media_Object;
+	
+	BSComponentMediaOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

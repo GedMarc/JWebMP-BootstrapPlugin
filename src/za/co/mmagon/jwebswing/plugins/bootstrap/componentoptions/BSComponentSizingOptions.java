@@ -22,24 +22,23 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
  * Easily make an element as wide or as tall as its parent using the .w-100 and .h-100 utility classes.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentSizingOptions implements IBSComponentOptions
 {
-    /**
-     * Sets the width to 100%
-     */
-    w_100,
-    /**
-     * Sets the height to 100%
-     */
-    h_100;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	/**
+	 * Sets the width to 100%
+	 */
+	w_100,
+	/**
+	 * Sets the height to 100%
+	 */
+	h_100;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

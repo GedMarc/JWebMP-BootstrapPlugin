@@ -23,57 +23,55 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGrou
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
 /**
- *
- * @author GedMarc
  * @param <J>
  *
+ * @author GedMarc
  * @since 20 Feb 2017
- *
  */
 public class BSFormHelpText<J extends BSFormHelpText<J>>
-        extends SmallText<J>
-        implements BSFormGroupChildren
+		extends SmallText<J>
+		implements BSFormGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A new block style help text for a bootstrap form
-     *
-     * @param text
-     */
-    public BSFormHelpText(String text)
-    {
-        super(text);
-        addClass(BSComponentDefaultOptions.Text_Muted);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * A blank help text entry for the form
-     */
-    public BSFormHelpText()
-    {
-        this(null);
-    }
-
-    /**
-     * Sets this help text as inline
-     *
-     * @param inline
-     *
-     * @return
-     */
-    public J setInline(boolean inline)
-    {
-        if (inline)
-        {
-            addClass(BSComponentFormGroupOptions.Form_Text);
-        }
-        else
-        {
-            removeClass(BSComponentFormGroupOptions.Form_Text);
-        }
-        return (J) this;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A new block style help text for a bootstrap form
+	 *
+	 * @param text
+	 */
+	public BSFormHelpText(String text)
+	{
+		super(text);
+		addClass(BSComponentDefaultOptions.Text_Muted);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * A blank help text entry for the form
+	 */
+	public BSFormHelpText()
+	{
+		this(null);
+	}
+	
+	/**
+	 * Sets this help text as inline
+	 *
+	 * @param inline
+	 *
+	 * @return
+	 */
+	public J setInline(boolean inline)
+	{
+		if (inline)
+		{
+			addClass(BSComponentFormGroupOptions.Form_Text);
+		}
+		else
+		{
+			removeClass(BSComponentFormGroupOptions.Form_Text);
+		}
+		return (J) this;
+	}
 }

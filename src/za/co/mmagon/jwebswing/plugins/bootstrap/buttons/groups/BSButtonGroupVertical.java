@@ -22,23 +22,22 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups;
  * Make a set of buttons appear vertically stacked rather than horizontally. Split button dropdowns are not supported here.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSButtonGroupVertical extends BSButtonGroup
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Vertical variation
-     * <p>
-     * Make a set of buttons appear vertically stacked rather than horizontally. Split button dropdowns are not supported here.
-     */
-    public BSButtonGroupVertical()
-    {
-        addClass(BSComponentButtonGroupOptions.Btn_Group_Vertical);
-        removeClass(BSComponentButtonGroupOptions.Btn_Group.toString());
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Vertical variation
+	 * <p>
+	 * Make a set of buttons appear vertically stacked rather than horizontally. Split button dropdowns are not supported here.
+	 */
+	public BSButtonGroupVertical()
+	{
+		addClass(BSComponentButtonGroupOptions.Btn_Group_Vertical);
+		removeClass(BSComponentButtonGroupOptions.Btn_Group.toString());
+	}
 }

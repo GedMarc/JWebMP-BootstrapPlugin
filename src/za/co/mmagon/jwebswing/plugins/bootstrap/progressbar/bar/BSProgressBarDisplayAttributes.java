@@ -19,39 +19,38 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 
 /**
- *
  * @author GedMarc
  */
 public enum BSProgressBarDisplayAttributes implements AttributeDefinitions
 {
-    Role,
-    Aria_Valuenow,
-    Aria_ValueMin,
-    Aria_ValueMax,
-    Visibility;
-
-    private BSProgressBarDisplayAttributes()
-    {
-    }
-
-    private BSProgressBarDisplayAttributes(boolean isKeyword)
-    {
-        this.isKeyword = isKeyword;
-    }
-
-    private boolean isKeyword;
-
-    @Override
-    public boolean isKeyword()
-    {
-        return isKeyword;
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_','-').replace("$", "");
-    }
-    
-    
+	Role,
+	Aria_Valuenow,
+	Aria_ValueMin,
+	Aria_ValueMax,
+	Visibility;
+	
+	private boolean isKeyword;
+	
+	BSProgressBarDisplayAttributes()
+	{
+	}
+	
+	BSProgressBarDisplayAttributes(boolean isKeyword)
+	{
+		this.isKeyword = isKeyword;
+	}
+	
+	@Override
+	public boolean isKeyword()
+	{
+		return isKeyword;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-').replace("$", "");
+	}
+	
+	
 }

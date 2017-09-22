@@ -24,135 +24,136 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
 /**
  * A particular crumb
  *
- * @author GedMarc
  * @param <J>
- * @since 31 Dec 2016
- * @version 1.0
  *
+ * @author GedMarc
+ * @version 1.0
+ * @since 31 Dec 2016
  */
 public class BSBreadcrumb<J extends BSBreadcrumb<J>>
-        extends ListItem<J>
-        implements BSBreadcrumbsChildren, IBSBreadcrumb<J>
+		extends ListItem<J>
+		implements BSBreadcrumbsChildren, IBSBreadcrumb<J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * The actual link for the crumb
-     */
-    private Link crumbLink;
-
-    /**
-     * Constructs a particular crumb
-     */
-    public BSBreadcrumb()
-    {
-        addClass(BSComponentBreadcrumbOptions.Breadcrumb_Item);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Construct with a link and text to show
-     *
-     * @param crumbLink
-     */
-    @SuppressWarnings("")
-    public BSBreadcrumb(Link crumbLink)
-    {
-        this();
-        setCrumbLink(crumbLink);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Neater display
-     *
-     * @return
-     */
-    public IBSBreadcrumb asMe()
-    {
-        return this;
-    }
-
-    /**
-     * Returns the crumb link, never null
-     *
-     * @return
-     */
-    @Override
-    public Link getCrumbLink()
-    {
-        if (crumbLink == null)
-        {
-            setCrumbLink(new Link("#"));
-        }
-        return crumbLink;
-    }
-
-    /**
-     * Sets the given crumb link
-     *
-     * @param crumbLink
-     */
-    @Override
-    public J setCrumbLink(Link crumbLink)
-    {
-        if (this.crumbLink != null)
-        {
-            remove(this.crumbLink);
-            this.crumbLink = null;
-        }
-        this.crumbLink = crumbLink;
-        if (this.crumbLink != null)
-        {
-            add(this.crumbLink);
-        }
-        return (J) this;
-    }
-
-    /**
-     * Sets this crumb to display as active
-     *
-     * @param active
-     * @return
-     */
-    @Override
-    public J setActive(boolean active)
-    {
-        if (active)
-        {
-            addClass(BSComponentDefaultOptions.Active);
-        }
-        else
-        {
-            removeClass(BSComponentDefaultOptions.Active);
-        }
-        return (J) this;
-    }
-
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (getClass() != obj.getClass())
-        {
-            return false;
-        }
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int hash = 7;
-        hash = 79 * hash + (this.getID().hashCode());
-        return hash;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * The actual link for the crumb
+	 */
+	private Link crumbLink;
+	
+	/**
+	 * Constructs a particular crumb
+	 */
+	public BSBreadcrumb()
+	{
+		addClass(BSComponentBreadcrumbOptions.Breadcrumb_Item);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Construct with a link and text to show
+	 *
+	 * @param crumbLink
+	 */
+	@SuppressWarnings("")
+	public BSBreadcrumb(Link crumbLink)
+	{
+		this();
+		setCrumbLink(crumbLink);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Neater display
+	 *
+	 * @return
+	 */
+	public IBSBreadcrumb asMe()
+	{
+		return this;
+	}
+	
+	/**
+	 * Returns the crumb link, never null
+	 *
+	 * @return
+	 */
+	@Override
+	public Link getCrumbLink()
+	{
+		if (crumbLink == null)
+		{
+			setCrumbLink(new Link("#"));
+		}
+		return crumbLink;
+	}
+	
+	/**
+	 * Sets the given crumb link
+	 *
+	 * @param crumbLink
+	 */
+	@Override
+	public J setCrumbLink(Link crumbLink)
+	{
+		if (this.crumbLink != null)
+		{
+			remove(this.crumbLink);
+			this.crumbLink = null;
+		}
+		this.crumbLink = crumbLink;
+		if (this.crumbLink != null)
+		{
+			add(this.crumbLink);
+		}
+		return (J) this;
+	}
+	
+	/**
+	 * Sets this crumb to display as active
+	 *
+	 * @param active
+	 *
+	 * @return
+	 */
+	@Override
+	public J setActive(boolean active)
+	{
+		if (active)
+		{
+			addClass(BSComponentDefaultOptions.Active);
+		}
+		else
+		{
+			removeClass(BSComponentDefaultOptions.Active);
+		}
+		return (J) this;
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (getClass() != obj.getClass())
+		{
+			return false;
+		}
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (this.getID().hashCode());
+		return hash;
+	}
 }

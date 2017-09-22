@@ -26,22 +26,21 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.progressbar;
 import org.junit.Test;
 
 /**
- *
  * @author GedMarc
  */
 public class BSProgressBarTest
 {
-
-    public BSProgressBarTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSProgressBar prog = new BSProgressBar();
-        prog.getProgressBar();
-        System.out.println(prog.toString(true));
-    }
+	
+	public BSProgressBarTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSProgressBar prog = new BSProgressBar();
+		prog.getProgressBar();
+		System.out.println(prog.toString(true));
+	}
 
 }

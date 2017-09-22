@@ -23,24 +23,23 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.dropdown;
  *
  * @author GedMarc
  * @since 14 Jan 2017
- *
  */
 public class BSDropUp extends BSDropDown
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSDropUp()
-    {
-
-        addClass(BSComponentDropDownOptions.Dropup);
-    }
-
-    @Override
-    public void init()
-    {
-        removeClass("dropdown");
-        super.init();
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSDropUp()
+	{
+		
+		addClass(BSComponentDropDownOptions.Dropup);
+	}
+	
+	@Override
+	public void init()
+	{
+		removeClass("dropdown");
+		super.init();
+	}
 
 }

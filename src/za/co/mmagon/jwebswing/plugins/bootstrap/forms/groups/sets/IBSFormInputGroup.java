@@ -16,47 +16,45 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
-import java.util.List;
 import za.co.mmagon.jwebswing.base.html.Span;
 
+import java.util.List;
+
 /**
- *
  * @author GedMarc
  * @since 20 Feb 2017
- * 
  */
-public interface IBSFormInputGroup 
+public interface IBSFormInputGroup
 {
-
-    /**
-     *
-     * @return
-     */
-    List<Span> getInputGroupAddons();
-
-    /**
-     * Sets the input group addons to the right
-     *
-     * @return
-     */
-    List<Span> getInputGroupAddonsRight();
-
-    /**
-     * The input group addons
-     *
-     * @param inputGroupAddons
-     *
-     * @return
-     */
-    BSFormInputGroup setInputGroupAddons(List<Span> inputGroupAddons);
-
-    /**
-     * Sets the input group addons to the right
-     *
-     * @param inputGroupAddonsRight
-     *
-     * @return
-     */
-    BSFormInputGroup setInputGroupAddonsRight(List<Span> inputGroupAddonsRight);
-
+	
+	/**
+	 * @return
+	 */
+	List<Span> getInputGroupAddons();
+	
+	/**
+	 * Sets the input group addons to the right
+	 *
+	 * @return
+	 */
+	List<Span> getInputGroupAddonsRight();
+	
+	/**
+	 * The input group addons
+	 *
+	 * @param inputGroupAddons
+	 *
+	 * @return
+	 */
+	BSFormInputGroup setInputGroupAddons(List<Span> inputGroupAddons);
+	
+	/**
+	 * Sets the input group addons to the right
+	 *
+	 * @param inputGroupAddonsRight
+	 *
+	 * @return
+	 */
+	BSFormInputGroup setInputGroupAddonsRight(List<Span> inputGroupAddonsRight);
+	
 }

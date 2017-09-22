@@ -20,10 +20,9 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.children.ListChildren;
 
 /**
- *
  * @author Marc Magon
- * @since 07 Aug 2015
  * @version 1.0
+ * @since 07 Aug 2015
  */
 public interface BSBreadcrumbsChildren extends GlobalChildren, ListChildren
 {

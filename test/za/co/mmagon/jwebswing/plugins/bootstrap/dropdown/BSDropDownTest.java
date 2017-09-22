@@ -25,47 +25,46 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItem
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItemHeader;
 
 /**
- *
  * @author GedMarc
  */
 public class BSDropDownTest extends BaseTestClass
 {
-
-    public BSDropDownTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSDropDown drop = new BSDropDown();
-        drop.getDropdownMenu().add(new BSDropDownMenuItem("menu item"));
-        drop.getDropdownMenu().add(new BSDropDownMenuItemDivider());
-        drop.getDropdownMenu().add(new BSDropDownMenuItemHeader("Text Yes"));
-        System.out.println(drop.toString(true));
-    }
-
-    @Test
-    public void testSingleDropdown()
-    {
-        BSDropDown drop = new BSDropDown();
-        drop.setDropdownButton(new BSButtonPrimaryOutline());
-        System.out.println(drop.toString(true));
-    }
-
-    @Test
-    public void testSplitButton()
-    {
-        BSButton actionButton = new BSButton("action");
-        BSDropDownSplitButton splitButton = new BSDropDownSplitButton(actionButton);
-
-        System.out.println(splitButton.toString(true));
-    }
-
-    @Test
-    public void testDropupButton()
-    {
-        BSDropUp up = new BSDropUp();
-        System.out.println(up.toString(true));
-    }
+	
+	public BSDropDownTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSDropDown drop = new BSDropDown();
+		drop.getDropdownMenu().add(new BSDropDownMenuItem("menu item"));
+		drop.getDropdownMenu().add(new BSDropDownMenuItemDivider());
+		drop.getDropdownMenu().add(new BSDropDownMenuItemHeader("Text Yes"));
+		System.out.println(drop.toString(true));
+	}
+	
+	@Test
+	public void testSingleDropdown()
+	{
+		BSDropDown drop = new BSDropDown();
+		drop.setDropdownButton(new BSButtonPrimaryOutline());
+		System.out.println(drop.toString(true));
+	}
+	
+	@Test
+	public void testSplitButton()
+	{
+		BSButton actionButton = new BSButton("action");
+		BSDropDownSplitButton splitButton = new BSDropDownSplitButton(actionButton);
+		
+		System.out.println(splitButton.toString(true));
+	}
+	
+	@Test
+	public void testDropupButton()
+	{
+		BSDropUp up = new BSDropUp();
+		System.out.println(up.toString(true));
+	}
 }

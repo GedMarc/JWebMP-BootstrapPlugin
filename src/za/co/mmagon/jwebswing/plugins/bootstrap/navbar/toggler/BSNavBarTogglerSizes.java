@@ -20,43 +20,41 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 
 /**
- *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public enum BSNavBarTogglerSizes implements IBSComponentOptions
 {
-    /**
-     * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
-     */
-    Navbar_Toggleable_XS,
-    /**
-     * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
-     */
-    Navbar_Toggleable_SM,
-    /**
-     * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
-     */
-    Navbar_Toggleable_MD,
-    /**
-     * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
-     */
-    Navbar_Toggleable_LG,
-    /**
-     * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
-     */
-    Navbar_Toggleable_XL,;
-
-    private BSNavBarTogglerSizes()
-    { //Nothing Needed
-    }
-
-    @JsonValue
-    @Override
-    public String toString()
-    {
-        String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
-        return name;
-    }
+	/**
+	 * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
+	 */
+	Navbar_Toggleable_XS,
+	/**
+	 * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
+	 */
+	Navbar_Toggleable_SM,
+	/**
+	 * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
+	 */
+	Navbar_Toggleable_MD,
+	/**
+	 * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
+	 */
+	Navbar_Toggleable_LG,
+	/**
+	 * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
+	 */
+	Navbar_Toggleable_XL,;
+	
+	BSNavBarTogglerSizes()
+	{ //Nothing Needed
+	}
+	
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
+		return name;
+	}
 }

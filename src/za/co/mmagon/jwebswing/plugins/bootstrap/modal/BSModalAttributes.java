@@ -19,44 +19,43 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.modal;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 
 /**
- *
  * @author GedMarc
  */
 public enum BSModalAttributes implements AttributeDefinitions
 {
-    Data_Backdrop,
-    Data_Keyboard,
-    Data_Focus,
-    Data_Show,
-    Visibility,
-    Role,
-    TabIndex;
-
-    private BSModalAttributes()
-    {
-    }
-
-    private BSModalAttributes(boolean isKeyword)
-    {
-        this.isKeyword = isKeyword;
-    }
-
-    private boolean isKeyword;
-
-    @Override
-    public boolean isKeyword()
-    {
-        return isKeyword;
-    }
-
-    /**
-     * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
-     *
-     * @return
-     */
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-').replace("$", "");
-    }
+	Data_Backdrop,
+	Data_Keyboard,
+	Data_Focus,
+	Data_Show,
+	Visibility,
+	Role,
+	TabIndex;
+	
+	private boolean isKeyword;
+	
+	BSModalAttributes()
+	{
+	}
+	
+	BSModalAttributes(boolean isKeyword)
+	{
+		this.isKeyword = isKeyword;
+	}
+	
+	@Override
+	public boolean isKeyword()
+	{
+		return isKeyword;
+	}
+	
+	/**
+	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
+	 *
+	 * @return
+	 */
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-').replace("$", "");
+	}
 }

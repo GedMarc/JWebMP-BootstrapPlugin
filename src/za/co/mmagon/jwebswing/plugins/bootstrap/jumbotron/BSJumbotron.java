@@ -28,79 +28,80 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * <p>
  * A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.
  * <p>
- * @author Marc Magon
+ *
  * @param <J>
  *
- * @since 18 Jan 2017
+ * @author Marc Magon
  * @version 1.0
+ * @since 18 Jan 2017
  */
 @ComponentInformation(name = "Bootstrap Jumbotron", description = "A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.",
-                      url = "https://v4-alpha.getbootstrap.com/components/jumbotron/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/jumbotron/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSJumbotron<J extends BSJumbotron<J>>
-        extends Div<GlobalChildren, BSJumbotronAttributes, GlobalFeatures, GlobalEvents, J>
+		extends Div<GlobalChildren, BSJumbotronAttributes, GlobalFeatures, GlobalEvents, J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new instance
-     * <p>
-     */
-    public BSJumbotron()
-    {
-        this((String) null);
-    }
-
-    /**
-     * Constructs a new instance
-     *
-     * @param text
-     */
-    public BSJumbotron(String text)
-    {
-        super(text);
-        addClass(BSComponentJumbotronOptions.Jumbotron);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Constructs a new instance
-     *
-     * @param jumbotronType
-     */
-    public BSJumbotron(BSComponentJumbotronOptions... jumbotronType)
-    {
-        this((String) null);
-        for (BSComponentJumbotronOptions bSComponentJumbotronOptions : jumbotronType)
-        {
-            addClass(bSComponentJumbotronOptions);
-        }
-    }
-
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (getClass() != obj.getClass())
-        {
-            return false;
-        }
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int hash = 7;
-        hash = 79 * hash + (this.getID().hashCode());
-        return hash;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new instance
+	 * <p>
+	 */
+	public BSJumbotron()
+	{
+		this((String) null);
+	}
+	
+	/**
+	 * Constructs a new instance
+	 *
+	 * @param text
+	 */
+	public BSJumbotron(String text)
+	{
+		super(text);
+		addClass(BSComponentJumbotronOptions.Jumbotron);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Constructs a new instance
+	 *
+	 * @param jumbotronType
+	 */
+	public BSJumbotron(BSComponentJumbotronOptions... jumbotronType)
+	{
+		this((String) null);
+		for (BSComponentJumbotronOptions bSComponentJumbotronOptions : jumbotronType)
+		{
+			addClass(bSComponentJumbotronOptions);
+		}
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (getClass() != obj.getClass())
+		{
+			return false;
+		}
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (this.getID().hashCode());
+		return hash;
+	}
+	
 }

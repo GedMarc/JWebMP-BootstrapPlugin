@@ -24,34 +24,33 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentPaginationSizingOptions implements IBSComponentOptions
 {
-    /**
-     * Sizing
-     * <p>
-     * Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
-     */
-    Pagination_Lg,
-    /**
-     * Sizing
-     * <p>
-     * Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
-     */
-    Pagination_Sm,;
-
-    private BSComponentPaginationSizingOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Sizing
+	 * <p>
+	 * Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
+	 */
+	Pagination_Lg,
+	/**
+	 * Sizing
+	 * <p>
+	 * Fancy larger or smaller pagination? Add .pagination-lg or .pagination-sm for additional sizes.
+	 */
+	Pagination_Sm,;
+	
+	BSComponentPaginationSizingOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

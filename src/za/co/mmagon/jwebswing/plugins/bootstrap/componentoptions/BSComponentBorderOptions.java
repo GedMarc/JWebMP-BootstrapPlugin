@@ -22,40 +22,39 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
  * Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons, or any other element.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentBorderOptions implements IBSComponentOptions
 {
-    /**
-     * makes all 4 corners rounded
-     */
-    Rounded,
-    /**
-     * Only round the top
-     */
-    Rounded_Top,
-    /**
-     * Only rounds the bottom
-     */
-    Rounded_Bottom,
-    /**
-     * Rounds the left
-     */
-    Rounded_Left,
-    /**
-     * Rounds the right
-     */
-    Rounded_Right,
-    /**
-     * Makes the display in circular format
-     */
-    Rounded_Circle;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	/**
+	 * makes all 4 corners rounded
+	 */
+	Rounded,
+	/**
+	 * Only round the top
+	 */
+	Rounded_Top,
+	/**
+	 * Only rounds the bottom
+	 */
+	Rounded_Bottom,
+	/**
+	 * Rounds the left
+	 */
+	Rounded_Left,
+	/**
+	 * Rounds the right
+	 */
+	Rounded_Right,
+	/**
+	 * Makes the display in circular format
+	 */
+	Rounded_Circle;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

@@ -26,25 +26,24 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 import org.junit.Test;
 
 /**
- *
  * @author GedMarc
  */
 public class BSBreadcrumbsTest
 {
-
-    public BSBreadcrumbsTest()
-    {
-    }
-
-    @Test
-    public void testPreConfigure()
-    {
-        BSBreadcrumbs crumbs = new BSBreadcrumbs();
-        BSBreadcrumb crumb = new BSBreadcrumb();
-
-        crumbs.add(crumb);
-
-        System.out.println(crumbs.toString(true));
-    }
+	
+	public BSBreadcrumbsTest()
+	{
+	}
+	
+	@Test
+	public void testPreConfigure()
+	{
+		BSBreadcrumbs crumbs = new BSBreadcrumbs();
+		BSBreadcrumb crumb = new BSBreadcrumb();
+		
+		crumbs.add(crumb);
+		
+		System.out.println(crumbs.toString(true));
+	}
 
 }

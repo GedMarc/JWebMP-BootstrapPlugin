@@ -26,49 +26,48 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOpti
  *
  * @author GedMarc
  * @since 14 Jan 2017
- *
  */
 public class BSDropDownMenuItemHeader extends BSDropDownMenuItem
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Menu headers
-     * <p>
-     * Add a header to label sections of actions in any dropdown menu.
-     *
-     * @param text
-     */
-    public BSDropDownMenuItemHeader(String text)
-    {
-        super(text);
-        config();
-    }
-
-    /**
-     * Menu headers
-     * <p>
-     * Add a header to label sections of actions in any dropdown menu.
-     *
-     * @param iconClass
-     * @param text
-     */
-    public BSDropDownMenuItemHeader(String iconClass, String text)
-    {
-        super(iconClass, text);
-        setRenderTextBeforeChildren(false);
-        config();
-    }
-
-    /**
-     * Sets tag to h6 and applies classes
-     */
-    private void config()
-    {
-        setTag("h6");
-        addClass(BSComponentDropDownOptions.Dropdown_Header);
-        removeClass(BSComponentDropDownOptions.Dropdown_Item.toString());
-        getAttributes().remove(LinkAttributes.HRef);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Menu headers
+	 * <p>
+	 * Add a header to label sections of actions in any dropdown menu.
+	 *
+	 * @param text
+	 */
+	public BSDropDownMenuItemHeader(String text)
+	{
+		super(text);
+		config();
+	}
+	
+	/**
+	 * Menu headers
+	 * <p>
+	 * Add a header to label sections of actions in any dropdown menu.
+	 *
+	 * @param iconClass
+	 * @param text
+	 */
+	public BSDropDownMenuItemHeader(String iconClass, String text)
+	{
+		super(iconClass, text);
+		setRenderTextBeforeChildren(false);
+		config();
+	}
+	
+	/**
+	 * Sets tag to h6 and applies classes
+	 */
+	private void config()
+	{
+		setTag("h6");
+		addClass(BSComponentDropDownOptions.Dropdown_Header);
+		removeClass(BSComponentDropDownOptions.Dropdown_Item.toString());
+		getAttributes().remove(LinkAttributes.HRef);
+	}
 }

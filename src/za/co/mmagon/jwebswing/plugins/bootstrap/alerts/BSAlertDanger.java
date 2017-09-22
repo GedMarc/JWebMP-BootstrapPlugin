@@ -22,22 +22,21 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
  * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public class BSAlertDanger extends BSAlert
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Alerts
-     * <p>
-     * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
-     */
-    public BSAlertDanger()
-    {
-        addClass(BSComponentAlertOptions.Alert_Danger);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Alerts
+	 * <p>
+	 * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+	 */
+	public BSAlertDanger()
+	{
+		addClass(BSComponentAlertOptions.Alert_Danger);
+	}
 }

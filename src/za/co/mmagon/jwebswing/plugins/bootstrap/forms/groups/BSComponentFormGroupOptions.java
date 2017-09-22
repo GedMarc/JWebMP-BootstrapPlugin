@@ -25,56 +25,55 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * not by hovering; this is an intentional design decision.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public enum BSComponentFormGroupOptions implements IBSComponentOptions
 {
-    /**
-     * Is a form group
-     */
-    Form_Group,
-    /**
-     * Denotes a specific form control
-     */
-    Form_Control,
-    /**
-     * Makes a &lt;form&gt; left_aligned with inline_block controls (This only applies to forms within viewports that are at least 768px wide)
-     */
-    Form_Inline,
-    /**
-     * Aligns labels and groups of form controls in a horizontal layout
-     */
-    Form_Horizontal,
-    /**
-     * File Inputs
-     */
-    Form_Control_File,
-    /**
-     * Marks this item as a validation feedback item
-     */
-    Form_Control_Feedback,
-    /**
-     * Checkboxes and radios
-     */
-    Form_Check,
-    /**
-     * Label for checkboxes and radio button
-     */
-    Form_Check_Label,
-    /**
-     * The input for checkbox and radio buttons
-     */
-    Form_Check_Input,
-    /**
-     * Deprecated?
-     */
-    Form_Text;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	/**
+	 * Is a form group
+	 */
+	Form_Group,
+	/**
+	 * Denotes a specific form control
+	 */
+	Form_Control,
+	/**
+	 * Makes a &lt;form&gt; left_aligned with inline_block controls (This only applies to forms within viewports that are at least 768px wide)
+	 */
+	Form_Inline,
+	/**
+	 * Aligns labels and groups of form controls in a horizontal layout
+	 */
+	Form_Horizontal,
+	/**
+	 * File Inputs
+	 */
+	Form_Control_File,
+	/**
+	 * Marks this item as a validation feedback item
+	 */
+	Form_Control_Feedback,
+	/**
+	 * Checkboxes and radios
+	 */
+	Form_Check,
+	/**
+	 * Label for checkboxes and radio button
+	 */
+	Form_Check_Label,
+	/**
+	 * The input for checkbox and radio buttons
+	 */
+	Form_Check_Input,
+	/**
+	 * Deprecated?
+	 */
+	Form_Text;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

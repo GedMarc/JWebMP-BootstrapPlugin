@@ -17,8 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
 
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.close.BSCloseIcon;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 
 /**
  * Dismissing
@@ -36,31 +36,30 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.close.BSCloseIcon;
  * To animate alerts when dismissing them, be sure to add the .fade and .in classes.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public class BSAlertDismissButton extends BSCloseIcon
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs and adds a dismiss button to the alert
-     *
-     * @param alert
-     * @param fade
-     */
-    @SuppressWarnings("")
-    public BSAlertDismissButton(BSAlert alert, boolean fade)
-    {
-        addAttribute(ButtonAttributes.Data_Dismiss, "alert");
-        alert.addClass(BSComponentAlertOptions.Alert_Dismissible);
-        if (fade)
-        {
-            alert.addClass(BSComponentDefaultOptions.Fade);
-            alert.addClass(BSComponentDefaultOptions.In);
-        }
-        alert.add(this);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs and adds a dismiss button to the alert
+	 *
+	 * @param alert
+	 * @param fade
+	 */
+	@SuppressWarnings("")
+	public BSAlertDismissButton(BSAlert alert, boolean fade)
+	{
+		addAttribute(ButtonAttributes.Data_Dismiss, "alert");
+		alert.addClass(BSComponentAlertOptions.Alert_Dismissible);
+		if (fade)
+		{
+			alert.addClass(BSComponentDefaultOptions.Fade);
+			alert.addClass(BSComponentDefaultOptions.In);
+		}
+		alert.add(this);
+	}
 }

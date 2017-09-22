@@ -19,59 +19,57 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.badge;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 
 /**
- *
  * @author GedMarc
  * @since 18 Jan 2017
- *
  */
 public enum BSComponentBadgeOptions implements IBSComponentOptions
 {
-    /**
-     * Base badge class
-     */
-    Badge,
-    /**
-     * Default styling
-     */
-    Badge_Default,
-    /**
-     * Primary colour styling
-     */
-    Badge_Primary,
-    /**
-     * Secondary styling
-     */
-    Badge_Secondary,
-    /**
-     * Info styling
-     */
-    Badge_Info,
-    /**
-     * Warning styling
-     */
-    Badge_Warning,
-    /**
-     * Success styling
-     */
-    Badge_Success,
-    /**
-     * Danger styling
-     */
-    Badge_Danger,
-    /**
-     * Pill styling (placed before colouring)
-     */
-    Badge_Pill;
-
-    private BSComponentBadgeOptions()
-    {
-        //Nothing Needed
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Base badge class
+	 */
+	Badge,
+	/**
+	 * Default styling
+	 */
+	Badge_Default,
+	/**
+	 * Primary colour styling
+	 */
+	Badge_Primary,
+	/**
+	 * Secondary styling
+	 */
+	Badge_Secondary,
+	/**
+	 * Info styling
+	 */
+	Badge_Info,
+	/**
+	 * Warning styling
+	 */
+	Badge_Warning,
+	/**
+	 * Success styling
+	 */
+	Badge_Success,
+	/**
+	 * Danger styling
+	 */
+	Badge_Danger,
+	/**
+	 * Pill styling (placed before colouring)
+	 */
+	Badge_Pill;
+	
+	BSComponentBadgeOptions()
+	{
+		//Nothing Needed
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

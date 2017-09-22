@@ -28,42 +28,43 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
  */
 public enum BSProgressBarReferencePool implements ReferencePool
 {
-
-    ;
-    private BSProgressBarReferencePool()
-    {
-    }
-
-    private JavascriptReference javaScriptReference;
-    private CSSReference cssReference;
-
-    private BSProgressBarReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-        this.cssReference = cssReference;
-    }
-
-    @Override
-    public JavascriptReference getJavaScriptReference()
-    {
-        return javaScriptReference;
-    }
-
-    @Override
-    public void setJavaScriptReference(JavascriptReference javaScriptReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-    }
-
-    @Override
-    public CSSReference getCssReference()
-    {
-        return cssReference;
-    }
-
-    @Override
-    public void setCssReference(CSSReference cssReference)
-    {
-        this.cssReference = cssReference;
-    }
+	
+	;
+	
+	private JavascriptReference javaScriptReference;
+	private CSSReference cssReference;
+	
+	BSProgressBarReferencePool()
+	{
+	}
+	
+	BSProgressBarReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+		this.cssReference = cssReference;
+	}
+	
+	@Override
+	public JavascriptReference getJavaScriptReference()
+	{
+		return javaScriptReference;
+	}
+	
+	@Override
+	public void setJavaScriptReference(JavascriptReference javaScriptReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+	}
+	
+	@Override
+	public CSSReference getCssReference()
+	{
+		return cssReference;
+	}
+	
+	@Override
+	public void setCssReference(CSSReference cssReference)
+	{
+		this.cssReference = cssReference;
+	}
 }

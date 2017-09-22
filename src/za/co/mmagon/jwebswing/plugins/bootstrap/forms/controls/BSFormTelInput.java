@@ -23,19 +23,18 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormTelInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default tel input for bootstrap
-     */
-    public BSFormTelInput()
-    {
-
-        setInputType(InputTypes.Tel);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default tel input for bootstrap
+	 */
+	public BSFormTelInput()
+	{
+		
+		setInputType(InputTypes.Tel);
+	}
 }

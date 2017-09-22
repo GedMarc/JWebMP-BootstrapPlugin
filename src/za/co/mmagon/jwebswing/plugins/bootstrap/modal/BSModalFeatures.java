@@ -19,10 +19,9 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.modal;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 
 /**
- *
  * @author Marc Magon
- * @since 07 Aug 2015
  * @version 1.0
+ * @since 07 Aug 2015
  */
 public interface BSModalFeatures extends GlobalFeatures
 {

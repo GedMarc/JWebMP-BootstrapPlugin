@@ -36,187 +36,189 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
  * Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking,
  * not by hovering; this is an intentional design decision.
  * <p>
- * @author Marc Magon
+ *
  * @param <J>
  *
- * @since 13 Jan 2017
+ * @author Marc Magon
  * @version 1.0
+ * @since 13 Jan 2017
  */
 @ComponentInformation(name = "Bootstrap Dropdown", description = "Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.",
-                      url = "https://v4-alpha.getbootstrap.com/components/dropdowns/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/dropdowns/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSDropDown<J extends BSDropDown<J>>
-        extends Div<BSDropDownChildren, BSDropDownAttributes, GlobalFeatures, BSDropDownEvents, J> implements IBSDropDown<J>
+		extends Div<BSDropDownChildren, BSDropDownAttributes, GlobalFeatures, BSDropDownEvents, J> implements IBSDropDown<J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * The button for the drop down,
-     */
-    private Component dropdownButton;
-
-    /**
-     * The dropdownMenu for this drop down
-     */
-    private BSDropDownMenu dropdownMenu;
-
-    /**
-     * Construct a new bootstrap drop down
-     */
-    @SuppressWarnings("")
-    public BSDropDown()
-    {
-        addClass(BSComponentDropDownOptions.Dropdown);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Construct a new drop down
-     *
-     * @param link
-     */
-    @SuppressWarnings("")
-    public BSDropDown(BSDropDownLink link)
-    {
-        this();
-        setDropdownButton(link);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Constructs a new bootstrap drop down with the given button
-     *
-     * @param button
-     */
-    @SuppressWarnings("")
-    public BSDropDown(BSDropDownButton button)
-    {
-        this();
-        setDropdownButton(button);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Neater view on the matter
-     *
-     * @return
-     */
-    public IBSDropDown asMe()
-    {
-        return this;
-    }
-
-    /**
-     * Sets no Cart on the item
-     *
-     * @param noCaret
-     * @return
-     */
-    public J setNoCaret(boolean noCaret)
-    {
-        if (noCaret)
-        {
-            getDropdownButton().addClass("no-caret");
-            if (BootstrapPageConfigurator.isBootstrap4())
-            {
-                addCssReference(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
-            }
-        }
-        else
-        {
-            getDropdownButton().removeClass("no-caret");
-            if (BootstrapPageConfigurator.isBootstrap4())
-            {
-                getCssReferences().remove(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
-            }
-        }
-
-        return (J) this;
-    }
-
-    /**
-     * Returns the current dropdownMenu or a new one
-     *
-     * @return
-     */
-    @Override
-    public BSDropDownMenu getDropdownMenu()
-    {
-        if (dropdownMenu == null)
-        {
-            setMenu(new BSDropDownMenu());
-        }
-        return dropdownMenu;
-    }
-
-    /**
-     * Sets the dropdownMenu
-     *
-     * @param menu
-     *
-     * @return
-     */
-    @Override
-    public BSDropDown setMenu(BSDropDownMenu menu)
-    {
-        this.dropdownMenu = menu;
-        if (menu != null)
-        {
-            menu.addAttribute(BSButtonAttributes.Role.toString(), "menu");
-        }
-        return this;
-    }
-
-    /**
-     * Returns the drop down button
-     *
-     * @return
-     */
-    @Override
-    public Component getDropdownButton()
-    {
-        if (dropdownButton == null)
-        {
-            setDropdownButton(new BSDropDownLink());
-        }
-        return dropdownButton;
-    }
-
-    /**
-     * Sets the drop down dropdownMenu button
-     *
-     * @param dropdownButton
-     *
-     * @return
-     */
-    @Override
-    public final J setDropdownButton(Component dropdownButton)
-    {
-        this.dropdownButton = (Component) dropdownButton;
-        if (dropdownButton != null)
-        {
-            dropdownButton.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-        }
-        return (J) this;
-    }
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            getDropdownButton().addAttribute(BSButtonGroupAttributes.Role.toString(), "button");
-            add((BSDropDownChildren) getDropdownButton());
-            add((BSDropDownChildren) getDropdownMenu());
-
-            getDropdownMenu().addAttribute(GlobalAttributes.Aria_LabelledBy.toString(), getDropdownButton().getID());
-            getDropdownButton().addAttribute(ButtonAttributes.Data_Target.toString(), getDropdownMenu().getID());
-
-            if (Link.class.isAssignableFrom(getDropdownButton().getClass()))
-            {
-                addClass(BSComponentDefaultOptions.Show);
-            }
-        }
-        super.preConfigure();
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * The button for the drop down,
+	 */
+	private Component dropdownButton;
+	
+	/**
+	 * The dropdownMenu for this drop down
+	 */
+	private BSDropDownMenu dropdownMenu;
+	
+	/**
+	 * Construct a new bootstrap drop down
+	 */
+	@SuppressWarnings("")
+	public BSDropDown()
+	{
+		addClass(BSComponentDropDownOptions.Dropdown);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Construct a new drop down
+	 *
+	 * @param link
+	 */
+	@SuppressWarnings("")
+	public BSDropDown(BSDropDownLink link)
+	{
+		this();
+		setDropdownButton(link);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Constructs a new bootstrap drop down with the given button
+	 *
+	 * @param button
+	 */
+	@SuppressWarnings("")
+	public BSDropDown(BSDropDownButton button)
+	{
+		this();
+		setDropdownButton(button);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Neater view on the matter
+	 *
+	 * @return
+	 */
+	public IBSDropDown asMe()
+	{
+		return this;
+	}
+	
+	/**
+	 * Sets no Cart on the item
+	 *
+	 * @param noCaret
+	 *
+	 * @return
+	 */
+	public J setNoCaret(boolean noCaret)
+	{
+		if (noCaret)
+		{
+			getDropdownButton().addClass("no-caret");
+			if (BootstrapPageConfigurator.isBootstrap4())
+			{
+				addCssReference(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
+			}
+		}
+		else
+		{
+			getDropdownButton().removeClass("no-caret");
+			if (BootstrapPageConfigurator.isBootstrap4())
+			{
+				getCssReferences().remove(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
+			}
+		}
+		
+		return (J) this;
+	}
+	
+	/**
+	 * Returns the current dropdownMenu or a new one
+	 *
+	 * @return
+	 */
+	@Override
+	public BSDropDownMenu getDropdownMenu()
+	{
+		if (dropdownMenu == null)
+		{
+			setMenu(new BSDropDownMenu());
+		}
+		return dropdownMenu;
+	}
+	
+	/**
+	 * Sets the dropdownMenu
+	 *
+	 * @param menu
+	 *
+	 * @return
+	 */
+	@Override
+	public BSDropDown setMenu(BSDropDownMenu menu)
+	{
+		this.dropdownMenu = menu;
+		if (menu != null)
+		{
+			menu.addAttribute(BSButtonAttributes.Role.toString(), "menu");
+		}
+		return this;
+	}
+	
+	/**
+	 * Returns the drop down button
+	 *
+	 * @return
+	 */
+	@Override
+	public Component getDropdownButton()
+	{
+		if (dropdownButton == null)
+		{
+			setDropdownButton(new BSDropDownLink());
+		}
+		return dropdownButton;
+	}
+	
+	/**
+	 * Sets the drop down dropdownMenu button
+	 *
+	 * @param dropdownButton
+	 *
+	 * @return
+	 */
+	@Override
+	public final J setDropdownButton(Component dropdownButton)
+	{
+		this.dropdownButton = dropdownButton;
+		if (dropdownButton != null)
+		{
+			dropdownButton.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
+		}
+		return (J) this;
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			getDropdownButton().addAttribute(BSButtonGroupAttributes.Role.toString(), "button");
+			add((BSDropDownChildren) getDropdownButton());
+			add(getDropdownMenu());
+			
+			getDropdownMenu().addAttribute(GlobalAttributes.Aria_LabelledBy.toString(), getDropdownButton().getID());
+			getDropdownButton().addAttribute(ButtonAttributes.Data_Target.toString(), getDropdownMenu().getID());
+			
+			if (Link.class.isAssignableFrom(getDropdownButton().getClass()))
+			{
+				addClass(BSComponentDefaultOptions.Show);
+			}
+		}
+		super.preConfigure();
+	}
 }

@@ -19,19 +19,17 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.carousel;
 import za.co.mmagon.jwebswing.base.html.Div;
 
 /**
- *
  * @author GedMarc
  * @since 16 Feb 2017
- *
  */
 public class BSCarouselSlides extends Div implements BSCarouselChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSCarouselSlides()
-    {
-        addClass(BSComponentCarouselOptions.Carousel_Inner);
-        addAttribute("role", "listbox");
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSCarouselSlides()
+	{
+		addClass(BSComponentCarouselOptions.Carousel_Inner);
+		addAttribute("role", "listbox");
+	}
 }

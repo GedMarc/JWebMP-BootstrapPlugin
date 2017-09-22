@@ -25,44 +25,43 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupLabe
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupRadioButton;
 
 /**
- *
  * @author GedMarc
  */
 public class BSButtonToolbarTest extends BaseTestClass
 {
-
-    public BSButtonToolbarTest()
-    {
-    }
-
-    @Test
-    public void testToolbar()
-    {
-        BSButtonToolbar bbt = new BSButtonToolbar();
-        bbt.setID("toolbar");
-        System.out.println(bbt.toString(true));
-
-        BSButtonGroup group = new BSButtonGroup();
-        group.setID("group");
-        bbt.add(group);
-        System.out.println(bbt.toString(true));
-
-        BSButtonSuccess bbs = new BSButtonSuccess();
-        BSButtonGroupLabel lbl;
-        group.add(lbl = (BSButtonGroupLabel) new BSButtonGroupLabel("stuff", new BSButtonGroupRadioButton()).setID("label"));
-        BSButtonGroupRadioButton.class.cast(lbl.getInput()).setID("label");
-        bbs.setID("button");
-
-        System.out.println(bbt.toString(true));
-
-        Assert.assertEquals("<div aria_label=\"Button Toolbar\" class=\"btn-toolbar\" id=\"toolbar\" role=\"toolbar\">\n"
-                + "	<div aria_label=\"Button Group\" class=\"btn-group\" data-toggle=\"buttons\" id=\"group\" role=\"group\">\n"
-                + "		<label class=\"btn\" id=\"label\" type=\"button\">\n"
-                + "			<input autocomplete=\"off\" id=\"label\" type=\"radio\">\n"
-                + "			stuff\n"
-                + "		</label>\n"
-                + "	</div>\n"
-                + "</div>", bbt.toString(true));
-
-    }
+	
+	public BSButtonToolbarTest()
+	{
+	}
+	
+	@Test
+	public void testToolbar()
+	{
+		BSButtonToolbar bbt = new BSButtonToolbar();
+		bbt.setID("toolbar");
+		System.out.println(bbt.toString(true));
+		
+		BSButtonGroup group = new BSButtonGroup();
+		group.setID("group");
+		bbt.add(group);
+		System.out.println(bbt.toString(true));
+		
+		BSButtonSuccess bbs = new BSButtonSuccess();
+		BSButtonGroupLabel lbl;
+		group.add(lbl = (BSButtonGroupLabel) new BSButtonGroupLabel("stuff", new BSButtonGroupRadioButton()).setID("label"));
+		BSButtonGroupRadioButton.class.cast(lbl.getInput()).setID("label");
+		bbs.setID("button");
+		
+		System.out.println(bbt.toString(true));
+		
+		Assert.assertEquals("<div aria_label=\"Button Toolbar\" class=\"btn-toolbar\" id=\"toolbar\" role=\"toolbar\">\n"
+				                    + "	<div aria_label=\"Button Group\" class=\"btn-group\" data-toggle=\"buttons\" id=\"group\" role=\"group\">\n"
+				                    + "		<label class=\"btn\" id=\"label\" type=\"button\">\n"
+				                    + "			<input autocomplete=\"off\" id=\"label\" type=\"radio\">\n"
+				                    + "			stuff\n"
+				                    + "		</label>\n"
+				                    + "	</div>\n"
+				                    + "</div>", bbt.toString(true));
+		
+	}
 }

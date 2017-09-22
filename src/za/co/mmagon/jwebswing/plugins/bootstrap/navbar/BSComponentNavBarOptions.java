@@ -28,47 +28,47 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  */
 public enum BSComponentNavBarOptions implements IBSComponentOptions
 {
-    /**
-     * Navbar
-     * <p>
-     * The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive
-     * behaviors.
-     */
-    Navbar,
-    /*
-     * Navbars come with built-in support for a handful of sub-components. Choose from the following as needed: <p> .navbar-brand for your company, product, or project name.
-     */
-    Navbar_Brand,
-    /**
-     * .navbar-toggler for use with our collapse plugin and other navigation toggling behaviors.
-     */
-    Navbar_Toggler,
-    /**
-     * The icon for the navbar toggler (in an italic component)
-     */
-    Navbar_Toggler_Icon,
-    /**
-     * .navbar-text for adding vertically centered strings of text.
-     */
-    Navbar_Text,
-    /**
-     * Default for navbar
-     */
-    Navbar_Default,
-    /**
-     * Align the navbar right
-     */
-    Navbar_Right;
-
-    private BSComponentNavBarOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	/**
+	 * Navbar
+	 * <p>
+	 * The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive
+	 * behaviors.
+	 */
+	Navbar,
+	/*
+	 * Navbars come with built-in support for a handful of sub-components. Choose from the following as needed: <p> .navbar-brand for your company, product, or project name.
+	 */
+	Navbar_Brand,
+	/**
+	 * .navbar-toggler for use with our collapse plugin and other navigation toggling behaviors.
+	 */
+	Navbar_Toggler,
+	/**
+	 * The icon for the navbar toggler (in an italic component)
+	 */
+	Navbar_Toggler_Icon,
+	/**
+	 * .navbar-text for adding vertically centered strings of text.
+	 */
+	Navbar_Text,
+	/**
+	 * Default for navbar
+	 */
+	Navbar_Default,
+	/**
+	 * Align the navbar right
+	 */
+	Navbar_Right;
+	
+	BSComponentNavBarOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 
 }

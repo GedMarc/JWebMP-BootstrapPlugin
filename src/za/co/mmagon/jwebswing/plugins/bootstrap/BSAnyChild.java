@@ -16,26 +16,26 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
-import java.io.Serializable;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 
+import java.io.Serializable;
+
 /**
  * Any child is allowed on this element
  *
- * @author GedMarc
  * @param <A> Any attribute definition
  *
+ * @author GedMarc
  * @since 16 Feb 2017
- *
  */
 public class BSAnyChild<A extends Enum & AttributeDefinitions> extends Div<GlobalChildren, A, GlobalFeatures, GlobalEvents, BSAnyChild<A>>
-        implements Serializable
+		implements Serializable
 {
-
-    private static final long serialVersionUID = 1L;
+	
+	private static final long serialVersionUID = 1L;
 
 }

@@ -28,71 +28,70 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentVerticalAlignmentOptions implements IBSComponentOptions
 {
-    /**
-     * Change the alignment of elements with the vertical-alignment utilities.
-     * <p>
-     * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
-     * <p>
-     * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
-     */
-    Align_BaseLine,
-    /**
-     * Change the alignment of elements with the vertical-alignment utilities.
-     * <p>
-     * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
-     * <p>
-     * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
-     */
-    Align_Top,
-    /**
-     * Change the alignment of elements with the vertical-alignment utilities.
-     * <p>
-     * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
-     * <p>
-     * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
-     */
-    Align_Middle,
-    /**
-     * Change the alignment of elements with the vertical-alignment utilities.
-     * <p>
-     * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
-     * <p>
-     * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
-     */
-    Align_Bottom,
-    /**
-     * Change the alignment of elements with the vertical-alignment utilities.
-     * <p>
-     * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
-     * <p>
-     * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
-     */
-    Align_Text_Top,
-    /**
-     * Change the alignment of elements with the vertical-alignment utilities.
-     * <p>
-     * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
-     * <p>
-     * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
-     */
-    Align_Text_Bottom;
-
-    private BSComponentVerticalAlignmentOptions()
-    {
-
-    }
-
-    @JsonValue
-    @Override
-    public String toString()
-    {
-        String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
-        return name;
-    }
+	/**
+	 * Change the alignment of elements with the vertical-alignment utilities.
+	 * <p>
+	 * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
+	 * <p>
+	 * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
+	 */
+	Align_BaseLine,
+	/**
+	 * Change the alignment of elements with the vertical-alignment utilities.
+	 * <p>
+	 * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
+	 * <p>
+	 * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
+	 */
+	Align_Top,
+	/**
+	 * Change the alignment of elements with the vertical-alignment utilities.
+	 * <p>
+	 * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
+	 * <p>
+	 * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
+	 */
+	Align_Middle,
+	/**
+	 * Change the alignment of elements with the vertical-alignment utilities.
+	 * <p>
+	 * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
+	 * <p>
+	 * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
+	 */
+	Align_Bottom,
+	/**
+	 * Change the alignment of elements with the vertical-alignment utilities.
+	 * <p>
+	 * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
+	 * <p>
+	 * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
+	 */
+	Align_Text_Top,
+	/**
+	 * Change the alignment of elements with the vertical-alignment utilities.
+	 * <p>
+	 * Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
+	 * <p>
+	 * Choose from .align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, and .align-text-top as needed.
+	 */
+	Align_Text_Bottom;
+	
+	BSComponentVerticalAlignmentOptions()
+	{
+	
+	}
+	
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
+		return name;
+	}
 }

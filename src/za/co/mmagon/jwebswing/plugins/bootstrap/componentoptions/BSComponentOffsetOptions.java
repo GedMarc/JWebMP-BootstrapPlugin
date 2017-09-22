@@ -20,262 +20,261 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
  * A list of all the column width settings from bootstrap
  *
  * @author GedMarc
- * @since Oct 10, 2016
  * @version 1.0
- *
+ * @since Oct 10, 2016
  */
 public enum BSComponentOffsetOptions implements IBSComponentOptions
 {
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_1,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_2,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_3,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_4,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_5,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_6,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_7,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_8,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_9,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_10,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_11,
-    /**
-     * From size XS the size should be 1
-     */
-    col_xs_offset_12,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_1,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_2,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_3,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_4,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_5,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_6,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_7,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_8,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_9,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_10,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_11,
-    /**
-     * From size SM (small) the size should be 1
-     */
-    col_sm_offset_12,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_1,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_2,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_3,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_4,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_5,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_6,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_7,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_8,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_9,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_10,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_11,
-    /**
-     * From size MD (medium) the size should be 1
-     */
-    col_md_offset_12,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_1,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_2,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_3,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_4,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_5,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_6,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_7,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_8,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_9,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_10,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_11,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_lg_offset_12,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_1,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_2,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_3,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_4,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_5,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_6,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_7,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_8,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_9,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_10,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_11,
-    /**
-     * For large LG only the size should be 1
-     */
-    col_xl_offset_12,;
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_1,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_2,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_3,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_4,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_5,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_6,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_7,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_8,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_9,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_10,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_11,
+	/**
+	 * From size XS the size should be 1
+	 */
+	col_xs_offset_12,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_1,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_2,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_3,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_4,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_5,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_6,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_7,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_8,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_9,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_10,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_11,
+	/**
+	 * From size SM (small) the size should be 1
+	 */
+	col_sm_offset_12,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_1,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_2,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_3,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_4,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_5,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_6,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_7,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_8,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_9,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_10,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_11,
+	/**
+	 * From size MD (medium) the size should be 1
+	 */
+	col_md_offset_12,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_1,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_2,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_3,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_4,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_5,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_6,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_7,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_8,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_9,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_10,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_11,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_lg_offset_12,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_1,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_2,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_3,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_4,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_5,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_6,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_7,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_8,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_9,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_10,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_11,
+	/**
+	 * For large LG only the size should be 1
+	 */
+	col_xl_offset_12,;
 	
-    private BSComponentOffsetOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	BSComponentOffsetOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 
 }

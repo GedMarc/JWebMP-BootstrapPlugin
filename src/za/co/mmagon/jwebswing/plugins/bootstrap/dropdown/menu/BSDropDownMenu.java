@@ -24,38 +24,39 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownChildren;
 /**
  * A drop down menu for the bootstrap drop down component
  * <p>
+ *
  * @author Marc Magon
- * @since 13 Jan 2017
  * @version 1.0
+ * @since 13 Jan 2017
  */
 public class BSDropDownMenu extends Div<BSDropDownMenuChildren, BSDropDownMenuAttributes, GlobalFeatures, BSDropDownMenuEvents, BSDropDownMenu>
-        implements BSDropDownChildren
+		implements BSDropDownChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A new drop down menu list
-     */
-    public BSDropDownMenu()
-    {
-        addClass(BSComponentDropDownOptions.Dropdown_Menu);
-
-    }
-
-    /**
-     * Menu alignment
-     * <p>
-     * By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add .dropdown-menu-right to a .dropdown-menu to right align the dropdown menu.
-     * <p>
-     * Heads up! Dropdowns are positioned only with CSS and may need some additional styles for exact alignment.
-     *
-     * @return
-     */
-    public BSDropDownMenu setRightAligned()
-    {
-        addClass(BSComponentDropDownOptions.Dropdown_Menu_Right);
-        return this;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A new drop down menu list
+	 */
+	public BSDropDownMenu()
+	{
+		addClass(BSComponentDropDownOptions.Dropdown_Menu);
+		
+	}
+	
+	/**
+	 * Menu alignment
+	 * <p>
+	 * By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add .dropdown-menu-right to a .dropdown-menu to right align the dropdown menu.
+	 * <p>
+	 * Heads up! Dropdowns are positioned only with CSS and may need some additional styles for exact alignment.
+	 *
+	 * @return
+	 */
+	public BSDropDownMenu setRightAligned()
+	{
+		addClass(BSComponentDropDownOptions.Dropdown_Menu_Right);
+		return this;
+	}
+	
 }

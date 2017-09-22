@@ -24,125 +24,124 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
  * Defines a control for the bootstrap carousel
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCarouselControl extends Link
-        implements BSCarouselChildren
+		implements BSCarouselChildren
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The actual carousel
-     */
-    private BSCarousel carousel;
-    /**
-     * If this is a previous control, as opposed to next
-     */
-    private boolean previous;
-    /**
-     * The icon for this control, automatically gets next and previous added on
-     */
-    private Span icon;
-
-    /**
-     * Constructs with a carousel and a previous
-     *
-     * @param carousel
-     * @param previous
-     */
-    public BSCarouselControl(BSCarousel carousel, boolean previous)
-    {
-        this.carousel = carousel;
-
-        addAttribute("role", "button");
-
-        if (previous)
-        {
-            addAttribute("data-slide", "prev");
-        }
-        else
-        {
-            addAttribute("data-slide", "next");
-        }
-        if (carousel != null)
-        {
-            addAttribute(LinkAttributes.HRef, carousel.getID(true));
-        }
-    }
-
-    /**
-     * Returns the carousel
-     *
-     * @return
-     */
-    public BSCarousel getCarousel()
-    {
-        if (this.carousel == null)
-        {
-            setCarousel(new BSCarousel());
-        }
-        return carousel;
-    }
-
-    /**
-     * Set carousel
-     *
-     * @param carousel
-     *
-     * @return
-     */
-    public BSCarouselControl setCarousel(BSCarousel carousel)
-    {
-        this.carousel = carousel;
-        return this;
-    }
-
-    /**
-     * Returns if this is a previous or next item
-     *
-     * @return
-     */
-    public boolean isPrevious()
-    {
-        return previous;
-    }
-
-    /**
-     * Sets if this is a previous or next control
-     *
-     * @param previous
-     *
-     * @return
-     */
-    public BSCarouselControl setPrevious(boolean previous)
-    {
-        this.previous = previous;
-        return this;
-    }
-
-    /**
-     * Returns the span for the icon, auto generated if need be
-     *
-     * @return
-     */
-    public Span getIcon()
-    {
-        return icon;
-    }
-
-    /**
-     * Sets the icon to the given item
-     *
-     * @param icon
-     *
-     * @return
-     */
-    public BSCarouselControl setIcon(Span icon)
-    {
-        this.icon = icon;
-
-        return this;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The actual carousel
+	 */
+	private BSCarousel carousel;
+	/**
+	 * If this is a previous control, as opposed to next
+	 */
+	private boolean previous;
+	/**
+	 * The icon for this control, automatically gets next and previous added on
+	 */
+	private Span icon;
+	
+	/**
+	 * Constructs with a carousel and a previous
+	 *
+	 * @param carousel
+	 * @param previous
+	 */
+	public BSCarouselControl(BSCarousel carousel, boolean previous)
+	{
+		this.carousel = carousel;
+		
+		addAttribute("role", "button");
+		
+		if (previous)
+		{
+			addAttribute("data-slide", "prev");
+		}
+		else
+		{
+			addAttribute("data-slide", "next");
+		}
+		if (carousel != null)
+		{
+			addAttribute(LinkAttributes.HRef, carousel.getID(true));
+		}
+	}
+	
+	/**
+	 * Returns the carousel
+	 *
+	 * @return
+	 */
+	public BSCarousel getCarousel()
+	{
+		if (this.carousel == null)
+		{
+			setCarousel(new BSCarousel());
+		}
+		return carousel;
+	}
+	
+	/**
+	 * Set carousel
+	 *
+	 * @param carousel
+	 *
+	 * @return
+	 */
+	public BSCarouselControl setCarousel(BSCarousel carousel)
+	{
+		this.carousel = carousel;
+		return this;
+	}
+	
+	/**
+	 * Returns if this is a previous or next item
+	 *
+	 * @return
+	 */
+	public boolean isPrevious()
+	{
+		return previous;
+	}
+	
+	/**
+	 * Sets if this is a previous or next control
+	 *
+	 * @param previous
+	 *
+	 * @return
+	 */
+	public BSCarouselControl setPrevious(boolean previous)
+	{
+		this.previous = previous;
+		return this;
+	}
+	
+	/**
+	 * Returns the span for the icon, auto generated if need be
+	 *
+	 * @return
+	 */
+	public Span getIcon()
+	{
+		return icon;
+	}
+	
+	/**
+	 * Sets the icon to the given item
+	 *
+	 * @param icon
+	 *
+	 * @return
+	 */
+	public BSCarouselControl setIcon(Span icon)
+	{
+		this.icon = icon;
+		
+		return this;
+	}
 }

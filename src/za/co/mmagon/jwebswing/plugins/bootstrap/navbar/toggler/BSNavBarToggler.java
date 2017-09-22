@@ -28,121 +28,119 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSComponentNavsOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
 
 /**
- *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavBarToggler
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * The specified screen reader aria label to apply when creating the div
-     */
-    private static String ARIA_LABEL = "Toggle Navigation";
-
-    private String iconClass = BSComponentNavBarOptions.Navbar_Toggler_Icon.toString();
-
-    /**
-     * Creates 2 new accessible objects for the nav bar
-     *
-     * @param togglerAlignment
-     */
-    public BSNavBarToggler(BSNavBarTogglerAlignments togglerAlignment)
-    {
-        addClass(BSComponentNavBarOptions.Navbar_Toggler);
-        addClass(togglerAlignment);
-    }
-
-    /**
-     * Nav
-     * <p>
-     * Navbar navigation links build on our .nav options with their own modifier class and require the use of toggler classes for proper responsive styling.
-     * <p>
-     * Navigation in navbars will also grow to occupy as much horizontal space as possible to keep your navbar contents securely aligned.
-     * <p>
-     * Active states—with .active—to indicate the current page can be applied directly to .nav-links or their immediate parent .nav-items.
-     *
-     * @param <T>
-     * @param navs
-     *
-     * @return
-     */
-    @Override
-    public <T extends Div & BSNavBarChildren> T createCollapsingDiv(BSNavs navs)
-    {
-        navs.removeClass(BSComponentNavsOptions.Nav);
-        navs.addClass(BSComponentNavsOptions.Navbar_Nav);
-
-        BSNavBarTogglerDiv div = new BSNavBarTogglerDiv();
-        div.add(navs);
-
-        addAttribute(ButtonAttributes.Data_Toggle, "collapse");
-        addAttribute(ButtonAttributes.Data_Target, div.getID(true));
-        addAttribute(GlobalAttributes.Aria_Controls, div.getID());
-        addAttribute(GlobalAttributes.Aria_Expanded, "false");
-        addAttribute(GlobalAttributes.Aria_Label, ARIA_LABEL);
-        addAttribute(GlobalAttributes.Type, "button");
-
-        BootstrapPageConfigurator.setRequired(this, true);
-
-        return (T) div;
-    }
-
-    /**
-     * A neater view
-     *
-     * @return
-     */
-    public IBSNavBarToggler asMe()
-    {
-        return this;
-    }
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            Span iconSpan = new Span();
-            iconSpan.addClass(getIconClass());
-            add(iconSpan);
-        }
-        super.preConfigure();
-    }
-
-    @Override
-    public String getIconClass()
-    {
-        return iconClass;
-    }
-
-    @Override
-    public void setIconClass(String iconClass)
-    {
-        this.iconClass = iconClass;
-    }
-
-    /**
-     * Gets the screen reader aria label
-     *
-     * @return
-     */
-    public static String getARIA_LABEL()
-    {
-        return ARIA_LABEL;
-    }
-
-    /**
-     * sets the screen reader aria label
-     *
-     * @param ARIA_LABEL
-     */
-    public static void setARIA_LABEL(String ARIA_LABEL)
-    {
-        BSNavBarToggler.ARIA_LABEL = ARIA_LABEL;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * The specified screen reader aria label to apply when creating the div
+	 */
+	private static String ARIA_LABEL = "Toggle Navigation";
+	
+	private String iconClass = BSComponentNavBarOptions.Navbar_Toggler_Icon.toString();
+	
+	/**
+	 * Creates 2 new accessible objects for the nav bar
+	 *
+	 * @param togglerAlignment
+	 */
+	public BSNavBarToggler(BSNavBarTogglerAlignments togglerAlignment)
+	{
+		addClass(BSComponentNavBarOptions.Navbar_Toggler);
+		addClass(togglerAlignment);
+	}
+	
+	/**
+	 * Gets the screen reader aria label
+	 *
+	 * @return
+	 */
+	public static String getARIA_LABEL()
+	{
+		return ARIA_LABEL;
+	}
+	
+	/**
+	 * sets the screen reader aria label
+	 *
+	 * @param ARIA_LABEL
+	 */
+	public static void setARIA_LABEL(String ARIA_LABEL)
+	{
+		BSNavBarToggler.ARIA_LABEL = ARIA_LABEL;
+	}
+	
+	/**
+	 * Nav
+	 * <p>
+	 * Navbar navigation links build on our .nav options with their own modifier class and require the use of toggler classes for proper responsive styling.
+	 * <p>
+	 * Navigation in navbars will also grow to occupy as much horizontal space as possible to keep your navbar contents securely aligned.
+	 * <p>
+	 * Active states—with .active—to indicate the current page can be applied directly to .nav-links or their immediate parent .nav-items.
+	 *
+	 * @param <T>
+	 * @param navs
+	 *
+	 * @return
+	 */
+	@Override
+	public <T extends Div & BSNavBarChildren> T createCollapsingDiv(BSNavs navs)
+	{
+		navs.removeClass(BSComponentNavsOptions.Nav);
+		navs.addClass(BSComponentNavsOptions.Navbar_Nav);
+		
+		BSNavBarTogglerDiv div = new BSNavBarTogglerDiv();
+		div.add(navs);
+		
+		addAttribute(ButtonAttributes.Data_Toggle, "collapse");
+		addAttribute(ButtonAttributes.Data_Target, div.getID(true));
+		addAttribute(GlobalAttributes.Aria_Controls, div.getID());
+		addAttribute(GlobalAttributes.Aria_Expanded, "false");
+		addAttribute(GlobalAttributes.Aria_Label, ARIA_LABEL);
+		addAttribute(GlobalAttributes.Type, "button");
+		
+		BootstrapPageConfigurator.setRequired(this, true);
+		
+		return (T) div;
+	}
+	
+	/**
+	 * A neater view
+	 *
+	 * @return
+	 */
+	public IBSNavBarToggler asMe()
+	{
+		return this;
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			Span iconSpan = new Span();
+			iconSpan.addClass(getIconClass());
+			add(iconSpan);
+		}
+		super.preConfigure();
+	}
+	
+	@Override
+	public String getIconClass()
+	{
+		return iconClass;
+	}
+	
+	@Override
+	public void setIconClass(String iconClass)
+	{
+		this.iconClass = iconClass;
+	}
+	
 }

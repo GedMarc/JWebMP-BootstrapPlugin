@@ -26,14 +26,14 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberI
 		
 		lower.add(lowerButton);
 		lowerButton.add(lowerIcon);
-		lowerButton.addAttribute("data-dir","dwn");
+		lowerButton.addAttribute("data-dir", "dwn");
 		before.add(lower);
 		
 		Span upper = new Span();
 		upper.addClass("input_group_btn");
 		Button upperButton = new Button();
 		upperButton.addClass("btn btn-default");
-		upperButton.addAttribute("data-dir","up");
+		upperButton.addAttribute("data-dir", "up");
 		Span upperIcon = new Span();
 		upperIcon.addClass("fa fa-angle-up");
 		
@@ -46,18 +46,18 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberI
 	@Override
 	public void init()
 	{
-		if(!isInitialized())
+		if (!isInitialized())
 		{
 			int index = getParent().getChildren().indexOf(this);
-			for(Span addon : getBefore())
+			for (Span addon : getBefore())
 			{
 				addon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
-				getParent().add(index,addon);
+				getParent().add(index, addon);
 			}
-			for(Span addon : getBefore())
+			for (Span addon : getBefore())
 			{
 				addon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
-				getParent().add(index + 1,addon);
+				getParent().add(index + 1, addon);
 			}
 		}
 		super.init();
@@ -65,6 +65,7 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberI
 	
 	/**
 	 * Returns this before list
+	 *
 	 * @return
 	 */
 	public List<Span> getBefore()
@@ -75,7 +76,7 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberI
 	public J setBefore(List<Span> before)
 	{
 		this.before = before;
-		return (J)this;
+		return (J) this;
 	}
 	
 	public List<Span> getAfter()
@@ -86,6 +87,6 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberI
 	public J setAfter(List<Span> after)
 	{
 		this.after = after;
-		return (J)this;
+		return (J) this;
 	}
 }

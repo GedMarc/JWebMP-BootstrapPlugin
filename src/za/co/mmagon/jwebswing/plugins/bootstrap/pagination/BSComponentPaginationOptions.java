@@ -26,43 +26,42 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Included is support for left and right aligned content, content alignment options, nesting, and more.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentPaginationOptions implements IBSComponentOptions
 {
-    /**
-     * Pagination
-     * <p>
-     * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
-     * such as in search results or inboxes.
-     */
-    Pagination,
-    /**
-     * Pagination
-     * <p>
-     * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
-     * such as in search results or inboxes.
-     */
-    Page_Item,
-    /**
-     * Pagination
-     * <p>
-     * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
-     * such as in search results or inboxes.
-     */
-    Page_Link,;
-
-    private BSComponentPaginationOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Pagination
+	 * <p>
+	 * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
+	 * such as in search results or inboxes.
+	 */
+	Pagination,
+	/**
+	 * Pagination
+	 * <p>
+	 * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
+	 * such as in search results or inboxes.
+	 */
+	Page_Item,
+	/**
+	 * Pagination
+	 * <p>
+	 * Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance,
+	 * such as in search results or inboxes.
+	 */
+	Page_Link,;
+	
+	BSComponentPaginationOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

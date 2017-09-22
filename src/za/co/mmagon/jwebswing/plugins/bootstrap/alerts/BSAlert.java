@@ -28,178 +28,177 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * <p>
  * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
  *
- * @author GedMarc
  * @param <J>
  *
- * @since 31 Dec 2016
+ * @author GedMarc
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 @ComponentInformation(name = "Bootstrap Alert", description = "rovide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.",
-                      url = "https://v4-alpha.getbootstrap.com/components/alerts/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/alerts/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSAlert<J extends BSAlert<J>>
-        extends Div<GlobalChildren, BSAlertAttributes, GlobalFeatures, BSAlertEvents, J> implements IBSAlert<J>
+		extends Div<GlobalChildren, BSAlertAttributes, GlobalFeatures, BSAlertEvents, J> implements IBSAlert<J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Alerts
-     * <p>
-     * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
-     */
-    public BSAlert()
-    {
-        addAttribute(BSAlertAttributes.Role, "alert");
-        addClass(BSComponentAlertOptions.Alert);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Neater view of this component
-     *
-     * @return
-     */
-    public IBSAlert asMe()
-    {
-        return this;
-    }
-
-    /**
-     * Creates and adds dismiss button assigned to this alert
-     *
-     * @return
-     */
-    @Override
-    public BSAlertDismissButton createDismissButton()
-    {
-        BSAlertDismissButton news = new BSAlertDismissButton(this, true);
-        add(news);
-        return news;
-    }
-
-    /**
-     * Set or remove the style
-     *
-     * @param applyStyle
-     *
-     * @return
-     */
-    @Override
-    public J setDanger(boolean applyStyle)
-    {
-        if (applyStyle)
-        {
-            addClass(BSComponentAlertOptions.Alert_Danger);
-        }
-        else
-
-        {
-            removeClass(BSComponentAlertOptions.Alert_Danger);
-        }
-
-        return (J) this;
-    }
-
-    /**
-     * Set or remove the style
-     *
-     * @param applyStyle
-     *
-     * @return
-     */
-    @Override
-    public J setInfo(boolean applyStyle)
-    {
-        if (applyStyle)
-        {
-            addClass(BSComponentAlertOptions.Alert_Info);
-        }
-        else
-        {
-            removeClass(BSComponentAlertOptions.Alert_Info);
-        }
-
-        return (J) this;
-    }
-
-    /**
-     * Sets the style as link
-     *
-     * @param applyStyle
-     *
-     * @return
-     */
-    @Override
-    public J setLink(boolean applyStyle)
-    {
-        if (applyStyle)
-        {
-            addClass(BSComponentAlertOptions.Alert_Link);
-        }
-        else
-        {
-            removeClass(BSComponentAlertOptions.Alert_Link);
-        }
-
-        return (J) this;
-    }
-
-    /**
-     * Adds the link styling for an alert to any component
-     *
-     * @param <T>
-     * @param component
-     *
-     * @return
-     */
-    @Override
-    public <T extends ComponentHierarchyBase> T addLinkStyle(T component)
-    {
-        component.addClass(BSComponentAlertOptions.Alert_Link);
-        return component;
-    }
-
-    /**
-     * Set or remove the style
-     *
-     * @param applyStyle
-     *
-     * @return
-     */
-    @Override
-    public J setSuccess(boolean applyStyle)
-    {
-        if (applyStyle)
-        {
-            addClass(BSComponentAlertOptions.Alert_Success);
-        }
-        else
-        {
-            removeClass(BSComponentAlertOptions.Alert_Success);
-        }
-        return (J) this;
-    }
-
-    /**
-     * Set or remove the style
-     *
-     * @param applyStyle
-     *
-     * @return
-     */
-    @Override
-    public J setWarning(boolean applyStyle)
-    {
-        if (applyStyle)
-        {
-            addClass(BSComponentAlertOptions.Alert_Warning);
-        }
-        else
-        {
-            removeClass(BSComponentAlertOptions.Alert_Warning);
-        }
-        return (J) this;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Alerts
+	 * <p>
+	 * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+	 */
+	public BSAlert()
+	{
+		addAttribute(BSAlertAttributes.Role, "alert");
+		addClass(BSComponentAlertOptions.Alert);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Neater view of this component
+	 *
+	 * @return
+	 */
+	public IBSAlert asMe()
+	{
+		return this;
+	}
+	
+	/**
+	 * Creates and adds dismiss button assigned to this alert
+	 *
+	 * @return
+	 */
+	@Override
+	public BSAlertDismissButton createDismissButton()
+	{
+		BSAlertDismissButton news = new BSAlertDismissButton(this, true);
+		add(news);
+		return news;
+	}
+	
+	/**
+	 * Set or remove the style
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	@Override
+	public J setDanger(boolean applyStyle)
+	{
+		if (applyStyle)
+		{
+			addClass(BSComponentAlertOptions.Alert_Danger);
+		}
+		else
+		
+		{
+			removeClass(BSComponentAlertOptions.Alert_Danger);
+		}
+		
+		return (J) this;
+	}
+	
+	/**
+	 * Set or remove the style
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	@Override
+	public J setInfo(boolean applyStyle)
+	{
+		if (applyStyle)
+		{
+			addClass(BSComponentAlertOptions.Alert_Info);
+		}
+		else
+		{
+			removeClass(BSComponentAlertOptions.Alert_Info);
+		}
+		
+		return (J) this;
+	}
+	
+	/**
+	 * Sets the style as link
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	@Override
+	public J setLink(boolean applyStyle)
+	{
+		if (applyStyle)
+		{
+			addClass(BSComponentAlertOptions.Alert_Link);
+		}
+		else
+		{
+			removeClass(BSComponentAlertOptions.Alert_Link);
+		}
+		
+		return (J) this;
+	}
+	
+	/**
+	 * Adds the link styling for an alert to any component
+	 *
+	 * @param <T>
+	 * @param component
+	 *
+	 * @return
+	 */
+	@Override
+	public <T extends ComponentHierarchyBase> T addLinkStyle(T component)
+	{
+		component.addClass(BSComponentAlertOptions.Alert_Link);
+		return component;
+	}
+	
+	/**
+	 * Set or remove the style
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	@Override
+	public J setSuccess(boolean applyStyle)
+	{
+		if (applyStyle)
+		{
+			addClass(BSComponentAlertOptions.Alert_Success);
+		}
+		else
+		{
+			removeClass(BSComponentAlertOptions.Alert_Success);
+		}
+		return (J) this;
+	}
+	
+	/**
+	 * Set or remove the style
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	@Override
+	public J setWarning(boolean applyStyle)
+	{
+		if (applyStyle)
+		{
+			addClass(BSComponentAlertOptions.Alert_Warning);
+		}
+		else
+		{
+			removeClass(BSComponentAlertOptions.Alert_Warning);
+		}
+		return (J) this;
+	}
+	
 }

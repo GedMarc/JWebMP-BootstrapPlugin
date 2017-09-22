@@ -27,29 +27,30 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * <p>
  * If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
  * <p>
+ *
  * @author Marc Magon
- * @since 29 Aug 2015
  * @version 1.0
+ * @since 29 Aug 2015
  */
 @ComponentInformation(name = "Bootstrap Card", description = "A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.",
 		url = "https://v4-alpha.getbootstrap.com/components/card/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCard extends Div<BSCardChildren, BSCardAttributes, GlobalFeatures, BSCardEvents, BSCard>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Cards
-     * <p>
-     * A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
-     * <p>
-     * If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
-     */
-    public BSCard()
-    {
-        this(null);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Cards
+	 * <p>
+	 * A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
+	 * <p>
+	 * If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
+	 */
+	public BSCard()
+	{
+		this(null);
+	}
+	
 	/**
 	 * Cards
 	 * <p>
@@ -67,34 +68,34 @@ public class BSCard extends Div<BSCardChildren, BSCardAttributes, GlobalFeatures
 		addClass("card-inverse");
 		addStyle("background-color:transparent;");
 	}
-
+	
 	/**
-     * Cards
-     * <p>
-     * A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
-     * <p>
-     * If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
-     *
-     * @param text
-     */
-    public BSCard(String text)
-    {
-        super(text);
-        addClass(BSComponentCardOptions.Card);
-    }
-
-    /**
-     * Adds the text to the card with the card text
-     *
-     * @param textToAdd
-     *
-     * @return
-     */
-    public BSCardText addCardText(String textToAdd)
-    {
-        BSCardText p = new BSCardText(textToAdd);
-        super.add(p);
-        return p;
-    }
-
+	 * Cards
+	 * <p>
+	 * A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
+	 * <p>
+	 * If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
+	 *
+	 * @param text
+	 */
+	public BSCard(String text)
+	{
+		super(text);
+		addClass(BSComponentCardOptions.Card);
+	}
+	
+	/**
+	 * Adds the text to the card with the card text
+	 *
+	 * @param textToAdd
+	 *
+	 * @return
+	 */
+	public BSCardText addCardText(String textToAdd)
+	{
+		BSCardText p = new BSCardText(textToAdd);
+		super.add(p);
+		return p;
+	}
+	
 }

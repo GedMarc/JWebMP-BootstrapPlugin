@@ -28,55 +28,56 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
  * List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within. They can also be used
  * as navigation with the right modifier class.
  * <p>
+ *
  * @author Marc Magon
- * @since 17 Jan 2017
  * @version 1.0
+ * @since 17 Jan 2017
  */
 @ComponentInformation(name = "Bootstrap ListGroup", description = "List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within. They can also be used as navigation with the right modifier class.",
-        url = "https://v4-alpha.getbootstrap.com/components/list-group/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/list-group/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes, GlobalFeatures, BSListGroupEvents, BSListGroup>
-        implements BSCardChildren
+		implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * List group
-     * <p>
-     * List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within. They can also be
-     * used as navigation with the right modifier class.
-     */
-    public BSListGroup()
-    {
-        setTag("ul");
-        addClass(BSComponentListGroupOptions.List_Group);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (getClass() != obj.getClass())
-        {
-            return false;
-        }
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int hash = 7;
-        hash = 79 * hash + (this.getID().hashCode());
-        return hash;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * List group
+	 * <p>
+	 * List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within. They can also be
+	 * used as navigation with the right modifier class.
+	 */
+	public BSListGroup()
+	{
+		setTag("ul");
+		addClass(BSComponentListGroupOptions.List_Group);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (getClass() != obj.getClass())
+		{
+			return false;
+		}
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (this.getID().hashCode());
+		return hash;
+	}
+	
 }

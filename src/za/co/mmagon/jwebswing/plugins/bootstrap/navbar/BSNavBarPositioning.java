@@ -27,33 +27,32 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public enum BSNavBarPositioning implements IBSComponentOptions
 {
-    /**
-     * Choose from fixed to the top, fixed to the bottom, or stickied to the top. Note that position: sticky, used for .sticky-top, isn’t fully supported in every browser.
-     */
-    Fixed_Top,
-    /**
-     * Choose from fixed to the top, fixed to the bottom, or stickied to the top. Note that position: sticky, used for .sticky-top, isn’t fully supported in every browser.
-     */
-    Fixed_Bottom,
-    /**
-     * Choose from fixed to the top, fixed to the bottom, or stickied to the top. Note that position: sticky, used for .sticky-top, isn’t fully supported in every browser.
-     */
-    Sticky_Top,;
-
-    private BSNavBarPositioning()
-    {
-        //Nothing Needed
-    }
-
-    @JsonValue
-    @Override
-    public String toString()
-    {
-        String name = "navbar-" + name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
-        return name;
-    }
+	/**
+	 * Choose from fixed to the top, fixed to the bottom, or stickied to the top. Note that position: sticky, used for .sticky-top, isn’t fully supported in every browser.
+	 */
+	Fixed_Top,
+	/**
+	 * Choose from fixed to the top, fixed to the bottom, or stickied to the top. Note that position: sticky, used for .sticky-top, isn’t fully supported in every browser.
+	 */
+	Fixed_Bottom,
+	/**
+	 * Choose from fixed to the top, fixed to the bottom, or stickied to the top. Note that position: sticky, used for .sticky-top, isn’t fully supported in every browser.
+	 */
+	Sticky_Top,;
+	
+	BSNavBarPositioning()
+	{
+		//Nothing Needed
+	}
+	
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		String name = "navbar-" + name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
+		return name;
+	}
 }

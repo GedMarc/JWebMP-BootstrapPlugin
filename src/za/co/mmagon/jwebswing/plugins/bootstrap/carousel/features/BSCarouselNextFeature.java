@@ -26,36 +26,37 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * Cycles to the next item.
  *
  * @author MMagon
- * @since 2013/01/16
  * @version 1.0
+ * @since 2013/01/16
  */
 public class BSCarouselNextFeature extends Feature<BSCarouselOptions, BSCarouselNextFeature>
-        implements BSCarouselFeatures, GlobalFeatures
+		implements BSCarouselFeatures, GlobalFeatures
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The method name to call
-     */
-    private final String methodName = "next";
-
-    /**
-     * Cycles to the next item.
-     * <p>
-     * @param forComponent
-     */
-    public BSCarouselNextFeature(BSCarousel forComponent)
-    {
-        super("BSCarouselNextFeature");
-        setComponent(forComponent);
-    }
-
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        String requiredString = getComponent().getJQueryID() + "carousel('";
-        requiredString += methodName;
-        requiredString += "');" + getNewLine();
-        addQuery(requiredString);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The method name to call
+	 */
+	private final String methodName = "next";
+	
+	/**
+	 * Cycles to the next item.
+	 * <p>
+	 *
+	 * @param forComponent
+	 */
+	public BSCarouselNextFeature(BSCarousel forComponent)
+	{
+		super("BSCarouselNextFeature");
+		setComponent(forComponent);
+	}
+	
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		String requiredString = getComponent().getJQueryID() + "carousel('";
+		requiredString += methodName;
+		requiredString += "');" + getNewLine();
+		addQuery(requiredString);
+	}
 }

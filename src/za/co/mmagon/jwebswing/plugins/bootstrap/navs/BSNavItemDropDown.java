@@ -21,50 +21,48 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownButton;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownLink;
 
 /**
- *
  * @author GedMarc
  * @since 19 Jan 2017
- *
  */
 public class BSNavItemDropDown extends BSDropDown implements BSNavsChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A drop down that can be placed on any nav bar
-     */
-    public BSNavItemDropDown()
-    {
-        getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
-        getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
-        setTag("li");
-    }
-
-    /**
-     * A drop down that can be placed on any nav bar
-     *
-     * @param link
-     */
-    public BSNavItemDropDown(BSDropDownLink link)
-    {
-        super(link);
-        getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
-        getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
-        setTag("li");
-    }
-
-    /**
-     * A drop down that can be placed on any nav bar
-     *
-     * @param button
-     */
-    public BSNavItemDropDown(BSDropDownButton button)
-    {
-        super(button);
-        getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
-        getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
-        setTag("li");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A drop down that can be placed on any nav bar
+	 */
+	public BSNavItemDropDown()
+	{
+		getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
+		getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
+		setTag("li");
+	}
+	
+	/**
+	 * A drop down that can be placed on any nav bar
+	 *
+	 * @param link
+	 */
+	public BSNavItemDropDown(BSDropDownLink link)
+	{
+		super(link);
+		getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
+		getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
+		setTag("li");
+	}
+	
+	/**
+	 * A drop down that can be placed on any nav bar
+	 *
+	 * @param button
+	 */
+	public BSNavItemDropDown(BSDropDownButton button)
+	{
+		super(button);
+		getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
+		getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
+		setTag("li");
+	}
+	
 }

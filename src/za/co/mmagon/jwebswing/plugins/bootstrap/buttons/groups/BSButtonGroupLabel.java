@@ -20,68 +20,67 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButton;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonChildren;
 
 /**
- *
- * @author GedMarc
  * @param <J>
  * @param <I>
- * @since 16 Feb 2017
  *
+ * @author GedMarc
+ * @since 16 Feb 2017
  */
 public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BSButtonChildren & IBSButtonGroupInput>
-        extends BSButton<J>
-        implements BSButtonGroupChildren
+		extends BSButton<J>
+		implements BSButtonGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    private I input;
-
-    /**
-     * Construct a new button group label item for an input component
-     *
-     * @param input
-     */
-    public BSButtonGroupLabel(I input)
-    {
-        setTag("label");
-        add(input);
-        setRenderTextBeforeChildren(false);
-        this.input = input;
-    }
-
-    /**
-     * Construct a new button group label item for an input component
-     *
-     * @param text
-     * @param input
-     */
-    public BSButtonGroupLabel(String text, I input)
-    {
-        super(text);
-        setTag("label");
-        add(input);
-        setRenderTextBeforeChildren(false);
-        this.input = input;
-    }
-
-    /**
-     * Returns the associated input component if any exists
-     *
-     * @return
-     */
-    public I getInput()
-    {
-        return input;
-    }
-
-    /**
-     * Sets the associated input component if any exists
-     *
-     * @param input
-     */
-    public void setInput(I input)
-    {
-        this.input = input;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	private I input;
+	
+	/**
+	 * Construct a new button group label item for an input component
+	 *
+	 * @param input
+	 */
+	public BSButtonGroupLabel(I input)
+	{
+		setTag("label");
+		add(input);
+		setRenderTextBeforeChildren(false);
+		this.input = input;
+	}
+	
+	/**
+	 * Construct a new button group label item for an input component
+	 *
+	 * @param text
+	 * @param input
+	 */
+	public BSButtonGroupLabel(String text, I input)
+	{
+		super(text);
+		setTag("label");
+		add(input);
+		setRenderTextBeforeChildren(false);
+		this.input = input;
+	}
+	
+	/**
+	 * Returns the associated input component if any exists
+	 *
+	 * @return
+	 */
+	public I getInput()
+	{
+		return input;
+	}
+	
+	/**
+	 * Sets the associated input component if any exists
+	 *
+	 * @param input
+	 */
+	public void setInput(I input)
+	{
+		this.input = input;
+	}
+	
 }

@@ -19,24 +19,23 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.badge;
 import org.junit.Test;
 
 /**
- *
  * @author GedMarc
  */
 public class BSBadgeTest
 {
-
-    public BSBadgeTest()
-    {
-    }
-
-    @Test
-    public void testBootstrapBadgePills()
-    {
-        BSBadge badge = new BSBadge("13", false);
-        System.out.println(badge.toString());
-
-        badge.setSuccess(true);
-        System.out.println(badge.toString(true));
-    }
+	
+	public BSBadgeTest()
+	{
+	}
+	
+	@Test
+	public void testBootstrapBadgePills()
+	{
+		BSBadge badge = new BSBadge("13", false);
+		System.out.println(badge.toString());
+		
+		badge.setSuccess(true);
+		System.out.println(badge.toString(true));
+	}
 
 }

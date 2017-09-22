@@ -23,18 +23,17 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormMonthInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default month input for bootstrap
-     */
-    public BSFormMonthInput()
-    {
-        setInputType(InputTypes.Month);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default month input for bootstrap
+	 */
+	public BSFormMonthInput()
+	{
+		setInputType(InputTypes.Month);
+	}
 }

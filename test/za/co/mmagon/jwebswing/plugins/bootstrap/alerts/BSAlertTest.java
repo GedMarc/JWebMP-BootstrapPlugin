@@ -34,120 +34,119 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.events.BSAlertCloseEvent;
 import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.events.BSAlertClosedEvent;
 
 /**
- *
  * @author GedMarc
  */
 public class BSAlertTest extends BaseTestClass
 {
-
-    public BSAlertTest()
-    {
-    }
-
-    @Test
-    public void testAlert()
-    {
-        BSAlert al = new BSAlert();
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testCreateDismissButton()
-    {
-        BSAlert al = new BSAlert();
-        ComponentHierarchyBase o = al.createDismissButton();
-        System.out.println(o.toString(true));
-
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testSetDanger()
-    {
-        BSAlert al = new BSAlert();
-        al.setDanger(true);
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testSetInfo()
-    {
-        BSAlert al = new BSAlert();
-        al.setInfo(true);
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testSetLink()
-    {
-        BSAlert al = new BSAlert();
-        al.setLink(true);
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testSetSuccess()
-    {
-        BSAlert al = new BSAlert();
-        al.setSuccess(true);
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testSetWarning()
-    {
-        BSAlert al = new BSAlert();
-        al.setWarning(true);
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testAsMe()
-    {
-        BSAlert al = new BSAlert();
-        al.asMe().setWarning(true);
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testEvents()
-    {
-        BSAlert al = new BSAlert();
-        al.addEvent(new BSAlertCloseEvent(al)
-        {
-            @Override
-            public void onClose(AjaxCall call, AjaxResponse response)
-            {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        });
-        al.setID("id");
-        al.addEvent(new BSAlertClosedEvent(al)
-        {
-            @Override
-            public void onClose(AjaxCall call, AjaxResponse response)
-            {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        });
-
-        al.addEvent(new ClickAdapter(al)
-        {
-            @Override
-            public void onClick(AjaxCall call, AjaxResponse response)
-            {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        });
-
-        System.out.println(al.toString(true));
-    }
-
-    @Test
-    public void testInPage()
-    {
-        Page p = getInstance();
-        p.getBody().add(new BSAlert());
-        System.out.println(p.toString(true));
-    }
+	
+	public BSAlertTest()
+	{
+	}
+	
+	@Test
+	public void testAlert()
+	{
+		BSAlert al = new BSAlert();
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testCreateDismissButton()
+	{
+		BSAlert al = new BSAlert();
+		ComponentHierarchyBase o = al.createDismissButton();
+		System.out.println(o.toString(true));
+		
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testSetDanger()
+	{
+		BSAlert al = new BSAlert();
+		al.setDanger(true);
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testSetInfo()
+	{
+		BSAlert al = new BSAlert();
+		al.setInfo(true);
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testSetLink()
+	{
+		BSAlert al = new BSAlert();
+		al.setLink(true);
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testSetSuccess()
+	{
+		BSAlert al = new BSAlert();
+		al.setSuccess(true);
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testSetWarning()
+	{
+		BSAlert al = new BSAlert();
+		al.setWarning(true);
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testAsMe()
+	{
+		BSAlert al = new BSAlert();
+		al.asMe().setWarning(true);
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testEvents()
+	{
+		BSAlert al = new BSAlert();
+		al.addEvent(new BSAlertCloseEvent(al)
+		{
+			@Override
+			public void onClose(AjaxCall call, AjaxResponse response)
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+		});
+		al.setID("id");
+		al.addEvent(new BSAlertClosedEvent(al)
+		{
+			@Override
+			public void onClose(AjaxCall call, AjaxResponse response)
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+		});
+		
+		al.addEvent(new ClickAdapter(al)
+		{
+			@Override
+			public void onClick(AjaxCall call, AjaxResponse response)
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+		});
+		
+		System.out.println(al.toString(true));
+	}
+	
+	@Test
+	public void testInPage()
+	{
+		Page p = getInstance();
+		p.getBody().add(new BSAlert());
+		System.out.println(p.toString(true));
+	}
 }

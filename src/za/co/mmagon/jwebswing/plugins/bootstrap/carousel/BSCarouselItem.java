@@ -26,36 +26,35 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * Contains each carousel slide
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCarouselItem extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSCarouselItem>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Contains each carousel slide
-     */
-    public BSCarouselItem()
-    {
-        addClass(BSComponentCarouselOptions.Carousel_Item);
-    }
-
-    /**
-     * Optional captions
-     * <p>
-     * Add captions to your slides easily with the .carousel-caption element within any .carousel-item. Place just about any optional HTML within there and it will be automatically aligned and
-     * formatted.
-     *
-     * @param caption
-     *
-     * @return
-     */
-    public BSCarouselItem addCaption(BSCarouselCaption caption)
-    {
-        super.add(caption);
-        return this;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Contains each carousel slide
+	 */
+	public BSCarouselItem()
+	{
+		addClass(BSComponentCarouselOptions.Carousel_Item);
+	}
+	
+	/**
+	 * Optional captions
+	 * <p>
+	 * Add captions to your slides easily with the .carousel-caption element within any .carousel-item. Place just about any optional HTML within there and it will be automatically aligned and
+	 * formatted.
+	 *
+	 * @param caption
+	 *
+	 * @return
+	 */
+	public BSCarouselItem addCaption(BSCarouselCaption caption)
+	{
+		super.add(caption);
+		return this;
+	}
 }

@@ -27,86 +27,85 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOpti
  *
  * @author GedMarc
  * @since 14 Jan 2017
- *
  */
 public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 {
-
-    private static final long serialVersionUID = 1L;
-    private String iconClass;
-
-    public BSDropDownMenuItem()
-    {
-        this("");
-    }
-
-    /**
-     * Construct a new drop down menu item
-     *
-     * @param text
-     */
-    public BSDropDownMenuItem(String text)
-    {
-        addClass(BSComponentDropDownOptions.Dropdown_Item);
-        setText(text);
-        addAttribute(LinkAttributes.HRef, "#");
-    }
-
-    /**
-     * Construct a new menu item with the given iconClass and text
-     *
-     * @param iconClass
-     * @param text
-     */
-    public BSDropDownMenuItem(String iconClass, String text)
-    {
-        this(text);
-        this.iconClass = iconClass;
-    }
-
-    public BSDropDownMenuItem setDisabled()
-    {
-        addClass(BSComponentDefaultOptions.Disabled);
-        return this;
-    }
-
-    /**
-     * Sets the icon class
-     *
-     * @return
-     */
-    public String getIconClass()
-    {
-        return iconClass;
-    }
-
-    /**
-     * Sets the icon to the given class
-     *
-     * @param iconClass
-     *
-     * @return
-     */
-    public BSDropDownMenuItem setIconClass(String iconClass)
-    {
-        this.iconClass = iconClass;
-        return this;
-    }
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-
-            Italic i = new Italic();
-            if (iconClass != null && !iconClass.isEmpty())
-            {
-                i.addClass(iconClass);
-            }
-            setText(i.toString(true) + getText(getCurrentTabIndents()).toString());
-        }
-        super.preConfigure();
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	private String iconClass;
+	
+	public BSDropDownMenuItem()
+	{
+		this("");
+	}
+	
+	/**
+	 * Construct a new drop down menu item
+	 *
+	 * @param text
+	 */
+	public BSDropDownMenuItem(String text)
+	{
+		addClass(BSComponentDropDownOptions.Dropdown_Item);
+		setText(text);
+		addAttribute(LinkAttributes.HRef, "#");
+	}
+	
+	/**
+	 * Construct a new menu item with the given iconClass and text
+	 *
+	 * @param iconClass
+	 * @param text
+	 */
+	public BSDropDownMenuItem(String iconClass, String text)
+	{
+		this(text);
+		this.iconClass = iconClass;
+	}
+	
+	public BSDropDownMenuItem setDisabled()
+	{
+		addClass(BSComponentDefaultOptions.Disabled);
+		return this;
+	}
+	
+	/**
+	 * Sets the icon class
+	 *
+	 * @return
+	 */
+	public String getIconClass()
+	{
+		return iconClass;
+	}
+	
+	/**
+	 * Sets the icon to the given class
+	 *
+	 * @param iconClass
+	 *
+	 * @return
+	 */
+	public BSDropDownMenuItem setIconClass(String iconClass)
+	{
+		this.iconClass = iconClass;
+		return this;
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			
+			Italic i = new Italic();
+			if (iconClass != null && !iconClass.isEmpty())
+			{
+				i.addClass(iconClass);
+			}
+			setText(i.toString(true) + getText(getCurrentTabIndents()).toString());
+		}
+		super.preConfigure();
+	}
+	
 }

@@ -17,34 +17,32 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.containers;
 
 /**
- *
  * @author GedMarc
- * @since Oct 11, 2016
  * @version 1.0
- * 
+ * @since Oct 11, 2016
  */
-public enum BSContainerType 
+public enum BSContainerType
 {
-    /**
-     * fixed-width
-     */
-    Container,
-    /**
-     * full width
-     * Default is this
-     */
-    Container_Fluid
-;
-    private BSContainerType ()
-    {
-        
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-    
-    
+	/**
+	 * fixed-width
+	 */
+	Container,
+	/**
+	 * full width
+	 * Default is this
+	 */
+	Container_Fluid;
+	
+	BSContainerType()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
+	
 }

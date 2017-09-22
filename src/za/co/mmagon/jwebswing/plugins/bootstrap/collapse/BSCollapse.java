@@ -30,71 +30,72 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  * <p>
  * The Bootstrap collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.
  * <p>
+ *
  * @author Marc Magon
- * @since 29 Aug 2015
  * @version 1.0
+ * @since 29 Aug 2015
  */
 @ComponentInformation(name = "Bootstrap Collapse", description = "The Bootstrap collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.",
-                      url = "https://v4-alpha.getbootstrap.com/components/collapse/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/collapse/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCollapse
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Apply a collapse to given components
-     *
-     * @param linkController
-     * @param display
-     * @param hideOnStart
-     */
-    public BSCollapse(Link linkController, ComponentHierarchyBase display, boolean hideOnStart)
-    {
-        if (display != null)
-        {
-            display.addClass("collapse");
-            if (!hideOnStart)
-            {
-                if (!BootstrapPageConfigurator.isBootstrap4())
-                {
-                    display.addClass(BSComponentDefaultOptions.In);
-                }
-                else
-                {
-                    display.addClass(BSComponentDefaultOptions.Show);
-                }
-            }
-            linkController.addAttribute("aria-controls", display.getID());
-            linkController.addAttribute(LinkAttributes.Data_Target.toString(), display.getID(true));
-        }
-
-        linkController.addAttribute(LinkAttributes.Data_Toggle, "collapse");
-        linkController.addAttribute(GlobalAttributes.Aria_Expanded, Boolean.toString(!hideOnStart));
-
-    }
-
-    /**
-     * Apply a collapse to given components
-     *
-     * @param buttonController
-     * @param display
-     * @param hideOnStart
-     */
-    public BSCollapse(Button buttonController, ComponentHierarchyBase display, boolean hideOnStart)
-    {
-        if (display != null)
-        {
-            display.addClass("collapse");
-            if (!hideOnStart)
-            {
-                display.addClass("in");
-            }
-
-            buttonController.addAttribute("aria-controls", display.getID());
-            buttonController.addAttribute("data-target", display.getID(true));
-        }
-
-        buttonController.addAttribute("data-toggle", "collapse");
-        buttonController.addAttribute("aria-expanded", Boolean.toString(!hideOnStart));
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Apply a collapse to given components
+	 *
+	 * @param linkController
+	 * @param display
+	 * @param hideOnStart
+	 */
+	public BSCollapse(Link linkController, ComponentHierarchyBase display, boolean hideOnStart)
+	{
+		if (display != null)
+		{
+			display.addClass("collapse");
+			if (!hideOnStart)
+			{
+				if (!BootstrapPageConfigurator.isBootstrap4())
+				{
+					display.addClass(BSComponentDefaultOptions.In);
+				}
+				else
+				{
+					display.addClass(BSComponentDefaultOptions.Show);
+				}
+			}
+			linkController.addAttribute("aria-controls", display.getID());
+			linkController.addAttribute(LinkAttributes.Data_Target.toString(), display.getID(true));
+		}
+		
+		linkController.addAttribute(LinkAttributes.Data_Toggle, "collapse");
+		linkController.addAttribute(GlobalAttributes.Aria_Expanded, Boolean.toString(!hideOnStart));
+		
+	}
+	
+	/**
+	 * Apply a collapse to given components
+	 *
+	 * @param buttonController
+	 * @param display
+	 * @param hideOnStart
+	 */
+	public BSCollapse(Button buttonController, ComponentHierarchyBase display, boolean hideOnStart)
+	{
+		if (display != null)
+		{
+			display.addClass("collapse");
+			if (!hideOnStart)
+			{
+				display.addClass("in");
+			}
+			
+			buttonController.addAttribute("aria-controls", display.getID());
+			buttonController.addAttribute("data-target", display.getID(true));
+		}
+		
+		buttonController.addAttribute("data-toggle", "collapse");
+		buttonController.addAttribute("aria-expanded", Boolean.toString(!hideOnStart));
+	}
 }

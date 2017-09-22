@@ -20,26 +20,24 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 
 /**
- *
  * @author GedMarc
  * @since 14 Jan 2017
- *
  */
 public class BSDropDownMenuItemDivider extends BSDropDownMenuItem
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A divider on the bs drop down menu item
-     * <p>
-     */
-    public BSDropDownMenuItemDivider()
-    {
-        super("");
-        removeClass(BSComponentDropDownOptions.Dropdown_Item.toString());
-        addClass(BSComponentDropDownOptions.Dropdown_Divider);
-        setTag("div");
-        getAttributes().remove(LinkAttributes.HRef);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A divider on the bs drop down menu item
+	 * <p>
+	 */
+	public BSDropDownMenuItemDivider()
+	{
+		super("");
+		removeClass(BSComponentDropDownOptions.Dropdown_Item.toString());
+		addClass(BSComponentDropDownOptions.Dropdown_Divider);
+		setTag("div");
+		getAttributes().remove(LinkAttributes.HRef);
+	}
 }

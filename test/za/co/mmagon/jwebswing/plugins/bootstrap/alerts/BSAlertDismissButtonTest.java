@@ -16,29 +16,25 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.BSAlertDismissButton;
-import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.BSAlertWarning;
 import org.junit.Test;
 
 /**
- *
  * @author GedMarc
  */
 public class BSAlertDismissButtonTest
 {
-
-    public BSAlertDismissButtonTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSAlertWarning alert = new BSAlertWarning();
-        BSAlertDismissButton button = new BSAlertDismissButton(alert, true);
-        System.out.println(alert.toString(true));
-        System.out.println(alert.toString());
-        ;
-    }
-
+	
+	public BSAlertDismissButtonTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSAlertWarning alert = new BSAlertWarning();
+		BSAlertDismissButton button = new BSAlertDismissButton(alert, true);
+		System.out.println(alert.toString(true));
+		System.out.println(alert.toString());
+	}
+	
 }

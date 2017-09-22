@@ -24,19 +24,18 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGrou
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormFileInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default email input for bootstrap
-     */
-    public BSFormFileInput()
-    {
-        setInputType(InputTypes.File);
-        addClass(BSComponentFormGroupOptions.Form_Control_File);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default email input for bootstrap
+	 */
+	public BSFormFileInput()
+	{
+		setInputType(InputTypes.File);
+		addClass(BSComponentFormGroupOptions.Form_Control_File);
+	}
 }

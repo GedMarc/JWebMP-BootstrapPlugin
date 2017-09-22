@@ -17,48 +17,50 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.badge;
 
 /**
- *
  * @author GedMarc
  * @since 16 Feb 2017
- * 
  */
-public interface IBSBadge<J extends BSBadge> 
+public interface IBSBadge<J extends BSBadge>
 {
-
-    /**
-     * Set or remove the style
-     *
-     * @param applyStyle
-     * @return
-     */
-    J setDanger(boolean applyStyle);
-
-    J setDefault(boolean applyStyle);
-
-    /**
-     * Set or remove the style
-     *
-     * @param applyStyle
-     * @return
-     */
-    J setInfo(boolean applyStyle);
-
-    J setPrimary(boolean applyStyle);
-
-    /**
-     * Set or remove the style
-     *
-     * @param applyStyle
-     * @return
-     */
-    J setSuccess(boolean applyStyle);
-
-    /**
-     * Set or remove the style
-     *
-     * @param applyStyle
-     * @return
-     */
-    J setWarning(boolean applyStyle);
-
+	
+	/**
+	 * Set or remove the style
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	J setDanger(boolean applyStyle);
+	
+	J setDefault(boolean applyStyle);
+	
+	/**
+	 * Set or remove the style
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	J setInfo(boolean applyStyle);
+	
+	J setPrimary(boolean applyStyle);
+	
+	/**
+	 * Set or remove the style
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	J setSuccess(boolean applyStyle);
+	
+	/**
+	 * Set or remove the style
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	J setWarning(boolean applyStyle);
+	
 }

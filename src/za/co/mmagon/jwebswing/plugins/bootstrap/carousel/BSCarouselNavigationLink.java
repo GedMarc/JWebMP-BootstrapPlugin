@@ -22,56 +22,55 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 
 /**
+ * @param <J>
  *
  * @author GedMarc
- * @param <J>
  * @since 16 Feb 2017
- *
  */
 public class BSCarouselNavigationLink<J extends BSCarouselNavigationLink<J>>
-        extends Link<J>
+		extends Link<J>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSCarouselNavigationLink(boolean isPrevious)
-    {
-        if (isPrevious)
-        {
-            addClass("left");
-            addClass(BSComponentCarouselOptions.Carousel_Control);
-
-            addAttribute("role", "button");
-            addAttribute("data-slide", "prev");
-
-            Span iconSpan = new Span();
-            iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
-            iconSpan.addClass("icon-next");
-
-            Span readerFriendly = new Span("Previous");
-            readerFriendly.addClass(BSComponentColoursOptions.Sr_Only);
-
-            add(iconSpan);
-            add(readerFriendly);
-        }
-        else
-        {
-            addClass("right");
-            addClass(BSComponentCarouselOptions.Carousel_Control);
-
-            addAttribute("role", "button");
-            addAttribute("data-slide", "next");
-
-            Span iconSpan = new Span();
-            iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
-            iconSpan.addClass("icon-next");
-
-            Span readerFriendly = new Span("Next");
-            readerFriendly.addClass(BSComponentColoursOptions.Sr_Only);
-
-            add(iconSpan);
-            add(readerFriendly);
-        }
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSCarouselNavigationLink(boolean isPrevious)
+	{
+		if (isPrevious)
+		{
+			addClass("left");
+			addClass(BSComponentCarouselOptions.Carousel_Control);
+			
+			addAttribute("role", "button");
+			addAttribute("data-slide", "prev");
+			
+			Span iconSpan = new Span();
+			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
+			iconSpan.addClass("icon-next");
+			
+			Span readerFriendly = new Span("Previous");
+			readerFriendly.addClass(BSComponentColoursOptions.Sr_Only);
+			
+			add(iconSpan);
+			add(readerFriendly);
+		}
+		else
+		{
+			addClass("right");
+			addClass(BSComponentCarouselOptions.Carousel_Control);
+			
+			addAttribute("role", "button");
+			addAttribute("data-slide", "next");
+			
+			Span iconSpan = new Span();
+			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
+			iconSpan.addClass("icon-next");
+			
+			Span readerFriendly = new Span("Next");
+			readerFriendly.addClass(BSComponentColoursOptions.Sr_Only);
+			
+			add(iconSpan);
+			add(readerFriendly);
+		}
+	}
+	
 }

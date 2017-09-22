@@ -16,24 +16,23 @@
  */
 package za.co.mmagon.jwebswing.plugins.jquery.bootstrap;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import org.junit.Test;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 
 /**
- *
  * @author ged_m
  */
 public class BootstrapClassesTest
 {
-
-    public BootstrapClassesTest()
-    {
-    }
-
-    @Test
-    public void testClassesRender()
-    {
-        System.out.println(BSComponentDefaultOptions.Nav$Nav_Pills);
-    }
+	
+	public BootstrapClassesTest()
+	{
+	}
+	
+	@Test
+	public void testClassesRender()
+	{
+		System.out.println(BSComponentDefaultOptions.Nav$Nav_Pills);
+	}
 
 }

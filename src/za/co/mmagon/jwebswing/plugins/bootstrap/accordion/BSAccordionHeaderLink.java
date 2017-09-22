@@ -19,21 +19,19 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 import za.co.mmagon.jwebswing.base.html.Link;
 
 /**
- *
  * @author GedMarc
  * @since 20 Feb 2017
- *
  */
 public class BSAccordionHeaderLink extends Link<BSAccordionHeaderLink>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * The displayed link for an accordion
-     */
-    public BSAccordionHeaderLink()
-    {
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * The displayed link for an accordion
+	 */
+	public BSAccordionHeaderLink()
+	{
+	}
+	
 }

@@ -19,52 +19,51 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 
 /**
- *
  * @author GedMarc
  */
 public enum BSNavsAttributes implements AttributeDefinitions
 {
-    Role,
-    Visibility;
-
-    private boolean isKeyword;
-
-    /**
-     * The component attributes
-     */
-    private BSNavsAttributes()
-    {
-    }
-
-    /**
-     * If the attribute is loaded as a keyword only
-     *
-     * @param isKeyword
-     */
-    private BSNavsAttributes(boolean isKeyword)
-    {
-        this.isKeyword = isKeyword;
-    }
-
-    /**
-     * If the attribute is a keyword
-     *
-     * @return
-     */
-    @Override
-    public boolean isKeyword()
-    {
-        return isKeyword;
-    }
-
-    /**
-     * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
-     *
-     * @return
-     */
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-').replace("$", "");
-    }
+	Role,
+	Visibility;
+	
+	private boolean isKeyword;
+	
+	/**
+	 * The component attributes
+	 */
+	BSNavsAttributes()
+	{
+	}
+	
+	/**
+	 * If the attribute is loaded as a keyword only
+	 *
+	 * @param isKeyword
+	 */
+	BSNavsAttributes(boolean isKeyword)
+	{
+		this.isKeyword = isKeyword;
+	}
+	
+	/**
+	 * If the attribute is a keyword
+	 *
+	 * @return
+	 */
+	@Override
+	public boolean isKeyword()
+	{
+		return isKeyword;
+	}
+	
+	/**
+	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
+	 *
+	 * @return
+	 */
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-').replace("$", "");
+	}
 }

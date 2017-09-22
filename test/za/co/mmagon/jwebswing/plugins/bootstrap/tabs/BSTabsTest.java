@@ -21,9 +21,9 @@ public class BSTabsTest extends BaseTestClass
 	public void testBSTabsContent()
 	{
 		BSTabs tabs = new BSTabs();
-		BSTab tab = new BSTab(new ListItem(),new Div());
-		BSTab tab1 = new BSTab(new ListItem(),new Div());
-		BSTab tab2 = new BSTab(new ListItem(),new Div());
+		BSTab tab = new BSTab(new ListItem(), new Div());
+		BSTab tab1 = new BSTab(new ListItem(), new Div());
+		BSTab tab2 = new BSTab(new ListItem(), new Div());
 
 		tab.setActive(true);
 

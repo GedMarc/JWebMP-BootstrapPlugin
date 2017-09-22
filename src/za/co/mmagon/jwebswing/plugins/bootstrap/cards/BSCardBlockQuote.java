@@ -26,20 +26,19 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * Block quote format for inside a bootstrap card
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSCardBlockQuote extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSCardBlockQuote> implements BSCardChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Block quote format for inside a bootstrap card
-     */
-    public BSCardBlockQuote()
-    {
-        
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Block quote format for inside a bootstrap card
+	 */
+	public BSCardBlockQuote()
+	{
+	
+	}
 }

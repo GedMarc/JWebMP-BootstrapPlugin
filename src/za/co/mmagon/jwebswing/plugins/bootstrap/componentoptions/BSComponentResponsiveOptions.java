@@ -16,8 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
-
 /**
  * Responsive utilities
  * <p>
@@ -33,80 +31,80 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * contiguous range of viewport breakpoint sizes; you will instead need to use custom CSS in such cases.
  *
  * @author GedMarc
- * @since Oct 10, 2016
  * @version 1.0
- *
+ * @since Oct 10, 2016
  */
 public enum BSComponentResponsiveOptions implements IBSComponentOptions
 {
-    /**
-     * Hide this component when small only
-     */
-    Hidden_SM,
-    /**
-     * Hide this component extra small only
-     */
-    Hidden_XS,
-    /**
-     * Hide this component when medium
-     */
-    Hidden_MD,
-    /**
-     * Hide this component when large
-     */
-    Hidden_LG,
-    /**
-     * Hide when XL
-     */
-    Hidden_XL,
-    /**
-     * Hide for XS and SM
-     */
-    Hidden_SM_Down,
-    /**
-     * Hide for XS, SM and MD
-     */
-    Hidden_MD_Down,
-    /**
-     * Only display on XL
-     */
-    Hidden_LG_Down,
-    /**
-     * Invisible
-     */
-    @Deprecated
-    Hidden_XL_Down,
-    /**
-     * Hide for XS and UP (invisible
-     */
-    @Deprecated
-    Hidden_XS_Up,
-    /**
-     * Hide for SM and UP
-     */
-    Hidden_SM_Up,
-    /**
-     * Hide for MD screens and up
-     */
-    Hidden_MD_Up,
-    /**
-     * Hide for Large and up
-     */
-    Hidden_LG_Up,;
-
-    private BSComponentResponsiveOptions()
-    {
-
-    }
-
-    /**
-     * Replaces the text with its HTML class equivalent
-     * @return 
-     */
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Hide this component when small only
+	 */
+	Hidden_SM,
+	/**
+	 * Hide this component extra small only
+	 */
+	Hidden_XS,
+	/**
+	 * Hide this component when medium
+	 */
+	Hidden_MD,
+	/**
+	 * Hide this component when large
+	 */
+	Hidden_LG,
+	/**
+	 * Hide when XL
+	 */
+	Hidden_XL,
+	/**
+	 * Hide for XS and SM
+	 */
+	Hidden_SM_Down,
+	/**
+	 * Hide for XS, SM and MD
+	 */
+	Hidden_MD_Down,
+	/**
+	 * Only display on XL
+	 */
+	Hidden_LG_Down,
+	/**
+	 * Invisible
+	 */
+	@Deprecated
+	Hidden_XL_Down,
+	/**
+	 * Hide for XS and UP (invisible
+	 */
+	@Deprecated
+	Hidden_XS_Up,
+	/**
+	 * Hide for SM and UP
+	 */
+	Hidden_SM_Up,
+	/**
+	 * Hide for MD screens and up
+	 */
+	Hidden_MD_Up,
+	/**
+	 * Hide for Large and up
+	 */
+	Hidden_LG_Up,;
+	
+	BSComponentResponsiveOptions()
+	{
+	
+	}
+	
+	/**
+	 * Replaces the text with its HTML class equivalent
+	 *
+	 * @return
+	 */
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

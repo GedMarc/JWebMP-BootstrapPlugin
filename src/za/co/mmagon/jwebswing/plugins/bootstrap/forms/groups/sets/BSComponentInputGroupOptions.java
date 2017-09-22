@@ -27,36 +27,36 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  */
 public enum BSComponentInputGroupOptions implements IBSComponentOptions
 {
-    /**
-     * Denotes an input group association
-     */
-    Input_Group,
-    /**
-     *
-     */
-    Input_Group_Addon,
-    /**
-     * Sizing
-     * <p>
-     * Add the relative form sizing classes to the .input-group itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
-     */
-    Input_Group_Lg,
-    /**
-     * Sizing
-     * <p>
-     * Add the relative form sizing classes to the .input-group itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
-     */
-    Input_Group_Sm;
-
-    private BSComponentInputGroupOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Denotes an input group association
+	 */
+	Input_Group,
+	/**
+	 *
+	 */
+	Input_Group_Addon,
+	/**
+	 * Sizing
+	 * <p>
+	 * Add the relative form sizing classes to the .input-group itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
+	 */
+	Input_Group_Lg,
+	/**
+	 * Sizing
+	 * <p>
+	 * Add the relative form sizing classes to the .input-group itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
+	 */
+	Input_Group_Sm;
+	
+	BSComponentInputGroupOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

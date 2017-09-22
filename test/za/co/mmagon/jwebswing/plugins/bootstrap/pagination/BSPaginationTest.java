@@ -16,61 +16,56 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.pagination;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.pagination.BSComponentPaginationAlignmentOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.pagination.BSPaginationLink;
-import za.co.mmagon.jwebswing.plugins.bootstrap.pagination.BSComponentPaginationSizingOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.pagination.BSPagination;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Span;
 
 /**
- *
  * @author GedMarc
  */
 public class BSPaginationTest extends BaseTestClass
 {
-
-    public BSPaginationTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSPagination page = new BSPagination();
-        BSPaginationLink link = page.createPageLink("AriaLabel");
-
-        link.add(new Span("&laquo;"));
-
-        link.getListItem().setDisabled();
-
-        System.out.println(page.toString(true));
-    }
-
-    @Test
-    public void testSizes()
-    {
-        BSPagination page = new BSPagination(BSComponentPaginationSizingOptions.Pagination_Sm);
-        BSPaginationLink link = page.createPageLink("AriaLabel");
-
-        link.add(new Span("&laquo;"));
-
-        link.getListItem().setDisabled();
-
-        System.out.println(page.toString(true));
-    }
-
-    @Test
-    public void testAlignment()
-    {
-        BSPagination page = new BSPagination(BSComponentPaginationSizingOptions.Pagination_Lg, BSComponentPaginationAlignmentOptions.Justify_Content_Center);
-        BSPaginationLink link = page.createPageLink("AriaLabel");
-
-        link.add(new Span("&laquo;"));
-
-        link.getListItem().setDisabled();
-
-        System.out.println(page.toString(true));
-    }
+	
+	public BSPaginationTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSPagination page = new BSPagination();
+		BSPaginationLink link = page.createPageLink("AriaLabel");
+		
+		link.add(new Span("&laquo;"));
+		
+		link.getListItem().setDisabled();
+		
+		System.out.println(page.toString(true));
+	}
+	
+	@Test
+	public void testSizes()
+	{
+		BSPagination page = new BSPagination(BSComponentPaginationSizingOptions.Pagination_Sm);
+		BSPaginationLink link = page.createPageLink("AriaLabel");
+		
+		link.add(new Span("&laquo;"));
+		
+		link.getListItem().setDisabled();
+		
+		System.out.println(page.toString(true));
+	}
+	
+	@Test
+	public void testAlignment()
+	{
+		BSPagination page = new BSPagination(BSComponentPaginationSizingOptions.Pagination_Lg, BSComponentPaginationAlignmentOptions.Justify_Content_Center);
+		BSPaginationLink link = page.createPageLink("AriaLabel");
+		
+		link.add(new Span("&laquo;"));
+		
+		link.getListItem().setDisabled();
+		
+		System.out.println(page.toString(true));
+	}
 }

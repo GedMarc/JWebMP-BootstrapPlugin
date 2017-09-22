@@ -293,19 +293,6 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	}
 	
 	/**
-	 * Sets the input component to any input type
-	 *
-	 * @param inputComponent
-	 *
-	 * @return
-	 */
-	public J setInputComponent(Input inputComponent)
-	{
-		this.inputComponent = inputComponent;
-		return (J) this;
-	}
-	
-	/**
 	 * Sets the input component
 	 *
 	 * @param inputComponent
@@ -328,6 +315,19 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 */
 	@Override
 	public J setInputComponent(BSFormSelectInput inputComponent)
+	{
+		this.inputComponent = inputComponent;
+		return (J) this;
+	}
+	
+	/**
+	 * Sets the input component to any input type
+	 *
+	 * @param inputComponent
+	 *
+	 * @return
+	 */
+	public J setInputComponent(Input inputComponent)
 	{
 		this.inputComponent = inputComponent;
 		return (J) this;
@@ -392,10 +392,16 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 				referencedForm.setTag("ng-form");
 				
 				String formName = referencedForm.getID();
-				String fieldName = "'" + (getInputComponent() == null ? "" : getInputComponent().getID()) + "'";
+				String fieldTemp = getInputComponent().getID();
+				if (fieldTemp.indexOf('_') > -1)
+				{
+					fieldTemp = fieldTemp.substring(fieldTemp.lastIndexOf('_') + 1);
+				}
+				String fieldName = "'" + (fieldTemp == null ? "" : fieldTemp + "'");
 				
 				addAttribute(AngularAttributes.ngClass, formName + "[" + fieldName + "].$valid && !" + formName + "[" + fieldName + "].$pristine "
 						+ "? '" + SUCCESS_CLASS + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + (BootstrapPageConfigurator.isBootstrap4() ? ERROR_CLASS_4 : ERROR_CLASS) + "'");
+				
 				
 				if (getShowControlFeedback() != null && getShowControlFeedback())
 				{

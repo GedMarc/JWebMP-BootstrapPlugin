@@ -23,19 +23,18 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormTextInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default email input for bootstrap
-     */
-    public BSFormTextInput()
-    {
-
-        setInputType(InputTypes.Text);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default email input for bootstrap
+	 */
+	public BSFormTextInput()
+	{
+		
+		setInputType(InputTypes.Text);
+	}
 }

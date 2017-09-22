@@ -21,22 +21,21 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputRadioTypeAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonChildren;
 
 /**
+ * @param <J>
  *
  * @author GedMarc
- * @param <J>
  * @since 16 Feb 2017
- *
  */
 public class BSButtonGroupRadioButton<J extends BSButtonGroupRadioButton<J>>
-        extends InputRadioType<J>
-        implements IBSButtonGroupInput, BSButtonChildren
+		extends InputRadioType<J>
+		implements IBSButtonGroupInput, BSButtonChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSButtonGroupRadioButton()
-    {
-        addAttribute(InputRadioTypeAttributes.AutoComplete, "off");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSButtonGroupRadioButton()
+	{
+		addAttribute(InputRadioTypeAttributes.AutoComplete, "off");
+	}
+	
 }

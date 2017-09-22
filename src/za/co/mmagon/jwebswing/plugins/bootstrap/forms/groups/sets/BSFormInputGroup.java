@@ -34,147 +34,146 @@ import java.util.List;
  *
  * @author GedMarc
  * @since 18 Jan 2017
- *
  */
 public class BSFormInputGroup<J extends BSFormInputGroup<J>>
-        extends BSFormGroup
-        implements BSFormGroupChildren, BSFormSetChildren, BSDropDownMenuChildren, IBSFormInputGroup
+		extends BSFormGroup
+		implements BSFormGroupChildren, BSFormSetChildren, BSDropDownMenuChildren, IBSFormInputGroup
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The input group addons
-     */
-    private List<Span> inputGroupAddons;
-    /**
-     * The input group addons
-     */
-    private List<Span> inputGroupAddonsRight;
-    
-    private BSInput input;
-
-    /**
-     * Input group
-     * <p>
-     * Easily extend form controls by adding text, buttons, or button groups on either side of textual input's.
-     *
-     * @param input
-     * @param size
-     */
-    public BSFormInputGroup(BSInput input, BSComponentInputGroupOptions... size)
-    {
-    	this.input = input;
-        addClass(BSComponentInputGroupOptions.Input_Group);
-        if (size != null && size.length > 0)
-        {
-            for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
-            {
-                addClass(bSComponentInputGroupOptions);
-            }
-        }
-    }
-
-    /**
-     * Input group
-     * <p>
-     * Easily extend form controls by adding text, buttons, or button groups on either side of textual input's.
-     *
-     * @param input
-     * @param size
-     */
-    public BSFormInputGroup(BSFormSelectInput input, BSComponentInputGroupOptions... size)
-    {
-	    this.input = input;
-        addClass(BSComponentInputGroupOptions.Input_Group);
-        if (size != null && size.length > 0)
-        {
-            for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
-            {
-                addClass(bSComponentInputGroupOptions);
-            }
-        }
-    }
-
-    /**
-     * Input group
-     * <p>
-     * Easily extend form controls by adding text, buttons, or button groups on either side of textual input's.
-     *
-     * @param input
-     * @param size
-     */
-    public BSFormInputGroup(BSFormTextAreaInput input, BSComponentInputGroupOptions... size)
-    {
-	    this.input = input;
-        addClass(BSComponentInputGroupOptions.Input_Group);
-        if (size != null && size.length > 0)
-        {
-            for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
-            {
-                addClass(bSComponentInputGroupOptions);
-            }
-        }
-    }
-
-    /**
-     *
-     * @return
-     */
-    @Override
-    public List<Span> getInputGroupAddons()
-    {
-        if (inputGroupAddons == null)
-        {
-            setInputGroupAddons(new ArrayList<>());
-        }
-        return inputGroupAddons;
-    }
-
-    /**
-     * The input group addons
-     *
-     * @param inputGroupAddons
-     *
-     * @return
-     */
-    @Override
-    public BSFormInputGroup setInputGroupAddons(List<Span> inputGroupAddons)
-    {
-        this.inputGroupAddons = inputGroupAddons;
-        return this;
-    }
-
-    /**
-     * Sets the input group addons to the right
-     *
-     * @return
-     */
-    @Override
-    public List<Span> getInputGroupAddonsRight()
-    {
-        if (inputGroupAddonsRight == null)
-        {
-            setInputGroupAddonsRight(new ArrayList());
-        }
-        return inputGroupAddonsRight;
-    }
-
-    /**
-     * Sets the input group addons to the right
-     *
-     * @param inputGroupAddonsRight
-     *
-     * @return
-     */
-    @Override
-    public BSFormInputGroup setInputGroupAddonsRight(List<Span> inputGroupAddonsRight)
-    {
-        this.inputGroupAddonsRight = inputGroupAddonsRight;
-        return this;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The input group addons
+	 */
+	private List<Span> inputGroupAddons;
+	/**
+	 * The input group addons
+	 */
+	private List<Span> inputGroupAddonsRight;
+	
+	private BSInput input;
+	
+	/**
+	 * Input group
+	 * <p>
+	 * Easily extend form controls by adding text, buttons, or button groups on either side of textual input's.
+	 *
+	 * @param input
+	 * @param size
+	 */
+	public BSFormInputGroup(BSInput input, BSComponentInputGroupOptions... size)
+	{
+		this.input = input;
+		addClass(BSComponentInputGroupOptions.Input_Group);
+		if (size != null && size.length > 0)
+		{
+			for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
+			{
+				addClass(bSComponentInputGroupOptions);
+			}
+		}
+	}
+	
+	/**
+	 * Input group
+	 * <p>
+	 * Easily extend form controls by adding text, buttons, or button groups on either side of textual input's.
+	 *
+	 * @param input
+	 * @param size
+	 */
+	public BSFormInputGroup(BSFormSelectInput input, BSComponentInputGroupOptions... size)
+	{
+		this.input = input;
+		addClass(BSComponentInputGroupOptions.Input_Group);
+		if (size != null && size.length > 0)
+		{
+			for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
+			{
+				addClass(bSComponentInputGroupOptions);
+			}
+		}
+	}
+	
+	/**
+	 * Input group
+	 * <p>
+	 * Easily extend form controls by adding text, buttons, or button groups on either side of textual input's.
+	 *
+	 * @param input
+	 * @param size
+	 */
+	public BSFormInputGroup(BSFormTextAreaInput input, BSComponentInputGroupOptions... size)
+	{
+		this.input = input;
+		addClass(BSComponentInputGroupOptions.Input_Group);
+		if (size != null && size.length > 0)
+		{
+			for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
+			{
+				addClass(bSComponentInputGroupOptions);
+			}
+		}
+	}
+	
+	/**
+	 * @return
+	 */
+	@Override
+	public List<Span> getInputGroupAddons()
+	{
+		if (inputGroupAddons == null)
+		{
+			setInputGroupAddons(new ArrayList<>());
+		}
+		return inputGroupAddons;
+	}
+	
+	/**
+	 * The input group addons
+	 *
+	 * @param inputGroupAddons
+	 *
+	 * @return
+	 */
+	@Override
+	public BSFormInputGroup setInputGroupAddons(List<Span> inputGroupAddons)
+	{
+		this.inputGroupAddons = inputGroupAddons;
+		return this;
+	}
+	
+	/**
+	 * Sets the input group addons to the right
+	 *
+	 * @return
+	 */
+	@Override
+	public List<Span> getInputGroupAddonsRight()
+	{
+		if (inputGroupAddonsRight == null)
+		{
+			setInputGroupAddonsRight(new ArrayList());
+		}
+		return inputGroupAddonsRight;
+	}
+	
+	/**
+	 * Sets the input group addons to the right
+	 *
+	 * @param inputGroupAddonsRight
+	 *
+	 * @return
+	 */
+	@Override
+	public BSFormInputGroup setInputGroupAddonsRight(List<Span> inputGroupAddonsRight)
+	{
+		this.inputGroupAddonsRight = inputGroupAddonsRight;
+		return this;
+	}
 	
 	/**
 	 * Gets the input component
+	 *
 	 * @return
 	 */
 	public BSInput getInput()
@@ -184,6 +183,7 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	
 	/**
 	 * Sets the input component
+	 *
 	 * @param input
 	 */
 	public J setInput(BSInput input)
@@ -191,25 +191,25 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 		this.input = input;
 		return (J) this;
 	}
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            getInputGroupAddons().forEach(inputGroupAddon ->
-            {
-                inputGroupAddon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
-                add(0, inputGroupAddon);
-            });
-	        add(getInput());
-            getInputGroupAddonsRight().forEach(inputGroupAddon ->
-            {
-                inputGroupAddon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
-                add(inputGroupAddon);
-            });
-        }
-        super.preConfigure();
-    }
-
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			getInputGroupAddons().forEach(inputGroupAddon ->
+			                              {
+				                              inputGroupAddon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
+				                              add(0, inputGroupAddon);
+			                              });
+			add(getInput());
+			getInputGroupAddonsRight().forEach(inputGroupAddon ->
+			                                   {
+				                                   inputGroupAddon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
+				                                   add(inputGroupAddon);
+			                                   });
+		}
+		super.preConfigure();
+	}
+	
 }

@@ -32,15 +32,14 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavsChildren;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormInline extends BSForm implements BSNavsChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSFormInline()
-    {
-        addClass("form-inline");
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSFormInline()
+	{
+		addClass("form-inline");
+	}
 }

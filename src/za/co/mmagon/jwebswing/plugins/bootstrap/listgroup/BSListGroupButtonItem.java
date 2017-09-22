@@ -24,21 +24,20 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
  *
  * @author GedMarc
  * @since 19 Jan 2017
- *
  */
 public class BSListGroupButtonItem extends BSListGroupListItem
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Links and buttons Use &gt;a&lt;s or &gt;button&lt;s to create actionable list group items with hover, disabled, and active states by adding .list-group-item-action. We separate these
-     * pseudo-classes to ensure list groups made of non-interactive elements (like &gt;li&lt;s or &gt;div&lt;s) don’t provide a click or tap affordance.
-     */
-    public BSListGroupButtonItem()
-    {
-        setTag("button");
-        addAttribute(GlobalAttributes.Type, "button");
-        addClass(BSComponentListGroupOptions.List_Group_Item_Action);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Links and buttons Use &gt;a&lt;s or &gt;button&lt;s to create actionable list group items with hover, disabled, and active states by adding .list-group-item-action. We separate these
+	 * pseudo-classes to ensure list groups made of non-interactive elements (like &gt;li&lt;s or &gt;div&lt;s) don’t provide a click or tap affordance.
+	 */
+	public BSListGroupButtonItem()
+	{
+		setTag("button");
+		addAttribute(GlobalAttributes.Type, "button");
+		addClass(BSComponentListGroupOptions.List_Group_Item_Action);
+	}
 }

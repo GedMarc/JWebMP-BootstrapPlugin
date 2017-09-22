@@ -24,45 +24,44 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
  *
  * @author GedMarc
  * @since 19 Jan 2017
- *
  */
 public class BSNavLinkItem extends Link implements BSNavsChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A navigation link item
-     *
-     * @param url
-     */
-    public BSNavLinkItem(String url)
-    {
-        setTag("a");
-        addAttribute(LinkAttributes.HRef, url);
-        addClass(BSComponentNavsOptions.Nav_Link);
-    }
-
-    /**
-     * Sets this link item active
-     *
-     * @return
-     */
-    public BSNavLinkItem setActive()
-    {
-        addClass(BSComponentNavsOptions.Active);
-        return this;
-    }
-
-    /**
-     * Sets this link item disabled
-     *
-     * @return
-     */
-    public BSNavLinkItem setDisabled()
-    {
-        addClass(BSComponentNavsOptions.Disabled);
-        return this;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A navigation link item
+	 *
+	 * @param url
+	 */
+	public BSNavLinkItem(String url)
+	{
+		setTag("a");
+		addAttribute(LinkAttributes.HRef, url);
+		addClass(BSComponentNavsOptions.Nav_Link);
+	}
+	
+	/**
+	 * Sets this link item active
+	 *
+	 * @return
+	 */
+	public BSNavLinkItem setActive()
+	{
+		addClass(BSComponentNavsOptions.Active);
+		return this;
+	}
+	
+	/**
+	 * Sets this link item disabled
+	 *
+	 * @return
+	 */
+	public BSNavLinkItem setDisabled()
+	{
+		addClass(BSComponentNavsOptions.Disabled);
+		return this;
+	}
+	
 }

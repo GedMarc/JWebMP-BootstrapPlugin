@@ -17,40 +17,38 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 
 /**
- *
  * @author GedMarc
  * @since 21 Feb 2017
- *
  */
 public interface IBSNavs
 {
-
-    /**
-     * Assigns the navigation list
-     *
-     * @return
-     */
-    BSNavList getNavigationList();
-
-    /**
-     * Sets this navigation bar as centered
-     *
-     * @return
-     */
-    BSNavs setCentered();
-
-    /**
-     * Sets the navigation list accordingly
-     *
-     * @param navigationList
-     */
-    void setNavigationList(BSNavList navigationList);
-
-    /**
-     * Sets this navigation bar as right aligned
-     *
-     * @return
-     */
-    BSNavs setRightAligned();
-
+	
+	/**
+	 * Assigns the navigation list
+	 *
+	 * @return
+	 */
+	BSNavList getNavigationList();
+	
+	/**
+	 * Sets the navigation list accordingly
+	 *
+	 * @param navigationList
+	 */
+	void setNavigationList(BSNavList navigationList);
+	
+	/**
+	 * Sets this navigation bar as centered
+	 *
+	 * @return
+	 */
+	BSNavs setCentered();
+	
+	/**
+	 * Sets this navigation bar as right aligned
+	 *
+	 * @return
+	 */
+	BSNavs setRightAligned();
+	
 }

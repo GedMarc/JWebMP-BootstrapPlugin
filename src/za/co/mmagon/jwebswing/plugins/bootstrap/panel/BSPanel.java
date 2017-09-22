@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.panel;
 
-import java.util.Iterator;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Button;
@@ -28,283 +27,286 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 
+import java.util.Iterator;
+
 /**
  * An implementation of the bootstrap panel layout.
  * <p>
+ *
  * @author Marc Magon
- * @since 29 Aug 2015
  * @version 1.0
+ * @since 29 Aug 2015
  * @deprecated for bootstrap 4, rather use bootstrap cards
  */
 @ComponentInformation(name = "Bootstrap Panel", description = "Panels can be used with bootstrap 3",
-        url = "https://v4-alpha.getbootstrap.com/components/cards/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/cards/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, BSPanel>
 {
-
-    private static final long serialVersionUID = 1L;
-    private BSPanelFeature feature;
-
-    /**
-     * The Panel Header Button Bar
-     */
-    private Div panelHeaderButtonBar;
-
-    /**
-     * The panel header
-     */
-    private Div panelHeader;
-    /*
-     * The panel body
-     */
-    private Div panelBody;
-
-    /**
-     * Specifies if the footer must render as a link, or as a div
-     */
-    private boolean footerIsLink;
-
-    /**
-     * The panel footer
-     */
-    private Component panelFooter;
-    /**
-     * The theme associated
-     */
-    private BSPanelThemes theme;
-
-    /**
-     * Construct a new controlled instance of the sb2 panel
-     *
-     * @param theme
-     */
-    public BSPanel(BSPanelThemes theme)
-    {
-        addClass("panel");
-        setTheme(theme);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            getChildren().clear();
-            getChildren().add(this.panelHeader);
-            getChildren().add(this.panelBody);
-            getChildren().add(this.panelFooter);
-
-            if (this.panelFooter != null)
-            {
-                if (footerIsLink)
-                {
-                    for (Iterator it = panelFooter.getChildren().iterator(); it.hasNext();)
-                    {
-                        ComponentHierarchyBase comp = (ComponentHierarchyBase) it.next();
-                        comp.addClass("panel-footer");
-                    }
-                }
-            }
-        }
-        super.preConfigure();
-    }
-
-    public final BSPanelFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new BSPanelFeature(this);
-        }
-        return feature;
-    }
-
-    @Override
-    public BSPanelOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
-
-    /**
-     * Gets the panel header
-     *
-     * @return
-     */
-    public Div getPanelHeader()
-    {
-        if (panelHeader == null)
-        {
-            setPanelHeader(new Div());
-        }
-
-        return panelHeader;
-    }
-
-    /**
-     * Sets and adds the panel body
-     *
-     * @return
-     */
-    public Div getPanelBody()
-    {
-        if (panelBody == null)
-        {
-            setPanelBody(new Div());
-        }
-        return panelBody;
-    }
-
-    /**
-     * Gets the panel footer as a link. Class cast exception may occur if you have set the footer to a custom component
-     *
-     * @return
-     */
-    public Component getPanelFooter()
-    {
-        if (panelFooter == null)
-        {
-            setPanelFooter(new Link("#"));
-            return this.panelFooter;
-        }
-        return panelFooter;
-    }
-
-    /**
-     * Returns the current theme attached, default is the default
-     *
-     * @return
-     */
-    public BSPanelThemes getTheme()
-    {
-        if (theme == null)
-        {
-            theme = BSPanelThemes.Default;
-        }
-        return theme;
-    }
-
-    /**
-     * Sets the panel header
-     *
-     * @param panelHeader
-     */
-    public void setPanelHeader(Div panelHeader)
-    {
-        this.panelHeader = panelHeader;
-        if (this.panelHeader != null)
-        {
-            this.panelHeader.addClass("panel-heading");
-        }
-    }
-
-    /**
-     * Sets the panel body
-     *
-     * @param panelBody
-     */
-    public void setPanelBody(Div panelBody)
-    {
-        getChildren().remove(this.panelBody);
-        this.panelBody = panelBody;
-        if (this.panelBody != null)
-        {
-            this.panelBody.addClass("panel-body");
-        }
-    }
-
-    /**
-     * Sets the panel footer as a link with formatting
-     *
-     * @param panelFooter
-     */
-    public void setPanelFooter(Link panelFooter)
-    {
-        this.panelFooter = panelFooter;
-        if (this.panelFooter != null)
-        {
-            //this.panelFooter.addClass("panel-footer");
-        }
-        this.footerIsLink = true;
-    }
-
-    /**
-     * Sets the panel footer as a regular div
-     *
-     * @param panelFooter
-     */
-    public void setPanelFooter(Div panelFooter)
-    {
-        this.panelFooter = panelFooter;
-        if (this.panelFooter != null)
-        {
-            this.panelFooter.addClass("panel-footer");
-        }
-        this.footerIsLink = false;
-    }
-
-    /**
-     * Sets the theme to the given settings
-     *
-     * @param theme
-     */
-    public final void setTheme(BSPanelThemes theme)
-    {
-        if (this.theme != null)
-        {
-            removeClass(this.theme.getClassText());
-        }
-        this.theme = theme;
-        addClass(theme.getClassText());
-    }
-
-    /**
-     * Returns the Panel Headers Button Bar
-     *
-     * @return
-     */
-    public Div getPanelHeaderButtonBar()
-    {
-        if (panelHeaderButtonBar == null)
-        {
-            setPanelHeaderButtonBar(new Div());
-        }
-        return panelHeaderButtonBar;
-    }
-
-    /**
-     * Sets the panel header button bar to the assigned Div
-     *
-     * @param panelHeaderButtonBar
-     */
-    public void setPanelHeaderButtonBar(Div panelHeaderButtonBar)
-    {
-        this.panelHeaderButtonBar = panelHeaderButtonBar;
-        if (panelHeaderButtonBar != null)
-        {
-            panelHeaderButtonBar.addClass(BSComponentDefaultOptions.Btn_Group);
-            panelHeaderButtonBar.addClass(BSComponentDefaultOptions.Pull_Right);
-            getPanelHeader().add(panelHeaderButtonBar);
-        }
-    }
-
-    /**
-     * Adds a button to the drop down header
-     *
-     * @param dropDownIcon
-     * @param dropDownContent
-     */
-    public void addDropDownToHeaderButtonBar(ComponentHierarchyBase dropDownIcon, ComponentHierarchyBase dropDownContent)
-    {
-        Button b = new Button();
-        b.addClass("btn btn-default btn-xs dropdown-toggle");
-        b.add(dropDownIcon);
-        b.addAttribute(ButtonAttributes.Type, "button");
-        b.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
-
-        dropDownContent.setTag("ul");
-        dropDownContent.addClass("dropdown-menu slidedown");
-
-        getPanelHeaderButtonBar().add(b);
-        getPanelHeaderButtonBar().add(dropDownContent);
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	private BSPanelFeature feature;
+	
+	/**
+	 * The Panel Header Button Bar
+	 */
+	private Div panelHeaderButtonBar;
+	
+	/**
+	 * The panel header
+	 */
+	private Div panelHeader;
+	/*
+	 * The panel body
+	 */
+	private Div panelBody;
+	
+	/**
+	 * Specifies if the footer must render as a link, or as a div
+	 */
+	private boolean footerIsLink;
+	
+	/**
+	 * The panel footer
+	 */
+	private Component panelFooter;
+	/**
+	 * The theme associated
+	 */
+	private BSPanelThemes theme;
+	
+	/**
+	 * Construct a new controlled instance of the sb2 panel
+	 *
+	 * @param theme
+	 */
+	public BSPanel(BSPanelThemes theme)
+	{
+		addClass("panel");
+		setTheme(theme);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			getChildren().clear();
+			getChildren().add(this.panelHeader);
+			getChildren().add(this.panelBody);
+			getChildren().add(this.panelFooter);
+			
+			if (this.panelFooter != null)
+			{
+				if (footerIsLink)
+				{
+					for (Iterator it = panelFooter.getChildren().iterator(); it.hasNext(); )
+					{
+						ComponentHierarchyBase comp = (ComponentHierarchyBase) it.next();
+						comp.addClass("panel-footer");
+					}
+				}
+			}
+		}
+		super.preConfigure();
+	}
+	
+	public final BSPanelFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new BSPanelFeature(this);
+		}
+		return feature;
+	}
+	
+	@Override
+	public BSPanelOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
+	
+	/**
+	 * Gets the panel header
+	 *
+	 * @return
+	 */
+	public Div getPanelHeader()
+	{
+		if (panelHeader == null)
+		{
+			setPanelHeader(new Div());
+		}
+		
+		return panelHeader;
+	}
+	
+	/**
+	 * Sets the panel header
+	 *
+	 * @param panelHeader
+	 */
+	public void setPanelHeader(Div panelHeader)
+	{
+		this.panelHeader = panelHeader;
+		if (this.panelHeader != null)
+		{
+			this.panelHeader.addClass("panel-heading");
+		}
+	}
+	
+	/**
+	 * Sets and adds the panel body
+	 *
+	 * @return
+	 */
+	public Div getPanelBody()
+	{
+		if (panelBody == null)
+		{
+			setPanelBody(new Div());
+		}
+		return panelBody;
+	}
+	
+	/**
+	 * Sets the panel body
+	 *
+	 * @param panelBody
+	 */
+	public void setPanelBody(Div panelBody)
+	{
+		getChildren().remove(this.panelBody);
+		this.panelBody = panelBody;
+		if (this.panelBody != null)
+		{
+			this.panelBody.addClass("panel-body");
+		}
+	}
+	
+	/**
+	 * Gets the panel footer as a link. Class cast exception may occur if you have set the footer to a custom component
+	 *
+	 * @return
+	 */
+	public Component getPanelFooter()
+	{
+		if (panelFooter == null)
+		{
+			setPanelFooter(new Link("#"));
+			return this.panelFooter;
+		}
+		return panelFooter;
+	}
+	
+	/**
+	 * Sets the panel footer as a regular div
+	 *
+	 * @param panelFooter
+	 */
+	public void setPanelFooter(Div panelFooter)
+	{
+		this.panelFooter = panelFooter;
+		if (this.panelFooter != null)
+		{
+			this.panelFooter.addClass("panel-footer");
+		}
+		this.footerIsLink = false;
+	}
+	
+	/**
+	 * Sets the panel footer as a link with formatting
+	 *
+	 * @param panelFooter
+	 */
+	public void setPanelFooter(Link panelFooter)
+	{
+		this.panelFooter = panelFooter;
+		if (this.panelFooter != null)
+		{
+			//this.panelFooter.addClass("panel-footer");
+		}
+		this.footerIsLink = true;
+	}
+	
+	/**
+	 * Returns the current theme attached, default is the default
+	 *
+	 * @return
+	 */
+	public BSPanelThemes getTheme()
+	{
+		if (theme == null)
+		{
+			theme = BSPanelThemes.Default;
+		}
+		return theme;
+	}
+	
+	/**
+	 * Sets the theme to the given settings
+	 *
+	 * @param theme
+	 */
+	public final void setTheme(BSPanelThemes theme)
+	{
+		if (this.theme != null)
+		{
+			removeClass(this.theme.getClassText());
+		}
+		this.theme = theme;
+		addClass(theme.getClassText());
+	}
+	
+	/**
+	 * Returns the Panel Headers Button Bar
+	 *
+	 * @return
+	 */
+	public Div getPanelHeaderButtonBar()
+	{
+		if (panelHeaderButtonBar == null)
+		{
+			setPanelHeaderButtonBar(new Div());
+		}
+		return panelHeaderButtonBar;
+	}
+	
+	/**
+	 * Sets the panel header button bar to the assigned Div
+	 *
+	 * @param panelHeaderButtonBar
+	 */
+	public void setPanelHeaderButtonBar(Div panelHeaderButtonBar)
+	{
+		this.panelHeaderButtonBar = panelHeaderButtonBar;
+		if (panelHeaderButtonBar != null)
+		{
+			panelHeaderButtonBar.addClass(BSComponentDefaultOptions.Btn_Group);
+			panelHeaderButtonBar.addClass(BSComponentDefaultOptions.Pull_Right);
+			getPanelHeader().add(panelHeaderButtonBar);
+		}
+	}
+	
+	/**
+	 * Adds a button to the drop down header
+	 *
+	 * @param dropDownIcon
+	 * @param dropDownContent
+	 */
+	public void addDropDownToHeaderButtonBar(ComponentHierarchyBase dropDownIcon, ComponentHierarchyBase dropDownContent)
+	{
+		Button b = new Button();
+		b.addClass("btn btn-default btn-xs dropdown-toggle");
+		b.add(dropDownIcon);
+		b.addAttribute(ButtonAttributes.Type, "button");
+		b.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
+		
+		dropDownContent.setTag("ul");
+		dropDownContent.addClass("dropdown-menu slidedown");
+		
+		getPanelHeaderButtonBar().add(b);
+		getPanelHeaderButtonBar().add(dropDownContent);
+	}
+	
 }

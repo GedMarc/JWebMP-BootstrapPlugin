@@ -23,65 +23,63 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * use the alerts jQuery plugin.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentAlertOptions implements IBSComponentOptions
 {
-    /**
-     * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
-     * dismissal, use the alerts jQuery plugin.
-     */
-    Alert,
-    /**
-     * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
-     * dismissal, use the alerts jQuery plugin.
-     */
-    Alert_Success,
-    /**
-     * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
-     * dismissal, use the alerts jQuery plugin.
-     */
-    Alert_Warning,
-    /**
-     * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
-     * dismissal, use the alerts jQuery plugin.
-     */
-    Alert_Danger,
-    /**
-     * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
-     * dismissal, use the alerts jQuery plugin.
-     */
-    Alert_Info,
-    /**
-     * Use the .alert-link utility class to quickly provide matching colored links within any alert.
-     */
-    Alert_Link,
-    /**
-     *
-     * Be sure you’ve loaded the alert plugin, or the compiled Bootstrap JavaScript.
-     * <p>
-     * Add a dismiss button and the .alert-dismissible class, which adds extra padding to the right of the alert and positions the .close button.
-     * <p>
-     * On the dismiss button, add the data-dismiss="alert" attribute, which triggers the JavaScript functionality.
-     * <p>
-     * Be sure to use the button element with it for proper behavior across all devices.
-     * <p>
-     * To animate alerts when dismissing them, be sure to add the .fade and .in classes.
-     * <p>
-     */
-    Alert_Dismissible;
-
-    private BSComponentAlertOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
-
+	/**
+	 * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
+	 * dismissal, use the alerts jQuery plugin.
+	 */
+	Alert,
+	/**
+	 * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
+	 * dismissal, use the alerts jQuery plugin.
+	 */
+	Alert_Success,
+	/**
+	 * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
+	 * dismissal, use the alerts jQuery plugin.
+	 */
+	Alert_Warning,
+	/**
+	 * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
+	 * dismissal, use the alerts jQuery plugin.
+	 */
+	Alert_Danger,
+	/**
+	 * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline
+	 * dismissal, use the alerts jQuery plugin.
+	 */
+	Alert_Info,
+	/**
+	 * Use the .alert-link utility class to quickly provide matching colored links within any alert.
+	 */
+	Alert_Link,
+	/**
+	 * Be sure you’ve loaded the alert plugin, or the compiled Bootstrap JavaScript.
+	 * <p>
+	 * Add a dismiss button and the .alert-dismissible class, which adds extra padding to the right of the alert and positions the .close button.
+	 * <p>
+	 * On the dismiss button, add the data-dismiss="alert" attribute, which triggers the JavaScript functionality.
+	 * <p>
+	 * Be sure to use the button element with it for proper behavior across all devices.
+	 * <p>
+	 * To animate alerts when dismissing them, be sure to add the .fade and .in classes.
+	 * <p>
+	 */
+	Alert_Dismissible;
+	
+	BSComponentAlertOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
+	
 }

@@ -26,19 +26,19 @@ import za.co.mmagon.jwebswing.base.interfaces.ICSSClassName;
  */
 public interface IBSComponentOptions extends ICSSClassName
 {
-
-    /**
-     * Replaces the text with its HTML class equivalent
-     *
-     * @return
-     */
-    @Override
-    public String toString();
-
-    /**
-     * Default name method for enumerations
-     *
-     * @return
-     */
-    public String name();
+	
+	/**
+	 * Replaces the text with its HTML class equivalent
+	 *
+	 * @return
+	 */
+	@Override
+	String toString();
+	
+	/**
+	 * Default name method for enumerations
+	 *
+	 * @return
+	 */
+	String name();
 }

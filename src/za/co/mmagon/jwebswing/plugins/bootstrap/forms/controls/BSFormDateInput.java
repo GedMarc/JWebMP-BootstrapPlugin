@@ -23,18 +23,17 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormDateInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default date time input for bootstrap
-     */
-    public BSFormDateInput()
-    {
-        setInputType(InputTypes.Date);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default date time input for bootstrap
+	 */
+	public BSFormDateInput()
+	{
+		setInputType(InputTypes.Date);
+	}
 }

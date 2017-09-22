@@ -22,18 +22,17 @@ import za.co.mmagon.jwebswing.base.html.Link;
  * Highlights text in an alert appropriately
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public class BSAlertLink extends Link
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public BSAlertLink()
-    {
-        super("#");
-        addClass(BSComponentAlertOptions.Alert_Link);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	public BSAlertLink()
+	{
+		super("#");
+		addClass(BSComponentAlertOptions.Alert_Link);
+	}
 }

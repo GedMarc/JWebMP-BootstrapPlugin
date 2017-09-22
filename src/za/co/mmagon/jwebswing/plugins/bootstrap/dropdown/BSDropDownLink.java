@@ -30,22 +30,21 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
  *
  * @author GedMarc
  * @since 13 Jan 2017
- *
  */
 public class BSDropDownLink extends Link implements BSDropDownChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new bootstrap drop down link item
-     */
-    public BSDropDownLink()
-    {
-        addAttribute(LinkAttributes.HRef, "#");
-        addAttribute(LinkAttributes.Data_Toggle, "dropdown");
-        addAttribute(GlobalAttributes.Aria_HasPopup, "true");
-        addAttribute(GlobalAttributes.Aria_Expanded, "false");
-        addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new bootstrap drop down link item
+	 */
+	public BSDropDownLink()
+	{
+		addAttribute(LinkAttributes.HRef, "#");
+		addAttribute(LinkAttributes.Data_Toggle, "dropdown");
+		addAttribute(GlobalAttributes.Aria_HasPopup, "true");
+		addAttribute(GlobalAttributes.Aria_Expanded, "false");
+		addClass(BSComponentDropDownOptions.Dropdown_Toggle);
+	}
 }

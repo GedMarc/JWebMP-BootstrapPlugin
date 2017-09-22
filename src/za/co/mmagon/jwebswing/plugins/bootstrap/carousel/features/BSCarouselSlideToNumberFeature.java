@@ -26,46 +26,47 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * Cycles the carousel to a particular frame (0 based, similar to an array).
  *
  * @author MMagon
- * @since 2013/01/16
  * @version 1.0
+ * @since 2013/01/16
  */
 public class BSCarouselSlideToNumberFeature extends Feature<BSCarouselOptions, BSCarouselSlideToNumberFeature>
-        implements BSCarouselFeatures, GlobalFeatures
+		implements BSCarouselFeatures, GlobalFeatures
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The method name to call
-     */
-    private String methodName = "0";
-
-    /**
-     * Cycles the carousel to a particular frame (0 based, similar to an array).
-     * <p>
-     * @param forComponent
-     */
-    public BSCarouselSlideToNumberFeature(BSCarousel forComponent)
-    {
-        super("BSCarouselPauseFeature");
-        setComponent(forComponent);
-    }
-
-    public String getSlideNumber()
-    {
-        return methodName;
-    }
-
-    public void setSlideNumber(String methodName)
-    {
-        this.methodName = methodName;
-    }
-
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        String requiredString = getComponent().getJQueryID() + "carousel(";
-        requiredString += methodName;
-        requiredString += ");" + getNewLine();
-        addQuery(requiredString);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The method name to call
+	 */
+	private String methodName = "0";
+	
+	/**
+	 * Cycles the carousel to a particular frame (0 based, similar to an array).
+	 * <p>
+	 *
+	 * @param forComponent
+	 */
+	public BSCarouselSlideToNumberFeature(BSCarousel forComponent)
+	{
+		super("BSCarouselPauseFeature");
+		setComponent(forComponent);
+	}
+	
+	public String getSlideNumber()
+	{
+		return methodName;
+	}
+	
+	public void setSlideNumber(String methodName)
+	{
+		this.methodName = methodName;
+	}
+	
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		String requiredString = getComponent().getJQueryID() + "carousel(";
+		requiredString += methodName;
+		requiredString += ");" + getNewLine();
+		addQuery(requiredString);
+	}
 }

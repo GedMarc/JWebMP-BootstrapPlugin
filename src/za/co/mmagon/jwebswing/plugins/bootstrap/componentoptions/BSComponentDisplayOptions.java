@@ -20,29 +20,27 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
  * Use .d-block, .d-inline, or .d-inline-block to simply set an element’s display property to block, inline, or inline-block (respectively).
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentDisplayOptions implements IBSComponentOptions
 {
-    /**
-     * Sets the display property to block
-     */
-    Block,
-    /**
-     * Sets the display property to inline
-     */
-    Inline,
-    /**
-     * Sets the display property to inline block
-     */
-    Inline_Block;
-
-    ;
-    @Override
-    public String toString()
-    {
-        return "d-" + name().toLowerCase().replace('_', '-');
-    }
+	/**
+	 * Sets the display property to block
+	 */
+	Block,
+	/**
+	 * Sets the display property to inline
+	 */
+	Inline,
+	/**
+	 * Sets the display property to inline block
+	 */
+	Inline_Block;
+	
+	@Override
+	public String toString()
+	{
+		return "d-" + name().toLowerCase().replace('_', '-');
+	}
 }

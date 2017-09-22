@@ -25,78 +25,79 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  * <p>
  * Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.
  * <p>
+ *
  * @author Marc Magon
- * @since 29 Aug 2015
  * @version 1.0
+ * @since 29 Aug 2015
  */
 @ComponentInformation(name = "Bootstrap Breadcrumbs", description = "Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.",
-        url = "https://v4-alpha.getbootstrap.com/components/breadcrumb/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/components/breadcrumb/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSBreadcrumbs extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttributes, BSBreadcrumbsEvents, BSBreadcrumbs>
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Breadcrumbs
-     * <p>
-     * Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.
-     */
-    @SuppressWarnings("")
-    public BSBreadcrumbs()
-    {
-        addClass(BSComponentBreadcrumbOptions.Breadcrumb);
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-            getChildren().forEach(next ->
-            {
-                next.removeClass(BSComponentBreadcrumbOptions.Active);
-            });
-            getChildren().get(getChildren().size() - 1).addClass(BSComponentBreadcrumbOptions.Active);
-        }
-        super.preConfigure();
-    }
-
-    /**
-     * Convenience method for quick access
-     *
-     * @param crumb
-     *
-     * @return
-     */
-    public BSBreadcrumbs add(BSBreadcrumb crumb)
-    {
-        return super.add(crumb);
-    }
-
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (getClass() != obj.getClass())
-        {
-            return false;
-        }
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int hash = 7;
-        hash = 79 * hash + (this.getID().hashCode());
-        return hash;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Breadcrumbs
+	 * <p>
+	 * Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.
+	 */
+	@SuppressWarnings("")
+	public BSBreadcrumbs()
+	{
+		addClass(BSComponentBreadcrumbOptions.Breadcrumb);
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			getChildren().forEach(next ->
+			                      {
+				                      next.removeClass(BSComponentBreadcrumbOptions.Active);
+			                      });
+			getChildren().get(getChildren().size() - 1).addClass(BSComponentBreadcrumbOptions.Active);
+		}
+		super.preConfigure();
+	}
+	
+	/**
+	 * Convenience method for quick access
+	 *
+	 * @param crumb
+	 *
+	 * @return
+	 */
+	public BSBreadcrumbs add(BSBreadcrumb crumb)
+	{
+		return super.add(crumb);
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (getClass() != obj.getClass())
+		{
+			return false;
+		}
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (this.getID().hashCode());
+		return hash;
+	}
 }

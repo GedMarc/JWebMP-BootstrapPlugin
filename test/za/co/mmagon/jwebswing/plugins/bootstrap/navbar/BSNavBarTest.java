@@ -16,49 +16,45 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavLinkItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarToggler;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarPositioning;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarColourSchemes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarTogglerSizes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavItemDropDown;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarTogglerAlignments;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBar;
-import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.brand.BSNavBarBrandImage;
 import org.junit.Test;
 import za.co.mmagon.jwebswing.base.html.Image;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormInline;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.brand.BSNavBarBrandImage;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarToggler;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarTogglerAlignments;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarTogglerSizes;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavItemDropDown;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavLinkItem;
+import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
 
 /**
- *
  * @author GedMarc
  */
 public class BSNavBarTest
 {
-
-    public BSNavBarTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSNavBar nav = new BSNavBar(BSNavBarTogglerSizes.Navbar_Toggleable_MD, BSNavBarColourSchemes.Navbar_Light, BSNavBarColourSchemes.BG_Faded).setPositioning(BSNavBarPositioning.Fixed_Top);
-
-        BSNavBarToggler toggle = new BSNavBarToggler(BSNavBarTogglerAlignments.Navbar_Toggler_Right);
-        nav.add(toggle);
-        nav.add(new BSNavBarBrandImage(new Image("image")));
-
-        BSNavs navs = new BSNavs();
-        navs.add(new BSNavItemDropDown());
-        navs.add(new BSNavLinkItem("#"));
-
-        navs.add(new BSFormInline());
-
-        nav.add(toggle.createCollapsingDiv(navs));
-
-        System.out.println(nav.toString(true));
-    }
-
+	
+	public BSNavBarTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSNavBar nav = new BSNavBar(BSNavBarTogglerSizes.Navbar_Toggleable_MD, BSNavBarColourSchemes.Navbar_Light, BSNavBarColourSchemes.BG_Faded).setPositioning(BSNavBarPositioning.Fixed_Top);
+		
+		BSNavBarToggler toggle = new BSNavBarToggler(BSNavBarTogglerAlignments.Navbar_Toggler_Right);
+		nav.add(toggle);
+		nav.add(new BSNavBarBrandImage(new Image("image")));
+		
+		BSNavs navs = new BSNavs();
+		navs.add(new BSNavItemDropDown());
+		navs.add(new BSNavLinkItem("#"));
+		
+		navs.add(new BSFormInline());
+		
+		nav.add(toggle.createCollapsingDiv(navs));
+		
+		System.out.println(nav.toString(true));
+	}
+	
 }

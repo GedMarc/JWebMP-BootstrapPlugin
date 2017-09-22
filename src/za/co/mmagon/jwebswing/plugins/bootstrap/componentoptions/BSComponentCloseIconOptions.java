@@ -22,26 +22,25 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
  * Use a generic close icon for dismissing content like modals and alerts. Be sure to include text for screen readers, as we’ve done with aria-label.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 public enum BSComponentCloseIconOptions implements IBSComponentOptions
 {
-    /**
-     * Marks an item as a close item
-     */
-    Close;
-
-    private BSComponentCloseIconOptions()
-    {
-
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase();
-    }
-
+	/**
+	 * Marks an item as a close item
+	 */
+	Close;
+	
+	BSComponentCloseIconOptions()
+	{
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase();
+	}
+	
 }

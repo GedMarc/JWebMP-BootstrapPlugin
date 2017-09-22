@@ -23,29 +23,28 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  * Indicator list items
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 class BSCarouselIndicatorItem extends ListItem
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Constructs a new carousel indicator that slides to a specific slide, and if it is the current active item or not
-     *
-     * @param dataTarget
-     * @param slideTo
-     * @param active
-     */
-    public BSCarouselIndicatorItem(String dataTarget, int slideTo, boolean active)
-    {
-        addAttribute("data-target", dataTarget);
-        addAttribute("data-slide-to", ((Integer) slideTo).toString());
-        if (active)
-        {
-            addClass(BSComponentDefaultOptions.Active);
-        }
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Constructs a new carousel indicator that slides to a specific slide, and if it is the current active item or not
+	 *
+	 * @param dataTarget
+	 * @param slideTo
+	 * @param active
+	 */
+	public BSCarouselIndicatorItem(String dataTarget, int slideTo, boolean active)
+	{
+		addAttribute("data-target", dataTarget);
+		addAttribute("data-slide-to", ((Integer) slideTo).toString());
+		if (active)
+		{
+			addClass(BSComponentDefaultOptions.Active);
+		}
+	}
 }

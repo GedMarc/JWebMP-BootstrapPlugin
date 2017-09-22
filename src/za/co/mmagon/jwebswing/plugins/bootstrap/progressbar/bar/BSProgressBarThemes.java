@@ -17,50 +17,49 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar;
 
 /**
- *
  * @author GedMarc
- * @since Oct 6, 2016
  * @version 1.0
- * 
+ * @since Oct 6, 2016
  */
-public enum BSProgressBarThemes 
+public enum BSProgressBarThemes
 {
-    Info("progress-bar-info"),
-    Warning("progress-bar-warning"),
-    Danger("progress-bar-danger"),
-    Success("progress-bar-success")
-    ;
-    
-    private BSProgressBarThemes (String classText)
-    {
-        this.classText = classText;
-    }
-        
-    private String classText;
-
-    /**
-     * Returns the class text
-     * @return 
-     */
-    public String getClassText()
-    {
-        return classText;
-    }
-
-    /**
-     * Sets the class text
-     * @param classText 
-     */
-    public void setClassText(String classText)
-    {
-        this.classText = classText;
-    }
-    
-    @Override
-    public String toString()
-    {
-        return getClassText().toLowerCase();
-    }
-    
-    
+	Info("progress-bar-info"),
+	Warning("progress-bar-warning"),
+	Danger("progress-bar-danger"),
+	Success("progress-bar-success");
+	
+	private String classText;
+	
+	BSProgressBarThemes(String classText)
+	{
+		this.classText = classText;
+	}
+	
+	/**
+	 * Returns the class text
+	 *
+	 * @return
+	 */
+	public String getClassText()
+	{
+		return classText;
+	}
+	
+	/**
+	 * Sets the class text
+	 *
+	 * @param classText
+	 */
+	public void setClassText(String classText)
+	{
+		this.classText = classText;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return getClassText().toLowerCase();
+	}
+	
+	
 }

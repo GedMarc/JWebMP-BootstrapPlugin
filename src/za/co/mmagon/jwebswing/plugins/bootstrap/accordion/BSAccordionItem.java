@@ -27,128 +27,127 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  *
  * @author GedMarc
  * @since 20 Feb 2017
- *
  */
 public class BSAccordionItem extends BSCard implements BSAccordionChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    private BSAccordionHeader accordionHeader;
-    private BSAccordionCollapsingContent accordionCollapsingContent;
-
-    private BSCardHeader cardHeader;
-
-    private boolean active;
-
-    public BSAccordionItem()
-    {
-    }
-
-    public BSAccordionHeader getAccordionHeader()
-    {
-        if (accordionHeader == null)
-        {
-            accordionHeader = new BSAccordionHeader();
-        }
-        return accordionHeader;
-    }
-
-    public void setAccordionHeader(BSAccordionHeader accordionHeader)
-    {
-        this.accordionHeader = accordionHeader;
-    }
-
-    public BSAccordionCollapsingContent getAccordionCollapsingContent()
-    {
-        if (accordionCollapsingContent == null)
-        {
-            accordionCollapsingContent = new BSAccordionCollapsingContent();
-        }
-        return accordionCollapsingContent;
-    }
-
-    public void setAccordionCollapsingContent(BSAccordionCollapsingContent accordionCollapsingContent)
-    {
-        this.accordionCollapsingContent = accordionCollapsingContent;
-    }
-
-    public BSCardHeader getCardHeader()
-    {
-        if (cardHeader == null)
-        {
-            setCardHeader(new BSCardHeader());
-        }
-        return cardHeader;
-    }
-
-    public void setCardHeader(BSCardHeader cardHeader)
-    {
-        this.cardHeader = cardHeader;
-        this.cardHeader.addAttribute(BSAccordionAttributes.Role.toString(), "tab");
-        cardHeader.add(getAccordionHeader());
-    }
-
-    /**
-     * If this accordion item is active or not
-     *
-     * @return
-     */
-    public boolean isActive()
-    {
-        return active;
-    }
-
-    /**
-     * if this accordion item is active or not
-     *
-     * @param active
-     */
-    public void setActive(boolean active)
-    {
-        this.active = active;
-        if (isActive())
-        {
-            getAccordionHeader().getAccordionHeaderLink().addAttribute(GlobalAttributes.Aria_Expanded, "true");
-
-            getAccordionHeader().getAccordionHeaderLink().removeClass(BSComponentDefaultOptions.Collapsed);
-            getAccordionCollapsingContent().addClass(BSComponentDefaultOptions.Show);
-        }
-        else
-        {
-            getAccordionHeader().getAccordionHeaderLink().addAttribute(GlobalAttributes.Aria_Expanded, "false");
-
-            getAccordionCollapsingContent().removeClass(BSComponentDefaultOptions.Show);
-            getAccordionHeader().getAccordionHeaderLink().addClass(BSComponentDefaultOptions.Collapsed);
-        }
-    }
-
-    @Override
-    public void init()
-    {
-        if (!isInitialized())
-        {
-            add(getCardHeader());
-            add(getAccordionCollapsingContent());
-
-            getAccordionCollapsingContent().getClasses().add(0, "collapse");
-
-            getAccordionCollapsingContent().addAttribute(BSAccordionAttributes.Role, "tabpanel");
-            getAccordionCollapsingContent().addAttribute(GlobalAttributes.Aria_LabelledBy, getCardHeader().getID());
-            new BSCollapse(getAccordionHeader().getAccordionHeaderLink(), getAccordionCollapsingContent().getAccordionContent(), true);
-
-        }
-        super.init();
-    }
-
-    @Override
-    public void preConfigure()
-    {
-        if (!isConfigured())
-        {
-
-        }
-        super.preConfigure();
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	private BSAccordionHeader accordionHeader;
+	private BSAccordionCollapsingContent accordionCollapsingContent;
+	
+	private BSCardHeader cardHeader;
+	
+	private boolean active;
+	
+	public BSAccordionItem()
+	{
+	}
+	
+	public BSAccordionHeader getAccordionHeader()
+	{
+		if (accordionHeader == null)
+		{
+			accordionHeader = new BSAccordionHeader();
+		}
+		return accordionHeader;
+	}
+	
+	public void setAccordionHeader(BSAccordionHeader accordionHeader)
+	{
+		this.accordionHeader = accordionHeader;
+	}
+	
+	public BSAccordionCollapsingContent getAccordionCollapsingContent()
+	{
+		if (accordionCollapsingContent == null)
+		{
+			accordionCollapsingContent = new BSAccordionCollapsingContent();
+		}
+		return accordionCollapsingContent;
+	}
+	
+	public void setAccordionCollapsingContent(BSAccordionCollapsingContent accordionCollapsingContent)
+	{
+		this.accordionCollapsingContent = accordionCollapsingContent;
+	}
+	
+	public BSCardHeader getCardHeader()
+	{
+		if (cardHeader == null)
+		{
+			setCardHeader(new BSCardHeader());
+		}
+		return cardHeader;
+	}
+	
+	public void setCardHeader(BSCardHeader cardHeader)
+	{
+		this.cardHeader = cardHeader;
+		this.cardHeader.addAttribute(BSAccordionAttributes.Role.toString(), "tab");
+		cardHeader.add(getAccordionHeader());
+	}
+	
+	/**
+	 * If this accordion item is active or not
+	 *
+	 * @return
+	 */
+	public boolean isActive()
+	{
+		return active;
+	}
+	
+	/**
+	 * if this accordion item is active or not
+	 *
+	 * @param active
+	 */
+	public void setActive(boolean active)
+	{
+		this.active = active;
+		if (isActive())
+		{
+			getAccordionHeader().getAccordionHeaderLink().addAttribute(GlobalAttributes.Aria_Expanded, "true");
+			
+			getAccordionHeader().getAccordionHeaderLink().removeClass(BSComponentDefaultOptions.Collapsed);
+			getAccordionCollapsingContent().addClass(BSComponentDefaultOptions.Show);
+		}
+		else
+		{
+			getAccordionHeader().getAccordionHeaderLink().addAttribute(GlobalAttributes.Aria_Expanded, "false");
+			
+			getAccordionCollapsingContent().removeClass(BSComponentDefaultOptions.Show);
+			getAccordionHeader().getAccordionHeaderLink().addClass(BSComponentDefaultOptions.Collapsed);
+		}
+	}
+	
+	@Override
+	public void init()
+	{
+		if (!isInitialized())
+		{
+			add(getCardHeader());
+			add(getAccordionCollapsingContent());
+			
+			getAccordionCollapsingContent().getClasses().add(0, "collapse");
+			
+			getAccordionCollapsingContent().addAttribute(BSAccordionAttributes.Role, "tabpanel");
+			getAccordionCollapsingContent().addAttribute(GlobalAttributes.Aria_LabelledBy, getCardHeader().getID());
+			new BSCollapse(getAccordionHeader().getAccordionHeaderLink(), getAccordionCollapsingContent().getAccordionContent(), true);
+			
+		}
+		super.init();
+	}
+	
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+		
+		}
+		super.preConfigure();
+	}
+	
 }

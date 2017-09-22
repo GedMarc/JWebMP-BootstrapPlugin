@@ -23,18 +23,17 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  *
  * @author GedMarc
  * @since 15 Jan 2017
- *
  */
 public class BSFormColourInput extends BSInput
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A default colour for bootstrap
-     */
-    public BSFormColourInput()
-    {
-        setInputType(InputTypes.Color);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A default colour for bootstrap
+	 */
+	public BSFormColourInput()
+	{
+		setInputType(InputTypes.Color);
+	}
 }

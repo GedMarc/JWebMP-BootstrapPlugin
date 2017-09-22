@@ -24,26 +24,25 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  * Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public enum BSComponentButtonGroupOptions implements IBSComponentOptions
 {
-    /**
-     * Button group
-     * <p>
-     * Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.
-     */
-    Btn_Group,
-    /**
-     * Make a set of buttons appear vertically stacked rather than horizontally. Split button dropdowns are not supported here.
-     */
-    Btn_Group_Vertical;
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	/**
+	 * Button group
+	 * <p>
+	 * Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.
+	 */
+	Btn_Group,
+	/**
+	 * Make a set of buttons appear vertically stacked rather than horizontally. Split button dropdowns are not supported here.
+	 */
+	Btn_Group_Vertical;
+	
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

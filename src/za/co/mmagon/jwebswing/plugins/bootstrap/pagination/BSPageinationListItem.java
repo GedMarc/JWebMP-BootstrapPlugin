@@ -25,51 +25,50 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  *
  * @author GedMarc
  * @since 21 Jan 2017
- *
  */
 public class BSPageinationListItem extends ListItem implements ListChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A pagination list item
-     */
-    public BSPageinationListItem()
-    {
-        addClass(BSComponentPaginationOptions.Page_Item);
-    }
-
-    /**
-     * Disabled and active states
-     * <p>
-     * Pagination links are customizable for different circumstances. Use .disabled for links that appear un-clickable and .active to indicate the current page.
-     * <p>
-     * While the .disabled class uses pointer-events: none to try to disable the link functionality of A's, that CSS property is not yet standardized and doesn’t account for keyboard navigation. As
-     * such, you should always add tabindex="-1" on disabled links and use custom JavaScript to fully disable their functionality.
-     *
-     * @return
-     */
-    public BSPageinationListItem setDisabled()
-    {
-        addClass(BSComponentDefaultOptions.Disabled);
-        addAttribute("tabindex", "-1");
-        return this;
-    }
-
-    /**
-     * Disabled and active states
-     * <p>
-     * Pagination links are customizable for different circumstances. Use .disabled for links that appear un-clickable and .active to indicate the current page.
-     * <p>
-     * While the .disabled class uses pointer-events: none to try to disable the link functionality of as, that CSS property is not yet standardized and doesn’t account for keyboard navigation. As
-     * such, you should always add tabindex="-1" on disabled links and use custom JavaScript to fully disable their functionality.
-     *
-     * @return
-     */
-    public BSPageinationListItem setActive()
-    {
-        addClass(BSComponentDefaultOptions.Active);
-        return this;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A pagination list item
+	 */
+	public BSPageinationListItem()
+	{
+		addClass(BSComponentPaginationOptions.Page_Item);
+	}
+	
+	/**
+	 * Disabled and active states
+	 * <p>
+	 * Pagination links are customizable for different circumstances. Use .disabled for links that appear un-clickable and .active to indicate the current page.
+	 * <p>
+	 * While the .disabled class uses pointer-events: none to try to disable the link functionality of A's, that CSS property is not yet standardized and doesn’t account for keyboard navigation. As
+	 * such, you should always add tabindex="-1" on disabled links and use custom JavaScript to fully disable their functionality.
+	 *
+	 * @return
+	 */
+	public BSPageinationListItem setDisabled()
+	{
+		addClass(BSComponentDefaultOptions.Disabled);
+		addAttribute("tabindex", "-1");
+		return this;
+	}
+	
+	/**
+	 * Disabled and active states
+	 * <p>
+	 * Pagination links are customizable for different circumstances. Use .disabled for links that appear un-clickable and .active to indicate the current page.
+	 * <p>
+	 * While the .disabled class uses pointer-events: none to try to disable the link functionality of as, that CSS property is not yet standardized and doesn’t account for keyboard navigation. As
+	 * such, you should always add tabindex="-1" on disabled links and use custom JavaScript to fully disable their functionality.
+	 *
+	 * @return
+	 */
+	public BSPageinationListItem setActive()
+	{
+		addClass(BSComponentDefaultOptions.Active);
+		return this;
+	}
 }

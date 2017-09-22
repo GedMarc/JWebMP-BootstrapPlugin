@@ -22,21 +22,20 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons;
  * Use Bootstrap’s custom button styles for actions in forms, dialogs, and more. Includes support for a handful of contextual variations, sizes, states, and more.
  *
  * @author GedMarc
- * @since 01 Jan 2017
  * @version 1.0
- *
+ * @since 01 Jan 2017
  */
 public class BSButtonInfo extends BSButton
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Contextual button for informational alert messages
-     */
-    public BSButtonInfo()
-    {
-        addClass(BSComponentButtonOptions.Btn_Info);
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Contextual button for informational alert messages
+	 */
+	public BSButtonInfo()
+	{
+		addClass(BSComponentButtonOptions.Btn_Info);
+	}
 
 }

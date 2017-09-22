@@ -28,76 +28,76 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
  */
 public enum BSPopOverReferencePool implements ReferencePool
 {
-    NoReference(null, null);
-    /**
-     * The actual javascript
-     */
-    private JavascriptReference javaScriptReference;
-    /**
-     * The actual css reference
-     */
-    private CSSReference cssReference;
-
-    /**
-     * Constructs a reference pool
-     */
-    private BSPopOverReferencePool()
-    {
-    }
-
-    /**
-     * Constructs a new reference pool
-     *
-     * @param javaScriptReference
-     * @param cssReference
-     */
-    private BSPopOverReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-        this.cssReference = cssReference;
-    }
-
-    /**
-     * Returns the javascript reference
-     *
-     * @return
-     */
-    @Override
-    public JavascriptReference getJavaScriptReference()
-    {
-        return javaScriptReference;
-    }
-
-    /**
-     * Sets the javascript reference
-     *
-     * @param javaScriptReference
-     */
-    @Override
-    public void setJavaScriptReference(JavascriptReference javaScriptReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-    }
-
-    /**
-     * Gets the cSS reference
-     *
-     * @return
-     */
-    @Override
-    public CSSReference getCssReference()
-    {
-        return cssReference;
-    }
-
-    /**
-     * Sets the CSS Reference
-     *
-     * @param cssReference
-     */
-    @Override
-    public void setCssReference(CSSReference cssReference)
-    {
-        this.cssReference = cssReference;
-    }
+	NoReference(null, null);
+	/**
+	 * The actual javascript
+	 */
+	private JavascriptReference javaScriptReference;
+	/**
+	 * The actual css reference
+	 */
+	private CSSReference cssReference;
+	
+	/**
+	 * Constructs a reference pool
+	 */
+	BSPopOverReferencePool()
+	{
+	}
+	
+	/**
+	 * Constructs a new reference pool
+	 *
+	 * @param javaScriptReference
+	 * @param cssReference
+	 */
+	BSPopOverReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+		this.cssReference = cssReference;
+	}
+	
+	/**
+	 * Returns the javascript reference
+	 *
+	 * @return
+	 */
+	@Override
+	public JavascriptReference getJavaScriptReference()
+	{
+		return javaScriptReference;
+	}
+	
+	/**
+	 * Sets the javascript reference
+	 *
+	 * @param javaScriptReference
+	 */
+	@Override
+	public void setJavaScriptReference(JavascriptReference javaScriptReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+	}
+	
+	/**
+	 * Gets the cSS reference
+	 *
+	 * @return
+	 */
+	@Override
+	public CSSReference getCssReference()
+	{
+		return cssReference;
+	}
+	
+	/**
+	 * Sets the CSS Reference
+	 *
+	 * @param cssReference
+	 */
+	@Override
+	public void setCssReference(CSSReference cssReference)
+	{
+		this.cssReference = cssReference;
+	}
 }

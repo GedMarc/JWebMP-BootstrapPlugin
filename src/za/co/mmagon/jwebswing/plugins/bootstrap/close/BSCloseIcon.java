@@ -29,124 +29,123 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentClos
  * Use a generic close icon for dismissing content like modals and alerts. Be sure to include text for screen readers, as we’ve done with aria-label.
  *
  * @author GedMarc
- * @since 31 Dec 2016
  * @version 1.0
- *
+ * @since 31 Dec 2016
  */
 @ComponentInformation(name = "Bootstrap Dismiss Buttons", description = "Use a generic close icon for dismissing content like modals and alerts. Be sure to include text for screen readers, as we’ve done with aria-label.",
-        url = "https://v4-alpha.getbootstrap.com/utilities/close-icon/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		url = "https://v4-alpha.getbootstrap.com/utilities/close-icon/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCloseIcon extends Button
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The actual close icon
-     */
-    private Span closeIcon;
-    /**
-     * The actual text for the close icon
-     */
-    private String closeIconText = "&times;";
-
-    /**
-     * Constructs a new instance of the close icon
-     * <p>
-     */
-    @SuppressWarnings("")
-    public BSCloseIcon()
-    {
-        setAriaLabel("Close");
-        addClass(BSComponentCloseIconOptions.Close);
-        addAttribute(GlobalAttributes.Type, "button");
-        getCloseIcon();
-        BootstrapPageConfigurator.setRequired(this, true);
-    }
-
-    /**
-     * Sets the close icon as a data dismissable
-     *
-     * @param dismiss
-     *
-     * @return
-     */
-    public BSCloseIcon setDataDismiss(String dismiss)
-    {
-        addAttribute("data-dismiss", dismiss);
-        return this;
-    }
-
-    /**
-     * Sets the label to be shown on screen readers
-     *
-     * @param label
-     *
-     * @return
-     */
-    public BSCloseIcon setAriaLabel(String label)
-    {
-        addAttribute(GlobalAttributes.Aria_Label, label);
-        return this;
-    }
-
-    /**
-     * The physical close icon span display
-     *
-     * @return
-     */
-    public Span getCloseIcon()
-    {
-        if (this.closeIcon == null)
-        {
-            setCloseIcon(new Span(closeIconText));
-        }
-        return closeIcon;
-    }
-
-    /**
-     * The physical close icon span
-     *
-     * @param closeIcon
-     *
-     * @return
-     */
-    public BSCloseIcon setCloseIcon(Span closeIcon)
-    {
-        if (this.closeIcon != null)
-        {
-            remove(this.closeIcon);
-            this.closeIcon = null;
-        }
-        this.closeIcon = closeIcon;
-        if (this.closeIcon != null)
-        {
-            add(this.closeIcon);
-            this.closeIcon.addAttribute(GlobalAttributes.Aria_Hidden, "true");
-        }
-        return this;
-    }
-
-    /**
-     * Return the text used for the close icon
-     *
-     * @return
-     */
-    public String getCloseIconText()
-    {
-        return closeIconText;
-    }
-
-    /**
-     * Sets the close icon text for the span
-     *
-     * @param closeIconText
-     */
-    public void setCloseIconText(String closeIconText)
-    {
-        this.closeIconText = closeIconText;
-        if (this.closeIconText != null)
-        {
-            getCloseIcon().setText(closeIconText);
-        }
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The actual close icon
+	 */
+	private Span closeIcon;
+	/**
+	 * The actual text for the close icon
+	 */
+	private String closeIconText = "&times;";
+	
+	/**
+	 * Constructs a new instance of the close icon
+	 * <p>
+	 */
+	@SuppressWarnings("")
+	public BSCloseIcon()
+	{
+		setAriaLabel("Close");
+		addClass(BSComponentCloseIconOptions.Close);
+		addAttribute(GlobalAttributes.Type, "button");
+		getCloseIcon();
+		BootstrapPageConfigurator.setRequired(this, true);
+	}
+	
+	/**
+	 * Sets the close icon as a data dismissable
+	 *
+	 * @param dismiss
+	 *
+	 * @return
+	 */
+	public BSCloseIcon setDataDismiss(String dismiss)
+	{
+		addAttribute("data-dismiss", dismiss);
+		return this;
+	}
+	
+	/**
+	 * Sets the label to be shown on screen readers
+	 *
+	 * @param label
+	 *
+	 * @return
+	 */
+	public BSCloseIcon setAriaLabel(String label)
+	{
+		addAttribute(GlobalAttributes.Aria_Label, label);
+		return this;
+	}
+	
+	/**
+	 * The physical close icon span display
+	 *
+	 * @return
+	 */
+	public Span getCloseIcon()
+	{
+		if (this.closeIcon == null)
+		{
+			setCloseIcon(new Span(closeIconText));
+		}
+		return closeIcon;
+	}
+	
+	/**
+	 * The physical close icon span
+	 *
+	 * @param closeIcon
+	 *
+	 * @return
+	 */
+	public BSCloseIcon setCloseIcon(Span closeIcon)
+	{
+		if (this.closeIcon != null)
+		{
+			remove(this.closeIcon);
+			this.closeIcon = null;
+		}
+		this.closeIcon = closeIcon;
+		if (this.closeIcon != null)
+		{
+			add(this.closeIcon);
+			this.closeIcon.addAttribute(GlobalAttributes.Aria_Hidden, "true");
+		}
+		return this;
+	}
+	
+	/**
+	 * Return the text used for the close icon
+	 *
+	 * @return
+	 */
+	public String getCloseIconText()
+	{
+		return closeIconText;
+	}
+	
+	/**
+	 * Sets the close icon text for the span
+	 *
+	 * @param closeIconText
+	 */
+	public void setCloseIconText(String closeIconText)
+	{
+		this.closeIconText = closeIconText;
+		if (this.closeIconText != null)
+		{
+			getCloseIcon().setText(closeIconText);
+		}
+	}
+	
 }

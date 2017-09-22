@@ -16,62 +16,61 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.tabs.BSTabs;
 import org.junit.Test;
+import za.co.mmagon.jwebswing.plugins.bootstrap.tabs.BSTabs;
 
 /**
- *
  * @author GedMarc
  */
 public class BSNavsTest
 {
-
-    public BSNavsTest()
-    {
-    }
-
-    @Test
-    public void testSomeMethod()
-    {
-        BSNavs nav = new BSNavs();
-        nav.add((BSNavLinkItem) new BSNavLinkItem("#").setText("Stff"));
-        System.out.println(nav.toString(true));
-
-        nav = new BSNavPill();
-        nav.add(((BSNavLinkItem) new BSNavLinkItem("#").setText("Stff")).setActive());
-        System.out.println(nav.toString(true));
-    }
-
-    @Test
-    public void testDropDownInTab()
-    {
-        BSNavs nav = new BSNavs();
-        nav.add(new BSNavItemDropDown());
-        System.out.println(nav.toString(true));
-    }
-
-    @Test
-    public void testPillsDropDownInTab()
-    {
-        BSNavs nav = new BSNavPill();
-        nav.add(new BSNavItemDropDown());
-        System.out.println(nav.toString(true));
-    }
-
-    @Test
-    public void testTabsDropDownInTab()
-    {
-        BSTabs nav = new BSTabs();
-        nav.add(new BSNavItemDropDown());
-        System.out.println(nav.toString(true));
-    }
-
-    @Test
-    public void testList()
-    {
-        BSNavs nav = new BSNavs();
-        nav.getNavigationList().add(new BSNavListItem(new BSNavLinkItem("url")));
-
-        System.out.println(nav.toString(true));
-    }
+	
+	public BSNavsTest()
+	{
+	}
+	
+	@Test
+	public void testSomeMethod()
+	{
+		BSNavs nav = new BSNavs();
+		nav.add((BSNavLinkItem) new BSNavLinkItem("#").setText("Stff"));
+		System.out.println(nav.toString(true));
+		
+		nav = new BSNavPill();
+		nav.add(((BSNavLinkItem) new BSNavLinkItem("#").setText("Stff")).setActive());
+		System.out.println(nav.toString(true));
+	}
+	
+	@Test
+	public void testDropDownInTab()
+	{
+		BSNavs nav = new BSNavs();
+		nav.add(new BSNavItemDropDown());
+		System.out.println(nav.toString(true));
+	}
+	
+	@Test
+	public void testPillsDropDownInTab()
+	{
+		BSNavs nav = new BSNavPill();
+		nav.add(new BSNavItemDropDown());
+		System.out.println(nav.toString(true));
+	}
+	
+	@Test
+	public void testTabsDropDownInTab()
+	{
+		BSTabs nav = new BSTabs();
+		nav.add(new BSNavItemDropDown());
+		System.out.println(nav.toString(true));
+	}
+	
+	@Test
+	public void testList()
+	{
+		BSNavs nav = new BSNavs();
+		nav.getNavigationList().add(new BSNavListItem(new BSNavLinkItem("url")));
+		
+		System.out.println(nav.toString(true));
+	}
 }

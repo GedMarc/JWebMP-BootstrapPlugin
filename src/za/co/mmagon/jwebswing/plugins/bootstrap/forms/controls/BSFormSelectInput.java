@@ -20,38 +20,36 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGrou
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
 /**
- *
  * @author GedMarc
  * @since 17 Jan 2017
- *
  */
 public class BSFormSelectInput extends BSInput
-        implements BSFormGroupChildren
+		implements BSFormGroupChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * A bootstrap default form select
-     */
-    public BSFormSelectInput()
-    {
-        this(false);
-    }
-
-    /**
-     * Constructs a new select input with multiple
-     *
-     * @param multiple
-     */
-    public BSFormSelectInput(boolean multiple)
-    {
-        addClass(BSComponentFormGroupOptions.Form_Control);
-        if (multiple)
-        {
-            addAttribute("multiple", null);
-        }
-        setTag("select");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * A bootstrap default form select
+	 */
+	public BSFormSelectInput()
+	{
+		this(false);
+	}
+	
+	/**
+	 * Constructs a new select input with multiple
+	 *
+	 * @param multiple
+	 */
+	public BSFormSelectInput(boolean multiple)
+	{
+		addClass(BSComponentFormGroupOptions.Form_Control);
+		if (multiple)
+		{
+			addAttribute("multiple", null);
+		}
+		setTag("select");
+	}
+	
 }
