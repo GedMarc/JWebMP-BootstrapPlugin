@@ -18,7 +18,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
 
@@ -31,7 +30,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
  * @since 18 Jan 2017
  */
 public class BSFormCheckGroup<J extends BSFormCheckGroup<J>>
-		extends BSFormGroup<BSInput, J>
+		extends BSFormGroup<J>
 		implements BSFormSetChildren
 {
 	

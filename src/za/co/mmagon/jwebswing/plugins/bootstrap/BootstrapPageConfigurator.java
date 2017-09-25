@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.PageConfigurator;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
@@ -62,6 +63,10 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	 * If the generator is generating for bootstrap 4
 	 */
 	private static boolean bootstrap4;
+	/**
+	 * If bootstrap 4 must include the reboot css
+	 */
+	private static boolean bootstrap4Reboot;
 	
 	public BootstrapPageConfigurator()
 	{
@@ -100,6 +105,26 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	}
 	
 	/**
+	 * If bootstrap 4 must include the reboot css class
+	 *
+	 * @return
+	 */
+	public static boolean isBootstrap4Reboot()
+	{
+		return bootstrap4Reboot;
+	}
+	
+	/**
+	 * If bootstrap 4 must include the reboot css class
+	 *
+	 * @param bootstrap4Reboot
+	 */
+	public static void setBootstrap4Reboot(boolean bootstrap4Reboot)
+	{
+		BootstrapPageConfigurator.bootstrap4Reboot = bootstrap4Reboot;
+	}
+	
+	/**
 	 * The 3 meta tags *must* come first in the head; any other head content must come *after* these tags
 	 * <p>
 	 * HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries WARNING: Respond.js doesn't work if you view the page via file://
@@ -119,11 +144,11 @@ public class BootstrapPageConfigurator extends PageConfigurator
 			viewportMeta.addAttribute(GlobalAttributes.Name, "viewport");
 			if (isBootstrap4())
 			{
-				viewportMeta.addAttribute(MetaAttributes.Content, "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1");
+				viewportMeta.addAttribute(MetaAttributes.Content, "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1,user-scalable=no");
 			}
 			else
 			{
-				viewportMeta.addAttribute(MetaAttributes.Content, "width=device-width, initial-scale=1, maximum-scale=1");
+				viewportMeta.addAttribute(MetaAttributes.Content, "width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no");
 			}
 			Meta compatMeta = new Meta();
 			compatMeta.addAttribute(MetaAttributes.Http_Equiv, "X-UA-Compatible");
@@ -132,16 +157,40 @@ public class BootstrapPageConfigurator extends PageConfigurator
 			page.getHead().add(charMeta);
 			page.getHead().add(compatMeta);
 			page.getHead().add(viewportMeta);
+			
+			page.getBody().addJavaScriptReference(BootstrapReferencePool.FastClickReference.getJavaScriptReference());
+			
+			page.getBody().addFeature(new Feature("FastClick")
+			{
+				
+				@Override
+				protected void assignFunctionsToComponent()
+				{
+					addQuery("$(function() {" +
+							         "FastClick.attach(document.body);" +
+							         "});" + getNewLine());
+				}
+			});
+			
+			
 			if (isBootstrap4())
 			{
-				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4TetherReference.getJavaScriptReference());
+				//page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4TetherReference.getJavaScriptReference());
+				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4PopperReference.getJavaScriptReference());
 				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4CoreReference.getJavaScriptReference());
 				page.getBody().addCssReference(BootstrapReferencePool.Bootstrap4CoreReference.getCssReference());
+				if (bootstrap4Reboot)
+				{
+					page.getBody().addCssReference(BootstrapReferencePool.Bootstrap4RebootReference.getCssReference());
+				}
+				
+				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap3ValidatorReference.getJavaScriptReference());
 			}
 			else
 			{
 				page.getBody().addJavaScriptReference(BootstrapReferencePool.BootstrapCoreReference.getJavaScriptReference());
 				page.getBody().addCssReference(BootstrapReferencePool.BootstrapCoreReference.getCssReference());
+				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap3ValidatorReference.getJavaScriptReference());
 			}
 			if (page.getBrowser().compareTo(Browsers.InternetExplorer9) < 1)
 			{

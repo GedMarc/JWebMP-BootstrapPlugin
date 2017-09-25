@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.6): button.js
+ * Bootstrap (v4.0.0-beta): button.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -15,7 +15,7 @@ const Button = (($) = > {
      */
 
     const NAME = 'button'
-    const VERSION = '4.0.0-alpha.6'
+    const VERSION = '4.0.0-beta'
     const DATA_KEY = 'bs.button'
     const EVENT_KEY = `.${DATA_KEY}`
     const DATA_API_KEY = '.data-api'
@@ -48,10 +48,10 @@ const Button = (($) = > {
      * ------------------------------------------------------------------------
      */
 
-    class Button;
+    class Button
 {
 
-    constructor(element);
+    constructor(element)
     {
         this._element = element
     }
@@ -59,9 +59,9 @@ const Button = (($) = > {
 
     // getters
 
-    static;
-    get;
-    VERSION();
+    static
+    get
+    VERSION()
     {
         return VERSION
     }
@@ -69,15 +69,16 @@ const Button = (($) = > {
 
     // public
 
-    toggle();
+    toggle()
     {
-        let triggerChangeEvent = true;
+        let triggerChangeEvent = true
+        let addAriaPressed = true
         const rootElement = $(this._element).closest(
             Selector.DATA_TOGGLE
-        )[0];
+        )[0]
 
         if (rootElement) {
-            const input = $(this._element).find(Selector.INPUT)[0];
+            const input = $(this._element).find(Selector.INPUT)[0]
 
             if (input) {
                 if (input.type === 'radio') {
@@ -86,7 +87,7 @@ const Button = (($) = > {
                         triggerChangeEvent = false
 
                     } else {
-                        const activeElement = $(rootElement).find(Selector.ACTIVE)[0];
+                        const activeElement = $(rootElement).find(Selector.ACTIVE)[0]
 
                         if (activeElement) {
                             $(activeElement).removeClass(ClassName.ACTIVE)
@@ -95,40 +96,49 @@ const Button = (($) = > {
                 }
 
                 if (triggerChangeEvent) {
-                    input.checked = !$(this._element).hasClass(ClassName.ACTIVE);
+                    if (input.hasAttribute('disabled') ||
+                        rootElement.hasAttribute('disabled') ||
+                        input.classList.contains('disabled') ||
+                        rootElement.classList.contains('disabled')) {
+                        return
+                    }
+                    input.checked = !$(this._element).hasClass(ClassName.ACTIVE)
                     $(input).trigger('change')
                 }
 
                 input.focus()
+                addAriaPressed = false
             }
 
         }
 
-        this._element.setAttribute('aria-pressed',
-            !$(this._element).hasClass(ClassName.ACTIVE));
+        if (addAriaPressed) {
+            this._element.setAttribute('aria-pressed',
+                !$(this._element).hasClass(ClassName.ACTIVE))
+        }
 
         if (triggerChangeEvent) {
             $(this._element).toggleClass(ClassName.ACTIVE)
         }
     }
 
-    dispose();
+    dispose()
     {
-        $.removeData(this._element, DATA_KEY);
+        $.removeData(this._element, DATA_KEY)
         this._element = null
     }
 
 
     // static
 
-    static;
-    _jQueryInterface(config);
+    static
+    _jQueryInterface(config)
     {
         return this.each(function () {
-            let data = $(this).data(DATA_KEY);
+            let data = $(this).data(DATA_KEY)
 
             if (!data) {
-                data = new Button(this);
+                data = new Button(this)
                 $(this).data(DATA_KEY, data)
             }
 
@@ -149,20 +159,20 @@ const Button = (($) = > {
 
 $(document)
     .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) = > {
-    event.preventDefault();
+    event.preventDefault()
 
-let button = event.target;
+let button = event.target
 
 if (!$(button).hasClass(ClassName.BUTTON)) {
     button = $(button).closest(Selector.BUTTON)
 }
 
-Button._jQueryInterface.call($(button), 'toggle');
+Button._jQueryInterface.call($(button), 'toggle')
 })
 .
 on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) = > {
     const button = $(event.target).closest(Selector.BUTTON)[0]
-    $(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type));
+    $(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type))
 })
 
 
@@ -172,16 +182,16 @@ on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) = > {
  * ------------------------------------------------------------------------
  */
 
-$.fn[NAME] = Button._jQueryInterface;
-$.fn[NAME].Constructor = Button;
+$.fn[NAME] = Button._jQueryInterface
+$.fn[NAME].Constructor = Button
 $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    $.fn[NAME] = JQUERY_NO_CONFLICT
     return Button._jQueryInterface
-};
+}
 
-return Button;
+return Button
 
 })
-(jQuery);
+(jQuery)
 
 export default Button

@@ -3,7 +3,7 @@ import Util from './util'
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.6): alert.js
+ * Bootstrap (v4.0.0-beta): alert.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -18,7 +18,7 @@ const Alert = (($) = > {
      */
 
     const NAME = 'alert'
-    const VERSION = '4.0.0-alpha.6'
+    const VERSION = '4.0.0-beta'
     const DATA_KEY = 'bs.alert'
     const EVENT_KEY = `.${DATA_KEY}`
     const DATA_API_KEY = '.data-api'
@@ -48,10 +48,10 @@ const Alert = (($) = > {
      * ------------------------------------------------------------------------
      */
 
-    class Alert;
+    class Alert
 {
 
-    constructor(element);
+    constructor(element)
     {
         this._element = element
     }
@@ -59,9 +59,9 @@ const Alert = (($) = > {
 
     // getters
 
-    static;
-    get;
-    VERSION();
+    static
+    get
+    VERSION()
     {
         return VERSION
     }
@@ -69,12 +69,12 @@ const Alert = (($) = > {
 
     // public
 
-    close(element);
+    close(element)
     {
-        element = element || this._element;
+        element = element || this._element
 
-        const rootElement = this._getRootElement(element);
-        const customEvent = this._triggerCloseEvent(rootElement);
+        const rootElement = this._getRootElement(element)
+        const customEvent = this._triggerCloseEvent(rootElement)
 
         if (customEvent.isDefaultPrevented()) {
             return
@@ -83,19 +83,19 @@ const Alert = (($) = > {
         this._removeElement(rootElement)
     }
 
-    dispose();
+    dispose()
     {
-        $.removeData(this._element, DATA_KEY);
+        $.removeData(this._element, DATA_KEY)
         this._element = null
     }
 
 
     // private
 
-    _getRootElement(element);
+    _getRootElement(element)
     {
-        const selector = Util.getSelectorFromElement(element);
-        let parent = false;
+        const selector = Util.getSelectorFromElement(element)
+        let parent = false
 
         if (selector) {
             parent = $(selector)[0]
@@ -108,32 +108,32 @@ const Alert = (($) = > {
         return parent
     }
 
-    _triggerCloseEvent(element);
+    _triggerCloseEvent(element)
     {
-        const closeEvent = $.Event(Event.CLOSE);
+        const closeEvent = $.Event(Event.CLOSE)
 
-        $(element).trigger(closeEvent);
+        $(element).trigger(closeEvent)
         return closeEvent
     }
 
-    _removeElement(element);
+    _removeElement(element)
     {
-        $(element).removeClass(ClassName.SHOW);
+        $(element).removeClass(ClassName.SHOW)
 
         if (!Util.supportsTransitionEnd() ||
             !$(element).hasClass(ClassName.FADE)) {
-            this._destroyElement(element);
+            this._destroyElement(element)
             return
         }
 
         $(element)
-            .one(Util.TRANSITION_END, (event) = > this._destroyElement(element, event);
+            .one(Util.TRANSITION_END, (event) = > this._destroyElement(element, event)
     )
     .
         emulateTransitionEnd(TRANSITION_DURATION)
     }
 
-    _destroyElement(element);
+    _destroyElement(element)
     {
         $(element)
             .detach()
@@ -144,15 +144,15 @@ const Alert = (($) = > {
 
     // static
 
-    static;
-    _jQueryInterface(config);
+    static
+    _jQueryInterface(config)
     {
         return this.each(function () {
-            const $element = $(this);
-            let data = $element.data(DATA_KEY);
+            const $element = $(this)
+            let data = $element.data(DATA_KEY)
 
             if (!data) {
-                data = new Alert(this);
+                data = new Alert(this)
                 $element.data(DATA_KEY, data)
             }
 
@@ -162,8 +162,8 @@ const Alert = (($) = > {
         })
     }
 
-    static;
-    _handleDismiss(alertInstance);
+    static
+    _handleDismiss(alertInstance)
     {
         return function (event) {
             if (event) {
@@ -187,7 +187,7 @@ $(document).on(
     Event.CLICK_DATA_API,
     Selector.DISMISS,
     Alert._handleDismiss(new Alert())
-);
+)
 
 
 /**
@@ -196,16 +196,16 @@ $(document).on(
  * ------------------------------------------------------------------------
  */
 
-$.fn[NAME] = Alert._jQueryInterface;
-$.fn[NAME].Constructor = Alert;
+$.fn[NAME] = Alert._jQueryInterface
+$.fn[NAME].Constructor = Alert
 $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    $.fn[NAME] = JQUERY_NO_CONFLICT
     return Alert._jQueryInterface
-};
+}
 
-return Alert;
+return Alert
 
 })
-(jQuery);
+(jQuery)
 
 export default Alert

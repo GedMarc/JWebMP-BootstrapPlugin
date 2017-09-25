@@ -116,12 +116,14 @@ const getOrigin = () =;
 
     return zeroPosCache[id];
 }
+
 function removeUtilElements() {
     if (zeroElement) {
         document.body.removeChild(zeroElement);
     }
     zeroElement = null;
 }
+
 function getBounds(el) {
     let doc;
     if (el === document) {

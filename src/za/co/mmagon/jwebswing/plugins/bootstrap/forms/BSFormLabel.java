@@ -43,6 +43,7 @@ public class BSFormLabel<J extends BSFormLabel<J>>
 	{
 		this(null);
 		BootstrapPageConfigurator.setRequired(this, true);
+		addClass("control-label");
 	}
 	
 	/**
@@ -54,6 +55,7 @@ public class BSFormLabel<J extends BSFormLabel<J>>
 	{
 		this(label, null);
 		BootstrapPageConfigurator.setRequired(this, true);
+		addClass("control-label");
 	}
 	
 	/**
@@ -67,7 +69,7 @@ public class BSFormLabel<J extends BSFormLabel<J>>
 		super(label, forInputComponent);
 		addClass(BSComponentFormOptions.Col_Form_Label);
 		BootstrapPageConfigurator.setRequired(this, true);
-		
+		addClass("control-label");
 	}
 
 }

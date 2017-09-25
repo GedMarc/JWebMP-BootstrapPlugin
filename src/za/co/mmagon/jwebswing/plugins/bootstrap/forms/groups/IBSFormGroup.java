@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups;
 
 import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormHelpText;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
@@ -29,7 +28,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
  * @author GedMarc
  * @since 20 Feb 2017
  */
-public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
+public interface IBSFormGroup<J extends BSFormGroup>
 {
 	
 	/**
@@ -37,7 +36,7 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	BSFormHelpText getHelpText();
+	String getHelpText();
 	
 	/**
 	 * Returns the input component
@@ -58,42 +57,42 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	T getMaxLengthMessage();
+	String getMaxLengthMessage();
 	
 	/**
 	 * Sets the maximum reached message error
 	 *
 	 * @return
 	 */
-	T getMaxMessage();
+	String getMaxMessage();
 	
 	/**
 	 * Returns the minimum length message
 	 *
 	 * @return
 	 */
-	T getMinLengthMessage();
+	String getMinLengthMessage();
 	
 	/**
 	 * Returns the minimum reached message component
 	 *
 	 * @return
 	 */
-	T getMinMessage();
+	String getMinMessage();
 	
 	/**
 	 * Sets the component to be shown when there is a pattern error
 	 *
 	 * @return
 	 */
-	T getPatternMessage();
+	String getPatternMessage();
 	
 	/**
 	 * Returns the component to be shown when there is a required error
 	 *
 	 * @return
 	 */
-	T getRequiredMessage();
+	String getRequiredMessage();
 	
 	/**
 	 * Shows a ticket, warning or cross from bootstrap 4
@@ -148,7 +147,7 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	J setHelpText(BSFormHelpText helpText);
+	J setHelpText(String helpText);
 	
 	/**
 	 * If this group must render as inline
@@ -193,7 +192,7 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	J setMaxLengthMessage(T maxLengthMessage);
+	J setMaxLengthMessage(String maxLengthMessage);
 	
 	/**
 	 * Sets the maximum reached message error
@@ -202,7 +201,7 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	J setMaxMessage(T maxMessage);
+	J setMaxMessage(String maxMessage);
 	
 	/**
 	 * Sets the minimum length message
@@ -211,7 +210,7 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	J setMinLengthMessage(T minLengthMessage);
+	J setMinLengthMessage(String minLengthMessage);
 	
 	/**
 	 * Sets the minimum reached message
@@ -220,7 +219,7 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	J setMinMessage(T minMessage);
+	J setMinMessage(String minMessage);
 	
 	/**
 	 * Sets the component to display when there is a pattern message
@@ -229,7 +228,7 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	J setPatternMessage(T patternMessage);
+	J setPatternMessage(String patternMessage);
 	
 	/**
 	 * Sets the component to be shown when there is a required error
@@ -238,7 +237,7 @@ public interface IBSFormGroup<T extends Component, J extends BSFormGroup>
 	 *
 	 * @return
 	 */
-	J setRequiredMessage(T requiredMessage);
+	J setRequiredMessage(String requiredMessage);
 	
 	/**
 	 * Shows a ticket, warning or cross from bootstrap 4

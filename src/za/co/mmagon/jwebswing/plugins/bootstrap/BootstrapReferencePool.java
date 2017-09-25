@@ -42,10 +42,25 @@ public enum BootstrapReferencePool implements ReferencePool
 	 */
 	Bootstrap4CoreReference(new JavascriptReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/js/bootstrap.min.js", 10),
 	                        new CSSReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/css/bootstrap.min.css", 10)),
+	
 	Bootstrap4TetherReference(new JavascriptReference("BS4Tether", 4.003, "bower_components/tether/dist/js/tether.min.js", 9),
 	                          new CSSReference("BS4Core", 4.003, "bower_components/tether/dist/css/tether.min.css", 9)),
+	
+	Bootstrap4PopperReference(new JavascriptReference("BS4Popper", 4.003, "bower_components/popper.js/dist/umd/popper.js", 9),
+	                          null),
+	
+	
+	Bootstrap4RebootReference(null,
+	                          new CSSReference("BS4Reboot", 4.003, "bower_components/bootstrap4/dist/css/bootstrap-reboot.css", 11)),
+	
 	Bootstrap4DropDownReference(null,
-	                            new CSSReference("BS4DropDownNoCaret", 4.006, "bs4custom/bs4hidecaret.css", 90)),;
+	                            new CSSReference("BS4DropDownNoCaret", 4.006, "bs4custom/bs4hidecaret.css", 90)),
+	
+	Bootstrap3ValidatorReference(new JavascriptReference("BS3Validator", 4.003, "bower_components/bootstrap-validator/dist/validator.js", 11),
+	                             null),
+	
+	FastClickReference(new JavascriptReference("FastClickReference", 4.003, "bower_components/fastclick/lib/fastclick.js", 11),
+	                   null),;
 	
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;

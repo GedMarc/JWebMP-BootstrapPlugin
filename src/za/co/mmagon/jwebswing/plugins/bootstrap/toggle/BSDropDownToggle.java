@@ -90,6 +90,28 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
 	 *
 	 * @param title
 	 */
+	public final void setTitle(Button title)
+	{
+		getChildren().remove(this.title);
+
+		this.title = title;
+		if (title != null)
+		{
+			getChildren().add(0, this.title);
+			this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
+			title.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
+			if (contents != null)
+			{
+				title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
+			}
+		}
+	}
+	
+	/**
+	 * Sets the title
+	 *
+	 * @param title
+	 */
 	public final void setTitle(Link title)
 	{
 		getChildren().remove(this.title);
@@ -102,28 +124,6 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
 			if (contents != null)
 			{
 				title.addAttribute(LinkAttributes.Data_Target, contents.getID(true));
-			}
-		}
-	}
-	
-	/**
-	 * Sets the title
-	 *
-	 * @param title
-	 */
-	public final void setTitle(Button title)
-	{
-		getChildren().remove(this.title);
-		
-		this.title = title;
-		if (title != null)
-		{
-			getChildren().add(0, this.title);
-			this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-			title.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
-			if (contents != null)
-			{
-				title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
 			}
 		}
 	}

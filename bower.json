@@ -18,8 +18,10 @@
   ],
   "dependencies": {
     "bootstrap": "bootstrap4#^3.3.7",
-    "bootstrap4": "bootstrap#^v4.0.0-alpha.3",
-    "tether": "^1.4.0"
+    "bootstrap4": "bootstrap#^v4.0.0-beta",
+    "tether": "^1.4.0",
+    "bootstrap-validator": "*",
+    "fastclick": "*"
   },
   "ignoredDependencies": [
     "jquery",

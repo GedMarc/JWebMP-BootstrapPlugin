@@ -53,6 +53,7 @@ public class BSForm<J extends BSForm<J>>
 	{
 		setTag("form");
 		BootstrapPageConfigurator.setRequired(this, true);
+		addAttribute("role", "form");
 	}
 	
 	/**

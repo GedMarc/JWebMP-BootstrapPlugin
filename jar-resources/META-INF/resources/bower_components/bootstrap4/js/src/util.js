@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.6): util.js
+ * Bootstrap (v4.0.0-beta): util.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -26,7 +26,7 @@ const Util = (($) = > {
     }
 
     // shoutout AngusCroll (https://goo.gl/pxwQGp)
-    function toType(obj);
+    function toType(obj)
 {
     return {}.toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
 }
@@ -53,7 +53,7 @@ function transitionEndTest() {
         return false
     }
 
-    const el = document.createElement('bootstrap');
+    const el = document.createElement('bootstrap')
 
     for (const name in TransitionEndEvent) {
         if (el.style[name] !== undefined) {
@@ -67,31 +67,31 @@ function transitionEndTest() {
 }
 
 function transitionEndEmulator(duration) {
-    let called = false;
+    let called = false
 
     $(this).one(Util.TRANSITION_END, () = > {
         called = true
-    };
+    }
 )
 
     setTimeout(() = > {
-        if(;
-    !called;
+        if(
+    !called
 )
     {
         Util.triggerTransitionEnd(this)
     }
 },
-    duration;
+    duration
 )
 
     return this
 }
 
 function setTransitionEndSupport() {
-    transition = transitionEndTest();
+    transition = transitionEndTest()
 
-    $.fn.emulateTransitionEnd = transitionEndEmulator;
+    $.fn.emulateTransitionEnd = transitionEndEmulator
 
     if (Util.supportsTransitionEnd()) {
         $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent()
@@ -113,19 +113,22 @@ const Util = {
         do {
             // eslint-disable-next-line no-bitwise
             prefix += ~~(Math.random() * MAX_UID) // "~~" acts like a faster Math.floor() here
-        } while (document.getElementById(prefix));
+        } while (document.getElementById(prefix))
         return prefix
     },
 
     getSelectorFromElement(element) {
-        let selector = element.getAttribute('data-target');
-
-        if (!selector) {
-            selector = element.getAttribute('href') || '';
-            selector = /^#[a-z]/i.test(selector) ? selector : null
+        let selector = element.getAttribute('data-target')
+        if (!selector || selector === '#') {
+            selector = element.getAttribute('href') || ''
         }
 
-        return selector
+        try {
+            const $selector = $(selector)
+            return $selector.length > 0 ? selector : null
+        } catch (error) {
+            return null
+        }
     },
 
     reflow(element) {
@@ -143,10 +146,10 @@ const Util = {
     typeCheckConfig(componentName, config, configTypes) {
         for (const property in configTypes) {
             if (configTypes.hasOwnProperty(property)) {
-                const expectedTypes = configTypes[property];
-                const value = config[property];
+                const expectedTypes = configTypes[property]
+                const value = config[property]
                 const valueType = value && isElement(value) ?
-                    'element' : toType(value);
+                    'element' : toType(value)
 
                 if (!new RegExp(expectedTypes).test(valueType)) {
                     throw new Error(
@@ -157,13 +160,13 @@ const Util = {
             }
         }
     }
-};
+}
 
-setTransitionEndSupport();
+setTransitionEndSupport()
 
-return Util;
+return Util
 
 })
-(jQuery);
+(jQuery)
 
 export default Util

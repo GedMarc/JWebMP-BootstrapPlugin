@@ -3,7 +3,7 @@ import Util from './util'
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.6): scrollspy.js
+ * Bootstrap (v4.0.0-beta): scrollspy.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -18,7 +18,7 @@ const ScrollSpy = (($) = > {
      */
 
     const NAME = 'scrollspy'
-    const VERSION = '4.0.0-alpha.6'
+    const VERSION = '4.0.0-beta'
     const DATA_KEY = 'bs.scrollspy'
     const EVENT_KEY = `.${DATA_KEY}`
     const DATA_API_KEY = '.data-api'
@@ -45,18 +45,15 @@ const ScrollSpy = (($) = > {
     const ClassName = {
         DROPDOWN_ITEM: 'dropdown-item',
         DROPDOWN_MENU: 'dropdown-menu',
-        NAV_LINK: 'nav-link',
-        NAV: 'nav',
         ACTIVE: 'active'
     }
 
     const Selector = {
         DATA_SPY: '[data-spy="scroll"]',
         ACTIVE: '.active',
-        LIST_ITEM: '.list-item',
-        LI: 'li',
-        LI_DROPDOWN: 'li.dropdown',
+        NAV_LIST_GROUP: '.nav, .list-group',
         NAV_LINKS: '.nav-link',
+        LIST_ITEMS: '.list-group-item',
         DROPDOWN: '.dropdown',
         DROPDOWN_ITEMS: '.dropdown-item',
         DROPDOWN_TOGGLE: '.dropdown-toggle'
@@ -74,41 +71,42 @@ const ScrollSpy = (($) = > {
      * ------------------------------------------------------------------------
      */
 
-    class ScrollSpy;
+    class ScrollSpy
 {
 
-    constructor(element, config);
+    constructor(element, config)
     {
-        this._element = element;
-        this._scrollElement = element.tagName === 'BODY' ? window : element;
-        this._config = this._getConfig(config);
+        this._element = element
+        this._scrollElement = element.tagName === 'BODY' ? window : element
+        this._config = this._getConfig(config)
         this._selector = `${this._config.target} ${Selector.NAV_LINKS},`
-            + `${this._config.target} ${Selector.DROPDOWN_ITEMS}`;
-        this._offsets = [];
-        this._targets = [];
-        this._activeTarget = null;
-        this._scrollHeight = 0;
+            + `${this._config.target} ${Selector.LIST_ITEMS},`
+            + `${this._config.target} ${Selector.DROPDOWN_ITEMS}`
+        this._offsets = []
+        this._targets = []
+        this._activeTarget = null
+        this._scrollHeight = 0
 
-        $(this._scrollElement).on(Event.SCROLL, (event) = > this._process(event);
+        $(this._scrollElement).on(Event.SCROLL, (event) = > this._process(event)
     )
 
-        this.refresh();
+        this.refresh()
         this._process()
     }
 
 
     // getters
 
-    static;
-    get;
-    VERSION();
+    static
+    get
+    VERSION()
     {
         return VERSION
     }
 
-    static;
-    get;
-    Default();
+    static
+    get
+    Default()
     {
         return Default
     }
@@ -116,23 +114,23 @@ const ScrollSpy = (($) = > {
 
     // public
 
-    refresh();
+    refresh()
     {
         const autoMethod = this._scrollElement !== this._scrollElement.window ?
-            OffsetMethod.POSITION : OffsetMethod.OFFSET;
+            OffsetMethod.POSITION : OffsetMethod.OFFSET
 
         const offsetMethod = this._config.method === 'auto' ?
-            autoMethod : this._config.method;
+            autoMethod : this._config.method
 
         const offsetBase = offsetMethod === OffsetMethod.POSITION ?
-            this._getScrollTop() : 0;
+            this._getScrollTop() : 0
 
-        this._offsets = [];
-        this._targets = [];
+        this._offsets = []
+        this._targets = []
 
-        this._scrollHeight = this._getScrollHeight();
+        this._scrollHeight = this._getScrollHeight()
 
-        const targets = $.makeArray($(this._selector));
+        const targets = $.makeArray($(this._selector))
 
         targets
             .map((element) = > {
@@ -143,73 +141,75 @@ const ScrollSpy = (($) = > {
                 target = $(targetSelector)[0]
             }
 
-            if(target && (target.offsetWidth || target.offsetHeight);
-    )
-        {
-            // todo (fat): remove sketch reliance on jQuery position/offset
-            return [
-                $(target)[offsetMethod]().top + offsetBase,
-                targetSelector
-            ]
+            if(target) {
+                const targetBCR = target.getBoundingClientRect()
+                if (targetBCR.width || targetBCR.height) {
+                    // todo (fat): remove sketch reliance on jQuery position/offset
+                    return [
+                        $(target)[offsetMethod]().top + offsetBase,
+                        targetSelector
+                    ]
+                }
+            }
+            return null
         }
-        return null
-    })
-    .
-        filter((item) = > item;
     )
     .
-        sort((a, b) = > a[0] - b[0];
+        filter((item) = > item
+    )
+    .
+        sort((a, b) = > a[0] - b[0]
     )
     .
         forEach((item) = > {
-            this._offsets.push(item[0]);
+            this._offsets.push(item[0])
         this._targets.push(item[1])
     })
     }
 
-    dispose();
+    dispose()
     {
-        $.removeData(this._element, DATA_KEY);
-        $(this._scrollElement).off(EVENT_KEY);
+        $.removeData(this._element, DATA_KEY)
+        $(this._scrollElement).off(EVENT_KEY)
 
-        this._element = null;
-        this._scrollElement = null;
-        this._config = null;
-        this._selector = null;
-        this._offsets = null;
-        this._targets = null;
-        this._activeTarget = null;
+        this._element = null
+        this._scrollElement = null
+        this._config = null
+        this._selector = null
+        this._offsets = null
+        this._targets = null
+        this._activeTarget = null
         this._scrollHeight = null
     }
 
 
     // private
 
-    _getConfig(config);
+    _getConfig(config)
     {
-        config = $.extend({}, Default, config);
+        config = $.extend({}, Default, config)
 
         if (typeof config.target !== 'string') {
-            let id = $(config.target).attr('id');
+            let id = $(config.target).attr('id')
             if (!id) {
-                id = Util.getUID(NAME);
+                id = Util.getUID(NAME)
                 $(config.target).attr('id', id)
             }
             config.target = `#${id}`
         }
 
-        Util.typeCheckConfig(NAME, config, DefaultType);
+        Util.typeCheckConfig(NAME, config, DefaultType)
 
         return config
     }
 
-    _getScrollTop();
+    _getScrollTop()
     {
         return this._scrollElement === window ?
             this._scrollElement.pageYOffset : this._scrollElement.scrollTop
     }
 
-    _getScrollHeight();
+    _getScrollHeight()
     {
         return this._scrollElement.scrollHeight || Math.max(
             document.body.scrollHeight,
@@ -217,26 +217,26 @@ const ScrollSpy = (($) = > {
         )
     }
 
-    _getOffsetHeight();
+    _getOffsetHeight()
     {
         return this._scrollElement === window ?
-            window.innerHeight : this._scrollElement.offsetHeight
+            window.innerHeight : this._scrollElement.getBoundingClientRect().height
     }
 
-    _process();
+    _process()
     {
-        const scrollTop = this._getScrollTop() + this._config.offset;
-        const scrollHeight = this._getScrollHeight();
+        const scrollTop = this._getScrollTop() + this._config.offset
+        const scrollHeight = this._getScrollHeight()
         const maxScroll = this._config.offset
             + scrollHeight
-            - this._getOffsetHeight();
+            - this._getOffsetHeight()
 
         if (this._scrollHeight !== scrollHeight) {
             this.refresh()
         }
 
         if (scrollTop >= maxScroll) {
-            const target = this._targets[this._targets.length - 1];
+            const target = this._targets[this._targets.length - 1]
 
             if (this._activeTarget !== target) {
                 this._activate(target)
@@ -245,8 +245,8 @@ const ScrollSpy = (($) = > {
         }
 
         if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
-            this._activeTarget = null;
-            this._clear();
+            this._activeTarget = null
+            this._clear()
             return
         }
 
@@ -254,7 +254,7 @@ const ScrollSpy = (($) = > {
             const isActiveTarget = this._activeTarget !== this._targets[i]
                 && scrollTop >= this._offsets[i]
                 && (this._offsets[i + 1] === undefined ||
-                    scrollTop < this._offsets[i + 1]);
+                    scrollTop < this._offsets[i + 1])
 
             if (isActiveTarget) {
                 this._activate(this._targets[i])
@@ -262,28 +262,30 @@ const ScrollSpy = (($) = > {
         }
     }
 
-    _activate(target);
+    _activate(target)
     {
-        this._activeTarget = target;
+        this._activeTarget = target
 
-        this._clear();
+        this._clear()
 
-        let queries = this._selector.split(',');
+        let queries = this._selector.split(',')
         queries = queries.map((selector) = > {
             return `${selector}[data-target="${target}"],` +
             `${selector}[href="${target}"]`
-        };
+        }
     )
 
-        const $link = $(queries.join(','));
+        const $link = $(queries.join(','))
 
         if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
-            $link.closest(Selector.DROPDOWN).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
+            $link.closest(Selector.DROPDOWN).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE)
             $link.addClass(ClassName.ACTIVE)
         } else {
-            // todo (fat) this is kinda sus...
-            // recursively add actives to tested nav-links
-            $link.parents(Selector.LI).find(`> ${Selector.NAV_LINKS}`).addClass(ClassName.ACTIVE)
+            // Set triggered link as active
+            $link.addClass(ClassName.ACTIVE)
+            // Set triggered links parents as active
+            // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
+            $link.parents(Selector.NAV_LIST_GROUP).prev(`${Selector.NAV_LINKS}, ${Selector.LIST_ITEMS}`).addClass(ClassName.ACTIVE)
         }
 
         $(this._scrollElement).trigger(Event.ACTIVATE, {
@@ -291,7 +293,7 @@ const ScrollSpy = (($) = > {
         })
     }
 
-    _clear();
+    _clear()
     {
         $(this._selector).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE)
     }
@@ -299,15 +301,15 @@ const ScrollSpy = (($) = > {
 
     // static
 
-    static;
-    _jQueryInterface(config);
+    static
+    _jQueryInterface(config)
     {
         return this.each(function () {
-            let data = $(this).data(DATA_KEY);
-            const _config = typeof config === 'object' && config;
+            let data = $(this).data(DATA_KEY)
+            const _config = typeof config === 'object' && config
 
             if (!data) {
-                data = new ScrollSpy(this, _config);
+                data = new ScrollSpy(this, _config)
                 $(this).data(DATA_KEY, data)
             }
 
@@ -337,7 +339,7 @@ $(window).on(Event.LOAD_DATA_API, () = > {
 i--;
 )
 {
-    const $spy = $(scrollSpys[i]);
+    const $spy = $(scrollSpys[i])
     ScrollSpy._jQueryInterface.call($spy, $spy.data())
 }
 })
@@ -349,16 +351,16 @@ i--;
  * ------------------------------------------------------------------------
  */
 
-$.fn[NAME] = ScrollSpy._jQueryInterface;
-$.fn[NAME].Constructor = ScrollSpy;
+$.fn[NAME] = ScrollSpy._jQueryInterface
+$.fn[NAME].Constructor = ScrollSpy
 $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    $.fn[NAME] = JQUERY_NO_CONFLICT
     return ScrollSpy._jQueryInterface
-};
+}
 
-return ScrollSpy;
+return ScrollSpy
 
 })
-(jQuery);
+(jQuery)
 
 export default ScrollSpy

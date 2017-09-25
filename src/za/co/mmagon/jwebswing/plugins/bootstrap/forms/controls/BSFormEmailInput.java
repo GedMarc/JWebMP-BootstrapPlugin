@@ -26,7 +26,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  * @author GedMarc
  * @since 15 Jan 2017
  */
-public class BSFormEmailInput extends BSInput
+public class BSFormEmailInput<J extends BSFormEmailInput<J>> extends BSInput<J>
 {
 	
 	private static final long serialVersionUID = 1L;

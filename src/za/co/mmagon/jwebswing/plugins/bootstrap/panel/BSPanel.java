@@ -200,21 +200,6 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
 	}
 	
 	/**
-	 * Sets the panel footer as a regular div
-	 *
-	 * @param panelFooter
-	 */
-	public void setPanelFooter(Div panelFooter)
-	{
-		this.panelFooter = panelFooter;
-		if (this.panelFooter != null)
-		{
-			this.panelFooter.addClass("panel-footer");
-		}
-		this.footerIsLink = false;
-	}
-	
-	/**
 	 * Sets the panel footer as a link with formatting
 	 *
 	 * @param panelFooter
@@ -227,6 +212,21 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
 			//this.panelFooter.addClass("panel-footer");
 		}
 		this.footerIsLink = true;
+	}
+	
+	/**
+	 * Sets the panel footer as a regular div
+	 *
+	 * @param panelFooter
+	 */
+	public void setPanelFooter(Div panelFooter)
+	{
+		this.panelFooter = panelFooter;
+		if (this.panelFooter != null)
+		{
+			this.panelFooter.addClass("panel-footer");
+		}
+		this.footerIsLink = false;
 	}
 	
 	/**

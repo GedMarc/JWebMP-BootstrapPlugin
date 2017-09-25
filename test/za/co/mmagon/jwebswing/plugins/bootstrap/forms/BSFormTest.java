@@ -16,9 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
-import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Option;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.*;
@@ -33,8 +32,12 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormSetLegen
  */
 public class BSFormTest extends BaseTestClass
 {
-	
 	public BSFormTest()
+	{
+	}
+	
+	@org.junit.jupiter.api.Test
+	void addSubmitButton()
 	{
 	}
 	
@@ -48,6 +51,25 @@ public class BSFormTest extends BaseTestClass
 		emailForm.setID("emailExample");
 		BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
 		group.setID("group");
+		form.add(group);
+		System.out.println(form.toString(true));
+	}
+	
+	@Test
+	public void testEmailFormAngular()
+	{
+		BSForm form = new BSForm();
+		form.setID("form");
+		BSFormEmailInput emailForm = new BSFormEmailInput();
+		emailForm.addAttribute("placeholder", "Email Entry");
+		emailForm.setID("emailExample");
+		BSFormGroup group = new BSFormGroup(new BSFormLabel("label"), emailForm, "Help Text");
+		group.setRequiredMessage("Required");
+		group.setID("group");
+		group.setAngularValidation(true);
+		
+		group.setHelpText("Default Help Text");
+		
 		form.add(group);
 		System.out.println(form.toString(true));
 	}
@@ -178,10 +200,10 @@ public class BSFormTest extends BaseTestClass
 		group.setID("group");
 		group.setAngularValidation(true);
 		
-		group.setPatternMessage(new Div("test pattern message"));
-		group.setRequiredMessage(new Div("test required message"));
-		group.setMinMessage(new Div("test min message"));
-		group.setMaxMessage(new Div("test max message"));
+		group.setPatternMessage("test pattern message");
+		group.setRequiredMessage("test required message");
+		group.setMinMessage("test min message");
+		group.setMaxMessage("test max message");
 		
 		form.add(group);
 		System.out.println(form.toString(true));

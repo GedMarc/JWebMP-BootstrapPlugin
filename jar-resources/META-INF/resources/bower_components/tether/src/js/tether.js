@@ -50,6 +50,7 @@ const position = () =;
 })
     flush();
 }
+
 function now() {
     if (typeof performance !== 'undefined' && typeof performance.now !== 'undefined') {
         return performance.now();

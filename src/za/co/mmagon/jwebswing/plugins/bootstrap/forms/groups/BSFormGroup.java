@@ -17,23 +17,28 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups;
 
 import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.base.angular.AngularAttributes;
+import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Input;
+import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.TextArea;
-import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.*;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSForm;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormInline;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
 import za.co.mmagon.logger.LogFactory;
 
 import javax.annotation.Nullable;
+import javax.validation.constraints.NotNull;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,16 +46,15 @@ import java.util.logging.Logger;
  * An implementation of
  * <p>
  *
- * @param <T> Is a component and a valid form group child
  * @param <J>
  *
  * @author Marc Magon
  * @version 1.0
  * @since 17 Jan 2017
  */
-public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
-		extends Div<BSFormGroupChildren, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
-		implements BSFormChildren, IBSFormGroup<T, J>
+public class BSFormGroup<J extends BSFormGroup<J>>
+		extends Div<GlobalChildren, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
+		implements BSFormChildren, IBSFormGroup<J>
 {
 	
 	private static final Logger log = LogFactory.getLog("BSFormGroup");
@@ -93,7 +97,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	/**
 	 * The label help text
 	 */
-	private BSFormHelpText helpText;
+	private String helpText;
 	/**
 	 * The input component for the form group
 	 */
@@ -113,34 +117,49 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	/**
 	 * The actual required message
 	 */
-	private T requiredMessage;
+	private String requiredMessage;
 	/**
 	 * The actual pattern message
 	 */
-	private T patternMessage;
+	private String patternMessage;
 	/**
 	 * The minimum error message
 	 */
-	private T minMessage;
+	private String minMessage;
 	/**
 	 * The maximum error message
 	 */
-	private T maxMessage;
+	private String maxMessage;
 	/**
 	 * The minimum length for a text field
 	 */
-	private T minLengthMessage;
+	private String minLengthMessage;
 	/**
 	 * The maximum length for a message
 	 */
-	private T maxLengthMessage;
+	private String maxLengthMessage;
+	/**
+	 * The general global error for a message
+	 */
+	private String errorMessage;
+	/**
+	 * The front icon string for the final input group
+	 */
+	private String frontIcon;
 	/**
 	 * Shows a ticket, warning or cross from bootstrap 4
 	 */
 	private Boolean showControlFeedback;
+	/**
+	 * The help block displayed when errors are found
+	 */
+	private Div helpBlockWithErrors;
 	
 	public BSFormGroup()
 	{
+		addClass(BSComponentFormGroupOptions.Form_Group);
+		BootstrapPageConfigurator.setRequired(this, true);
+		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -154,9 +173,10 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	{
 		this.label = label;
 		this.inputComponent = inputComponent;
-		this.helpText = new BSFormHelpText(helpText);
+		this.helpText = helpText;
 		addClass(BSComponentFormGroupOptions.Form_Group);
 		BootstrapPageConfigurator.setRequired(this, true);
+		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -170,9 +190,10 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	{
 		this.label = label;
 		this.inputComponent = inputComponent;
-		this.helpText = new BSFormHelpText(helpText);
+		this.helpText = helpText;
 		addClass(BSComponentFormGroupOptions.Form_Group);
 		BootstrapPageConfigurator.setRequired(this, true);
+		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -186,9 +207,10 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	{
 		this.label = label;
 		this.inputComponent = inputComponent;
-		this.helpText = new BSFormHelpText(helpText);
+		this.helpText = helpText;
 		addClass(BSComponentFormGroupOptions.Form_Group);
 		BootstrapPageConfigurator.setRequired(this, true);
+		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -202,9 +224,10 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	{
 		this.label = label;
 		this.inputComponent = inputComponent;
-		this.helpText = new BSFormHelpText(helpText);
+		this.helpText = helpText;
 		addClass(BSComponentFormGroupOptions.Form_Group);
 		BootstrapPageConfigurator.setRequired(this, true);
+		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -225,11 +248,6 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	@Override
 	public BSFormLabel getLabel()
 	{
-		/*if (label == null)
-		{
-			setLabel(new BSFormLabel("Component Label"));
-			label.addClass(BSComponentColoursOptions.Sr_Only);
-		}*/
 		return label;
 	}
 	
@@ -253,13 +271,8 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	@Nullable
-	public BSFormHelpText getHelpText()
+	public String getHelpText()
 	{
-		if (helpText == null)
-		{
-//            helpText = new BSFormHelpText();
-		}
 		return helpText;
 	}
 	
@@ -271,7 +284,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public J setHelpText(BSFormHelpText helpText)
+	public J setHelpText(String helpText)
 	{
 		this.helpText = helpText;
 		return (J) this;
@@ -283,13 +296,22 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public T getInputComponent()
+	public Component getInputComponent()
 	{
-		if (inputComponent == null)
-		{
-			//setInputComponent(new BSInput(InputTypes.Text));
-		}
-		return (T) inputComponent;
+		return inputComponent;
+	}
+	
+	/**
+	 * Sets the input component to any input type
+	 *
+	 * @param inputComponent
+	 *
+	 * @return
+	 */
+	public J setInputComponent(Input inputComponent)
+	{
+		this.inputComponent = inputComponent;
+		return (J) this;
 	}
 	
 	/**
@@ -315,19 +337,6 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 */
 	@Override
 	public J setInputComponent(BSFormSelectInput inputComponent)
-	{
-		this.inputComponent = inputComponent;
-		return (J) this;
-	}
-	
-	/**
-	 * Sets the input component to any input type
-	 *
-	 * @param inputComponent
-	 *
-	 * @return
-	 */
-	public J setInputComponent(Input inputComponent)
 	{
 		this.inputComponent = inputComponent;
 		return (J) this;
@@ -365,15 +374,55 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 			
 			if (!(getInputComponent() == null))
 			{
-				add((BSInput) getInputComponent());
-				if (getHelpText() != null)
+				if (!(getInputComponent() instanceof BSFormInputGroup))
 				{
-					getInputComponent().addAttribute(GlobalAttributes.Aria_Describedby, getHelpText().getID());
+					BSFormInputGroup inputGroup = new BSFormInputGroup((BSInput) getInputComponent());
+					if (getFrontIcon() != null)
+					{
+						Span newSpan = new Span<>().setText(getFrontIcon());
+						if (BootstrapPageConfigurator.isBootstrap4())
+						{
+							newSpan.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+						}
+						newSpan.addStyle("background:transparent !important;");
+						newSpan.addStyle("top:0;");
+						newSpan.addStyle("margin-top:0;");
+						inputGroup.getInputGroupAddons().add(newSpan);
+					}
+					
+					Span iconFeedback = new Span();
+					if (BootstrapPageConfigurator.isBootstrap4())
+					{
+						iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+					}
+					iconFeedback.addStyle("background:transparent !important;");
+					iconFeedback.addStyle("top:0;");
+					iconFeedback.addStyle("margin-top:0;");
+					iconFeedback.addAttribute("aria-hidden", "true");
+					
+					inputGroup.getInputGroupAddonsRight().add(iconFeedback);
+					add(inputGroup);
+				}
+				else
+				{
+					BSFormInputGroup ig = (BSFormInputGroup) getInputComponent();
+					Span iconFeedback = new Span();
+					if (BootstrapPageConfigurator.isBootstrap4())
+					{
+						iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+					}
+					iconFeedback.addStyle("background:transparent !important;");
+					iconFeedback.addAttribute("aria-hidden", "true");
+					iconFeedback.addStyle("top:0;");
+					iconFeedback.addStyle("margin-top:0;");
+					ig.getInputGroupAddonsRight().add(iconFeedback);
+					add(ig);
 				}
 			}
 			
 			if (isAngularValidation())
 			{
+				addClass("has-feedback");
 				AngularPageConfigurator.setRequired(this, true);
 				BSForm referencedForm = findParent(BSForm.class);
 				if (referencedForm == null)
@@ -383,12 +432,23 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 					referencedForm.setID("InvalidForm");
 				}
 				
+				referencedForm.addAttribute("data-toggle", "validator");
+				
+				addFeature(new Feature("BootstrapValidatorFeature")
+				{
+					@Override
+					protected void assignFunctionsToComponent()
+					{
+						addQuery("$('[data-toggle=validator]').validator();");
+					}
+				});
+				
 				if (BSFormInline.class.isAssignableFrom(referencedForm.getClass()))
 				{
 					setInline(true);
 				}
 				
-				referencedForm.addAttribute("novalidate", null);
+				referencedForm.addAttribute("novalidate", "");
 				referencedForm.setTag("ng-form");
 				
 				String formName = referencedForm.getID();
@@ -399,101 +459,52 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 				}
 				String fieldName = "'" + (fieldTemp == null ? "" : fieldTemp + "'");
 				
-				addAttribute(AngularAttributes.ngClass, formName + "[" + fieldName + "].$valid && !" + formName + "[" + fieldName + "].$pristine "
-						+ "? '" + SUCCESS_CLASS + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + (BootstrapPageConfigurator.isBootstrap4() ? ERROR_CLASS_4 : ERROR_CLASS) + "'");
 				
-				
-				if (getShowControlFeedback() != null && getShowControlFeedback())
+				if (getInputComponent() != null)
 				{
-					if (getInputComponent() != null)
+					if (BootstrapPageConfigurator.isBootstrap4())
 					{
-						getInputComponent().addAttribute(AngularAttributes.ngClass, formName + "[" + fieldName + "].$valid && !" + formName + "[" + fieldName + "].$pristine "
-								+ "? '" + SUCCESS_CLASS_FEEDBACK + "' : " + formName + "[" + fieldName + "].$pristine ? '' : " + " '" + (BootstrapPageConfigurator.isBootstrap4() ? ERROR_CLASS_FEEDBACK$ : ERROR_CLASS_FEEDBACK) + "'");
-					}
-				}
-				
-				if (getRequiredMessage() != null)
-				{
-					getRequiredMessage().addAttribute(AngularAttributes.ngShow, "" + formName + "[" + fieldName + "].$error.required && !" + formName + "[" + fieldName + "].$pristine");
-					if (!isInline())
-					{
-						getRequiredMessage().addClass(BSComponentFormGroupOptions.Form_Text);
-						getRequiredMessage().addClass(BSComponentFormGroupOptions.Form_Control_Feedback);
+						Span iconFeedback = new Span();
+						if (!BootstrapPageConfigurator.isBootstrap4())
+						{
+							iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+						}
+						iconFeedback.addStyle("background:transparent !important;");
+						iconFeedback.addAttribute("aria-hidden", "true");
+						iconFeedback.addStyle("top:0;");
+						iconFeedback.addStyle("margin-top:0;");
+						add(iconFeedback);
 					}
 					
-					getChildren().add(getRequiredMessage());
-				}
-				
-				if (getPatternMessage() != null)
-				{
-					getPatternMessage().addAttribute(AngularAttributes.ngShow, "" + formName + "[" + fieldName + "].$error.pattern && !" + formName + "[" + fieldName + "].$pristine");
-					if (!isInline())
+					if (getShowControlFeedback() != null && getShowControlFeedback())
 					{
-						getPatternMessage().addClass(BSComponentFormGroupOptions.Form_Text);
-						getPatternMessage().addClass(BSComponentFormGroupOptions.Form_Control_Feedback);
+						if (getRequiredMessage() != null)
+						{
+							getInputComponent().addAttribute("data-required-error", getRequiredMessage());
+						}
+						if (getPatternMessage() != null)
+						{
+							getInputComponent().addAttribute("data-pattern-error", getPatternMessage());
+						}
+						if (getMinMessage() != null)
+						{
+							getInputComponent().addAttribute("data-minlength-error", getMinLengthMessage());
+						}
+						if (getMaxMessage() != null)
+						{
+							getInputComponent().addAttribute("data-maxlength-error", getMaxLengthMessage());
+						}
+						if (getErrorMessage() != null)
+						{
+							getInputComponent().addAttribute("data-error", getErrorMessage());
+						}
+						if (getHelpText() != null)
+						{
+							getHelpBlockWithErrors().setText(getHelpText());
+						}
+						add(getHelpBlockWithErrors());
 					}
-					
-					getChildren().add(getPatternMessage());
 				}
-				
-				if (getMinMessage() != null)
-				{
-					getMinMessage().addAttribute(AngularAttributes.ngShow, "" + formName + "[" + fieldName + "].$error.min && !" + formName + "[" + fieldName + "].$pristine");
-					if (!isInline())
-					{
-						getMinMessage().addClass(BSComponentFormGroupOptions.Form_Text);
-						getMinMessage().addClass(BSComponentFormGroupOptions.Form_Control_Feedback);
-					}
-					
-					getChildren().add(getMinMessage());
-				}
-				
-				if (getMinLengthMessage() != null)
-				{
-					getMinLengthMessage().addAttribute(AngularAttributes.ngShow, "" + formName + "[" + fieldName + "].$error.minlength && !" + formName + "[" + fieldName + "].$pristine");
-					if (!isInline())
-					{
-						getMinLengthMessage().addClass(BSComponentFormGroupOptions.Form_Text);
-						getMinLengthMessage().addClass(BSComponentFormGroupOptions.Form_Control_Feedback);
-					}
-					
-					getChildren().add(getMinLengthMessage());
-				}
-				
-				if (getMaxMessage() != null)
-				{
-					getMaxMessage().addAttribute(AngularAttributes.ngShow, "" + formName + "[" + fieldName + "].$error.max && !" + formName + "[" + fieldName + "].$pristine");
-					if (!isInline())
-					{
-						getMaxMessage().addClass(BSComponentFormGroupOptions.Form_Text);
-						getMaxMessage().addClass(BSComponentFormGroupOptions.Form_Control_Feedback);
-					}
-					
-					getChildren().add(getMaxMessage());
-				}
-				
-				if (getMaxLengthMessage() != null)
-				{
-					getMaxLengthMessage().addAttribute(AngularAttributes.ngShow, "" + formName + "[" + fieldName + "].$error.max && !" + formName + "[" + fieldName + "].$pristine");
-					if (!isInline())
-					{
-						getMaxLengthMessage().addClass(BSComponentFormGroupOptions.Form_Text);
-						getMaxLengthMessage().addClass(BSComponentFormGroupOptions.Form_Control_Feedback);
-					}
-					getChildren().add(getMaxLengthMessage());
-				}
-			}
-			
-			if (!isInline())
-			{
-				if (getHelpText() != null)
-				{
-					getHelpText().setInline(true);
-				}
-			}
-			if (getHelpText() != null)
-			{
-				add(getHelpText());
 			}
 		}
 		super.preConfigure();
@@ -580,7 +591,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public T getRequiredMessage()
+	public String getRequiredMessage()
 	{
 		return requiredMessage;
 	}
@@ -593,7 +604,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public J setRequiredMessage(T requiredMessage)
+	public J setRequiredMessage(String requiredMessage)
 	{
 		setAngularValidation(true);
 		this.requiredMessage = requiredMessage;
@@ -606,7 +617,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public T getPatternMessage()
+	public String getPatternMessage()
 	{
 		return patternMessage;
 	}
@@ -619,7 +630,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public J setPatternMessage(T patternMessage)
+	public J setPatternMessage(String patternMessage)
 	{
 		setAngularValidation(true);
 		this.patternMessage = patternMessage;
@@ -632,7 +643,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public T getMinMessage()
+	public String getMinMessage()
 	{
 		return minMessage;
 	}
@@ -645,7 +656,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public J setMinMessage(T minMessage)
+	public J setMinMessage(String minMessage)
 	{
 		setAngularValidation(true);
 		this.minMessage = minMessage;
@@ -658,7 +669,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public T getMaxMessage()
+	public String getMaxMessage()
 	{
 		return maxMessage;
 	}
@@ -671,7 +682,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public J setMaxMessage(T maxMessage)
+	public J setMaxMessage(String maxMessage)
 	{
 		setAngularValidation(true);
 		this.maxMessage = maxMessage;
@@ -684,7 +695,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public T getMinLengthMessage()
+	public String getMinLengthMessage()
 	{
 		return minLengthMessage;
 	}
@@ -697,7 +708,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public J setMinLengthMessage(T minLengthMessage)
+	public J setMinLengthMessage(String minLengthMessage)
 	{
 		setAngularValidation(true);
 		this.minLengthMessage = minLengthMessage;
@@ -710,7 +721,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public T getMaxLengthMessage()
+	public String getMaxLengthMessage()
 	{
 		return maxLengthMessage;
 	}
@@ -723,7 +734,7 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 	 * @return
 	 */
 	@Override
-	public J setMaxLengthMessage(T maxLengthMessage)
+	public J setMaxLengthMessage(String maxLengthMessage)
 	{
 		setAngularValidation(true);
 		this.maxLengthMessage = maxLengthMessage;
@@ -782,4 +793,79 @@ public class BSFormGroup<T extends Component, J extends BSFormGroup<T, J>>
 		return hash;
 	}
 	
+	/**
+	 * Returns the help block with erros, never null
+	 *
+	 * @return
+	 */
+	@NotNull
+	public Div getHelpBlockWithErrors()
+	{
+		if (helpBlockWithErrors == null)
+		{
+			setHelpBlockWithErrors(new Div());
+		}
+		return helpBlockWithErrors;
+	}
+	
+	/**
+	 * sets the help block with errors
+	 *
+	 * @param helpBlockWithErrors
+	 *
+	 * @return
+	 */
+	public J setHelpBlockWithErrors(@NotNull Div helpBlockWithErrors)
+	{
+		this.helpBlockWithErrors = helpBlockWithErrors;
+		this.helpBlockWithErrors.addClass("help-block with-errors col-form-label");
+		return (J) this;
+	}
+	
+	/**
+	 * The general global error for a message
+	 *
+	 * @return
+	 */
+	@Nullable
+	public String getErrorMessage()
+	{
+		return errorMessage;
+	}
+	
+	/**
+	 * The general global error for a message
+	 *
+	 * @param errorMessage
+	 *
+	 * @return
+	 */
+	public J setErrorMessage(@Nullable String errorMessage)
+	{
+		this.errorMessage = errorMessage;
+		return (J) this;
+	}
+	
+	/**
+	 * Sets the instance of this
+	 *
+	 * @return
+	 */
+	public String getFrontIcon()
+	{
+		return frontIcon;
+	}
+	
+	/**
+	 * Returns an instance of this
+	 *
+	 * @param frontIcon
+	 *
+	 * @return
+	 */
+	public J setFrontIcon(String frontIcon)
+	{
+		this.frontIcon = frontIcon;
+		return (J) this;
+	}
 }

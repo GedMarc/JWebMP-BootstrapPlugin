@@ -16,14 +16,16 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
+import za.co.mmagon.jwebswing.base.html.DivSimple;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextAreaInput;
+import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +38,7 @@ import java.util.List;
  * @since 18 Jan 2017
  */
 public class BSFormInputGroup<J extends BSFormInputGroup<J>>
-		extends BSFormGroup
+		extends DivSimple<J>
 		implements BSFormGroupChildren, BSFormSetChildren, BSDropDownMenuChildren, IBSFormInputGroup
 {
 	
@@ -176,6 +178,7 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	 *
 	 * @return
 	 */
+	@Nullable
 	public BSInput getInput()
 	{
 		return input;
@@ -189,19 +192,27 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	public J setInput(BSInput input)
 	{
 		this.input = input;
+		if (this.input != null)
+		{
+			this.input.addClass("form-control");
+		}
 		return (J) this;
 	}
 	
 	@Override
-	public void preConfigure()
+	public void init()
 	{
-		if (!isConfigured())
+		if (!isInitialized())
 		{
 			getInputGroupAddons().forEach(inputGroupAddon ->
 			                              {
 				                              inputGroupAddon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
 				                              add(0, inputGroupAddon);
 			                              });
+			if (getInput() == null)
+			{
+				setInput(new BSFormTextInput());
+			}
 			add(getInput());
 			getInputGroupAddonsRight().forEach(inputGroupAddon ->
 			                                   {
@@ -209,7 +220,7 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 				                                   add(inputGroupAddon);
 			                                   });
 		}
-		super.preConfigure();
+		super.init();
 	}
 	
 }

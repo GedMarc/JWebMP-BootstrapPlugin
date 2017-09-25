@@ -24,7 +24,7 @@ function _classCallCheck(instance, Constructor) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.6): button.js
+ * Bootstrap (v4.0.0-beta): button.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -38,7 +38,7 @@ var Button = function ($) {
      */
 
     var NAME = 'button';
-    var VERSION = '4.0.0-alpha.6';
+    var VERSION = '4.0.0-beta';
     var DATA_KEY = 'bs.button';
     var EVENT_KEY = '.' + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -61,14 +61,14 @@ var Button = function ($) {
     var Event = {
         CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY,
         FOCUS_BLUR_DATA_API: 'focus' + EVENT_KEY + DATA_API_KEY + ' ' + ('blur' + EVENT_KEY + DATA_API_KEY)
+
+        /**
+         * ------------------------------------------------------------------------
+         * Class Definition
+         * ------------------------------------------------------------------------
+         */
+
     };
-
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
     var Button = function () {
         function Button(element) {
             _classCallCheck(this, Button);
@@ -82,6 +82,7 @@ var Button = function ($) {
 
         Button.prototype.toggle = function toggle() {
             var triggerChangeEvent = true;
+            var addAriaPressed = true;
             var rootElement = $(this._element).closest(Selector.DATA_TOGGLE)[0];
 
             if (rootElement) {
@@ -101,15 +102,21 @@ var Button = function ($) {
                     }
 
                     if (triggerChangeEvent) {
+                        if (input.hasAttribute('disabled') || rootElement.hasAttribute('disabled') || input.classList.contains('disabled') || rootElement.classList.contains('disabled')) {
+                            return;
+                        }
                         input.checked = !$(this._element).hasClass(ClassName.ACTIVE);
                         $(input).trigger('change');
                     }
 
                     input.focus();
+                    addAriaPressed = false;
                 }
             }
 
-            this._element.setAttribute('aria-pressed', !$(this._element).hasClass(ClassName.ACTIVE));
+            if (addAriaPressed) {
+                this._element.setAttribute('aria-pressed', !$(this._element).hasClass(ClassName.ACTIVE));
+            }
 
             if (triggerChangeEvent) {
                 $(this._element).toggleClass(ClassName.ACTIVE);
