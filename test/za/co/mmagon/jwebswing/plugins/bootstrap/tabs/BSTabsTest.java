@@ -1,6 +1,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.tabs;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.ListItem;

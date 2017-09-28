@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.columnlayout;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSContainer;
 import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSContainerType;
@@ -45,11 +45,11 @@ public class BSContainerTest extends BaseTestClass
 		BSContainer b = new BSContainer();
 		b.setID("id");
 		System.out.println(b.toString(true));
-		Assert.assertEquals("<div class=\"container-fluid\" id=\"id\"></div>", b.toString(true));
+		Assertions.assertEquals("<div class=\"container-fluid\" id=\"id\"></div>", b.toString(true));
 		
 		b.setContainerType(BSContainerType.Container);
 		System.out.println(b.toString(true));
-		Assert.assertEquals("<div class=\"container\" id=\"id\"></div>", b.toString(true));
+		Assertions.assertEquals("<div class=\"container\" id=\"id\"></div>", b.toString(true));
 		soutDivider();
 	}
 

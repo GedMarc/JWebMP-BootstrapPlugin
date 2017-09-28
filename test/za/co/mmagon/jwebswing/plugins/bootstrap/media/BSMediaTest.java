@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.media;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
@@ -38,7 +38,7 @@ public class BSMediaTest extends BaseTestClass
 		BSMedia media = new BSMedia();
 		media.setID("media");
 		System.out.println(media.toString(true));
-		Assert.assertEquals("<div class=\"media\" id=\"media\"></div>", media.toString(true));
+		Assertions.assertEquals("<div class=\"media\" id=\"media\"></div>", media.toString(true));
 	}
 	
 	@Test
@@ -51,7 +51,7 @@ public class BSMediaTest extends BaseTestClass
 		media.setID("media");
 		p.getBody().add(media);
 		System.out.println(p.toString(true));
-		Assert.assertEquals("<!DOCTYPE html>\n"
+		Assertions.assertEquals("<!DOCTYPE html>\n"
 				                    + "<html>\n"
 				                    + "	<head>\n"
 				                    + "		<meta charset=\"utf-16\">\n"
@@ -78,7 +78,7 @@ public class BSMediaTest extends BaseTestClass
 		media.setID("media");
 		media.getMediaLink().setID("link");
 		System.out.println(media.toString(true));
-		Assert.assertEquals("<div class=\"media\" id=\"media\">\n"
+		Assertions.assertEquals("<div class=\"media\" id=\"media\">\n"
 				                    + "	<a class=\"media-left\" href=\"#\" id=\"link\"></a>\n"
 				                    + "</div>", media.toString(true));
 	}
@@ -90,7 +90,7 @@ public class BSMediaTest extends BaseTestClass
 		media.setID("media");
 		media.getMediaBody().setID("body");
 		System.out.println(media.toString(true));
-		Assert.assertEquals("<div class=\"media\" id=\"media\">\n"
+		Assertions.assertEquals("<div class=\"media\" id=\"media\">\n"
 				                    + "	<div class=\"media-body\" id=\"body\"></div>\n"
 				                    + "</div>", media.toString(true));
 	}
@@ -105,7 +105,7 @@ public class BSMediaTest extends BaseTestClass
 		media.getMediaBody().setID("body");
 		
 		System.out.println(media.toString(true));
-		Assert.assertEquals("<div class=\"media\" id=\"media\">\n"
+		Assertions.assertEquals("<div class=\"media\" id=\"media\">\n"
 				                    + "	<div class=\"media-body\" id=\"body\">\n"
 				                    + "		<h4 class=\"media-heading\" id=\"header\"></h4>\n"
 				                    + "	</div>\n"
@@ -122,7 +122,7 @@ public class BSMediaTest extends BaseTestClass
 		media.getMediaLink().setID("link");
 		
 		System.out.println(media.toString(true));
-		Assert.assertEquals("<div class=\"media\" id=\"media\">\n"
+		Assertions.assertEquals("<div class=\"media\" id=\"media\">\n"
 				                    + "	<a class=\"media-left\" href=\"#\" id=\"link\">\n"
 				                    + "		<div class=\"media-object\" id=\"object\"></div>\n"
 				                    + "	</a>\n"

@@ -169,6 +169,23 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	 * @param inputComponent
 	 * @param helpText
 	 */
+	public BSFormGroup(BSFormLabel label, Input inputComponent, String helpText)
+	{
+		this.label = label;
+		this.inputComponent = inputComponent;
+		this.helpText = helpText;
+		addClass(BSComponentFormGroupOptions.Form_Group);
+		BootstrapPageConfigurator.setRequired(this, true);
+		addStyle("margin-bottom:0px");
+	}
+	
+	/**
+	 * Constructs a new instance
+	 *
+	 * @param label
+	 * @param inputComponent
+	 * @param helpText
+	 */
 	public BSFormGroup(BSFormLabel label, BSInput inputComponent, String helpText)
 	{
 		this.label = label;
@@ -376,7 +393,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			{
 				if (!(getInputComponent() instanceof BSFormInputGroup))
 				{
-					BSFormInputGroup inputGroup = new BSFormInputGroup((BSInput) getInputComponent());
+					BSFormInputGroup inputGroup = new BSFormInputGroup((Input) getInputComponent());
 					if (getFrontIcon() != null)
 					{
 						Span newSpan = new Span<>().setText(getFrontIcon());

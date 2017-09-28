@@ -16,7 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.base.html.Image;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormInline;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.brand.BSNavBarBrandImage;

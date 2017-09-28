@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.close;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 
 /**
@@ -37,7 +37,7 @@ public class BSCloseIconTest extends BaseTestClass
 		icon.setID("icon");
 		icon.getCloseIcon().setID("closeIcon");
 		System.out.println(icon.toString(true));
-		Assert.assertEquals("<button aria_label=\"Close\" class=\"close\" id=\"icon\" type=\"button\">\n"
+		Assertions.assertEquals("<button aria_label=\"Close\" class=\"close\" id=\"icon\" type=\"button\">\n"
 				                    + "	<span aria_hidden=\"true\" id=\"closeIcon\">&times;</span>\n"
 				                    + "</button>", icon.toString(true));
 	}
@@ -50,7 +50,7 @@ public class BSCloseIconTest extends BaseTestClass
 		icon.getCloseIcon().setID("closeIcon");
 		icon.setAriaLabel("aria label");
 		System.out.println(icon.toString(true));
-		Assert.assertEquals("<button aria_label=\"aria label\" class=\"close\" id=\"icon\" type=\"button\">\n"
+		Assertions.assertEquals("<button aria_label=\"aria label\" class=\"close\" id=\"icon\" type=\"button\">\n"
 				                    + "	<span aria_hidden=\"true\" id=\"closeIcon\">&times;</span>\n"
 				                    + "</button>", icon.toString(true));
 	}
@@ -63,7 +63,7 @@ public class BSCloseIconTest extends BaseTestClass
 		icon.getCloseIcon().setID("closeIcon");
 		icon.setAriaLabel("aria label");
 		System.out.println(icon.toString(true));
-		Assert.assertEquals("<button aria_label=\"aria label\" class=\"close\" id=\"icon\" type=\"button\">\n"
+		Assertions.assertEquals("<button aria_label=\"aria label\" class=\"close\" id=\"icon\" type=\"button\">\n"
 				                    + "	<span aria_hidden=\"true\" id=\"closeIcon\">&times;</span>\n"
 				                    + "</button>", icon.toString(true));
 	}
@@ -77,7 +77,7 @@ public class BSCloseIconTest extends BaseTestClass
 		icon.setAriaLabel("aria label");
 		icon.setCloseIconText("newText");
 		System.out.println(icon.toString(true));
-		Assert.assertEquals("<button aria_label=\"aria label\" class=\"close\" id=\"icon\" type=\"button\">\n"
+		Assertions.assertEquals("<button aria_label=\"aria label\" class=\"close\" id=\"icon\" type=\"button\">\n"
 				                    + "	<span aria_hidden=\"true\" id=\"closeIcon\">newText</span>\n"
 				                    + "</button>", icon.toString(true));
 	}
@@ -91,7 +91,7 @@ public class BSCloseIconTest extends BaseTestClass
 		icon.setAriaLabel("aria label");
 		icon.setCloseIconText("newText");
 		System.out.println(icon.toString());
-		Assert.assertEquals("<button aria_label=\"aria label\" class=\"close\" id=\"icon\" type=\"button\">\n"
+		Assertions.assertEquals("<button aria_label=\"aria label\" class=\"close\" id=\"icon\" type=\"button\">\n"
 				                    + "	<span aria_hidden=\"true\" id=\"closeIcon\">newText</span>\n"
 				                    + "</button>", icon.toString(true));
 	}

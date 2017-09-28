@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
 import za.co.mmagon.jwebswing.base.html.DivSimple;
+import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
@@ -52,7 +53,28 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	 */
 	private List<Span> inputGroupAddonsRight;
 	
-	private BSInput input;
+	private Input input;
+	
+	/**
+	 * Input group
+	 * <p>
+	 * Easily extend form controls by adding text, buttons, or button groups on either side of textual input's.
+	 *
+	 * @param input
+	 * @param size
+	 */
+	public BSFormInputGroup(Input input, BSComponentInputGroupOptions... size)
+	{
+		this.input = input;
+		addClass(BSComponentInputGroupOptions.Input_Group);
+		if (size != null && size.length > 0)
+		{
+			for (BSComponentInputGroupOptions bSComponentInputGroupOptions : size)
+			{
+				addClass(bSComponentInputGroupOptions);
+			}
+		}
+	}
 	
 	/**
 	 * Input group
@@ -179,7 +201,7 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	 * @return
 	 */
 	@Nullable
-	public BSInput getInput()
+	public Input getInput()
 	{
 		return input;
 	}
@@ -189,7 +211,7 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	 *
 	 * @param input
 	 */
-	public J setInput(BSInput input)
+	public J setInput(Input input)
 	{
 		this.input = input;
 		if (this.input != null)

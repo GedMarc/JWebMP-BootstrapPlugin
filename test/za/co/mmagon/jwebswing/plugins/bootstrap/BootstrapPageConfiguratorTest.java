@@ -23,7 +23,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 
@@ -49,7 +49,7 @@ public class BootstrapPageConfiguratorTest extends BaseTestClass
 		BootstrapPageConfigurator.setBootstrap4(false);
 		bpc.configure(p);
 		System.out.println(p.toString(true));
-		Assert.assertEquals("<!DOCTYPE html>\n" +
+		Assertions.assertEquals("<!DOCTYPE html>\n" +
 				                    "<html>\n" +
 				                    "\t<head>\n" +
 				                    "\t\t<meta charset=\"utf-16\">\n" +
@@ -86,7 +86,7 @@ public class BootstrapPageConfiguratorTest extends BaseTestClass
 		BootstrapPageConfigurator.setBootstrap4(true);
 		bpc.configure(p);
 		System.out.println(p.toString(true));
-		Assert.assertEquals("<!DOCTYPE html>\n" +
+		Assertions.assertEquals("<!DOCTYPE html>\n" +
 				                    "<html>\n" +
 				                    "\t<head>\n" +
 				                    "\t\t<meta charset=\"utf-16\">\n" +
