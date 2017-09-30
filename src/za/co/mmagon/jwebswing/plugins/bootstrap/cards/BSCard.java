@@ -34,7 +34,7 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  */
 @ComponentInformation(name = "Bootstrap Card", description = "A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.",
 		url = "https://v4-alpha.getbootstrap.com/components/card/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSCard extends Div<BSCardChildren, BSCardAttributes, GlobalFeatures, BSCardEvents, BSCard>
+public class BSCard<J extends BSCard<J>> extends Div<BSCardChildren, BSCardAttributes, GlobalFeatures, BSCardEvents, J>
 {
 	
 	private static final long serialVersionUID = 1L;

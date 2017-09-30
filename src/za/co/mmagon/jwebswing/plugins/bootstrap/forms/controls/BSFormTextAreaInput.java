@@ -16,8 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls;
 
-import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
-import za.co.mmagon.jwebswing.base.html.attributes.TextAreaAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
@@ -25,7 +23,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  * @author GedMarc
  * @since 17 Jan 2017
  */
-public class BSFormTextAreaInput extends BSInput
+public class BSFormTextAreaInput extends BSInput<BSFormTextAreaInput>
 		implements BSFormGroupChildren
 {
 	
@@ -47,9 +45,11 @@ public class BSFormTextAreaInput extends BSInput
 	 */
 	public BSFormTextAreaInput(int linesToShow)
 	{
-		super(InputTypes.Text);
-		addAttribute(TextAreaAttributes.Rows, linesToShow);
+		addAttribute("rows", linesToShow + "");
 		addClass(BSComponentFormGroupOptions.Form_Control);
+		setTag("textarea");
+		setInlineClosingTag(false);
+		setClosingTag(true);
 	}
 	
 }
