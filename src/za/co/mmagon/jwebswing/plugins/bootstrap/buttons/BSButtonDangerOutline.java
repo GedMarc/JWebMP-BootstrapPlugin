@@ -25,7 +25,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons;
  * @version 1.0
  * @since 01 Jan 2017
  */
-public class BSButtonDangerOutline extends BSButton
+public class BSButtonDangerOutline<J extends BSButtonDangerOutline<J>> extends BSButton<J>
 {
 	
 	private static final long serialVersionUID = 1L;
