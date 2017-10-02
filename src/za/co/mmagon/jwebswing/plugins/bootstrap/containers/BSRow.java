@@ -35,7 +35,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  * @version 1.0
  * @since Oct 7, 2016
  */
-public class BSRow extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSRow> implements BSFormChildren, BSFormGroupChildren
+public class BSRow<J extends BSRow<J>> extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSRow<J>> implements BSFormChildren, BSFormGroupChildren
 {
 	
 	private static final long serialVersionUID = 1L;

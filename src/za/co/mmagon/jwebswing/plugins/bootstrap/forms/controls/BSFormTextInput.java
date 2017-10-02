@@ -24,7 +24,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
  * @author GedMarc
  * @since 15 Jan 2017
  */
-public class BSFormTextInput extends BSInput
+public class BSFormTextInput<J extends BSFormTextInput<J>> extends BSInput<J>
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -34,7 +34,6 @@ public class BSFormTextInput extends BSInput
 	 */
 	public BSFormTextInput()
 	{
-		
 		setInputType(InputTypes.Text);
 	}
 }
