@@ -23,6 +23,8 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
 
+import java.util.Objects;
+
 /**
  * An implementation of the bootstrap bar
  * <p>
@@ -153,7 +155,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	public final J setMin(double min)
 	{
 		this.min = min;
-		addAttribute(BSProgressBarDisplayAttributes.Aria_ValueMin, min + "");
+		addAttribute(BSProgressBarDisplayAttributes.Aria_ValueMin, Double.toString(min));
 		return (J) this;
 	}
 	
@@ -179,7 +181,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	public final J setMax(double max)
 	{
 		this.max = max;
-		addAttribute(BSProgressBarDisplayAttributes.Aria_ValueMax, max + "");
+		addAttribute(BSProgressBarDisplayAttributes.Aria_ValueMax, Double.toString(max));
 		return (J) this;
 	}
 	
@@ -205,7 +207,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	public final J setValue(double value)
 	{
 		this.value = value;
-		addAttribute(BSProgressBarDisplayAttributes.Aria_Valuenow, value + "");
+		addAttribute(BSProgressBarDisplayAttributes.Aria_Valuenow, Double.toString(value));
 		addAttribute(GlobalAttributes.Style, "width:" + value + "%;");
 		return (J) this;
 	}
@@ -302,11 +304,36 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		{
 			addClass(theme.getClassText());
 		}
-		else
-		{
-		
-		}
 		return (J) this;
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSProgressBarDisplay))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSProgressBarDisplay<?> that = (BSProgressBarDisplay<?>) o;
+		return Double.compare(that.getMin(), getMin()) == 0 &&
+				Double.compare(that.getMax(), getMax()) == 0 &&
+				Double.compare(that.getValue(), getValue()) == 0 &&
+				Objects.equals(getSpan(), that.getSpan()) &&
+				getTheme() == that.getTheme() &&
+				Objects.equals(getLabel(), that.getLabel());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getSpan(), getTheme(), getMin(), getMax(), getValue(), getLabel());
+	}
 }

@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.children.ListChildren;
 
+import java.util.Objects;
+
 /**
  * The indicators for the bootstrap carousel
  *
@@ -27,10 +29,12 @@ import za.co.mmagon.jwebswing.base.html.interfaces.children.ListChildren;
  * @version 1.0
  * @since 01 Jan 2017
  */
-public class BSCarouselIndicators extends List<ListChildren, NoAttributes, BSCarouselEvents, BSCarouselIndicators> implements BSCarouselChildren
+public class BSCarouselIndicators<J extends BSCarouselIndicators<J>>
+		extends List<ListChildren, NoAttributes, BSCarouselEvents, J> implements BSCarouselChildren
 {
 	
 	private static final long serialVersionUID = 1L;
+	
 	private final BSCarousel carousel;
 	
 	/**
@@ -51,19 +55,49 @@ public class BSCarouselIndicators extends List<ListChildren, NoAttributes, BSCar
 	@Override
 	public void init()
 	{
-		if (!isInitialized())
+		if (!isInitialized() && this.carousel != null)
 		{
-			if (this.carousel != null)
+			for (int i = 0; i < carousel.getSlides().size(); i++)
 			{
-				for (int i = 0; i < carousel.getSlides().size(); i++)
-				{
-					//BSCarouselItem slide = (BSCarouselItem) carousel.getSlides().get(i);
-					BSCarouselIndicatorItem newSlideIndicator = new BSCarouselIndicatorItem(carousel.getID(true), i, i == carousel.getActiveSlide());
-					add(newSlideIndicator);
-				}
+				BSCarouselIndicatorItem newSlideIndicator = new BSCarouselIndicatorItem(carousel.getID(true), i, i == carousel.getActiveSlide());
+				add(newSlideIndicator);
 			}
 		}
 		super.init();
 	}
 	
+	/**
+	 * Returns the associated carousel
+	 *
+	 * @return
+	 */
+	public BSCarousel getCarousel()
+	{
+		return carousel;
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselIndicators))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselIndicators<?> that = (BSCarouselIndicators<?>) o;
+		return Objects.equals(getCarousel(), that.getCarousel());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getCarousel());
+	}
 }

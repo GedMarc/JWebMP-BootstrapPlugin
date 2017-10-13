@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.panel;
 
 import za.co.mmagon.jwebswing.base.html.Span;
 
+import java.util.Objects;
+
 /**
  * A default Bootstrap panel with a header row that has an icon and title
  *
@@ -25,7 +27,7 @@ import za.co.mmagon.jwebswing.base.html.Span;
  * @version 1.0
  * @since Oct 9, 2016
  */
-public class BSPanelDefault extends BSPanel
+public class BSPanelDefault<J extends BSPanelDefault<J>> extends BSPanel<J>
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -46,6 +48,12 @@ public class BSPanelDefault extends BSPanel
 		super(BSPanelThemes.Default);
 	}
 	
+	/**
+	 * Constructs a new default panel with an icon and a title
+	 *
+	 * @param icon
+	 * @param title
+	 */
 	public BSPanelDefault(String icon, String title)
 	{
 		this();
@@ -80,12 +88,11 @@ public class BSPanelDefault extends BSPanel
 	 *
 	 * @param icon
 	 */
-	public void setIcon(String icon)
+	public J setIcon(String icon)
 	{
 		this.icon = icon;
+		return (J) this;
 	}
-	
-	//@TODO Glyphicons
 	
 	/**
 	 * Gets the title
@@ -102,8 +109,35 @@ public class BSPanelDefault extends BSPanel
 	 *
 	 * @param title
 	 */
-	public void setTitle(Span title)
+	public J setTitle(Span title)
 	{
 		this.title = title;
+		return (J) this;
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSPanelDefault))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSPanelDefault<?> that = (BSPanelDefault<?>) o;
+		return Objects.equals(getIcon(), that.getIcon()) &&
+				Objects.equals(getTitle(), that.getTitle());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getIcon(), getTitle());
 	}
 }

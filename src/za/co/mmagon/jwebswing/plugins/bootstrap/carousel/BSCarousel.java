@@ -27,6 +27,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Carousel
@@ -154,13 +155,11 @@ public class BSCarousel<J extends BSCarousel<J>>
 	@Override
 	public void preConfigure()
 	{
-		if (!isConfigured())
+		if (!isConfigured() && BootstrapPageConfigurator.isBootstrap4())
 		{
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				addClass("carousel slide");
-			}
+			addClass("carousel slide");
 		}
+		
 		super.preConfigure();
 	}
 	
@@ -377,7 +376,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	@Override
 	public J setInterval(int interval)
 	{
-		addAttribute("data-interval", interval + "");
+		addAttribute("data-interval", Integer.toString(interval));
 		return (J) this;
 	}
 	
@@ -391,7 +390,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	@Override
 	public J setKeyboard(boolean keyboard)
 	{
-		addAttribute("data-keyboard", keyboard + "");
+		addAttribute("data-keyboard", Boolean.toString(keyboard));
 		return (J) this;
 	}
 	
@@ -419,7 +418,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	@Override
 	public J setWrap(boolean wrap)
 	{
-		addAttribute("data-wrap", wrap + "");
+		addAttribute("data-wrap", Boolean.toString(wrap));
 		return (J) this;
 	}
 	
@@ -475,5 +474,30 @@ public class BSCarousel<J extends BSCarousel<J>>
 			
 		}
 		super.init();
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarousel))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarousel<?> carousel = (BSCarousel<?>) o;
+		return getComponent().equals(carousel.getComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getFeature());
 	}
 }

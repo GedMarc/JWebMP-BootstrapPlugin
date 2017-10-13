@@ -25,6 +25,7 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTy
 import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.BSAlertEvents;
 import za.co.mmagon.logger.LogFactory;
 
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -112,5 +113,30 @@ public abstract class BSAlertClosedEvent extends Event
 		{
 			LOG.log(Level.SEVERE, "Error In Firing Event", e);
 		}
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSAlertClosedEvent))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSAlertClosedEvent that = (BSAlertClosedEvent) o;
+		return getComponent().equals(that.getComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getDirective());
 	}
 }

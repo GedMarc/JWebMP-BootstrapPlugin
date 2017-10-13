@@ -68,7 +68,6 @@ public enum BSNavBarColourSchemes implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
-		return name;
+		return name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
 	}
 }

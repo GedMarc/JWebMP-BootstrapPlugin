@@ -33,11 +33,6 @@ public enum BSButtonGroupAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSButtonGroupAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

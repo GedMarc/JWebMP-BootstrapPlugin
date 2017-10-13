@@ -31,11 +31,6 @@ public enum BSDropDownAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSDropDownAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

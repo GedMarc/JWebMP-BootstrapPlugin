@@ -32,11 +32,6 @@ public enum BSButtonToolbarAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSButtonToolbarAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

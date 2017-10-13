@@ -21,10 +21,12 @@ import za.co.mmagon.jwebswing.Event;
 import za.co.mmagon.jwebswing.base.ajax.AjaxCall;
 import za.co.mmagon.jwebswing.base.ajax.AjaxResponse;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.BSAlertEvents;
 import za.co.mmagon.logger.LogFactory;
 
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,7 +35,7 @@ import java.util.logging.Logger;
  *
  * @author Marc Magon
  */
-public abstract class BSCarouselSlideEvent extends Event
+public abstract class BSCarouselSlideEvent<J extends BSCarouselSlideEvent<J>> extends Event<JavaScriptPart, J>
 		implements GlobalEvents, BSAlertEvents
 {
 	
@@ -112,5 +114,30 @@ public abstract class BSCarouselSlideEvent extends Event
 		{
 			LOG.log(Level.SEVERE, "Error In Firing Event", e);
 		}
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselSlideEvent))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselSlideEvent<?> that = (BSCarouselSlideEvent<?>) o;
+		return Objects.equals(getComponent(), that.getComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getDirective());
 	}
 }

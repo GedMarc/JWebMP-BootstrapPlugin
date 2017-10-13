@@ -29,7 +29,8 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * @version 1.0
  * @since 01 Jan 2017
  */
-public class BSCardBlockQuote extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSCardBlockQuote> implements BSCardChildren
+public class BSCardBlockQuote<J extends BSCardBlockQuote<J>>
+		extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J> implements BSCardChildren
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -39,6 +40,6 @@ public class BSCardBlockQuote extends Div<GlobalChildren, NoAttributes, GlobalFe
 	 */
 	public BSCardBlockQuote()
 	{
-	
+		//Not Needed
 	}
 }

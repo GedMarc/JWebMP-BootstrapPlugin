@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.modal;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
  * All the options for the tooltip library
@@ -29,20 +28,17 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
  * <p>
  * @since Mar 4, 2015
  */
-public class BSModalOptions extends JavaScriptPart
+public class BSModalOptions<J extends BSModalOptions<J>> extends JavaScriptPart<J>
 {
 	
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 *
+	 */
 	public BSModalOptions()
 	{
-	
-	}
-	
-	@Override
-	public JavascriptPartType getJavascriptType()
-	{
-		return JavascriptPartType.Javascript;
+		//Nothing Needed
 	}
 	
 }

@@ -27,6 +27,8 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 
+import java.util.Objects;
+
 /**
  * An implementation of the Bootstrap Toggle Feature
  * <p>
@@ -35,14 +37,24 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOpti
  * @author Marc Magon
  * @version 1.0
  * @since 29 Aug 2015
- * @deprecated Bootstrap 3 only
  */
-public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, BSToggleFeatures, BSToggleEvents, BSDropDownToggle>
+@SuppressWarnings("unused")
+public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggleChildren, BSToggleAttributes, BSToggleFeatures, BSToggleEvents, J>
 {
 	
 	private static final long serialVersionUID = 1L;
+	private static final String ToggleString = "dropdown";
+	/**
+	 * The feature for this toggle
+	 */
 	private BSToggleFeature feature;
+	/**
+	 * The title component for this drop down
+	 */
 	private Component title;
+	/**
+	 * A list of the contents for this drop down
+	 */
 	private List contents;
 	
 	/**
@@ -51,6 +63,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
 	 * @param titleItem Displays by default, clickable to show the contents
 	 * @param contents
 	 */
+	@SuppressWarnings("unused")
 	public BSDropDownToggle(Link titleItem, List contents)
 	{
 		addFeature(getFeature());
@@ -66,6 +79,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
 	 * @param titleItem Displays by default, clickable to show the contents
 	 * @param contents
 	 */
+	@SuppressWarnings("unused")
 	public BSDropDownToggle(Button titleItem, List contents)
 	{
 		addFeature(getFeature());
@@ -99,7 +113,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
 		{
 			getChildren().add(0, this.title);
 			this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-			title.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
+			title.addAttribute(ButtonAttributes.Data_Toggle, ToggleString);
 			if (contents != null)
 			{
 				title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
@@ -120,7 +134,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
 		{
 			getChildren().add(0, this.title);
 			this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
-			title.addAttribute(LinkAttributes.Data_Toggle, "dropdown");
+			title.addAttribute(LinkAttributes.Data_Toggle, ToggleString);
 			if (contents != null)
 			{
 				title.addAttribute(LinkAttributes.Data_Target, contents.getID(true));
@@ -151,7 +165,7 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
 		{
 			contents.addClass(BSComponentDropDownOptions.Dropdown_Menu);
 			contents.addClass("");
-			title.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
+			title.addAttribute(ButtonAttributes.Data_Toggle, ToggleString);
 			title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
 		}
 	}
@@ -180,5 +194,29 @@ public class BSDropDownToggle extends Div<BSToggleChildren, BSToggleAttributes, 
 	{
 		return getFeature().getOptions();
 	}
-
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSDropDownToggle))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSDropDownToggle<?> that = (BSDropDownToggle<?>) o;
+		return Objects.equals(getComponent(), that.getComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getContents());
+	}
 }

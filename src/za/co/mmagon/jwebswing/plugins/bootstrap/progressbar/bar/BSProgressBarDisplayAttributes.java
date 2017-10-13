@@ -35,11 +35,6 @@ public enum BSProgressBarDisplayAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSProgressBarDisplayAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

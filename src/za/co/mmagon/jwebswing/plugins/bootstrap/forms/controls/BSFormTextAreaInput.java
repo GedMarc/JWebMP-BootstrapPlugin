@@ -45,7 +45,7 @@ public class BSFormTextAreaInput extends BSInput<BSFormTextAreaInput>
 	 */
 	public BSFormTextAreaInput(int linesToShow)
 	{
-		addAttribute("rows", linesToShow + "");
+		addAttribute("rows", Integer.toString(linesToShow));
 		addClass(BSComponentFormGroupOptions.Form_Control);
 		setTag("textarea");
 		setInlineClosingTag(false);

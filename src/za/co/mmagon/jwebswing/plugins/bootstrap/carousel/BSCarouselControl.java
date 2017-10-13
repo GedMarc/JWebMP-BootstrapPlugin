@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 
+import java.util.Objects;
+
 /**
  * Defines a control for the bootstrap carousel
  *
@@ -143,5 +145,30 @@ public class BSCarouselControl extends Link
 		this.icon = icon;
 		
 		return this;
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselControl))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselControl that = (BSCarouselControl) o;
+		return Objects.equals(getComponent(), that.getComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getIcon());
 	}
 }

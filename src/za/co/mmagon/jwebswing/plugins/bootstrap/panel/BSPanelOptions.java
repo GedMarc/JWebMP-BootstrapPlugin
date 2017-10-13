@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.panel;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
  * All the options for the tooltip library
@@ -34,15 +33,12 @@ public class BSPanelOptions extends JavaScriptPart
 	
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * A new instance of the panel options
+	 */
 	public BSPanelOptions()
 	{
-	
-	}
-	
-	@Override
-	public JavascriptPartType getJavascriptType()
-	{
-		return JavascriptPartType.Javascript;
+		//Nothing needed
 	}
 	
 }

@@ -84,14 +84,14 @@ public enum BSComponentVerticalAlignmentOptions implements IBSComponentOptions
 	
 	BSComponentVerticalAlignmentOptions()
 	{
-	
+		//Nothing needed
 	}
 	
 	@JsonValue
 	@Override
 	public String toString()
 	{
-		String name = name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
-		return name;
+		return name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
+		
 	}
 }

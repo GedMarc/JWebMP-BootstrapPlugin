@@ -29,7 +29,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * @version 1.0
  * @since 2013/01/16
  */
-public class BSCarouselCycleFeature extends Feature<BSCarouselOptions, BSCarouselCycleFeature>
+@SuppressWarnings("unused")
+public class BSCarouselCycleFeature<J extends BSCarouselCycleFeature<J>>
+		extends Feature<BSCarouselOptions, J>
 		implements BSCarouselFeatures, GlobalFeatures
 {
 	
@@ -37,7 +39,7 @@ public class BSCarouselCycleFeature extends Feature<BSCarouselOptions, BSCarouse
 	/**
 	 * The method name to call
 	 */
-	private final String methodName = "cycle";
+	private static final String methodName = "cycle";
 	
 	/**
 	 * Constructs a new Carousel Feature - Cycle

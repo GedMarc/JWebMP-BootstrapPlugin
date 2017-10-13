@@ -7,13 +7,17 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSComponentInp
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberInput<J>
 {
 	private List<Span> before = new ArrayList<>();
 	private List<Span> after = new ArrayList<>();
 	
-	public BSNumberSpinner(BSComponentInputGroupOptions... size)
+	/**
+	 * Constructs a number spinner
+	 */
+	public BSNumberSpinner()
 	{
 		addClass("number-spinner");
 		
@@ -73,20 +77,60 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberI
 		return before;
 	}
 	
+	/**
+	 * Sets the before list of spans
+	 * @param before
+	 * @return
+	 */
 	public J setBefore(List<Span> before)
 	{
 		this.before = before;
 		return (J) this;
 	}
 	
+	/**
+	 * Returns the after span list
+	 * @return
+	 */
 	public List<Span> getAfter()
 	{
 		return after;
 	}
 	
+	/**
+	 * Sets the after list
+	 * @param after
+	 * @return
+	 */
 	public J setAfter(List<Span> after)
 	{
 		this.after = after;
 		return (J) this;
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSNumberSpinner))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSNumberSpinner<?> that = (BSNumberSpinner<?>) o;
+		return Objects.equals(getBefore(), that.getBefore()) &&
+				Objects.equals(getAfter(), that.getAfter());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getBefore(), getAfter());
 	}
 }

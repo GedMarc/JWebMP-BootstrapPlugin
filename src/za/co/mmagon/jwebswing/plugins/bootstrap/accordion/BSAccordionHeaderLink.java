@@ -32,6 +32,7 @@ public class BSAccordionHeaderLink extends Link<BSAccordionHeaderLink>
 	 */
 	public BSAccordionHeaderLink()
 	{
+		//Nothing Needed
 	}
 	
 }

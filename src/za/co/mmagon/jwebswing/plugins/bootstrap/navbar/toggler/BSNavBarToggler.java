@@ -39,7 +39,7 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 	/**
 	 * The specified screen reader aria label to apply when creating the div
 	 */
-	private static String ARIA_LABEL = "Toggle Navigation";
+	private static String AriaLabel = "Toggle Navigation";
 	
 	private String iconClass = BSComponentNavBarOptions.Navbar_Toggler_Icon.toString();
 	
@@ -59,19 +59,19 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 	 *
 	 * @return
 	 */
-	public static String getARIA_LABEL()
+	public static String getAriaLabel()
 	{
-		return ARIA_LABEL;
+		return AriaLabel;
 	}
 	
 	/**
 	 * sets the screen reader aria label
 	 *
-	 * @param ARIA_LABEL
+	 * @param ari
 	 */
-	public static void setARIA_LABEL(String ARIA_LABEL)
+	public static void setAriaLabel(String ariaLabel)
 	{
-		BSNavBarToggler.ARIA_LABEL = ARIA_LABEL;
+		BSNavBarToggler.AriaLabel = ariaLabel;
 	}
 	
 	/**
@@ -101,7 +101,7 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 		addAttribute(ButtonAttributes.Data_Target, div.getID(true));
 		addAttribute(GlobalAttributes.Aria_Controls, div.getID());
 		addAttribute(GlobalAttributes.Aria_Expanded, "false");
-		addAttribute(GlobalAttributes.Aria_Label, ARIA_LABEL);
+		addAttribute(GlobalAttributes.Aria_Label, AriaLabel);
 		addAttribute(GlobalAttributes.Type, "button");
 		
 		BootstrapPageConfigurator.setRequired(this, true);

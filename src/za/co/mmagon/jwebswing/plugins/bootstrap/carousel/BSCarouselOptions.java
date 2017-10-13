@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.carousel;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
  * All the options for the tooltip library
@@ -34,15 +33,11 @@ public class BSCarouselOptions extends JavaScriptPart
 	
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * A list of carousel options
+	 */
 	public BSCarouselOptions()
 	{
-	
+		//Nothing needed
 	}
-	
-	@Override
-	public JavascriptPartType getJavascriptType()
-	{
-		return JavascriptPartType.Javascript;
-	}
-	
 }

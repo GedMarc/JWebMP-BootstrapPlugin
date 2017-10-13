@@ -16,18 +16,23 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 
-import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.DivSimple;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
+
+import java.util.Objects;
 
 /**
  * @author GedMarc
  * @since 20 Feb 2017
  */
-public class BSAccordionCollapsingContent extends Div
+public class BSAccordionCollapsingContent<J extends BSAccordionCollapsingContent<J>> extends DivSimple<J>
 		implements BSCardChildren
 {
 	
 	private static final long serialVersionUID = 1L;
+	/**
+	 * The physical accordion content
+	 */
 	private BSAccordionContent accordionContent;
 	
 	/**
@@ -64,4 +69,28 @@ public class BSAccordionCollapsingContent extends Div
 		super.init();
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSAccordionCollapsingContent))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSAccordionCollapsingContent that = (BSAccordionCollapsingContent) o;
+		return Objects.equals(getAccordionContent(), that.getAccordionContent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getAccordionContent());
+	}
 }

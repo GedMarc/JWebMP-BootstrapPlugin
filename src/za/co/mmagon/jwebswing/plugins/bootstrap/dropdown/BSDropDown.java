@@ -30,6 +30,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupAttr
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
 
+import java.util.Objects;
+
 /**
  * Dropdowns
  * <p>
@@ -220,5 +222,31 @@ public class BSDropDown<J extends BSDropDown<J>>
 			}
 		}
 		super.preConfigure();
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSDropDown))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSDropDown<?> that = (BSDropDown<?>) o;
+		return Objects.equals(getDropdownButton(), that.getDropdownButton()) &&
+				Objects.equals(getDropdownMenu(), that.getDropdownMenu());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getDropdownButton(), getDropdownMenu());
 	}
 }

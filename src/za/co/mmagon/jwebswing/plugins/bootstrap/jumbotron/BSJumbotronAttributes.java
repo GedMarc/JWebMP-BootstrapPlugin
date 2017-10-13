@@ -33,17 +33,6 @@ public enum BSJumbotronAttributes implements AttributeDefinitions
 	BSJumbotronAttributes()
 	{
 	}
-	
-	/**
-	 * If the attribute is loaded as a keyword only
-	 *
-	 * @param isKeyword
-	 */
-	BSJumbotronAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	/**
 	 * If the attribute is a keyword
 	 *

@@ -31,11 +31,6 @@ public enum BSMediaAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSMediaAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

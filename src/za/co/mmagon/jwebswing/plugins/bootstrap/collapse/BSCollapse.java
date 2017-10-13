@@ -39,8 +39,12 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
 		url = "https://v4-alpha.getbootstrap.com/components/collapse/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCollapse
 {
-	
+	private static final String Collapse = "collapse";
 	private static final long serialVersionUID = 1L;
+	
+	BSCollapse()
+	{
+	}
 	
 	/**
 	 * Apply a collapse to given components
@@ -49,11 +53,11 @@ public class BSCollapse
 	 * @param display
 	 * @param hideOnStart
 	 */
-	public BSCollapse(Link linkController, ComponentHierarchyBase display, boolean hideOnStart)
+	public static void link(Link linkController, ComponentHierarchyBase display, boolean hideOnStart)
 	{
 		if (display != null)
 		{
-			display.addClass("collapse");
+			display.addClass(Collapse);
 			if (!hideOnStart)
 			{
 				if (!BootstrapPageConfigurator.isBootstrap4())
@@ -69,7 +73,7 @@ public class BSCollapse
 			linkController.addAttribute(LinkAttributes.Data_Target.toString(), display.getID(true));
 		}
 		
-		linkController.addAttribute(LinkAttributes.Data_Toggle, "collapse");
+		linkController.addAttribute(LinkAttributes.Data_Toggle, Collapse);
 		linkController.addAttribute(GlobalAttributes.Aria_Expanded, Boolean.toString(!hideOnStart));
 		
 	}
@@ -81,11 +85,11 @@ public class BSCollapse
 	 * @param display
 	 * @param hideOnStart
 	 */
-	public BSCollapse(Button buttonController, ComponentHierarchyBase display, boolean hideOnStart)
+	public static void link(Button buttonController, ComponentHierarchyBase display, boolean hideOnStart)
 	{
 		if (display != null)
 		{
-			display.addClass("collapse");
+			display.addClass(Collapse);
 			if (!hideOnStart)
 			{
 				display.addClass("in");
@@ -95,7 +99,7 @@ public class BSCollapse
 			buttonController.addAttribute("data-target", display.getID(true));
 		}
 		
-		buttonController.addAttribute("data-toggle", "collapse");
+		buttonController.addAttribute("data-toggle", Collapse);
 		buttonController.addAttribute("aria-expanded", Boolean.toString(!hideOnStart));
 	}
 }

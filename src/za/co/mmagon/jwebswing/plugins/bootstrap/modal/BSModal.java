@@ -26,6 +26,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentClos
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 
+import java.util.Objects;
+
 /**
  * Modal Modals are streamlined, but flexible dialog prompts powered by JavaScript. They support a number of use cases from user notification to completely custom content and feature a handful of
  * helpful subcomponents, sizes, and more.
@@ -392,5 +394,34 @@ public class BSModal<J extends BSModal<J>>
 	{
 		addAttribute(BSModalAttributes.Data_Show, show);
 		return (J) this;
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSModal))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSModal<?> bsModal = (BSModal<?>) o;
+		return Objects.equals(getModalDialog(), bsModal.getModalDialog()) &&
+				Objects.equals(getModalContent(), bsModal.getModalContent()) &&
+				Objects.equals(getModalHeader(), bsModal.getModalHeader()) &&
+				Objects.equals(getModalBody(), bsModal.getModalBody()) &&
+				Objects.equals(getModalFooter(), bsModal.getModalFooter());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getModalDialog(), getModalContent(), getModalHeader(), getModalBody(), getModalFooter());
 	}
 }

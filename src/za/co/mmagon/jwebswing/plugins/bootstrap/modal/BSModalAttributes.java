@@ -37,11 +37,6 @@ public enum BSModalAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSModalAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

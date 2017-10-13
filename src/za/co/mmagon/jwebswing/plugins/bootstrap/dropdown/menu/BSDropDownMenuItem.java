@@ -22,6 +22,8 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 
+import java.util.Objects;
+
 /**
  * A Drop Down Menu Item
  *
@@ -32,6 +34,9 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 {
 	
 	private static final long serialVersionUID = 1L;
+	/**
+	 * The class string for the icon
+	 */
 	private String iconClass;
 	
 	public BSDropDownMenuItem()
@@ -108,4 +113,15 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 		super.preConfigure();
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getIconClass());
+	}
 }

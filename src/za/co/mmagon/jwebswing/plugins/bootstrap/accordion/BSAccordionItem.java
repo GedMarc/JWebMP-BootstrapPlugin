@@ -22,28 +22,50 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardHeader;
 import za.co.mmagon.jwebswing.plugins.bootstrap.collapse.BSCollapse;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
+
 /**
  * A specific item for the Accordion, built as a card
  *
  * @author GedMarc
  * @since 20 Feb 2017
  */
-public class BSAccordionItem extends BSCard implements BSAccordionChildren
+public class BSAccordionItem<J extends BSAccordionItem<J>>
+		extends BSCard<J> implements BSAccordionChildren
 {
 	
 	private static final long serialVersionUID = 1L;
-	
+	/**
+	 * The accordion header
+	 */
 	private BSAccordionHeader accordionHeader;
+	/**
+	 * The accordion collapsing content
+	 */
 	private BSAccordionCollapsingContent accordionCollapsingContent;
-	
+	/**
+	 * The card header
+	 */
 	private BSCardHeader cardHeader;
-	
+	/**
+	 * If this item is rendered as active
+	 */
 	private boolean active;
 	
+	/**
+	 * Construct a new accordion item
+	 */
 	public BSAccordionItem()
 	{
 	}
 	
+	/**
+	 * Gets the accordion header
+	 *
+	 * @return
+	 */
+	@NotNull
 	public BSAccordionHeader getAccordionHeader()
 	{
 		if (accordionHeader == null)
@@ -53,11 +75,22 @@ public class BSAccordionItem extends BSCard implements BSAccordionChildren
 		return accordionHeader;
 	}
 	
+	/**
+	 * Sets the accordion header
+	 *
+	 * @param accordionHeader
+	 */
+	@SuppressWarnings("unused")
 	public void setAccordionHeader(BSAccordionHeader accordionHeader)
 	{
 		this.accordionHeader = accordionHeader;
 	}
 	
+	/**
+	 * The collapsing content for the accordion item
+	 * @return
+	 */
+	@NotNull
 	public BSAccordionCollapsingContent getAccordionCollapsingContent()
 	{
 		if (accordionCollapsingContent == null)
@@ -67,6 +100,11 @@ public class BSAccordionItem extends BSCard implements BSAccordionChildren
 		return accordionCollapsingContent;
 	}
 	
+	/**
+	 * Sets the accordion collapsing content
+	 * @param accordionCollapsingContent
+	 */
+	@SuppressWarnings("unused")
 	public void setAccordionCollapsingContent(BSAccordionCollapsingContent accordionCollapsingContent)
 	{
 		this.accordionCollapsingContent = accordionCollapsingContent;
@@ -81,6 +119,10 @@ public class BSAccordionItem extends BSCard implements BSAccordionChildren
 		return cardHeader;
 	}
 	
+	/**
+	 * Sets the card header for this accordion item
+	 * @param cardHeader
+	 */
 	public void setCardHeader(BSCardHeader cardHeader)
 	{
 		this.cardHeader = cardHeader;
@@ -134,20 +176,37 @@ public class BSAccordionItem extends BSCard implements BSAccordionChildren
 			
 			getAccordionCollapsingContent().addAttribute(BSAccordionAttributes.Role, "tabpanel");
 			getAccordionCollapsingContent().addAttribute(GlobalAttributes.Aria_LabelledBy, getCardHeader().getID());
-			new BSCollapse(getAccordionHeader().getAccordionHeaderLink(), getAccordionCollapsingContent().getAccordionContent(), true);
+			
+			BSCollapse.link(getAccordionHeader().getAccordionHeaderLink(), getAccordionCollapsingContent().getAccordionContent(), true);
 			
 		}
 		super.init();
 	}
 	
 	@Override
-	public void preConfigure()
+	public boolean equals(Object o)
 	{
-		if (!isConfigured())
+		if (this == o)
 		{
-		
+			return true;
 		}
-		super.preConfigure();
+		if (!(o instanceof BSAccordionItem))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSAccordionItem<?> that = (BSAccordionItem<?>) o;
+		return Objects.equals(getAccordionHeader(), that.getAccordionHeader()) &&
+				Objects.equals(getAccordionCollapsingContent(), that.getAccordionCollapsingContent()) &&
+				Objects.equals(getCardHeader(), that.getCardHeader());
 	}
 	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getAccordionHeader(), getAccordionCollapsingContent(), getCardHeader());
+	}
 }

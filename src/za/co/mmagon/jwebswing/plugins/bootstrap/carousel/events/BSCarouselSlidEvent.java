@@ -21,6 +21,7 @@ import za.co.mmagon.jwebswing.Event;
 import za.co.mmagon.jwebswing.base.ajax.AjaxCall;
 import za.co.mmagon.jwebswing.base.ajax.AjaxResponse;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.BSAlertEvents;
 import za.co.mmagon.logger.LogFactory;
@@ -33,7 +34,7 @@ import java.util.logging.Logger;
  *
  * @author Marc Magon
  */
-public abstract class BSCarouselSlidEvent extends Event
+public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> extends Event<JavaScriptPart, J>
 		implements GlobalEvents, BSAlertEvents
 {
 	
@@ -42,6 +43,9 @@ public abstract class BSCarouselSlidEvent extends Event
 	 */
 	private static final Logger LOG = LogFactory.getInstance().getLogger("BSCarouselSlidEvent");
 	private static final long serialVersionUID = 1L;
+	/**
+	 * The associated directive
+	 */
 	private BSCarouselSlideEventDirective directive;
 	
 	/**

@@ -25,6 +25,8 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
+import java.util.Objects;
+
 /**
  * Media object
  * <p>
@@ -239,4 +241,31 @@ public class BSMedia<J extends BSMedia<J>>
 		return this;
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSMedia))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSMedia<?> bsMedia = (BSMedia<?>) o;
+		return Objects.equals(getMediaLink(), bsMedia.getMediaLink()) &&
+				Objects.equals(getMediaBody(), bsMedia.getMediaBody()) &&
+				Objects.equals(getMediaHeader(), bsMedia.getMediaHeader()) &&
+				Objects.equals(getMediaComponent(), bsMedia.getMediaComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getMediaLink(), getMediaBody(), getMediaHeader(), getMediaComponent());
+	}
 }

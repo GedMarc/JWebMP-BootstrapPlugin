@@ -29,7 +29,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * @version 1.0
  * @since 2013/01/16
  */
-public class BSCarouselNextFeature extends Feature<BSCarouselOptions, BSCarouselNextFeature>
+public class BSCarouselNextFeature<J extends BSCarouselNextFeature<J>>
+		extends Feature<BSCarouselOptions, J>
 		implements BSCarouselFeatures, GlobalFeatures
 {
 	
@@ -37,7 +38,7 @@ public class BSCarouselNextFeature extends Feature<BSCarouselOptions, BSCarousel
 	/**
 	 * The method name to call
 	 */
-	private final String methodName = "next";
+	private static final String methodName = "next";
 	
 	/**
 	 * Cycles to the next item.

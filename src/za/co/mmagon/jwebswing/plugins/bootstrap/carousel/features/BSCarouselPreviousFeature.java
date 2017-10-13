@@ -22,6 +22,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarousel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselFeatures;
 import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
 
+import java.util.Objects;
+
 /**
  * Cycles to the previous item.
  *
@@ -29,7 +31,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * @version 1.0
  * @since 2013/01/16
  */
-public class BSCarouselPreviousFeature extends Feature<BSCarouselOptions, BSCarouselPreviousFeature>
+public class BSCarouselPreviousFeature<J extends BSCarouselPreviousFeature<J>>
+		extends Feature<BSCarouselOptions, J>
 		implements BSCarouselFeatures, GlobalFeatures
 {
 	
@@ -37,7 +40,7 @@ public class BSCarouselPreviousFeature extends Feature<BSCarouselOptions, BSCaro
 	/**
 	 * The method name to call
 	 */
-	private final String methodName = "prev";
+	private static final String methodName = "prev";
 	
 	/**
 	 * Cycles to the previous item.
@@ -58,5 +61,30 @@ public class BSCarouselPreviousFeature extends Feature<BSCarouselOptions, BSCaro
 		requiredString += methodName;
 		requiredString += "');" + getNewLine();
 		addQuery(requiredString);
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselPreviousFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselPreviousFeature that = (BSCarouselPreviousFeature) o;
+		return Objects.equals(methodName, that.methodName);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), methodName);
 	}
 }

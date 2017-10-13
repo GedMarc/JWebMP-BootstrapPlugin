@@ -52,7 +52,6 @@ public enum BSNavBarPositioning implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		String name = "navbar-" + name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
-		return name;
+		return "navbar-" + name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
 	}
 }

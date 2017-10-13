@@ -39,13 +39,13 @@ import java.util.List;
  * <p>
  * Zero-length title and content values will never show a popover.
  * <p>
- * Specify container: 'body' to avoid rendering problems in more complex components (like our input groups, button groups, etc).
+ * Specify container: 'body' to aJ rendering problems in more complex components (like our input groups, button groups, etc).
  * <p>
  * Triggering popovers on hidden elements will not work.
  * <p>
  * Popovers for .disabled or disabled elements must be triggered on a wrapper element.
  * <p>
- * When triggered from hyperlinks that span multiple lines, popovers will be centered. Use white-space: nowrap; on your as to avoid this behavior.
+ * When triggered from hyperlinks that span multiple lines, popovers will be centered. Use white-space: nowrap; on your as to aJ this behavior.
  * <p>
  * <p>
  * Got all that? Great, let’s see how they work with some examples.
@@ -57,7 +57,7 @@ import java.util.List;
  * <p>
  * @since Mar 4, 2015
  */
-public class BSPopOverOptions extends JavaScriptPart
+public class BSPopOverOptions<J extends BSPopOverOptions<J>> extends JavaScriptPart<J>
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -151,20 +151,20 @@ public class BSPopOverOptions extends JavaScriptPart
 	 * <p>
 	 * Zero-length title and content values will never show a popover.
 	 * <p>
-	 * Specify container: 'body' to avoid rendering problems in more complex components (like our input groups, button groups, etc).
+	 * Specify container: 'body' to aJ rendering problems in more complex components (like our input groups, button groups, etc).
 	 * <p>
 	 * Triggering popovers on hidden elements will not work.
 	 * <p>
 	 * Popovers for .disabled or disabled elements must be triggered on a wrapper element.
 	 * <p>
-	 * When triggered from hyperlinks that span multiple lines, popovers will be centered. Use white-space: nowrap; on your as to avoid this behavior.
+	 * When triggered from hyperlinks that span multiple lines, popovers will be centered. Use white-space: nowrap; on your as to aJ this behavior.
 	 * <p>
 	 * <p>
 	 * Got all that? Great, let’s see how they work with some examples.
 	 */
 	public BSPopOverOptions()
 	{
-	
+		//Nothing needed
 	}
 	
 	/**
@@ -182,9 +182,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param animation
 	 */
-	public void setAnimation(Boolean animation)
+	public J setAnimation(Boolean animation)
 	{
 		this.animation = animation;
+		return (J) this;
 	}
 	
 	/**
@@ -202,9 +203,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param content
 	 */
-	public void setContent(String content)
+	public J setContent(String content)
 	{
 		this.content = content;
+		return (J) this;
 	}
 	
 	/**
@@ -224,9 +226,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param container
 	 */
-	public void setContainer(String container)
+	public J setContainer(String container)
 	{
 		this.container = container;
+		return (J) this;
 	}
 	
 	/**
@@ -248,9 +251,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param constraints
 	 */
-	public void setConstraints(List<String> constraints)
+	public J setConstraints(List<String> constraints)
 	{
 		this.constraints = constraints;
+		return (J) this;
 	}
 	
 	/**
@@ -276,9 +280,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param delay
 	 */
-	public void setDelay(Integer delay)
+	public J setDelay(Integer delay)
 	{
 		this.delay = delay;
+		return (J) this;
 	}
 	
 	/**
@@ -300,9 +305,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param html
 	 */
-	public void setHtml(Boolean html)
+	public J setHtml(Boolean html)
 	{
 		this.html = html;
+		return (J) this;
 	}
 	
 	/**
@@ -328,9 +334,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param placement
 	 */
-	public void setPlacement(String placement)
+	public J setPlacement(String placement)
 	{
 		this.placement = placement;
+		return (J) this;
 	}
 	
 	/**
@@ -350,9 +357,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param selector
 	 */
-	public void setSelector(String selector)
+	public J setSelector(String selector)
 	{
 		this.selector = selector;
+		return (J) this;
 	}
 	
 	/**
@@ -386,9 +394,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param template
 	 */
-	public void setTemplate(String template)
+	public J setTemplate(String template)
 	{
 		this.template = template;
+		return (J) this;
 	}
 	
 	/**
@@ -410,9 +419,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param title
 	 */
-	public void setTitle(String title)
+	public J setTitle(String title)
 	{
 		this.title = title;
+		return (J) this;
 	}
 	
 	/**
@@ -430,9 +440,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param trigger
 	 */
-	public void setTrigger(String trigger)
+	public J setTrigger(String trigger)
 	{
 		this.trigger = trigger;
+		return (J) this;
 	}
 	
 	/**
@@ -450,9 +461,10 @@ public class BSPopOverOptions extends JavaScriptPart
 	 *
 	 * @param offset
 	 */
-	public void setOffset(String offset)
+	public J setOffset(String offset)
 	{
 		this.offset = offset;
+		return (J) this;
 	}
 	
 	/**

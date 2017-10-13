@@ -28,6 +28,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * An implementation of the bootstrap panel layout.
@@ -36,11 +37,10 @@ import java.util.Iterator;
  * @author Marc Magon
  * @version 1.0
  * @since 29 Aug 2015
- * @deprecated for bootstrap 4, rather use bootstrap cards
  */
 @ComponentInformation(name = "Bootstrap Panel", description = "Panels can be used with bootstrap 3",
 		url = "https://v4-alpha.getbootstrap.com/components/cards/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, BSPanel>
+public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, J>
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -98,17 +98,25 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
 			
 			if (this.panelFooter != null)
 			{
-				if (footerIsLink)
-				{
-					for (Iterator it = panelFooter.getChildren().iterator(); it.hasNext(); )
-					{
-						ComponentHierarchyBase comp = (ComponentHierarchyBase) it.next();
-						comp.addClass("panel-footer");
-					}
-				}
+				configureFooter();
 			}
 		}
 		super.preConfigure();
+	}
+	
+	/**
+	 * Configures the footer
+	 */
+	private void configureFooter()
+	{
+		if (footerIsLink)
+		{
+			for (Iterator it = panelFooter.getChildren().iterator(); it.hasNext(); )
+			{
+				ComponentHierarchyBase comp = (ComponentHierarchyBase) it.next();
+				comp.addClass("panel-footer");
+			}
+		}
 	}
 	
 	public final BSPanelFeature getFeature()
@@ -209,7 +217,7 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
 		this.panelFooter = panelFooter;
 		if (this.panelFooter != null)
 		{
-			//this.panelFooter.addClass("panel-footer");
+			this.panelFooter.addClass("panel-footer");
 		}
 		this.footerIsLink = true;
 	}
@@ -309,4 +317,33 @@ public class BSPanel extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatu
 		getPanelHeaderButtonBar().add(dropDownContent);
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSPanel))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSPanel<?> bsPanel = (BSPanel<?>) o;
+		return footerIsLink == bsPanel.footerIsLink &&
+				Objects.equals(getPanelHeaderButtonBar(), bsPanel.getPanelHeaderButtonBar()) &&
+				Objects.equals(getPanelHeader(), bsPanel.getPanelHeader()) &&
+				Objects.equals(getPanelBody(), bsPanel.getPanelBody()) &&
+				Objects.equals(getPanelFooter(), bsPanel.getPanelFooter()) &&
+				getTheme() == bsPanel.getTheme();
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getPanelHeaderButtonBar(), getPanelHeader(), getPanelBody(), footerIsLink, getPanelFooter(), getTheme());
+	}
 }

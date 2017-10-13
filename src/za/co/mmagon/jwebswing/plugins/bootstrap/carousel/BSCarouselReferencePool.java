@@ -38,11 +38,6 @@ public enum BSCarouselReferencePool implements ReferencePool
 	{
 	}
 	
-	BSCarouselReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
-	{
-		this.javaScriptReference = javaScriptReference;
-		this.cssReference = cssReference;
-	}
 	
 	@Override
 	public JavascriptReference getJavaScriptReference()

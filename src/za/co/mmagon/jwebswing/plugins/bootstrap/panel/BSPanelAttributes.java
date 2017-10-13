@@ -31,11 +31,6 @@ public enum BSPanelAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSPanelAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

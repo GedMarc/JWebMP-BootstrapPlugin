@@ -33,11 +33,6 @@ public enum BSAccordionAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSAccordionAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

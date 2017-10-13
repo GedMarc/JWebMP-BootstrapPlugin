@@ -35,16 +35,6 @@ public enum BSListGroupAttributes implements AttributeDefinitions
 	}
 	
 	/**
-	 * If the attribute is loaded as a keyword only
-	 *
-	 * @param isKeyword
-	 */
-	BSListGroupAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
-	/**
 	 * If the attribute is a keyword
 	 *
 	 * @return

@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 
+import java.util.Objects;
+
 /**
  * Adds on a Carousel Feature, String for custom text using header theme, Div for custom contents
  *
@@ -27,7 +29,8 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
  * @version 1.0
  * @since 2013/01/16
  */
-public class BSCarouselFeature extends Feature<BSCarouselOptions, BSCarouselFeature> implements BSCarouselFeatures, GlobalFeatures
+public class BSCarouselFeature<J extends BSCarouselFeature<J>>
+		extends Feature<BSCarouselOptions, J> implements BSCarouselFeatures, GlobalFeatures
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -71,5 +74,30 @@ public class BSCarouselFeature extends Feature<BSCarouselOptions, BSCarouselFeat
 		requiredString += getOptions().toString();
 		requiredString += ");" + getNewLine();
 		addQuery(requiredString);
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselFeature<?> that = (BSCarouselFeature<?>) o;
+		return Objects.equals(getOptions(), that.getOptions());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getOptions());
 	}
 }

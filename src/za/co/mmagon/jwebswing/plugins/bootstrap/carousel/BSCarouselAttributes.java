@@ -31,11 +31,6 @@ public enum BSCarouselAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSCarouselAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

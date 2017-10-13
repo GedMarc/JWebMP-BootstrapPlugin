@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 
+import java.util.Objects;
+
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
  *
@@ -31,7 +33,9 @@ public class BSModalFeature extends Feature<BSModalOptions, BSModalFeature> impl
 {
 	
 	private static final long serialVersionUID = 1L;
-	
+	/**
+	 * The options for the modal
+	 */
 	private BSModalOptions options;
 	
 	/**
@@ -44,8 +48,6 @@ public class BSModalFeature extends Feature<BSModalOptions, BSModalFeature> impl
 	{
 		super("BSModalFeature");
 		setComponent(forComponent);
-		// getJavascriptReferences().add(JQXReferencePool.Core.getJavaScriptReference());
-		// getCssReferences().add(JQXReferencePool.Core.getCssReference());
 	}
 	
 	/**
@@ -67,9 +69,30 @@ public class BSModalFeature extends Feature<BSModalOptions, BSModalFeature> impl
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		String requiredString = getComponent().getJQueryID() + "blank(";
-		requiredString += getOptions().toString();
-		requiredString += ");" + getNewLine();
-		//addQuery(requiredString);
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSModalFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSModalFeature that = (BSModalFeature) o;
+		return Objects.equals(getOptions(), that.getOptions());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getOptions());
 	}
 }

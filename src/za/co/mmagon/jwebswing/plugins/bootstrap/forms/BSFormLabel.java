@@ -18,7 +18,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.forms;
 
 import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.Label;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
 /**
@@ -42,8 +41,6 @@ public class BSFormLabel<J extends BSFormLabel<J>>
 	public BSFormLabel()
 	{
 		this(null);
-		BootstrapPageConfigurator.setRequired(this, true);
-		addClass("control-label");
 	}
 	
 	/**
@@ -54,8 +51,6 @@ public class BSFormLabel<J extends BSFormLabel<J>>
 	public BSFormLabel(String label)
 	{
 		this(label, null);
-		BootstrapPageConfigurator.setRequired(this, true);
-		addClass("control-label");
 	}
 	
 	/**
@@ -68,7 +63,6 @@ public class BSFormLabel<J extends BSFormLabel<J>>
 	{
 		super(label, forInputComponent);
 		addClass(BSComponentFormOptions.Col_Form_Label);
-		BootstrapPageConfigurator.setRequired(this, true);
 		addClass("control-label");
 	}
 

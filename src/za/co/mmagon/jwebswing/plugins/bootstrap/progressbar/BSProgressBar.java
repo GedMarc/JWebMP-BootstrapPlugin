@@ -21,6 +21,8 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.progressbar.bar.BSProgressBarDisplay;
 
+import java.util.Objects;
+
 /**
  * Progress
  * <p>
@@ -269,4 +271,32 @@ public class BSProgressBar<J extends BSProgressBar<J>>
 		}
 	}
 	
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSProgressBar))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSProgressBar<?> that = (BSProgressBar<?>) o;
+		return isStriped() == that.isStriped() &&
+				isActive() == that.isActive() &&
+				isAnimated() == that.isAnimated() &&
+				Objects.equals(getProgressBar(), that.getProgressBar());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), isStriped(), isActive(), isAnimated(), getProgressBar());
+	}
 }

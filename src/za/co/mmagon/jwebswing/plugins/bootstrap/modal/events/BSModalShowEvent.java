@@ -21,9 +21,11 @@ import za.co.mmagon.jwebswing.Event;
 import za.co.mmagon.jwebswing.base.ajax.AjaxCall;
 import za.co.mmagon.jwebswing.base.ajax.AjaxResponse;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.logger.LogFactory;
 
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,7 +34,7 @@ import java.util.logging.Logger;
  *
  * @author Marc Magon
  */
-public abstract class BSModalShowEvent extends Event
+public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>> extends Event<JavaScriptPart, J>
 		implements GlobalEvents
 {
 	
@@ -63,7 +65,7 @@ public abstract class BSModalShowEvent extends Event
 		if (!isConfigured())
 		{
 			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-			component.addAttribute("ng-show-bootstap-modal", "perform($event," + renderVariables() + ");");
+			component.addAttribute("ng-show-bootstrap-modal", "perform($event," + renderVariables() + ");");
 		}
 		super.preConfigure();
 	}
@@ -112,5 +114,30 @@ public abstract class BSModalShowEvent extends Event
 		{
 			LOG.log(Level.SEVERE, "Error In Firing Event", e);
 		}
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSModalShowEvent))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSModalShowEvent<?> that = (BSModalShowEvent<?>) o;
+		return Objects.equals(getComponent(), that.getComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getDirective());
 	}
 }

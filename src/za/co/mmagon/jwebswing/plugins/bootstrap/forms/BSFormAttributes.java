@@ -31,11 +31,6 @@ public enum BSFormAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSFormAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

@@ -32,7 +32,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
  */
 @ComponentInformation(name = "Bootstrap Breadcrumbs", description = "Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.",
 		url = "https://v4-alpha.getbootstrap.com/components/breadcrumb/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSBreadcrumbs extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttributes, BSBreadcrumbsEvents, BSBreadcrumbs>
+public class BSBreadcrumbs<J extends BSBreadcrumbs<J>> extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttributes, BSBreadcrumbsEvents, J>
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -54,25 +54,10 @@ public class BSBreadcrumbs extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttr
 	{
 		if (!isConfigured())
 		{
-			getChildren().forEach(next ->
-			                      {
-				                      next.removeClass(BSComponentBreadcrumbOptions.Active);
-			                      });
+			getChildren().forEach(next -> next.removeClass(BSComponentBreadcrumbOptions.Active));
 			getChildren().get(getChildren().size() - 1).addClass(BSComponentBreadcrumbOptions.Active);
 		}
 		super.preConfigure();
-	}
-	
-	/**
-	 * Convenience method for quick access
-	 *
-	 * @param crumb
-	 *
-	 * @return
-	 */
-	public BSBreadcrumbs add(BSBreadcrumb crumb)
-	{
-		return super.add(crumb);
 	}
 	
 	@Override

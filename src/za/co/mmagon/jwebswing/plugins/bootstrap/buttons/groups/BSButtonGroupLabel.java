@@ -19,6 +19,9 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButton;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonChildren;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  * @param <J>
  * @param <I>
@@ -26,7 +29,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonChildren;
  * @author GedMarc
  * @since 16 Feb 2017
  */
-public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BSButtonChildren & IBSButtonGroupInput>
+public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BSButtonChildren & IBSButtonGroupInput & Serializable>
 		extends BSButton<J>
 		implements BSButtonGroupChildren
 {
@@ -83,4 +86,28 @@ public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BS
 		this.input = input;
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSButtonGroupLabel))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSButtonGroupLabel<?, ?> that = (BSButtonGroupLabel<?, ?>) o;
+		return Objects.equals(getInput(), that.getInput());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getInput());
+	}
 }

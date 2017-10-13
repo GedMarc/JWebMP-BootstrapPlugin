@@ -46,6 +46,7 @@ public class BSButton<J extends BSButton<J>>
 {
 	
 	private static final long serialVersionUID = 1L;
+	private static final String roleAttribute = "button";
 	
 	/**
 	 * Constructs a new button
@@ -54,7 +55,7 @@ public class BSButton<J extends BSButton<J>>
 	public BSButton()
 	{
 		addClass(BSComponentButtonOptions.Btn);
-		addAttribute(GlobalAttributes.Type, "button");
+		addAttribute(GlobalAttributes.Type, roleAttribute);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
 	
@@ -91,12 +92,9 @@ public class BSButton<J extends BSButton<J>>
 	@Override
 	public void preConfigure()
 	{
-		if (!isConfigured())
+		if (!isConfigured() && "a".equalsIgnoreCase(getTag()))
 		{
-			if ("a".equalsIgnoreCase(getTag()))
-			{
-				addAttribute(BSButtonAttributes.Role, "button");
-			}
+			addAttribute(BSButtonAttributes.Role, roleAttribute);
 		}
 		super.preConfigure();
 	}
@@ -137,12 +135,12 @@ public class BSButton<J extends BSButton<J>>
 	{
 		if (pressed)
 		{
-			addAttribute(GlobalAttributes.Aria_Pressed, "true");
+			addAttribute(GlobalAttributes.Aria_Pressed, Boolean.toString(true));
 			addClass(BSComponentDefaultOptions.Active);
 		}
 		else
 		{
-			addAttribute(GlobalAttributes.Aria_Pressed, "false");
+			addAttribute(GlobalAttributes.Aria_Pressed, Boolean.toString(false));
 			removeClass(BSComponentDefaultOptions.Active.toString());
 		}
 		
@@ -179,14 +177,14 @@ public class BSButton<J extends BSButton<J>>
 	{
 		if (disabled)
 		{
-			addAttribute(GlobalAttributes.Aria_Disabled, "true");
+			addAttribute(GlobalAttributes.Aria_Disabled, Boolean.toString(true));
 			addAttribute(BSButtonAttributes.Disabled, "");
 			addClass("disabled");
 		}
 		else
 		{
 			getAttributes().remove(BSButtonAttributes.Disabled);
-			addAttribute(GlobalAttributes.Aria_Disabled, "false");
+			addAttribute(GlobalAttributes.Aria_Disabled, Boolean.toString(false));
 			removeClass("disabled");
 		}
 		
@@ -495,12 +493,12 @@ public class BSButton<J extends BSButton<J>>
 	{
 		if (toggle)
 		{
-			addAttribute(BSButtonAttributes.Data_Toggle, "button");
-			addAttribute(InputButtonTypeAttributes.AutoComplete.toString(), "false");
+			addAttribute(BSButtonAttributes.Data_Toggle, roleAttribute);
+			addAttribute(InputButtonTypeAttributes.AutoComplete.toString(), Boolean.toString(false));
 		}
 		else
 		{
-			getAttributes().remove(BSButtonAttributes.Data_Toggle, "button");
+			getAttributes().remove(BSButtonAttributes.Data_Toggle, roleAttribute);
 			getAttributes().remove(InputButtonTypeAttributes.AutoComplete.toString());
 		}
 		

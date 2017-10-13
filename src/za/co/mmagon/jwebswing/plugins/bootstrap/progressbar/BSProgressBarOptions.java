@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.progressbar;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
  * All the options for the tooltip library
@@ -34,15 +33,11 @@ public class BSProgressBarOptions extends JavaScriptPart
 	
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * JS Options for the progress bar
+	 */
 	public BSProgressBarOptions()
 	{
-	
+		//Nothing Needed
 	}
-	
-	@Override
-	public JavascriptPartType getJavascriptType()
-	{
-		return JavascriptPartType.Javascript;
-	}
-	
 }

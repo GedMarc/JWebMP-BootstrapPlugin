@@ -29,6 +29,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Input group
@@ -245,4 +246,30 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 		super.init();
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSFormInputGroup))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSFormInputGroup<?> that = (BSFormInputGroup<?>) o;
+		return Objects.equals(getInputGroupAddons(), that.getInputGroupAddons()) &&
+				Objects.equals(getInputGroupAddonsRight(), that.getInputGroupAddonsRight()) &&
+				Objects.equals(getInput(), that.getInput());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getInputGroupAddons(), getInputGroupAddonsRight(), getInput());
+	}
 }

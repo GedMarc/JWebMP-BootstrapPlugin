@@ -60,36 +60,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	private static final Logger log = LogFactory.getLog("BSFormGroup");
 	
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The class name applied to the group when there is an error
-	 */
-	public static String ERROR_CLASS = "has-error";
-	public static String ERROR_CLASS_4 = "has-danger";
-	/**
-	 * The class name applied to the group when there is a warning
-	 */
-	public static String WARNING_CLASS = "has-warning";
-	/**
-	 * The class anme applied to the group when there is success
-	 */
-	public static String SUCCESS_CLASS = "has-success";
-	
-	/**
-	 * The class name applied to the group when there is an error
-	 */
-	public static String ERROR_CLASS_FEEDBACK = "form-control-danger";
-	public static String ERROR_CLASS_FEEDBACK$ = "form-control-feedback form-control-danger";
-	/**
-	 * The class name applied to the group when there is a warning
-	 */
-	public static String WARNING_CLASS_FEEDBACK = "form-control-warning";
-	public static String WARNING_CLASS_FEEDBACK4 = "form-control-feedback";
-	/**
-	 * The class anme applied to the group when there is success
-	 */
-	public static String SUCCESS_CLASS_FEEDBACK = "form-control-success";
-	public static String SUCCESS_CLASS_FEEDBACK$ = "form-control-feedback form-control-success";
-	
+
 	/**
 	 * The label
 	 */
@@ -155,11 +126,12 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	 */
 	private Div helpBlockWithErrors;
 	
+	/**
+	 * Constructs a new BS Form Group
+	 */
 	public BSFormGroup()
 	{
-		addClass(BSComponentFormGroupOptions.Form_Group);
-		BootstrapPageConfigurator.setRequired(this, true);
-		addStyle("margin-bottom:0px");
+		//Nothing Needed
 	}
 	
 	/**
@@ -174,9 +146,6 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.label = label;
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
-		addClass(BSComponentFormGroupOptions.Form_Group);
-		BootstrapPageConfigurator.setRequired(this, true);
-		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -191,9 +160,6 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.label = label;
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
-		addClass(BSComponentFormGroupOptions.Form_Group);
-		BootstrapPageConfigurator.setRequired(this, true);
-		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -208,9 +174,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.label = label;
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
-		addClass(BSComponentFormGroupOptions.Form_Group);
-		BootstrapPageConfigurator.setRequired(this, true);
-		addStyle("margin-bottom:0px");
+		
 	}
 	
 	/**
@@ -225,9 +189,6 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.label = label;
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
-		addClass(BSComponentFormGroupOptions.Form_Group);
-		BootstrapPageConfigurator.setRequired(this, true);
-		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -242,9 +203,6 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.label = label;
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
-		addClass(BSComponentFormGroupOptions.Form_Group);
-		BootstrapPageConfigurator.setRequired(this, true);
-		addStyle("margin-bottom:0px");
 	}
 	
 	/**
@@ -360,6 +318,184 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	}
 	
 	/**
+	 * Adds and configures the row
+	 */
+	private void configureAsRow()
+	{
+		if (isAsRow())
+		{
+			addClass(BSComponentDefaultOptions.Row);
+			if (getLabel() != null)
+			{
+				getLabel().addClass("col-2");
+			}
+			if (getInputComponent() != null)
+			{
+				getInputComponent().addClass("col-10");
+			}
+		}
+	}
+	
+	/**
+	 * Adds and configures the label
+	 */
+	private void configureLabel()
+	{
+		if (getLabel() != null)
+		{
+			if (getLabel().getParent() == null)
+			{
+				getLabel().setForInputComponent(getInputComponent());
+				add(getLabel());
+			}
+		}
+	}
+	
+	private void configureInputComponent()
+	{
+		if (!(getInputComponent() == null))
+		{
+			if (!(getInputComponent() instanceof BSFormInputGroup))
+			{
+				BSFormInputGroup inputGroup = new BSFormInputGroup((Input) getInputComponent());
+				if (getFrontIcon() != null)
+				{
+					Span newSpan = new Span<>().setText(getFrontIcon());
+					if (BootstrapPageConfigurator.isBootstrap4())
+					{
+						newSpan.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+					}
+					newSpan.addStyle("background:transparent !important;");
+					newSpan.addStyle("top:0;");
+					newSpan.addStyle("margin-top:0;");
+					inputGroup.getInputGroupAddons().add(newSpan);
+				}
+				
+				Span iconFeedback = new Span();
+				if (BootstrapPageConfigurator.isBootstrap4())
+				{
+					iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+				}
+				iconFeedback.addStyle("background:transparent !important;");
+				iconFeedback.addStyle("top:0;");
+				iconFeedback.addStyle("margin-top:0;");
+				iconFeedback.addAttribute("aria-hidden", "true");
+				
+				inputGroup.getInputGroupAddonsRight().add(iconFeedback);
+				add(inputGroup);
+			}
+			else
+			{
+				BSFormInputGroup ig = (BSFormInputGroup) getInputComponent();
+				Span iconFeedback = new Span();
+				if (BootstrapPageConfigurator.isBootstrap4())
+				{
+					iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+				}
+				iconFeedback.addStyle("background:transparent !important;");
+				iconFeedback.addAttribute("aria-hidden", "true");
+				iconFeedback.addStyle("top:0;");
+				iconFeedback.addStyle("margin-top:0;");
+				ig.getInputGroupAddonsRight().add(iconFeedback);
+				add(ig);
+			}
+		}
+	}
+	
+	/**
+	 * Adds and configures the validation techniques
+	 */
+	private void configureAngularValidation()
+	{
+		if (isAngularValidation())
+		{
+			addClass("has-feedback");
+			AngularPageConfigurator.setRequired(this, true);
+			BSForm referencedForm = findParent(BSForm.class);
+			if (referencedForm == null)
+			{
+				log.log(Level.SEVERE, "Unable to map angular, hierarchy doesn't seem to be built right. Expecting a BSForm as a parent somewhere");
+				referencedForm = new BSForm();
+				referencedForm.setID("InvalidForm");
+			}
+			
+			referencedForm.addAttribute("data-toggle", "validator");
+			
+			addFeature(new Feature("BootstrapValidatorFeature")
+			{
+				@Override
+				protected void assignFunctionsToComponent()
+				{
+					addQuery("$('[data-toggle=validator]').validator();");
+				}
+			});
+			
+			if (BSFormInline.class.isAssignableFrom(referencedForm.getClass()))
+			{
+				setInline(true);
+			}
+			
+			referencedForm.addAttribute("novalidate", "");
+			referencedForm.setTag("ng-form");
+			
+			String formName = referencedForm.getID();
+			String fieldTemp = getInputComponent().getID();
+			if (fieldTemp.indexOf('_') > -1)
+			{
+				fieldTemp = fieldTemp.substring(fieldTemp.lastIndexOf('_') + 1);
+			}
+			String fieldName = "'" + (fieldTemp == null ? "" : fieldTemp + "'");
+			
+			
+			if (getInputComponent() != null)
+			{
+				if (BootstrapPageConfigurator.isBootstrap4())
+				{
+					Span iconFeedback = new Span();
+					if (!BootstrapPageConfigurator.isBootstrap4())
+					{
+						iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+					}
+					iconFeedback.addStyle("background:transparent !important;");
+					iconFeedback.addAttribute("aria-hidden", "true");
+					iconFeedback.addStyle("top:0;");
+					iconFeedback.addStyle("margin-top:0;");
+					add(iconFeedback);
+				}
+				
+				if (getShowControlFeedback() != null && getShowControlFeedback())
+				{
+					if (getRequiredMessage() != null)
+					{
+						getInputComponent().addAttribute("data-required-error", getRequiredMessage());
+					}
+					if (getPatternMessage() != null)
+					{
+						getInputComponent().addAttribute("data-pattern-error", getPatternMessage());
+					}
+					if (getMinMessage() != null)
+					{
+						getInputComponent().addAttribute("data-minlength-error", getMinLengthMessage());
+					}
+					if (getMaxMessage() != null)
+					{
+						getInputComponent().addAttribute("data-maxlength-error", getMaxLengthMessage());
+					}
+					if (getErrorMessage() != null)
+					{
+						getInputComponent().addAttribute("data-error", getErrorMessage());
+					}
+					if (getHelpText() != null)
+					{
+						getHelpBlockWithErrors().setText(getHelpText());
+					}
+					add(getHelpBlockWithErrors());
+				}
+			}
+		}
+	}
+	
+	/**
 	 * Adds all the necessary items
 	 */
 	@Override
@@ -367,161 +503,15 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		if (!isConfigured())
 		{
-			if (isAsRow())
-			{
-				addClass(BSComponentDefaultOptions.Row);
-				if (getLabel() != null)
-				{
-					getLabel().addClass("col-2");
-				}
-				if (getInputComponent() != null)
-				{
-					getInputComponent().addClass("col-10");
-				}
-			}
+			configureAsRow();
+			configureLabel();
+			configureInputComponent();
+			configureAngularValidation();
 			
-			if (getLabel() != null)
+			if (BootstrapPageConfigurator.isBootstrap4())
 			{
-				if (getLabel().getParent() == null)
-				{
-					getLabel().setForInputComponent(getInputComponent());
-					add(getLabel());
-				}
-			}
-			
-			if (!(getInputComponent() == null))
-			{
-				if (!(getInputComponent() instanceof BSFormInputGroup))
-				{
-					BSFormInputGroup inputGroup = new BSFormInputGroup((Input) getInputComponent());
-					if (getFrontIcon() != null)
-					{
-						Span newSpan = new Span<>().setText(getFrontIcon());
-						if (BootstrapPageConfigurator.isBootstrap4())
-						{
-							newSpan.addClass("glyphicon form-control-feedback form-control-feedback-lg");
-						}
-						newSpan.addStyle("background:transparent !important;");
-						newSpan.addStyle("top:0;");
-						newSpan.addStyle("margin-top:0;");
-						inputGroup.getInputGroupAddons().add(newSpan);
-					}
-					
-					Span iconFeedback = new Span();
-					if (BootstrapPageConfigurator.isBootstrap4())
-					{
-						iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
-					}
-					iconFeedback.addStyle("background:transparent !important;");
-					iconFeedback.addStyle("top:0;");
-					iconFeedback.addStyle("margin-top:0;");
-					iconFeedback.addAttribute("aria-hidden", "true");
-					
-					inputGroup.getInputGroupAddonsRight().add(iconFeedback);
-					add(inputGroup);
-				}
-				else
-				{
-					BSFormInputGroup ig = (BSFormInputGroup) getInputComponent();
-					Span iconFeedback = new Span();
-					if (BootstrapPageConfigurator.isBootstrap4())
-					{
-						iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
-					}
-					iconFeedback.addStyle("background:transparent !important;");
-					iconFeedback.addAttribute("aria-hidden", "true");
-					iconFeedback.addStyle("top:0;");
-					iconFeedback.addStyle("margin-top:0;");
-					ig.getInputGroupAddonsRight().add(iconFeedback);
-					add(ig);
-				}
-			}
-			
-			if (isAngularValidation())
-			{
-				addClass("has-feedback");
-				AngularPageConfigurator.setRequired(this, true);
-				BSForm referencedForm = findParent(BSForm.class);
-				if (referencedForm == null)
-				{
-					log.log(Level.SEVERE, "Unable to map angular, hierarchy doesn't seem to be built right. Expecting a BSForm as a parent somewhere");
-					referencedForm = new BSForm();
-					referencedForm.setID("InvalidForm");
-				}
-				
-				referencedForm.addAttribute("data-toggle", "validator");
-				
-				addFeature(new Feature("BootstrapValidatorFeature")
-				{
-					@Override
-					protected void assignFunctionsToComponent()
-					{
-						addQuery("$('[data-toggle=validator]').validator();");
-					}
-				});
-				
-				if (BSFormInline.class.isAssignableFrom(referencedForm.getClass()))
-				{
-					setInline(true);
-				}
-				
-				referencedForm.addAttribute("novalidate", "");
-				referencedForm.setTag("ng-form");
-				
-				String formName = referencedForm.getID();
-				String fieldTemp = getInputComponent().getID();
-				if (fieldTemp.indexOf('_') > -1)
-				{
-					fieldTemp = fieldTemp.substring(fieldTemp.lastIndexOf('_') + 1);
-				}
-				String fieldName = "'" + (fieldTemp == null ? "" : fieldTemp + "'");
-				
-				
-				if (getInputComponent() != null)
-				{
-					if (BootstrapPageConfigurator.isBootstrap4())
-					{
-						Span iconFeedback = new Span();
-						if (!BootstrapPageConfigurator.isBootstrap4())
-						{
-							iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
-						}
-						iconFeedback.addStyle("background:transparent !important;");
-						iconFeedback.addAttribute("aria-hidden", "true");
-						iconFeedback.addStyle("top:0;");
-						iconFeedback.addStyle("margin-top:0;");
-						add(iconFeedback);
-					}
-					
-					if (getShowControlFeedback() != null && getShowControlFeedback())
-					{
-						if (getRequiredMessage() != null)
-						{
-							getInputComponent().addAttribute("data-required-error", getRequiredMessage());
-						}
-						if (getPatternMessage() != null)
-						{
-							getInputComponent().addAttribute("data-pattern-error", getPatternMessage());
-						}
-						if (getMinMessage() != null)
-						{
-							getInputComponent().addAttribute("data-minlength-error", getMinLengthMessage());
-						}
-						if (getMaxMessage() != null)
-						{
-							getInputComponent().addAttribute("data-maxlength-error", getMaxLengthMessage());
-						}
-						if (getErrorMessage() != null)
-						{
-							getInputComponent().addAttribute("data-error", getErrorMessage());
-						}
-						if (getHelpText() != null)
-						{
-							getHelpBlockWithErrors().setText(getHelpText());
-						}
-						add(getHelpBlockWithErrors());
-					}
-				}
+				addClass(BSComponentFormGroupOptions.Form_Group);
+				addStyle("margin-bottom:0px");
 			}
 		}
 		super.preConfigure();

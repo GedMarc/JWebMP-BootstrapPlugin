@@ -64,12 +64,12 @@ public class BSColumn extends Div
 	@Override
 	public boolean equals(Object obj)
 	{
-		if (obj == null)
-		{
-			return false;
-		}
-		
 		return false;
 	}
-
+	
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
+	}
 }

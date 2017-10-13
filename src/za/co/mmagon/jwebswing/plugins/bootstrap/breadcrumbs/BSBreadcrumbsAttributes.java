@@ -30,12 +30,6 @@ public enum BSBreadcrumbsAttributes implements AttributeDefinitions
 	BSBreadcrumbsAttributes()
 	{
 	}
-	
-	BSBreadcrumbsAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

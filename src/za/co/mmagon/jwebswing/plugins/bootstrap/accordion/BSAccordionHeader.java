@@ -23,11 +23,14 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
  * @author GedMarc
  * @since 20 Feb 2017
  */
-public class BSAccordionHeader extends H5<BSAccordionHeader>
+public class BSAccordionHeader<J extends BSAccordionHeader<J>> extends H5<J>
 		implements BSCardChildren
 {
 	
 	private static final long serialVersionUID = 1L;
+	/**
+	 * The link for the hovering
+	 */
 	private BSAccordionHeaderLink accordionHeaderLink;
 	
 	/**

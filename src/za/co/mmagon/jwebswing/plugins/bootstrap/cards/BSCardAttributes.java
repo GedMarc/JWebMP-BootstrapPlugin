@@ -37,11 +37,6 @@ public enum BSCardAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSCardAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{

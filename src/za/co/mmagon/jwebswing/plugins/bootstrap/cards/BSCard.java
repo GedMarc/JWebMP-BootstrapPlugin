@@ -65,7 +65,10 @@ public class BSCard<J extends BSCard<J>> extends Div<BSCardChildren, BSCardAttri
 	public BSCard(boolean inverse)
 	{
 		this(null);
-		addClass("card-inverse");
+		if (inverse)
+		{
+			addClass("card-inverse");
+		}
 		addStyle("background-color:transparent;");
 	}
 	

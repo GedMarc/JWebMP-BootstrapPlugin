@@ -29,7 +29,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * @version 1.0
  * @since 2013/01/16
  */
-public class BSCarouselSlideToNumberFeature extends Feature<BSCarouselOptions, BSCarouselSlideToNumberFeature>
+public class BSCarouselSlideToNumberFeature<J extends BSCarouselSlideToNumberFeature<J>> extends Feature<BSCarouselOptions, J>
 		implements BSCarouselFeatures, GlobalFeatures
 {
 	
@@ -51,11 +51,20 @@ public class BSCarouselSlideToNumberFeature extends Feature<BSCarouselOptions, B
 		setComponent(forComponent);
 	}
 	
+	/**
+	 * Sets the slide number
+	 *
+	 * @return
+	 */
 	public String getSlideNumber()
 	{
 		return methodName;
 	}
 	
+	/**
+	 * Sets the slide number
+	 * @param methodName
+	 */
 	public void setSlideNumber(String methodName)
 	{
 		this.methodName = methodName;

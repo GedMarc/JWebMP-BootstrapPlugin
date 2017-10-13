@@ -22,6 +22,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarousel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselFeatures;
 import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
 
+import java.util.Objects;
+
 /**
  * Stops the carousel from cycling through items.
  *
@@ -29,7 +31,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
  * @version 1.0
  * @since 2013/01/16
  */
-public class BSCarouselPauseFeature extends Feature<BSCarouselOptions, BSCarouselPauseFeature>
+@SuppressWarnings("unused")
+public class BSCarouselPauseFeature<J extends BSCarouselPauseFeature<J>>
+		extends Feature<BSCarouselOptions, J>
 		implements BSCarouselFeatures, GlobalFeatures
 {
 	
@@ -37,7 +41,7 @@ public class BSCarouselPauseFeature extends Feature<BSCarouselOptions, BSCarouse
 	/**
 	 * The method name to call
 	 */
-	private final String methodName = "pause";
+	private static final String methodName = "pause";
 	
 	/**
 	 * Constructs a new Carousel Feature - Cycle
@@ -58,5 +62,30 @@ public class BSCarouselPauseFeature extends Feature<BSCarouselOptions, BSCarouse
 		requiredString += methodName;
 		requiredString += "');" + getNewLine();
 		addQuery(requiredString);
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselPauseFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselPauseFeature that = (BSCarouselPauseFeature) o;
+		return Objects.equals(methodName, that.methodName);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), methodName);
 	}
 }

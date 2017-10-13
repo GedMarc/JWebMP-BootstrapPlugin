@@ -34,7 +34,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentClos
  */
 @ComponentInformation(name = "Bootstrap Dismiss Buttons", description = "Use a generic close icon for dismissing content like modals and alerts. Be sure to include text for screen readers, as we’ve done with aria-label.",
 		url = "https://v4-alpha.getbootstrap.com/utilities/close-icon/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSCloseIcon extends Button
+public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<J>
 {
 	
 	private static final long serialVersionUID = 1L;

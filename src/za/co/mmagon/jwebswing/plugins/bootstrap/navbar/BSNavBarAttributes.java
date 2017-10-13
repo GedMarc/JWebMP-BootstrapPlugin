@@ -32,11 +32,6 @@ public enum BSNavBarAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSNavBarAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public boolean isKeyword()
 	{
