@@ -29,9 +29,6 @@ import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.RequirementsPriority;
 import za.co.mmagon.jwebswing.plugins.PluginInformation;
 import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
-import za.co.mmagon.logger.LogFactory;
-
-import java.util.logging.Logger;
 
 /**
  * The 3 meta tags *must* come first in the head; any other head content must come *after* these tags
@@ -57,7 +54,7 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	
 	@JsonIgnore
 	public static final String BootstrapEnabledString = "bootstrap-enabled";
-	private static final Logger log = LogFactory.getInstance().getLogger("Bootstrap");
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * If the generator is generating for bootstrap 4
@@ -68,9 +65,12 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	 */
 	private static boolean bootstrap4Reboot;
 	
+	/**
+	 * The default page configurator for bootstrap
+	 */
 	public BootstrapPageConfigurator()
 	{
-	
+		//Nothing Needed
 	}
 	
 	/**
@@ -175,7 +175,6 @@ public class BootstrapPageConfigurator extends PageConfigurator
 			
 			if (isBootstrap4())
 			{
-				//page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4TetherReference.getJavaScriptReference());
 				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4PopperReference.getJavaScriptReference());
 				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4CoreReference.getJavaScriptReference());
 				page.getBody().addCssReference(BootstrapReferencePool.Bootstrap4CoreReference.getCssReference());

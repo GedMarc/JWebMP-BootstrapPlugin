@@ -1,7 +1,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextInput;
 

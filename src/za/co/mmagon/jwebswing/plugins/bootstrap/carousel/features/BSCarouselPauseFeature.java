@@ -80,12 +80,12 @@ public class BSCarouselPauseFeature<J extends BSCarouselPauseFeature<J>>
 			return false;
 		}
 		BSCarouselPauseFeature that = (BSCarouselPauseFeature) o;
-		return Objects.equals(methodName, that.methodName);
+		return Objects.equals(getComponent(), that.getComponent());
 	}
 	
 	@Override
 	public int hashCode()
 	{
-		return Objects.hash(super.hashCode(), methodName);
+		return Objects.hash(super.hashCode(), getComponent());
 	}
 }

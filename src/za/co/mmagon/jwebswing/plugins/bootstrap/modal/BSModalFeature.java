@@ -69,6 +69,7 @@ public class BSModalFeature extends Feature<BSModalOptions, BSModalFeature> impl
 	@Override
 	public void assignFunctionsToComponent()
 	{
+		//Nothing Needed
 	}
 	
 	@Override

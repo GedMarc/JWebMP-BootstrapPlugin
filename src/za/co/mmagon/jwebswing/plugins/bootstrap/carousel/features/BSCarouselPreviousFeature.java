@@ -79,7 +79,7 @@ public class BSCarouselPreviousFeature<J extends BSCarouselPreviousFeature<J>>
 			return false;
 		}
 		BSCarouselPreviousFeature that = (BSCarouselPreviousFeature) o;
-		return Objects.equals(methodName, that.methodName);
+		return Objects.equals(getComponent(), that.getComponent());
 	}
 	
 	@Override

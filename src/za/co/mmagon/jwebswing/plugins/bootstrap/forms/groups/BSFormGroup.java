@@ -23,6 +23,7 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.TextArea;
+import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
@@ -58,9 +59,10 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 {
 	
 	private static final Logger log = LogFactory.getLog("BSFormGroup");
+	private static final String BootstrapValidationIconClass = "glyphicon form-control-feedback form-control-feedback-lg";
 	
 	private static final long serialVersionUID = 1L;
-
+	
 	/**
 	 * The label
 	 */
@@ -341,65 +343,55 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	 */
 	private void configureLabel()
 	{
-		if (getLabel() != null)
+		
+		if (getLabel() != null && getLabel().getParent() == null)
 		{
-			if (getLabel().getParent() == null)
-			{
-				getLabel().setForInputComponent(getInputComponent());
-				add(getLabel());
-			}
+			getLabel().setForInputComponent(getInputComponent());
+			add(getLabel());
 		}
 	}
 	
+	/**
+	 * Configures the input component
+	 */
 	private void configureInputComponent()
 	{
-		if (!(getInputComponent() == null))
+		if (!(getInputComponent() != null && getInputComponent() instanceof BSFormInputGroup))
 		{
-			if (!(getInputComponent() instanceof BSFormInputGroup))
+			BSFormInputGroup inputGroup = new BSFormInputGroup((Input) getInputComponent());
+			if (getFrontIcon() != null)
 			{
-				BSFormInputGroup inputGroup = new BSFormInputGroup((Input) getInputComponent());
-				if (getFrontIcon() != null)
-				{
-					Span newSpan = new Span<>().setText(getFrontIcon());
-					if (BootstrapPageConfigurator.isBootstrap4())
-					{
-						newSpan.addClass("glyphicon form-control-feedback form-control-feedback-lg");
-					}
-					newSpan.addStyle("background:transparent !important;");
-					newSpan.addStyle("top:0;");
-					newSpan.addStyle("margin-top:0;");
-					inputGroup.getInputGroupAddons().add(newSpan);
-				}
-				
-				Span iconFeedback = new Span();
+				Span newSpan = new Span<>().setText(getFrontIcon());
 				if (BootstrapPageConfigurator.isBootstrap4())
 				{
-					iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+					newSpan.addClass(BootstrapValidationIconClass);
 				}
-				iconFeedback.addStyle("background:transparent !important;");
-				iconFeedback.addStyle("top:0;");
-				iconFeedback.addStyle("margin-top:0;");
-				iconFeedback.addAttribute("aria-hidden", "true");
-				
-				inputGroup.getInputGroupAddonsRight().add(iconFeedback);
-				add(inputGroup);
+				inputGroup.getInputGroupAddons().add(newSpan);
 			}
-			else
+			
+			Span iconFeedback = new Span();
+			if (BootstrapPageConfigurator.isBootstrap4())
 			{
-				BSFormInputGroup ig = (BSFormInputGroup) getInputComponent();
-				Span iconFeedback = new Span();
-				if (BootstrapPageConfigurator.isBootstrap4())
-				{
-					iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
-				}
-				iconFeedback.addStyle("background:transparent !important;");
-				iconFeedback.addAttribute("aria-hidden", "true");
-				iconFeedback.addStyle("top:0;");
-				iconFeedback.addStyle("margin-top:0;");
-				ig.getInputGroupAddonsRight().add(iconFeedback);
-				add(ig);
+				iconFeedback.addClass(BootstrapValidationIconClass);
 			}
+			iconFeedback.addAttribute(GlobalAttributes.Aria_Hidden, "true");
+			
+			inputGroup.getInputGroupAddonsRight().add(iconFeedback);
+			add(inputGroup);
 		}
+		else
+		{
+			BSFormInputGroup ig = (BSFormInputGroup) getInputComponent();
+			Span iconFeedback = new Span();
+			if (BootstrapPageConfigurator.isBootstrap4())
+			{
+				iconFeedback.addClass(BootstrapValidationIconClass);
+			}
+			iconFeedback.addAttribute(GlobalAttributes.Aria_Hidden, "true");
+			ig.getInputGroupAddonsRight().add(iconFeedback);
+			add(ig);
+		}
+		
 	}
 	
 	/**
@@ -418,9 +410,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 				referencedForm = new BSForm();
 				referencedForm.setID("InvalidForm");
 			}
-			
 			referencedForm.addAttribute("data-toggle", "validator");
-			
 			addFeature(new Feature("BootstrapValidatorFeature")
 			{
 				@Override
@@ -438,59 +428,55 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			referencedForm.addAttribute("novalidate", "");
 			referencedForm.setTag("ng-form");
 			
-			String formName = referencedForm.getID();
-			String fieldTemp = getInputComponent().getID();
-			if (fieldTemp.indexOf('_') > -1)
+			configureAngularIcon();
+		}
+	}
+	
+	private void configureAngularIcon()
+	{
+		if (getInputComponent() != null)
+		{
+			if (BootstrapPageConfigurator.isBootstrap4())
 			{
-				fieldTemp = fieldTemp.substring(fieldTemp.lastIndexOf('_') + 1);
+				Span iconFeedback = new Span();
+				if (!BootstrapPageConfigurator.isBootstrap4())
+				{
+					iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
+				}
+				iconFeedback.addStyle("background:transparent !important;");
+				iconFeedback.addAttribute("aria-hidden", "true");
+				iconFeedback.addStyle("top:0;");
+				iconFeedback.addStyle("margin-top:0;");
+				add(iconFeedback);
 			}
-			String fieldName = "'" + (fieldTemp == null ? "" : fieldTemp + "'");
 			
-			
-			if (getInputComponent() != null)
+			if (getShowControlFeedback() != null && getShowControlFeedback())
 			{
-				if (BootstrapPageConfigurator.isBootstrap4())
+				if (getRequiredMessage() != null)
 				{
-					Span iconFeedback = new Span();
-					if (!BootstrapPageConfigurator.isBootstrap4())
-					{
-						iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
-					}
-					iconFeedback.addStyle("background:transparent !important;");
-					iconFeedback.addAttribute("aria-hidden", "true");
-					iconFeedback.addStyle("top:0;");
-					iconFeedback.addStyle("margin-top:0;");
-					add(iconFeedback);
+					getInputComponent().addAttribute("data-required-error", getRequiredMessage());
 				}
-				
-				if (getShowControlFeedback() != null && getShowControlFeedback())
+				if (getPatternMessage() != null)
 				{
-					if (getRequiredMessage() != null)
-					{
-						getInputComponent().addAttribute("data-required-error", getRequiredMessage());
-					}
-					if (getPatternMessage() != null)
-					{
-						getInputComponent().addAttribute("data-pattern-error", getPatternMessage());
-					}
-					if (getMinMessage() != null)
-					{
-						getInputComponent().addAttribute("data-minlength-error", getMinLengthMessage());
-					}
-					if (getMaxMessage() != null)
-					{
-						getInputComponent().addAttribute("data-maxlength-error", getMaxLengthMessage());
-					}
-					if (getErrorMessage() != null)
-					{
-						getInputComponent().addAttribute("data-error", getErrorMessage());
-					}
-					if (getHelpText() != null)
-					{
-						getHelpBlockWithErrors().setText(getHelpText());
-					}
-					add(getHelpBlockWithErrors());
+					getInputComponent().addAttribute("data-pattern-error", getPatternMessage());
 				}
+				if (getMinMessage() != null)
+				{
+					getInputComponent().addAttribute("data-minlength-error", getMinLengthMessage());
+				}
+				if (getMaxMessage() != null)
+				{
+					getInputComponent().addAttribute("data-maxlength-error", getMaxLengthMessage());
+				}
+				if (getErrorMessage() != null)
+				{
+					getInputComponent().addAttribute("data-error", getErrorMessage());
+				}
+				if (getHelpText() != null)
+				{
+					getHelpBlockWithErrors().setText(getHelpText());
+				}
+				add(getHelpBlockWithErrors());
 			}
 		}
 	}

@@ -35,7 +35,9 @@ public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BS
 {
 	
 	private static final long serialVersionUID = 1L;
-	
+	/**
+	 * The group button input for the label
+	 */
 	private I input;
 	
 	/**

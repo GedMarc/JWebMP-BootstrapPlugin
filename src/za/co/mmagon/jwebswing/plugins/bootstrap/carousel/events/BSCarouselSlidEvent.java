@@ -26,6 +26,7 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTy
 import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.BSAlertEvents;
 import za.co.mmagon.logger.LogFactory;
 
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -116,5 +117,30 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 		{
 			LOG.log(Level.SEVERE, "Error In Firing Event", e);
 		}
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselSlidEvent))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselSlidEvent<?> that = (BSCarouselSlidEvent<?>) o;
+		return Objects.equals(getComponent(), that.getComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getComponent());
 	}
 }

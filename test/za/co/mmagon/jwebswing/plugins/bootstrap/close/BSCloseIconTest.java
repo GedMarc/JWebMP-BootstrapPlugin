@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.close;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 
 /**
  * @author GedMarc

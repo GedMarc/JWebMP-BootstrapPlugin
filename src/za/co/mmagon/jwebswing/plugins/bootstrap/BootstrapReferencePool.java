@@ -44,7 +44,7 @@ public enum BootstrapReferencePool implements ReferencePool
 	                        new CSSReference("BS4Core", 4.003, "bower_components/bootstrap4/dist/css/bootstrap.min.css", 10)),
 	
 	Bootstrap4TetherReference(new JavascriptReference("BS4Tether", 4.003, "bower_components/tether/dist/js/tether.min.js", 9),
-	                          new CSSReference("BS4Core", 4.003, "bower_components/tether/dist/css/tether.min.css", 9)),
+	                          new CSSReference("BS4Tether", 4.003, "bower_components/tether/dist/css/tether.min.css", 9)),
 	
 	Bootstrap4PopperReference(new JavascriptReference("BS4Popper", 4.003, "bower_components/popper.js/dist/umd/popper.js", 9),
 	                          null),

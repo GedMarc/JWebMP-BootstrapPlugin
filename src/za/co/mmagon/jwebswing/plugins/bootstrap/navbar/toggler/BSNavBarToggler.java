@@ -27,6 +27,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSComponentNavsOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
 
+import java.util.Objects;
+
 /**
  * @author GedMarc
  * @since 21 Jan 2017
@@ -131,16 +133,49 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 		super.preConfigure();
 	}
 	
+	/**
+	 * Gets the Icon Class
+	 *
+	 * @return
+	 */
 	@Override
 	public String getIconClass()
 	{
 		return iconClass;
 	}
 	
+	/**
+	 * Sets the Icon Class
+	 * @param iconClass
+	 */
 	@Override
 	public void setIconClass(String iconClass)
 	{
 		this.iconClass = iconClass;
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSNavBarToggler))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSNavBarToggler that = (BSNavBarToggler) o;
+		return Objects.equals(getIconClass(), that.getIconClass());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getIconClass());
+	}
 }

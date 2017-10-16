@@ -17,7 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.dropdown;
 
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButton;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonPrimaryOutline;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenuItem;

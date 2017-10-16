@@ -58,6 +58,7 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 	 */
 	public BSAccordionItem()
 	{
+		//Nothing Needed
 	}
 	
 	/**

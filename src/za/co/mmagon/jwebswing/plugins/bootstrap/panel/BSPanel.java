@@ -44,7 +44,6 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 {
 	
 	private static final long serialVersionUID = 1L;
-	private BSPanelFeature feature;
 	
 	/**
 	 * The Panel Header Button Bar
@@ -111,27 +110,12 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 	{
 		if (footerIsLink)
 		{
-			for (Iterator it = panelFooter.getChildren().iterator(); it.hasNext(); )
+			for (Iterator it = getPanelFooter().getChildren().iterator(); it.hasNext(); )
 			{
 				ComponentHierarchyBase comp = (ComponentHierarchyBase) it.next();
-				comp.addClass("panel-footer");
+				comp.addClass(BSComponentPanelOptions.Panel_Footer);
 			}
 		}
-	}
-	
-	public final BSPanelFeature getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new BSPanelFeature(this);
-		}
-		return feature;
-	}
-	
-	@Override
-	public BSPanelOptions getOptions()
-	{
-		return getFeature().getOptions();
 	}
 	
 	/**
@@ -159,7 +143,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		this.panelHeader = panelHeader;
 		if (this.panelHeader != null)
 		{
-			this.panelHeader.addClass("panel-heading");
+			this.panelHeader.addClass(BSComponentPanelOptions.Panel_Heading);
 		}
 	}
 	
@@ -188,7 +172,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		this.panelBody = panelBody;
 		if (this.panelBody != null)
 		{
-			this.panelBody.addClass("panel-body");
+			this.panelBody.addClass(BSComponentPanelOptions.Panel_Body);
 		}
 	}
 	
@@ -217,7 +201,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		this.panelFooter = panelFooter;
 		if (this.panelFooter != null)
 		{
-			this.panelFooter.addClass("panel-footer");
+			this.panelFooter.addClass(BSComponentPanelOptions.Panel_Footer);
 		}
 		this.footerIsLink = true;
 	}
@@ -232,7 +216,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		this.panelFooter = panelFooter;
 		if (this.panelFooter != null)
 		{
-			this.panelFooter.addClass("panel-footer");
+			this.panelFooter.addClass(BSComponentPanelOptions.Panel_Footer);
 		}
 		this.footerIsLink = false;
 	}

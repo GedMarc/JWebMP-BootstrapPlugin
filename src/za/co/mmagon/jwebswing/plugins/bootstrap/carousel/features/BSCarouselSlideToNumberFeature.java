@@ -22,6 +22,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarousel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselFeatures;
 import za.co.mmagon.jwebswing.plugins.bootstrap.carousel.BSCarouselOptions;
 
+import java.util.Objects;
+
 /**
  * Cycles the carousel to a particular frame (0 based, similar to an array).
  *
@@ -77,5 +79,30 @@ public class BSCarouselSlideToNumberFeature<J extends BSCarouselSlideToNumberFea
 		requiredString += methodName;
 		requiredString += ");" + getNewLine();
 		addQuery(requiredString);
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselSlideToNumberFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselSlideToNumberFeature<?> that = (BSCarouselSlideToNumberFeature<?>) o;
+		return Objects.equals(getComponent(), that.getComponent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), methodName);
 	}
 }

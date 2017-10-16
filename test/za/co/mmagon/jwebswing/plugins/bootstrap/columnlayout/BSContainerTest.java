@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.columnlayout;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSContainer;
 import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSContainerType;
 

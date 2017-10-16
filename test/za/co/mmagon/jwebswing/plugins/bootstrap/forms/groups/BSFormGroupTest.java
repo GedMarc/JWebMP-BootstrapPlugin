@@ -1,7 +1,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups;
 
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
 
 class BSFormGroupTest extends BaseTestClass

@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 import za.co.mmagon.jwebswing.base.html.H5;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
 
+import java.util.Objects;
+
 /**
  * @author GedMarc
  * @since 20 Feb 2017
@@ -84,4 +86,28 @@ public class BSAccordionHeader<J extends BSAccordionHeader<J>> extends H5<J>
 		}
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSAccordionHeader))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSAccordionHeader<?> that = (BSAccordionHeader<?>) o;
+		return Objects.equals(getAccordionHeaderLink(), that.getAccordionHeaderLink());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getAccordionHeaderLink());
+	}
 }

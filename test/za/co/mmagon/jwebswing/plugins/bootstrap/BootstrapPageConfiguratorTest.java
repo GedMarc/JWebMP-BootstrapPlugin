@@ -24,7 +24,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
 import org.junit.jupiter.api.Assertions;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 
 /**

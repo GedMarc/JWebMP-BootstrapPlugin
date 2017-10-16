@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.DivSimple;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
+import za.co.mmagon.jwebswing.plugins.bootstrap.accordion.BSAccordionAttributes;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSComponentNavsOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
 import za.co.mmagon.jwebswing.plugins.bootstrap.toggle.BSToggleAttributes;
@@ -27,6 +29,7 @@ import za.co.mmagon.logger.LogFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 /**
@@ -195,7 +198,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 				Link link = new Link();
 				link.addClass(BSComponentNavsOptions.Nav_Link);
 				link.addAttribute(BSToggleAttributes.Data_Toggle, "tab");
-				link.addAttribute("role", "tab");
+				link.addAttribute(BSAccordionAttributes.Role, "tab");
 				link.setDirectToAddress(tab.getTabContent().getID(true));
 				if (!li.getText(0).toString().isEmpty())
 				{
@@ -203,13 +206,13 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 					li.setText("");
 				}
 				
-				tab.getTabContent().addClass("tab-pane");
-				tab.getTabContent().addAttribute("role", "tabpanel");
+				tab.getTabContent().addClass(BSComponentDefaultOptions.Tab_Pane);
+				tab.getTabContent().addAttribute(BSAccordionAttributes.Role, "tabpanel");
 				
 				if (tab.isActive())
 				{
-					link.addClass("active");
-					tab.getTabContent().addClass("active");
+					link.addClass(BSComponentDefaultOptions.Active);
+					tab.getTabContent().addClass(BSComponentDefaultOptions.Active);
 				}
 				
 				li.add(link);
@@ -221,15 +224,29 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 	}
 	
 	@Override
-	public void preConfigure()
+	public boolean equals(Object o)
 	{
-		if (!isConfigured())
+		if (this == o)
 		{
-			for (BSTab tab : getTabs())
-			{
-
-			}
+			return true;
 		}
-		super.preConfigure();
+		if (!(o instanceof BSTabs))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSTabs<?> bsTabs = (BSTabs<?>) o;
+		return Objects.equals(getTabs(), bsTabs.getTabs()) &&
+				Objects.equals(getNavigation(), bsTabs.getNavigation()) &&
+				Objects.equals(getTabContent(), bsTabs.getTabContent());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getTabs(), getNavigation(), getTabContent());
 	}
 }

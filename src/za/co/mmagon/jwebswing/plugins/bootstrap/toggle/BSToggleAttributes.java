@@ -33,11 +33,6 @@ public enum BSToggleAttributes implements AttributeDefinitions
 	{
 	}
 	
-	BSToggleAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
 	@Override
 	public String toString()
 	{

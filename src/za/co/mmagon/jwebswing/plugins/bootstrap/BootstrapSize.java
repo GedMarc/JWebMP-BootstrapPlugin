@@ -56,11 +56,6 @@ public enum BootstrapSize
 	
 	}
 	
-	BootstrapSize(String name)
-	{
-		this.name = name;
-	}
-	
 	BootstrapSize(String name, Integer size)
 	{
 		this.name = name;

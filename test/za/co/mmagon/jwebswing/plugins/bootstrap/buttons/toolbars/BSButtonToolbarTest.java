@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.toolbars;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonSuccess;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroup;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupLabel;

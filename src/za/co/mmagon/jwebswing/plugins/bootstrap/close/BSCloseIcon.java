@@ -19,9 +19,15 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.close;
 import za.co.mmagon.jwebswing.base.html.Button;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentCloseIconOptions;
+
+import java.util.Objects;
 
 /**
  * Close icon
@@ -34,7 +40,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentClos
  */
 @ComponentInformation(name = "Bootstrap Dismiss Buttons", description = "Use a generic close icon for dismissing content like modals and alerts. Be sure to include text for screen readers, as we’ve done with aria-label.",
 		url = "https://v4-alpha.getbootstrap.com/utilities/close-icon/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
-public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<J>
+public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J>
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -148,4 +154,29 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<J>
 		}
 	}
 	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCloseIcon))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCloseIcon<?> that = (BSCloseIcon<?>) o;
+		return Objects.equals(getCloseIcon(), that.getCloseIcon()) &&
+				Objects.equals(getCloseIconText(), that.getCloseIconText());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getCloseIcon(), getCloseIconText());
+	}
 }
