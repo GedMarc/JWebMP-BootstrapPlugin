@@ -41,7 +41,6 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 {
 	
 	private static final long serialVersionUID = 1L;
-	private BSProgressBarDisplayFeature feature;
 	
 	private Span span;
 	private BSProgressBarThemes theme;
@@ -253,21 +252,6 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		this.label = label;
 		getSpan().setText(label);
 		return (J) this;
-	}
-	
-	public final BSProgressBarDisplayFeature getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new BSProgressBarDisplayFeature(this);
-		}
-		return feature;
-	}
-	
-	@Override
-	public BSProgressBarDisplayOptions getOptions()
-	{
-		return getFeature().getOptions();
 	}
 	
 	/**

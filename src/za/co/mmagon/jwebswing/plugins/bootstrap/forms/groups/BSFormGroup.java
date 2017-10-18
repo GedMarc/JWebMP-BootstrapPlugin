@@ -432,6 +432,9 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		}
 	}
 	
+	/**
+	 * Adds the angular icon for components
+	 */
 	private void configureAngularIcon()
 	{
 		if (getInputComponent() != null)
@@ -449,35 +452,42 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 				iconFeedback.addStyle("margin-top:0;");
 				add(iconFeedback);
 			}
-			
-			if (getShowControlFeedback() != null && getShowControlFeedback())
+			configureDataAttributes();
+		}
+	}
+	
+	/**
+	 * Configures the data attributes for the widget
+	 */
+	private void configureDataAttributes()
+	{
+		if (getShowControlFeedback() != null && getShowControlFeedback())
+		{
+			if (getRequiredMessage() != null)
 			{
-				if (getRequiredMessage() != null)
-				{
-					getInputComponent().addAttribute("data-required-error", getRequiredMessage());
-				}
-				if (getPatternMessage() != null)
-				{
-					getInputComponent().addAttribute("data-pattern-error", getPatternMessage());
-				}
-				if (getMinMessage() != null)
-				{
-					getInputComponent().addAttribute("data-minlength-error", getMinLengthMessage());
-				}
-				if (getMaxMessage() != null)
-				{
-					getInputComponent().addAttribute("data-maxlength-error", getMaxLengthMessage());
-				}
-				if (getErrorMessage() != null)
-				{
-					getInputComponent().addAttribute("data-error", getErrorMessage());
-				}
-				if (getHelpText() != null)
-				{
-					getHelpBlockWithErrors().setText(getHelpText());
-				}
-				add(getHelpBlockWithErrors());
+				getInputComponent().addAttribute("data-required-error", getRequiredMessage());
 			}
+			if (getPatternMessage() != null)
+			{
+				getInputComponent().addAttribute("data-pattern-error", getPatternMessage());
+			}
+			if (getMinMessage() != null)
+			{
+				getInputComponent().addAttribute("data-minlength-error", getMinLengthMessage());
+			}
+			if (getMaxMessage() != null)
+			{
+				getInputComponent().addAttribute("data-maxlength-error", getMaxLengthMessage());
+			}
+			if (getErrorMessage() != null)
+			{
+				getInputComponent().addAttribute("data-error", getErrorMessage());
+			}
+			if (getHelpText() != null)
+			{
+				getHelpBlockWithErrors().setText(getHelpText());
+			}
+			add(getHelpBlockWithErrors());
 		}
 	}
 	
