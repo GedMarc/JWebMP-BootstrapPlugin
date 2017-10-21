@@ -44,10 +44,7 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 	
 	private static final long serialVersionUID = 1L;
 	private static final String ToggleString = "dropdown";
-	/**
-	 * The feature for this toggle
-	 */
-	private BSToggleFeature feature;
+
 	/**
 	 * The title component for this drop down
 	 */
@@ -66,7 +63,6 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 	@SuppressWarnings("unused")
 	public BSDropDownToggle(Link titleItem, List contents)
 	{
-		addFeature(getFeature());
 		setTag(titleItem.getTag());
 		setTitle(titleItem);
 		setContents(contents);
@@ -82,7 +78,6 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 	@SuppressWarnings("unused")
 	public BSDropDownToggle(Button titleItem, List contents)
 	{
-		addFeature(getFeature());
 		setTag(titleItem.getTag());
 		setTitle(titleItem);
 		setContents(contents);
@@ -169,32 +164,7 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 			title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
 		}
 	}
-	
-	/**
-	 * Doesn't return anything
-	 *
-	 * @return
-	 */
-	public final BSToggleFeature getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new BSToggleFeature(this);
-		}
-		return feature;
-	}
-	
-	/**
-	 * Doesn't return anything
-	 *
-	 * @return
-	 */
-	@Override
-	public BSToggleOptions getOptions()
-	{
-		return getFeature().getOptions();
-	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{

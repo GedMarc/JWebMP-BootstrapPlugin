@@ -45,7 +45,6 @@ public class BSProgressBar<J extends BSProgressBar<J>>
 {
 	
 	private static final long serialVersionUID = 1L;
-	private BSProgressBarFeature feature;
 	
 	/**
 	 * Whether or not the progress bar is striped
@@ -119,22 +118,7 @@ public class BSProgressBar<J extends BSProgressBar<J>>
 	{
 		return this;
 	}
-	
-	public final BSProgressBarFeature getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new BSProgressBarFeature(this);
-		}
-		return feature;
-	}
-	
-	@Override
-	public BSProgressBarOptions getOptions()
-	{
-		return getFeature().getOptions();
-	}
-	
+
 	/**
 	 * Sets if this component is striped or not
 	 *
