@@ -65,7 +65,7 @@ public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>> extends Ev
 		if (!isConfigured())
 		{
 			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-			component.addAttribute("ng-show-bootstrap-modal", "perform($event," + renderVariables() + ");");
+			getComponent().addAttribute("ng-show-bootstrap-modal", "perform($event," + renderVariables() + ");");
 		}
 		super.preConfigure();
 	}

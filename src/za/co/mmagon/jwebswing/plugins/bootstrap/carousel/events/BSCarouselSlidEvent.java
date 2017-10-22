@@ -68,7 +68,7 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 		if (!isConfigured())
 		{
 			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-			component.addAttribute("ng-bs-carousel-slid-directive", "perform($event," + renderVariables() + ");");
+			getComponent().addAttribute("ng-bs-carousel-slid-directive", "perform($event," + renderVariables() + ");");
 		}
 		super.preConfigure();
 	}
