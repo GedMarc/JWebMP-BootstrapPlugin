@@ -66,6 +66,7 @@ public class BSForm<J extends BSForm<J>>
 		{
 			addAttribute(GlobalAttributes.Name, getID());
 		}
+
 		super.preConfigure();
 	}
 	
@@ -78,9 +79,10 @@ public class BSForm<J extends BSForm<J>>
 	 */
 	public ComponentHierarchyBase addSubmitButton(ComponentHierarchyBase component)
 	{
-		getComponent().addAttribute(AngularAttributes.ngDisabled, getID() + ".$invalid || jw.isLoading");
-		getComponent().addAttribute(GlobalAttributes.Type, "submit");
+		component.addAttribute(AngularAttributes.ngDisabled, getID() + ".$invalid || jw.isLoading");
+		component.addAttribute(GlobalAttributes.Type, "submit");
 		component.addStyle("cursor:pointer");
 		return component;
 	}
+
 }
