@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.base.html.Span;
 
 import java.util.Objects;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SPACE;
+
 /**
  * A default Bootstrap panel with a header row that has an icon and title
  *
@@ -58,7 +60,7 @@ public class BSPanelDefault<J extends BSPanelDefault<J>> extends BSPanel<J>
 	{
 		this();
 		setIcon(icon);
-		setTitle(new Span(" " + title));
+		setTitle(new Span(STRING_SPACE + title));
 		
 	}
 	

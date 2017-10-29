@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler;
 import com.fasterxml.jackson.annotation.JsonValue;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SPACE;
+
 /**
  * @author GedMarc
  * @since 21 Jan 2017
@@ -42,6 +44,6 @@ public enum BSNavBarTogglerAlignments implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
+		return name().toLowerCase().replaceAll("\\$", STRING_SPACE).replaceAll("_", "-");
 	}
 }

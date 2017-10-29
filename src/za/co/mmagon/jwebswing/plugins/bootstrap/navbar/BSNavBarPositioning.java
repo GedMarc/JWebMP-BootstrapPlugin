@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navbar;
 import com.fasterxml.jackson.annotation.JsonValue;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SPACE;
+
 /**
  * Placement
  * <p>
@@ -52,6 +54,6 @@ public enum BSNavBarPositioning implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return "navbar-" + name().toLowerCase().replaceAll("\\$", " ").replaceAll("_", "-");
+		return "navbar-" + name().toLowerCase().replaceAll("\\$", STRING_SPACE).replaceAll("_", "-");
 	}
 }

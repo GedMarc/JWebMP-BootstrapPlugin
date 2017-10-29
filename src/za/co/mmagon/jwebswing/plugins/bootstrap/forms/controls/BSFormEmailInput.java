@@ -17,8 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls;
 
 import za.co.mmagon.jwebswing.base.angular.AngularAttributes;
-import za.co.mmagon.jwebswing.base.dto.RegularExpressionsDTO;
 import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
+import za.co.mmagon.jwebswing.utilities.RegularExpressionsDTO;
 
 /**
  * A default email input for bootstrap
