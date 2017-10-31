@@ -100,14 +100,14 @@ public abstract class BSAlertClosedEvent extends Event
 	 * @param call     The physical AJAX call
 	 * @param response The physical Ajax Receiver
 	 */
-	public abstract void onClose(AjaxCall call, AjaxResponse response);
+	public abstract void onClosed(AjaxCall call, AjaxResponse response);
 	
 	@Override
 	public void fireEvent(AjaxCall call, AjaxResponse response)
 	{
 		try
 		{
-			onClose(call, response);
+			onClosed(call, response);
 		}
 		catch (Exception e)
 		{

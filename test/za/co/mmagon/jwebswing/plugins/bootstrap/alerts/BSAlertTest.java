@@ -124,7 +124,7 @@ public class BSAlertTest extends BaseTestClass
 		al.addEvent(new BSAlertClosedEvent(al)
 		{
 			@Override
-			public void onClose(AjaxCall call, AjaxResponse response)
+			public void onClosed(AjaxCall call, AjaxResponse response)
 			{
 				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 			}

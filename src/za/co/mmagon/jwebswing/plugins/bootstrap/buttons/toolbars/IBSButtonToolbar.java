@@ -20,6 +20,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.toolbars;
  * @author GedMarc
  * @since 16 Feb 2017
  */
+@FunctionalInterface
 public interface IBSButtonToolbar
 {
 	

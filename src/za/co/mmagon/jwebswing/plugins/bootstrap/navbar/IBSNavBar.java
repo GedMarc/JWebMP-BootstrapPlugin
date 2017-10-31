@@ -20,6 +20,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navbar;
  * @author GedMarc
  * @since 21 Feb 2017
  */
+@FunctionalInterface
 public interface IBSNavBar
 {
 	

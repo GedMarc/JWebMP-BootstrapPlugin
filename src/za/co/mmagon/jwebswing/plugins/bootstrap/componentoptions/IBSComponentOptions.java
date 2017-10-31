@@ -24,6 +24,7 @@ import za.co.mmagon.jwebswing.base.interfaces.ICSSClassName;
  * @author GedMarc
  * @since 2016/10/10
  */
+@FunctionalInterface
 public interface IBSComponentOptions extends ICSSClassName
 {
 	
