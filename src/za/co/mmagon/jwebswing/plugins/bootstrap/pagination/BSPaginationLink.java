@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.pagination;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * A pagination link for an item, usually auto generated from BSPagination
@@ -40,7 +41,7 @@ public class BSPaginationLink extends Link
 	public BSPaginationLink(String ariaLabel)
 	{
 		addClass(BSComponentPaginationOptions.Page_Link);
-		addAttribute(LinkAttributes.HRef, "#");
+		addAttribute(LinkAttributes.HRef, StaticStrings.STRING_HASH);
 		addAttribute(GlobalAttributes.Aria_Label, ariaLabel);
 	}
 	

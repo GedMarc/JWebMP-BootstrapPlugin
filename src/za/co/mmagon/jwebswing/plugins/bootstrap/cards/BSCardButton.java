@@ -18,6 +18,9 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButton;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
 
 /**
  * @author GedMarc
@@ -34,7 +37,7 @@ public class BSCardButton extends BSButton implements BSCardChildren
 	public BSCardButton()
 	{
 		setTag("a");
-		addAttribute(LinkAttributes.HRef.toString(), "#");
+		addAttribute(LinkAttributes.HRef.toString(), STRING_HASH);
 	}
 	
 	/**
@@ -46,7 +49,7 @@ public class BSCardButton extends BSButton implements BSCardChildren
 	{
 		super(text);
 		setTag("a");
-		addAttribute(LinkAttributes.HRef.toString(), "#");
+		addAttribute(LinkAttributes.HRef.toString(), StaticStrings.STRING_HASH);
 	}
 	
 }

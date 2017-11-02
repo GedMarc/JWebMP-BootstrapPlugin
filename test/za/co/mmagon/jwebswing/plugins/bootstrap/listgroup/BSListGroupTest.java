@@ -18,6 +18,9 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.listgroup;
 
 import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.BaseTestClass;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
 
 /**
  * @author GedMarc
@@ -36,8 +39,8 @@ public class BSListGroupTest extends BaseTestClass
 		group.add(new BSListGroupListItem("List Item").setActive());
 		
 		System.out.println(group.toString(true));
-		
-		group.add(new BSListGroupLinkItem("#", "link item"));
+
+		group.add(new BSListGroupLinkItem(STRING_HASH, "link item"));
 		System.out.println(group.toString(true));
 		
 		group.add((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button"));
@@ -48,11 +51,11 @@ public class BSListGroupTest extends BaseTestClass
 		group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setWarning());
 		group.add(((BSListGroupButtonItem) new BSListGroupButtonItem().setText("button")).setInfo());
 		System.out.println(group.toString(true));
-		
-		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setSuccess());
-		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setDanger());
-		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setWarning());
-		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem("#", "").setText("button")).setInfo());
+
+		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem(StaticStrings.STRING_HASH, "").setText("button")).setSuccess());
+		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem(StaticStrings.STRING_HASH, "").setText("button")).setDanger());
+		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem(StaticStrings.STRING_HASH, "").setText("button")).setWarning());
+		group.add(((BSListGroupLinkItem) new BSListGroupLinkItem(StaticStrings.STRING_HASH, "").setText("button")).setInfo());
 		System.out.println(group.toString(true));
 		
 	}

@@ -18,6 +18,9 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 
 import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.plugins.bootstrap.tabs.BSTabs;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
 
 /**
  * @author GedMarc
@@ -33,11 +36,11 @@ public class BSNavsTest
 	public void testSomeMethod()
 	{
 		BSNavs nav = new BSNavs();
-		nav.add((BSNavLinkItem) new BSNavLinkItem("#").setText("Stff"));
+		nav.add((BSNavLinkItem) new BSNavLinkItem(STRING_HASH).setText("Stff"));
 		System.out.println(nav.toString(true));
 		
 		nav = new BSNavPill();
-		nav.add(((BSNavLinkItem) new BSNavLinkItem("#").setText("Stff")).setActive());
+		nav.add(((BSNavLinkItem) new BSNavLinkItem(StaticStrings.STRING_HASH).setText("Stff")).setActive());
 		System.out.println(nav.toString(true));
 	}
 	

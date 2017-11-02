@@ -25,6 +25,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 
 import org.junit.jupiter.api.Test;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
+
 /**
  * @author GedMarc
  */
@@ -45,7 +47,7 @@ public class BSBreadcrumbTest
 	@Test
 	public void testSetCrumbLink()
 	{
-		BSBreadcrumb crumbs = new BSBreadcrumb(new BSBreadCrumbLink("#"));
+		BSBreadcrumb crumbs = new BSBreadcrumb(new BSBreadCrumbLink(STRING_HASH));
 		System.out.println(crumbs.toString(true));
 		
 		crumbs.setActive(true);

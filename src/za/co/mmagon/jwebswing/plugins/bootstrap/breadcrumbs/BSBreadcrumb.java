@@ -20,6 +20,7 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * A particular crumb
@@ -84,7 +85,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 	{
 		if (crumbLink == null)
 		{
-			setCrumbLink(new Link("#"));
+			setCrumbLink(new Link(StaticStrings.STRING_HASH));
 		}
 		return crumbLink;
 	}

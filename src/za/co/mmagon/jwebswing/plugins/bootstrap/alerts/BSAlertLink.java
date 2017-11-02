@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
 
 import za.co.mmagon.jwebswing.base.html.Link;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
+
 /**
  * Highlights text in an alert appropriately
  *
@@ -32,7 +34,7 @@ public class BSAlertLink extends Link
 	
 	public BSAlertLink()
 	{
-		super("#");
+		super(STRING_HASH);
 		addClass(BSComponentAlertOptions.Alert_Link);
 	}
 }

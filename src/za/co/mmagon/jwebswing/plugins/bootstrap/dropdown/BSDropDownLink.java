@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.dropdown;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * The Link Button for a drop down
@@ -41,7 +42,7 @@ public class BSDropDownLink extends Link implements BSDropDownChildren
 	 */
 	public BSDropDownLink()
 	{
-		addAttribute(LinkAttributes.HRef, "#");
+		addAttribute(LinkAttributes.HRef, StaticStrings.STRING_HASH);
 		addAttribute(LinkAttributes.Data_Toggle, "dropdown");
 		addAttribute(GlobalAttributes.Aria_HasPopup, "true");
 		addAttribute(GlobalAttributes.Aria_Expanded, "false");

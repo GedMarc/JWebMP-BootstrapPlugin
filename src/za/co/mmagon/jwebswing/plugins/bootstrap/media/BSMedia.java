@@ -27,6 +27,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 import java.util.Objects;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
+
 /**
  * Media object
  * <p>
@@ -86,7 +88,7 @@ public class BSMedia<J extends BSMedia<J>>
 	{
 		if (mediaLink == null)
 		{
-			setMediaLink(new Link("#"), true);
+			setMediaLink(new Link(STRING_HASH), true);
 		}
 		return mediaLink;
 	}

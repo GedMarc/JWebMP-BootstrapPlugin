@@ -26,6 +26,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -185,7 +186,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 	{
 		if (panelFooter == null)
 		{
-			setPanelFooter(new Link("#"));
+			setPanelFooter(new Link(StaticStrings.STRING_HASH));
 			return this.panelFooter;
 		}
 		return panelFooter;

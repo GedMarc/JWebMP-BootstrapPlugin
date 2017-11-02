@@ -21,6 +21,7 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import java.util.Objects;
 
@@ -53,7 +54,7 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 	{
 		addClass(BSComponentDropDownOptions.Dropdown_Item);
 		setText(text);
-		addAttribute(LinkAttributes.HRef, "#");
+		addAttribute(LinkAttributes.HRef, StaticStrings.STRING_HASH);
 	}
 	
 	/**

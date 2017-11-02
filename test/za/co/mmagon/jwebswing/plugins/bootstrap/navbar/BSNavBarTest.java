@@ -27,6 +27,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavItemDropDown;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavLinkItem;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
+
 /**
  * @author GedMarc
  */
@@ -48,7 +50,7 @@ public class BSNavBarTest
 		
 		BSNavs navs = new BSNavs();
 		navs.add(new BSNavItemDropDown());
-		navs.add(new BSNavLinkItem("#"));
+		navs.add(new BSNavLinkItem(STRING_HASH));
 		
 		navs.add(new BSFormInline());
 		
