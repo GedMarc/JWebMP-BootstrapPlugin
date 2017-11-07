@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
 
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
 /**
  * Borders
  * <p>
@@ -55,6 +57,6 @@ public enum BSComponentBorderOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 }

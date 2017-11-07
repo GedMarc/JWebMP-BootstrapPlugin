@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.toolbars;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * Button toolbar
@@ -39,6 +40,6 @@ public enum BSComponentButtonToolbarOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 }

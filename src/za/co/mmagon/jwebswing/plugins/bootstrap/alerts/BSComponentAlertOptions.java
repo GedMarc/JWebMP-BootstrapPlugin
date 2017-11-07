@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline dismissal,
@@ -79,7 +80,7 @@ public enum BSComponentAlertOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 	
 }

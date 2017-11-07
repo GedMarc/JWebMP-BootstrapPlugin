@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * Input group
@@ -56,7 +57,7 @@ public enum BSComponentInputGroupOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 	
 }

@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.listgroup;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * List group
@@ -95,7 +96,7 @@ public enum BSComponentListGroupOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 	
 }

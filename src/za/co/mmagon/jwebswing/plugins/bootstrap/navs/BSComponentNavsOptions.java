@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navs;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * Navs Navigation available in Bootstrap share general markup and styles, from the base .nav class to the active and disabled states. Swap modifier classes to switch between each style..
@@ -81,7 +82,7 @@ public enum BSComponentNavsOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 	
 }

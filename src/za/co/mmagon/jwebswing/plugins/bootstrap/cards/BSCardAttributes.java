@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * Cards
@@ -51,6 +52,6 @@ public enum BSCardAttributes implements AttributeDefinitions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-').replace("$", "");
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-').replace("$", "");
 	}
 }

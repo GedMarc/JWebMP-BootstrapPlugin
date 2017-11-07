@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.media;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * The media object is an abstract element used as the basis for building more complex and repetitive components (like blog comments, Tweets, etc).
@@ -62,7 +63,7 @@ public enum BSComponentMediaOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 	
 }

@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.containers;
 
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
 /**
  * @author GedMarc
  * @version 1.0
@@ -41,7 +43,7 @@ public enum BSContainerType
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 	
 	

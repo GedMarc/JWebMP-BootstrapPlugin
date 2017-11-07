@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.pagination;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * Justify content
@@ -53,7 +54,7 @@ public enum BSComponentPaginationAlignmentOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 	
 }

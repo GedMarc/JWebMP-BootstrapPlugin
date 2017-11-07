@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
 
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
 /**
  * Responsive floats
  * <p>
@@ -169,6 +171,6 @@ public enum BSComponentFloatOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 }

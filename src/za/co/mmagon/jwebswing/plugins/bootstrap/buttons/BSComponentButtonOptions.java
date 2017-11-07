@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.buttons;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * Buttons
@@ -109,6 +110,6 @@ public enum BSComponentButtonOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 }

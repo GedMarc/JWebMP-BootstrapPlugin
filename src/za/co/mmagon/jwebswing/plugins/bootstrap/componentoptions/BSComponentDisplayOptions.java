@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
 
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
 /**
  * Use .d-block, .d-inline, or .d-inline-block to simply set an element’s display property to block, inline, or inline-block (respectively).
  *
@@ -41,6 +43,6 @@ public enum BSComponentDisplayOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return "d-" + name().toLowerCase().replace('_', '-');
+		return "d-" + name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 }

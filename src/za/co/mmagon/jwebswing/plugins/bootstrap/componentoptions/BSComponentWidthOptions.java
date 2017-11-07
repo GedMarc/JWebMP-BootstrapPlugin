@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
 
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
 /**
  * A list of all the column width settings from bootstrap
  *
@@ -275,7 +277,7 @@ public enum BSComponentWidthOptions implements IBSComponentOptions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace('_', '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 
 }
