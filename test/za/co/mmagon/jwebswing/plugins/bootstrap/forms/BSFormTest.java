@@ -42,6 +42,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testEmailForm()
 	{
 		BSForm form = new BSForm();
@@ -56,6 +57,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testEmailFormAngular()
 	{
 		BSForm form = new BSForm();
@@ -75,6 +77,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testPasswordEntryForm()
 	{
 		BSForm form = new BSForm();
@@ -89,6 +92,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testSelectEntryForm()
 	{
 		BSForm form = new BSForm();
@@ -104,6 +108,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testSelectMultipleEntryForm()
 	{
 		BSForm form = new BSForm();
@@ -119,6 +124,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testTextArea()
 	{
 		BSForm form = new BSForm();
@@ -132,6 +138,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testFileInput()
 	{
 		BSForm form = new BSForm();
@@ -145,6 +152,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testFieldSet()
 	{
 		BSForm form = new BSForm();
@@ -167,6 +175,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testInputColour()
 	{
 		BSFormColourInput input = new BSFormColourInput();
@@ -178,6 +187,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testInputCDate()
 	{
 		BSFormDateInput input = new BSFormDateInput();
@@ -190,6 +200,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testAngular()
 	{
 		BSForm form = new BSForm();
@@ -210,6 +221,7 @@ public class BSFormTest extends BaseTestClass
 	}
 	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testInputGroups()
 	{
 		BSFormDateInput input = new BSFormDateInput();
