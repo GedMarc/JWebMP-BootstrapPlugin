@@ -68,6 +68,6 @@ public class BSDropDownMenuItemHeader extends BSDropDownMenuItem
 		setTag("h6");
 		addClass(BSComponentDropDownOptions.Dropdown_Header);
 		removeClass(BSComponentDropDownOptions.Dropdown_Item.toString());
-		getAttributes().remove(LinkAttributes.HRef);
+		getAttributes().remove(LinkAttributes.HRef.toString());
 	}
 }

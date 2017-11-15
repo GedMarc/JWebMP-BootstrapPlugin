@@ -48,7 +48,7 @@ public class BSAlertCloseEventDirective extends AngularDirectiveBase
 	@Override
 	public String renderFunction()
 	{
-		return FileTemplates.getFileTemplate(BSAlertCloseEventDirective.class, "Event").toString();
+		return FileTemplates.getFileTemplate(BSAlertCloseEventDirective.class, "BSAlertCloseEvent").toString();
 	}
 
 }

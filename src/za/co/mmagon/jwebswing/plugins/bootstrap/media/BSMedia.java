@@ -94,34 +94,25 @@ public class BSMedia<J extends BSMedia<J>>
 	}
 	
 	/**
-	 * Sets the media link, and moves the media object into the new link if necessary
+	 * Sets the header to the required object
 	 *
-	 * @param mediaLink
-	 * @param left
+	 * @param mediaHeader
 	 *
 	 * @return
 	 */
 	@Override
-	public BSMedia setMediaLink(Link mediaLink, boolean left)
+	public BSMedia setMediaHeader(HeaderText mediaHeader)
 	{
-		if (this.mediaLink != null)
+		if (this.mediaHeader != null)
 		{
-			mediaLink.add(getMediaComponent());
-			getChildren().remove(this.mediaLink);
-			this.mediaLink = null;
+			getMediaBody().remove(this.mediaHeader);
+			this.mediaHeader = null;
 		}
-		this.mediaLink = mediaLink;
-		if (this.mediaLink != null)
+		this.mediaHeader = mediaHeader;
+		if (this.mediaHeader != null)
 		{
-			if (left)
-			{
-				this.mediaLink.addClass(BSComponentMediaOptions.Media_Left);
-			}
-			else
-			{
-				this.mediaLink.addClass(BSComponentMediaOptions.Media_Right);
-			}
-			getChildren().add(0, this.mediaLink);
+			this.mediaHeader.addClass(BSComponentMediaOptions.Media_Heading);
+			getMediaBody().add(this.mediaHeader);
 		}
 		return this;
 	}
@@ -181,25 +172,34 @@ public class BSMedia<J extends BSMedia<J>>
 	}
 	
 	/**
-	 * Sets the header to the required object
+	 * Sets the media link, and moves the media object into the new link if necessary
 	 *
-	 * @param mediaHeader
+	 * @param mediaLink
+	 * @param left
 	 *
 	 * @return
 	 */
 	@Override
-	public BSMedia setMediaHeader(HeaderText mediaHeader)
+	public BSMedia setMediaLink(Link mediaLink, boolean left)
 	{
-		if (this.mediaHeader != null)
+		if (this.mediaLink != null)
 		{
-			getMediaBody().remove(this.mediaHeader);
-			this.mediaHeader = null;
+			mediaLink.add(getMediaComponent());
+			getChildren().remove(this.mediaLink);
+			this.mediaLink = null;
 		}
-		this.mediaHeader = mediaHeader;
-		if (this.mediaHeader != null)
+		this.mediaLink = mediaLink;
+		if (this.mediaLink != null)
 		{
-			this.mediaHeader.addClass(BSComponentMediaOptions.Media_Heading);
-			getMediaBody().add(0, this.mediaHeader);
+			if (left)
+			{
+				this.mediaLink.addClass(BSComponentMediaOptions.Media_Left);
+			}
+			else
+			{
+				this.mediaLink.addClass(BSComponentMediaOptions.Media_Right);
+			}
+			getChildren().add(this.mediaLink);
 		}
 		return this;
 	}

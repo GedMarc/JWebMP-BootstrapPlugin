@@ -48,20 +48,19 @@ public class BSButtonToolbarTest extends BaseTestClass
 		
 		BSButtonSuccess bbs = new BSButtonSuccess();
 		BSButtonGroupLabel lbl;
-		group.add(lbl = (BSButtonGroupLabel) new BSButtonGroupLabel("stuff", new BSButtonGroupRadioButton()).setID("label"));
+		group.add(lbl = new BSButtonGroupLabel<>("stuff", new BSButtonGroupRadioButton()).setID("label"));
 		BSButtonGroupRadioButton.class.cast(lbl.getInput()).setID("label");
 		bbs.setID("button");
 		
 		System.out.println(bbt.toString(true));
-		
-		Assertions.assertEquals("<div aria_label=\"Button Toolbar\" class=\"btn-toolbar\" id=\"toolbar\" role=\"toolbar\">\n"
-				                    + "	<div aria_label=\"Button Group\" class=\"btn-group\" data-toggle=\"buttons\" id=\"group\" role=\"group\">\n"
-				                    + "		<label class=\"btn\" id=\"label\" type=\"button\">\n"
-				                    + "			<input autocomplete=\"off\" id=\"label\" type=\"radio\">\n"
-				                    + "			stuff\n"
-				                    + "		</label>\n"
-				                    + "	</div>\n"
-				                    + "</div>", bbt.toString(true));
+
+		Assertions.assertEquals("<div aria_label=\"Button Toolbar\" class=\"btn-toolbar\" id=\"toolbar\" role=\"toolbar\">\n" +
+				                        "\t<div aria_label=\"Button Group\" class=\"btn-group\" data-toggle=\"buttons\" id=\"group\" role=\"group\">\n" +
+				                        "\t\t<label class=\"btn\" id=\"label\" type=\"button\">\n" +
+				                        "\t\t\t<input autocomplete=\"off\" id=\"label\" type=\"radio\">stuff\n" +
+				                        "\t\t</label>\n" +
+				                        "\t</div>\n" +
+				                        "</div>", bbt.toString(true));
 		
 	}
 }

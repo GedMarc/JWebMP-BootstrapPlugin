@@ -47,35 +47,25 @@ public class BootstrapPageConfiguratorTest extends BaseTestClass
 		Page p = getInstance();
 		BootstrapPageConfigurator bpc = new BootstrapPageConfigurator();
 		BootstrapPageConfigurator.setBootstrap4(false);
-		bpc.configure(p);
 		System.out.println(p.toString(true));
 		Assertions.assertEquals("<!DOCTYPE html>\n" +
-				                    "<html>\n" +
-				                    "\t<head>\n" +
-				                    "\t\t<meta charset=\"utf-16\">\n" +
-				                    "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" +
-				                    "\t\t<meta content=\"width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" +
-				                    "\t\t<meta charset=\"utf-16\">\n" +
-				                    "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" +
-				                    "\t\t<meta content=\"width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" +
-				                    "\t\t<!-- Priority [Top_Shelf] Values -->\n" +
-				                    "\t\t<script src=\"persist-js/persist-all-min.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n" +
-				                    "\t</head>\n" +
-				                    "\t<body id=\"body\">\n" +
-				                    "\t\t<!-- Priority [First] Values -->\n" +
-				                    "\t\t<script src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<!-- Priority [Second] Values -->\n" +
-				                    "\t\t<script src=\"bower_components/jquery-migrate/jquery-migrate.min.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<!-- Priority [Third] Values -->\n" +
-				                    "\t\t<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<script src=\"bower_components/fastclick/lib/fastclick.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<script src=\"bower_components/bootstrap-validator/dist/validator.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<script type=\"application/javascript\">\n" +
-				                    "$(function() {FastClick.attach(document.body);});\n" +
-				                    "</script>\n" +
-				                    "\t</body>\n" +
-				                    "</html>", p.toString(true));
+				                        "<html>\n" +
+				                        "\t<head>\n" +
+				                        "\t\t<meta charset=\"utf-16\">\n" +
+				                        "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" +
+				                        "\t\t<meta content=\"width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" +
+				                        "\t\t<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n" +
+				                        "\t</head>\n" +
+				                        "\t<body id=\"body\">\n" +
+				                        "\t\t<!-- Priority [First] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<!-- Priority [Second] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/jquery-migrate/jquery-migrate.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<!-- Priority [Third] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<script src=\"bower_components/bootstrap-validator/dist/validator.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t</body>\n" +
+				                        "</html>", p.toString(true));
 	}
 	
 	@org.junit.jupiter.api.Test
@@ -87,33 +77,23 @@ public class BootstrapPageConfiguratorTest extends BaseTestClass
 		bpc.configure(p);
 		System.out.println(p.toString(true));
 		Assertions.assertEquals("<!DOCTYPE html>\n" +
-				                    "<html>\n" +
-				                    "\t<head>\n" +
-				                    "\t\t<meta charset=\"utf-16\">\n" +
-				                    "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" +
-				                    "\t\t<meta content=\"width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" +
-				                    "\t\t<meta charset=\"utf-16\">\n" +
-				                    "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" +
-				                    "\t\t<meta content=\"width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" +
-				                    "\t\t<!-- Priority [Top_Shelf] Values -->\n" +
-				                    "\t\t<script src=\"persist-js/persist-all-min.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<link href=\"bower_components/bootstrap4/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n" +
-				                    "\t</head>\n" +
-				                    "\t<body id=\"body\">\n" +
-				                    "\t\t<!-- Priority [First] Values -->\n" +
-				                    "\t\t<script src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<!-- Priority [Second] Values -->\n" +
-				                    "\t\t<script src=\"bower_components/jquery-migrate/jquery-migrate.min.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<!-- Priority [Third] Values -->\n" +
-				                    "\t\t<script src=\"bower_components/popper.js/dist/umd/popper.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<script src=\"bower_components/bootstrap4/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<script src=\"bower_components/fastclick/lib/fastclick.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<script src=\"bower_components/bootstrap-validator/dist/validator.js\" type=\"text/javascript\"></script>\n" +
-				                    "\t\t<script type=\"application/javascript\">\n" +
-				                    "$(function() {FastClick.attach(document.body);});\n" +
-				                    "</script>\n" +
-				                    "\t</body>\n" +
-				                    "</html>", p.toString(true));
+				                        "<html>\n" +
+				                        "\t<head>\n" +
+				                        "\t\t<meta charset=\"utf-16\">\n" +
+				                        "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" +
+				                        "\t\t<meta content=\"width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" +
+				                        "\t\t<link href=\"bower_components/bootstrap4/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n" +
+				                        "\t</head>\n" +
+				                        "\t<body id=\"body\">\n" +
+				                        "\t\t<!-- Priority [First] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<!-- Priority [Second] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/jquery-migrate/jquery-migrate.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<!-- Priority [Third] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/popper.js/dist/umd/popper.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<script src=\"bower_components/bootstrap4/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<script src=\"bower_components/bootstrap-validator/dist/validator.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t</body>\n" +
+				                        "</html>", p.toString(true));
 	}
-	
 }

@@ -38,6 +38,6 @@ public class BSDropDownMenuItemDivider extends BSDropDownMenuItem
 		removeClass(BSComponentDropDownOptions.Dropdown_Item.toString());
 		addClass(BSComponentDropDownOptions.Dropdown_Divider);
 		setTag("div");
-		getAttributes().remove(LinkAttributes.HRef);
+		getAttributes().remove(LinkAttributes.HRef.toString());
 	}
 }

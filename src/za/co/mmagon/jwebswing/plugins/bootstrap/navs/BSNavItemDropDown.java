@@ -34,8 +34,8 @@ public class BSNavItemDropDown extends BSDropDown implements BSNavsChildren
 	 */
 	public BSNavItemDropDown()
 	{
-		getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
-		getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
+		getDropdownButton().getClasses().add(BSComponentNavsOptions.Nav_Link.toString());
+		getClasses().add(BSComponentNavsOptions.Nav_Item.toString());
 		setTag("li");
 	}
 	
@@ -47,8 +47,8 @@ public class BSNavItemDropDown extends BSDropDown implements BSNavsChildren
 	public BSNavItemDropDown(BSDropDownLink link)
 	{
 		super(link);
-		getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
-		getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
+		getDropdownButton().getClasses().add(BSComponentNavsOptions.Nav_Link.toString());
+		getClasses().add(BSComponentNavsOptions.Nav_Item.toString());
 		setTag("li");
 	}
 	
@@ -60,8 +60,8 @@ public class BSNavItemDropDown extends BSDropDown implements BSNavsChildren
 	public BSNavItemDropDown(BSDropDownButton button)
 	{
 		super(button);
-		getDropdownButton().getClasses().add(0, BSComponentNavsOptions.Nav_Link.toString());
-		getClasses().add(0, BSComponentNavsOptions.Nav_Item.toString());
+		getDropdownButton().getClasses().add(BSComponentNavsOptions.Nav_Link.toString());
+		getClasses().add(BSComponentNavsOptions.Nav_Item.toString());
 		setTag("li");
 	}
 	

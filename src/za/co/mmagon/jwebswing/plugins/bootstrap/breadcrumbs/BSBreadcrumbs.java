@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
+import java.util.ArrayList;
+
 /**
  * Breadcrumb
  * <p>
@@ -55,7 +57,8 @@ public class BSBreadcrumbs<J extends BSBreadcrumbs<J>> extends List<BSBreadcrumb
 		if (!isConfigured())
 		{
 			getChildren().forEach(next -> next.removeClass(BSComponentBreadcrumbOptions.Active));
-			getChildren().get(getChildren().size() - 1).addClass(BSComponentBreadcrumbOptions.Active);
+
+			new ArrayList<>(getChildren()).get(getChildren().size() - 1).addClass(BSComponentBreadcrumbOptions.Active);
 		}
 		super.preConfigure();
 	}

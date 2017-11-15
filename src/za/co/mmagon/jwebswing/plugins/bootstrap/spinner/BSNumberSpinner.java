@@ -52,16 +52,15 @@ public class BSNumberSpinner<J extends BSNumberSpinner<J>> extends BSFormNumberI
 	{
 		if (!isInitialized())
 		{
-			int index = getParent().getChildren().indexOf(this);
 			for (Span addon : getBefore())
 			{
 				addon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
-				getParent().add(index, addon);
+				getParent().add(addon);
 			}
 			for (Span addon : getBefore())
 			{
 				addon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
-				getParent().add(index + 1, addon);
+				getParent().add(addon);
 			}
 		}
 		super.init();

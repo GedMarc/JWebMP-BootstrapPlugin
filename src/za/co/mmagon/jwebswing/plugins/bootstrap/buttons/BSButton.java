@@ -183,7 +183,7 @@ public class BSButton<J extends BSButton<J>>
 		}
 		else
 		{
-			getAttributes().remove(BSButtonAttributes.Disabled);
+			getAttributes().remove(BSButtonAttributes.Disabled.toString());
 			addAttribute(GlobalAttributes.Aria_Disabled, Boolean.toString(false));
 			removeClass("disabled");
 		}

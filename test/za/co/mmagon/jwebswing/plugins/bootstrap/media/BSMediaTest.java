@@ -49,26 +49,40 @@ public class BSMediaTest extends BaseTestClass
 		bpc.configure(p);
 		BSMedia media = new BSMedia();
 		media.setID("media");
+
+		media.getMediaBody().setID("mbody");
+		media.getMediaLink().setID("mlink");
+		media.getMediaComponent().setID("mcomp");
+		media.getMediaHeader().setID("mheader");
+
 		p.getBody().add(media);
 		System.out.println(p.toString(true));
-		Assertions.assertEquals("<!DOCTYPE html>\n"
-				                    + "<html>\n"
-				                    + "	<head>\n"
-				                    + "		<meta charset=\"utf-16\">\n"
-				                    + "		<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n"
-				                    + "		<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n"
-				                    + "		\n"
-				                    + "		\n"
-				                    + "		<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n"
-				                    + "	</head>\n"
-				                    + "	<body id=\"body\">\n"
-				                    + "		<div class=\"media\" id=\"media\"></div>\n"
-				                    + "		\n"
-				                    + "		<!-- Priority [Third] Values -->\n"
-				                    + "		<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n"
-				                    + "		\n"
-				                    + "	</body>\n"
-				                    + "</html>", p.toString(true));
+		Assertions.assertEquals("<!DOCTYPE html>\n" +
+				                        "<html>\n" +
+				                        "\t<head>\n" +
+				                        "\t\t<meta charset=\"utf-16\">\n" +
+				                        "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" +
+				                        "\t\t<meta content=\"width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" +
+				                        "\t\t<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n" +
+				                        "\t</head>\n" +
+				                        "\t<body id=\"body\">\n" +
+				                        "\t\t<div class=\"media\" id=\"media\">\n" +
+				                        "\t\t\t<div class=\"media-body\" id=\"mbody\">\n" +
+				                        "\t\t\t\t<H4 class=\"media-heading\" id=\"mheader\"></H4>\n" +
+				                        "\t\t\t</div>\n" +
+				                        "\t\t\t<a class=\"media-left\" href=\"#\" id=\"mlink\">\n" +
+				                        "\t\t\t\t<div class=\"media-object\" id=\"mcomp\"></div>\n" +
+				                        "\t\t\t</a>\n" +
+				                        "\t\t</div>\n" +
+				                        "\t\t<!-- Priority [First] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<!-- Priority [Second] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/jquery-migrate/jquery-migrate.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<!-- Priority [Third] Values -->\n" +
+				                        "\t\t<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t\t<script src=\"bower_components/bootstrap-validator/dist/validator.js\" type=\"text/javascript\"></script>\n" +
+				                        "\t</body>\n" +
+				                        "</html>", p.toString(true));
 	}
 	
 	@Test
@@ -107,7 +121,7 @@ public class BSMediaTest extends BaseTestClass
 		System.out.println(media.toString(true));
 		Assertions.assertEquals("<div class=\"media\" id=\"media\">\n"
 				                    + "	<div class=\"media-body\" id=\"body\">\n"
-				                    + "		<h4 class=\"media-heading\" id=\"header\"></h4>\n"
+				                        + "		<H4 class=\"media-heading\" id=\"header\"></H4>\n"
 				                    + "	</div>\n"
 				                    + "</div>", media.toString(true));
 		

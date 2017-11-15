@@ -27,6 +27,8 @@ import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 
 /**
@@ -106,7 +108,9 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 		this.title = title;
 		if (title != null)
 		{
-			getChildren().add(0, this.title);
+			java.util.List tempList = new ArrayList<>(getChildren());
+			tempList.add(0, this.title);
+			setChildren(new LinkedHashSet<>(tempList));
 			this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
 			title.addAttribute(ButtonAttributes.Data_Toggle, ToggleString);
 			if (contents != null)
@@ -127,7 +131,9 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 		this.title = title;
 		if (title != null)
 		{
-			getChildren().add(0, this.title);
+			java.util.List tempList = new ArrayList<>(getChildren());
+			tempList.add(0, this.title);
+			setChildren(new LinkedHashSet<>(tempList));
 			this.title.addClass(BSComponentDropDownOptions.Dropdown_Toggle);
 			title.addAttribute(LinkAttributes.Data_Toggle, ToggleString);
 			if (contents != null)

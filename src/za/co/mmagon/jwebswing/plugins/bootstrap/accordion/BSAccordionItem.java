@@ -172,8 +172,8 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 		{
 			add(getCardHeader());
 			add(getAccordionCollapsingContent());
-			
-			getAccordionCollapsingContent().getClasses().add(0, "collapse");
+
+			getAccordionCollapsingContent().getClasses().add("collapse");
 			
 			getAccordionCollapsingContent().addAttribute(BSAccordionAttributes.Role, "tabpanel");
 			getAccordionCollapsingContent().addAttribute(GlobalAttributes.Aria_LabelledBy, getCardHeader().getID());

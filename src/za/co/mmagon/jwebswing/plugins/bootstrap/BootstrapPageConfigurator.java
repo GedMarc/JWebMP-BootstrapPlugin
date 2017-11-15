@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.PageConfigurator;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
@@ -134,7 +133,7 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	@Override
 	public Page configure(Page page)
 	{
-		if (!page.isConfigured())
+		//if (!page.isConfigured())
 		{
 			JQueryPageConfigurator.setRequired(page.getBody(), true);
 			Meta charMeta = new Meta();
@@ -157,22 +156,7 @@ public class BootstrapPageConfigurator extends PageConfigurator
 			page.getHead().add(charMeta);
 			page.getHead().add(compatMeta);
 			page.getHead().add(viewportMeta);
-			
-			page.getBody().addJavaScriptReference(BootstrapReferencePool.FastClickReference.getJavaScriptReference());
-			
-			page.getBody().addFeature(new Feature("FastClick")
-			{
-				
-				@Override
-				protected void assignFunctionsToComponent()
-				{
-					addQuery("$(function() {" +
-							         "FastClick.attach(document.body);" +
-							         "});" + getNewLine());
-				}
-			});
-			
-			
+
 			if (isBootstrap4())
 			{
 				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4PopperReference.getJavaScriptReference());

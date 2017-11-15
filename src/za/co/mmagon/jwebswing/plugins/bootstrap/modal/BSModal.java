@@ -210,7 +210,7 @@ public class BSModal<J extends BSModal<J>>
 		this.modalHeader = modalHeader;
 		if (this.modalHeader != null)
 		{
-			getModalContent().add(0, this.modalHeader);
+			getModalContent().add(this.modalHeader);
 			this.modalHeader.addClass(BSComponentModalOptions.Modal_Header);
 		}
 		return (J) this;

@@ -57,10 +57,7 @@ public enum BootstrapReferencePool implements ReferencePool
 	                            new CSSReference("BS4DropDownNoCaret", 4.006, "bs4custom/bs4hidecaret.css", 90)),
 	
 	Bootstrap3ValidatorReference(new JavascriptReference("BS3Validator", 4.003, "bower_components/bootstrap-validator/dist/validator.js", 11),
-	                             null),
-	
-	FastClickReference(new JavascriptReference("FastClickReference", 4.003, "bower_components/fastclick/lib/fastclick.js", 11),
-	                   null),;
+	                             null);
 	
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;

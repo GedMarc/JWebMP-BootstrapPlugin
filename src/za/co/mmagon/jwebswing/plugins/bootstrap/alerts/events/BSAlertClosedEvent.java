@@ -53,6 +53,7 @@ public abstract class BSAlertClosedEvent extends Event
 	public BSAlertClosedEvent(Component component)
 	{
 		super(EventTypes.undefined, component);
+		setComponent(component);
 	}
 	
 	/**

@@ -28,6 +28,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -230,7 +231,9 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 			getInputGroupAddons().forEach(inputGroupAddon ->
 			                              {
 				                              inputGroupAddon.addClass(BSComponentInputGroupOptions.Input_Group_Addon);
-				                              add(0, inputGroupAddon);
+				                              List tempList = new ArrayList<>(getChildren());
+				                              tempList.add(0, inputGroupAddon);
+				                              setChildren(new LinkedHashSet(tempList));
 			                              });
 			if (getInput() == null)
 			{
@@ -270,6 +273,6 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	@Override
 	public int hashCode()
 	{
-		return Objects.hash(super.hashCode(), getInputGroupAddons(), getInputGroupAddonsRight(), getInput());
+		return super.hashCode();
 	}
 }
