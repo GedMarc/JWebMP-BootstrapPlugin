@@ -5,10 +5,10 @@ import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextInput;
 
-class BSFormInputGroupTest extends BaseTestClass
+public class BSFormInputGroupTest extends BaseTestClass
 {
 	@Test
-	void getInputGroupAddons()
+	public void getInputGroupAddons()
 	{
 		BSFormInputGroup inputGroup = new BSFormInputGroup(new BSFormTextInput());
 		inputGroup.getInputGroupAddons().add(new Span("@"));

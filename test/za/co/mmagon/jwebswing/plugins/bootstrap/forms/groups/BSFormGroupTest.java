@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
 
-class BSFormGroupTest extends BaseTestClass
+public class BSFormGroupTest extends BaseTestClass
 {
 	@Test
-	void getLabel()
+	public void getLabel()
 	{
 		BSFormGroup group = new BSFormGroup();
 		group.setLabel(new BSFormLabel("This is a label"));
@@ -16,67 +16,67 @@ class BSFormGroupTest extends BaseTestClass
 	}
 	
 	@Test
-	void getHelpText()
+	public void getHelpText()
 	{
 	}
 	
 	@Test
-	void setInputComponent()
+	public void setInputComponent()
 	{
 	}
 	
 	@Test
-	void setInputComponent1()
+	public void setInputComponent1()
 	{
 	}
 	
 	@Test
-	void setAsRow()
+	public void setAsRow()
 	{
 	}
 	
 	@Test
-	void setInline()
+	public void setInline()
 	{
 	}
 	
 	@Test
-	void setAngularValidation()
+	public void setAngularValidation()
 	{
 	}
 	
 	@Test
-	void setRequiredMessage()
+	public void setRequiredMessage()
 	{
 	}
 	
 	@Test
-	void setPatternMessage()
+	public void setPatternMessage()
 	{
 	}
 	
 	@Test
-	void setMinMessage()
+	public void setMinMessage()
 	{
 	}
 	
 	@Test
-	void setMaxMessage()
+	public void setMaxMessage()
 	{
 	}
 	
 	@Test
-	void setMinLengthMessage()
+	public void setMinLengthMessage()
 	{
 	}
 	
 	@Test
-	void setMaxLengthMessage()
+	public void setMaxLengthMessage()
 	{
 	}
 	
 	@Test
-	void setShowControlFeedback()
+	public void setShowControlFeedback()
 	{
 	}
 	
