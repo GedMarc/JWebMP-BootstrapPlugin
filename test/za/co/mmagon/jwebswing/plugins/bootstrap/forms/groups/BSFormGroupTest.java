@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
 
-class BSFormGroupTest extends BaseTestClass
+public class BSFormGroupTest extends BaseTestClass
 {
 	@Test
 	void getLabel()

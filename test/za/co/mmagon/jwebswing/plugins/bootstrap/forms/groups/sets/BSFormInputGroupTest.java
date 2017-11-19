@@ -5,7 +5,7 @@ import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormTextInput;
 
-class BSFormInputGroupTest extends BaseTestClass
+public class BSFormInputGroupTest extends BaseTestClass
 {
 	@Test
 	void getInputGroupAddons()
