@@ -19,8 +19,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.media;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.BaseTestClass;
-import za.co.mmagon.jwebswing.Page;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * @author GedMarc
@@ -39,50 +37,6 @@ public class BSMediaTest extends BaseTestClass
 		media.setID("media");
 		System.out.println(media.toString(true));
 		Assertions.assertEquals("<div class=\"media\" id=\"media\"></div>", media.toString(true));
-	}
-	
-	@Test
-	public void testNothingPage()
-	{
-		Page p = getInstance();
-		BootstrapPageConfigurator bpc = new BootstrapPageConfigurator();
-		bpc.configure(p);
-		BSMedia media = new BSMedia();
-		media.setID("media");
-
-		media.getMediaBody().setID("mbody");
-		media.getMediaLink().setID("mlink");
-		media.getMediaComponent().setID("mcomp");
-		media.getMediaHeader().setID("mheader");
-
-		p.getBody().add(media);
-		System.out.println(p.toString(true));
-		Assertions.assertEquals("<!DOCTYPE html>\n" +
-				                        "<html>\n" +
-				                        "\t<head>\n" +
-				                        "\t\t<meta charset=\"utf-16\">\n" +
-				                        "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" +
-				                        "\t\t<meta content=\"width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" +
-				                        "\t\t<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n" +
-				                        "\t</head>\n" +
-				                        "\t<body id=\"body\">\n" +
-				                        "\t\t<div class=\"media\" id=\"media\">\n" +
-				                        "\t\t\t<div class=\"media-body\" id=\"mbody\">\n" +
-				                        "\t\t\t\t<H4 class=\"media-heading\" id=\"mheader\"></H4>\n" +
-				                        "\t\t\t</div>\n" +
-				                        "\t\t\t<a class=\"media-left\" href=\"#\" id=\"mlink\">\n" +
-				                        "\t\t\t\t<div class=\"media-object\" id=\"mcomp\"></div>\n" +
-				                        "\t\t\t</a>\n" +
-				                        "\t\t</div>\n" +
-				                        "\t\t<!-- Priority [First] Values -->\n" +
-				                        "\t\t<script src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n" +
-				                        "\t\t<!-- Priority [Second] Values -->\n" +
-				                        "\t\t<script src=\"bower_components/jquery-migrate/jquery-migrate.min.js\" type=\"text/javascript\"></script>\n" +
-				                        "\t\t<!-- Priority [Third] Values -->\n" +
-				                        "\t\t<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n" +
-				                        "\t\t<script src=\"bower_components/bootstrap-validator/dist/validator.js\" type=\"text/javascript\"></script>\n" +
-				                        "\t</body>\n" +
-				                        "</html>", p.toString(true));
 	}
 	
 	@Test
