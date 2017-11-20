@@ -133,7 +133,7 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	@Override
 	public Page configure(Page page)
 	{
-		//if (!page.isConfigured())
+		if (!page.isConfigured())
 		{
 			JQueryPageConfigurator.setRequired(page.getBody(), true);
 			Meta charMeta = new Meta();
