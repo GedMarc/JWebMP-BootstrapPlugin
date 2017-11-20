@@ -16,6 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.jquery.bootstrap;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
 
@@ -33,6 +34,7 @@ public class BootstrapClassesTest
 	public void testClassesRender()
 	{
 		System.out.println(BSComponentDefaultOptions.Nav$Nav_Pills);
+		Assertions.assertEquals("nav nav-pills", BSComponentDefaultOptions.Nav$Nav_Pills.toString());
 	}
 
 }

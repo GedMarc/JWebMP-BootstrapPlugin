@@ -37,11 +37,6 @@ public class BootstrapPageConfiguratorTest extends BaseTestClass
 	}
 	
 	@org.junit.jupiter.api.Test
-	void setBootstrap4()
-	{
-	}
-	
-	@org.junit.jupiter.api.Test
 	public void testPageConfiguration()
 	{
 		Page p = getInstance();

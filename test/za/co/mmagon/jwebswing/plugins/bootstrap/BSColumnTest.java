@@ -16,6 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.plugins.bootstrap.containers.BSColumn;
@@ -36,6 +37,7 @@ public class BSColumnTest extends BaseTestClass
 		BSColumn column = BSColumn.newInstance();
 		column.setID("id");
 		System.out.println(column.toString(true));
+		Assertions.assertEquals("<div class=\"col-md-6\" id=\"id\"></div>", column.toString(true));
 	}
 	
 }

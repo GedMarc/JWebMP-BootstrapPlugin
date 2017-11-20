@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.containers;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentWidthOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 
 /**
@@ -58,6 +59,10 @@ public class BSColumn extends Div
 	 */
 	public static BSColumn newInstance(IBSComponentOptions... columnOptions)
 	{
+		if (columnOptions == null || columnOptions.length < 1)
+		{
+			columnOptions = new IBSComponentOptions[]{BSComponentWidthOptions.col_md_6};
+		}
 		return new BSColumn(columnOptions);
 	}
 	
