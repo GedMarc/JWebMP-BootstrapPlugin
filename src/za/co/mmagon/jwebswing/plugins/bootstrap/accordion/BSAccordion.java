@@ -22,6 +22,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,8 +41,10 @@ import java.util.List;
 public class BSAccordion<J extends BSAccordion<J>>
 		extends Div<BSAccordionChildren, BSAccordionAttributes, GlobalFeatures, BSAccordionEvents, J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
+	private static final String RoleAttributeName = "tablist";
+
 	/**
 	 * All the accordion items
 	 */
@@ -50,7 +53,7 @@ public class BSAccordion<J extends BSAccordion<J>>
 	 * The active item
 	 */
 	private int activeItem = 0;
-	
+
 	/**
 	 * Extend the default collapse behavior to create an accordion.
 	 */
@@ -58,15 +61,24 @@ public class BSAccordion<J extends BSAccordion<J>>
 	public BSAccordion()
 	{
 		BootstrapPageConfigurator.setRequired(this, true);
-		addAttribute(BSAccordionAttributes.Role, "tablist");
-		addAttribute(BSAccordionAttributes.Aria_Multiselectable, "true");
+		addAttribute(BSAccordionAttributes.Role, RoleAttributeName);
+		addAttribute(BSAccordionAttributes.Aria_Multiselectable, Boolean.TRUE.toString());
 	}
-	
+
+	@Override
+	@NotNull
+	public J add(BSAccordionChildren newChild)
+	{
+		getAccordionItems().add((BSAccordionItem) newChild);
+		return super.add(newChild);
+	}
+
 	/**
 	 * Returns the list of accordion items
 	 *
 	 * @return
 	 */
+	@NotNull
 	public List<BSAccordionItem> getAccordionItems()
 	{
 		if (this.accordionItems == null)
@@ -75,26 +87,22 @@ public class BSAccordion<J extends BSAccordion<J>>
 		}
 		return accordionItems;
 	}
-	
+
 	/**
 	 * Sets the list of accordion items
 	 *
 	 * @param accordionItems
 	 */
-	public void setAccordionItems(List<BSAccordionItem> accordionItems)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setAccordionItems(List<BSAccordionItem> accordionItems)
 	{
 		this.accordionItems = accordionItems;
 		getChildren().clear();
 		setConfigured(false);
+		return (J) this;
 	}
-	
-	@Override
-	public J add(BSAccordionChildren newChild)
-	{
-		getAccordionItems().add((BSAccordionItem) newChild);
-		return super.add(newChild);
-	}
-	
+
 	/**
 	 * Sets the active accordion item
 	 *
@@ -104,17 +112,7 @@ public class BSAccordion<J extends BSAccordion<J>>
 	{
 		return activeItem;
 	}
-	
-	/**
-	 * Sets the active accordion item
-	 *
-	 * @param activeItem
-	 */
-	public void setActiveItem(int activeItem)
-	{
-		this.activeItem = activeItem;
-	}
-	
+
 	@Override
 	public void init()
 	{
@@ -123,7 +121,7 @@ public class BSAccordion<J extends BSAccordion<J>>
 			for (int i = 0; i < getAccordionItems().size(); i++)
 			{
 				BSAccordionItem next = getAccordionItems().get(i);
-				next.getAccordionHeader().getAccordionHeaderLink().addAttribute("data-parent", getID(true));
+				next.getAccordionHeader().getAccordionHeaderLink().addAttribute(LinkAttributes.Data_Parent, getID(true));
 				next.getAccordionHeader().getAccordionHeaderLink().addAttribute(LinkAttributes.HRef, next.getAccordionCollapsingContent().getID(true));
 				if (i == getActiveItem())
 				{
@@ -134,11 +132,24 @@ public class BSAccordion<J extends BSAccordion<J>>
 					next.setActive(false);
 				}
 			}
-			
+
 		}
 		super.init();
 	}
-	
+
+	/**
+	 * Sets the active accordion item
+	 *
+	 * @param activeItem
+	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setActiveItem(int activeItem)
+	{
+		this.activeItem = activeItem;
+		return (J) this;
+	}
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -156,7 +167,7 @@ public class BSAccordion<J extends BSAccordion<J>>
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

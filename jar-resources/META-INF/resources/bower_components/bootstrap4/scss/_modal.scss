@@ -3,6 +3,7 @@
 // .modal-dialog    - positioning shell for the actual modal
 // .modal-content   - actual modal w/ bg and corners and stuff
 
+
 // Kill the scroll on the body
 .modal-open {
   overflow: hidden;
@@ -34,7 +35,6 @@
     transform: translate(0, 0);
   }
 }
-
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;
@@ -45,6 +45,8 @@
   position: relative;
   width: auto;
   margin: $modal-dialog-margin;
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
 }
 
 // Actual modal
@@ -52,6 +54,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  // counteract the pointer-events: none; in the .modal-dialog
+  pointer-events: auto;
   background-color: $modal-content-bg;
   background-clip: padding-box;
   border: $modal-content-border-width solid $modal-content-border-color;
@@ -84,10 +88,17 @@
 // Top section of the modal w/ title and dismiss
 .modal-header {
   display: flex;
-  align-items: center; // vertically center it
+  align-items: flex-start; // so the close btn always stays on the upper right corner
   justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
   padding: $modal-header-padding;
   border-bottom: $modal-header-border-width solid $modal-header-border-color;
+  @include border-top-radius($border-radius-lg);
+
+  .close {
+    padding: $modal-header-padding;
+    // auto on the left force icon to the right even when there is no .modal-title
+    margin: (-$modal-header-padding) (-$modal-header-padding) (-$modal-header-padding) auto;
+  }
 }
 
 // Title text within header

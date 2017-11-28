@@ -1,6 +1,7 @@
 // Toggles
 //
 // Used in conjunction with global variables to enable certain theme features.
+
 // Utilities
 @import "mixins/breakpoints";
 @import "mixins/hover";
@@ -17,6 +18,7 @@
 // // Components
 @import "mixins/alert";
 @import "mixins/buttons";
+@import "mixins/caret";
 @import "mixins/pagination";
 @import "mixins/lists";
 @import "mixins/list-group";

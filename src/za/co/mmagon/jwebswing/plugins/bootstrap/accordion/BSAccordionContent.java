@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,6 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 
+import za.co.mmagon.jwebswing.htmlbuilder.css.tables.TableBorderCollapse;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardBlock;
 
 /**
@@ -24,9 +25,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardBlock;
  */
 public class BSAccordionContent<J extends BSAccordionContent<J>> extends BSCardBlock<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Constructs a new instance of the BS Accordion Content
 	 */
@@ -34,16 +35,16 @@ public class BSAccordionContent<J extends BSAccordionContent<J>> extends BSCardB
 	{
 		//Nothing needed
 	}
-	
+
 	@Override
 	public void init()
 	{
 		if (!isInitialized())
 		{
-			removeClass("collapse");
+			removeClass(TableBorderCollapse.Collapse);
 		}
 		super.init();
-		
+
 	}
-	
+
 }

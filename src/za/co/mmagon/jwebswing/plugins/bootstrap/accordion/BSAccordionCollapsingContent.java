@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 import za.co.mmagon.jwebswing.base.html.DivSimple;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
 
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
@@ -28,13 +29,13 @@ import java.util.Objects;
 public class BSAccordionCollapsingContent<J extends BSAccordionCollapsingContent<J>> extends DivSimple<J>
 		implements BSCardChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The physical accordion content
 	 */
 	private BSAccordionContent accordionContent;
-	
+
 	/**
 	 * The actual content
 	 *
@@ -48,17 +49,20 @@ public class BSAccordionCollapsingContent<J extends BSAccordionCollapsingContent
 		}
 		return accordionContent;
 	}
-	
+
 	/**
 	 * The actual content
 	 *
 	 * @param accordionContent
 	 */
-	public void setAccordionContent(BSAccordionContent accordionContent)
+	@NotNull
+	@SuppressWarnings("unchecked")
+	public J setAccordionContent(BSAccordionContent accordionContent)
 	{
 		this.accordionContent = accordionContent;
+		return (J) this;
 	}
-	
+
 	@Override
 	public void init()
 	{
@@ -68,7 +72,7 @@ public class BSAccordionCollapsingContent<J extends BSAccordionCollapsingContent
 		}
 		super.init();
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -87,7 +91,7 @@ public class BSAccordionCollapsingContent<J extends BSAccordionCollapsingContent
 		BSAccordionCollapsingContent that = (BSAccordionCollapsingContent) o;
 		return Objects.equals(getAccordionContent(), that.getAccordionContent());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

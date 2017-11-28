@@ -57,12 +57,12 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		extends Div<GlobalChildren, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
 		implements BSFormChildren, IBSFormGroup<J>
 {
-	
+
 	private static final Logger log = LogFactory.getLog("BSFormGroup");
 	private static final String BootstrapValidationIconClass = "glyphicon form-control-feedback form-control-feedback-lg";
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * The label
 	 */
@@ -127,7 +127,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	 * The help block displayed when errors are found
 	 */
 	private Div helpBlockWithErrors;
-	
+
 	/**
 	 * Constructs a new BS Form Group
 	 */
@@ -135,7 +135,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		//Nothing Needed
 	}
-	
+
 	/**
 	 * Constructs a new instance
 	 *
@@ -149,7 +149,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
 	}
-	
+
 	/**
 	 * Constructs a new instance
 	 *
@@ -163,7 +163,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
 	}
-	
+
 	/**
 	 * Constructs a new instance
 	 *
@@ -176,9 +176,9 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.label = label;
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
-		
+
 	}
-	
+
 	/**
 	 * Constructs a new instance
 	 *
@@ -192,7 +192,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
 	}
-	
+
 	/**
 	 * Constructs a new instance
 	 *
@@ -206,7 +206,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.inputComponent = inputComponent;
 		this.helpText = helpText;
 	}
-	
+
 	/**
 	 * A neater representation
 	 *
@@ -216,7 +216,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return this;
 	}
-	
+
 	/**
 	 * Returns a label. There must always be a label
 	 *
@@ -227,7 +227,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return label;
 	}
-	
+
 	/**
 	 * Sets the label to the given label
 	 *
@@ -241,7 +241,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.label = label;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Return the help text
 	 *
@@ -252,7 +252,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return helpText;
 	}
-	
+
 	/**
 	 * Sets the help text
 	 *
@@ -266,7 +266,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.helpText = helpText;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns the input component
 	 *
@@ -277,7 +277,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return inputComponent;
 	}
-	
+
 	/**
 	 * Sets the input component to any input type
 	 *
@@ -290,7 +290,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.inputComponent = inputComponent;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Sets the input component
 	 *
@@ -304,7 +304,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.inputComponent = inputComponent;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Sets the input component
 	 *
@@ -318,7 +318,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.inputComponent = inputComponent;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Adds and configures the row
 	 */
@@ -337,20 +337,42 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			}
 		}
 	}
-	
+
+	/**
+	 * Adds all the necessary items
+	 */
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			configureAsRow();
+			configureLabel();
+			configureInputComponent();
+			configureAngularValidation();
+
+			if (BootstrapPageConfigurator.isBootstrap4())
+			{
+				addClass(BSComponentFormGroupOptions.Form_Group);
+				addStyle("margin-bottom:0px");
+			}
+		}
+		super.preConfigure();
+	}
+
 	/**
 	 * Adds and configures the label
 	 */
 	private void configureLabel()
 	{
-		
+
 		if (getLabel() != null && getLabel().getParent() == null)
 		{
 			getLabel().setForInputComponent(getInputComponent());
 			add(getLabel());
 		}
 	}
-	
+
 	/**
 	 * Configures the input component
 	 */
@@ -368,14 +390,14 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 				}
 				inputGroup.getInputGroupAddons().add(newSpan);
 			}
-			
+
 			Span iconFeedback = new Span();
 			if (BootstrapPageConfigurator.isBootstrap4())
 			{
 				iconFeedback.addClass(BootstrapValidationIconClass);
 			}
 			iconFeedback.addAttribute(GlobalAttributes.Aria_Hidden, "true");
-			
+
 			inputGroup.getInputGroupAddonsRight().add(iconFeedback);
 			add(inputGroup);
 		}
@@ -391,9 +413,9 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			ig.getInputGroupAddonsRight().add(iconFeedback);
 			add(ig);
 		}
-		
+
 	}
-	
+
 	/**
 	 * Adds and configures the validation techniques
 	 */
@@ -419,43 +441,19 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 					addQuery("$('[data-toggle=validator]').validator();");
 				}
 			});
-			
+
 			if (BSFormInline.class.isAssignableFrom(referencedForm.getClass()))
 			{
 				setInline(true);
 			}
-			
+
 			referencedForm.addAttribute("novalidate", "");
 			referencedForm.setTag("ng-form");
-			
+
 			configureAngularIcon();
 		}
 	}
-	
-	/**
-	 * Adds the angular icon for components
-	 */
-	private void configureAngularIcon()
-	{
-		if (getInputComponent() != null)
-		{
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				Span iconFeedback = new Span();
-				if (!BootstrapPageConfigurator.isBootstrap4())
-				{
-					iconFeedback.addClass("glyphicon form-control-feedback form-control-feedback-lg");
-				}
-				iconFeedback.addStyle("background:transparent !important;");
-				iconFeedback.addAttribute("aria-hidden", "true");
-				iconFeedback.addStyle("top:0;");
-				iconFeedback.addStyle("margin-top:0;");
-				add(iconFeedback);
-			}
-			configureDataAttributes();
-		}
-	}
-	
+
 	/**
 	 * Configures the data attributes for the widget
 	 */
@@ -490,29 +488,31 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			add(getHelpBlockWithErrors());
 		}
 	}
-	
+
 	/**
-	 * Adds all the necessary items
+	 * Adds the angular icon for components
 	 */
-	@Override
-	public void preConfigure()
+	private void configureAngularIcon()
 	{
-		if (!isConfigured())
+		if (getInputComponent() != null)
 		{
-			configureAsRow();
-			configureLabel();
-			configureInputComponent();
-			configureAngularValidation();
-			
 			if (BootstrapPageConfigurator.isBootstrap4())
 			{
-				addClass(BSComponentFormGroupOptions.Form_Group);
-				addStyle("margin-bottom:0px");
+				Span iconFeedback = new Span();
+				if (!BootstrapPageConfigurator.isBootstrap4())
+				{
+					iconFeedback.addClass(BootstrapValidationIconClass);
+				}
+				iconFeedback.addStyle("background:transparent !important;");
+				iconFeedback.addAttribute("aria-hidden", "true");
+				iconFeedback.addStyle("top:0;");
+				iconFeedback.addStyle("margin-top:0;");
+				add(iconFeedback);
 			}
+			configureDataAttributes();
 		}
-		super.preConfigure();
 	}
-	
+
 	/**
 	 * If this form group must render as a row
 	 *
@@ -523,7 +523,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return asRow;
 	}
-	
+
 	/**
 	 * If this group must render as a row
 	 *
@@ -537,7 +537,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.asRow = asRow;
 		return (J) this;
 	}
-	
+
 	/**
 	 * If this group must render as inline
 	 *
@@ -548,7 +548,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return inline;
 	}
-	
+
 	/**
 	 * If this group must render as inline
 	 *
@@ -562,7 +562,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.inline = inline;
 		return this;
 	}
-	
+
 	/**
 	 * Sets if this form group has validation attached
 	 *
@@ -573,7 +573,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return angularValidation;
 	}
-	
+
 	/**
 	 * Sets if this form group has validation attached
 	 *
@@ -587,7 +587,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.angularValidation = angularValidation;
 		return this;
 	}
-	
+
 	/**
 	 * Returns the component to be shown when there is a required error
 	 *
@@ -598,7 +598,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return requiredMessage;
 	}
-	
+
 	/**
 	 * Sets the component to be shown when there is a required error
 	 *
@@ -613,7 +613,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.requiredMessage = requiredMessage;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Sets the component to be shown when there is a pattern error
 	 *
@@ -624,7 +624,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return patternMessage;
 	}
-	
+
 	/**
 	 * Sets the component to display when there is a pattern message
 	 *
@@ -639,7 +639,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.patternMessage = patternMessage;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns the minimum reached message component
 	 *
@@ -650,7 +650,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return minMessage;
 	}
-	
+
 	/**
 	 * Sets the minimum reached message
 	 *
@@ -665,7 +665,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.minMessage = minMessage;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Sets the maximum reached message error
 	 *
@@ -676,7 +676,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return maxMessage;
 	}
-	
+
 	/**
 	 * Sets the maximum reached message error
 	 *
@@ -691,7 +691,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.maxMessage = maxMessage;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns the minimum length message
 	 *
@@ -702,7 +702,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return minLengthMessage;
 	}
-	
+
 	/**
 	 * Sets the minimum length message
 	 *
@@ -717,7 +717,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.minLengthMessage = minLengthMessage;
 		return (J) this;
 	}
-	
+
 	/**
 	 * The max length message
 	 *
@@ -728,7 +728,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return maxLengthMessage;
 	}
-	
+
 	/**
 	 * The max length message
 	 *
@@ -743,7 +743,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.maxLengthMessage = maxLengthMessage;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Shows a ticket, warning or cross from bootstrap 4
 	 *
@@ -754,7 +754,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return showControlFeedback;
 	}
-	
+
 	/**
 	 * Shows a ticket, warning or cross from bootstrap 4
 	 *
@@ -769,7 +769,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.showControlFeedback = showControlFeedback;
 		return (J) this;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -787,7 +787,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -795,7 +795,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		hash = 79 * hash + (this.getID().hashCode());
 		return hash;
 	}
-	
+
 	/**
 	 * Returns the help block with erros, never null
 	 *
@@ -810,7 +810,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		}
 		return helpBlockWithErrors;
 	}
-	
+
 	/**
 	 * sets the help block with errors
 	 *
@@ -824,7 +824,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.helpBlockWithErrors.addClass("help-block with-errors col-form-label");
 		return (J) this;
 	}
-	
+
 	/**
 	 * The general global error for a message
 	 *
@@ -835,7 +835,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return errorMessage;
 	}
-	
+
 	/**
 	 * The general global error for a message
 	 *
@@ -848,7 +848,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		this.errorMessage = errorMessage;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Sets the instance of this
 	 *
@@ -858,7 +858,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		return frontIcon;
 	}
-	
+
 	/**
 	 * Returns an instance of this
 	 *

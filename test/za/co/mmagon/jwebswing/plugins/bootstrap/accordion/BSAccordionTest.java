@@ -24,24 +24,26 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 
 import org.junit.jupiter.api.Test;
+import za.co.mmagon.jwebswing.BaseTestClass;
 
 /**
  * @author GedMarc
  */
-public class BSAccordionTest
+public class BSAccordionTest extends BaseTestClass
 {
-	
+
 	public BSAccordionTest()
 	{
 	}
-	
+
 	@Test
 	public void testHtml()
 	{
 		BSAccordion accordion = new BSAccordion();
-		accordion.add(new BSAccordionItem());
-		accordion.add(new BSAccordionItem());
-		
+		accordion.add(new BSAccordionItem<>().setID("item1"));
+		accordion.add(new BSAccordionItem<>().setID("item2"));
+		accordion.setID("test");
+
 		System.out.println(accordion.toString(true));
 	}
 

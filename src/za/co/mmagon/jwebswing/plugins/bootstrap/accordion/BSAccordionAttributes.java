@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,22 +24,31 @@ import za.co.mmagon.jwebswing.utilities.StaticStrings;
  */
 public enum BSAccordionAttributes implements AttributeDefinitions
 {
+	/**
+	 * The role attribute
+	 */
 	Role,
+	/**
+	 * The readable view multi selectable setting
+	 */
 	Aria_Multiselectable,
+	/**
+	 * Visibilty property
+	 */
 	Visibility;
-	
+
 	private boolean isKeyword;
-	
+
 	BSAccordionAttributes()
 	{
 	}
-	
+
 	@Override
 	public boolean isKeyword()
 	{
 		return isKeyword;
 	}
-	
+
 	/**
 	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
 	 *

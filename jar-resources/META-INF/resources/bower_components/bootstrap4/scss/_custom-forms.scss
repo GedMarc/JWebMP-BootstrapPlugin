@@ -1,8 +1,7 @@
-// scss-lint:disable PropertyCount, VendorPrefix
-
 // Embedded icons from Open Iconic.
 // Released under MIT and copyright 2014 Waybury.
 // https://useiconic.com/open
+
 
 // Checkboxes and radios
 //
@@ -23,7 +22,7 @@
 
   &:checked ~ .custom-control-indicator {
     color: $custom-control-indicator-checked-color;
-    background-color: $custom-control-indicator-checked-bg;
+    @include gradient-bg($custom-control-indicator-checked-bg);
     @include box-shadow($custom-control-indicator-checked-box-shadow);
   }
 
@@ -34,7 +33,7 @@
 
   &:active ~ .custom-control-indicator {
     color: $custom-control-indicator-active-color;
-    background-color: $custom-control-indicator-active-bg;
+    @include gradient-bg($custom-control-indicator-active-bg);
     @include box-shadow($custom-control-indicator-active-box-shadow);
   }
 
@@ -103,6 +102,7 @@
   }
 }
 
+
 // Layout options
 //
 // By default radios and checkboxes are `inline-block` with no additional spacing
@@ -120,6 +120,7 @@
     }
   }
 }
+
 
 // Select
 //
@@ -161,6 +162,11 @@
     }
   }
 
+  &[multiple] {
+    height: auto;
+    background-image: none;
+  }
+
   &:disabled {
     color: $custom-select-disabled-color;
     background-color: $custom-select-disabled-bg;
@@ -178,6 +184,7 @@
   padding-bottom: $custom-select-padding-y;
   font-size: $custom-select-font-size-sm;
 }
+
 
 // File
 //
@@ -199,7 +206,7 @@
   opacity: 0;
 
   &:focus ~ .custom-file-control {
-    @include box-shadow($custom-file-focus-box-shadow);
+    box-shadow: $custom-file-focus-box-shadow;
   }
 }
 
@@ -210,7 +217,7 @@
   left: 0;
   z-index: 5;
   height: $custom-file-height;
-  padding: $custom-file-padding-x $custom-file-padding-y;
+  padding: $custom-file-padding-y $custom-file-padding-x;
   line-height: $custom-file-line-height;
   color: $custom-file-color;
   pointer-events: none;
@@ -234,10 +241,10 @@
     z-index: 6;
     display: block;
     height: $custom-file-height;
-    padding: $custom-file-padding-x $custom-file-padding-y;
+    padding: $custom-file-padding-y $custom-file-padding-x;
     line-height: $custom-file-line-height;
     color: $custom-file-button-color;
-    background-color: $custom-file-button-bg;
+    @include gradient-bg($custom-file-button-bg);
     border: $custom-file-border-width solid $custom-file-border-color;
     @include border-radius(0 $custom-file-border-radius $custom-file-border-radius 0);
   }
