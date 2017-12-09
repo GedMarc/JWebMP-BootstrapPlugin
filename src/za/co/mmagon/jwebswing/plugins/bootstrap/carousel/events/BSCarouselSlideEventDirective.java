@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,20 +26,20 @@ import za.co.mmagon.jwebswing.base.angular.directives.AngularDirectiveBase;
  * @since 25 Jun 2016
  */
 public class BSCarouselSlideEventDirective extends AngularDirectiveBase
+
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Constructs a new right click directive based on the angular object passed in
 	 *
-	 * @param angular
 	 */
 	public BSCarouselSlideEventDirective()
 	{
 		super("ngBSCarouselSlideEventDirective");
 	}
-	
+
 	/**
 	 * Renders the right click directive from the JavaScript file
 	 *
@@ -50,5 +50,5 @@ public class BSCarouselSlideEventDirective extends AngularDirectiveBase
 	{
 		return FileTemplates.getFileTemplate(BSCarouselSlideEventDirective.class, "Event").toString();
 	}
-	
+
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -35,16 +35,16 @@ import java.util.Objects;
  */
 public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavBarToggler
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * The specified screen reader aria label to apply when creating the div
 	 */
 	private static String AriaLabel = "Toggle Navigation";
-	
+
 	private String iconClass = BSComponentNavBarOptions.Navbar_Toggler_Icon.toString();
-	
+
 	/**
 	 * Creates 2 new accessible objects for the nav bar
 	 *
@@ -55,7 +55,7 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 		addClass(BSComponentNavBarOptions.Navbar_Toggler);
 		addClass(togglerAlignment);
 	}
-	
+
 	/**
 	 * Gets the screen reader aria label
 	 *
@@ -65,17 +65,15 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 	{
 		return AriaLabel;
 	}
-	
+
 	/**
 	 * sets the screen reader aria label
-	 *
-	 * @param ari
 	 */
 	public static void setAriaLabel(String ariaLabel)
 	{
 		BSNavBarToggler.AriaLabel = ariaLabel;
 	}
-	
+
 	/**
 	 * Nav
 	 * <p>
@@ -95,22 +93,22 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 	{
 		navs.removeClass(BSComponentNavsOptions.Nav);
 		navs.addClass(BSComponentNavsOptions.Navbar_Nav);
-		
+
 		BSNavBarTogglerDiv div = new BSNavBarTogglerDiv();
 		div.add(navs);
-		
+
 		addAttribute(ButtonAttributes.Data_Toggle, "collapse");
 		addAttribute(ButtonAttributes.Data_Target, div.getID(true));
 		addAttribute(GlobalAttributes.Aria_Controls, div.getID());
 		addAttribute(GlobalAttributes.Aria_Expanded, "false");
 		addAttribute(GlobalAttributes.Aria_Label, AriaLabel);
 		addAttribute(GlobalAttributes.Type, "button");
-		
+
 		BootstrapPageConfigurator.setRequired(this, true);
-		
+
 		return (T) div;
 	}
-	
+
 	/**
 	 * A neater view
 	 *
@@ -120,7 +118,7 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 	{
 		return this;
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
@@ -132,7 +130,7 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 		}
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Gets the Icon Class
 	 *
@@ -143,9 +141,10 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 	{
 		return iconClass;
 	}
-	
+
 	/**
 	 * Sets the Icon Class
+	 *
 	 * @param iconClass
 	 */
 	@Override
@@ -153,7 +152,7 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 	{
 		this.iconClass = iconClass;
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -172,7 +171,7 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 		BSNavBarToggler that = (BSNavBarToggler) o;
 		return Objects.equals(getIconClass(), that.getIconClass());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

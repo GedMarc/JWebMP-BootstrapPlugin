@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,6 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
 
 /**
- * @param <T>
  * @param <J>
  *
  * @author GedMarc
@@ -30,98 +29,98 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
  */
 public interface IBSFormGroup<J extends BSFormGroup>
 {
-	
+
 	/**
 	 * Return the help text
 	 *
 	 * @return
 	 */
 	String getHelpText();
-	
+
 	/**
 	 * Returns the input component
 	 *
 	 * @return
 	 */
 	Component getInputComponent();
-	
+
 	/**
 	 * Returns a label. There must always be a label
 	 *
 	 * @return
 	 */
 	BSFormLabel getLabel();
-	
+
 	/**
 	 * The max length message
 	 *
 	 * @return
 	 */
 	String getMaxLengthMessage();
-	
+
 	/**
 	 * Sets the maximum reached message error
 	 *
 	 * @return
 	 */
 	String getMaxMessage();
-	
+
 	/**
 	 * Returns the minimum length message
 	 *
 	 * @return
 	 */
 	String getMinLengthMessage();
-	
+
 	/**
 	 * Returns the minimum reached message component
 	 *
 	 * @return
 	 */
 	String getMinMessage();
-	
+
 	/**
 	 * Sets the component to be shown when there is a pattern error
 	 *
 	 * @return
 	 */
 	String getPatternMessage();
-	
+
 	/**
 	 * Returns the component to be shown when there is a required error
 	 *
 	 * @return
 	 */
 	String getRequiredMessage();
-	
+
 	/**
 	 * Shows a ticket, warning or cross from bootstrap 4
 	 *
 	 * @return
 	 */
 	Boolean getShowControlFeedback();
-	
+
 	/**
 	 * Sets if this form group has validation attached
 	 *
 	 * @return
 	 */
 	boolean isAngularValidation();
-	
+
 	/**
 	 * If this form group must render as a row
 	 *
 	 * @return
 	 */
 	boolean isAsRow();
-	
+
 	/**
 	 * If this group must render as inline
 	 *
 	 * @return
 	 */
 	boolean isInline();
-	
+
 	/**
 	 * Sets if this form group has validation attached
 	 *
@@ -130,7 +129,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	BSFormGroup setAngularValidation(boolean angularValidation);
-	
+
 	/**
 	 * If this group must render as a row
 	 *
@@ -139,7 +138,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setAsRow(boolean asRow);
-	
+
 	/**
 	 * Sets the help text
 	 *
@@ -148,7 +147,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setHelpText(String helpText);
-	
+
 	/**
 	 * If this group must render as inline
 	 *
@@ -157,7 +156,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	BSFormGroup setInline(boolean inline);
-	
+
 	/**
 	 * Sets the input component
 	 *
@@ -166,7 +165,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setInputComponent(BSInput inputComponent);
-	
+
 	/**
 	 * Sets the input component
 	 *
@@ -175,7 +174,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setInputComponent(BSFormSelectInput inputComponent);
-	
+
 	/**
 	 * Sets the label to the given label
 	 *
@@ -184,7 +183,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setLabel(BSFormLabel label);
-	
+
 	/**
 	 * The max length message
 	 *
@@ -193,7 +192,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setMaxLengthMessage(String maxLengthMessage);
-	
+
 	/**
 	 * Sets the maximum reached message error
 	 *
@@ -202,7 +201,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setMaxMessage(String maxMessage);
-	
+
 	/**
 	 * Sets the minimum length message
 	 *
@@ -211,7 +210,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setMinLengthMessage(String minLengthMessage);
-	
+
 	/**
 	 * Sets the minimum reached message
 	 *
@@ -220,7 +219,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setMinMessage(String minMessage);
-	
+
 	/**
 	 * Sets the component to display when there is a pattern message
 	 *
@@ -229,7 +228,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setPatternMessage(String patternMessage);
-	
+
 	/**
 	 * Sets the component to be shown when there is a required error
 	 *
@@ -238,7 +237,7 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setRequiredMessage(String requiredMessage);
-	
+
 	/**
 	 * Shows a ticket, warning or cross from bootstrap 4
 	 *
@@ -247,5 +246,5 @@ public interface IBSFormGroup<J extends BSFormGroup>
 	 * @return
 	 */
 	J setShowControlFeedback(Boolean showControlFeedback);
-	
+
 }

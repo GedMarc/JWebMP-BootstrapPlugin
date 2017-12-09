@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,31 +25,30 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
  */
 public interface IBSDropDown<J extends BSDropDown>
 {
-	
+
 	/**
 	 * Returns the drop down button
 	 *
 	 * @return
 	 */
 	Component getDropdownButton();
-	
+
 	/**
 	 * Returns the current dropdownMenu or a new one
 	 *
 	 * @return
 	 */
 	BSDropDownMenu getDropdownMenu();
-	
+
 	/**
 	 * Sets the drop down dropdownMenu button
 	 *
-	 * @param <T>            bs drop down children type
 	 * @param dropdownButton
 	 *
 	 * @return
 	 */
 	J setDropdownButton(Component dropdownButton);
-	
+
 	/**
 	 * Sets the dropdownMenu
 	 *
@@ -58,5 +57,5 @@ public interface IBSDropDown<J extends BSDropDown>
 	 * @return
 	 */
 	BSDropDown setMenu(BSDropDownMenu menu);
-	
+
 }
