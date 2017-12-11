@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.containers;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentWidthOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSWidthOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 
 /**
@@ -30,9 +30,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOpt
  */
 public class BSColumn extends Div
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Supply a list of column options for this div
 	 *
@@ -49,7 +49,7 @@ public class BSColumn extends Div
 		}
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Constructs a new instance with the given column options
 	 *
@@ -61,17 +61,17 @@ public class BSColumn extends Div
 	{
 		if (columnOptions == null || columnOptions.length < 1)
 		{
-			columnOptions = new IBSComponentOptions[]{BSComponentWidthOptions.col_md_6};
+			columnOptions = new IBSComponentOptions[]{BSWidthOptions.col_md_6};
 		}
 		return new BSColumn(columnOptions);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
 		return false;
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

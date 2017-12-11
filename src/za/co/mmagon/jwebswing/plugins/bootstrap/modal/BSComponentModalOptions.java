@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.modal;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
 
 /**
  * Modal Modals are streamlined, but flexible dialog prompts powered by JavaScript. They support a number of use cases from user notification to completely custom content and feature a handful of
@@ -63,16 +65,16 @@ public enum BSComponentModalOptions implements IBSComponentOptions
 	 * Modal small
 	 */
 	Modal_Sm;
-	
+
 	BSComponentModalOptions()
 	{
-	
+
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
 	}
-	
+
 }

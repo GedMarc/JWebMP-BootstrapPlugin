@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.containers;
 
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+
 /**
  * @author GedMarc
  * @version 1.0
@@ -34,17 +36,17 @@ public enum BSContainerType
 	 * Default is this
 	 */
 	Container_Fluid;
-	
+
 	BSContainerType()
 	{
-	
+
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
 	}
-	
-	
+
+
 }

@@ -24,22 +24,24 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 
 import org.junit.jupiter.api.Test;
+import za.co.mmagon.jwebswing.plugins.bootstrap.cards.parts.BSCardBody;
+import za.co.mmagon.jwebswing.plugins.bootstrap.cards.parts.BSCardHeader;
 
 /**
  * @author GedMarc
  */
 public class BSCardTest
 {
-	
+
 	public BSCardTest()
 	{
 	}
-	
+
 	@Test
 	public void testSomeMethod()
 	{
 		BSCard card = new BSCard();
-		card.add(new BSCardBlock());
+		card.add(new BSCardBody());
 		card.add(new BSCardHeader("THis is a card header"));
 		System.out.println(card.toString(true));
 	}

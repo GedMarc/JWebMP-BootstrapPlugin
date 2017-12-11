@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ import za.co.mmagon.jwebswing.base.html.DivSimple;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.plugins.bootstrap.accordion.BSAccordionAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSComponentNavsOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSNavs;
 import za.co.mmagon.jwebswing.plugins.bootstrap.toggle.BSToggleAttributes;
@@ -54,8 +54,8 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 	 * The tab content
 	 */
 	private Div tabContent;
-	
-	
+
+
 	/**
 	 * Tabs Takes the basic nav from above and adds the .nav-tabs class to generate a tabbed interface. Use them to create tabbable regions with our tab JavaScript plugin.
 	 */
@@ -67,13 +67,13 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		getNavigation().setTag("ul");
 		getNavigation().addAttribute("role", "tablist");
 	}
-	
+
 	public J addTab(BSTab tab)
 	{
 		getTabs().add(tab);
 		return (J) this;
 	}
-	
+
 	/**
 	 * Gets the navigation component, not allowed to be null
 	 *
@@ -87,7 +87,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		}
 		return navigation;
 	}
-	
+
 	/**
 	 * Sets the navigation component
 	 *
@@ -100,7 +100,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		this.navigation = navigation;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Aligns the tabs to fill the available space in Justify mode
 	 *
@@ -118,7 +118,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		}
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns the current list of tabs
 	 *
@@ -132,7 +132,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		}
 		return tabs;
 	}
-	
+
 	/**
 	 * Sets the tab list
 	 *
@@ -145,7 +145,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		this.tabs = tabs;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns the tab content div. Never Null
 	 *
@@ -159,7 +159,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		}
 		return tabContent;
 	}
-	
+
 	/**
 	 * Sets the tab content
 	 *
@@ -175,7 +175,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		}
 		return (J) this;
 	}
-	
+
 	@Override
 	public void init()
 	{
@@ -183,7 +183,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		{
 			add(getNavigation());
 			add(getTabContent());
-			
+
 			for (BSTab tab : getTabs())
 			{
 				if (tab.getTabContent() == null || tab.getTabHeader() == null)
@@ -191,10 +191,10 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 					log.warning("Invalid Bootstrap Tab - Either content or header is missing. Will not render");
 					continue;
 				}
-				
+
 				ListItem li = tab.getTabHeader();
 				li.addClass(BSComponentNavsOptions.Nav_Item);
-				
+
 				Link link = new Link();
 				link.addClass(BSComponentNavsOptions.Nav_Link);
 				link.addAttribute(BSToggleAttributes.Data_Toggle, "tab");
@@ -205,16 +205,16 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 					link.setText(li.getText(0));
 					li.setText("");
 				}
-				
-				tab.getTabContent().addClass(BSComponentDefaultOptions.Tab_Pane);
+
+				tab.getTabContent().addClass(BSDefaultOptions.Tab_Pane);
 				tab.getTabContent().addAttribute(BSAccordionAttributes.Role, "tabpanel");
-				
+
 				if (tab.isActive())
 				{
-					link.addClass(BSComponentDefaultOptions.Active);
-					tab.getTabContent().addClass(BSComponentDefaultOptions.Active);
+					link.addClass(BSDefaultOptions.Active);
+					tab.getTabContent().addClass(BSDefaultOptions.Active);
 				}
-				
+
 				li.add(link);
 				getNavigation().add(li);
 				getTabContent().add(tab.getTabContent());
@@ -222,7 +222,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 		}
 		super.init();
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -243,7 +243,7 @@ public class BSTabs<J> extends DivSimple<BSTabs<J>>
 				Objects.equals(getNavigation(), bsTabs.getNavigation()) &&
 				Objects.equals(getTabContent(), bsTabs.getTabContent());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

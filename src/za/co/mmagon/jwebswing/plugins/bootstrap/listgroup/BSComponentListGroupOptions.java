@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.listgroup;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
 
 /**
  * List group
@@ -87,16 +89,16 @@ public enum BSComponentListGroupOptions implements IBSComponentOptions
 	 * Add .disabled to a .list-group-item to make it appear disabled. Note that some elements with .disabled will also require custom JavaScript to fully disable their click events (e.g., links).
 	 */
 	Disabled,;
-	
+
 	BSComponentListGroupOptions()
 	{
-	
+
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
 	}
-	
+
 }

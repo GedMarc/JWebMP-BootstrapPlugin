@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentCloseIconOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSCloseIconOptions;
 
 import java.util.Objects;
 
@@ -42,7 +42,7 @@ import java.util.Objects;
 		url = "https://v4-alpha.getbootstrap.com/utilities/close-icon/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The actual close icon
@@ -52,7 +52,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 	 * The actual text for the close icon
 	 */
 	private String closeIconText = "&times;";
-	
+
 	/**
 	 * Constructs a new instance of the close icon
 	 * <p>
@@ -61,12 +61,12 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 	public BSCloseIcon()
 	{
 		setAriaLabel("Close");
-		addClass(BSComponentCloseIconOptions.Close);
+		addClass(BSCloseIconOptions.Close);
 		addAttribute(GlobalAttributes.Type, "button");
 		getCloseIcon();
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Sets the close icon as a data dismissable
 	 *
@@ -79,7 +79,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 		addAttribute("data-dismiss", dismiss);
 		return this;
 	}
-	
+
 	/**
 	 * Sets the label to be shown on screen readers
 	 *
@@ -92,7 +92,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 		addAttribute(GlobalAttributes.Aria_Label, label);
 		return this;
 	}
-	
+
 	/**
 	 * The physical close icon span display
 	 *
@@ -106,7 +106,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 		}
 		return closeIcon;
 	}
-	
+
 	/**
 	 * The physical close icon span
 	 *
@@ -129,7 +129,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Return the text used for the close icon
 	 *
@@ -139,7 +139,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 	{
 		return closeIconText;
 	}
-	
+
 	/**
 	 * Sets the close icon text for the span
 	 *
@@ -153,7 +153,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 			getCloseIcon().setText(closeIconText);
 		}
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -173,7 +173,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 		return Objects.equals(getCloseIcon(), that.getCloseIcon()) &&
 				Objects.equals(getCloseIconText(), that.getCloseIconText());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

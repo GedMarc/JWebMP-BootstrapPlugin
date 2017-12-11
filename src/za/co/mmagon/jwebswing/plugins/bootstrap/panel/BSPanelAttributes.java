@@ -19,25 +19,27 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.panel;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+
 /**
  * @author GedMarc
  */
 public enum BSPanelAttributes implements AttributeDefinitions
 {
 	Visibility;
-	
+
 	private boolean isKeyword;
-	
+
 	BSPanelAttributes()
 	{
 	}
-	
+
 	@Override
 	public boolean isKeyword()
 	{
 		return isKeyword;
 	}
-	
+
 	/**
 	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
 	 *
@@ -46,6 +48,6 @@ public enum BSPanelAttributes implements AttributeDefinitions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-').replace("$", "");
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH).replace("$", "");
 	}
 }

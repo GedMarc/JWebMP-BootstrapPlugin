@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
@@ -37,9 +37,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren
  */
 public class BSRow<J extends BSRow<J>> extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSRow<J>> implements BSFormChildren, BSFormGroupChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Rows are horizontal groups of columns that ensure your columns are lined up properly.
 	 * <p>
@@ -47,7 +47,7 @@ public class BSRow<J extends BSRow<J>> extends Div<GlobalChildren, NoAttributes,
 	 */
 	public BSRow()
 	{
-		addClass(BSComponentDefaultOptions.Row);
+		addClass(BSDefaultOptions.Row);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
 }

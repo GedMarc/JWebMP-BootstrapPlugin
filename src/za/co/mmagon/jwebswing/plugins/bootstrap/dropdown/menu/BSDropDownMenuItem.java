@@ -19,7 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu;
 import za.co.mmagon.jwebswing.base.html.Italic;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
@@ -33,18 +33,18 @@ import java.util.Objects;
  */
 public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The class string for the icon
 	 */
 	private String iconClass;
-	
+
 	public BSDropDownMenuItem()
 	{
 		this("");
 	}
-	
+
 	/**
 	 * Construct a new drop down menu item
 	 *
@@ -56,7 +56,7 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 		setText(text);
 		addAttribute(LinkAttributes.HRef, StaticStrings.STRING_HASH);
 	}
-	
+
 	/**
 	 * Construct a new menu item with the given iconClass and text
 	 *
@@ -68,13 +68,13 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 		this(text);
 		this.iconClass = iconClass;
 	}
-	
+
 	public BSDropDownMenuItem setDisabled()
 	{
-		addClass(BSComponentDefaultOptions.Disabled);
+		addClass(BSDefaultOptions.Disabled);
 		return this;
 	}
-	
+
 	/**
 	 * Sets the icon class
 	 *
@@ -84,7 +84,7 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 	{
 		return iconClass;
 	}
-	
+
 	/**
 	 * Sets the icon to the given class
 	 *
@@ -97,13 +97,13 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 		this.iconClass = iconClass;
 		return this;
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
 		if (!isConfigured())
 		{
-			
+
 			Italic i = new Italic();
 			if (iconClass != null && !iconClass.isEmpty())
 			{
@@ -113,13 +113,13 @@ public class BSDropDownMenuItem extends Link implements BSDropDownMenuChildren
 		}
 		super.preConfigure();
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
 		return super.equals(o);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

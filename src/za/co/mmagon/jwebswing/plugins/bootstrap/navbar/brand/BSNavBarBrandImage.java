@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,8 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navbar.brand;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Image;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDisplayOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentVerticalAlignmentOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDisplayOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSVerticalAlignmentOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 
 /**
@@ -30,9 +30,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
  */
 public class BSNavBarBrandImage extends Div implements BSNavBarChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Adding images to the .navbar-brand will likely always require custom styles or utilities to properly size. Here are some examples to demonstrate.
 	 *
@@ -40,10 +40,10 @@ public class BSNavBarBrandImage extends Div implements BSNavBarChildren
 	 */
 	public BSNavBarBrandImage(Image image)
 	{
-		addClass(BSComponentDisplayOptions.Inline_Block);
-		addClass(BSComponentVerticalAlignmentOptions.Align_Top);
+		addClass(BSDisplayOptions.Inline_Block);
+		addClass(BSVerticalAlignmentOptions.Align_Top);
 		addAttribute("alt", "...");
 		add(image);
 	}
-	
+
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,9 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
-import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_UNDERSCORE;
 
 /**
  * Cards
@@ -55,7 +57,7 @@ public enum BSComponentCardOptions implements IBSComponentOptions
 	/**
 	 * Displays and pads an item for card blocks
 	 */
-	Card_Block,
+	Card_Body,
 	/**
 	 * Card titles are used by adding .card-title to a h* tag. In the same way, links are added and placed next to each other by adding .card-link to a a tag.
 	 */
@@ -93,6 +95,18 @@ public enum BSComponentCardOptions implements IBSComponentOptions
 	 */
 	Card_Primary,
 	/**
+	 * Card Light
+	 */
+	Card_Light,
+	/**
+	 * Card Dark
+	 */
+	Card_Dark,
+	/**
+	 * The secondary
+	 */
+	Card_Secondary,
+	/**
 	 * Formats a card in the success fashion
 	 */
 	Card_Success,
@@ -112,6 +126,10 @@ public enum BSComponentCardOptions implements IBSComponentOptions
 	 * Formats a card in the primary fashion outlined
 	 */
 	Card_Outline_Primary,
+	/**
+	 * Secondary
+	 */
+	Card_Outline_Secondary,
 	/**
 	 * Formats a card in the success fashion outlined
 	 */
@@ -160,11 +178,19 @@ public enum BSComponentCardOptions implements IBSComponentOptions
 	/**
 	 * Formats the header for use with nav pills
 	 */
-	Card_Header_Pills,;
-	
+	Card_Header_Pills,
+	/**
+	 * The Block Quote Class
+	 */
+	BlockQuote,
+	/**
+	 * The Block Quote Footer Class
+	 */
+	BlockQuote_Footer;
+
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
+		return name().toLowerCase().replace(CHAR_UNDERSCORE, CHAR_DASH);
 	}
 }

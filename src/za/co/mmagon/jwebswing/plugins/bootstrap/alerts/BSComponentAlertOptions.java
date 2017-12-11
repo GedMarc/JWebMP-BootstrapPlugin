@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
 
 /**
  * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline dismissal,
@@ -71,16 +73,16 @@ public enum BSComponentAlertOptions implements IBSComponentOptions
 	 * <p>
 	 */
 	Alert_Dismissible;
-	
+
 	BSComponentAlertOptions()
 	{
-	
+
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
 	}
-	
+
 }

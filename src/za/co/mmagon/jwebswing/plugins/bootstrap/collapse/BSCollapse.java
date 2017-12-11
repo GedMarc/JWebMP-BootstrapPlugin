@@ -23,7 +23,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 
 /**
  * Collapse
@@ -41,11 +41,11 @@ public class BSCollapse
 {
 	private static final String Collapse = "collapse";
 	private static final long serialVersionUID = 1L;
-	
+
 	BSCollapse()
 	{
 	}
-	
+
 	/**
 	 * Apply a collapse to given components
 	 *
@@ -62,22 +62,22 @@ public class BSCollapse
 			{
 				if (!BootstrapPageConfigurator.isBootstrap4())
 				{
-					display.addClass(BSComponentDefaultOptions.In);
+					display.addClass(BSDefaultOptions.In);
 				}
 				else
 				{
-					display.addClass(BSComponentDefaultOptions.Show);
+					display.addClass(BSDefaultOptions.Show);
 				}
 			}
 			linkController.addAttribute("aria-controls", display.getID());
 			linkController.addAttribute(LinkAttributes.Data_Target.toString(), display.getID(true));
 		}
-		
+
 		linkController.addAttribute(LinkAttributes.Data_Toggle, Collapse);
 		linkController.addAttribute(GlobalAttributes.Aria_Expanded, Boolean.toString(!hideOnStart));
-		
+
 	}
-	
+
 	/**
 	 * Apply a collapse to given components
 	 *
@@ -94,11 +94,11 @@ public class BSCollapse
 			{
 				display.addClass("in");
 			}
-			
+
 			buttonController.addAttribute("aria-controls", display.getID());
 			buttonController.addAttribute("data-target", display.getID(true));
 		}
-		
+
 		buttonController.addAttribute("data-toggle", Collapse);
 		buttonController.addAttribute("aria-expanded", Boolean.toString(!hideOnStart));
 	}

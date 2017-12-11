@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.media;
 
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
 
 /**
  * The media object is an abstract element used as the basis for building more complex and repetitive components (like blog comments, Tweets, etc).
@@ -54,16 +56,16 @@ public enum BSComponentMediaOptions implements IBSComponentOptions
 	 * Marks the object displayed as the media object
 	 */
 	Media_Object;
-	
+
 	BSComponentMediaOptions()
 	{
-	
+
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
 	}
-	
+
 }

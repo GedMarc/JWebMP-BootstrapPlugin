@@ -21,8 +21,8 @@ import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSColoursOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -49,10 +49,10 @@ import java.util.Objects;
 public class BSCarousel<J extends BSCarousel<J>>
 		extends Div<BSCarouselChildren, BSCarouselAttributes, BSCarouselFeatures, BSCarouselEvents, J> implements IBSCarousel<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	private BSCarouselFeature feature;
-	
+
 	/**
 	 * Determines the active slide
 	 */
@@ -77,7 +77,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	 * Whether or not this carousel will show indicators
 	 */
 	private boolean indicators;
-	
+
 	/**
 	 * Carousel
 	 * <p>
@@ -91,7 +91,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		addFeature(getFeature());
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Neater representation
 	 *
@@ -101,7 +101,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	{
 		return this;
 	}
-	
+
 	/**
 	 * Returns the java script feature associated
 	 *
@@ -115,7 +115,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		}
 		return feature;
 	}
-	
+
 	/**
 	 * Returns any javascript options available
 	 *
@@ -126,7 +126,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	{
 		return getFeature().getOptions();
 	}
-	
+
 	/**
 	 * The active slide
 	 *
@@ -137,7 +137,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	{
 		return activeSlide;
 	}
-	
+
 	/**
 	 * Sets the active slide
 	 *
@@ -151,152 +151,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		this.activeSlide = activeSlide;
 		return this;
 	}
-	
-	@Override
-	public void preConfigure()
-	{
-		if (!isConfigured() && BootstrapPageConfigurator.isBootstrap4())
-		{
-			addClass("carousel slide");
-		}
-		
-		super.preConfigure();
-	}
-	
-	/**
-	 * Returns the list of slides currently associated
-	 *
-	 * @return
-	 */
-	@Override
-	public List<BSCarouselItem> getSlides()
-	{
-		if (slides == null)
-		{
-			setSlides(new ArrayList<>());
-		}
-		return slides;
-	}
-	
-	/**
-	 * Sets the list of slides currently associated
-	 *
-	 * @param slides
-	 *
-	 * @return
-	 */
-	@Override
-	public BSCarousel setSlides(List<BSCarouselItem> slides)
-	{
-		this.slides = slides;
-		return this;
-	}
-	
-	/**
-	 * Returns the carousel slides
-	 *
-	 * @return
-	 */
-	@Override
-	public BSCarouselSlides getCarouselSlides()
-	{
-		if (carouselSlides == null)
-		{
-			setCarouselSlides(new BSCarouselSlides());
-		}
-		return carouselSlides;
-	}
-	
-	/**
-	 * Sets the carousel slides
-	 *
-	 * @param carouselSlides
-	 *
-	 * @return
-	 */
-	@Override
-	public J setCarouselSlides(BSCarouselSlides carouselSlides)
-	{
-		this.carouselSlides = carouselSlides;
-		return (J) this;
-	}
-	
-	/**
-	 * Returns the previous link
-	 *
-	 * @return
-	 */
-	@Override
-	public BSCarouselControl getPreviousLink()
-	{
-		if (previousLink == null)
-		{
-			setPreviousLink(new BSCarouselControl(this, true));
-		}
-		return previousLink;
-	}
-	
-	/**
-	 * Set's the previous link
-	 *
-	 * @param previousLink
-	 *
-	 * @return
-	 */
-	@Override
-	public J setPreviousLink(BSCarouselControl previousLink)
-	{
-		getChildren().remove(this.previousLink);
-		this.previousLink = previousLink;
-		if (this.previousLink != null)
-		{
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				previousLink.addClass(BSComponentCarouselOptions.Carousel_Control_Prev);
-			}
-			else
-			{
-				previousLink.addClass("left");
-				previousLink.addClass(BSComponentCarouselOptions.Carousel_Control);
-			}
-			
-			previousLink.addAttribute("role", "button");
-			previousLink.addAttribute("data-slide", "prev");
-			
-			Span iconSpan = new Span();
-			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				iconSpan.addClass(BSComponentCarouselOptions.Carousel_Control_Prev_Icon);
-			}
-			else
-			{
-				iconSpan.addClass(BSComponentCarouselOptions.Icon_Next);
-			}
-			
-			Span readerFriendly = new Span("Previous");
-			readerFriendly.addClass(BSComponentColoursOptions.Sr_Only);
-			previousLink.add(iconSpan);
-			previousLink.add(readerFriendly);
-		}
-		return (J) this;
-	}
-	
-	/**
-	 * Returns the next link
-	 *
-	 * @return
-	 */
-	@Override
-	public BSCarouselControl getNextLink()
-	{
-		if (nextLink == null)
-		{
-			setNextLink(new BSCarouselControl(this, false));
-		}
-		return nextLink;
-	}
-	
+
 	/**
 	 * Sets the next link
 	 *
@@ -320,30 +175,193 @@ public class BSCarousel<J extends BSCarousel<J>>
 				nextLink.addClass("right");
 				nextLink.addClass(BSComponentCarouselOptions.Carousel_Control);
 			}
-			
+
 			nextLink.addAttribute("role", "button");
 			nextLink.addAttribute("data-slide", "next");
-			
+
 			Span iconSpan = new Span();
 			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
 			if (BootstrapPageConfigurator.isBootstrap4())
 			{
-				
+
 				iconSpan.addClass(BSComponentCarouselOptions.Carousel_Control_Next_Icon);
 			}
 			else
 			{
 				iconSpan.addClass(BSComponentCarouselOptions.Icon_Next);
 			}
-			
+
 			Span readerFriendly = new Span("Next");
-			readerFriendly.addClass(BSComponentColoursOptions.Sr_Only);
+			readerFriendly.addClass(BSColoursOptions.Sr_Only);
 			nextLink.add(iconSpan);
 			nextLink.add(readerFriendly);
 		}
 		return (J) this;
 	}
-	
+
+	/**
+	 * Returns the list of slides currently associated
+	 *
+	 * @return
+	 */
+	@Override
+	public List<BSCarouselItem> getSlides()
+	{
+		if (slides == null)
+		{
+			setSlides(new ArrayList<>());
+		}
+		return slides;
+	}
+
+	/**
+	 * Sets the list of slides currently associated
+	 *
+	 * @param slides
+	 *
+	 * @return
+	 */
+	@Override
+	public BSCarousel setSlides(List<BSCarouselItem> slides)
+	{
+		this.slides = slides;
+		return this;
+	}
+
+	/**
+	 * Returns the carousel slides
+	 *
+	 * @return
+	 */
+	@Override
+	public BSCarouselSlides getCarouselSlides()
+	{
+		if (carouselSlides == null)
+		{
+			setCarouselSlides(new BSCarouselSlides());
+		}
+		return carouselSlides;
+	}
+
+	/**
+	 * Sets the carousel slides
+	 *
+	 * @param carouselSlides
+	 *
+	 * @return
+	 */
+	@Override
+	public J setCarouselSlides(BSCarouselSlides carouselSlides)
+	{
+		this.carouselSlides = carouselSlides;
+		return (J) this;
+	}
+
+	/**
+	 * Returns the previous link
+	 *
+	 * @return
+	 */
+	@Override
+	public BSCarouselControl getPreviousLink()
+	{
+		if (previousLink == null)
+		{
+			setPreviousLink(new BSCarouselControl(this, true));
+		}
+		return previousLink;
+	}
+
+	/**
+	 * Set's the previous link
+	 *
+	 * @param previousLink
+	 *
+	 * @return
+	 */
+	@Override
+	public J setPreviousLink(BSCarouselControl previousLink)
+	{
+		getChildren().remove(this.previousLink);
+		this.previousLink = previousLink;
+		if (this.previousLink != null)
+		{
+			if (BootstrapPageConfigurator.isBootstrap4())
+			{
+				previousLink.addClass(BSComponentCarouselOptions.Carousel_Control_Prev);
+			}
+			else
+			{
+				previousLink.addClass("left");
+				previousLink.addClass(BSComponentCarouselOptions.Carousel_Control);
+			}
+
+			previousLink.addAttribute("role", "button");
+			previousLink.addAttribute("data-slide", "prev");
+
+			Span iconSpan = new Span();
+			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
+			if (BootstrapPageConfigurator.isBootstrap4())
+			{
+				iconSpan.addClass(BSComponentCarouselOptions.Carousel_Control_Prev_Icon);
+			}
+			else
+			{
+				iconSpan.addClass(BSComponentCarouselOptions.Icon_Next);
+			}
+
+			Span readerFriendly = new Span("Previous");
+			readerFriendly.addClass(BSColoursOptions.Sr_Only);
+			previousLink.add(iconSpan);
+			previousLink.add(readerFriendly);
+		}
+		return (J) this;
+	}
+
+	/**
+	 * Returns the next link
+	 *
+	 * @return
+	 */
+	@Override
+	public BSCarouselControl getNextLink()
+	{
+		if (nextLink == null)
+		{
+			setNextLink(new BSCarouselControl(this, false));
+		}
+		return nextLink;
+	}
+
+	@Override
+	public void init()
+	{
+		if (!isInitialized())
+		{
+			BSCarouselIndicators indications = new BSCarouselIndicators(this);
+			indications.init();
+			add(indications);
+			add(getCarouselSlides());
+
+			BSCarouselItem activeItem;
+			if (!getSlides().isEmpty())
+			{
+				activeItem = getSlides().get(getActiveSlide());
+				activeItem.addClass(BSDefaultOptions.Active);
+			}
+			for (Iterator<BSCarouselItem> it = getSlides().iterator(); it.hasNext(); )
+			{
+				BSCarouselItem slide = it.next();
+				getCarouselSlides().add(slide);
+			}
+
+			add(getPreviousLink());
+			add(getNextLink());
+
+		}
+		super.init();
+	}
+
 	/**
 	 * The data-ride="carousel" attribute is used to mark a carousel as animating starting at page load. It cannot be used in combination with (redundant and unnecessary) explicit JavaScript
 	 * initialization of the same carousel.
@@ -365,7 +383,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		}
 		return (J) this;
 	}
-	
+
 	/**
 	 * Sets the time in milli's
 	 *
@@ -379,7 +397,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		addAttribute("data-interval", Integer.toString(interval));
 		return (J) this;
 	}
-	
+
 	/**
 	 * Whether or not to respond to keyboard actions
 	 *
@@ -393,7 +411,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		addAttribute("data-keyboard", Boolean.toString(keyboard));
 		return (J) this;
 	}
-	
+
 	/**
 	 * If set to "hover", pauses the cycling of the carousel on mouse-enter and resumes the cycling of the carousel on mouse-leave. If set to null, hovering over the carousel won't pause it.
 	 *
@@ -407,7 +425,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		addAttribute("data-pause", pause ? "hover" : "" + "null");
 		return (J) this;
 	}
-	
+
 	/**
 	 * Whether the carousel should cycle continuously or have hard stops.
 	 *
@@ -421,7 +439,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		addAttribute("data-wrap", Boolean.toString(wrap));
 		return (J) this;
 	}
-	
+
 	/**
 	 * Whether or not this carousel shows indicators
 	 *
@@ -432,7 +450,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	{
 		return indicators;
 	}
-	
+
 	/**
 	 * Whether or not this carousel shows indicators
 	 *
@@ -446,36 +464,18 @@ public class BSCarousel<J extends BSCarousel<J>>
 		this.indicators = indicators;
 		return (J) this;
 	}
-	
+
 	@Override
-	public void init()
+	public void preConfigure()
 	{
-		if (!isInitialized())
+		if (!isConfigured() && BootstrapPageConfigurator.isBootstrap4())
 		{
-			BSCarouselIndicators indications = new BSCarouselIndicators(this);
-			indications.init();
-			add(indications);
-			add(getCarouselSlides());
-			
-			BSCarouselItem activeItem;
-			if (!getSlides().isEmpty())
-			{
-				activeItem = getSlides().get(getActiveSlide());
-				activeItem.addClass(BSComponentDefaultOptions.Active);
-			}
-			for (Iterator<BSCarouselItem> it = getSlides().iterator(); it.hasNext(); )
-			{
-				BSCarouselItem slide = it.next();
-				getCarouselSlides().add(slide);
-			}
-			
-			add(getPreviousLink());
-			add(getNextLink());
-			
+			addClass("carousel slide");
 		}
-		super.init();
+
+		super.preConfigure();
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -494,7 +494,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 		BSCarousel<?> carousel = (BSCarousel<?>) o;
 		return getComponent().equals(carousel.getComponent());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

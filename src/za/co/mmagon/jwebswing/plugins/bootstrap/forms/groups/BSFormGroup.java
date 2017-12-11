@@ -28,7 +28,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSForm;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormInline;
@@ -326,7 +326,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		if (isAsRow())
 		{
-			addClass(BSComponentDefaultOptions.Row);
+			addClass(BSDefaultOptions.Row);
 			if (getLabel() != null)
 			{
 				getLabel().addClass("col-2");

@@ -22,7 +22,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.InputButtonTypeAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 
@@ -44,10 +44,10 @@ public class BSButton<J extends BSButton<J>>
 		extends Button<BSButtonChildren, BSButtonAttributes, GlobalFeatures, BSButtonEvents, J>
 		implements BSDropDownChildren, BSFormChildren, IBSButton<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	private static final String roleAttribute = "button";
-	
+
 	/**
 	 * Constructs a new button
 	 */
@@ -58,7 +58,7 @@ public class BSButton<J extends BSButton<J>>
 		addAttribute(GlobalAttributes.Type, roleAttribute);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Constructs a new BS Button with the given text
 	 *
@@ -69,7 +69,7 @@ public class BSButton<J extends BSButton<J>>
 		this();
 		setText(text);
 	}
-	
+
 	/**
 	 * Neater view
 	 *
@@ -79,7 +79,7 @@ public class BSButton<J extends BSButton<J>>
 	{
 		return this;
 	}
-	
+
 	/**
 	 * Button tags
 	 * <p>
@@ -98,55 +98,7 @@ public class BSButton<J extends BSButton<J>>
 		}
 		super.preConfigure();
 	}
-	
-	/**
-	 * Sizes
-	 * <p>
-	 * Fancy larger or smaller buttons? Add .btn-lg or .btn-sm for additional sizes.
-	 *
-	 * @param size
-	 *
-	 * @return
-	 */
-	@Override
-	public BSButton setSize(BSComponentButtonSizeOptions size)
-	{
-		for (BSComponentButtonSizeOptions value : BSComponentButtonSizeOptions.values())
-		{
-			removeClass(value.toString());
-		}
-		addClass(size);
-		
-		return this;
-	}
-	
-	/**
-	 * Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active.
-	 * <p>
-	 * There’s no need to add a class to buttons as they use a pseudo-class. However, you can still force the same active appearance with .active (and include the aria-pressed="true" attribute) should
-	 * you need to replicate the state programmatically.
-	 *
-	 * @param pressed
-	 *
-	 * @return
-	 */
-	@Override
-	public BSButton setPressed(boolean pressed)
-	{
-		if (pressed)
-		{
-			addAttribute(GlobalAttributes.Aria_Pressed, Boolean.toString(true));
-			addClass(BSComponentDefaultOptions.Active);
-		}
-		else
-		{
-			addAttribute(GlobalAttributes.Aria_Pressed, Boolean.toString(false));
-			removeClass(BSComponentDefaultOptions.Active.toString());
-		}
-		
-		return this;
-	}
-	
+
 	/**
 	 * Disabled state
 	 * <p>
@@ -187,10 +139,60 @@ public class BSButton<J extends BSButton<J>>
 			addAttribute(GlobalAttributes.Aria_Disabled, Boolean.toString(false));
 			removeClass("disabled");
 		}
-		
+
 		return this;
 	}
-	
+
+	/**
+	 * Sets the style as link
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public J setLink(boolean applyStyle)
+	{
+		if (applyStyle)
+		{
+			addClass(BSComponentButtonOptions.Btn_Link);
+		}
+		else
+		{
+			removeClass(BSComponentButtonOptions.Btn_Link);
+		}
+
+		return (J) this;
+	}
+
+	/**
+	 * Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active.
+	 * <p>
+	 * There’s no need to add a class to buttons as they use a pseudo-class. However, you can still force the same active appearance with .active (and include the aria-pressed="true" attribute) should
+	 * you need to replicate the state programmatically.
+	 *
+	 * @param pressed
+	 *
+	 * @return
+	 */
+	@Override
+	public BSButton setPressed(boolean pressed)
+	{
+		if (pressed)
+		{
+			addAttribute(GlobalAttributes.Aria_Pressed, Boolean.toString(true));
+			addClass(BSDefaultOptions.Active);
+		}
+		else
+		{
+			addAttribute(GlobalAttributes.Aria_Pressed, Boolean.toString(false));
+			removeClass(BSDefaultOptions.Active.toString());
+		}
+
+		return this;
+	}
+
 	/**
 	 * Set or remove the style
 	 *
@@ -214,7 +216,7 @@ public class BSButton<J extends BSButton<J>>
 
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -238,7 +240,7 @@ public class BSButton<J extends BSButton<J>>
 
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -261,7 +263,7 @@ public class BSButton<J extends BSButton<J>>
 
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -284,9 +286,9 @@ public class BSButton<J extends BSButton<J>>
 
 		return (J) this;
 	}
-	
+
 	/**
-	 * Sets the style as link
+	 * Set or remove the style
 	 *
 	 * @param applyStyle
 	 *
@@ -294,20 +296,21 @@ public class BSButton<J extends BSButton<J>>
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public J setLink(boolean applyStyle)
+	public J setSecondaryOutline(boolean applyStyle)
 	{
 		if (applyStyle)
 		{
-			addClass(BSComponentButtonOptions.Btn_Link);
+			addClass(BSComponentButtonOptions.Btn_Outline_Secondary);
 		}
 		else
+
 		{
-			removeClass(BSComponentButtonOptions.Btn_Link);
+			removeClass(BSComponentButtonOptions.Btn_Outline_Secondary);
 		}
-		
+
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -331,7 +334,7 @@ public class BSButton<J extends BSButton<J>>
 
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -355,7 +358,7 @@ public class BSButton<J extends BSButton<J>>
 
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -379,31 +382,28 @@ public class BSButton<J extends BSButton<J>>
 
 		return (J) this;
 	}
-	
+
 	/**
-	 * Set or remove the style
+	 * Sizes
+	 * <p>
+	 * Fancy larger or smaller buttons? Add .btn-lg or .btn-sm for additional sizes.
 	 *
-	 * @param applyStyle
+	 * @param size
 	 *
 	 * @return
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
-	public J setSecondaryOutline(boolean applyStyle)
+	public BSButton setSize(BSComponentButtonSizeOptions size)
 	{
-		if (applyStyle)
+		for (BSComponentButtonSizeOptions value : BSComponentButtonSizeOptions.values())
 		{
-			addClass(BSComponentButtonOptions.Btn_Outline_Secondary);
+			removeClass(value.toString());
 		}
-		else
-		
-		{
-			removeClass(BSComponentButtonOptions.Btn_Outline_Secondary);
-		}
-		
-		return (J) this;
+		addClass(size);
+
+		return this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -425,7 +425,7 @@ public class BSButton<J extends BSButton<J>>
 		}
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -474,7 +474,7 @@ public class BSButton<J extends BSButton<J>>
 
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -496,7 +496,7 @@ public class BSButton<J extends BSButton<J>>
 		}
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -518,7 +518,7 @@ public class BSButton<J extends BSButton<J>>
 		}
 		return (J) this;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -532,7 +532,7 @@ public class BSButton<J extends BSButton<J>>
 		}
 		return getClass() == obj.getClass() && super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

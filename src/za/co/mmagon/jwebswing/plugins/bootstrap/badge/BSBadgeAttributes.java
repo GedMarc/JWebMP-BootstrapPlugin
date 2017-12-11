@@ -19,22 +19,24 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.badge;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+
 /**
  * @author GedMarc
  */
 public enum BSBadgeAttributes implements AttributeDefinitions
 {
 	Visibility;
-	
+
 	private boolean isKeyword;
-	
+
 	/**
 	 * The component attributes
 	 */
 	BSBadgeAttributes()
 	{
 	}
-	
+
 	/**
 	 * If the attribute is a keyword
 	 *
@@ -45,7 +47,7 @@ public enum BSBadgeAttributes implements AttributeDefinitions
 	{
 		return isKeyword;
 	}
-	
+
 	/**
 	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
 	 *
@@ -54,6 +56,6 @@ public enum BSBadgeAttributes implements AttributeDefinitions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-').replace("$", "");
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH).replace("$", "");
 	}
 }

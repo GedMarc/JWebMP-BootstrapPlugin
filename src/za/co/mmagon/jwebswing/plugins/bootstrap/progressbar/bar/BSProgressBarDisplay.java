@@ -21,7 +21,7 @@ import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSColoursOptions;
 
 import java.util.Objects;
 
@@ -39,12 +39,12 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		extends Div<GlobalChildren, BSProgressBarDisplayAttributes, BSProgressBarDisplayFeatures, BSProgressBarDisplayEvents, J>
 		implements IBSProgressBarDisplay<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private Span span;
 	private BSProgressBarThemes theme;
-	
+
 	/**
 	 * The min value to apply
 	 */
@@ -61,17 +61,17 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	 * The label of the bar
 	 */
 	private String label;
-	
+
 	/**
 	 * Constructs an empty progress bar display
 	 */
 	public BSProgressBarDisplay()
 	{
-		
+
 		this(0, 100, 0);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Construct a new progress bar display with the given values
 	 *
@@ -81,7 +81,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	{
 		this(0, 100, value);
 	}
-	
+
 	/**
 	 * Construct a new progress bar display with the given values
 	 *
@@ -93,7 +93,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	{
 		this(min, max, value, null);
 	}
-	
+
 	/**
 	 * Construct a new progress bar display with the given values
 	 *
@@ -104,7 +104,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	{
 		this(0, 100, value, label);
 	}
-	
+
 	/**
 	 * Construct a new progress bar display with the given values
 	 *
@@ -122,7 +122,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		addClass("progress-bar");
 		addAttribute(BSProgressBarDisplayAttributes.Role, "progressbar");
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
@@ -132,7 +132,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		}
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Returns the current min value
 	 *
@@ -142,7 +142,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	{
 		return min;
 	}
-	
+
 	/**
 	 * Returns the current min value
 	 *
@@ -157,7 +157,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		addAttribute(BSProgressBarDisplayAttributes.Aria_ValueMin, Double.toString(min));
 		return (J) this;
 	}
-	
+
 	/**
 	 * Gets the current max value
 	 *
@@ -168,7 +168,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	{
 		return max;
 	}
-	
+
 	/**
 	 * Sets the current max value
 	 *
@@ -183,7 +183,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		addAttribute(BSProgressBarDisplayAttributes.Aria_ValueMax, Double.toString(max));
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns the current percentage
 	 *
@@ -194,7 +194,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	{
 		return value;
 	}
-	
+
 	/**
 	 * Sets the current percentage / width
 	 *
@@ -210,7 +210,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		addAttribute(GlobalAttributes.Style, "width:" + value + "%;");
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns this associated span
 	 *
@@ -224,10 +224,10 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 			span = new Span();
 			add(span);
 		}
-		span.addClass(BSComponentColoursOptions.Sr_Only);
+		span.addClass(BSColoursOptions.Sr_Only);
 		return span;
 	}
-	
+
 	/**
 	 * Returns this label
 	 *
@@ -238,7 +238,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	{
 		return label;
 	}
-	
+
 	/**
 	 * Sets this label
 	 *
@@ -253,7 +253,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		getSpan().setText(label);
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns a current theme, default is success
 	 *
@@ -268,7 +268,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		}
 		return theme;
 	}
-	
+
 	/**
 	 * Sets the current theme
 	 *
@@ -290,7 +290,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		}
 		return (J) this;
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -314,7 +314,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 				getTheme() == that.getTheme() &&
 				Objects.equals(getLabel(), that.getLabel());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

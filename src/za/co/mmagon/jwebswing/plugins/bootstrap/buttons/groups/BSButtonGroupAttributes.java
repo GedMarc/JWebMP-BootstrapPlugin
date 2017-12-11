@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+
 /**
  * @author GedMarc
  */
@@ -27,19 +29,19 @@ public enum BSButtonGroupAttributes implements AttributeDefinitions
 	Role,
 	Data_Toggle,
 	Visibility;
-	
+
 	private boolean isKeyword;
-	
+
 	BSButtonGroupAttributes()
 	{
 	}
-	
+
 	@Override
 	public boolean isKeyword()
 	{
 		return isKeyword;
 	}
-	
+
 	/**
 	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
 	 *
@@ -48,6 +50,6 @@ public enum BSButtonGroupAttributes implements AttributeDefinitions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-').replace("$", "");
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH).replace("$", "");
 	}
 }

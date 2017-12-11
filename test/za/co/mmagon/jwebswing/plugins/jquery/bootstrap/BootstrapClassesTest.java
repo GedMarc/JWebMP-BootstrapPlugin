@@ -18,23 +18,23 @@ package za.co.mmagon.jwebswing.plugins.jquery.bootstrap;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 
 /**
  * @author ged_m
  */
 public class BootstrapClassesTest
 {
-	
+
 	public BootstrapClassesTest()
 	{
 	}
-	
+
 	@Test
 	public void testClassesRender()
 	{
-		System.out.println(BSComponentDefaultOptions.Nav$Nav_Pills);
-		Assertions.assertEquals("nav nav-pills", BSComponentDefaultOptions.Nav$Nav_Pills.toString());
+		System.out.println(BSDefaultOptions.Nav$Nav_Pills);
+		Assertions.assertEquals("nav nav-pills", BSDefaultOptions.Nav$Nav_Pills.toString());
 	}
 
 }

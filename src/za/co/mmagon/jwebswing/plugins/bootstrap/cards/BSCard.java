@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.cards;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.bootstrap.cards.parts.BSCardText;
 
 /**
  * Cards
@@ -36,9 +37,9 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 		url = "https://v4-alpha.getbootstrap.com/components/card/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCard<J extends BSCard<J>> extends Div<BSCardChildren, BSCardAttributes, GlobalFeatures, BSCardEvents, J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Cards
 	 * <p>
@@ -50,7 +51,7 @@ public class BSCard<J extends BSCard<J>> extends Div<BSCardChildren, BSCardAttri
 	{
 		this(null);
 	}
-	
+
 	/**
 	 * Cards
 	 * <p>
@@ -71,7 +72,7 @@ public class BSCard<J extends BSCard<J>> extends Div<BSCardChildren, BSCardAttri
 		}
 		addStyle("background-color:transparent;");
 	}
-	
+
 	/**
 	 * Cards
 	 * <p>
@@ -86,7 +87,7 @@ public class BSCard<J extends BSCard<J>> extends Div<BSCardChildren, BSCardAttri
 		super(text);
 		addClass(BSComponentCardOptions.Card);
 	}
-	
+
 	/**
 	 * Adds the text to the card with the card text
 	 *
@@ -100,5 +101,5 @@ public class BSCard<J extends BSCard<J>> extends Div<BSCardChildren, BSCardAttri
 		super.add(p);
 		return p;
 	}
-	
+
 }

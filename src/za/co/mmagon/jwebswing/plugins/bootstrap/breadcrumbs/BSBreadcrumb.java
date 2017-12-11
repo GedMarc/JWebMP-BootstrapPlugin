@@ -19,7 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
@@ -35,14 +35,14 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 		extends ListItem<J>
 		implements BSBreadcrumbsChildren, IBSBreadcrumb<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * The actual link for the crumb
 	 */
 	private Link crumbLink;
-	
+
 	/**
 	 * Constructs a particular crumb
 	 */
@@ -51,7 +51,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 		addClass(BSComponentBreadcrumbOptions.Breadcrumb_Item);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Construct with a link and text to show
 	 *
@@ -64,7 +64,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 		setCrumbLink(crumbLink);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Neater display
 	 *
@@ -74,7 +74,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 	{
 		return this;
 	}
-	
+
 	/**
 	 * Returns the crumb link, never null
 	 *
@@ -89,7 +89,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 		}
 		return crumbLink;
 	}
-	
+
 	/**
 	 * Sets the given crumb link
 	 *
@@ -110,7 +110,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 		}
 		return (J) this;
 	}
-	
+
 	/**
 	 * Sets this crumb to display as active
 	 *
@@ -123,15 +123,15 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 	{
 		if (active)
 		{
-			addClass(BSComponentDefaultOptions.Active);
+			addClass(BSDefaultOptions.Active);
 		}
 		else
 		{
-			removeClass(BSComponentDefaultOptions.Active);
+			removeClass(BSDefaultOptions.Active);
 		}
 		return (J) this;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -149,7 +149,7 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

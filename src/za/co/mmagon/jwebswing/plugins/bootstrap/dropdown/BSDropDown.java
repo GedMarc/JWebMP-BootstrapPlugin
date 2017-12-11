@@ -27,7 +27,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapReferencePool;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
 
 import java.util.Objects;
@@ -50,19 +50,19 @@ import java.util.Objects;
 public class BSDropDown<J extends BSDropDown<J>>
 		extends Div<BSDropDownChildren, BSDropDownAttributes, GlobalFeatures, BSDropDownEvents, J> implements IBSDropDown<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * The button for the drop down,
 	 */
 	private Component dropdownButton;
-	
+
 	/**
 	 * The dropdownMenu for this drop down
 	 */
 	private BSDropDownMenu dropdownMenu;
-	
+
 	/**
 	 * Construct a new bootstrap drop down
 	 */
@@ -72,7 +72,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 		addClass(BSComponentDropDownOptions.Dropdown);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Construct a new drop down
 	 *
@@ -85,7 +85,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 		setDropdownButton(link);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Constructs a new bootstrap drop down with the given button
 	 *
@@ -98,7 +98,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 		setDropdownButton(button);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	/**
 	 * Neater view on the matter
 	 *
@@ -108,7 +108,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 	{
 		return this;
 	}
-	
+
 	/**
 	 * Sets no Cart on the item
 	 *
@@ -134,10 +134,10 @@ public class BSDropDown<J extends BSDropDown<J>>
 				getCssReferences().remove(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
 			}
 		}
-		
+
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns the current dropdownMenu or a new one
 	 *
@@ -152,7 +152,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 		}
 		return dropdownMenu;
 	}
-	
+
 	/**
 	 * Sets the dropdownMenu
 	 *
@@ -170,7 +170,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Returns the drop down button
 	 *
@@ -185,7 +185,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 		}
 		return dropdownButton;
 	}
-	
+
 	/**
 	 * Sets the drop down dropdownMenu button
 	 *
@@ -203,7 +203,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 		}
 		return (J) this;
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
@@ -212,18 +212,18 @@ public class BSDropDown<J extends BSDropDown<J>>
 			getDropdownButton().addAttribute(BSButtonGroupAttributes.Role.toString(), "button");
 			add((BSDropDownChildren) getDropdownButton());
 			add(getDropdownMenu());
-			
+
 			getDropdownMenu().addAttribute(GlobalAttributes.Aria_LabelledBy.toString(), getDropdownButton().getID());
 			getDropdownButton().addAttribute(ButtonAttributes.Data_Target.toString(), getDropdownMenu().getID());
-			
+
 			if (Link.class.isAssignableFrom(getDropdownButton().getClass()))
 			{
-				addClass(BSComponentDefaultOptions.Show);
+				addClass(BSDefaultOptions.Show);
 			}
 		}
 		super.preConfigure();
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -243,7 +243,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 		return Objects.equals(getDropdownButton(), that.getDropdownButton()) &&
 				Objects.equals(getDropdownMenu(), that.getDropdownMenu());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

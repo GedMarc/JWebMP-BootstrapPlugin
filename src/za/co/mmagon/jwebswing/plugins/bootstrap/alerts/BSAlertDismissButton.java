@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
 
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.close.BSCloseIcon;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 
 /**
  * Dismissing
@@ -41,9 +41,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  */
 public class BSAlertDismissButton extends BSCloseIcon
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Constructs and adds a dismiss button to the alert
 	 *
@@ -57,8 +57,8 @@ public class BSAlertDismissButton extends BSCloseIcon
 		alert.addClass(BSComponentAlertOptions.Alert_Dismissible);
 		if (fade)
 		{
-			alert.addClass(BSComponentDefaultOptions.Fade);
-			alert.addClass(BSComponentDefaultOptions.In);
+			alert.addClass(BSDefaultOptions.Fade);
+			alert.addClass(BSDefaultOptions.In);
 		}
 		alert.add(this);
 	}

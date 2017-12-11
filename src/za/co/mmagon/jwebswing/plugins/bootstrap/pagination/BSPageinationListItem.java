@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.pagination;
 
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.base.html.interfaces.children.ListChildren;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 
 /**
  * A pagination list item
@@ -28,9 +28,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  */
 public class BSPageinationListItem extends ListItem implements ListChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * A pagination list item
 	 */
@@ -38,7 +38,7 @@ public class BSPageinationListItem extends ListItem implements ListChildren
 	{
 		addClass(BSComponentPaginationOptions.Page_Item);
 	}
-	
+
 	/**
 	 * Disabled and active states
 	 * <p>
@@ -51,11 +51,11 @@ public class BSPageinationListItem extends ListItem implements ListChildren
 	 */
 	public BSPageinationListItem setDisabled()
 	{
-		addClass(BSComponentDefaultOptions.Disabled);
+		addClass(BSDefaultOptions.Disabled);
 		addAttribute("tabindex", "-1");
 		return this;
 	}
-	
+
 	/**
 	 * Disabled and active states
 	 * <p>
@@ -68,7 +68,7 @@ public class BSPageinationListItem extends ListItem implements ListChildren
 	 */
 	public BSPageinationListItem setActive()
 	{
-		addClass(BSComponentDefaultOptions.Active);
+		addClass(BSDefaultOptions.Active);
 		return this;
 	}
 }

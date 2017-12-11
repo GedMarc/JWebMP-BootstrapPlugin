@@ -19,9 +19,9 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.tables.TableBorderCollapse;
 import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCard;
-import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardHeader;
+import za.co.mmagon.jwebswing.plugins.bootstrap.cards.parts.BSCardHeader;
 import za.co.mmagon.jwebswing.plugins.bootstrap.collapse.BSCollapse;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
@@ -106,15 +106,15 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 		{
 			getAccordionHeader().getAccordionHeaderLink().addAttribute(GlobalAttributes.Aria_Expanded, Boolean.TRUE.toString());
 
-			getAccordionHeader().getAccordionHeaderLink().removeClass(BSComponentDefaultOptions.Collapsed);
-			getAccordionCollapsingContent().addClass(BSComponentDefaultOptions.Show);
+			getAccordionHeader().getAccordionHeaderLink().removeClass(BSDefaultOptions.Collapsed);
+			getAccordionCollapsingContent().addClass(BSDefaultOptions.Show);
 		}
 		else
 		{
 			getAccordionHeader().getAccordionHeaderLink().addAttribute(GlobalAttributes.Aria_Expanded, Boolean.FALSE.toString());
 
-			getAccordionCollapsingContent().removeClass(BSComponentDefaultOptions.Show);
-			getAccordionHeader().getAccordionHeaderLink().addClass(BSComponentDefaultOptions.Collapsed);
+			getAccordionCollapsingContent().removeClass(BSDefaultOptions.Show);
+			getAccordionHeader().getAccordionHeaderLink().addClass(BSDefaultOptions.Collapsed);
 		}
 		return (J) this;
 	}

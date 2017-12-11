@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import java.util.Iterator;
@@ -43,14 +43,14 @@ import java.util.Objects;
 		url = "https://v4-alpha.getbootstrap.com/components/cards/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * The Panel Header Button Bar
 	 */
 	private Div panelHeaderButtonBar;
-	
+
 	/**
 	 * The panel header
 	 */
@@ -59,12 +59,12 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 	 * The panel body
 	 */
 	private Div panelBody;
-	
+
 	/**
 	 * Specifies if the footer must render as a link, or as a div
 	 */
 	private boolean footerIsLink;
-	
+
 	/**
 	 * The panel footer
 	 */
@@ -73,7 +73,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 	 * The theme associated
 	 */
 	private BSPanelThemes theme;
-	
+
 	/**
 	 * Construct a new controlled instance of the sb2 panel
 	 *
@@ -85,7 +85,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		setTheme(theme);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
@@ -95,7 +95,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 			getChildren().add(this.panelHeader);
 			getChildren().add(this.panelBody);
 			getChildren().add(this.panelFooter);
-			
+
 			if (this.panelFooter != null)
 			{
 				configureFooter();
@@ -103,7 +103,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		}
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Configures the footer
 	 */
@@ -118,22 +118,23 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 			}
 		}
 	}
-	
+
 	/**
-	 * Gets the panel header
+	 * Sets the panel header button bar to the assigned Div
 	 *
-	 * @return
+	 * @param panelHeaderButtonBar
 	 */
-	public Div getPanelHeader()
+	public void setPanelHeaderButtonBar(Div panelHeaderButtonBar)
 	{
-		if (panelHeader == null)
+		this.panelHeaderButtonBar = panelHeaderButtonBar;
+		if (panelHeaderButtonBar != null)
 		{
-			setPanelHeader(new Div());
+			panelHeaderButtonBar.addClass(BSDefaultOptions.Btn_Group);
+			panelHeaderButtonBar.addClass(BSDefaultOptions.Pull_Right);
+			getPanelHeader().add(panelHeaderButtonBar);
 		}
-		
-		return panelHeader;
 	}
-	
+
 	/**
 	 * Sets the panel header
 	 *
@@ -147,7 +148,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 			this.panelHeader.addClass(BSComponentPanelOptions.Panel_Heading);
 		}
 	}
-	
+
 	/**
 	 * Sets and adds the panel body
 	 *
@@ -161,7 +162,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		}
 		return panelBody;
 	}
-	
+
 	/**
 	 * Sets the panel body
 	 *
@@ -176,7 +177,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 			this.panelBody.addClass(BSComponentPanelOptions.Panel_Body);
 		}
 	}
-	
+
 	/**
 	 * Gets the panel footer as a link. Class cast exception may occur if you have set the footer to a custom component
 	 *
@@ -191,7 +192,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		}
 		return panelFooter;
 	}
-	
+
 	/**
 	 * Sets the panel footer as a link with formatting
 	 *
@@ -206,7 +207,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		}
 		this.footerIsLink = true;
 	}
-	
+
 	/**
 	 * Sets the panel footer as a regular div
 	 *
@@ -221,7 +222,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		}
 		this.footerIsLink = false;
 	}
-	
+
 	/**
 	 * Returns the current theme attached, default is the default
 	 *
@@ -235,7 +236,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		}
 		return theme;
 	}
-	
+
 	/**
 	 * Sets the theme to the given settings
 	 *
@@ -250,7 +251,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		this.theme = theme;
 		addClass(theme.getClassText());
 	}
-	
+
 	/**
 	 * Returns the Panel Headers Button Bar
 	 *
@@ -264,23 +265,22 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		}
 		return panelHeaderButtonBar;
 	}
-	
+
 	/**
-	 * Sets the panel header button bar to the assigned Div
+	 * Gets the panel header
 	 *
-	 * @param panelHeaderButtonBar
+	 * @return
 	 */
-	public void setPanelHeaderButtonBar(Div panelHeaderButtonBar)
+	public Div getPanelHeader()
 	{
-		this.panelHeaderButtonBar = panelHeaderButtonBar;
-		if (panelHeaderButtonBar != null)
+		if (panelHeader == null)
 		{
-			panelHeaderButtonBar.addClass(BSComponentDefaultOptions.Btn_Group);
-			panelHeaderButtonBar.addClass(BSComponentDefaultOptions.Pull_Right);
-			getPanelHeader().add(panelHeaderButtonBar);
+			setPanelHeader(new Div());
 		}
+
+		return panelHeader;
 	}
-	
+
 	/**
 	 * Adds a button to the drop down header
 	 *
@@ -294,14 +294,14 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 		b.add(dropDownIcon);
 		b.addAttribute(ButtonAttributes.Type, "button");
 		b.addAttribute(ButtonAttributes.Data_Toggle, "dropdown");
-		
+
 		dropDownContent.setTag("ul");
 		dropDownContent.addClass("dropdown-menu slidedown");
-		
+
 		getPanelHeaderButtonBar().add(b);
 		getPanelHeaderButtonBar().add(dropDownContent);
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -325,7 +325,7 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 				Objects.equals(getPanelFooter(), bsPanel.getPanelFooter()) &&
 				getTheme() == bsPanel.getTheme();
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

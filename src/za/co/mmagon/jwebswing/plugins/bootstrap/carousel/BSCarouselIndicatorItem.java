@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.carousel;
 
 import za.co.mmagon.jwebswing.base.html.ListItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 
 /**
  * Indicator list items
@@ -28,9 +28,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentDefa
  */
 class BSCarouselIndicatorItem extends ListItem
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Constructs a new carousel indicator that slides to a specific slide, and if it is the current active item or not
 	 *
@@ -44,7 +44,7 @@ class BSCarouselIndicatorItem extends ListItem
 		addAttribute("data-slide-to", ((Integer) slideTo).toString());
 		if (active)
 		{
-			addClass(BSComponentDefaultOptions.Active);
+			addClass(BSDefaultOptions.Active);
 		}
 	}
 }

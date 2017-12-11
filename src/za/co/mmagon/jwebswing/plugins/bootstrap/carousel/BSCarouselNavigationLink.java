@@ -19,7 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.carousel;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColoursOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSColoursOptions;
 
 /**
  * @param <J>
@@ -30,26 +30,26 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSComponentColo
 public class BSCarouselNavigationLink<J extends BSCarouselNavigationLink<J>>
 		extends Link<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public BSCarouselNavigationLink(boolean isPrevious)
 	{
 		if (isPrevious)
 		{
 			addClass("left");
 			addClass(BSComponentCarouselOptions.Carousel_Control);
-			
+
 			addAttribute("role", "button");
 			addAttribute("data-slide", "prev");
-			
+
 			Span iconSpan = new Span();
 			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
 			iconSpan.addClass("icon-next");
-			
+
 			Span readerFriendly = new Span("Previous");
-			readerFriendly.addClass(BSComponentColoursOptions.Sr_Only);
-			
+			readerFriendly.addClass(BSColoursOptions.Sr_Only);
+
 			add(iconSpan);
 			add(readerFriendly);
 		}
@@ -57,20 +57,20 @@ public class BSCarouselNavigationLink<J extends BSCarouselNavigationLink<J>>
 		{
 			addClass("right");
 			addClass(BSComponentCarouselOptions.Carousel_Control);
-			
+
 			addAttribute("role", "button");
 			addAttribute("data-slide", "next");
-			
+
 			Span iconSpan = new Span();
 			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
 			iconSpan.addClass("icon-next");
-			
+
 			Span readerFriendly = new Span("Next");
-			readerFriendly.addClass(BSComponentColoursOptions.Sr_Only);
-			
+			readerFriendly.addClass(BSColoursOptions.Sr_Only);
+
 			add(iconSpan);
 			add(readerFriendly);
 		}
 	}
-	
+
 }
