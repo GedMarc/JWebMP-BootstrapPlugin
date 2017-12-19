@@ -24,7 +24,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapReferencePool;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
@@ -121,18 +120,10 @@ public class BSDropDown<J extends BSDropDown<J>>
 		if (noCaret)
 		{
 			getDropdownButton().addClass("no-caret");
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				addCssReference(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
-			}
 		}
 		else
 		{
 			getDropdownButton().removeClass("no-caret");
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				getCssReferences().remove(BootstrapReferencePool.Bootstrap4DropDownReference.getCssReference());
-			}
 		}
 
 		return (J) this;

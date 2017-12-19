@@ -17,13 +17,14 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 
 import za.co.mmagon.jwebswing.htmlbuilder.css.tables.TableBorderCollapse;
-import za.co.mmagon.jwebswing.plugins.bootstrap.cards.parts.BSCardBody;
+import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanel;
+import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelThemes;
 
 /**
  * @author GedMarc
  * @since 20 Feb 2017
  */
-public class BSAccordionContent<J extends BSAccordionContent<J>> extends BSCardBody<J>
+public class BSAccordionContent<J extends BSAccordionContent<J>> extends BSPanel<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -33,7 +34,7 @@ public class BSAccordionContent<J extends BSAccordionContent<J>> extends BSCardB
 	 */
 	public BSAccordionContent()
 	{
-		//Nothing needed
+		super(BSPanelThemes.Default);
 	}
 
 	@Override

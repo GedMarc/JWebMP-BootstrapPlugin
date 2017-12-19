@@ -27,7 +27,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSForm;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
@@ -350,12 +349,6 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			configureLabel();
 			configureInputComponent();
 			configureAngularValidation();
-
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				addClass(BSComponentFormGroupOptions.Form_Group);
-				addStyle("margin-bottom:0px");
-			}
 		}
 		super.preConfigure();
 	}
@@ -384,20 +377,12 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			if (getFrontIcon() != null)
 			{
 				Span newSpan = new Span<>().setText(getFrontIcon());
-				if (BootstrapPageConfigurator.isBootstrap4())
-				{
-					newSpan.addClass(BootstrapValidationIconClass);
-				}
 				inputGroup.getInputGroupAddons().add(newSpan);
 			}
 
 			Span iconFeedback = new Span();
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				iconFeedback.addClass(BootstrapValidationIconClass);
-			}
-			iconFeedback.addAttribute(GlobalAttributes.Aria_Hidden, "true");
 
+			iconFeedback.addAttribute(GlobalAttributes.Aria_Hidden, "true");
 			inputGroup.getInputGroupAddonsRight().add(iconFeedback);
 			add(inputGroup);
 		}
@@ -405,10 +390,6 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		{
 			BSFormInputGroup ig = (BSFormInputGroup) getInputComponent();
 			Span iconFeedback = new Span();
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				iconFeedback.addClass(BootstrapValidationIconClass);
-			}
 			iconFeedback.addAttribute(GlobalAttributes.Aria_Hidden, "true");
 			ig.getInputGroupAddonsRight().add(iconFeedback);
 			add(ig);
@@ -496,19 +477,9 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	{
 		if (getInputComponent() != null)
 		{
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				Span iconFeedback = new Span();
-				if (!BootstrapPageConfigurator.isBootstrap4())
-				{
-					iconFeedback.addClass(BootstrapValidationIconClass);
-				}
-				iconFeedback.addStyle("background:transparent !important;");
-				iconFeedback.addAttribute("aria-hidden", "true");
-				iconFeedback.addStyle("top:0;");
-				iconFeedback.addStyle("margin-top:0;");
-				add(iconFeedback);
-			}
+			Span iconFeedback = new Span();
+			iconFeedback.addClass(BootstrapValidationIconClass);
+			add(iconFeedback);
 			configureDataAttributes();
 		}
 	}

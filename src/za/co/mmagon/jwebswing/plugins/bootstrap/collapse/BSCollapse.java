@@ -22,7 +22,6 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 
 /**
@@ -60,14 +59,9 @@ public class BSCollapse
 			display.addClass(Collapse);
 			if (!hideOnStart)
 			{
-				if (!BootstrapPageConfigurator.isBootstrap4())
-				{
-					display.addClass(BSDefaultOptions.In);
-				}
-				else
-				{
-					display.addClass(BSDefaultOptions.Show);
-				}
+
+				display.addClass(BSDefaultOptions.Show);
+
 			}
 			linkController.addAttribute("aria-controls", display.getID());
 			linkController.addAttribute(LinkAttributes.Data_Target.toString(), display.getID(true));

@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 
 import za.co.mmagon.jwebswing.base.html.H5;
-import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
 
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
@@ -27,7 +26,6 @@ import java.util.Objects;
  * @since 20 Feb 2017
  */
 public class BSAccordionHeader<J extends BSAccordionHeader<J>> extends H5<J>
-		implements BSCardChildren
 {
 
 	private static final long serialVersionUID = 1L;

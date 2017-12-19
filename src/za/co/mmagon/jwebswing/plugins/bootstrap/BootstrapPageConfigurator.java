@@ -50,20 +50,13 @@ import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 )
 public class BootstrapPageConfigurator extends PageConfigurator
 {
-	
+
 	@JsonIgnore
 	public static final String BootstrapEnabledString = "bootstrap-enabled";
 
 	private static final long serialVersionUID = 1L;
-	/**
-	 * If the generator is generating for bootstrap 4
-	 */
-	private static boolean bootstrap4;
-	/**
-	 * If bootstrap 4 must include the reboot css
-	 */
-	private static boolean bootstrap4Reboot;
-	
+
+
 	/**
 	 * The default page configurator for bootstrap
 	 */
@@ -71,7 +64,7 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	{
 		//Nothing Needed
 	}
-	
+
 	/**
 	 * Sets if bootstrap is required or not on this component
 	 *
@@ -82,47 +75,7 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	{
 		component.getProperties().put(BootstrapEnabledString, bootstrapRequired);
 	}
-	
-	/**
-	 * Whether or not this binder is building for bootstrap 4
-	 *
-	 * @return
-	 */
-	public static boolean isBootstrap4()
-	{
-		return bootstrap4;
-	}
-	
-	/**
-	 * Whether or not the binder is building for bootstrap 4
-	 *
-	 * @param bootstrap4
-	 */
-	public static void setBootstrap4(boolean bootstrap4)
-	{
-		BootstrapPageConfigurator.bootstrap4 = bootstrap4;
-	}
-	
-	/**
-	 * If bootstrap 4 must include the reboot css class
-	 *
-	 * @return
-	 */
-	public static boolean isBootstrap4Reboot()
-	{
-		return bootstrap4Reboot;
-	}
-	
-	/**
-	 * If bootstrap 4 must include the reboot css class
-	 *
-	 * @param bootstrap4Reboot
-	 */
-	public static void setBootstrap4Reboot(boolean bootstrap4Reboot)
-	{
-		BootstrapPageConfigurator.bootstrap4Reboot = bootstrap4Reboot;
-	}
-	
+
 	/**
 	 * The 3 meta tags *must* come first in the head; any other head content must come *after* these tags
 	 * <p>
@@ -138,51 +91,30 @@ public class BootstrapPageConfigurator extends PageConfigurator
 			JQueryPageConfigurator.setRequired(page.getBody(), true);
 			Meta charMeta = new Meta();
 			charMeta.addAttribute(MetaAttributes.Charset, "utf-16");
-			
+
 			Meta viewportMeta = new Meta();
 			viewportMeta.addAttribute(GlobalAttributes.Name, "viewport");
-			if (isBootstrap4())
-			{
-				viewportMeta.addAttribute(MetaAttributes.Content, "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1,user-scalable=no");
-			}
-			else
-			{
-				viewportMeta.addAttribute(MetaAttributes.Content, "width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no");
-			}
+
+			viewportMeta.addAttribute(MetaAttributes.Content, "width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no");
+
 			Meta compatMeta = new Meta();
 			compatMeta.addAttribute(MetaAttributes.Http_Equiv, "X-UA-Compatible");
 			compatMeta.addAttribute(MetaAttributes.Content, "IE=Edge");
-			
+
 			page.getHead().add(charMeta);
 			page.getHead().add(compatMeta);
 			page.getHead().add(viewportMeta);
 
-			if (isBootstrap4())
-			{
-				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4PopperReference.getJavaScriptReference());
-				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap4CoreReference.getJavaScriptReference());
-				page.getBody().addCssReference(BootstrapReferencePool.Bootstrap4CoreReference.getCssReference());
-				if (bootstrap4Reboot)
-				{
-					page.getBody().addCssReference(BootstrapReferencePool.Bootstrap4RebootReference.getCssReference());
-				}
-				
-				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap3ValidatorReference.getJavaScriptReference());
-			}
-			else
-			{
-				page.getBody().addJavaScriptReference(BootstrapReferencePool.BootstrapCoreReference.getJavaScriptReference());
-				page.getBody().addCssReference(BootstrapReferencePool.BootstrapCoreReference.getCssReference());
-				page.getBody().addJavaScriptReference(BootstrapReferencePool.Bootstrap3ValidatorReference.getJavaScriptReference());
-			}
+			page.getBody().addJavaScriptReference(BootstrapReferencePool.BootstrapCoreReference.getJavaScriptReference());
+			page.getBody().addCssReference(BootstrapReferencePool.BootstrapCoreReference.getCssReference());
 			if (page.getBrowser().compareTo(Browsers.InternetExplorer9) < 1)
 			{
 				page.getBody().addJavaScriptReference(new JavascriptReference("html5shim", 1.0, "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", RequirementsPriority.Fourth));
 				page.getBody().addJavaScriptReference(new JavascriptReference("html5shimrespond", 1.0, "https://oss.maxcdn.com/respond/1.4.2/respond.min.js", RequirementsPriority.Fourth));
 			}
-			
+
 		}
 		return page;
 	}
-	
+
 }

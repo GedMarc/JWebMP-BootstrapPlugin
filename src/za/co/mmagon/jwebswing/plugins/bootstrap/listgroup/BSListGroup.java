@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
 
 /**
  * List group
@@ -36,11 +35,10 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCardChildren;
 @ComponentInformation(name = "Bootstrap ListGroup", description = "List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within. They can also be used as navigation with the right modifier class.",
 		url = "https://v4-alpha.getbootstrap.com/components/list-group/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes, GlobalFeatures, BSListGroupEvents, BSListGroup>
-		implements BSCardChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * List group
 	 * <p>
@@ -53,7 +51,7 @@ public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes,
 		addClass(BSComponentListGroupOptions.List_Group);
 		BootstrapPageConfigurator.setRequired(this, true);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -71,7 +69,7 @@ public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes,
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -79,5 +77,5 @@ public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes,
 		hash = 79 * hash + (this.getID().hashCode());
 		return hash;
 	}
-	
+
 }

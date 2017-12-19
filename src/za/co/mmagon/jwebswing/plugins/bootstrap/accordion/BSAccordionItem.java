@@ -16,12 +16,13 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.accordion;
 
+import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.tables.TableBorderCollapse;
-import za.co.mmagon.jwebswing.plugins.bootstrap.cards.BSCard;
-import za.co.mmagon.jwebswing.plugins.bootstrap.cards.parts.BSCardHeader;
 import za.co.mmagon.jwebswing.plugins.bootstrap.collapse.BSCollapse;
 import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanel;
+import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelThemes;
 
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
@@ -33,7 +34,7 @@ import java.util.Objects;
  * @since 20 Feb 2017
  */
 public class BSAccordionItem<J extends BSAccordionItem<J>>
-		extends BSCard<J> implements BSAccordionChildren
+		extends BSPanel<J> implements BSAccordionChildren
 {
 
 	private static final long serialVersionUID = 1L;
@@ -51,7 +52,7 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 	/**
 	 * The card header
 	 */
-	private BSCardHeader cardHeader;
+	private Div cardHeader;
 	/**
 	 * If this item is rendered as active
 	 */
@@ -62,7 +63,7 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 	 */
 	public BSAccordionItem()
 	{
-		//Nothing Needed
+		super(BSPanelThemes.Default);
 	}
 
 	/**
@@ -178,11 +179,11 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 	}
 
 	@NotNull
-	public BSCardHeader getCardHeader()
+	public Div getCardHeader()
 	{
 		if (cardHeader == null)
 		{
-			setCardHeader(new BSCardHeader());
+			setCardHeader(new Div());
 		}
 		return cardHeader;
 	}
@@ -194,7 +195,7 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setCardHeader(BSCardHeader cardHeader)
+	public J setCardHeader(Div cardHeader)
 	{
 		this.cardHeader = cardHeader;
 		this.cardHeader.addAttribute(BSAccordionAttributes.Role.toString(), "tab");

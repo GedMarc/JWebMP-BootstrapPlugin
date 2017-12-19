@@ -166,30 +166,19 @@ public class BSCarousel<J extends BSCarousel<J>>
 		this.nextLink = nextLink;
 		if (this.nextLink != null)
 		{
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				nextLink.addClass(BSComponentCarouselOptions.Carousel_Control_Next);
-			}
-			else
-			{
-				nextLink.addClass("right");
-				nextLink.addClass(BSComponentCarouselOptions.Carousel_Control);
-			}
+
+			nextLink.addClass("right");
+			nextLink.addClass(BSComponentCarouselOptions.Carousel_Control);
+
 
 			nextLink.addAttribute("role", "button");
 			nextLink.addAttribute("data-slide", "next");
 
 			Span iconSpan = new Span();
 			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
 
-				iconSpan.addClass(BSComponentCarouselOptions.Carousel_Control_Next_Icon);
-			}
-			else
-			{
-				iconSpan.addClass(BSComponentCarouselOptions.Icon_Next);
-			}
+			iconSpan.addClass(BSComponentCarouselOptions.Icon_Next);
+
 
 			Span readerFriendly = new Span("Next");
 			readerFriendly.addClass(BSColoursOptions.Sr_Only);
@@ -286,29 +275,19 @@ public class BSCarousel<J extends BSCarousel<J>>
 		this.previousLink = previousLink;
 		if (this.previousLink != null)
 		{
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				previousLink.addClass(BSComponentCarouselOptions.Carousel_Control_Prev);
-			}
-			else
-			{
-				previousLink.addClass("left");
-				previousLink.addClass(BSComponentCarouselOptions.Carousel_Control);
-			}
+
+			previousLink.addClass("left");
+			previousLink.addClass(BSComponentCarouselOptions.Carousel_Control);
+
 
 			previousLink.addAttribute("role", "button");
 			previousLink.addAttribute("data-slide", "prev");
 
 			Span iconSpan = new Span();
 			iconSpan.addAttribute(GlobalAttributes.Aria_Hidden, "true");
-			if (BootstrapPageConfigurator.isBootstrap4())
-			{
-				iconSpan.addClass(BSComponentCarouselOptions.Carousel_Control_Prev_Icon);
-			}
-			else
-			{
-				iconSpan.addClass(BSComponentCarouselOptions.Icon_Next);
-			}
+
+			iconSpan.addClass(BSComponentCarouselOptions.Icon_Next);
+
 
 			Span readerFriendly = new Span("Previous");
 			readerFriendly.addClass(BSColoursOptions.Sr_Only);
@@ -468,11 +447,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	@Override
 	public void preConfigure()
 	{
-		if (!isConfigured() && BootstrapPageConfigurator.isBootstrap4())
-		{
-			addClass("carousel slide");
-		}
-
+		addClass("carousel slide");
 		super.preConfigure();
 	}
 
