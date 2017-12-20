@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -30,9 +30,9 @@ public abstract class BSFormCheckInput<J extends BSFormCheckInput>
 		extends BSInput
 		implements BSFormSetChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Defines an item as a check item.
 	 */
@@ -40,7 +40,7 @@ public abstract class BSFormCheckInput<J extends BSFormCheckInput>
 	{
 		super(InputTypes.Checkbox);
 	}
-	
+
 	/**
 	 * Defines an item as a check item
 	 *
@@ -50,7 +50,7 @@ public abstract class BSFormCheckInput<J extends BSFormCheckInput>
 	{
 		super(inputType);
 	}
-	
+
 	/**
 	 * Sets the checkbox accordingly
 	 *
@@ -58,6 +58,7 @@ public abstract class BSFormCheckInput<J extends BSFormCheckInput>
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public J setChecked(boolean checked)
 	{
 		if (checked)
@@ -70,5 +71,5 @@ public abstract class BSFormCheckInput<J extends BSFormCheckInput>
 		}
 		return (J) this;
 	}
-	
+
 }
