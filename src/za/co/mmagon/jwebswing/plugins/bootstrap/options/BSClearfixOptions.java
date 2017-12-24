@@ -14,50 +14,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
-
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_UNDERSCORE;
+package za.co.mmagon.jwebswing.plugins.bootstrap.options;
 
 /**
- * Borders
+ * Clearfix
  * <p>
- * Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons, or any other element.
+ * Easily clear floats by adding .clearfix to the parent element. Utilizes the micro clearfix as popularized by Nicolas Gallagher. Can also be used as a mixin.
  *
  * @author GedMarc
  * @version 1.0
  * @since 31 Dec 2016
  */
-public enum BSBorderOptions implements IBSComponentOptions
+public enum BSClearfixOptions implements IBSComponentOptions
 {
-	/**
-	 * makes all 4 corners rounded
-	 */
-	Rounded,
-	/**
-	 * Only round the top
-	 */
-	Rounded_Top,
-	/**
-	 * Only rounds the bottom
-	 */
-	Rounded_Bottom,
-	/**
-	 * Rounds the left
-	 */
-	Rounded_Left,
-	/**
-	 * Rounds the right
-	 */
-	Rounded_Right,
-	/**
-	 * Makes the display in circular format
-	 */
-	Rounded_Circle;
+	Clearfix;
 
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(CHAR_UNDERSCORE, CHAR_DASH);
+		return name().toLowerCase();
 	}
 }

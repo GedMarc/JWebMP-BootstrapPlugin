@@ -18,9 +18,9 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navbar.brand;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Image;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDisplayOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSVerticalAlignmentOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDisplayOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSVerticalAlignmentOptions;
 
 /**
  * Adding images to the .navbar-brand will likely always require custom styles or utilities to properly size. Here are some examples to demonstrate.

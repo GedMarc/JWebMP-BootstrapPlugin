@@ -20,7 +20,7 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.tables.TableBorderCollapse;
 import za.co.mmagon.jwebswing.plugins.bootstrap.collapse.BSCollapse;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.panel.BSPanelThemes;
 

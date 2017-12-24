@@ -18,8 +18,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.containers;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSWidthOptions;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSWidthOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.IBSComponentOptions;
 
 /**
  * Shortcut for writing column Div's and spans for bootstrap

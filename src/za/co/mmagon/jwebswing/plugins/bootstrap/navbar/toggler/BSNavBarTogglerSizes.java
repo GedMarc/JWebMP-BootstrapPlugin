@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.IBSComponentOptions;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SPACE;
 
@@ -47,11 +47,11 @@ public enum BSNavBarTogglerSizes implements IBSComponentOptions
 	 * Navbars require a wrapping .navbar with .navbar-toggleable-* for responsive collapsing and color scheme classes.
 	 */
 	Navbar_Toggleable_XL,;
-	
+
 	BSNavBarTogglerSizes()
 	{ //Nothing Needed
 	}
-	
+
 	@JsonValue
 	@Override
 	public String toString()

@@ -14,33 +14,50 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
+package za.co.mmagon.jwebswing.plugins.bootstrap.options;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_UNDERSCORE;
 
 /**
- * Close icon
+ * Borders
  * <p>
- * Use a generic close icon for dismissing content like modals and alerts. Be sure to include text for screen readers, as we’ve done with aria-label.
+ * Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons, or any other element.
  *
  * @author GedMarc
  * @version 1.0
  * @since 31 Dec 2016
  */
-public enum BSCloseIconOptions implements IBSComponentOptions
+public enum BSBorderOptions implements IBSComponentOptions
 {
 	/**
-	 * Marks an item as a close item
+	 * makes all 4 corners rounded
 	 */
-	Close;
-
-	BSCloseIconOptions()
-	{
-
-	}
+	Rounded,
+	/**
+	 * Only round the top
+	 */
+	Rounded_Top,
+	/**
+	 * Only rounds the bottom
+	 */
+	Rounded_Bottom,
+	/**
+	 * Rounds the left
+	 */
+	Rounded_Left,
+	/**
+	 * Rounds the right
+	 */
+	Rounded_Right,
+	/**
+	 * Makes the display in circular format
+	 */
+	Rounded_Circle;
 
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase();
+		return name().toLowerCase().replace(CHAR_UNDERSCORE, CHAR_DASH);
 	}
-
 }

@@ -16,7 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.media;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.IBSComponentOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;

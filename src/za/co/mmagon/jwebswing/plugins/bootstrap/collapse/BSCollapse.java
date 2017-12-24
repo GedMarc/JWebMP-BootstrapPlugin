@@ -22,7 +22,7 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 
 /**
  * Collapse

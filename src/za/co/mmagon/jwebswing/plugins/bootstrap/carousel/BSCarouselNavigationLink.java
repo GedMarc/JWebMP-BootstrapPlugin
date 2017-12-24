@@ -19,7 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.carousel;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSColoursOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSColoursOptions;
 
 /**
  * @param <J>

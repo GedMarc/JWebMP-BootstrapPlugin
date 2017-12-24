@@ -25,7 +25,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSCloseIconOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSCloseIconOptions;
 
 import java.util.Objects;
 

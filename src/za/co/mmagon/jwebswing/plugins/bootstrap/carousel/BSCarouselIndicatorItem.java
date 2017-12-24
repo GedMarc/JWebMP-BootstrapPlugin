@@ -17,7 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.carousel;
 
 import za.co.mmagon.jwebswing.base.html.ListItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 
 /**
  * Indicator list items

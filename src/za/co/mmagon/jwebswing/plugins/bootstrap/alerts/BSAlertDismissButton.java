@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.alerts;
 
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.close.BSCloseIcon;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 
 /**
  * Dismissing

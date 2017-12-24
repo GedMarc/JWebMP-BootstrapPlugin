@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.progressbar;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.IBSComponentOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
@@ -36,16 +36,16 @@ public enum BSComponentProgressBarOptions implements IBSComponentOptions
 	Progress_Bar,
 	Progress_Bar_Striped,
 	Progress_Bar_Animated;
-	
+
 	BSComponentProgressBarOptions()
 	{
-	
+
 	}
-	
+
 	@Override
 	public String toString()
 	{
 		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
-	
+
 }

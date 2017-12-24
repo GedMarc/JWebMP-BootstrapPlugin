@@ -19,7 +19,7 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**

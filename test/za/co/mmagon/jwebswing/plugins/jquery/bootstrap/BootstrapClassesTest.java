@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jquery.bootstrap;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 
 /**
  * @author ged_m

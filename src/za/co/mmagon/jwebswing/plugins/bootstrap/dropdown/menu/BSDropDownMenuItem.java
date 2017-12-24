@@ -19,8 +19,8 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu;
 import za.co.mmagon.jwebswing.base.html.Italic;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import java.util.Objects;

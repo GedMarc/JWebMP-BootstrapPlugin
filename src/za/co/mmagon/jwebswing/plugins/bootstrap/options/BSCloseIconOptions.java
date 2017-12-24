@@ -14,37 +14,33 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
-
-import za.co.mmagon.jwebswing.utilities.StaticStrings;
-
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+package za.co.mmagon.jwebswing.plugins.bootstrap.options;
 
 /**
- * Use .d-block, .d-inline, or .d-inline-block to simply set an element’s display property to block, inline, or inline-block (respectively).
+ * Close icon
+ * <p>
+ * Use a generic close icon for dismissing content like modals and alerts. Be sure to include text for screen readers, as we’ve done with aria-label.
  *
  * @author GedMarc
  * @version 1.0
  * @since 31 Dec 2016
  */
-public enum BSDisplayOptions implements IBSComponentOptions
+public enum BSCloseIconOptions implements IBSComponentOptions
 {
 	/**
-	 * Sets the display property to block
+	 * Marks an item as a close item
 	 */
-	Block,
-	/**
-	 * Sets the display property to inline
-	 */
-	Inline,
-	/**
-	 * Sets the display property to inline block
-	 */
-	Inline_Block;
+	Close;
+
+	BSCloseIconOptions()
+	{
+
+	}
 
 	@Override
 	public String toString()
 	{
-		return "d-" + name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
+		return name().toLowerCase();
 	}
+
 }

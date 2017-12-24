@@ -1,4 +1,4 @@
-package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
+package za.co.mmagon.jwebswing.plugins.bootstrap.options;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_UNDERSCORE;

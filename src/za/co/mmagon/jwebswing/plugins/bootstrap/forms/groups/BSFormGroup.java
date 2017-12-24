@@ -27,7 +27,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.BSDefaultOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSForm;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormInline;
@@ -35,6 +34,7 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.controls.BSInput;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 import za.co.mmagon.logger.LogFactory;
 
 import javax.annotation.Nullable;

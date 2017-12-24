@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,4 +14,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions;
+package za.co.mmagon.jwebswing.plugins.bootstrap.options;
+
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+
+/**
+ * Width and height
+ * <p>
+ * Easily make an element as wide or as tall as its parent using the .w-100 and .h-100 utility classes.
+ *
+ * @author GedMarc
+ * @version 1.0
+ * @since 31 Dec 2016
+ */
+public enum BSSizingOptions implements IBSComponentOptions
+{
+	/**
+	 * Sets the width to 100%
+	 */
+	w_100,
+	/**
+	 * Sets the height to 100%
+	 */
+	h_100;
+
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
+	}
+}

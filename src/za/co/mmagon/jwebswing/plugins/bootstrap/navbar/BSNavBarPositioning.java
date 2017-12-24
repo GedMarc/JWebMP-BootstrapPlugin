@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import za.co.mmagon.jwebswing.plugins.bootstrap.componentoptions.IBSComponentOptions;
+import za.co.mmagon.jwebswing.plugins.bootstrap.options.IBSComponentOptions;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SPACE;
 
@@ -44,12 +44,12 @@ public enum BSNavBarPositioning implements IBSComponentOptions
 	 * Choose from fixed to the top, fixed to the bottom, or stickied to the top. Note that position: sticky, used for .sticky-top, isn’t fully supported in every browser.
 	 */
 	Sticky_Top,;
-	
+
 	BSNavBarPositioning()
 	{
 		//Nothing Needed
 	}
-	
+
 	@JsonValue
 	@Override
 	public String toString()
