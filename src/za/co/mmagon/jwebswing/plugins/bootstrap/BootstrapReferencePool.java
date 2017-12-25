@@ -29,15 +29,9 @@ public enum BootstrapReferencePool implements ReferencePool
 {
 	BootstrapCoreReference(new JavascriptReference("BSCore", 3.36, "bower_components/bootstrap/dist/js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", 10),
 	                       new CSSReference("BSCore", 3.36, "bower_components/bootstrap/dist/css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", 10)),
-
-
-	//BootstrapDefaultThemeReference(null, new CSSReference("BSTheme", 3.36, "css/bootstrap/bootstrap-theme.css", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", 11)),
-
 	BootstrapNumberSpinnerReference(new JavascriptReference("NumberSpinnerReference", 3.36, "bs4custom/bsnumberspinner.js")
 			, new CSSReference("NumberSpinnerReference", 3.36, "bs4custom/bsnumberspinner.js"));
 
-	//Bootstrap3ValidatorReference(new JavascriptReference("BS3Validator", 4.003, "bower_components/bootstrap-validator/dist/validator.js", 11),
-	   //                          null);
 
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
