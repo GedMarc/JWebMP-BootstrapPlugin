@@ -30,22 +30,25 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_ANGULAR_EVENT_START_SHORT;
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * Handles all events. Over-ride methods.
  *
  * @author Marc Magon
  */
-public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends Event<JavaScriptPart, J>
+public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends Event<J>
 		implements GlobalEvents, BSAlertEvents
 {
-	
+
 	/**
 	 * Logger for the Component
 	 */
 	private static final Logger LOG = LogFactory.getInstance().getLogger("BSAlertCloseEvent");
 	private static final long serialVersionUID = 1L;
 	private BSAlertCloseEventDirective directive;
-	
+
 	/**
 	 * Performs a click
 	 *
@@ -56,7 +59,7 @@ public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends 
 		super(EventTypes.undefined, component);
 		setComponent(component);
 	}
-	
+
 	/**
 	 * Sets JQuery and Angular enabled, adds the directive to angular, and the attribute to the component
 	 */
@@ -66,11 +69,11 @@ public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends 
 		if (!isConfigured())
 		{
 			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-			getComponent().addAttribute("ng-bs-alert-close-directive", "perform($event," + renderVariables() + ");");
+			getComponent().addAttribute("ng-bs-alert-close-directive", STRING_ANGULAR_EVENT_START_SHORT + renderVariables() + STRING_CLOSING_BRACKET_SEMICOLON);
 		}
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Returns the angular directive associated with the right click event
 	 *
@@ -84,7 +87,7 @@ public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends 
 		}
 		return directive;
 	}
-	
+
 	/**
 	 * Sets the right click angular event
 	 *
@@ -94,7 +97,7 @@ public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends 
 	{
 		this.directive = directive;
 	}
-	
+
 	/**
 	 * Triggers on Click
 	 * <p>
@@ -103,7 +106,7 @@ public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends 
 	 * @param response The physical Ajax Receiver
 	 */
 	public abstract void onClose(AjaxCall call, AjaxResponse response);
-	
+
 	@Override
 	public void fireEvent(AjaxCall call, AjaxResponse response)
 	{
@@ -116,7 +119,7 @@ public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends 
 			LOG.log(Level.SEVERE, "Error In Firing Event", e);
 		}
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -135,7 +138,7 @@ public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>> extends 
 		BSAlertCloseEvent<?> that = (BSAlertCloseEvent<?>) o;
 		return getComponent().equals(that.getComponent());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

@@ -30,15 +30,18 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_ANGULAR_EVENT_START_SHORT;
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * Handles all events. Over-ride methods.
  *
  * @author Marc Magon
  */
-public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> extends Event<JavaScriptPart, J>
+public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> extends Event<J>
 		implements GlobalEvents, BSAlertEvents
 {
-	
+
 	/**
 	 * Logger for the Component
 	 */
@@ -48,7 +51,7 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 	 * The associated directive
 	 */
 	private BSCarouselSlideEventDirective directive;
-	
+
 	/**
 	 * Performs a click
 	 *
@@ -58,7 +61,7 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 	{
 		super(EventTypes.undefined, component);
 	}
-	
+
 	/**
 	 * Sets JQuery and Angular enabled, adds the directive to angular, and the attribute to the component
 	 */
@@ -68,11 +71,11 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 		if (!isConfigured())
 		{
 			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-			getComponent().addAttribute("ng-bs-carousel-slid-directive", "perform($event," + renderVariables() + ");");
+			getComponent().addAttribute("ng-bs-carousel-slid-directive", STRING_ANGULAR_EVENT_START_SHORT + renderVariables() + STRING_CLOSING_BRACKET_SEMICOLON);
 		}
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Returns the angular directive associated with the right click event
 	 *
@@ -86,7 +89,7 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 		}
 		return directive;
 	}
-	
+
 	/**
 	 * Sets the right click angular event
 	 *
@@ -96,7 +99,7 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 	{
 		this.directive = directive;
 	}
-	
+
 	/**
 	 * Triggers on Click
 	 * <p>
@@ -105,7 +108,7 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 	 * @param response The physical Ajax Receiver
 	 */
 	public abstract void onSlid(AjaxCall call, AjaxResponse response);
-	
+
 	@Override
 	public void fireEvent(AjaxCall call, AjaxResponse response)
 	{
@@ -118,7 +121,7 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 			LOG.log(Level.SEVERE, "Error In Firing Event", e);
 		}
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -137,7 +140,7 @@ public abstract class BSCarouselSlidEvent<J extends BSCarouselSlidEvent<J>> exte
 		BSCarouselSlidEvent<?> that = (BSCarouselSlidEvent<?>) o;
 		return Objects.equals(getComponent(), that.getComponent());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

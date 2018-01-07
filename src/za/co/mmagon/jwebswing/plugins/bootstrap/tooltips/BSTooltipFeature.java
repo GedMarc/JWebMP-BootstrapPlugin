@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,6 +23,8 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.popovers.BSPopOverFeatures;
 import za.co.mmagon.jwebswing.plugins.bootstrap.popovers.BSPopOverOptions;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
  *
@@ -32,11 +34,11 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.popovers.BSPopOverOptions;
  */
 public class BSTooltipFeature extends Feature<BSPopOverOptions, BSTooltipFeature> implements BSPopOverFeatures, GlobalFeatures
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private BSPopOverOptions options;
-	
+
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component. Adds the tooltip text as the Title attribute to the component
 	 * <p>
@@ -49,7 +51,7 @@ public class BSTooltipFeature extends Feature<BSPopOverOptions, BSTooltipFeature
 		setComponent(forComponent);
 		BootstrapPageConfigurator.setRequired(forComponent, true);
 	}
-	
+
 	/**
 	 * Returns all the tooltip options
 	 * <p>
@@ -65,15 +67,15 @@ public class BSTooltipFeature extends Feature<BSPopOverOptions, BSTooltipFeature
 		}
 		return options;
 	}
-	
+
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		String requiredString = getComponent().getJQueryID()
-				+ "tooltip(" + getOptions() + ");" + getNewLine();
+				+ "tooltip(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine();
 		addQuery(requiredString);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -91,7 +93,7 @@ public class BSTooltipFeature extends Feature<BSPopOverOptions, BSTooltipFeature
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

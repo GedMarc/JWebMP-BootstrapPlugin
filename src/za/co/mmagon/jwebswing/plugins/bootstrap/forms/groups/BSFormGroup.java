@@ -405,7 +405,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		if (isAngularValidation())
 		{
 			addClass("has-feedback");
-			AngularPageConfigurator.setRequired(this, true);
+			AngularPageConfigurator.setRequired(true);
 			BSForm referencedForm = findParent(BSForm.class);
 			if (referencedForm == null)
 			{

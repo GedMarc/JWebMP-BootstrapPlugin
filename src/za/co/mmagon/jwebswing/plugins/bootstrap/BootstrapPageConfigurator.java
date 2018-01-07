@@ -88,7 +88,7 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	{
 		if (!page.isConfigured())
 		{
-			JQueryPageConfigurator.setRequired(page.getBody(), true);
+			JQueryPageConfigurator.setRequired(true);
 			Meta charMeta = new Meta();
 			charMeta.addAttribute(MetaAttributes.Charset, "utf-16");
 

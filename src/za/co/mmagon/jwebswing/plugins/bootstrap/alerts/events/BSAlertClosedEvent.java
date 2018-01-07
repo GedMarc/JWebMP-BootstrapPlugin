@@ -29,22 +29,25 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_ANGULAR_EVENT_START_SHORT;
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * Handles all events. Over-ride methods.
  *
  * @author Marc Magon
  */
-public abstract class BSAlertClosedEvent extends Event
+public abstract class BSAlertClosedEvent<J extends BSAlertClosedEvent<J>> extends Event<J>
 		implements GlobalEvents, BSAlertEvents
 {
-	
+
 	/**
 	 * Logger for the Component
 	 */
 	private static final Logger LOG = LogFactory.getInstance().getLogger("BSAlertClosedEvent");
 	private static final long serialVersionUID = 1L;
 	private BSAlertCloseEventDirective directive;
-	
+
 	/**
 	 * Performs a click
 	 *
@@ -55,7 +58,7 @@ public abstract class BSAlertClosedEvent extends Event
 		super(EventTypes.undefined, component);
 		setComponent(component);
 	}
-	
+
 	/**
 	 * Sets JQuery and Angular enabled, adds the directive to angular, and the attribute to the component
 	 */
@@ -65,11 +68,11 @@ public abstract class BSAlertClosedEvent extends Event
 		if (!isConfigured())
 		{
 			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-			getComponent().addAttribute("ng-bs-alert-closed-directive", "perform($event," + renderVariables() + ");");
+			getComponent().addAttribute("ng-bs-alert-closed-directive", STRING_ANGULAR_EVENT_START_SHORT + renderVariables() + STRING_CLOSING_BRACKET_SEMICOLON);
 		}
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Returns the angular directive associated with the right click event
 	 *
@@ -83,7 +86,7 @@ public abstract class BSAlertClosedEvent extends Event
 		}
 		return directive;
 	}
-	
+
 	/**
 	 * Sets the right click angular event
 	 *
@@ -93,7 +96,7 @@ public abstract class BSAlertClosedEvent extends Event
 	{
 		this.directive = directive;
 	}
-	
+
 	/**
 	 * Triggers on Click
 	 * <p>
@@ -102,7 +105,7 @@ public abstract class BSAlertClosedEvent extends Event
 	 * @param response The physical Ajax Receiver
 	 */
 	public abstract void onClosed(AjaxCall call, AjaxResponse response);
-	
+
 	@Override
 	public void fireEvent(AjaxCall call, AjaxResponse response)
 	{
@@ -115,7 +118,7 @@ public abstract class BSAlertClosedEvent extends Event
 			LOG.log(Level.SEVERE, "Error In Firing Event", e);
 		}
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -134,7 +137,7 @@ public abstract class BSAlertClosedEvent extends Event
 		BSAlertClosedEvent that = (BSAlertClosedEvent) o;
 		return getComponent().equals(that.getComponent());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{
