@@ -52,7 +52,7 @@ public class BootstrapPageConfiguratorTest extends BaseTestClass
 				                                                "\t</head>\n" +
 				                                                "\t<body id=\"body\">\n" +
 				                                                "\t\t<!-- Priority [First] Values -->\n" +
-				                                                "\t\t<script src=\"bower_components/jquery-3/dist/core.min.js\" type=\"text/javascript\"></script>\n" +
+				                                                "\t\t<script src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n" +
 				                                                "\t\t<!-- Priority [Second] Values -->\n" +
 				                                                "\t\t<script src=\"bower_components/jquery-migrate/jquery-migrate.min.js\" type=\"text/javascript\"></script>\n" +
 				                                                "\t\t<!-- Priority [Third] Values -->\n" +
