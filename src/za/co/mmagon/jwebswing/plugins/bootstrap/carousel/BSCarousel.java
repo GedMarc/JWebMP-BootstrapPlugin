@@ -20,7 +20,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSColoursOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 
@@ -89,7 +88,7 @@ public class BSCarousel<J extends BSCarousel<J>>
 	public BSCarousel()
 	{
 		addFeature(getFeature());
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 
 	/**

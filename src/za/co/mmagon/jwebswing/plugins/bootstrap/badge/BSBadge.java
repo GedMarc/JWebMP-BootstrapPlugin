@@ -19,7 +19,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.badge;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * With badges
@@ -39,9 +38,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 public class BSBadge<J extends BSBadge<J>>
 		extends Span<GlobalChildren, BSBadgeAttributes, J> implements IBSBadge<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * With badges
 	 * <p>
@@ -61,9 +60,9 @@ public class BSBadge<J extends BSBadge<J>>
 		{
 			addClass(badgeOption);
 		}
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * With badges
 	 * <p>
@@ -85,9 +84,9 @@ public class BSBadge<J extends BSBadge<J>>
 		{
 			addClass(badgeOption);
 		}
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Neater output
 	 *
@@ -97,53 +96,7 @@ public class BSBadge<J extends BSBadge<J>>
 	{
 		return this;
 	}
-	
-	/**
-	 * Primary colour theme
-	 *
-	 * @param applyStyle
-	 *
-	 * @return
-	 */
-	@Override
-	public J setPrimary(boolean applyStyle)
-	{
-		if (applyStyle)
-		{
-			addClass(BSComponentBadgeOptions.Badge_Primary);
-		}
-		else
-		
-		{
-			removeClass(BSComponentBadgeOptions.Badge_Primary);
-		}
-		
-		return (J) this;
-	}
-	
-	/**
-	 * Default colour theme
-	 *
-	 * @param applyStyle
-	 *
-	 * @return
-	 */
-	@Override
-	public J setDefault(boolean applyStyle)
-	{
-		if (applyStyle)
-		{
-			addClass(BSComponentBadgeOptions.Badge_Default);
-		}
-		else
-		
-		{
-			removeClass(BSComponentBadgeOptions.Badge_Default);
-		}
-		
-		return (J) this;
-	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -159,14 +112,37 @@ public class BSBadge<J extends BSBadge<J>>
 			addClass(BSComponentBadgeOptions.Badge_Danger);
 		}
 		else
-		
+
 		{
 			removeClass(BSComponentBadgeOptions.Badge_Danger);
 		}
-		
+
 		return (J) this;
 	}
-	
+
+	/**
+	 * Default colour theme
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	@Override
+	public J setDefault(boolean applyStyle)
+	{
+		if (applyStyle)
+		{
+			addClass(BSComponentBadgeOptions.Badge_Default);
+		}
+		else
+
+		{
+			removeClass(BSComponentBadgeOptions.Badge_Default);
+		}
+
+		return (J) this;
+	}
+
 	/**
 	 * Set or remove the style
 	 *
@@ -185,10 +161,33 @@ public class BSBadge<J extends BSBadge<J>>
 		{
 			removeClass(BSComponentBadgeOptions.Badge_Info);
 		}
-		
+
 		return (J) this;
 	}
-	
+
+	/**
+	 * Primary colour theme
+	 *
+	 * @param applyStyle
+	 *
+	 * @return
+	 */
+	@Override
+	public J setPrimary(boolean applyStyle)
+	{
+		if (applyStyle)
+		{
+			addClass(BSComponentBadgeOptions.Badge_Primary);
+		}
+		else
+
+		{
+			removeClass(BSComponentBadgeOptions.Badge_Primary);
+		}
+
+		return (J) this;
+	}
+
 	/**
 	 * Set or remove the style
 	 *
@@ -209,7 +208,7 @@ public class BSBadge<J extends BSBadge<J>>
 		}
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -230,7 +229,7 @@ public class BSBadge<J extends BSBadge<J>>
 		}
 		return (J) this;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -248,7 +247,7 @@ public class BSBadge<J extends BSBadge<J>>
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -256,5 +255,5 @@ public class BSBadge<J extends BSBadge<J>>
 		hash = 79 * hash + (this.getID().hashCode());
 		return hash;
 	}
-	
+
 }

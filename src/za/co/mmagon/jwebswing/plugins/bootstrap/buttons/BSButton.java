@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.InputButtonTypeAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSDropDownChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
@@ -56,7 +55,6 @@ public class BSButton<J extends BSButton<J>>
 	{
 		addClass(BSComponentButtonOptions.Btn);
 		addAttribute(GlobalAttributes.Type, roleAttribute);
-		BootstrapPageConfigurator.setRequired(this, true);
 	}
 
 	/**

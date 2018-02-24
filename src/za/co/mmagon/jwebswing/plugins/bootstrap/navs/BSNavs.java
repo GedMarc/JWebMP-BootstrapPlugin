@@ -20,7 +20,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 
 /**
@@ -39,13 +38,13 @@ public class BSNavs<J extends BSNavs<J>>
 		extends Div<BSNavsChildren, BSNavsAttributes, GlobalFeatures, GlobalEvents, J>
 		implements BSNavBarChildren, IBSNavs
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * Assign the navigation list
 	 */
 	private BSNavList navigationList;
-	
+
 	/**
 	 * Navs Navigation available in Bootstrap share general markup and styles, from the base .nav class to the active and disabled states. Swap modifier classes to switch between each style.
 	 */
@@ -54,9 +53,9 @@ public class BSNavs<J extends BSNavs<J>>
 		setTag("nav");
 		addClass(BSComponentNavsOptions.Nav);
 		addAttribute(BSNavsAttributes.Role, "navigation");
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Sets this navigation bar as centered
 	 *
@@ -68,7 +67,7 @@ public class BSNavs<J extends BSNavs<J>>
 		addClass(BSComponentNavsOptions.Justify_Content_Center);
 		return this;
 	}
-	
+
 	/**
 	 * Sets this navigation bar as right aligned
 	 *
@@ -80,7 +79,7 @@ public class BSNavs<J extends BSNavs<J>>
 		addClass(BSComponentNavsOptions.Justify_Content_End);
 		return this;
 	}
-	
+
 	/**
 	 * Assigns the navigation list
 	 *
@@ -95,7 +94,7 @@ public class BSNavs<J extends BSNavs<J>>
 		}
 		return navigationList;
 	}
-	
+
 	/**
 	 * Sets the navigation list accordingly
 	 *
@@ -114,7 +113,7 @@ public class BSNavs<J extends BSNavs<J>>
 			add(this.navigationList);
 		}
 	}
-	
+
 	/**
 	 * A neater version of only my options
 	 *
@@ -124,7 +123,7 @@ public class BSNavs<J extends BSNavs<J>>
 	{
 		return this;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -142,7 +141,7 @@ public class BSNavs<J extends BSNavs<J>>
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -150,5 +149,5 @@ public class BSNavs<J extends BSNavs<J>>
 		hash = 79 * hash + (this.getID().hashCode());
 		return hash;
 	}
-	
+
 }

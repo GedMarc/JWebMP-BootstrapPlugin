@@ -19,7 +19,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.listgroup;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * List group
@@ -49,7 +48,7 @@ public class BSListGroup extends Div<BSListGroupChildren, BSListGroupAttributes,
 	{
 		setTag("ul");
 		addClass(BSComponentListGroupOptions.List_Group);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 
 	@Override

@@ -18,7 +18,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Link;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * @param <J>
@@ -29,17 +28,17 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 public class BSBreadCrumbLink<J extends BSBreadCrumbLink<J>>
 		extends Link<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * A new default crumb link
 	 */
 	public BSBreadCrumbLink()
 	{
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * A new default crumb link
 	 *
@@ -48,9 +47,9 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink<J>>
 	public BSBreadCrumbLink(String directToAddress)
 	{
 		super(directToAddress);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * A new default crumb link
 	 *
@@ -60,9 +59,9 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink<J>>
 	public BSBreadCrumbLink(String directToAddress, String targetFrameName)
 	{
 		super(directToAddress, targetFrameName);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * A new default crumb link
 	 *
@@ -73,9 +72,9 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink<J>>
 	public BSBreadCrumbLink(String directToAddress, String targetFrameName, String text)
 	{
 		super(directToAddress, targetFrameName, text);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * A new default crumb link
 	 *
@@ -86,7 +85,7 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink<J>>
 	public BSBreadCrumbLink(String directToAddress, String targetFrameName, ComponentHierarchyBase component)
 	{
 		super(directToAddress, targetFrameName, component);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 }

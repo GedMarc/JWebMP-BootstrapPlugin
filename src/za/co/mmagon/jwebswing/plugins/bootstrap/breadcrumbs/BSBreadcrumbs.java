@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 
 import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 import java.util.ArrayList;
 
@@ -36,9 +35,9 @@ import java.util.ArrayList;
 		url = "https://v4-alpha.getbootstrap.com/components/breadcrumb/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSBreadcrumbs<J extends BSBreadcrumbs<J>> extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttributes, BSBreadcrumbsEvents, J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Breadcrumbs
 	 * <p>
@@ -48,9 +47,9 @@ public class BSBreadcrumbs<J extends BSBreadcrumbs<J>> extends List<BSBreadcrumb
 	public BSBreadcrumbs()
 	{
 		addClass(BSComponentBreadcrumbOptions.Breadcrumb);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
@@ -62,7 +61,7 @@ public class BSBreadcrumbs<J extends BSBreadcrumbs<J>> extends List<BSBreadcrumb
 		}
 		super.preConfigure();
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -80,7 +79,7 @@ public class BSBreadcrumbs<J extends BSBreadcrumbs<J>> extends List<BSBreadcrumb
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

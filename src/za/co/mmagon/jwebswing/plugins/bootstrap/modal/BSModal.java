@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSCloseIconOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
@@ -80,7 +79,7 @@ public class BSModal<J extends BSModal<J>>
 		addAttribute(BSModalAttributes.Role, "dialog");
 		addAttribute(BSModalAttributes.TabIndex, "-1");
 		addAttribute(GlobalAttributes.Aria_Hidden, "true");
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 
 	/**

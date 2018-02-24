@@ -23,7 +23,6 @@ import za.co.mmagon.jwebswing.base.html.HeaderText;
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 import java.util.Objects;
 
@@ -48,7 +47,7 @@ public class BSMedia<J extends BSMedia<J>>
 		extends Div<BSMediaChildren, BSMediaAttributes, GlobalFeatures, BSMediaEvents, J>
 		implements IBSMedia
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The link for the media object
@@ -66,7 +65,7 @@ public class BSMedia<J extends BSMedia<J>>
 	 * The media object being displayed (usually image or something)
 	 */
 	private Component mediaComponent;
-	
+
 	/**
 	 * The media object is an abstract element used as the basis for building more complex and repetitive components (like blog comments, Tweets, etc).
 	 * <p>
@@ -75,9 +74,9 @@ public class BSMedia<J extends BSMedia<J>>
 	public BSMedia()
 	{
 		addClass(BSComponentMediaOptions.Media);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Returns the associated media link, never null
 	 *
@@ -92,7 +91,7 @@ public class BSMedia<J extends BSMedia<J>>
 		}
 		return mediaLink;
 	}
-	
+
 	/**
 	 * Sets the header to the required object
 	 *
@@ -116,7 +115,7 @@ public class BSMedia<J extends BSMedia<J>>
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Returns the body portion of this media object
 	 *
@@ -131,7 +130,7 @@ public class BSMedia<J extends BSMedia<J>>
 		}
 		return mediaBody;
 	}
-	
+
 	/**
 	 * Sets the media body and adds it to this object
 	 *
@@ -155,7 +154,7 @@ public class BSMedia<J extends BSMedia<J>>
 		getChildren().add(mediaBody);
 		return this;
 	}
-	
+
 	/**
 	 * Returns a new H4 header
 	 *
@@ -170,7 +169,7 @@ public class BSMedia<J extends BSMedia<J>>
 		}
 		return mediaHeader;
 	}
-	
+
 	/**
 	 * Sets the media link, and moves the media object into the new link if necessary
 	 *
@@ -203,7 +202,7 @@ public class BSMedia<J extends BSMedia<J>>
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Returns the component displayed inside the link that is used for display
 	 *
@@ -218,7 +217,7 @@ public class BSMedia<J extends BSMedia<J>>
 		}
 		return mediaComponent;
 	}
-	
+
 	/**
 	 * Sets the component displayed to the left or right (set that in the link)
 	 *
@@ -242,7 +241,7 @@ public class BSMedia<J extends BSMedia<J>>
 		}
 		return this;
 	}
-	
+
 	@Override
 	public boolean equals(Object o)
 	{
@@ -264,7 +263,7 @@ public class BSMedia<J extends BSMedia<J>>
 				Objects.equals(getMediaHeader(), bsMedia.getMediaHeader()) &&
 				Objects.equals(getMediaComponent(), bsMedia.getMediaComponent());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
@@ -48,6 +47,6 @@ public class BSRow<J extends BSRow<J>> extends Div<GlobalChildren, NoAttributes,
 	public BSRow()
 	{
 		addClass(BSDefaultOptions.Row);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 }

@@ -22,7 +22,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Forms
@@ -41,9 +40,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 public class BSForm<J extends BSForm<J>>
 		extends Div<BSFormChildren, BSFormAttributes, GlobalFeatures, BSFormEvents, J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Forms
 	 * <p>
@@ -52,10 +51,10 @@ public class BSForm<J extends BSForm<J>>
 	public BSForm()
 	{
 		setTag("form");
-		BootstrapPageConfigurator.setRequired(this, true);
+
 		addAttribute("role", "form");
 	}
-	
+
 	/**
 	 * Pre configures the item with a name
 	 */
@@ -69,7 +68,7 @@ public class BSForm<J extends BSForm<J>>
 
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Configures a component as the submit button for this component
 	 *

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Button toolbar
@@ -36,9 +35,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 		url = "https://v4-alpha.getbootstrap.com/components/button-group/", wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSButtonToolbar extends Div<BSButtonToolbarChildren, BSButtonToolbarAttributes, GlobalFeatures, BSButtonToolbarEvents, BSButtonToolbar> implements IBSButtonToolbar
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Button toolbar
 	 * <p>
@@ -49,9 +48,9 @@ public class BSButtonToolbar extends Div<BSButtonToolbarChildren, BSButtonToolba
 		addAttribute(BSButtonToolbarAttributes.Role, "toolbar");
 		setAriaLabel("Button Toolbar");
 		addClass(BSComponentButtonToolbarOptions.Btn_Toolbar);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Neater representation
 	 *
@@ -61,7 +60,7 @@ public class BSButtonToolbar extends Div<BSButtonToolbarChildren, BSButtonToolba
 	{
 		return this;
 	}
-	
+
 	/**
 	 * Sets the screen reader label for this group
 	 *
@@ -75,7 +74,7 @@ public class BSButtonToolbar extends Div<BSButtonToolbarChildren, BSButtonToolba
 		addAttribute(GlobalAttributes.Aria_Label, label);
 		return this;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -93,7 +92,7 @@ public class BSButtonToolbar extends Div<BSButtonToolbarChildren, BSButtonToolba
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

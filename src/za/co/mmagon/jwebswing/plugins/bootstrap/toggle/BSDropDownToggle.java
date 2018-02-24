@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,6 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.LinkAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 
 import java.util.ArrayList;
@@ -43,7 +42,7 @@ import java.util.Objects;
 @SuppressWarnings("unused")
 public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggleChildren, BSToggleAttributes, BSToggleFeatures, BSToggleEvents, J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	private static final String ToggleString = "dropdown";
 
@@ -55,7 +54,7 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 	 * A list of the contents for this drop down
 	 */
 	private List contents;
-	
+
 	/**
 	 * Construct a new toggle item with the given items
 	 *
@@ -68,24 +67,27 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 		setTag(titleItem.getTag());
 		setTitle(titleItem);
 		setContents(contents);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
-	 * Construct a new toggle item with the given items
+	 * Sets the contents
 	 *
-	 * @param titleItem Displays by default, clickable to show the contents
 	 * @param contents
 	 */
-	@SuppressWarnings("unused")
-	public BSDropDownToggle(Button titleItem, List contents)
+	public final void setContents(List contents)
 	{
-		setTag(titleItem.getTag());
-		setTitle(titleItem);
-		setContents(contents);
-		BootstrapPageConfigurator.setRequired(this, true);
+		this.contents = contents;
+
+		if (contents != null)
+		{
+			contents.addClass(BSComponentDropDownOptions.Dropdown_Menu);
+			contents.addClass("");
+			title.addAttribute(ButtonAttributes.Data_Toggle, ToggleString);
+			title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
+		}
 	}
-	
+
 	/**
 	 * Returns the title component
 	 *
@@ -95,7 +97,7 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 	{
 		return title;
 	}
-	
+
 	/**
 	 * Sets the title
 	 *
@@ -119,7 +121,7 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 			}
 		}
 	}
-	
+
 	/**
 	 * Sets the title
 	 *
@@ -142,7 +144,7 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 			}
 		}
 	}
-	
+
 	/**
 	 * Returns the contents
 	 *
@@ -152,23 +154,20 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 	{
 		return contents;
 	}
-	
+
 	/**
-	 * Sets the contents
+	 * Construct a new toggle item with the given items
 	 *
+	 * @param titleItem Displays by default, clickable to show the contents
 	 * @param contents
 	 */
-	public final void setContents(List contents)
+	@SuppressWarnings("unused")
+	public BSDropDownToggle(Button titleItem, List contents)
 	{
-		this.contents = contents;
-		
-		if (contents != null)
-		{
-			contents.addClass(BSComponentDropDownOptions.Dropdown_Menu);
-			contents.addClass("");
-			title.addAttribute(ButtonAttributes.Data_Toggle, ToggleString);
-			title.addAttribute(ButtonAttributes.Data_Target, contents.getID(true));
-		}
+		setTag(titleItem.getTag());
+		setTitle(titleItem);
+		setContents(contents);
+
 	}
 
 	@Override
@@ -189,7 +188,7 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>> extends Div<BSToggl
 		BSDropDownToggle<?> that = (BSDropDownToggle<?>) o;
 		return Objects.equals(getComponent(), that.getComponent());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.sets;
 
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormLabel;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroup;
@@ -33,9 +32,9 @@ public class BSFormCheckGroup<J extends BSFormCheckGroup<J>>
 		extends BSFormGroup<J>
 		implements BSFormSetChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Constructs a new instance of a group of items that denote a single radio button.
 	 * <p>
@@ -52,9 +51,9 @@ public class BSFormCheckGroup<J extends BSFormCheckGroup<J>>
 	{
 		super(label, inputComponent, helpText);
 		inputComponent.addAttribute("value", value);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Adds all the necessary items
 	 */
@@ -66,7 +65,7 @@ public class BSFormCheckGroup<J extends BSFormCheckGroup<J>>
 			addClass(BSComponentFormGroupOptions.Form_Check);
 			getLabel().addClass(BSComponentFormGroupOptions.Form_Check_Label);
 			removeClass(BSComponentFormGroupOptions.Form_Group);
-			
+
 			getLabel().add(getInputComponent());
 			getLabel().setRenderTextBeforeChildren(false);
 			add(getLabel());

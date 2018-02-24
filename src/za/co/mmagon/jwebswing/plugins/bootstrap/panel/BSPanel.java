@@ -24,7 +24,6 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
@@ -83,7 +82,6 @@ public class BSPanel<J extends BSPanel<J>> extends Div<GlobalChildren, BSPanelAt
 	{
 		addClass("panel");
 		setTheme(theme);
-		BootstrapPageConfigurator.setRequired(this, true);
 	}
 
 	@Override

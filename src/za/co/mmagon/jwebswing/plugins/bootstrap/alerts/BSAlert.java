@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Alerts
@@ -39,9 +38,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 public class BSAlert<J extends BSAlert<J>>
 		extends Div<GlobalChildren, BSAlertAttributes, GlobalFeatures, BSAlertEvents, J> implements IBSAlert<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Alerts
 	 * <p>
@@ -51,9 +50,9 @@ public class BSAlert<J extends BSAlert<J>>
 	{
 		addAttribute(BSAlertAttributes.Role, "alert");
 		addClass(BSComponentAlertOptions.Alert);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Neater view of this component
 	 *
@@ -63,7 +62,7 @@ public class BSAlert<J extends BSAlert<J>>
 	{
 		return this;
 	}
-	
+
 	/**
 	 * Creates and adds dismiss button assigned to this alert
 	 *
@@ -76,7 +75,7 @@ public class BSAlert<J extends BSAlert<J>>
 		add(news);
 		return news;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -92,14 +91,14 @@ public class BSAlert<J extends BSAlert<J>>
 			addClass(BSComponentAlertOptions.Alert_Danger);
 		}
 		else
-		
+
 		{
 			removeClass(BSComponentAlertOptions.Alert_Danger);
 		}
-		
+
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -118,10 +117,10 @@ public class BSAlert<J extends BSAlert<J>>
 		{
 			removeClass(BSComponentAlertOptions.Alert_Info);
 		}
-		
+
 		return (J) this;
 	}
-	
+
 	/**
 	 * Sets the style as link
 	 *
@@ -140,10 +139,10 @@ public class BSAlert<J extends BSAlert<J>>
 		{
 			removeClass(BSComponentAlertOptions.Alert_Link);
 		}
-		
+
 		return (J) this;
 	}
-	
+
 	/**
 	 * Adds the link styling for an alert to any component
 	 *
@@ -158,7 +157,7 @@ public class BSAlert<J extends BSAlert<J>>
 		component.addClass(BSComponentAlertOptions.Alert_Link);
 		return component;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -179,7 +178,7 @@ public class BSAlert<J extends BSAlert<J>>
 		}
 		return (J) this;
 	}
-	
+
 	/**
 	 * Set or remove the style
 	 *
@@ -200,5 +199,5 @@ public class BSAlert<J extends BSAlert<J>>
 		}
 		return (J) this;
 	}
-	
+
 }

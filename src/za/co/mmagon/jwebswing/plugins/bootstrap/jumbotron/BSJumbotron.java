@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Jumbotron
@@ -40,9 +39,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 public class BSJumbotron<J extends BSJumbotron<J>>
 		extends Div<GlobalChildren, BSJumbotronAttributes, GlobalFeatures, GlobalEvents, J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Constructs a new instance
 	 * <p>
@@ -51,7 +50,7 @@ public class BSJumbotron<J extends BSJumbotron<J>>
 	{
 		this((String) null);
 	}
-	
+
 	/**
 	 * Constructs a new instance
 	 *
@@ -61,9 +60,9 @@ public class BSJumbotron<J extends BSJumbotron<J>>
 	{
 		super(text);
 		addClass(BSComponentJumbotronOptions.Jumbotron);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Constructs a new instance
 	 *
@@ -77,7 +76,7 @@ public class BSJumbotron<J extends BSJumbotron<J>>
 			addClass(bSComponentJumbotronOptions);
 		}
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -95,7 +94,7 @@ public class BSJumbotron<J extends BSJumbotron<J>>
 		}
 		return super.equals(obj);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{
@@ -103,5 +102,5 @@ public class BSJumbotron<J extends BSJumbotron<J>>
 		hash = 79 * hash + (this.getID().hashCode());
 		return hash;
 	}
-	
+
 }

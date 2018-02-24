@@ -23,7 +23,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.BSButtonAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.buttons.groups.BSButtonGroupAttributes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
@@ -63,16 +62,6 @@ public class BSDropDown<J extends BSDropDown<J>>
 	private BSDropDownMenu dropdownMenu;
 
 	/**
-	 * Construct a new bootstrap drop down
-	 */
-	@SuppressWarnings("")
-	public BSDropDown()
-	{
-		addClass(BSComponentDropDownOptions.Dropdown);
-		BootstrapPageConfigurator.setRequired(this, true);
-	}
-
-	/**
 	 * Construct a new drop down
 	 *
 	 * @param link
@@ -82,7 +71,17 @@ public class BSDropDown<J extends BSDropDown<J>>
 	{
 		this();
 		setDropdownButton(link);
-		BootstrapPageConfigurator.setRequired(this, true);
+
+	}
+
+	/**
+	 * Construct a new bootstrap drop down
+	 */
+	@SuppressWarnings("")
+	public BSDropDown()
+	{
+		addClass(BSComponentDropDownOptions.Dropdown);
+
 	}
 
 	/**
@@ -95,7 +94,7 @@ public class BSDropDown<J extends BSDropDown<J>>
 	{
 		this();
 		setDropdownButton(button);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 
 	/**

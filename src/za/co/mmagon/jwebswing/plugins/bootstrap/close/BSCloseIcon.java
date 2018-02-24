@@ -24,7 +24,6 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSCloseIconOptions;
 
 import java.util.Objects;
@@ -64,7 +63,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>> extends Button<GlobalChildren
 		addClass(BSCloseIconOptions.Close);
 		addAttribute(GlobalAttributes.Type, "button");
 		getCloseIcon();
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 
 	/**

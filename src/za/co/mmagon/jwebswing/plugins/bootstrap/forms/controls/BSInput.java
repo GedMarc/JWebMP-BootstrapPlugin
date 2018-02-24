@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,6 @@ import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.InputTypes;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
@@ -34,17 +33,17 @@ public class BSInput<J extends BSInput<J>>
 		extends Input<NoAttributes, J>
 		implements BSFormGroupChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Allows construction of a bootstrap input component
 	 */
 	public BSInput()
 	{
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Allows construction of a bootstrap input component
 	 *
@@ -53,9 +52,9 @@ public class BSInput<J extends BSInput<J>>
 	public BSInput(InputTypes inputType)
 	{
 		super(inputType);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{

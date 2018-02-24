@@ -20,7 +20,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSColoursOptions;
 
 import java.util.Objects;
@@ -69,7 +68,7 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	{
 
 		this(0, 100, 0);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 
 	/**

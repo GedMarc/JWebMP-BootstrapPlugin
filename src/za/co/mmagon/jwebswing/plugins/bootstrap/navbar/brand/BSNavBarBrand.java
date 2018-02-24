@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar.brand;
 
 import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSComponentNavBarOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarColourSchemes;
@@ -32,9 +31,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarColourSchemes;
  */
 public class BSNavBarBrand extends Div implements BSNavBarChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Brand
 	 * <p>
@@ -43,9 +42,9 @@ public class BSNavBarBrand extends Div implements BSNavBarChildren
 	public BSNavBarBrand()
 	{
 		addClass(BSComponentNavBarOptions.Navbar_Brand);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Color schemes
 	 * <p>

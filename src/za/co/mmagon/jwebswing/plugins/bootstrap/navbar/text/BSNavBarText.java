@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.navbar.text;
 
 import za.co.mmagon.jwebswing.base.html.Span;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSComponentNavBarOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 
@@ -31,9 +30,9 @@ import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
  */
 public class BSNavBarText extends Span implements BSNavBarChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Text
 	 * <p>
@@ -42,13 +41,13 @@ public class BSNavBarText extends Span implements BSNavBarChildren
 	public BSNavBarText()
 	{
 		addClass(BSComponentNavBarOptions.Navbar_Text);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	public BSNavBarText(String text)
 	{
 		super(text);
 		addClass(BSComponentNavBarOptions.Navbar_Text);
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 }

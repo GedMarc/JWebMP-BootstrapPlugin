@@ -19,7 +19,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.navbar;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.toggler.BSNavBarTogglerSizes;
 
 /**
@@ -37,9 +36,9 @@ public class BSNavBar<J extends BSNavBar<J>>
 		extends Div<BSNavBarChildren, BSNavBarAttributes, GlobalFeatures, BSNavBarEvents, J>
 		implements IBSNavBar
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Navbar
 	 * <p>
@@ -65,9 +64,9 @@ public class BSNavBar<J extends BSNavBar<J>>
 				addClass(colourScheme);
 			}
 		}
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Sets this navbar's positioning
 	 *

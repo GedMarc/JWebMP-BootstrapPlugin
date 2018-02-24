@@ -16,10 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.bootstrap;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.PageConfigurator;
-import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.client.Browsers;
 import za.co.mmagon.jwebswing.base.html.Meta;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
@@ -50,10 +48,6 @@ import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 )
 public class BootstrapPageConfigurator extends PageConfigurator
 {
-
-	@JsonIgnore
-	public static final String BootstrapEnabledString = "bootstrap-enabled";
-
 	private static final long serialVersionUID = 1L;
 
 
@@ -63,17 +57,6 @@ public class BootstrapPageConfigurator extends PageConfigurator
 	public BootstrapPageConfigurator()
 	{
 		//Nothing Needed
-	}
-
-	/**
-	 * Sets if bootstrap is required or not on this component
-	 *
-	 * @param component
-	 * @param bootstrapRequired
-	 */
-	public static void setRequired(ComponentHierarchyBase component, Boolean bootstrapRequired)
-	{
-		component.getProperties().put(BootstrapEnabledString, bootstrapRequired);
 	}
 
 	/**

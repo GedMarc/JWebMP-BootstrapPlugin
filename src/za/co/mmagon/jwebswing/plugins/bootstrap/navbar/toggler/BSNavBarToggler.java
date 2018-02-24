@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Span;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSComponentNavBarOptions;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navs.BSComponentNavsOptions;
@@ -104,7 +103,6 @@ public class BSNavBarToggler extends Button implements BSNavBarChildren, IBSNavB
 		addAttribute(GlobalAttributes.Aria_Label, AriaLabel);
 		addAttribute(GlobalAttributes.Type, "button");
 
-		BootstrapPageConfigurator.setRequired(this, true);
 
 		return (T) div;
 	}

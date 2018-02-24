@@ -18,7 +18,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.breadcrumbs;
 
 import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.options.BSDefaultOptions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
@@ -44,15 +43,6 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 	private Link crumbLink;
 
 	/**
-	 * Constructs a particular crumb
-	 */
-	public BSBreadcrumb()
-	{
-		addClass(BSComponentBreadcrumbOptions.Breadcrumb_Item);
-		BootstrapPageConfigurator.setRequired(this, true);
-	}
-
-	/**
 	 * Construct with a link and text to show
 	 *
 	 * @param crumbLink
@@ -62,7 +52,16 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 	{
 		this();
 		setCrumbLink(crumbLink);
-		BootstrapPageConfigurator.setRequired(this, true);
+
+	}
+
+	/**
+	 * Constructs a particular crumb
+	 */
+	public BSBreadcrumb()
+	{
+		addClass(BSComponentBreadcrumbOptions.Breadcrumb_Item);
+
 	}
 
 	/**

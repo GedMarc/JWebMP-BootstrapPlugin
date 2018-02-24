@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSFormChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 import za.co.mmagon.jwebswing.plugins.bootstrap.navbar.BSNavBarChildren;
@@ -44,9 +43,9 @@ public class BSContainer<J extends BSContainer<J>>
 		extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J>
 		implements BSNavBarChildren, BSFormChildren, BSFormGroupChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Constructs as a container-fluid full page
 	 */
@@ -54,7 +53,7 @@ public class BSContainer<J extends BSContainer<J>>
 	{
 		this(BSContainerType.Container_Fluid);
 	}
-	
+
 	/**
 	 * Constructs a new container
 	 *
@@ -63,9 +62,9 @@ public class BSContainer<J extends BSContainer<J>>
 	public BSContainer(BSContainerType type)
 	{
 		addClass(type.toString());
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
-	
+
 	/**
 	 * Returns a new instance
 	 *
@@ -77,7 +76,7 @@ public class BSContainer<J extends BSContainer<J>>
 	{
 		return new BSContainer(type);
 	}
-	
+
 	/**
 	 * Sets the container type on this container
 	 *

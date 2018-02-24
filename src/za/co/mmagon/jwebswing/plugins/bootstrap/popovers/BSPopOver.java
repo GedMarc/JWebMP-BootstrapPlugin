@@ -19,7 +19,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.popovers;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Popovers
@@ -91,7 +90,7 @@ public class BSPopOver extends Div<BSPopOverChildren, BSPopOverAttributes, BSPop
 			displayedComponent.setTiny(true);
 			getOptions().setContent(displayedComponent.toString(true));
 		}
-		BootstrapPageConfigurator.setRequired(this, true);
+
 	}
 
 	/**
