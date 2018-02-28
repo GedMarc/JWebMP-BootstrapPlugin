@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.bootstrap.forms.groups;
 
 import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Input;
@@ -414,15 +413,6 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 				referencedForm.setID("InvalidForm");
 			}
 			referencedForm.addAttribute("data-toggle", "validator");
-			addFeature(new Feature("BootstrapValidatorFeature")
-			{
-				@Override
-				protected void assignFunctionsToComponent()
-				{
-					addQuery("$('[data-toggle=validator]').validator();");
-				}
-			});
-
 			if (BSFormInline.class.isAssignableFrom(referencedForm.getClass()))
 			{
 				setInline(true);
