@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.Event;
 import za.co.mmagon.jwebswing.base.ajax.AjaxCall;
 import za.co.mmagon.jwebswing.base.ajax.AjaxResponse;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.jwebswing.plugins.bootstrap.alerts.BSAlertEvents;
 import za.co.mmagon.logger.LogFactory;
@@ -38,25 +37,41 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  *
  * @author Marc Magon
  */
-public abstract class BSCarouselSlideEvent<J extends BSCarouselSlideEvent<J>> extends Event<J>
+public abstract class BSCarouselSlideEvent<J extends BSCarouselSlideEvent<J>>
+		extends Event<J>
 		implements GlobalEvents, BSAlertEvents
 {
 
 	/**
 	 * Logger for the Component
 	 */
-	private static final Logger LOG = LogFactory.getInstance().getLogger("BSCarouselSlideEvent");
+	private static final Logger LOG = LogFactory.getInstance()
+	                                            .getLogger("BSCarouselSlideEvent");
 	private static final long serialVersionUID = 1L;
 	private BSCarouselSlideEventDirective directive;
 
 	/**
 	 * Performs a click
 	 *
-	 * @param component The component this click is going to be acting on
+	 * @param component
+	 * 		The component this click is going to be acting on
 	 */
 	public BSCarouselSlideEvent(Component component)
 	{
 		super(EventTypes.undefined, component);
+	}
+
+	@Override
+	public void fireEvent(AjaxCall call, AjaxResponse response)
+	{
+		try
+		{
+			onSlide(call, response);
+		}
+		catch (Exception e)
+		{
+			LOG.log(Level.SEVERE, "Error In Firing Event", e);
+		}
 	}
 
 	/**
@@ -67,10 +82,36 @@ public abstract class BSCarouselSlideEvent<J extends BSCarouselSlideEvent<J>> ex
 	{
 		if (!isConfigured())
 		{
-			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-			getComponent().addAttribute("ng-bs-carousel-slide-directive", STRING_ANGULAR_EVENT_START_SHORT + renderVariables() + STRING_CLOSING_BRACKET_SEMICOLON);
+
+			getComponent().addAttribute("ng-bs-carousel-slide-directive",
+			                            STRING_ANGULAR_EVENT_START_SHORT + renderVariables() + STRING_CLOSING_BRACKET_SEMICOLON);
 		}
 		super.preConfigure();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSCarouselSlideEvent))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSCarouselSlideEvent<?> that = (BSCarouselSlideEvent<?>) o;
+		return Objects.equals(getComponent(), that.getComponent());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getDirective());
 	}
 
 	/**
@@ -101,46 +142,10 @@ public abstract class BSCarouselSlideEvent<J extends BSCarouselSlideEvent<J>> ex
 	 * Triggers on Click
 	 * <p>
 	 *
-	 * @param call     The physical AJAX call
-	 * @param response The physical Ajax Receiver
+	 * @param call
+	 * 		The physical AJAX call
+	 * @param response
+	 * 		The physical Ajax Receiver
 	 */
 	public abstract void onSlide(AjaxCall call, AjaxResponse response);
-
-	@Override
-	public void fireEvent(AjaxCall call, AjaxResponse response)
-	{
-		try
-		{
-			onSlide(call, response);
-		}
-		catch (Exception e)
-		{
-			LOG.log(Level.SEVERE, "Error In Firing Event", e);
-		}
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSCarouselSlideEvent))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSCarouselSlideEvent<?> that = (BSCarouselSlideEvent<?>) o;
-		return Objects.equals(getComponent(), that.getComponent());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getDirective());
-	}
 }

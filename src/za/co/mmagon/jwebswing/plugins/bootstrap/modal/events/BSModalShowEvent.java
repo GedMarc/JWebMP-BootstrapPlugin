@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.Event;
 import za.co.mmagon.jwebswing.base.ajax.AjaxCall;
 import za.co.mmagon.jwebswing.base.ajax.AjaxResponse;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.logger.LogFactory;
 
@@ -37,26 +36,42 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  *
  * @author Marc Magon
  */
-public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>> extends Event<J>
+public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>>
+		extends Event<J>
 		implements GlobalEvents
 {
 
 	/**
 	 * Logger for the Component
 	 */
-	private static final Logger LOG = LogFactory.getInstance().getLogger("BootstrapShowModal");
+	private static final Logger LOG = LogFactory.getInstance()
+	                                            .getLogger("BootstrapShowModal");
 	private static final long serialVersionUID = 1L;
 	private BSModalShowEventDirective directive;
 
 	/**
 	 * Performs a click
 	 *
-	 * @param component The component this click is going to be acting on
+	 * @param component
+	 * 		The component this click is going to be acting on
 	 */
 	public BSModalShowEvent(Component component)
 	{
 		super(EventTypes.contextmenu, component);
 
+	}
+
+	@Override
+	public void fireEvent(AjaxCall call, AjaxResponse response)
+	{
+		try
+		{
+			onModalShow(call, response);
+		}
+		catch (Exception e)
+		{
+			LOG.log(Level.SEVERE, "Error In Firing Event", e);
+		}
 	}
 
 	/**
@@ -67,10 +82,36 @@ public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>> extends Ev
 	{
 		if (!isConfigured())
 		{
-			getComponent().getPage().getAngular().getAngularDirectives().add(getDirective());
-			getComponent().addAttribute("ng-show-bootstrap-modal", STRING_ANGULAR_EVENT_START_SHORT + renderVariables() + STRING_CLOSING_BRACKET_SEMICOLON);
+
+			getComponent().addAttribute("ng-show-bootstrap-modal",
+			                            STRING_ANGULAR_EVENT_START_SHORT + renderVariables() + STRING_CLOSING_BRACKET_SEMICOLON);
 		}
 		super.preConfigure();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSModalShowEvent))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSModalShowEvent<?> that = (BSModalShowEvent<?>) o;
+		return Objects.equals(getComponent(), that.getComponent());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getDirective());
 	}
 
 	/**
@@ -101,46 +142,10 @@ public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>> extends Ev
 	 * Triggers on Click
 	 * <p>
 	 *
-	 * @param call     The physical AJAX call
-	 * @param response The physical Ajax Receiver
+	 * @param call
+	 * 		The physical AJAX call
+	 * @param response
+	 * 		The physical Ajax Receiver
 	 */
 	public abstract void onModalShow(AjaxCall call, AjaxResponse response);
-
-	@Override
-	public void fireEvent(AjaxCall call, AjaxResponse response)
-	{
-		try
-		{
-			onModalShow(call, response);
-		}
-		catch (Exception e)
-		{
-			LOG.log(Level.SEVERE, "Error In Firing Event", e);
-		}
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSModalShowEvent))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSModalShowEvent<?> that = (BSModalShowEvent<?>) o;
-		return Objects.equals(getComponent(), that.getComponent());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getDirective());
-	}
 }
