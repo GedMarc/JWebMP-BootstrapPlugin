@@ -45,16 +45,7 @@ public class BootstrapPageConfiguratorTest
 		System.out.println(p.toString(true));
 		Assertions.assertTrue(p.toString(true)
 		                       .contains(
-				                       "<!DOCTYPE html>\n" + "<html>\n" + "\t<head>\n" + "\t\t<meta charset=\"utf-16\">\n" + "\t\t<meta "
-						                       + "content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" + "\t\t<meta " +
-						                       "content=\"width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no\" " +
-						                       "name=\"viewport\">\n" + "\t\t<link href=\"bower_components/bootstrap/dist/css/bootstrap" +
-						                       ".min.css\" rel=\"stylesheet\" type=\"text/css\">\n" + "\t</head>\n" + "\t<body " +
-						                       "id=\"body\">\n" + "\t\t<!-- Priority [First] Values -->\n" + "\t\t<script " +
-						                       "src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n"
-						                       + "\t\t<!-- Priority [Third] Values -->\n" + "\t\t<script " +
-						                       "src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" " +
-						                       "type=\"text/javascript\"></script>"));
+				                       "<!DOCTYPE html>\n" + "<html>\n" + "\t<head>\n" + "\t\t<meta charset=\"utf-16\">\n" + "\t\t<meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n" + "\t\t<meta content=\"width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no\" name=\"viewport\">\n" + "\t\t<link href=\"bower_components/bootstrap/dist/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">\n" + "\t</head>\n" + "\t<body id=\"body\">\n" + "\t\t<script src=\"bower_components/jquery-3/dist/jquery.min.js\" type=\"text/javascript\"></script>\n" + "\t\t<script src=\"bower_components/bootstrap/dist/js/bootstrap.min.js\" type=\"text/javascript\"></script>"));
 	}
 
 }
