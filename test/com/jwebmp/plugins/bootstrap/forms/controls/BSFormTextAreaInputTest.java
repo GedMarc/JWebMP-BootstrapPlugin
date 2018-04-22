@@ -17,11 +17,10 @@
 
 package com.jwebmp.plugins.bootstrap.forms.controls;
 
-import com.jwebmp.BaseTestClass;
 import org.junit.jupiter.api.Test;
 
 public class BSFormTextAreaInputTest
-		extends BaseTestClass
+
 {
 	@Test
 	public void testHtml()

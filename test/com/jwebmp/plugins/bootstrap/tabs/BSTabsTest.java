@@ -17,13 +17,12 @@
 
 package com.jwebmp.plugins.bootstrap.tabs;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.base.html.Div;
 import com.jwebmp.base.html.ListItem;
 import org.junit.jupiter.api.Test;
 
 public class BSTabsTest
-		extends BaseTestClass
+
 {
 	@Test
 	public void testBSTabs()

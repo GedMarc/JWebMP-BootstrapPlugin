@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.bootstrap.listgroup;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.utilities.StaticStrings;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +25,7 @@ import static com.jwebmp.utilities.StaticStrings.STRING_HASH;
  * @author GedMarc
  */
 public class BSListGroupTest
-		extends BaseTestClass
+
 {
 
 	public BSListGroupTest()

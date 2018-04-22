@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.bootstrap.media;
 
-import com.jwebmp.BaseTestClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +23,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class BSMediaTest
-		extends BaseTestClass
+
 {
 
 	public BSMediaTest()

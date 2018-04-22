@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.bootstrap.pagination;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.base.html.Span;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +23,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class BSPaginationTest
-		extends BaseTestClass
+
 {
 
 	public BSPaginationTest()

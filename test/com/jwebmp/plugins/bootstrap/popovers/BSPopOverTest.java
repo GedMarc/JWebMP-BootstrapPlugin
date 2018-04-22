@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.bootstrap.popovers;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.Page;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +23,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class BSPopOverTest
-		extends BaseTestClass
+
 {
 
 	public BSPopOverTest()
@@ -39,7 +38,7 @@ public class BSPopOverTest
 		System.out.println(popOver.toString(true));
 		System.out.println(popOver.renderJavascript());
 
-		Page p = getInstance();
+		Page p = new Page();
 		//p.getOptions().setBootstrapEnabled(true);
 		p.getBody()
 		 .add(popOver);

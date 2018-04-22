@@ -1,11 +1,10 @@
 package com.jwebmp.plugins.bootstrap.forms.groups;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.plugins.bootstrap.forms.BSFormLabel;
 import org.junit.jupiter.api.Test;
 
 public class BSFormGroupTest
-		extends BaseTestClass
+
 {
 	@Test
 	public void getLabel()

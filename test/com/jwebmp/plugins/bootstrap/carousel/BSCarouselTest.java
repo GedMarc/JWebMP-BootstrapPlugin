@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.bootstrap.carousel;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.base.ajax.AjaxCall;
 import com.jwebmp.base.ajax.AjaxResponse;
 import com.jwebmp.plugins.bootstrap.carousel.events.BSCarouselSlidEvent;
@@ -26,7 +25,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class BSCarouselTest
-		extends BaseTestClass
+
 {
 
 	public BSCarouselTest()

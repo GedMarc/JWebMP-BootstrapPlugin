@@ -23,14 +23,13 @@
  */
 package com.jwebmp.plugins.bootstrap.accordion;
 
-import com.jwebmp.BaseTestClass;
 import org.junit.jupiter.api.Test;
 
 /**
  * @author GedMarc
  */
 public class BSAccordionTest
-		extends BaseTestClass
+
 {
 
 	public BSAccordionTest()

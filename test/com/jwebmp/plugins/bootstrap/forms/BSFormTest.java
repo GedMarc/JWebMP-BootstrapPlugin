@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.bootstrap.forms;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.base.html.Option;
 import com.jwebmp.base.html.Span;
 import com.jwebmp.plugins.bootstrap.forms.controls.*;
@@ -31,7 +30,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class BSFormTest
-		extends BaseTestClass
+
 {
 	public BSFormTest()
 	{

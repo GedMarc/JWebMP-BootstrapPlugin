@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.bootstrap.dropdown;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.plugins.bootstrap.buttons.BSButton;
 import com.jwebmp.plugins.bootstrap.buttons.BSButtonPrimaryOutline;
 import com.jwebmp.plugins.bootstrap.dropdown.menu.BSDropDownMenuItem;
@@ -28,7 +27,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class BSDropDownTest
-		extends BaseTestClass
+
 {
 
 	public BSDropDownTest()

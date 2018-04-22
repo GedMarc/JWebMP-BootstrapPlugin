@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.bootstrap.columnlayout;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.plugins.bootstrap.containers.BSContainer;
 import com.jwebmp.plugins.bootstrap.containers.BSContainerType;
 import org.junit.jupiter.api.Assertions;
@@ -26,7 +25,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class BSContainerTest
-		extends BaseTestClass
+
 {
 
 	public BSContainerTest()
@@ -51,7 +50,7 @@ public class BSContainerTest
 		b.setContainerType(BSContainerType.Container);
 		System.out.println(b.toString(true));
 		Assertions.assertEquals("<div class=\"container\" id=\"id\"></div>", b.toString(true));
-		soutDivider();
+		//soutDivider();
 	}
 
 }
