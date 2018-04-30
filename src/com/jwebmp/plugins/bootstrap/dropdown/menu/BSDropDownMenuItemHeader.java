@@ -42,19 +42,7 @@ public class BSDropDownMenuItemHeader
 	 */
 	public BSDropDownMenuItemHeader(String text)
 	{
-		super(text);
-		config();
-	}
-
-	/**
-	 * Sets tag to h6 and applies classes
-	 */
-	private void config()
-	{
-		setTag("h6");
-		addClass(BSComponentDropDownOptions.Dropdown_Header);
-		removeClass(BSComponentDropDownOptions.Dropdown_Item.toString());
-		getAttributes().remove(LinkAttributes.HRef.toString());
+		this(null, text);
 	}
 
 	/**
@@ -69,6 +57,17 @@ public class BSDropDownMenuItemHeader
 	{
 		super(iconClass, text);
 		setRenderTextBeforeChildren(false);
-		config();
+		setup();
+	}
+
+	/**
+	 * Sets tag to h6 and applies classes
+	 */
+	private void setup()
+	{
+		setTag("h6");
+		addClass(BSComponentDropDownOptions.Dropdown_Header);
+		removeClass(BSComponentDropDownOptions.Dropdown_Item.toString());
+		getAttributes().remove(LinkAttributes.HRef.toString());
 	}
 }

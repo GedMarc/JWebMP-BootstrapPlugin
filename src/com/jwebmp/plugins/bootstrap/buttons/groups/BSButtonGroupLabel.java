@@ -38,7 +38,7 @@ public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BS
 	/**
 	 * The group button input for the label
 	 */
-	private I input;
+	private transient I input;
 
 	/**
 	 * Construct a new button group label item for an input component
@@ -68,6 +68,25 @@ public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BS
 		this.input = input;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSButtonGroupLabel))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSButtonGroupLabel<?, ?> that = (BSButtonGroupLabel<?, ?>) o;
+		return Objects.equals(getInput(), that.getInput());
+	}
+
 	/**
 	 * Returns the associated input component if any exists
 	 *
@@ -86,25 +105,6 @@ public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BS
 	public void setInput(I input)
 	{
 		this.input = input;
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSButtonGroupLabel))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSButtonGroupLabel<?, ?> that = (BSButtonGroupLabel<?, ?>) o;
-		return Objects.equals(getInput(), that.getInput());
 	}
 
 	@Override
