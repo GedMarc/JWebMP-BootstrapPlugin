@@ -43,7 +43,6 @@ public class BSAccordionTest
 		accordion.add(new BSAccordionItem<>().setID("item1"));
 		accordion.add(new BSAccordionItem<>().setID("item2"));
 		accordion.setID("test");
-
 		System.out.println(accordion.toString(true));
 	}
 
