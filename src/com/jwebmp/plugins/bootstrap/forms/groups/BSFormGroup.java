@@ -25,6 +25,7 @@ import com.jwebmp.base.html.TextArea;
 import com.jwebmp.base.html.attributes.GlobalAttributes;
 import com.jwebmp.base.html.interfaces.GlobalChildren;
 import com.jwebmp.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.base.html.interfaces.children.FormChildren;
 import com.jwebmp.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.plugins.bootstrap.forms.BSForm;
 import com.jwebmp.plugins.bootstrap.forms.BSFormChildren;
@@ -53,7 +54,7 @@ import java.util.logging.Logger;
  */
 public class BSFormGroup<J extends BSFormGroup<J>>
 		extends Div<GlobalChildren, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
-		implements BSFormChildren, IBSFormGroup<J>
+		implements BSFormChildren, IBSFormGroup<J>, FormChildren
 {
 
 	private static final Logger log = LogFactory.getLog("BSFormGroup");

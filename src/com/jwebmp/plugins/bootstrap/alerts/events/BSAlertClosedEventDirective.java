@@ -47,7 +47,7 @@ public class BSAlertClosedEventDirective
 	@Override
 	public String renderFunction()
 	{
-		return FileTemplates.getFileTemplate(BSAlertClosedEventDirective.class, "Event")
+		return FileTemplates.getFileTemplate(BSAlertClosedEventDirective.class, "BSAlertClosedEvent.min.js", "BSAlertClosedEvent.min.js")
 		                    .toString();
 	}
 

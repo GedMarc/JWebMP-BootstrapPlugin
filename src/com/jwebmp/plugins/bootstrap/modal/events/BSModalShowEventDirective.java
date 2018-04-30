@@ -47,7 +47,7 @@ public class BSModalShowEventDirective
 	@Override
 	public String renderFunction()
 	{
-		return FileTemplates.getFileTemplate(BSModalShowEventDirective.class, "Event")
+		return FileTemplates.getFileTemplate(BSModalShowEventDirective.class, "BSModalShowEvent", "BSModalShowEvent.min.js")
 		                    .toString();
 	}
 

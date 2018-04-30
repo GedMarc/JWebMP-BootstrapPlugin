@@ -47,7 +47,7 @@ public class BSCarouselSlidEventDirective
 	@Override
 	public String renderFunction()
 	{
-		return FileTemplates.getFileTemplate(BSCarouselSlidEventDirective.class, "Event")
+		return FileTemplates.getFileTemplate(BSCarouselSlidEventDirective.class, "BSCarouselSlidEvent", "BSCarouselSlidEvent.min.js")
 		                    .toString();
 	}
 
