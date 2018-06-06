@@ -27,6 +27,7 @@ import com.jwebmp.base.html.interfaces.GlobalChildren;
 import com.jwebmp.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.base.html.interfaces.children.FormChildren;
 import com.jwebmp.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.logger.LogFactory;
 import com.jwebmp.plugins.bootstrap.forms.BSForm;
 import com.jwebmp.plugins.bootstrap.forms.BSFormChildren;
 import com.jwebmp.plugins.bootstrap.forms.BSFormInline;
@@ -35,7 +36,6 @@ import com.jwebmp.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSInput;
 import com.jwebmp.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
-import za.co.mmagon.logger.LogFactory;
 
 import javax.annotation.Nullable;
 import javax.validation.constraints.NotNull;
