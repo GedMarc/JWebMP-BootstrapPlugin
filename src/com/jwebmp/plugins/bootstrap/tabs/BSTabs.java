@@ -63,7 +63,7 @@ public class BSTabs<J>
 	public BSTabs()
 	{
 		super();
-		setRenderIDAttibute(false);
+		setRenderIDAttribute(false);
 		getNavigation().addClass(BSComponentNavsOptions.Nav_Tabs);
 		getNavigation().setTag("ul");
 		getNavigation().addAttribute("role", "tablist");
@@ -225,7 +225,7 @@ public class BSTabs<J>
 		if (this.tabContent != null)
 		{
 			this.tabContent.addClass("tab-content");
-			this.tabContent.setRenderIDAttibute(false);
+			this.tabContent.setRenderIDAttribute(false);
 		}
 		return (J) this;
 	}
