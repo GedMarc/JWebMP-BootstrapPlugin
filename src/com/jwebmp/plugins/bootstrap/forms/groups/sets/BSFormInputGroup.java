@@ -26,7 +26,6 @@ import com.jwebmp.plugins.bootstrap.forms.controls.BSFormTextInput;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSInput;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -228,7 +227,7 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	 *
 	 * @return
 	 */
-	@Nullable
+
 	public Input getInput()
 	{
 		return input;

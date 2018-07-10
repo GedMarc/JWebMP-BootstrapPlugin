@@ -37,7 +37,6 @@ import com.jwebmp.plugins.bootstrap.forms.controls.BSInput;
 import com.jwebmp.plugins.bootstrap.forms.groups.sets.BSFormInputGroup;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 
-import javax.annotation.Nullable;
 import javax.validation.constraints.NotNull;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -404,7 +403,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	 *
 	 * @return
 	 */
-	@Nullable
+
 	public String getErrorMessage()
 	{
 		return errorMessage;
@@ -792,7 +791,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	 *
 	 * @return
 	 */
-	public J setErrorMessage(@Nullable String errorMessage)
+	public J setErrorMessage(String errorMessage)
 	{
 		this.errorMessage = errorMessage;
 		return (J) this;
