@@ -1,6 +1,6 @@
 package com.jwebmp.plugins.bootstrap.options;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Colour settings for bootstrap 4 beta and up

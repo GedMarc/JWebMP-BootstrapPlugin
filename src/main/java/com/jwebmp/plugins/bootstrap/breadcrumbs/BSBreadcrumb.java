@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.breadcrumbs;
 
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.ListItem;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
-import com.jwebmp.utilities.StaticStrings;
 
 /**
  * A particular crumb

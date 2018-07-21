@@ -16,17 +16,17 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.groups;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.angular.AngularPageConfigurator;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.Input;
-import com.jwebmp.base.html.Span;
-import com.jwebmp.base.html.TextArea;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.interfaces.GlobalChildren;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.base.html.interfaces.children.FormChildren;
-import com.jwebmp.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.angular.AngularPageConfigurator;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.Input;
+import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.base.html.TextArea;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.html.interfaces.children.FormChildren;
+import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.logger.LogFactory;
 import com.jwebmp.plugins.bootstrap.forms.BSForm;
 import com.jwebmp.plugins.bootstrap.forms.BSFormChildren;

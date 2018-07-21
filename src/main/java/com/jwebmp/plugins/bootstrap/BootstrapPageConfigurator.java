@@ -16,16 +16,16 @@
  */
 package com.jwebmp.plugins.bootstrap;
 
-import com.jwebmp.Page;
-import com.jwebmp.PageConfigurator;
-import com.jwebmp.base.client.Browsers;
-import com.jwebmp.base.html.Meta;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.attributes.MetaAttributes;
-import com.jwebmp.base.references.JavascriptReference;
-import com.jwebmp.base.servlets.enumarations.RequirementsPriority;
-import com.jwebmp.plugins.PluginInformation;
-import com.jwebmp.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.PageConfigurator;
+import com.jwebmp.core.base.client.Browsers;
+import com.jwebmp.core.base.html.Meta;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.attributes.MetaAttributes;
+import com.jwebmp.core.base.references.JavascriptReference;
+import com.jwebmp.core.base.servlets.enumarations.RequirementsPriority;
+import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 
 /**
  * The 3 meta tags *must* come first in the head; any other head content must come *after* these tags

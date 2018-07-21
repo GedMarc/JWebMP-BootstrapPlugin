@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.progressbar.bar;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.Span;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.plugins.bootstrap.options.BSColoursOptions;
 
 import java.util.Objects;

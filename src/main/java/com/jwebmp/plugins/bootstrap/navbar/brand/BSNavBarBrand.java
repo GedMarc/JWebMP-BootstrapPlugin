@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.navbar.brand;
 
-import com.jwebmp.base.html.Div;
+import com.jwebmp.core.base.html.Div;
 import com.jwebmp.plugins.bootstrap.navbar.BSComponentNavBarOptions;
 import com.jwebmp.plugins.bootstrap.navbar.BSNavBarChildren;
 import com.jwebmp.plugins.bootstrap.navbar.BSNavBarColourSchemes;

@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.carousel;
 
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.Span;
-import com.jwebmp.base.html.attributes.LinkAttributes;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.base.html.attributes.LinkAttributes;
 
 import java.util.Objects;
 

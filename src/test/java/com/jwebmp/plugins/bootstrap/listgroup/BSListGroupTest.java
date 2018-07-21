@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.listgroup;
 
-import com.jwebmp.utilities.StaticStrings;
+import com.jwebmp.core.utilities.StaticStrings;
 import org.junit.jupiter.api.Test;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

@@ -17,8 +17,8 @@
 
 package com.jwebmp.plugins.bootstrap.tabs;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.ListItem;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.ListItem;
 
 import java.io.Serializable;
 

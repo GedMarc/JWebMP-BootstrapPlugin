@@ -19,7 +19,7 @@ package com.jwebmp.plugins.bootstrap.navbar;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.jwebmp.plugins.bootstrap.options.IBSComponentOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Placement

@@ -18,7 +18,7 @@ package com.jwebmp.plugins.bootstrap.breadcrumbs;
 
 import org.junit.jupiter.api.Test;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

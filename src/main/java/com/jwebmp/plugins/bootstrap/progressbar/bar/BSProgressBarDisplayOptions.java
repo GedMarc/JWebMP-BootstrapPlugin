@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.progressbar.bar;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 /**
  * All the options for the tooltip library

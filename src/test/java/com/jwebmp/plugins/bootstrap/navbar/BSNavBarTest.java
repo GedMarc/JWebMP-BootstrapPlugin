@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.navbar;
 
-import com.jwebmp.base.html.Image;
+import com.jwebmp.core.base.html.Image;
 import com.jwebmp.plugins.bootstrap.forms.BSFormInline;
 import com.jwebmp.plugins.bootstrap.navbar.brand.BSNavBarBrandImage;
 import com.jwebmp.plugins.bootstrap.navbar.toggler.BSNavBarToggler;
@@ -27,7 +27,7 @@ import com.jwebmp.plugins.bootstrap.navs.BSNavLinkItem;
 import com.jwebmp.plugins.bootstrap.navs.BSNavs;
 import org.junit.jupiter.api.Test;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

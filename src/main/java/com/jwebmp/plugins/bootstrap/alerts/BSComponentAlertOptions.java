@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.alerts;
 
+import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.options.IBSComponentOptions;
-import com.jwebmp.utilities.StaticStrings;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success).

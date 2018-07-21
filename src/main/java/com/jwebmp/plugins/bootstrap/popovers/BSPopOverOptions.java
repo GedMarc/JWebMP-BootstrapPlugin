@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.popovers;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.htmlbuilder.javascript.JavascriptPartType;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavascriptPartType;
 
 import java.util.ArrayList;
 import java.util.List;

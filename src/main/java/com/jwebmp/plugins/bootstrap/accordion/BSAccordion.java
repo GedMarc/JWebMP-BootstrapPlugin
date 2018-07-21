@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.accordion;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.LinkAttributes;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.LinkAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;

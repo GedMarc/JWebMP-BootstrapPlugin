@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.forms;
 
+import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.options.IBSComponentOptions;
-import com.jwebmp.utilities.StaticStrings;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Dropdowns

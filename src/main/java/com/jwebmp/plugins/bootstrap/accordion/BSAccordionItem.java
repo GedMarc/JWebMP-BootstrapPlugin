@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.accordion;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.htmlbuilder.css.tables.TableBorderCollapse;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.htmlbuilder.css.tables.TableBorderCollapse;
 import com.jwebmp.plugins.bootstrap.collapse.BSCollapse;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 import com.jwebmp.plugins.bootstrap.panel.BSPanel;

@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.buttons.groups;
 
-import com.jwebmp.base.html.attributes.InputRadioTypeAttributes;
-import com.jwebmp.base.html.inputs.InputRadioType;
+import com.jwebmp.core.base.html.attributes.InputRadioTypeAttributes;
+import com.jwebmp.core.base.html.inputs.InputRadioType;
 import com.jwebmp.plugins.bootstrap.buttons.BSButtonChildren;
 
 /**

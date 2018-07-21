@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.breadcrumbs;
 
-import com.jwebmp.base.html.interfaces.GlobalChildren;
-import com.jwebmp.base.html.interfaces.children.ListChildren;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.html.interfaces.children.ListChildren;
 
 /**
  * @author Marc Magon

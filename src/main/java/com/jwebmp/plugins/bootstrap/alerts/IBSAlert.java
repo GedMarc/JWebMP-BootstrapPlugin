@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.alerts;
 
-import com.jwebmp.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.ComponentHierarchyBase;
 
 /**
  * @param <J>

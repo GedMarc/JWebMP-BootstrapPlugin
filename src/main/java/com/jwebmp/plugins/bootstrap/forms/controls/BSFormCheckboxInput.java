@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.controls;
 
-import com.jwebmp.base.html.attributes.InputTypes;
+import com.jwebmp.core.base.html.attributes.InputTypes;
 
 /**
  * @author GedMarc

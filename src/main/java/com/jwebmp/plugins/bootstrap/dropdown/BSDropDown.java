@@ -16,13 +16,13 @@
  */
 package com.jwebmp.plugins.bootstrap.dropdown;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.attributes.ButtonAttributes;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.attributes.ButtonAttributes;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.bootstrap.buttons.BSButtonAttributes;
 import com.jwebmp.plugins.bootstrap.buttons.groups.BSButtonGroupAttributes;
 import com.jwebmp.plugins.bootstrap.dropdown.menu.BSDropDownMenu;

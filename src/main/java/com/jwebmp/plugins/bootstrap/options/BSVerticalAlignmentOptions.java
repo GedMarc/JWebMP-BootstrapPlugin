@@ -18,7 +18,7 @@ package com.jwebmp.plugins.bootstrap.options;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Vertical alignment

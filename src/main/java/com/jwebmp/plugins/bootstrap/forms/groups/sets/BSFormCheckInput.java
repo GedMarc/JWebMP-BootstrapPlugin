@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.groups.sets;
 
-import com.jwebmp.base.html.attributes.InputCheckBoxTypeAttributes;
-import com.jwebmp.base.html.attributes.InputTypes;
+import com.jwebmp.core.base.html.attributes.InputCheckBoxTypeAttributes;
+import com.jwebmp.core.base.html.attributes.InputTypes;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSInput;
 
 /**

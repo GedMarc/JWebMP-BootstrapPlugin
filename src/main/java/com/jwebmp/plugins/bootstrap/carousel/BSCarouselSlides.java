@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.carousel;
 
-import com.jwebmp.base.html.Div;
+import com.jwebmp.core.base.html.Div;
 
 /**
  * @author GedMarc

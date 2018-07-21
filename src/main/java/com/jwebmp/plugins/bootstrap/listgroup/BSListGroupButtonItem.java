@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.listgroup;
 
-import com.jwebmp.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 
 /**
  * Links and buttons Use &gt;a&lt;s or &gt;button&lt;s to create actionable list group items with hover, disabled, and active states by adding .list-group-item-action. We separate

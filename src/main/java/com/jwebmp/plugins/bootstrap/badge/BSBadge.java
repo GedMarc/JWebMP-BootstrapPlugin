@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.badge;
 
-import com.jwebmp.base.html.Span;
-import com.jwebmp.base.html.interfaces.GlobalChildren;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 /**
  * With badges

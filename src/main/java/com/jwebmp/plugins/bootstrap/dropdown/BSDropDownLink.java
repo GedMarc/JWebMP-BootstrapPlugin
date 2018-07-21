@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.dropdown;
 
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.attributes.LinkAttributes;
-import com.jwebmp.utilities.StaticStrings;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.attributes.LinkAttributes;
+import com.jwebmp.core.utilities.StaticStrings;
 
 /**
  * The Link Button for a drop down

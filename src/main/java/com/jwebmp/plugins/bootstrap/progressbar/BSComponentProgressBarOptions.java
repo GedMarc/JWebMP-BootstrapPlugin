@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.progressbar;
 
+import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.options.IBSComponentOptions;
-import com.jwebmp.utilities.StaticStrings;
 
 /**
  * Pagination

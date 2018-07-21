@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.forms;
 
-import com.jwebmp.base.html.Input;
-import com.jwebmp.base.html.Label;
+import com.jwebmp.core.base.html.Input;
+import com.jwebmp.core.base.html.Label;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
 /**

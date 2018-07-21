@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.bootstrap.navs;
 
+import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.tabs.BSTabs;
-import com.jwebmp.utilities.StaticStrings;
 import org.junit.jupiter.api.Test;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.options;
 
-import com.jwebmp.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICSSClassName;
 
 /**
  * Defines any class that is registered as a bootstrap associated class

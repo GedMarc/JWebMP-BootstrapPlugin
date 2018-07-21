@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.dropdown;
 
-import com.jwebmp.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.plugins.bootstrap.buttons.BSButton;
 import com.jwebmp.plugins.bootstrap.buttons.BSButtonAttributes;
 

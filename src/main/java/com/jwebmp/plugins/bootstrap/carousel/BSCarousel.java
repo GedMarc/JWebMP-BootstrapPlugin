@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.carousel;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.Span;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.bootstrap.options.BSColoursOptions;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 

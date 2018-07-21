@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.breadcrumbs;
 
-import com.jwebmp.base.html.Link;
+import com.jwebmp.core.base.html.Link;
 
 /**
  * @param <J>

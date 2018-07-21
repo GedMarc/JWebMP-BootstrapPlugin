@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.bootstrap.forms;
 
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.angular.AngularAttributes;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.angular.AngularAttributes;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 /**
  * Forms

@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.breadcrumbs;
 
-import com.jwebmp.base.html.List;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 import java.util.ArrayList;
 

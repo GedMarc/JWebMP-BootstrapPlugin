@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap;
 
-import com.jwebmp.Page;
+import com.jwebmp.core.Page;
 
 /**
  * @author GedMarc

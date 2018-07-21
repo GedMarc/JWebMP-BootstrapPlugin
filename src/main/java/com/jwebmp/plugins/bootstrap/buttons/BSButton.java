@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.bootstrap.buttons;
 
-import com.jwebmp.base.html.Button;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.attributes.InputButtonTypeAttributes;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Button;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.attributes.InputButtonTypeAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.bootstrap.dropdown.BSDropDownChildren;
 import com.jwebmp.plugins.bootstrap.forms.BSFormChildren;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;

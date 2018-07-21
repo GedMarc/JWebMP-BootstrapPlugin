@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.containers;
 
-import com.jwebmp.base.html.Div;
+import com.jwebmp.core.base.html.Div;
 import com.jwebmp.plugins.bootstrap.options.BSWidthOptions;
 import com.jwebmp.plugins.bootstrap.options.IBSComponentOptions;
 

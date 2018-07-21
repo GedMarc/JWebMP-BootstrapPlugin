@@ -17,7 +17,7 @@
 
 package com.jwebmp.plugins.bootstrap.panel;
 
-import com.jwebmp.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICSSClassName;
 
 public enum BSComponentPanelOptions
 		implements ICSSClassName

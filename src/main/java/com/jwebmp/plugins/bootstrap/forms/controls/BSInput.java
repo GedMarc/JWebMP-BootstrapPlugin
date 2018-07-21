@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.controls;
 
-import com.jwebmp.base.html.Input;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.attributes.InputTypes;
-import com.jwebmp.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.html.Input;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.attributes.InputTypes;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 

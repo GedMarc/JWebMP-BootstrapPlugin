@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.accordion;
 
-import com.jwebmp.base.html.H5;
+import com.jwebmp.core.base.html.H5;
 
 import javax.validation.constraints.NotNull;
 import java.util.Objects;

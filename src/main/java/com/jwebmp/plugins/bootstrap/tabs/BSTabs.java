@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.tabs;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.DivSimple;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.ListItem;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.DivSimple;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.logger.LogFactory;
 import com.jwebmp.plugins.bootstrap.accordion.BSAccordionAttributes;
 import com.jwebmp.plugins.bootstrap.navs.BSComponentNavsOptions;

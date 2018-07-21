@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.groups.sets;
 
-import com.jwebmp.base.html.Italic;
+import com.jwebmp.core.base.html.Italic;
 
 /**
  * A legend to describe a form set

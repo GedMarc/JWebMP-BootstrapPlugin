@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.progressbar.bar;
 
-import com.jwebmp.base.html.Span;
+import com.jwebmp.core.base.html.Span;
 
 /**
  * @param <J>

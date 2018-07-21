@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.alerts;
 
-import com.jwebmp.base.html.Link;
+import com.jwebmp.core.base.html.Link;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Highlights text in an alert appropriately

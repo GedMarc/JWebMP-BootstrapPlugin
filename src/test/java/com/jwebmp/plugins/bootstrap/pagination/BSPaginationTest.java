@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.pagination;
 
-import com.jwebmp.base.html.Span;
+import com.jwebmp.core.base.html.Span;
 import org.junit.jupiter.api.Test;
 
 /**

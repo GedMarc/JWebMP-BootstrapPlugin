@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.pagination;
 
-import com.jwebmp.base.html.ListItem;
-import com.jwebmp.base.html.interfaces.children.ListChildren;
+import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.interfaces.children.ListChildren;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 
 /**

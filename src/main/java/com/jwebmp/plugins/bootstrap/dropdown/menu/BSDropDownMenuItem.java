@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.bootstrap.dropdown.menu;
 
-import com.jwebmp.base.html.Italic;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.attributes.LinkAttributes;
+import com.jwebmp.core.base.html.Italic;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.attributes.LinkAttributes;
+import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
-import com.jwebmp.utilities.StaticStrings;
 
 import java.util.Objects;
 

@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.controls;
 
-import com.jwebmp.base.angular.AngularAttributes;
-import com.jwebmp.base.html.attributes.InputTypes;
-import com.jwebmp.utilities.regex.RegularExpressionsDTO;
+import com.jwebmp.core.base.angular.AngularAttributes;
+import com.jwebmp.core.base.html.attributes.InputTypes;
+import com.jwebmp.core.utilities.regex.RegularExpressionsDTO;
 
 /**
  * A default email input for bootstrap

@@ -16,14 +16,14 @@
  */
 package com.jwebmp.plugins.bootstrap.toggle;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.html.Button;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.attributes.ButtonAttributes;
-import com.jwebmp.base.html.attributes.LinkAttributes;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.html.Button;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.attributes.ButtonAttributes;
+import com.jwebmp.core.base.html.attributes.LinkAttributes;
 import com.jwebmp.plugins.bootstrap.dropdown.BSComponentDropDownOptions;
 
 import java.util.ArrayList;

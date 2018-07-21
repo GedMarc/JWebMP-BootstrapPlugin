@@ -16,16 +16,16 @@
  */
 package com.jwebmp.plugins.bootstrap.panel;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.html.Button;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.attributes.ButtonAttributes;
-import com.jwebmp.base.html.interfaces.GlobalChildren;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.html.Button;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.attributes.ButtonAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.plugins.ComponentInformation;
+import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
-import com.jwebmp.utilities.StaticStrings;
 
 import java.util.Iterator;
 import java.util.Objects;

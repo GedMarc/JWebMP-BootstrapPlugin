@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.pagination;
 
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 
 /**
  * The default paging list

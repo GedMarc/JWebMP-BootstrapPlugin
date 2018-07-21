@@ -16,17 +16,17 @@
  */
 package com.jwebmp.plugins.bootstrap.media;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.H4;
-import com.jwebmp.base.html.HeaderText;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.H4;
+import com.jwebmp.core.base.html.HeaderText;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 import java.util.Objects;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Media object

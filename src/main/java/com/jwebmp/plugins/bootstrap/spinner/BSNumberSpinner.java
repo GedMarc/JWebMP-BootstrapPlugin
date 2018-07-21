@@ -1,7 +1,7 @@
 package com.jwebmp.plugins.bootstrap.spinner;
 
-import com.jwebmp.base.html.Button;
-import com.jwebmp.base.html.Span;
+import com.jwebmp.core.base.html.Button;
+import com.jwebmp.core.base.html.Span;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSFormNumberInput;
 import com.jwebmp.plugins.bootstrap.forms.groups.sets.BSComponentInputGroupOptions;
 

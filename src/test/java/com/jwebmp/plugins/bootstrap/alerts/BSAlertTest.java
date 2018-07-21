@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.bootstrap.alerts;
 
-import com.jwebmp.Page;
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.ajax.AjaxCall;
-import com.jwebmp.base.ajax.AjaxResponse;
-import com.jwebmp.events.click.ClickAdapter;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.ajax.AjaxCall;
+import com.jwebmp.core.base.ajax.AjaxResponse;
+import com.jwebmp.core.events.click.ClickAdapter;
 import com.jwebmp.plugins.bootstrap.alerts.events.BSAlertCloseEvent;
 import com.jwebmp.plugins.bootstrap.alerts.events.BSAlertClosedEvent;
 import org.junit.jupiter.api.Test;

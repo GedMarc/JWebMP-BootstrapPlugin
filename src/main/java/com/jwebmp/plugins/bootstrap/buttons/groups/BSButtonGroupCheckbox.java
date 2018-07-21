@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.buttons.groups;
 
-import com.jwebmp.base.html.attributes.InputCheckBoxTypeAttributes;
-import com.jwebmp.base.html.inputs.InputCheckBoxType;
+import com.jwebmp.core.base.html.attributes.InputCheckBoxTypeAttributes;
+import com.jwebmp.core.base.html.inputs.InputCheckBoxType;
 import com.jwebmp.plugins.bootstrap.buttons.BSButtonChildren;
 
 /**

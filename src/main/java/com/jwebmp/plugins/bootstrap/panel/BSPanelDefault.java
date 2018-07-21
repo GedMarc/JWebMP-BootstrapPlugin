@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.bootstrap.panel;
 
-import com.jwebmp.base.html.Span;
+import com.jwebmp.core.base.html.Span;
 
 import java.util.Objects;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * A default Bootstrap panel with a header row that has an icon and title

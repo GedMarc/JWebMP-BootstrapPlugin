@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.media;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.HeaderText;
-import com.jwebmp.base.html.Link;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.HeaderText;
+import com.jwebmp.core.base.html.Link;
 
 /**
  * @author GedMarc

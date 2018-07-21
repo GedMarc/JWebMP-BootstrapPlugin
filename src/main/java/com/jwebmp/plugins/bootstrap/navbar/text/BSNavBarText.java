@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.navbar.text;
 
-import com.jwebmp.base.html.Span;
+import com.jwebmp.core.base.html.Span;
 import com.jwebmp.plugins.bootstrap.navbar.BSComponentNavBarOptions;
 import com.jwebmp.plugins.bootstrap.navbar.BSNavBarChildren;
 

@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.carousel;
 
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.base.html.interfaces.children.ListChildren;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.html.interfaces.children.ListChildren;
 
 import java.util.Objects;
 

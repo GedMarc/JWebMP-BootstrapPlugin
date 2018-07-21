@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.modal;
 
-import com.jwebmp.base.html.Button;
-import com.jwebmp.base.html.Div;
+import com.jwebmp.core.base.html.Button;
+import com.jwebmp.core.base.html.Div;
 
 /**
  * @param <J>

@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.dropdown;
 
-import com.jwebmp.Component;
+import com.jwebmp.core.Component;
 import com.jwebmp.plugins.bootstrap.dropdown.menu.BSDropDownMenu;
 
 /**

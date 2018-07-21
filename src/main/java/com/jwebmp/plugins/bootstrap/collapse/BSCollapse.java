@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.bootstrap.collapse;
 
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.html.Button;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.attributes.LinkAttributes;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.html.Button;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.attributes.LinkAttributes;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 
 /**

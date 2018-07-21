@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.groups.sets;
 
-import com.jwebmp.base.html.DivSimple;
-import com.jwebmp.base.html.Input;
-import com.jwebmp.base.html.Span;
+import com.jwebmp.core.base.html.DivSimple;
+import com.jwebmp.core.base.html.Input;
+import com.jwebmp.core.base.html.Span;
 import com.jwebmp.plugins.bootstrap.dropdown.menu.BSDropDownMenuChildren;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSFormTextAreaInput;

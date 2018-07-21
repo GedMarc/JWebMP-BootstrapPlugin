@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.groups.sets;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.plugins.bootstrap.forms.BSFormChildren;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 

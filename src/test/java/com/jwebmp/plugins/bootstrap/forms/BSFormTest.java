@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.forms;
 
-import com.jwebmp.base.html.Option;
-import com.jwebmp.base.html.Span;
+import com.jwebmp.core.base.html.Option;
+import com.jwebmp.core.base.html.Span;
 import com.jwebmp.plugins.bootstrap.forms.controls.*;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroup;
 import com.jwebmp.plugins.bootstrap.forms.groups.sets.BSFormCheckGroup;

@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.groups;
 
-import com.jwebmp.Component;
+import com.jwebmp.core.Component;
 import com.jwebmp.plugins.bootstrap.forms.BSFormLabel;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSInput;

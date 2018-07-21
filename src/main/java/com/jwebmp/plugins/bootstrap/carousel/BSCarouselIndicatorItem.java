@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.carousel;
 
-import com.jwebmp.base.html.ListItem;
+import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 
 /**
