@@ -17,7 +17,6 @@
 package com.jwebmp.plugins.bootstrap;
 
 import com.jwebmp.core.Page;
-import com.jwebmp.core.PageConfigurator;
 import com.jwebmp.core.base.client.Browsers;
 import com.jwebmp.core.base.html.Meta;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
@@ -26,6 +25,7 @@ import com.jwebmp.core.base.references.JavascriptReference;
 import com.jwebmp.core.base.servlets.enumarations.RequirementsPriority;
 import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.core.services.IPageConfigurator;
 
 /**
  * The 3 meta tags *must* come first in the head; any other head content must come *after* these tags
@@ -46,7 +46,7 @@ import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 		pluginOriginalHomepage = "http://getbootstrap.com/",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/BootstrapPlugin.jar/download")
 public class BootstrapPageConfigurator
-		extends PageConfigurator
+		implements IPageConfigurator
 {
 	private static final long serialVersionUID = 1L;
 

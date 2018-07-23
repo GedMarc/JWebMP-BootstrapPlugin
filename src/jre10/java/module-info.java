@@ -1,3 +1,6 @@
+import com.jwebmp.core.services.IPageConfigurator;
+import com.jwebmp.plugins.bootstrap.BootstrapPageConfigurator;
+
 module com.jwebmp.plugins.bootstrap {
 
 	exports com.jwebmp.plugins.bootstrap;
@@ -47,4 +50,7 @@ module com.jwebmp.plugins.bootstrap {
 	requires com.fasterxml.jackson.annotation;
 	requires java.logging;
 	requires java.validation;
+
+	provides IPageConfigurator with BootstrapPageConfigurator;
+
 }
