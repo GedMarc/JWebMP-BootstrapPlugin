@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.options;
 
-import com.jwebmp.core.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICssClassName;
 
 /**
  * Defines any class that is registered as a bootstrap associated class
@@ -26,7 +26,7 @@ import com.jwebmp.core.base.interfaces.ICSSClassName;
  */
 @FunctionalInterface
 public interface IBSComponentOptions
-		extends ICSSClassName
+		extends ICssClassName
 {
 
 	/**

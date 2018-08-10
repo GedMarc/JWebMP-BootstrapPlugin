@@ -17,10 +17,10 @@
 
 package com.jwebmp.plugins.bootstrap.panel;
 
-import com.jwebmp.core.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICssClassName;
 
 public enum BSComponentPanelOptions
-		implements ICSSClassName
+		implements ICssClassName
 {
 	Panel,
 	Panel_Heading,
