@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bootstrap.accordion;
 
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.css.tables.TableBorderCollapse;
 import com.jwebmp.plugins.bootstrap.collapse.BSCollapse;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
@@ -35,7 +36,7 @@ import java.util.Objects;
  */
 public class BSAccordionItem<J extends BSAccordionItem<J>>
 		extends BSPanel<J>
-		implements BSAccordionChildren
+		implements BSAccordionChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -78,7 +79,7 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 
 			getAccordionCollapsingContent().addClass(TableBorderCollapse.Collapse.toString());
 
-			getAccordionCollapsingContent().addAttribute(BSAccordionAttributes.Role, TabPanelRoleName);
+			getAccordionCollapsingContent().addAttribute(BSAccordionAttributes.Role, BSAccordionItem.TabPanelRoleName);
 			getAccordionCollapsingContent().addAttribute(GlobalAttributes.Aria_LabelledBy, getCardHeader().getID());
 
 			BSCollapse.link(getAccordionHeader().getAccordionHeaderLink(), getAccordionCollapsingContent().getAccordionContent(), true);
@@ -168,6 +169,12 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getAccordionHeader(), getAccordionCollapsingContent(), getCardHeader());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -186,12 +193,6 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 		return Objects.equals(getAccordionHeader(), that.getAccordionHeader()) && Objects.equals(getAccordionCollapsingContent(),
 		                                                                                         that.getAccordionCollapsingContent()) && Objects.equals(getCardHeader(),
 		                                                                                                                                                 that.getCardHeader());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getAccordionHeader(), getAccordionCollapsingContent(), getCardHeader());
 	}
 
 	/**

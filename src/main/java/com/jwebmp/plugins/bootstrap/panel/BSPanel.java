@@ -22,13 +22,12 @@ import com.jwebmp.core.base.html.Button;
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.Link;
 import com.jwebmp.core.base.html.attributes.ButtonAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 
 import java.util.Iterator;
-import java.util.Objects;
 
 /**
  * An implementation of the bootstrap panel layout.
@@ -43,7 +42,7 @@ import java.util.Objects;
 		url = "https://v4-alpha.getbootstrap.com/components/cards/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSPanel<J extends BSPanel<J>>
-		extends Div<GlobalChildren, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, J>
+		extends Div<IComponentHierarchyBase, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -305,34 +304,14 @@ public class BSPanel<J extends BSPanel<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public int hashCode()
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSPanel))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSPanel<?> bsPanel = (BSPanel<?>) o;
-		return footerIsLink == bsPanel.footerIsLink &&
-		       Objects.equals(getPanelHeaderButtonBar(), bsPanel.getPanelHeaderButtonBar()) &&
-		       Objects.equals(getPanelHeader(),
-		                      bsPanel.getPanelHeader()) &&
-		       Objects.equals(
-				       getPanelBody(), bsPanel.getPanelBody()) &&
-		       Objects.equals(getPanelFooter(), bsPanel.getPanelFooter()) &&
-		       getTheme() == bsPanel.getTheme();
+		return super.hashCode();
 	}
 
 	@Override
-	public int hashCode()
+	public boolean equals(Object o)
 	{
-		return Objects.hash(super.hashCode(), getPanelHeaderButtonBar(), getPanelHeader(), getPanelBody(), footerIsLink, getPanelFooter(), getTheme());
+		return super.equals(o);
 	}
 }

@@ -20,6 +20,7 @@ import com.jwebmp.core.base.html.Input;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.attributes.InputTypes;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
@@ -31,7 +32,7 @@ import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
  */
 public class BSInput<J extends BSInput<J>>
 		extends Input<NoAttributes, J>
-		implements BSFormGroupChildren
+		implements BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;

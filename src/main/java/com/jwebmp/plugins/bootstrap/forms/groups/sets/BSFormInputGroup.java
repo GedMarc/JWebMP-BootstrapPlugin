@@ -19,6 +19,7 @@ package com.jwebmp.plugins.bootstrap.forms.groups.sets;
 import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.core.base.html.Input;
 import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.bootstrap.dropdown.menu.BSDropDownMenuChildren;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSFormSelectInput;
 import com.jwebmp.plugins.bootstrap.forms.controls.BSFormTextAreaInput;
@@ -41,7 +42,7 @@ import java.util.Objects;
  */
 public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 		extends DivSimple<J>
-		implements BSFormGroupChildren, BSFormSetChildren, BSDropDownMenuChildren, IBSFormInputGroup
+		implements BSFormGroupChildren<IComponentHierarchyBase, J>, BSFormSetChildren<IComponentHierarchyBase, J>, BSDropDownMenuChildren<IComponentHierarchyBase, J>, IBSFormInputGroup
 {
 
 	private static final long serialVersionUID = 1L;
@@ -249,6 +250,12 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -266,11 +273,5 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 		BSFormInputGroup<?> that = (BSFormInputGroup<?>) o;
 		return Objects.equals(getInputGroupAddons(), that.getInputGroupAddons()) && Objects.equals(getInputGroupAddonsRight(), that.getInputGroupAddonsRight()) && Objects.equals(
 				getInput(), that.getInput());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
 	}
 }

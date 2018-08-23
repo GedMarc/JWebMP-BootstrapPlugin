@@ -19,10 +19,7 @@ package com.jwebmp.plugins.bootstrap.carousel.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.bootstrap.carousel.BSCarousel;
-import com.jwebmp.plugins.bootstrap.carousel.BSCarouselFeatures;
 import com.jwebmp.plugins.bootstrap.carousel.BSCarouselOptions;
-
-import java.util.Objects;
 
 /**
  * Stops the carousel from cycling through items.
@@ -33,8 +30,7 @@ import java.util.Objects;
  */
 @SuppressWarnings("unused")
 public class BSCarouselPauseFeature<J extends BSCarouselPauseFeature<J>>
-		extends Feature<BSCarouselOptions, J>
-		implements BSCarouselFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, BSCarouselOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -58,33 +54,20 @@ public class BSCarouselPauseFeature<J extends BSCarouselPauseFeature<J>>
 	@Override
 	public int hashCode()
 	{
-		return Objects.hash(super.hashCode(), getComponent());
+		return super.hashCode();
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public boolean equals(Object obj)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSCarouselPauseFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSCarouselPauseFeature that = (BSCarouselPauseFeature) o;
-		return Objects.equals(getComponent(), that.getComponent());
+		return super.equals(obj);
 	}
 
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		String requiredString = getComponent().getJQueryID() + "carousel('";
-		requiredString += methodName;
+		requiredString += BSCarouselPauseFeature.methodName;
 		requiredString += "');" + getNewLine();
 		addQuery(requiredString);
 	}

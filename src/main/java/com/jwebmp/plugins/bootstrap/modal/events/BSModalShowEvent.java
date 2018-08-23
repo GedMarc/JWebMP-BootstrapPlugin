@@ -20,11 +20,11 @@ import com.jwebmp.core.Component;
 import com.jwebmp.core.Event;
 import com.jwebmp.core.base.ajax.AjaxCall;
 import com.jwebmp.core.base.ajax.AjaxResponse;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.core.htmlbuilder.javascript.events.enumerations.EventTypes;
 import com.jwebmp.logger.LogFactory;
 
-import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,7 +36,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @author Marc Magon
  */
 public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>>
-		extends Event<J>
+		extends Event<GlobalFeatures, J>
 		implements GlobalEvents
 {
 
@@ -69,33 +69,20 @@ public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>>
 		}
 		catch (Exception e)
 		{
-			LOG.log(Level.SEVERE, "Error In Firing Event", e);
+			BSModalShowEvent.LOG.log(Level.SEVERE, "Error In Firing Event", e);
 		}
 	}
 
 	@Override
 	public int hashCode()
 	{
-		return Objects.hash(super.hashCode(), getDirective());
+		return super.hashCode();
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public boolean equals(Object obj)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSModalShowEvent))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSModalShowEvent<?> that = (BSModalShowEvent<?>) o;
-		return Objects.equals(getComponent(), that.getComponent());
+		return super.equals(obj);
 	}
 
 	/**
@@ -111,6 +98,17 @@ public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>>
 		}
 		super.preConfigure();
 	}
+
+	/**
+	 * Triggers on Click
+	 * <p>
+	 *
+	 * @param call
+	 * 		The physical AJAX call
+	 * @param response
+	 * 		The physical Ajax Receiver
+	 */
+	public abstract void onModalShow(AjaxCall call, AjaxResponse response);
 
 	/**
 	 * Returns the angular directive associated with the right click event
@@ -135,15 +133,4 @@ public abstract class BSModalShowEvent<J extends BSModalShowEvent<J>>
 	{
 		this.directive = directive;
 	}
-
-	/**
-	 * Triggers on Click
-	 * <p>
-	 *
-	 * @param call
-	 * 		The physical AJAX call
-	 * @param response
-	 * 		The physical Ajax Receiver
-	 */
-	public abstract void onModalShow(AjaxCall call, AjaxResponse response);
 }

@@ -16,6 +16,8 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.controls;
 
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
@@ -23,9 +25,9 @@ import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
  * @author GedMarc
  * @since 17 Jan 2017
  */
-public class BSFormTextAreaInput
-		extends BSInput<BSFormTextAreaInput>
-		implements BSFormGroupChildren
+public class BSFormTextAreaInput<J extends BSFormTextAreaInput<J>>
+		extends BSInput<J>
+		implements BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -48,7 +50,7 @@ public class BSFormTextAreaInput
 	{
 		addAttribute("rows", Integer.toString(linesToShow));
 		addClass(BSComponentFormGroupOptions.Form_Control);
-		setTag("textarea");
+		setTag(ComponentTypes.TextArea.getComponentTag());
 		setInlineClosingTag(false);
 		setClosingTag(true);
 	}

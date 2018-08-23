@@ -19,10 +19,7 @@ package com.jwebmp.plugins.bootstrap.carousel.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.bootstrap.carousel.BSCarousel;
-import com.jwebmp.plugins.bootstrap.carousel.BSCarouselFeatures;
 import com.jwebmp.plugins.bootstrap.carousel.BSCarouselOptions;
-
-import java.util.Objects;
 
 /**
  * Cycles the carousel to a particular frame (0 based, similar to an array).
@@ -32,8 +29,7 @@ import java.util.Objects;
  * @since 2013/01/16
  */
 public class BSCarouselSlideToNumberFeature<J extends BSCarouselSlideToNumberFeature<J>>
-		extends Feature<BSCarouselOptions, J>
-		implements BSCarouselFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, BSCarouselOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -77,26 +73,13 @@ public class BSCarouselSlideToNumberFeature<J extends BSCarouselSlideToNumberFea
 	@Override
 	public int hashCode()
 	{
-		return Objects.hash(super.hashCode(), methodName);
+		return super.hashCode();
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public boolean equals(Object obj)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSCarouselSlideToNumberFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSCarouselSlideToNumberFeature<?> that = (BSCarouselSlideToNumberFeature<?>) o;
-		return Objects.equals(getComponent(), that.getComponent());
+		return super.equals(obj);
 	}
 
 	@Override

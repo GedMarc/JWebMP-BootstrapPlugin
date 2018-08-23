@@ -19,7 +19,6 @@ package com.jwebmp.plugins.bootstrap.carousel.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.bootstrap.carousel.BSCarousel;
-import com.jwebmp.plugins.bootstrap.carousel.BSCarouselFeatures;
 import com.jwebmp.plugins.bootstrap.carousel.BSCarouselOptions;
 
 /**
@@ -31,8 +30,7 @@ import com.jwebmp.plugins.bootstrap.carousel.BSCarouselOptions;
  */
 @SuppressWarnings("unused")
 public class BSCarouselCycleFeature<J extends BSCarouselCycleFeature<J>>
-		extends Feature<BSCarouselOptions, J>
-		implements BSCarouselFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, BSCarouselOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -57,7 +55,7 @@ public class BSCarouselCycleFeature<J extends BSCarouselCycleFeature<J>>
 	public void assignFunctionsToComponent()
 	{
 		String requiredString = getComponent().getJQueryID() + "carousel('";
-		requiredString += methodName;
+		requiredString += BSCarouselCycleFeature.methodName;
 		requiredString += "');" + getNewLine();
 		addQuery(requiredString);
 	}

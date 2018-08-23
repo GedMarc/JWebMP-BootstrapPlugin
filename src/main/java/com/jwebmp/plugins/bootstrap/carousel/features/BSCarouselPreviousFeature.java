@@ -19,10 +19,7 @@ package com.jwebmp.plugins.bootstrap.carousel.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.bootstrap.carousel.BSCarousel;
-import com.jwebmp.plugins.bootstrap.carousel.BSCarouselFeatures;
 import com.jwebmp.plugins.bootstrap.carousel.BSCarouselOptions;
-
-import java.util.Objects;
 
 /**
  * Cycles to the previous item.
@@ -32,8 +29,7 @@ import java.util.Objects;
  * @since 2013/01/16
  */
 public class BSCarouselPreviousFeature<J extends BSCarouselPreviousFeature<J>>
-		extends Feature<BSCarouselOptions, J>
-		implements BSCarouselFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, BSCarouselOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -57,33 +53,20 @@ public class BSCarouselPreviousFeature<J extends BSCarouselPreviousFeature<J>>
 	@Override
 	public int hashCode()
 	{
-		return Objects.hash(super.hashCode(), methodName);
+		return super.hashCode();
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public boolean equals(Object obj)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSCarouselPreviousFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSCarouselPreviousFeature that = (BSCarouselPreviousFeature) o;
-		return Objects.equals(getComponent(), that.getComponent());
+		return super.equals(obj);
 	}
 
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		String requiredString = getComponent().getJQueryID() + "carousel('";
-		requiredString += methodName;
+		requiredString += BSCarouselPreviousFeature.methodName;
 		requiredString += "');" + getNewLine();
 		addQuery(requiredString);
 	}

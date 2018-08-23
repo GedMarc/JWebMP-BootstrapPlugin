@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bootstrap.breadcrumbs;
 
 import com.jwebmp.core.base.html.Link;
 import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.interfaces.children.ListItemChildren;
 import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 
@@ -32,7 +33,7 @@ import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
  */
 public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 		extends ListItem<J>
-		implements BSBreadcrumbsChildren, IBSBreadcrumb<J>
+		implements BSBreadcrumbsChildren<ListItemChildren, J>, IBSBreadcrumb<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -132,6 +133,14 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (getID().hashCode());
+		return hash;
+	}
+
+	@Override
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -147,13 +156,5 @@ public class BSBreadcrumb<J extends BSBreadcrumb<J>>
 			return false;
 		}
 		return super.equals(obj);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
 	}
 }

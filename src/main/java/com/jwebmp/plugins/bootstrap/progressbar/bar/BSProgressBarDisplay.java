@@ -19,7 +19,7 @@ package com.jwebmp.plugins.bootstrap.progressbar.bar;
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.Span;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.bootstrap.options.BSColoursOptions;
 
 import java.util.Objects;
@@ -35,7 +35,7 @@ import java.util.Objects;
  * @since 29 Aug 2015
  */
 public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
-		extends Div<GlobalChildren, BSProgressBarDisplayAttributes, BSProgressBarDisplayFeatures, BSProgressBarDisplayEvents, J>
+		extends Div<IComponentHierarchyBase, BSProgressBarDisplayAttributes, BSProgressBarDisplayFeatures, BSProgressBarDisplayEvents, J>
 		implements IBSProgressBarDisplay<J>
 {
 
@@ -143,6 +143,12 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getSpan(), getTheme(), getMin(), getMax(), getValue(), getLabel());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -160,12 +166,6 @@ public class BSProgressBarDisplay<J extends BSProgressBarDisplay<J>>
 		BSProgressBarDisplay<?> that = (BSProgressBarDisplay<?>) o;
 		return Double.compare(that.getMin(), getMin()) == 0 && Double.compare(that.getMax(), getMax()) == 0 && Double.compare(that.getValue(), getValue()) == 0 && Objects.equals(
 				getSpan(), that.getSpan()) && getTheme() == that.getTheme() && Objects.equals(getLabel(), that.getLabel());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getSpan(), getTheme(), getMin(), getMax(), getValue(), getLabel());
 	}
 
 	/**

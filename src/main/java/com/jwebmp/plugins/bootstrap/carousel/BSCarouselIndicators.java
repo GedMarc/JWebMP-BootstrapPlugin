@@ -20,8 +20,6 @@ import com.jwebmp.core.base.html.List;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
 import com.jwebmp.core.base.html.interfaces.children.ListChildren;
 
-import java.util.Objects;
-
 /**
  * The indicators for the bootstrap carousel
  *
@@ -31,7 +29,7 @@ import java.util.Objects;
  */
 public class BSCarouselIndicators<J extends BSCarouselIndicators<J>>
 		extends List<ListChildren, NoAttributes, BSCarouselEvents, J>
-		implements BSCarouselChildren
+		implements BSCarouselChildren<ListChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -69,28 +67,15 @@ public class BSCarouselIndicators<J extends BSCarouselIndicators<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public int hashCode()
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSCarouselIndicators))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSCarouselIndicators<?> that = (BSCarouselIndicators<?>) o;
-		return Objects.equals(getCarousel(), that.getCarousel());
+		return super.hashCode();
 	}
 
 	@Override
-	public int hashCode()
+	public boolean equals(Object o)
 	{
-		return Objects.hash(super.hashCode(), getCarousel());
+		return super.equals(o);
 	}
 
 	/**

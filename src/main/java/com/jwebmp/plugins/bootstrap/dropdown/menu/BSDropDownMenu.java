@@ -29,9 +29,9 @@ import com.jwebmp.plugins.bootstrap.dropdown.BSDropDownChildren;
  * @version 1.0
  * @since 13 Jan 2017
  */
-public class BSDropDownMenu
-		extends Div<BSDropDownMenuChildren, BSDropDownMenuAttributes, GlobalFeatures, BSDropDownMenuEvents, BSDropDownMenu>
-		implements BSDropDownChildren
+public class BSDropDownMenu<J extends BSDropDownMenu<J>>
+		extends Div<BSDropDownMenuChildren, BSDropDownMenuAttributes, GlobalFeatures, BSDropDownMenuEvents, J>
+		implements BSDropDownChildren<BSDropDownMenuChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;

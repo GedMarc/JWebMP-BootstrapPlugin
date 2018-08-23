@@ -20,9 +20,9 @@ import com.jwebmp.core.base.html.Button;
 import com.jwebmp.core.base.html.Span;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.bootstrap.options.BSCloseIconOptions;
 
@@ -42,7 +42,7 @@ import java.util.Objects;
 		url = "https://v4-alpha.getbootstrap.com/utilities/close-icon/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSCloseIcon<J extends BSCloseIcon<J>>
-		extends Button<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, J>
+		extends Button<IComponentHierarchyBase, NoAttributes, GlobalFeatures, GlobalEvents, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -133,6 +133,12 @@ public class BSCloseIcon<J extends BSCloseIcon<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getCloseIcon(), getCloseIconText());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -149,12 +155,6 @@ public class BSCloseIcon<J extends BSCloseIcon<J>>
 		}
 		BSCloseIcon<?> that = (BSCloseIcon<?>) o;
 		return Objects.equals(getCloseIcon(), that.getCloseIcon()) && Objects.equals(getCloseIconText(), that.getCloseIconText());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getCloseIcon(), getCloseIconText());
 	}
 
 	/**

@@ -22,6 +22,7 @@ import com.jwebmp.core.base.html.H4;
 import com.jwebmp.core.base.html.HeaderText;
 import com.jwebmp.core.base.html.Link;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 
 import java.util.Objects;
@@ -46,7 +47,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
 		url = "https://v4-alpha.getbootstrap.com/layout/media-object/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSMedia<J extends BSMedia<J>>
-		extends Div<BSMediaChildren, BSMediaAttributes, GlobalFeatures, BSMediaEvents, J>
+		extends Div<IComponentHierarchyBase, BSMediaAttributes, GlobalFeatures, BSMediaEvents, J>
 		implements IBSMedia
 {
 
@@ -245,6 +246,12 @@ public class BSMedia<J extends BSMedia<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getMediaLink(), getMediaBody(), getMediaHeader(), getMediaComponent());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -266,11 +273,5 @@ public class BSMedia<J extends BSMedia<J>>
 		                      bsMedia.getMediaHeader()) &&
 		       Objects.equals(
 				       getMediaComponent(), bsMedia.getMediaComponent());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getMediaLink(), getMediaBody(), getMediaHeader(), getMediaComponent());
 	}
 }

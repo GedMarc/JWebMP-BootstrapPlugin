@@ -34,7 +34,7 @@ import com.jwebmp.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
  */
 public class BSFormSet<J extends BSFormSet<J>>
 		extends Div<BSFormSetChildren, BSFormSetAttributes, GlobalFeatures, GlobalEvents, J>
-		implements BSFormChildren
+		implements BSFormChildren<BSFormSetChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -46,6 +46,14 @@ public class BSFormSet<J extends BSFormSet<J>>
 	{
 		setTag("fieldset");
 		addClass(BSComponentFormGroupOptions.Form_Group);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (getID().hashCode());
+		return hash;
 	}
 
 	@Override
@@ -64,14 +72,6 @@ public class BSFormSet<J extends BSFormSet<J>>
 			return false;
 		}
 		return super.equals(obj);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
 	}
 
 }

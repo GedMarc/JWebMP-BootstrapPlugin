@@ -62,13 +62,13 @@ public class BSAccordion<J extends BSAccordion<J>>
 	public BSAccordion()
 	{
 
-		addAttribute(BSAccordionAttributes.Role, RoleAttributeName);
+		addAttribute(BSAccordionAttributes.Role, BSAccordion.RoleAttributeName);
 		addAttribute(BSAccordionAttributes.Aria_Multiselectable, Boolean.TRUE.toString());
 	}
 
 	@Override
 	@NotNull
-	public J add(BSAccordionChildren newChild)
+	public J add(@NotNull BSAccordionChildren newChild)
 	{
 		getAccordionItems().add((BSAccordionItem) newChild);
 		return super.add(newChild);
@@ -157,6 +157,14 @@ public class BSAccordion<J extends BSAccordion<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (getID().hashCode());
+		return hash;
+	}
+
+	@Override
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -172,13 +180,5 @@ public class BSAccordion<J extends BSAccordion<J>>
 			return false;
 		}
 		return super.equals(obj);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
 	}
 }

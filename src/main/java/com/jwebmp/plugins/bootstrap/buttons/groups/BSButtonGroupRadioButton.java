@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bootstrap.buttons.groups;
 
 import com.jwebmp.core.base.html.attributes.InputRadioTypeAttributes;
 import com.jwebmp.core.base.html.inputs.InputRadioType;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.bootstrap.buttons.BSButtonChildren;
 
 /**
@@ -28,7 +29,7 @@ import com.jwebmp.plugins.bootstrap.buttons.BSButtonChildren;
  */
 public class BSButtonGroupRadioButton<J extends BSButtonGroupRadioButton<J>>
 		extends InputRadioType<J>
-		implements IBSButtonGroupInput, BSButtonChildren
+		implements IBSButtonGroupInput, BSButtonChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;

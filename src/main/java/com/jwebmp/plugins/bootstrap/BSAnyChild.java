@@ -18,9 +18,9 @@ package com.jwebmp.plugins.bootstrap;
 
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 import java.io.Serializable;
 
@@ -34,7 +34,7 @@ import java.io.Serializable;
  * @since 16 Feb 2017
  */
 public class BSAnyChild<A extends Enum & AttributeDefinitions>
-		extends Div<GlobalChildren, A, GlobalFeatures, GlobalEvents, BSAnyChild<A>>
+		extends Div<IComponentHierarchyBase, A, GlobalFeatures, GlobalEvents, BSAnyChild<A>>
 		implements Serializable
 {
 

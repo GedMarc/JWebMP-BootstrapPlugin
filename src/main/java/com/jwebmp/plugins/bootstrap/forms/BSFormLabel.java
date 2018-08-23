@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bootstrap.forms;
 
 import com.jwebmp.core.base.html.Input;
 import com.jwebmp.core.base.html.Label;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
 /**
@@ -30,7 +31,7 @@ import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
  */
 public class BSFormLabel<J extends BSFormLabel<J>>
 		extends Label<J>
-		implements BSFormGroupChildren
+		implements BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;

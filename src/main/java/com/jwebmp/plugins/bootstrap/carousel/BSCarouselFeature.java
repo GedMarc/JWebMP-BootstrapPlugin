@@ -20,8 +20,6 @@ import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 
-import java.util.Objects;
-
 /**
  * Adds on a Carousel Feature, String for custom text using header theme, Div for custom contents
  *
@@ -30,8 +28,7 @@ import java.util.Objects;
  * @since 2013/01/16
  */
 public class BSCarouselFeature<J extends BSCarouselFeature<J>>
-		extends Feature<BSCarouselOptions, J>
-		implements BSCarouselFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, BSCarouselOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -55,26 +52,13 @@ public class BSCarouselFeature<J extends BSCarouselFeature<J>>
 	@Override
 	public int hashCode()
 	{
-		return Objects.hash(super.hashCode(), getOptions());
+		return super.hashCode();
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public boolean equals(Object obj)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSCarouselFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSCarouselFeature<?> that = (BSCarouselFeature<?>) o;
-		return Objects.equals(getOptions(), that.getOptions());
+		return super.equals(obj);
 	}
 
 	/**

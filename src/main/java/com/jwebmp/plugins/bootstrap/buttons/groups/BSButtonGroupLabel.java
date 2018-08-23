@@ -20,7 +20,6 @@ import com.jwebmp.plugins.bootstrap.buttons.BSButton;
 import com.jwebmp.plugins.bootstrap.buttons.BSButtonChildren;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * @param <J>
@@ -31,7 +30,7 @@ import java.util.Objects;
  */
 public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BSButtonChildren & IBSButtonGroupInput & Serializable>
 		extends BSButton<J>
-		implements BSButtonGroupChildren
+		implements BSButtonGroupChildren<BSButtonChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -69,22 +68,15 @@ public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BS
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public int hashCode()
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSButtonGroupLabel))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSButtonGroupLabel<?, ?> that = (BSButtonGroupLabel<?, ?>) o;
-		return Objects.equals(getInput(), that.getInput());
+		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return super.equals(obj);
 	}
 
 	/**
@@ -105,11 +97,5 @@ public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BS
 	public void setInput(I input)
 	{
 		this.input = input;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getInput());
 	}
 }

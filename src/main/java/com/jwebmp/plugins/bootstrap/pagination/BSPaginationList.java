@@ -26,9 +26,9 @@ import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
  * @author GedMarc
  * @since 21 Jan 2017
  */
-public class BSPaginationList
-		extends List<BSPageinationListItem, NoAttributes, GlobalEvents, BSPaginationList>
-		implements BSPaginationChildren
+public class BSPaginationList<J extends BSPaginationList<J>>
+		extends List<BSPageinationListItem, NoAttributes, GlobalEvents, J>
+		implements BSPaginationChildren<BSPageinationListItem, J>
 {
 
 	private static final long serialVersionUID = 1L;

@@ -20,8 +20,6 @@ import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 
-import java.util.Objects;
-
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
  *
@@ -30,8 +28,7 @@ import java.util.Objects;
  * @since 2013/01/16
  */
 public class BSModalFeature
-		extends Feature<BSModalOptions, BSModalFeature>
-		implements BSModalFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, BSModalOptions, BSModalFeature>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -55,26 +52,13 @@ public class BSModalFeature
 	@Override
 	public int hashCode()
 	{
-		return Objects.hash(super.hashCode(), getOptions());
+		return super.hashCode();
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public boolean equals(Object obj)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSModalFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSModalFeature that = (BSModalFeature) o;
-		return Objects.equals(getOptions(), that.getOptions());
+		return super.equals(obj);
 	}
 
 	/**

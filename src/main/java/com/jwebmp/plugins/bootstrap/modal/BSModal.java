@@ -25,8 +25,6 @@ import com.jwebmp.plugins.bootstrap.navbar.BSNavBarChildren;
 import com.jwebmp.plugins.bootstrap.options.BSCloseIconOptions;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 
-import java.util.Objects;
-
 /**
  * Modal Modals are streamlined, but flexible dialog prompts powered by JavaScript. They support a number of use cases from user notification to completely custom content and
  * feature a handful of
@@ -45,7 +43,7 @@ import java.util.Objects;
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSModal<J extends BSModal<J>>
 		extends Div<BSModalChildren, BSModalAttributes, BSModalFeatures, BSModalEvents, J>
-		implements BSNavBarChildren, IBSModal<J>
+		implements BSNavBarChildren<BSModalChildren, J>, IBSModal<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -53,23 +51,23 @@ public class BSModal<J extends BSModal<J>>
 	/**
 	 * The modal dialog
 	 */
-	private Div modalDialog;
+	private BSModalDiv modalDialog;
 	/**
 	 * The modal content
 	 */
-	private Div modalContent;
+	private BSModalDiv modalContent;
 	/**
 	 * The header for the modal
 	 */
-	private Div modalHeader;
+	private BSModalDiv modalHeader;
 	/**
 	 * The body for the modal
 	 */
-	private Div modalBody;
+	private BSModalDiv modalBody;
 	/**
 	 * The footer for the div
 	 */
-	private Div modalFooter;
+	private BSModalDiv modalFooter;
 
 	/**
 	 * Modal Modals are streamlined, but flexible dialog prompts powered by JavaScript. They support a number of use cases from user notification to completely custom content and
@@ -132,11 +130,11 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public Div getModalBody()
+	public BSModalDiv getModalBody()
 	{
 		if (modalBody == null)
 		{
-			setModalBody(new Div());
+			setModalBody(new BSModalDiv());
 		}
 		return modalBody;
 	}
@@ -147,21 +145,21 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public Div getModalContent()
+	public BSModalDiv getModalContent()
 	{
 		if (modalContent == null)
 		{
-			setModalContent(new Div());
+			setModalContent(new BSModalDiv());
 		}
 		return modalContent;
 	}
 
 	@Override
-	public Div getModalDialog()
+	public BSModalDiv getModalDialog()
 	{
 		if (modalDialog == null)
 		{
-			setModalDialog(new Div());
+			setModalDialog(new BSModalDiv());
 		}
 		return modalDialog;
 	}
@@ -174,13 +172,13 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public J setModalDialog(Div modalDialog)
+	public J setModalDialog(BSModalDiv modalDialog)
 	{
-		getChildren().remove(this.modalDialog);
+		remove(this.modalDialog);
 		this.modalDialog = modalDialog;
 		if (this.modalDialog != null)
 		{
-			getChildren().add(modalDialog);
+			add(modalDialog);
 			modalDialog.addClass(BSComponentModalOptions.Modal_Dialog);
 			modalDialog.addAttribute(BSModalAttributes.Role, "document");
 		}
@@ -216,11 +214,11 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public Div getModalFooter()
+	public BSModalDiv getModalFooter()
 	{
 		if (modalFooter == null)
 		{
-			setModalFooter(new Div());
+			setModalFooter(new BSModalDiv());
 		}
 		return modalFooter;
 	}
@@ -231,11 +229,11 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public Div getModalHeader()
+	public BSModalDiv getModalHeader()
 	{
 		if (modalHeader == null)
 		{
-			setModalHeader(new Div());
+			setModalHeader(new BSModalDiv());
 		}
 		return modalHeader;
 	}
@@ -297,7 +295,7 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public J setModalHeader(Div modalHeader)
+	public J setModalHeader(BSModalDiv modalHeader)
 	{
 		getModalContent().remove(modalHeader);
 		this.modalHeader = modalHeader;
@@ -331,7 +329,7 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public J setModalFooter(Div modalFooter)
+	public J setModalFooter(BSModalDiv modalFooter)
 	{
 		getModalContent().remove(this.modalFooter);
 		this.modalFooter = modalFooter;
@@ -351,7 +349,7 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public J setModalContent(Div modalContent)
+	public J setModalContent(BSModalDiv modalContent)
 	{
 		getModalDialog().remove(this.modalContent);
 		this.modalContent = modalContent;
@@ -371,7 +369,7 @@ public class BSModal<J extends BSModal<J>>
 	 * @return
 	 */
 	@Override
-	public J setModalBody(Div modalBody)
+	public J setModalBody(BSModalDiv modalBody)
 	{
 		getModalContent().remove(this.modalBody);
 		this.modalBody = modalBody;
@@ -400,33 +398,14 @@ public class BSModal<J extends BSModal<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public int hashCode()
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSModal))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSModal<?> bsModal = (BSModal<?>) o;
-		return Objects.equals(getModalDialog(), bsModal.getModalDialog()) &&
-		       Objects.equals(getModalContent(), bsModal.getModalContent()) &&
-		       Objects.equals(getModalHeader(),
-		                      bsModal.getModalHeader()) &&
-		       Objects.equals(
-				       getModalBody(), bsModal.getModalBody()) &&
-		       Objects.equals(getModalFooter(), bsModal.getModalFooter());
+		return super.hashCode();
 	}
 
 	@Override
-	public int hashCode()
+	public boolean equals(Object o)
 	{
-		return Objects.hash(super.hashCode(), getModalDialog(), getModalContent(), getModalHeader(), getModalBody(), getModalFooter());
+		return super.equals(o);
 	}
 }

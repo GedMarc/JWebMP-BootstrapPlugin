@@ -17,7 +17,6 @@
 package com.jwebmp.plugins.bootstrap.modal;
 
 import com.jwebmp.core.base.html.Button;
-import com.jwebmp.core.base.html.Div;
 
 /**
  * @param <J>
@@ -47,30 +46,30 @@ public interface IBSModal<J extends BSModal>
 	 *
 	 * @return
 	 */
-	Div getModalBody();
+	BSModalDiv getModalBody();
 
 	/**
 	 * Gets the modal content pane
 	 *
 	 * @return
 	 */
-	Div getModalContent();
+	BSModalDiv getModalContent();
 
-	Div getModalDialog();
+	BSModalDiv getModalDialog();
 
 	/**
 	 * Gets the modal footer
 	 *
 	 * @return
 	 */
-	Div getModalFooter();
+	BSModalDiv getModalFooter();
 
 	/**
 	 * Sets the modal header pane
 	 *
 	 * @return
 	 */
-	Div getModalHeader();
+	BSModalDiv getModalHeader();
 
 	/**
 	 * Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on click.
@@ -106,21 +105,21 @@ public interface IBSModal<J extends BSModal>
 	 *
 	 * @param modalBody
 	 */
-	J setModalBody(Div modalBody);
+	J setModalBody(BSModalDiv modalBody);
 
 	/**
 	 * Sets the modal content pane
 	 *
 	 * @param modalContent
 	 */
-	J setModalContent(Div modalContent);
+	J setModalContent(BSModalDiv modalContent);
 
 	/**
 	 * Sets the overall dialog of the modal
 	 *
 	 * @param modalDialog
 	 */
-	J setModalDialog(Div modalDialog);
+	J setModalDialog(BSModalDiv modalDialog);
 
 	/**
 	 * Sets the size to render for the modal. By default medium. false sets small
@@ -134,14 +133,14 @@ public interface IBSModal<J extends BSModal>
 	 *
 	 * @param modalFooter
 	 */
-	J setModalFooter(Div modalFooter);
+	J setModalFooter(BSModalDiv modalFooter);
 
 	/**
 	 * Sets the modal header pane
 	 *
 	 * @param modalHeader
 	 */
-	J setModalHeader(Div modalHeader);
+	J setModalHeader(BSModalDiv modalHeader);
 
 	/**
 	 * Shows the modal when initialized.

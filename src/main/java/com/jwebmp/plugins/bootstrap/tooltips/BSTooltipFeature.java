@@ -19,7 +19,6 @@ package com.jwebmp.plugins.bootstrap.tooltips;
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.bootstrap.popovers.BSPopOverFeatures;
 import com.jwebmp.plugins.bootstrap.popovers.BSPopOverOptions;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -32,8 +31,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 2013/01/16
  */
 public class BSTooltipFeature
-		extends Feature<BSPopOverOptions, BSTooltipFeature>
-		implements BSPopOverFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, BSPopOverOptions, BSTooltipFeature>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -56,26 +54,12 @@ public class BSTooltipFeature
 	@Override
 	public int hashCode()
 	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
+		return super.hashCode();
 	}
 
 	@Override
 	public boolean equals(Object obj)
 	{
-		if (this == obj)
-		{
-			return true;
-		}
-		if (obj == null)
-		{
-			return false;
-		}
-		if (getClass() != obj.getClass())
-		{
-			return false;
-		}
 		return super.equals(obj);
 	}
 

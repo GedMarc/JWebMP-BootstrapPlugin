@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.bootstrap.progressbar;
 
 import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.bootstrap.progressbar.bar.BSProgressBarDisplay;
 
@@ -41,7 +42,7 @@ import java.util.Objects;
 		url = "https://v4-alpha.getbootstrap.com/components/progress/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSProgressBar<J extends BSProgressBar<J>>
-		extends Div<BSProgressBarChildren, BSProgressBarAttributes, BSProgressBarFeatures, BSProgressBarEvents, J>
+		extends Div<IComponentHierarchyBase, BSProgressBarAttributes, BSProgressBarFeatures, BSProgressBarEvents, J>
 		implements IBSProgressBar<J>
 {
 
@@ -127,6 +128,12 @@ public class BSProgressBar<J extends BSProgressBar<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), isStriped(), isActive(), isAnimated(), getProgressBar());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -169,11 +176,11 @@ public class BSProgressBar<J extends BSProgressBar<J>>
 	@Override
 	public final void setProgressBar(BSProgressBarDisplay progressBar)
 	{
-		getChildren().remove(this.progressBar);
+		remove(this.progressBar);
 		this.progressBar = progressBar;
 		if (progressBar != null)
 		{
-			getChildren().add(progressBar);
+			add(progressBar);
 		}
 	}
 
@@ -279,12 +286,6 @@ public class BSProgressBar<J extends BSProgressBar<J>>
 	{
 		getProgressBar().setValue(percent);
 		return (J) this;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), isStriped(), isActive(), isAnimated(), getProgressBar());
 	}
 
 }

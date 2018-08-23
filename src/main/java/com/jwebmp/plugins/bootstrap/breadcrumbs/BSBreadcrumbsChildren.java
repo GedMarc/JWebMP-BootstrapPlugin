@@ -16,16 +16,17 @@
  */
 package com.jwebmp.plugins.bootstrap.breadcrumbs;
 
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.ComponentBase;
 import com.jwebmp.core.base.html.interfaces.children.ListChildren;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 /**
  * @author Marc Magon
  * @version 1.0
  * @since 07 Aug 2015
  */
-public interface BSBreadcrumbsChildren
-		extends GlobalChildren, ListChildren
+public interface BSBreadcrumbsChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
+		extends IComponentHierarchyBase<C, J>, ListChildren<C, J>
 {
 
 }

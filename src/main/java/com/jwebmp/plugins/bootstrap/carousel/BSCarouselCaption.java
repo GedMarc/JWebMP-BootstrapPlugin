@@ -18,9 +18,9 @@ package com.jwebmp.plugins.bootstrap.carousel;
 
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 /**
  * Optional captions
@@ -32,7 +32,7 @@ import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
  * @since 4th Jan 2017
  */
 public class BSCarouselCaption
-		extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSCarouselCaption>
+		extends Div<IComponentHierarchyBase, NoAttributes, GlobalFeatures, GlobalEvents, BSCarouselCaption>
 {
 
 	/**

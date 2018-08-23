@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.bootstrap.listgroup;
 
 import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.interfaces.children.ListItemChildren;
 
 /**
  * Basic example The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
@@ -28,7 +29,7 @@ import com.jwebmp.core.base.html.ListItem;
  */
 public class BSListGroupListItem<J extends BSListGroupListItem<J>>
 		extends ListItem<J>
-		implements BSListGroupChildren, IBSListGroupListItem<J>
+		implements BSListGroupChildren<ListItemChildren, J>, IBSListGroupListItem<J>
 {
 
 	private static final long serialVersionUID = 1L;

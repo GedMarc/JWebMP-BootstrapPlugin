@@ -16,6 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.forms.groups.sets;
 
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.bootstrap.forms.BSFormLabel;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroup;
@@ -30,7 +31,7 @@ import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroup;
  */
 public class BSFormCheckGroup<J extends BSFormCheckGroup<J>>
 		extends BSFormGroup<J>
-		implements BSFormSetChildren
+		implements BSFormSetChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;

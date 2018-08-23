@@ -17,9 +17,9 @@
 package com.jwebmp.plugins.bootstrap.jumbotron;
 
 import com.jwebmp.core.base.html.Div;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 
 /**
@@ -39,7 +39,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 		url = "https://v4-alpha.getbootstrap.com/components/jumbotron/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
 public class BSJumbotron<J extends BSJumbotron<J>>
-		extends Div<GlobalChildren, BSJumbotronAttributes, GlobalFeatures, GlobalEvents, J>
+		extends Div<IComponentHierarchyBase, BSJumbotronAttributes, GlobalFeatures, GlobalEvents, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -80,6 +80,14 @@ public class BSJumbotron<J extends BSJumbotron<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (getID().hashCode());
+		return hash;
+	}
+
+	@Override
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -95,14 +103,6 @@ public class BSJumbotron<J extends BSJumbotron<J>>
 			return false;
 		}
 		return super.equals(obj);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
 	}
 
 }

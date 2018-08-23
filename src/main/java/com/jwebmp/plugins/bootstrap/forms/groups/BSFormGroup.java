@@ -23,10 +23,10 @@ import com.jwebmp.core.base.html.Input;
 import com.jwebmp.core.base.html.Span;
 import com.jwebmp.core.base.html.TextArea;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.children.FormChildren;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.logger.LogFactory;
 import com.jwebmp.plugins.bootstrap.forms.BSForm;
 import com.jwebmp.plugins.bootstrap.forms.BSFormChildren;
@@ -52,8 +52,8 @@ import java.util.logging.Logger;
  * @since 17 Jan 2017
  */
 public class BSFormGroup<J extends BSFormGroup<J>>
-		extends Div<GlobalChildren, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
-		implements BSFormChildren, IBSFormGroup<J>, FormChildren
+		extends Div<IComponentHierarchyBase, BSFormGroupAttributes, GlobalFeatures, GlobalEvents, J>
+		implements BSFormChildren<IComponentHierarchyBase, J>, IBSFormGroup<J>, FormChildren<IComponentHierarchyBase, J>
 {
 
 	private static final Logger log = LogFactory.getLog("BSFormGroup");
@@ -322,7 +322,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			BSForm referencedForm = findParent(BSForm.class);
 			if (referencedForm == null)
 			{
-				log.log(Level.SEVERE, "Unable to map angular, hierarchy doesn't seem to be built right. Expecting a BSForm as a parent somewhere");
+				BSFormGroup.log.log(Level.SEVERE, "Unable to map angular, hierarchy doesn't seem to be built right. Expecting a BSForm as a parent somewhere");
 				referencedForm = new BSForm();
 				referencedForm.setID("InvalidForm");
 			}
@@ -357,7 +357,7 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 		if (getInputComponent() != null)
 		{
 			Span iconFeedback = new Span();
-			iconFeedback.addClass(BootstrapValidationIconClass);
+			iconFeedback.addClass(BSFormGroup.BootstrapValidationIconClass);
 			add(iconFeedback);
 			configureDataAttributes();
 		}
@@ -811,6 +811,14 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (getID().hashCode());
+		return hash;
+	}
+
+	@Override
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -826,13 +834,5 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 			return false;
 		}
 		return super.equals(obj);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
 	}
 }

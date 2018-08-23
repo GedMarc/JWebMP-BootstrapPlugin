@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.bootstrap.forms.controls;
 
 import com.jwebmp.core.base.html.attributes.InputTypes;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSComponentFormGroupOptions;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 
@@ -26,7 +27,7 @@ import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
  */
 public class BSFormNumberInput<J extends BSFormNumberInput<J>>
 		extends BSInput<J>
-		implements BSFormGroupChildren
+		implements BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;

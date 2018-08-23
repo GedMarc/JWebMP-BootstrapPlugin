@@ -57,29 +57,14 @@ public class BSListGroup
 	}
 
 	@Override
-	public boolean equals(Object obj)
+	public int hashCode()
 	{
-		if (this == obj)
-		{
-			return true;
-		}
-		if (obj == null)
-		{
-			return false;
-		}
-		if (getClass() != obj.getClass())
-		{
-			return false;
-		}
-		return super.equals(obj);
+		return super.hashCode();
 	}
 
 	@Override
-	public int hashCode()
+	public boolean equals(Object o)
 	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
+		return super.equals(o);
 	}
-
 }

@@ -18,9 +18,9 @@ package com.jwebmp.plugins.bootstrap.containers;
 
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.bootstrap.forms.BSFormChildren;
 import com.jwebmp.plugins.bootstrap.forms.groups.BSFormGroupChildren;
 import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
@@ -35,8 +35,8 @@ import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
  * @since Oct 7, 2016
  */
 public class BSRow<J extends BSRow<J>>
-		extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, BSRow<J>>
-		implements BSFormChildren, BSFormGroupChildren
+		extends Div<IComponentHierarchyBase, NoAttributes, GlobalFeatures, GlobalEvents, J>
+		implements BSFormChildren<IComponentHierarchyBase, J>, BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;
