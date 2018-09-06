@@ -51,27 +51,12 @@ public class BSFormSet<J extends BSFormSet<J>>
 	@Override
 	public int hashCode()
 	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
+		return super.hashCode();
 	}
 
 	@Override
-	public boolean equals(Object obj)
+	public boolean equals(Object o)
 	{
-		if (this == obj)
-		{
-			return true;
-		}
-		if (obj == null)
-		{
-			return false;
-		}
-		if (getClass() != obj.getClass())
-		{
-			return false;
-		}
-		return super.equals(obj);
+		return super.equals(o);
 	}
-
 }
