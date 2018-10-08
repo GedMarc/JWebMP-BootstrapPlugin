@@ -71,7 +71,10 @@ public class BSPanelDefault<J extends BSPanelDefault<J>>
 		if (!isConfigured())
 		{
 			getPanelHeader().add(getIcon());
-			getPanelHeader().add(getTitle());
+			if (getTitle() != null)
+			{
+				getPanelHeader().add(getTitle());
+			}
 		}
 		super.preConfigure();
 	}
@@ -119,6 +122,12 @@ public class BSPanelDefault<J extends BSPanelDefault<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getIcon(), getTitle());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -135,11 +144,5 @@ public class BSPanelDefault<J extends BSPanelDefault<J>>
 		}
 		BSPanelDefault<?> that = (BSPanelDefault<?>) o;
 		return Objects.equals(getIcon(), that.getIcon()) && Objects.equals(getTitle(), that.getTitle());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getIcon(), getTitle());
 	}
 }
