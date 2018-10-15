@@ -39,7 +39,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 @ComponentInformation(name = "Bootstrap Pagination",
 		description = "Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance, such as in search results or inboxes.",
 		url = "https://v4-alpha.getbootstrap.com/components/pagination/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSPagination<J extends BSPagination<J>>
 		extends Div<BSPaginationChildren, BSPaginationAttributes, GlobalFeatures, GlobalEvents, J>
 		implements IBSPagination

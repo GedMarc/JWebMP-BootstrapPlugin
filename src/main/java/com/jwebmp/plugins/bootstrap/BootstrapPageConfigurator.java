@@ -41,16 +41,15 @@ import javax.validation.constraints.NotNull;
 		pluginCategories = "bootstrap,ui,web ui, framework",
 		pluginSubtitle = "Bootstrap makes front-end web development faster and easier.",
 		pluginSourceUrl = "http://getbootstrap.com/",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki",
-		pluginGitUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin",
 		pluginIconUrl = "bower_components/bootstrap/bootstrapicon.jpg",
 		pluginIconImageUrl = "bower_components/bootstrap/bootstraplogo.jpg",
 		pluginOriginalHomepage = "http://getbootstrap.com/",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/BootstrapPlugin.jar/download")
 public class BootstrapPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<BootstrapPageConfigurator>
 {
-	private static final long serialVersionUID = 1L;
 	/**
 	 * If this configurator is enabled
 	 */

@@ -40,7 +40,7 @@ import java.util.Iterator;
 @ComponentInformation(name = "Bootstrap Panel",
 		description = "Panels can be used with bootstrap 3",
 		url = "https://v4-alpha.getbootstrap.com/components/cards/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSPanel<J extends BSPanel<J>>
 		extends Div<IComponentHierarchyBase, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, J>
 {

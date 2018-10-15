@@ -40,7 +40,7 @@ import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 @ComponentInformation(name = "Bootstrap Modals",
 		description = "Modals are streamlined, but flexible dialog prompts powered by JavaScript. They support a number of use cases from user notification to completely custom content and feature a handful of helpful subcomponents, sizes, and more.",
 		url = "https://v4-alpha.getbootstrap.com/components/modal/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSModal<J extends BSModal<J>>
 		extends Div<BSModalChildren, BSModalAttributes, BSModalFeatures, BSModalEvents, J>
 		implements BSNavBarChildren<BSModalChildren, J>, IBSModal<J>

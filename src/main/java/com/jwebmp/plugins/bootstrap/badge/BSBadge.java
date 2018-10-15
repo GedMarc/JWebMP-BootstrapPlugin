@@ -36,7 +36,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 @ComponentInformation(name = "Bootstrap Badge",
 		description = "Add badges to any list group item to show unread counts, activity, and more with the help of some utilities. Note the justify-content-between utility class and the badge’s placement.",
 		url = "https://v4-alpha.getbootstrap.com/components/badge/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 
 public class BSBadge<J extends BSBadge<J>>
 		extends Span<IComponentHierarchyBase, BSBadgeAttributes, J>

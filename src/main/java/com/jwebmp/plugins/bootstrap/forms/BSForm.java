@@ -38,7 +38,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 @ComponentInformation(name = "Bootstrap Forms",
 		description = "Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.",
 		url = "https://v4-alpha.getbootstrap.com/components/forms/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSForm<J extends BSForm<J>>
 		extends Div<BSFormChildren, BSFormAttributes, GlobalFeatures, BSFormEvents, J>
 {

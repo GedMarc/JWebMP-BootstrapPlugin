@@ -34,7 +34,7 @@ import java.util.ArrayList;
 @ComponentInformation(name = "Bootstrap Breadcrumbs",
 		description = "Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.",
 		url = "https://v4-alpha.getbootstrap.com/components/breadcrumb/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSBreadcrumbs<J extends BSBreadcrumbs<J>>
 		extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttributes, BSBreadcrumbsEvents, J>
 {

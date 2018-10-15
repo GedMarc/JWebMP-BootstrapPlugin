@@ -47,7 +47,7 @@ import java.util.Objects;
 @ComponentInformation(name = "Bootstrap Carousel",
 		description = " slideshow component for cycling through elements—images or slides of text—like a carousel.",
 		url = "https://v4-alpha.getbootstrap.com/components/carousel/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSCarousel<J extends BSCarousel<J>>
 		extends Div<BSCarouselChildren, BSCarouselAttributes, BSCarouselFeatures, BSCarouselEvents, J>
 		implements IBSCarousel<J>
@@ -454,6 +454,12 @@ public class BSCarousel<J extends BSCarousel<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getFeature());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -470,11 +476,5 @@ public class BSCarousel<J extends BSCarousel<J>>
 		}
 		BSCarousel<?> carousel = (BSCarousel<?>) o;
 		return getComponent().equals(carousel.getComponent());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getFeature());
 	}
 }

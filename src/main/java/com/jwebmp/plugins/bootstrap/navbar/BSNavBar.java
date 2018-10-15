@@ -33,7 +33,7 @@ import com.jwebmp.plugins.bootstrap.navbar.toggler.BSNavBarTogglerSizes;
 @ComponentInformation(name = "Bootstrap Navbar",
 		description = "The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive behaviors.",
 		url = "https://v4-alpha.getbootstrap.com/components/navbar/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSNavBar<J extends BSNavBar<J>>
 		extends Div<BSNavBarChildren, BSNavBarAttributes, GlobalFeatures, BSNavBarEvents, J>
 		implements IBSNavBar

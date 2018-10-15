@@ -35,7 +35,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 @ComponentInformation(name = "Bootstrap ListGroup",
 		description = "List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within. They can also be used as navigation with the right modifier class.",
 		url = "https://v4-alpha.getbootstrap.com/components/list-group/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSListGroup
 		extends Div<BSListGroupChildren, BSListGroupAttributes, GlobalFeatures, BSListGroupEvents, BSListGroup>
 {

@@ -37,7 +37,7 @@ import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 @ComponentInformation(name = "Bootstrap Collapse",
 		description = "The Bootstrap collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.",
 		url = "https://v4-alpha.getbootstrap.com/components/collapse/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSCollapse
 {
 	private static final String Collapse = "collapse";

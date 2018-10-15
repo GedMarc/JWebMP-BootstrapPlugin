@@ -36,7 +36,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 @ComponentInformation(name = "Bootstrap Alert",
 		description = "rovide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.",
 		url = "https://v4-alpha.getbootstrap.com/components/alerts/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSAlert<J extends BSAlert<J>>
 		extends Div<IComponentHierarchyBase, BSAlertAttributes, GlobalFeatures, BSAlertEvents, J>
 		implements IBSAlert<J>

@@ -46,7 +46,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 @ComponentInformation(name = "Bootstrap Popovers",
 		description = "Add small overlay content, like those found in iOS, to any element for housing secondary information.",
 		url = "https://v4-alpha.getbootstrap.com/components/popovers/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSPopOver
 		extends Div<BSPopOverChildren, BSPopOverAttributes, BSPopOverFeatures, BSPopOverEvents, BSPopOver>
 		implements IBSPopOver

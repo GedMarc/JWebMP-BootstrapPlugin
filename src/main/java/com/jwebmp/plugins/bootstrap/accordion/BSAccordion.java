@@ -38,7 +38,7 @@ import java.util.List;
 @ComponentInformation(name = "Bootstrap Accordion",
 		description = "Extend the default collapse behavior to create an accordion.",
 		url = "https://v4-alpha.getbootstrap.com/components/collapse/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSAccordion<J extends BSAccordion<J>>
 		extends Div<BSAccordionChildren, BSAccordionAttributes, GlobalFeatures, BSAccordionEvents, J>
 {

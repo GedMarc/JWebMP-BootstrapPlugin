@@ -40,7 +40,7 @@ import com.jwebmp.plugins.bootstrap.options.BSDefaultOptions;
 @ComponentInformation(name = "Bootstrap Buttons",
 		description = "Use Bootstrap’s custom button styles for actions in forms, dialogs, and more. Includes support for a handful of contextual variations, sizes, states, and more.",
 		url = "https://v4-alpha.getbootstrap.com/components/buttons/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSButton<J extends BSButton<J>>
 		extends Button<BSButtonChildren, BSButtonAttributes, GlobalFeatures, BSButtonEvents, J>
 		implements BSDropDownChildren<BSButtonChildren, J>, BSFormChildren<BSButtonChildren, J>, IBSButton<J>

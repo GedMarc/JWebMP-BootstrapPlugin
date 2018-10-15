@@ -40,7 +40,7 @@ import java.util.Objects;
 @ComponentInformation(name = "Bootstrap Dismiss Buttons",
 		description = "Use a generic close icon for dismissing content like modals and alerts. Be sure to include text for screen readers, as we’ve done with aria-label.",
 		url = "https://v4-alpha.getbootstrap.com/utilities/close-icon/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSCloseIcon<J extends BSCloseIcon<J>>
 		extends Button<IComponentHierarchyBase, NoAttributes, GlobalFeatures, GlobalEvents, J>
 {

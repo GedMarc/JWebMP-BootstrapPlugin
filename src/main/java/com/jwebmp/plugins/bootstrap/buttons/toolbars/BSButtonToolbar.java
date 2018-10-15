@@ -34,7 +34,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 @ComponentInformation(name = "Bootstrap Toolbar",
 		description = "Combine sets of button groups into button toolbars for more complex components. Use utility classes as needed to space out groups, buttons, and more.",
 		url = "https://v4-alpha.getbootstrap.com/components/button-group/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSButtonToolbar
 		extends Div<BSButtonToolbarChildren, BSButtonToolbarAttributes, GlobalFeatures, BSButtonToolbarEvents, BSButtonToolbar>
 		implements IBSButtonToolbar

@@ -35,7 +35,7 @@ import com.jwebmp.plugins.bootstrap.buttons.toolbars.BSButtonToolbarChildren;
 @ComponentInformation(name = "Bootstrap Button Groups",
 		description = "Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.",
 		url = "https://v4-alpha.getbootstrap.com/components/button-group/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapPlugin/wiki")
 public class BSButtonGroup<J extends BSButtonGroup<J>>
 		extends Div<BSButtonGroupChildren, BSButtonGroupAttributes, GlobalFeatures, BSButtonGroupEvents, J>
 		implements BSButtonToolbarChildren<BSButtonGroupChildren, J>, IBSButtonGroup
