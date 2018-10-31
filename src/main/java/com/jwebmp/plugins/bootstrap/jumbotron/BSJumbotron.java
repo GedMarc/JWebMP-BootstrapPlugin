@@ -42,7 +42,6 @@ public class BSJumbotron<J extends BSJumbotron<J>>
 		extends Div<IComponentHierarchyBase, BSJumbotronAttributes, GlobalFeatures, GlobalEvents, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new instance

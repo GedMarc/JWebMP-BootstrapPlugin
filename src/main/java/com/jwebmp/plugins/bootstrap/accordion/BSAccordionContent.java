@@ -28,7 +28,6 @@ public class BSAccordionContent<J extends BSAccordionContent<J>>
 		extends BSPanel<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new instance of the BS Accordion Content

@@ -33,7 +33,7 @@ public class BSPanelDefault<J extends BSPanelDefault<J>>
 		extends BSPanel<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The icon class
 	 */

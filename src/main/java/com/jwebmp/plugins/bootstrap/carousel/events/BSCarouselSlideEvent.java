@@ -46,7 +46,7 @@ public abstract class BSCarouselSlideEvent<J extends BSCarouselSlideEvent<J>>
 	 */
 	private static final Logger LOG = LogFactory.getInstance()
 	                                            .getLogger("BSCarouselSlideEvent");
-	private static final long serialVersionUID = 1L;
+
 	private BSCarouselSlideEventDirective directive;
 
 	/**

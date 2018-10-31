@@ -29,7 +29,6 @@ public class BSNavItemDropDown
 		implements BSNavsChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A drop down that can be placed on any nav bar

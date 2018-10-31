@@ -28,7 +28,6 @@ public class BSFormTextInput<J extends BSFormTextInput<J>>
 		extends BSInput<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default email input for bootstrap

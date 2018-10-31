@@ -28,7 +28,6 @@ public class BSFormSelectInput
 		implements BSFormGroupChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A bootstrap default form select

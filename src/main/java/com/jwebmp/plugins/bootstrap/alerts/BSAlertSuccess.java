@@ -29,7 +29,6 @@ public class BSAlertSuccess
 		extends BSAlert
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Alerts

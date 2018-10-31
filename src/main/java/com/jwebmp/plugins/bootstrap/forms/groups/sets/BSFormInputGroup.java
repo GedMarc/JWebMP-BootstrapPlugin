@@ -45,7 +45,7 @@ public class BSFormInputGroup<J extends BSFormInputGroup<J>>
 		implements BSFormGroupChildren<IComponentHierarchyBase, J>, BSFormSetChildren<IComponentHierarchyBase, J>, BSDropDownMenuChildren<IComponentHierarchyBase, J>, IBSFormInputGroup
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The input group addons
 	 */

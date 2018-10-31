@@ -29,7 +29,6 @@ public class BSButtonSecondaryOutline
 		extends BSButton
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Secondary, outline button

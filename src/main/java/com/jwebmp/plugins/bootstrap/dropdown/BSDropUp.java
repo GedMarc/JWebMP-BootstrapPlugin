@@ -28,7 +28,6 @@ public class BSDropUp
 		extends BSDropDown
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSDropUp()
 	{

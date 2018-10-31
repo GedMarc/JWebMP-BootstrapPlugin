@@ -29,7 +29,6 @@ public class BSFormSetLegend
 		implements BSFormSetChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A legend to describe a form set

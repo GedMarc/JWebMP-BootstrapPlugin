@@ -35,7 +35,6 @@ public class BSInput<J extends BSInput<J>>
 		implements BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Allows construction of a bootstrap input component

@@ -31,7 +31,6 @@ public abstract class BSFormCheckInput<J extends BSFormCheckInput>
 		implements BSFormSetChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Defines an item as a check item.

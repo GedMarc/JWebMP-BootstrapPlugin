@@ -31,7 +31,7 @@ public class BSModalFeature
 		extends Feature<GlobalFeatures, BSModalOptions, BSModalFeature>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The options for the modal
 	 */

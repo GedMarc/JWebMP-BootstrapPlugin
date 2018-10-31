@@ -34,7 +34,6 @@ public class BSDropDownMenu<J extends BSDropDownMenu<J>>
 		implements BSDropDownChildren<BSDropDownMenuChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A new drop down menu list

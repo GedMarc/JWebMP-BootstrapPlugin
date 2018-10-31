@@ -32,7 +32,7 @@ public class BSCarouselNextFeature<J extends BSCarouselNextFeature<J>>
 		extends Feature<GlobalFeatures, BSCarouselOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The method name to call
 	 */

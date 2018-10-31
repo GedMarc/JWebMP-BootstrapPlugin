@@ -29,7 +29,6 @@ public class BSButtonWarning
 		extends BSButton
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Indicates caution should be taken with this action

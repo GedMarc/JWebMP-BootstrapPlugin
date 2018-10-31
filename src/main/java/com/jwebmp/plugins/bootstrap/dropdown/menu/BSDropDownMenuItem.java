@@ -36,7 +36,7 @@ public class BSDropDownMenuItem
 		implements BSDropDownMenuChildren
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The class string for the icon
 	 */
@@ -94,15 +94,15 @@ public class BSDropDownMenuItem
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return Objects.hash(super.hashCode(), getIconClass());
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 
 	/**

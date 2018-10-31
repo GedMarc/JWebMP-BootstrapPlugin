@@ -53,7 +53,6 @@ public class BSDropDown<J extends BSDropDown<J>>
 		implements IBSDropDown<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The button for the drop down,
@@ -199,6 +198,12 @@ public class BSDropDown<J extends BSDropDown<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getDropdownButton(), getDropdownMenu());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -215,12 +220,6 @@ public class BSDropDown<J extends BSDropDown<J>>
 		}
 		BSDropDown<?> that = (BSDropDown<?>) o;
 		return Objects.equals(getDropdownButton(), that.getDropdownButton()) && Objects.equals(getDropdownMenu(), that.getDropdownMenu());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getDropdownButton(), getDropdownMenu());
 	}
 
 	@Override

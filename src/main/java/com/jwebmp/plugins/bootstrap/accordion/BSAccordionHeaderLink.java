@@ -26,7 +26,6 @@ public class BSAccordionHeaderLink<J extends BSAccordionHeaderLink<J>>
 		extends Link<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The displayed link for an accordion

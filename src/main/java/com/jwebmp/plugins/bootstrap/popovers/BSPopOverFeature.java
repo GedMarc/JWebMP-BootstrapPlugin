@@ -31,7 +31,6 @@ public class BSPopOverFeature
 		extends Feature<GlobalFeatures, BSPopOverOptions, BSPopOverFeature>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private BSPopOverOptions options;
 

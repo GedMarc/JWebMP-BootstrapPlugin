@@ -39,7 +39,6 @@ public class BSBreadcrumbs<J extends BSBreadcrumbs<J>>
 		extends List<BSBreadcrumbsChildren, BSBreadcrumbsAttributes, BSBreadcrumbsEvents, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Breadcrumbs
@@ -67,6 +66,14 @@ public class BSBreadcrumbs<J extends BSBreadcrumbs<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (getID().hashCode());
+		return hash;
+	}
+
+	@Override
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -82,13 +89,5 @@ public class BSBreadcrumbs<J extends BSBreadcrumbs<J>>
 			return false;
 		}
 		return super.equals(obj);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
 	}
 }

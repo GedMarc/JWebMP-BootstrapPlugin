@@ -31,7 +31,6 @@ public class BSColumn
 		extends Div
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Supply a list of column options for this div
@@ -67,14 +66,14 @@ public class BSColumn
 	}
 
 	@Override
-	public boolean equals(Object obj)
-	{
-		return false;
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return false;
 	}
 }

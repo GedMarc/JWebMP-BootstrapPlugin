@@ -19,8 +19,6 @@ package com.jwebmp.plugins.bootstrap.buttons.groups;
 import com.jwebmp.plugins.bootstrap.buttons.BSButton;
 import com.jwebmp.plugins.bootstrap.buttons.BSButtonChildren;
 
-import java.io.Serializable;
-
 /**
  * @param <J>
  * @param <I>
@@ -28,12 +26,12 @@ import java.io.Serializable;
  * @author GedMarc
  * @since 16 Feb 2017
  */
-public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BSButtonChildren & IBSButtonGroupInput & Serializable>
+public class BSButtonGroupLabel<J extends BSButtonGroupLabel<J, I>, I extends BSButtonChildren & IBSButtonGroupInput>
 		extends BSButton<J>
 		implements BSButtonGroupChildren<BSButtonChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The group button input for the label
 	 */

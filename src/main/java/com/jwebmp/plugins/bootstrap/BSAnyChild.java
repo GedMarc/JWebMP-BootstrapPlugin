@@ -22,8 +22,6 @@ import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
-import java.io.Serializable;
-
 /**
  * Any child is allowed on this element
  *
@@ -35,9 +33,7 @@ import java.io.Serializable;
  */
 public class BSAnyChild<A extends Enum & AttributeDefinitions>
 		extends Div<IComponentHierarchyBase, A, GlobalFeatures, GlobalEvents, BSAnyChild<A>>
-		implements Serializable
 {
 
-	private static final long serialVersionUID = 1L;
 
 }

@@ -29,7 +29,6 @@ public class BSButtonGroupVertical
 		extends BSButtonGroup
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Vertical variation

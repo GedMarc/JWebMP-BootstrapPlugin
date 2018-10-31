@@ -31,7 +31,6 @@ public class BSPageinationListItem
 		implements ListChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A pagination list item

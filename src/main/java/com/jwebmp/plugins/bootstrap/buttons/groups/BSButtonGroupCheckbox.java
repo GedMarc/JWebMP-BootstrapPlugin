@@ -32,7 +32,6 @@ public class BSButtonGroupCheckbox<J extends BSButtonGroupCheckbox<J>>
 		implements IBSButtonGroupInput, BSButtonChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSButtonGroupCheckbox()
 	{

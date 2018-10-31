@@ -33,7 +33,6 @@ public class BSNavBarText
 		implements BSNavBarChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Text

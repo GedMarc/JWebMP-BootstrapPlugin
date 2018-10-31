@@ -27,7 +27,6 @@ public class BSCarouselSlides
 		implements BSCarouselChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSCarouselSlides()
 	{

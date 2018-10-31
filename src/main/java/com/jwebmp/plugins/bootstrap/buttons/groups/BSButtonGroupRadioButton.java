@@ -32,7 +32,6 @@ public class BSButtonGroupRadioButton<J extends BSButtonGroupRadioButton<J>>
 		implements IBSButtonGroupInput, BSButtonChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSButtonGroupRadioButton()
 	{

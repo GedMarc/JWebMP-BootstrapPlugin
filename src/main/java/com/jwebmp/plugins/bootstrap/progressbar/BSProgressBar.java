@@ -46,7 +46,6 @@ public class BSProgressBar<J extends BSProgressBar<J>>
 		implements IBSProgressBar<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Whether or not the progress bar is striped

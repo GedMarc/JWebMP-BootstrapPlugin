@@ -27,7 +27,6 @@ public class BSModalShowFeature
 		extends Feature
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSModalShowFeature(BSModal modal)
 	{

@@ -59,7 +59,6 @@ public class BSFormGroup<J extends BSFormGroup<J>>
 	private static final Logger log = LogFactory.getLog("BSFormGroup");
 	private static final String BootstrapValidationIconClass = "glyphicon form-control-feedback form-control-feedback-lg";
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The label

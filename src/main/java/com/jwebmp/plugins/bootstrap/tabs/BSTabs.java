@@ -41,7 +41,7 @@ import java.util.logging.Logger;
 public class BSTabs<J>
 		extends DivSimple<BSTabs<J>>
 {
-	private static final long serialVersionUID = 1L;
+
 	private static final Logger log = LogFactory.getLog("BSTabs");
 	/**
 	 * The tabs to render
@@ -228,6 +228,12 @@ public class BSTabs<J>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getTabs(), getNavigation(), getTabContent());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -244,11 +250,5 @@ public class BSTabs<J>
 		}
 		BSTabs<?> bsTabs = (BSTabs<?>) o;
 		return Objects.equals(getTabs(), bsTabs.getTabs()) && Objects.equals(getNavigation(), bsTabs.getNavigation()) && Objects.equals(getTabContent(), bsTabs.getTabContent());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getTabs(), getNavigation(), getTabContent());
 	}
 }

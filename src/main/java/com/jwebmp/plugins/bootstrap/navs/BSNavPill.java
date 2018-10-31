@@ -26,7 +26,6 @@ public class BSNavPill
 		extends BSNavs
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Pills Take that same HTML, but use .nav-pills instead:

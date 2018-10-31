@@ -28,7 +28,6 @@ public class BSFormDateTimeLocalInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default date time input for bootstrap

@@ -20,15 +20,13 @@ package com.jwebmp.plugins.bootstrap.tabs;
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.ListItem;
 
-import java.io.Serializable;
-
 /**
  * A tab specific to Bootstrap 4
  */
 public class BSTab<J extends BSTab>
-		implements Serializable
+
 {
-	private static final long serialVersionUID = 1L;
+
 
 	/**
 	 * The tab header item

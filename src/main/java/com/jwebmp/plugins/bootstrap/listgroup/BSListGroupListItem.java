@@ -32,7 +32,6 @@ public class BSListGroupListItem<J extends BSListGroupListItem<J>>
 		implements BSListGroupChildren<ListItemChildren, J>, IBSListGroupListItem<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Basic example The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as

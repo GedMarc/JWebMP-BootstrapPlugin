@@ -40,7 +40,6 @@ public class BSButtonToolbar
 		implements IBSButtonToolbar
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Button toolbar
@@ -80,6 +79,14 @@ public class BSButtonToolbar
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 79 * hash + (getID().hashCode());
+		return hash;
+	}
+
+	@Override
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -95,13 +102,5 @@ public class BSButtonToolbar
 			return false;
 		}
 		return super.equals(obj);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
 	}
 }

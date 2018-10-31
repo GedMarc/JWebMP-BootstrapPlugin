@@ -39,7 +39,6 @@ public class BSAccordionItem<J extends BSAccordionItem<J>>
 		implements BSAccordionChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private static final String TabPanelRoleName = "tabpanel";
 

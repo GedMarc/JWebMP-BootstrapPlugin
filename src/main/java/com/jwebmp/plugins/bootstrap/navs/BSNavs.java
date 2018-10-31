@@ -42,7 +42,7 @@ public class BSNavs<J extends BSNavs<J>>
 		implements BSNavBarChildren<BSNavsChildren, J>, IBSNavs
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Assign the navigation list
 	 */

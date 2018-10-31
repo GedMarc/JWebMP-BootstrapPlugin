@@ -29,7 +29,6 @@ public class BSFormFileInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default email input for bootstrap

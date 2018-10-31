@@ -34,7 +34,7 @@ public class BSCarouselControl
 		implements BSCarouselChildren
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The actual carousel
 	 */
@@ -125,6 +125,12 @@ public class BSCarouselControl
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getIcon());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -141,12 +147,6 @@ public class BSCarouselControl
 		}
 		BSCarouselControl that = (BSCarouselControl) o;
 		return Objects.equals(getComponent(), that.getComponent());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getIcon());
 	}
 
 	/**

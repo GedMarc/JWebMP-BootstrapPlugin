@@ -46,7 +46,7 @@ public class BSButton<J extends BSButton<J>>
 		implements BSDropDownChildren<BSButtonChildren, J>, BSFormChildren<BSButtonChildren, J>, IBSButton<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private static final String roleAttribute = "button";
 
 	/**

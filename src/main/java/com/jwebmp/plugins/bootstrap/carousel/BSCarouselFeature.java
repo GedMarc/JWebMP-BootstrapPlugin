@@ -31,7 +31,7 @@ public class BSCarouselFeature<J extends BSCarouselFeature<J>>
 		extends Feature<GlobalFeatures, BSCarouselOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Any Carousel options provided by JavaSript
 	 */

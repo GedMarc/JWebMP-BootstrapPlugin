@@ -29,7 +29,6 @@ public class BSBreadCrumbLink<J extends BSBreadCrumbLink<J>>
 		extends Link<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A new default crumb link

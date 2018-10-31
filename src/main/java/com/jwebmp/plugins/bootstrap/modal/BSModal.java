@@ -46,7 +46,7 @@ public class BSModal<J extends BSModal<J>>
 		implements BSNavBarChildren<BSModalChildren, J>, IBSModal<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private BSModalFeature feature;
 	/**
 	 * The modal dialog

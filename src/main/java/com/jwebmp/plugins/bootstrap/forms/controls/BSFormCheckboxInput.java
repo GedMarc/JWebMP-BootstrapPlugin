@@ -26,7 +26,6 @@ public class BSFormCheckboxInput
 		extends BSFormRadioInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSFormCheckboxInput(String groupName)
 	{

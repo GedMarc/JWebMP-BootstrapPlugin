@@ -29,7 +29,6 @@ public class BSDropDownButton
 		implements BSDropDownChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSDropDownButton()
 	{

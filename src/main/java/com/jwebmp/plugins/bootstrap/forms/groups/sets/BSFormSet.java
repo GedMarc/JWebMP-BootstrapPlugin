@@ -37,7 +37,6 @@ public class BSFormSet<J extends BSFormSet<J>>
 		implements BSFormChildren<BSFormSetChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new instance

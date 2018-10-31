@@ -27,7 +27,6 @@ public class BSNavListItem
 		implements BSNavsChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a list item with a link item inside

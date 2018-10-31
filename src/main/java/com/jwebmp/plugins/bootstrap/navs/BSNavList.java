@@ -27,7 +27,6 @@ public class BSNavList
 		implements BSNavsChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new nav list for use with the bs nav widget

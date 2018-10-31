@@ -43,7 +43,7 @@ public class BSAccordion<J extends BSAccordion<J>>
 		extends Div<BSAccordionChildren, BSAccordionAttributes, GlobalFeatures, BSAccordionEvents, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private static final String RoleAttributeName = "tablist";
 
 	/**
@@ -72,6 +72,36 @@ public class BSAccordion<J extends BSAccordion<J>>
 	{
 		getAccordionItems().add((BSAccordionItem) newChild);
 		return super.add(newChild);
+	}
+
+	/**
+	 * Returns the list of accordion items
+	 *
+	 * @return
+	 */
+	@NotNull
+	public List<BSAccordionItem> getAccordionItems()
+	{
+		if (accordionItems == null)
+		{
+			setAccordionItems(new ArrayList<>());
+		}
+		return accordionItems;
+	}
+
+	/**
+	 * Sets the list of accordion items
+	 *
+	 * @param accordionItems
+	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setAccordionItems(List<BSAccordionItem> accordionItems)
+	{
+		this.accordionItems = accordionItems;
+		getChildren().clear();
+		setConfigured(false);
+		return (J) this;
 	}
 
 	@Override
@@ -123,36 +153,6 @@ public class BSAccordion<J extends BSAccordion<J>>
 	public J setActiveItem(int activeItem)
 	{
 		this.activeItem = activeItem;
-		return (J) this;
-	}
-
-	/**
-	 * Returns the list of accordion items
-	 *
-	 * @return
-	 */
-	@NotNull
-	public List<BSAccordionItem> getAccordionItems()
-	{
-		if (accordionItems == null)
-		{
-			setAccordionItems(new ArrayList<>());
-		}
-		return accordionItems;
-	}
-
-	/**
-	 * Sets the list of accordion items
-	 *
-	 * @param accordionItems
-	 */
-	@SuppressWarnings("unchecked")
-	@NotNull
-	public J setAccordionItems(List<BSAccordionItem> accordionItems)
-	{
-		this.accordionItems = accordionItems;
-		getChildren().clear();
-		setConfigured(false);
 		return (J) this;
 	}
 

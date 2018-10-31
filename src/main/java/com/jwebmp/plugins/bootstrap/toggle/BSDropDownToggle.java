@@ -39,7 +39,7 @@ public class BSDropDownToggle<J extends BSDropDownToggle<J>>
 		extends Div<BSToggleChildren, BSToggleAttributes, BSToggleFeatures, BSToggleEvents, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private static final String ToggleString = "dropdown";
 
 	/**

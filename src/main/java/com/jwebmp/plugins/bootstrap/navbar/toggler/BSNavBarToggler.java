@@ -37,7 +37,6 @@ public class BSNavBarToggler
 		implements BSNavBarChildren, IBSNavBarToggler
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The specified screen reader aria label to apply when creating the div
@@ -153,6 +152,12 @@ public class BSNavBarToggler
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getIconClass());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -169,11 +174,5 @@ public class BSNavBarToggler
 		}
 		BSNavBarToggler that = (BSNavBarToggler) o;
 		return Objects.equals(getIconClass(), that.getIconClass());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getIconClass());
 	}
 }

@@ -39,7 +39,6 @@ public class BSNavBar<J extends BSNavBar<J>>
 		implements IBSNavBar
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Navbar

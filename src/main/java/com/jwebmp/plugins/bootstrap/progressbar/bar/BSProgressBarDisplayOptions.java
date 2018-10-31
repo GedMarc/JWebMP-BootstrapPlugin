@@ -32,7 +32,6 @@ public class BSProgressBarDisplayOptions
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Progress Bar Options JS

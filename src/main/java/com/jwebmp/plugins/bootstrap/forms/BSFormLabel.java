@@ -34,7 +34,6 @@ public class BSFormLabel<J extends BSFormLabel<J>>
 		implements BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new label for a bootstrap form

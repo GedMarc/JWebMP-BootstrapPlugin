@@ -30,7 +30,6 @@ public class BSFormNumberInput<J extends BSFormNumberInput<J>>
 		implements BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A bootstrap default form select

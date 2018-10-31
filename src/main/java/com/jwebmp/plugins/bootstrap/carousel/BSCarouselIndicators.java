@@ -32,7 +32,6 @@ public class BSCarouselIndicators<J extends BSCarouselIndicators<J>>
 		implements BSCarouselChildren<ListChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private final BSCarousel carousel;
 

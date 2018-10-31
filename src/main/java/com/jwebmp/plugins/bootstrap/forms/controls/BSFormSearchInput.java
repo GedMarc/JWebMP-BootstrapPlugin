@@ -28,7 +28,6 @@ public class BSFormSearchInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default search input for bootstrap

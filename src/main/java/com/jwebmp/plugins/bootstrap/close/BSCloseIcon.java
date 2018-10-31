@@ -45,7 +45,7 @@ public class BSCloseIcon<J extends BSCloseIcon<J>>
 		extends Button<IComponentHierarchyBase, NoAttributes, GlobalFeatures, GlobalEvents, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The actual close icon
 	 */

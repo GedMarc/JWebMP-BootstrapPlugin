@@ -29,7 +29,7 @@ public class BSAccordionCollapsingContent<J extends BSAccordionCollapsingContent
 		extends DivSimple<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The physical accordion content
 	 */
@@ -73,6 +73,12 @@ public class BSAccordionCollapsingContent<J extends BSAccordionCollapsingContent
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getAccordionContent());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -89,11 +95,5 @@ public class BSAccordionCollapsingContent<J extends BSAccordionCollapsingContent
 		}
 		BSAccordionCollapsingContent that = (BSAccordionCollapsingContent) o;
 		return Objects.equals(getAccordionContent(), that.getAccordionContent());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getAccordionContent());
 	}
 }

@@ -40,7 +40,6 @@ public class BSListGroup
 		extends Div<BSListGroupChildren, BSListGroupAttributes, GlobalFeatures, BSListGroupEvents, BSListGroup>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * List group

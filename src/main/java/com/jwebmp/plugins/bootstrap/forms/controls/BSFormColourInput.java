@@ -28,7 +28,6 @@ public class BSFormColourInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default colour for bootstrap

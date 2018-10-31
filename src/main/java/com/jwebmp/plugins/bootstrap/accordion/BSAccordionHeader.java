@@ -29,7 +29,7 @@ public class BSAccordionHeader<J extends BSAccordionHeader<J>>
 		extends H5<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The link for the hovering
 	 */
@@ -55,6 +55,12 @@ public class BSAccordionHeader<J extends BSAccordionHeader<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getAccordionHeaderLink());
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -71,12 +77,6 @@ public class BSAccordionHeader<J extends BSAccordionHeader<J>>
 		}
 		BSAccordionHeader<?> that = (BSAccordionHeader<?>) o;
 		return Objects.equals(getAccordionHeaderLink(), that.getAccordionHeaderLink());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getAccordionHeaderLink());
 	}
 
 	/**

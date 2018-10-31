@@ -45,7 +45,6 @@ public class BSContainer<J extends BSContainer<J>>
 		implements BSNavBarChildren<IComponentHierarchyBase, J>, BSFormChildren<IComponentHierarchyBase, J>, BSFormGroupChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs as a container-fluid full page

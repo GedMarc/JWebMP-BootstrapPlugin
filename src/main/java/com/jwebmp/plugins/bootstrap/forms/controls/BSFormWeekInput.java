@@ -28,7 +28,6 @@ public class BSFormWeekInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default week input for bootstrap

@@ -40,7 +40,6 @@ public class BSFormInline
 		implements BSNavsChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSFormInline()
 	{

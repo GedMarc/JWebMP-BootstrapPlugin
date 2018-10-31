@@ -34,7 +34,6 @@ public class BSTooltipFeature
 		extends Feature<GlobalFeatures, BSPopOverOptions, BSTooltipFeature>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private BSPopOverOptions options;
 

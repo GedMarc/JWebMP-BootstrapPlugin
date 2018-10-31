@@ -29,7 +29,6 @@ public class BSButtonDangerOutline<J extends BSButtonDangerOutline<J>>
 		extends BSButton<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Indicates a dangerous or potentially negative action

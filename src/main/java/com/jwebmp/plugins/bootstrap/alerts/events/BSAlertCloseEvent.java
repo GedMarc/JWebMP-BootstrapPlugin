@@ -46,7 +46,7 @@ public abstract class BSAlertCloseEvent<J extends BSAlertCloseEvent<J>>
 	 */
 	private static final Logger LOG = LogFactory.getInstance()
 	                                            .getLogger("BSAlertCloseEvent");
-	private static final long serialVersionUID = 1L;
+
 	private BSAlertCloseEventDirective directive;
 
 	/**

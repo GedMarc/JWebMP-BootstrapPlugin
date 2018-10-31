@@ -29,7 +29,6 @@ public class BSButtonDanger
 		extends BSButton
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Indicates a dangerous or potentially negative action

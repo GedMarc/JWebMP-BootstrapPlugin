@@ -26,7 +26,6 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class BSButtonToolbarTest
-
 {
 
 	public BSButtonToolbarTest()
@@ -48,7 +47,7 @@ public class BSButtonToolbarTest
 		BSButtonSuccess bbs = new BSButtonSuccess();
 		BSButtonGroupLabel lbl;
 		group.add(lbl = new BSButtonGroupLabel<>("stuff", new BSButtonGroupRadioButton()).setID("label"));
-		BSButtonGroupRadioButton.class.cast(lbl.getInput())
+		((BSButtonGroupRadioButton) lbl.getInput())
 		                              .setID("label");
 		bbs.setID("button");
 

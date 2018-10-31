@@ -34,7 +34,6 @@ public class BSNavBarBrand
 		implements BSNavBarChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Color schemes

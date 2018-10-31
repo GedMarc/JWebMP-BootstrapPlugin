@@ -28,7 +28,6 @@ public class BSFormMonthInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default month input for bootstrap

@@ -33,7 +33,7 @@ public class BSCarouselPauseFeature<J extends BSCarouselPauseFeature<J>>
 		extends Feature<GlobalFeatures, BSCarouselOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The method name to call
 	 */

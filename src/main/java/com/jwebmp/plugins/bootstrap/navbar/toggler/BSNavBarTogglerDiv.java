@@ -28,7 +28,6 @@ public class BSNavBarTogglerDiv
 		implements BSNavBarChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BSNavBarTogglerDiv()
 	{

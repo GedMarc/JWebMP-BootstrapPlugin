@@ -31,7 +31,6 @@ public class BSDropDownMenuItemHeader
 		extends BSDropDownMenuItem
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Menu headers

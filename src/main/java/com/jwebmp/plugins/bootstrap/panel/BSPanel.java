@@ -45,7 +45,6 @@ public class BSPanel<J extends BSPanel<J>>
 		extends Div<IComponentHierarchyBase, BSPanelAttributes, BSPanelFeatures, BSPanelEvents, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The Panel Header Button Bar

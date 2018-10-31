@@ -51,7 +51,7 @@ public class BSMedia<J extends BSMedia<J>>
 		implements IBSMedia
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The link for the media object
 	 */

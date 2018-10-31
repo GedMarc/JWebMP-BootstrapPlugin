@@ -30,7 +30,6 @@ class BSCarouselIndicatorItem
 		extends ListItem
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new carousel indicator that slides to a specific slide, and if it is the current active item or not

@@ -28,7 +28,6 @@ public class BSFormTelInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default tel input for bootstrap

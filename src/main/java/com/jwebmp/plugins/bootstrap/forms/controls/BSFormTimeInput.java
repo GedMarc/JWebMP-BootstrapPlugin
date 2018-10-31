@@ -28,7 +28,6 @@ public class BSFormTimeInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default time input for bootstrap

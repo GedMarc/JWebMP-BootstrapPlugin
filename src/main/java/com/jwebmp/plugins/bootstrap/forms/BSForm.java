@@ -43,7 +43,6 @@ public class BSForm<J extends BSForm<J>>
 		extends Div<BSFormChildren, BSFormAttributes, GlobalFeatures, BSFormEvents, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Forms

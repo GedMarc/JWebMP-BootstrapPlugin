@@ -28,7 +28,6 @@ public class BSFormUrlInput
 		extends BSInput
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A default url input for bootstrap

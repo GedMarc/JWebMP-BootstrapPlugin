@@ -30,7 +30,6 @@ public class BSNavLinkItem
 		implements BSNavsChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A navigation link item

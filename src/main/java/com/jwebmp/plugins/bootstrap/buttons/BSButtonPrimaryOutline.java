@@ -29,7 +29,6 @@ public class BSButtonPrimaryOutline
 		extends BSButton
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Provides extra visual weight and identifies the primary action in a set of buttons

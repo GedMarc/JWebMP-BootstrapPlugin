@@ -32,7 +32,6 @@ public class BSPanelOptions
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A new instance of the panel options
