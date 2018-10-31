@@ -48,7 +48,7 @@ public class BSButtonToolbarTest
 		BSButtonGroupLabel lbl;
 		group.add(lbl = new BSButtonGroupLabel<>("stuff", new BSButtonGroupRadioButton()).setID("label"));
 		((BSButtonGroupRadioButton) lbl.getInput())
-		                              .setID("label");
+				.setID("label");
 		bbs.setID("button");
 
 		System.out.println(bbt.toString(true));
