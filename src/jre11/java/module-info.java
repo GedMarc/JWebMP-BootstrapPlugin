@@ -1,8 +1,14 @@
+import com.jwebmp.core.base.angular.services.IAngularDirective;
 import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
 import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
 import com.jwebmp.plugins.bootstrap.BootstrapPageConfigurator;
+import com.jwebmp.plugins.bootstrap.alerts.events.BSAlertCloseEventDirective;
+import com.jwebmp.plugins.bootstrap.alerts.events.BSAlertClosedEventDirective;
+import com.jwebmp.plugins.bootstrap.carousel.events.BSCarouselSlidEventDirective;
+import com.jwebmp.plugins.bootstrap.carousel.events.BSCarouselSlideEventDirective;
 import com.jwebmp.plugins.bootstrap.implementations.BootstrapExclusionsModule;
+import com.jwebmp.plugins.bootstrap.modal.events.BSModalShowEventDirective;
 
 module com.jwebmp.plugins.bootstrap {
 
@@ -54,11 +60,15 @@ module com.jwebmp.plugins.bootstrap {
 	requires java.logging;
 	requires java.validation;
 	requires com.jwebmp.guicedinjection;
+	requires com.jwebmp.core.angularjs;
 
 	provides IPageConfigurator with BootstrapPageConfigurator;
-
 	provides IGuiceScanJarExclusions with BootstrapExclusionsModule;
 	provides IGuiceScanModuleExclusions with BootstrapExclusionsModule;
+
+	provides IAngularDirective with BSAlertClosedEventDirective, BSAlertCloseEventDirective,
+			                           BSCarouselSlideEventDirective, BSCarouselSlidEventDirective, BSModalShowEventDirective;
+
 
 	opens com.jwebmp.plugins.bootstrap to com.fasterxml.jackson.databind, com.jwebmp.core;
 	opens com.jwebmp.plugins.bootstrap.collapse to com.fasterxml.jackson.databind, com.jwebmp.core;

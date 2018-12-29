@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bootstrap.modal.events;
 
 import com.jwebmp.core.FileTemplates;
 import com.jwebmp.core.base.angular.directives.AngularDirectiveBase;
+import com.jwebmp.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Maps to the angular function of right click
@@ -26,7 +27,7 @@ import com.jwebmp.core.base.angular.directives.AngularDirectiveBase;
  * @since 25 Jun 2016
  */
 public class BSModalShowEventDirective
-		extends AngularDirectiveBase
+		extends AngularDirectiveBase<BSModalShowEventDirective>
 {
 
 
@@ -48,6 +49,12 @@ public class BSModalShowEventDirective
 	{
 		return FileTemplates.getFileTemplate(BSModalShowEventDirective.class, "BSModalShowEvent", "BSModalShowEvent.min.js")
 		                    .toString();
+	}
+
+	@Override
+	public boolean enabled()
+	{
+		return BootstrapPageConfigurator.isEnabled();
 	}
 
 }

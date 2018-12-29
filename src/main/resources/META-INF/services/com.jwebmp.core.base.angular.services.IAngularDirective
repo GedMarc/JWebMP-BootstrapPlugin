@@ -1,0 +1,5 @@
+com.jwebmp.plugins.bootstrap.alerts.events.BSAlertCloseEventDirective
+com.jwebmp.plugins.bootstrap.alerts.events.BSAlertClosedEventDirective
+com.jwebmp.plugins.bootstrap.carousel.events.BSCarouselSlidEventDirective
+com.jwebmp.plugins.bootstrap.carousel.events.BSCarouselSlideEventDirective
+com.jwebmp.plugins.bootstrap.modal.events.BSModalShowEventDirective

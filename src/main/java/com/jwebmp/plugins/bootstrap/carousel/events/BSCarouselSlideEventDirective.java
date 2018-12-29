@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bootstrap.carousel.events;
 
 import com.jwebmp.core.FileTemplates;
 import com.jwebmp.core.base.angular.directives.AngularDirectiveBase;
+import com.jwebmp.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Maps to the angular function of right click
@@ -26,7 +27,7 @@ import com.jwebmp.core.base.angular.directives.AngularDirectiveBase;
  * @since 25 Jun 2016
  */
 public class BSCarouselSlideEventDirective
-		extends AngularDirectiveBase
+		extends AngularDirectiveBase<BSCarouselSlideEventDirective>
 
 {
 
@@ -51,4 +52,9 @@ public class BSCarouselSlideEventDirective
 		                    .toString();
 	}
 
+	@Override
+	public boolean enabled()
+	{
+		return BootstrapPageConfigurator.isEnabled();
+	}
 }

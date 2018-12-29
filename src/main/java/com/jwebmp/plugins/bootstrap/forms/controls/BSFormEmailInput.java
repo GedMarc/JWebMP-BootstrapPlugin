@@ -36,9 +36,8 @@ public class BSFormEmailInput<J extends BSFormEmailInput<J>>
 	 */
 	public BSFormEmailInput()
 	{
-
 		setInputType(InputTypes.Email);
-		addAttribute(AngularAttributes.ngPattern, "regex.emailField");
+		addAttribute(AngularAttributes.ngPattern.getAttributeName(), "regex.emailField");
 	}
 
 	@Override

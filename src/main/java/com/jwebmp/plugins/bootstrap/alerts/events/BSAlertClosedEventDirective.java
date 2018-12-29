@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bootstrap.alerts.events;
 
 import com.jwebmp.core.FileTemplates;
 import com.jwebmp.core.base.angular.directives.AngularDirectiveBase;
+import com.jwebmp.plugins.bootstrap.BootstrapPageConfigurator;
 
 /**
  * Maps to the angular function of right click
@@ -26,10 +27,8 @@ import com.jwebmp.core.base.angular.directives.AngularDirectiveBase;
  * @since 25 Jun 2016
  */
 public class BSAlertClosedEventDirective
-		extends AngularDirectiveBase
+		extends AngularDirectiveBase<BSAlertClosedEventDirective>
 {
-
-
 	/**
 	 * Constructs a new right click directive based on the angular object passed in
 	 */
@@ -50,4 +49,9 @@ public class BSAlertClosedEventDirective
 		                    .toString();
 	}
 
+	@Override
+	public boolean enabled()
+	{
+		return BootstrapPageConfigurator.isEnabled();
+	}
 }
