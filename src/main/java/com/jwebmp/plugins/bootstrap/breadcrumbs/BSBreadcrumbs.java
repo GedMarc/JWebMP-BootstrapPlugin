@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Marc Magon
+ * Copyright (C) 2017 GedMarc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ import java.util.ArrayList;
  * Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.
  * <p>
  *
- * @author Marc Magon
+ * @author GedMarc
  * @version 1.0
  * @since 29 Aug 2015
  */

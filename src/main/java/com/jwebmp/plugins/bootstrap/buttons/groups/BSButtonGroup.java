@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Marc Magon
+ * Copyright (C) 2017 GedMarc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ import com.jwebmp.plugins.bootstrap.buttons.toolbars.BSButtonToolbarChildren;
  * Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.
  * <p>
  *
- * @author Marc Magon
+ * @author GedMarc
  * @version 1.0
  * @since 01 Jan 2017
  */

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Marc Magon
+ * Copyright (C) 2017 GedMarc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ import com.jwebmp.plugins.bootstrap.navbar.toggler.BSNavBarTogglerSizes;
  *
  * @param <J>
  *
- * @author Marc Magon
+ * @author GedMarc
  * @version 1.0
  * @since 13 Jan 2017
  */
